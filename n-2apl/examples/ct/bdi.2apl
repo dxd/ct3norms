@@ -51,6 +51,7 @@ BeliefUpdates:
 {true}														ReceivedEvent(X)				{event(X)}
 {sent(Pp,ID,open)}											ReceivedMessage(RESPONSE,ID)	{not sent(Pp,ID,open), sent(Pp,ID,closed(RESPONSE))}
 {true}														ReceivedMessage(TYPE,ID,STATUS) {received(TYPE,ID,STATUS)}
+{true}														ReceivedProposal(TYPE,ID,STATUS){receivedP(TYPE,ID,STATUS)}
 {requestChips(X,Y) or not requestChips(X,Y)}				RequestChips(PIN,CHIPS)			{not requestChips(X,Y), requestChips(PIN,CHIPS)}
 // sent a proposal
 {true}														Sent(TYPE,ID,STATUS)		    {sent(TYPE,ID,STATUS)}

@@ -35,7 +35,7 @@ import edu.harvard.eecs.airg.coloredtrails.shared.types.Phases;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.PlayerStatus;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.RowCol;
 
-public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListener,PlayersUpdatedEventListener{
+public class CTAgentHandler implements RecipAgentAdaptor{
 	private ColoredTrailsClientImpl client;
 	private EnvCT env;
 
@@ -68,7 +68,7 @@ public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListe
 		client.addGameInitializedEventListener(this);		
 		client.addGameStartEventListener(this);		
 		client.addPhasesAdvancedEventListener(this);
-		client.addPhasesUpdatedEventListener(this);
+		//client.addPhasesUpdatedEventListener(this);
 		//client.addPlayersUpdatedEventListener(this);
 
 		System.out.println("[CTAH] Added a new agent to the game by the name of "
@@ -98,7 +98,7 @@ public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListe
 		System.out.println("My PlayerStatus is: " + client.getGameStatus().getMyPlayer());
 		APLFunction event = new APLFunction("message",
 				new APLIdent("game_ended"));
-		env.throwEvents(event);
+		env.throwEvents(event,"a"+agentname);
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListe
 							new APLIdent(type), new APLNum(dm.getMessageId()),
 							new APLIdent("accept"));
 				}
-				env.throwEvents(event);
+				env.throwEvents(event,"a"+agentname);
 			}
 
 			else if (type.equals("basicproposal")) {
@@ -186,22 +186,31 @@ public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListe
 				// check if the proposal is beneficial
 
 				boolean offerResponse = RespondStrategy(ChipSet.subChipSets(proposal.getChipsSentByResponder(), proposal.getChipsSentByProposer() ),dm.getFromPerGameId());
-				System.out.println("Received a proposal ");
+				System.out.println("Received a proposal creating event");
+				APLFunction event = null;
+				
+				
 				// PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
 				// waiter.doWait(RecipConstants.minRespondTime, RecipConstants.maxRespondTime);
 
 				// check if the proposal is beneficial
 				if( offerResponse ) {
 					//response.setSubjectMsgId(subjectMsgId);
-					((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).acceptOffer();
+					event = new APLFunction("proposal",
+							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
+							new APLIdent("accept"));
+					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).acceptOffer();
 					//responseMessage.acceptOffer();
 				} else {
 					//response.setSubjectMsgId(subjectMsgId);
-					((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).rejectOffer();
+					event = new APLFunction("proposal",
+							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
+							new APLIdent("reject"));
+					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).rejectOffer();
 					//responseMessage.rejectOffer();
 				}
-
-				client.communication.sendDiscourseRequest(responseMessage);
+				env.throwEvents(event,"a"+agentname);
+				//client.communication.sendDiscourseRequest(responseMessage);
 			}
 
 		}
@@ -229,7 +238,7 @@ public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListe
 
 		APLFunction event = new APLFunction("message",
 				new APLIdent("phasechange"));
-		env.throwEvents(event);
+		env.throwEvents(event,"a"+agentname);
 		if(phaseName.equals("Offer Phase")) {
 
 		}
@@ -331,7 +340,7 @@ public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListe
 		String initialize = "game_initialized";
 		APLFunction event = new APLFunction("message",
 				new APLIdent(initialize));
-		env.throwEvents(event);       
+		env.throwEvents(event,"a"+agentname);       
 	}
 
 
@@ -885,17 +894,7 @@ public class CTAgentHandler implements RecipAgentAdaptor,PhasesUpdatedEventListe
 
 	}
 
-	@Override
-	public void phasesUpdated(Phases ph) {
-		// TODO Auto-generated method stub
-		System.out.println("[CTAH] phasesUpdated Phase: " + ph);
-	}
 
-	@Override
-	public void playersUpdated(Set<PlayerStatus> ps) {
-		// TODO Auto-generated method stub
-		System.out.println("[CTAH] playersUpdated(Set<PlayerStatus>: " + ps);
-	}
 
 	/**
 	 * Send a proposal to a player

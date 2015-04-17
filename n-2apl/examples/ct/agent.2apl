@@ -62,11 +62,18 @@ event(FUNCTION, NAME) <- true | {
 		// Received a response
 		if B(TYPE=response) then {
 			ReceivedMessage(RESPONSE,ID)
-		}
+		} 
 	}
 	else if B(LIST=[actionresult([TYPE])]) then {
 		// Received an event
 		ReceivedEvent(TYPE)
+	}
+	else if B(LIST=[actionresult([TYPE,AGENT,ID,RESPONSE])]) then {	
+		// Received a proposal
+		if B(TYPE=proposal) then {
+			ReceivedProposal(AGENT,ID,RESPONSE)
+			//adopta(receivedP(AGENT,ID,RESPONSE))
+		}
 	}	
 }
 
