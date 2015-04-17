@@ -1,6 +1,5 @@
 
 
-import edu.harvard.eecs.airg.coloredtrails.agent.events.PlayersUpdatedEventListener;
 import edu.harvard.eecs.airg.coloredtrails.server.ServerPhases;
 import edu.harvard.eecs.airg.coloredtrails.shared.Scoring;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage;
@@ -29,7 +28,7 @@ import mwspaces.CTsetup;
  * automatic exchange after accept an offer, and automatic movement.
  */
 public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
-		PhaseChangeHandler, PlayersUpdatedEventListener {
+		PhaseChangeHandler {
 
 	/**
 	 * The scoring function used for players in the game. 100 for a player
@@ -134,6 +133,8 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		gs.setPhases(ph);
 
 		gs.setInitialized(); // will generate GAME_INITIALIZED message
+		
+		
 	}
 
 	/**
@@ -330,9 +331,5 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	        }
 	    }
 
-	@Override
-	public void playersUpdated(Set<PlayerStatus> ps) {
-		spaces.writePlayers(ps);		
-	}
 
 }

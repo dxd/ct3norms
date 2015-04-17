@@ -1,0 +1,1284 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.239 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-64672-1429295851347-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.40] of type 
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.40] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-04-17 19:38:21,528  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 637 milliseconds
+     [java] 2015-04-17 19:38:21,537 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-04-17~19.38-gigaspaces-service-192.168.0.40-33384.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-17 19:38:21.759, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:38:21.791, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:38:21.794, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:38:21.797, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:38:21.799, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-17 19:38:21.802, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-17 19:38:21.805, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:38:21.807, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:38:21.81, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:38:21.812, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:38:21.814, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:38:21.815, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:38:21.817, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:38:21.819, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:38:21.821, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:38:21.823, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:38:21.839, clock=0]
+     [java] CT notification: Time [clock=5, time=null]
+     [java] CT players: 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=7077, agent=a20, agent2=a10, clock=5, time=2015-04-17 19:38:28.588]
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: green
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':3 'green':1 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':3 'green':1 }
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.writePlayers(CTsetup.java:173)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:138)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Time [clock=6, time=null]
+     [java] CT players: 
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':3 'green':1 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':1 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':3 'purple':1 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':2 'red':3 'purple':0 'green':2 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':1 'red':3 'purple':0 'green':2 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':2 'purple':0 'green':2 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':0 'green':2 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':1 'red':3 'purple':0 'green':2 }.
+     [java] Score: 20.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':0 'green':2 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':2 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2] [3][1] [3][0]
+     [java] 
+     [java] Player: 10  Score: 15
+     [java] Player: 20  Score: 125
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=orange, time=2015-04-17 19:38:52.759, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:38:52.761, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=purple, time=2015-04-17 19:38:52.763, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=red, time=2015-04-17 19:38:52.765, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:38:52.767, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:38:52.769, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=orange, time=2015-04-17 19:38:52.771, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:38:52.773, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=purple, time=2015-04-17 19:38:52.775, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:38:52.778, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:38:52.78, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:38:52.782, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:38:52.784, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:38:52.787, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:38:52.789, clock=6]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=green, time=2015-04-17 19:38:52.791, clock=6]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=6]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:38:52.8, clock=6]
+     [java] AUTOMATIC MOVEMEMT
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=7, time=null]
+     [java] CT players: 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':1 'purple':3 'green':1 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: green
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':3 'green':0 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: purple
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':2 'green':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':2 'red':0 'purple':2 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':0 'purple':2 'green':0 }.
+     [java] Score: 120.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':2 'green':0 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':3 'green':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':3 'green':1 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0] [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':3 'red':2 'purple':1 'green':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':3 'red':2 'purple':0 'green':0 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':2 'red':2 'purple':0 'green':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':0 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':0 'green':0 }.
+     [java] Score: 115.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':2 'red':2 'purple':0 'green':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':3 'red':2 'purple':0 'green':0 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':3 'red':2 'purple':1 'green':0 }.
+     [java] Score: 0.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2] [3][1] [3][0]
+     [java] 
+     [java] Player: 10  Score: 120
+     [java] Player: 20  Score: 115
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=purple, time=2015-04-17 19:39:23.759, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:39:23.761, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:39:23.763, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:39:23.765, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=purple, time=2015-04-17 19:39:23.767, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:39:23.769, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=purple, time=2015-04-17 19:39:23.771, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:39:23.773, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:39:23.776, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=green, time=2015-04-17 19:39:23.777, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=orange, time=2015-04-17 19:39:23.779, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:39:23.781, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=green, time=2015-04-17 19:39:23.783, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=red, time=2015-04-17 19:39:23.785, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=green, time=2015-04-17 19:39:23.787, clock=7]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:39:23.789, clock=7]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=7]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:39:23.795, clock=7]
+     [java] AUTOMATIC MOVEMEMT
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=8, time=null]
+     [java] CT players: 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':2 'green':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: purple
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':1 'green':0 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: 0.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':1 'green':0 }.
+     [java] Score: -5.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':2 'green':0 }.
+     [java] Score: -10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':1 'green':1 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: green
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: -10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':1 }.
+     [java] Score: -15.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2]
+     [java] 
+     [java] Player: 10  Score: 0
+     [java] Player: 20  Score: -10
+     [java] A New Phase Began: Movement Phase
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=305, agent=a20, agent2=a10, clock=8, time=2015-04-17 19:39:53.96]
+     [java] A New Phase Began: Feedback Phase
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=9, time=null]
+     [java] CT players: 
+     [java] DEBUG root                           - Game ended id = 0
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 1
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.1
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [1] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [1] and player [20]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 1
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 1
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-17 19:40:58.187, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:40:58.189, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:40:58.192, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:40:58.194, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:40:58.196, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-17 19:40:58.198, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-17 19:40:58.2, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:40:58.203, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:40:58.205, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:40:58.207, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:40:58.209, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:40:58.211, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:40:58.213, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:40:58.215, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:40:58.217, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:40:58.219, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:40:58.231, clock=0]
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.40] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 2
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.2
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [2] and player [10]
+     [java] CT notification: Time [clock=21, time=null]
+     [java] CT players: 
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [2] and player [20]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 2
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 2
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-17 19:41:07.011, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:41:07.014, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:41:07.015, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:41:07.018, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:41:07.021, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-17 19:41:07.024, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-17 19:41:07.026, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:41:07.028, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:41:07.03, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:41:07.032, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:41:07.034, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:41:07.035, clock=0]
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:41:07.037, clock=0]
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:41:07.039, clock=0]
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 2
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:41:07.044, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:41:07.048, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:41:07.055, clock=0]
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 2
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-17 19:41:07.17, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:41:07.173, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:41:07.178, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:41:07.182, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:41:07.189, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-17 19:41:07.2, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-17 19:41:07.202, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:41:07.205, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:41:07.209, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:41:07.212, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:41:07.214, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:41:07.216, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:41:07.219, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:41:07.222, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:41:07.226, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:41:07.228, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:41:07.235, clock=0]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=1573, agent=a20, agent2=a10, clock=0, time=2015-04-17 19:41:11.018]
+     [java] CT notification: Time [clock=22, time=null]
+     [java] CT players: 
+     [java] CT notification: Time [clock=22, time=null]
+     [java] CT players: 
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: green
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':3 'green':1 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':3 'green':1 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':3 'green':1 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':1 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':3 'purple':1 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':2 'red':3 'purple':0 'green':2 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':1 'red':3 'purple':0 'green':2 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':2 'purple':0 'green':2 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':0 'green':2 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':1 'red':3 'purple':0 'green':2 }.
+     [java] Score: 20.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':0 'green':2 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':2 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2] [3][1] [3][0]
+     [java] 
+     [java] Player: 10  Score: 15
+     [java] Player: 20  Score: 125
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=orange, time=2015-04-17 19:41:28.831, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:41:28.833, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=purple, time=2015-04-17 19:41:28.834, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=red, time=2015-04-17 19:41:28.836, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:41:28.838, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:41:28.839, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=orange, time=2015-04-17 19:41:28.841, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:41:28.843, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=purple, time=2015-04-17 19:41:28.844, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:41:28.846, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:41:28.849, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:41:28.85, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:41:28.853, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:41:28.854, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:41:28.856, clock=21]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=green, time=2015-04-17 19:41:28.858, clock=21]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=21]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:41:28.863, clock=21]
+     [java] AUTOMATIC MOVEMEMT
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=23, time=null]
+     [java] CT players: 
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=23, time=null]
+     [java] CT players: 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: green
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':3 'green':1 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':3 'green':1 }
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':3 'green':1 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':1 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0]
+     [java] 
+     [java] CT notification: Time [clock=24, time=null]
+     [java] CT players: 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':3 'purple':1 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':2 'red':3 'purple':0 'green':2 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':1 'red':3 'purple':0 'green':2 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':2 'purple':0 'green':2 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':0 'green':2 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':1 'red':3 'purple':0 'green':2 }.
+     [java] Score: 20.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':0 'green':2 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':2 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2] [3][1] [3][0]
+     [java] 
+     [java] Player: 20  Score: 15
+     [java] Player: 10  Score: 125
+     [java] A New Phase Began: Movement Phase
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':3 'green':1 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':3 'green':1 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':2 'purple':0 'green':2 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':0 'green':2 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] Player: 20  Score: 15
+     [java] Player: 10  Score: 125
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=orange, time=2015-04-17 19:41:37.838, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:41:37.841, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=purple, time=2015-04-17 19:41:37.843, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=red, time=2015-04-17 19:41:37.844, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:41:37.846, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:41:37.848, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=orange, time=2015-04-17 19:41:37.85, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:41:37.852, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=purple, time=2015-04-17 19:41:37.854, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:41:37.856, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:41:37.859, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:41:37.862, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:41:37.864, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:41:37.866, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:41:37.868, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=green, time=2015-04-17 19:41:37.87, clock=24]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=24]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:41:37.881, clock=24]
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=orange, time=2015-04-17 19:41:37.92, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:41:37.925, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=purple, time=2015-04-17 19:41:37.927, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=red, time=2015-04-17 19:41:37.929, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-17 19:41:37.932, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:41:37.935, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=orange, time=2015-04-17 19:41:37.937, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:41:37.94, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=purple, time=2015-04-17 19:41:37.943, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-17 19:41:37.945, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-17 19:41:37.947, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:41:37.949, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-17 19:41:37.951, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-17 19:41:37.953, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-17 19:41:37.956, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=green, time=2015-04-17 19:41:37.958, clock=23]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=23]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:41:37.962, clock=23]
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':1 'purple':3 'green':1 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: green
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':3 'green':0 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: purple
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':2 'green':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':2 'red':0 'purple':2 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':0 'purple':2 'green':0 }.
+     [java] Score: 120.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':2 'green':0 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':3 'green':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':3 'green':1 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0] [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':3 'red':2 'purple':1 'green':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':3 'red':2 'purple':0 'green':0 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':2 'red':2 'purple':0 'green':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':0 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':0 'green':0 }.
+     [java] Score: 115.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':2 'red':2 'purple':0 'green':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':3 'red':2 'purple':0 'green':0 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':3 'red':2 'purple':1 'green':0 }.
+     [java] Score: 0.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2] [3][1] [3][0]
+     [java] 
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=22, time=null]
+     [java] CT players: 
+     [java] Player: 10  Score: 120
+     [java] Player: 20  Score: 115
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=purple, time=2015-04-17 19:41:59.856, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:41:59.858, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:41:59.861, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:41:59.863, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=purple, time=2015-04-17 19:41:59.865, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:41:59.866, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=purple, time=2015-04-17 19:41:59.868, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:41:59.87, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:41:59.871, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=green, time=2015-04-17 19:41:59.873, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=orange, time=2015-04-17 19:41:59.875, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:41:59.877, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=green, time=2015-04-17 19:41:59.878, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=red, time=2015-04-17 19:41:59.88, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=green, time=2015-04-17 19:41:59.882, clock=22]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:41:59.883, clock=22]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=22]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:41:59.888, clock=22]
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':1 'purple':3 'green':1 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: green
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':3 'green':0 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: purple
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':2 'green':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':2 'red':0 'purple':2 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':0 'purple':2 'green':0 }.
+     [java] Score: 120.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':2 'green':0 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':3 'green':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':3 'green':1 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0] [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':3 'red':2 'purple':1 'green':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':3 'red':2 'purple':0 'green':0 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':2 'red':2 'purple':0 'green':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':2 'red':1 'purple':0 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':0 'green':0 }.
+     [java] Score: 115.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':2 'red':2 'purple':0 'green':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':3 'red':2 'purple':0 'green':0 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':3 'red':2 'purple':1 'green':0 }.
+     [java] Score: 0.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2] [3][1] [3][0]
+     [java] 
+     [java] Player: 20  Score: 120
+     [java] Player: 10  Score: 115
+     [java] A New Phase Began: Movement Phase
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':0 'purple':2 'green':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':0 'purple':2 'green':0 }.
+     [java] Score: 120.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':1 'purple':0 'green':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':0 'green':0 }.
+     [java] Score: 115.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] Player: 20  Score: 120
+     [java] Player: 10  Score: 115
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=purple, time=2015-04-17 19:42:08.865, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:42:08.867, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:42:08.869, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:42:08.871, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=purple, time=2015-04-17 19:42:08.872, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:42:08.875, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=purple, time=2015-04-17 19:42:08.877, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:42:08.879, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:42:08.881, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=green, time=2015-04-17 19:42:08.883, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=orange, time=2015-04-17 19:42:08.885, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:42:08.887, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=green, time=2015-04-17 19:42:08.888, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=red, time=2015-04-17 19:42:08.89, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=green, time=2015-04-17 19:42:08.893, clock=24]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:42:08.894, clock=24]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=24]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:42:08.906, clock=24]
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=purple, time=2015-04-17 19:42:08.931, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-17 19:42:08.946, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-17 19:42:08.956, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-17 19:42:08.96, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=purple, time=2015-04-17 19:42:08.963, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=green, time=2015-04-17 19:42:08.965, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=purple, time=2015-04-17 19:42:08.966, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-17 19:42:08.968, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-17 19:42:08.97, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=green, time=2015-04-17 19:42:08.972, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=orange, time=2015-04-17 19:42:08.974, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-17 19:42:08.975, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=green, time=2015-04-17 19:42:08.978, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=red, time=2015-04-17 19:42:08.98, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=green, time=2015-04-17 19:42:08.982, clock=23]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-17 19:42:08.984, clock=23]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], time=null, clock=23]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], time=2015-04-17 19:42:08.991, clock=23]
+     [java] AUTOMATIC MOVEMEMT
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=23, time=null]
+     [java] CT players: 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':2 'green':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: purple
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':1 'green':0 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: 0.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':1 'green':0 }.
+     [java] Score: -5.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':2 'green':0 }.
+     [java] Score: -10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':1 'green':1 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: green
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: -10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':1 }.
+     [java] Score: -15.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2]
+     [java] 
+     [java] Player: 10  Score: 0
+     [java] Player: 20  Score: -10
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Feedback Phase
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=24, time=null]
+     [java] CT players: 
+     [java] DEBUG root                           - Game ended id = 1
+     [java] AUTOMATIC MOVEMEMT
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] CT notification: Time [clock=25, time=null]
+     [java] CT players: 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':2 'green':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: purple
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':1 'green':0 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: 0.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':1 'green':0 }.
+     [java] Score: -5.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':2 'green':0 }.
+     [java] Score: -10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':1 'green':1 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: green
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: -10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':1 }.
+     [java] Score: -15.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2]
+     [java] 
+     [java] Player: 20  Score: 0
+     [java] Player: 10  Score: -10
+     [java] A New Phase Began: Movement Phase
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: 0.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':1 'green':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':1 'green':0 }.
+     [java] Score: -10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][2]
+     [java] 
+     [java] Player: 20  Score: 0
+     [java] Player: 10  Score: -10
+     [java] A New Phase Began: Movement Phase
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-64672-1429295851347-1:0) is shutting down
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-64672-1429295851347-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 5 minutes 14 seconds

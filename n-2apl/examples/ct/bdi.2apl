@@ -76,6 +76,7 @@ PG-rules:
 //respond <- received(TYPE,ID,open) and phase(communicationphase) | makeResponse(ID)
 
 received(TYPE,ID,closed) <- phase(communicationphase) | makeResponse(ID)
+receivedP(TYPE,ID,accept) <- phase(communicationphase) | makeResponse(ID)
 
 initialized <- event(game_initialized) | {
     dropgoal(initialized);
@@ -265,15 +266,15 @@ getScoreCurrentChips(ID) <- true | {
 }
 
 initialize() <- initialized(no) | {
-	getPin(); 
-	getOpponentPin(); 
-	getId(); 
-	getOpponentId(); 
-	getPos();
-	getOpponentPos();
-	getGoalPos(0); 
-	if B(goalPos(TYPE,X,Y)) then getGoalId(TYPE,X,Y);
-    if B(agentId(MYID)) then {getRole(MYID)} ;
+	//getPin(); 
+	//getOpponentPin(); 
+	//getId(); 
+	//getOpponentId(); 
+	//getPos();
+	//getOpponentPos();
+	//getGoalPos(0); 
+	//if B(goalPos(TYPE,X,Y)) then getGoalId(TYPE,X,Y);
+    //if B(agentId(MYID)) then {getRole(MYID)} ;
     getPhase();
 	Initialize() 
 }

@@ -200,17 +200,17 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
 							new APLIdent("accept"));
 					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).acceptOffer();
-					//responseMessage.acceptOffer();
+				responseMessage.acceptOffer();
 				} else {
 					//response.setSubjectMsgId(subjectMsgId);
 					event = new APLFunction("proposal",
 							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
 							new APLIdent("reject"));
 					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).rejectOffer();
-					//responseMessage.rejectOffer();
+					responseMessage.rejectOffer();
 				}
 				env.throwEvents(event,"a"+agentname);
-				//client.communication.sendDiscourseRequest(responseMessage);
+				client.communication.sendDiscourseRequest(responseMessage);
 			}
 
 		}
@@ -812,8 +812,6 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			throws ExternalActionFailedException {
 
 		int id = apl_id.toInt();
-		//TODO remove the hack
-		//cgs.getPlayerByPerGameId(id).setRole("proposer");
 		String role = cgs.getPlayerByPerGameId(id).getRole();
 
 		if (role != "")

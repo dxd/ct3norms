@@ -39,7 +39,7 @@ public class CTsetup {
 	private Logger log = Logger.getRootLogger();
 	private Integer clock = 0;
 	private ServerGameStatus gs;
-	Hashtable <Integer,PlayerStatus> ops;
+	Hashtable <Integer,PlayerStatus> ops = new Hashtable<Integer, PlayerStatus>();;
 	 
 
 	public CTsetup(ServerGameStatus gs) {
@@ -135,6 +135,7 @@ public class CTsetup {
 	public void event(TimeEntry e) {
 		if (e instanceof tuplespace.Time) {
 			this.clock = e.getClock();
+			writePlayers(gs.getPlayers());
 		}
 	}
 
@@ -160,32 +161,43 @@ public class CTsetup {
 	}
 
 	public void writePlayers(Set<PlayerStatus> ps) {
+		System.out.println("CT players: ");
 		Hashtable <Integer,PlayerStatus> newold = new Hashtable<Integer, PlayerStatus>();
 		while (ps.iterator().hasNext())
 		{			
 			PlayerStatus p = ps.iterator().next();
-			newold.put(p.getPerGameId(), p);
-			if (!p.hasChanged())
-				continue;
-			PlayerStatus op = ops.get(p.getPerGameId());
+			newold.put(p.getPerGameId(), (PlayerStatus) p.clone());
+		//	if (!p.hasChanged())
+		//		continue;
+			if (!ops.isEmpty()) {
+				PlayerStatus op = ops.get(p.getPerGameId());
 			if (!p.getPosition().equals(op.getPosition()))
 				writePosition(p.getPerGameId(),p.getPosition());
 			if (!p.getChips().equals(op.getChips()))
 				writeChips(p.getPerGameId(),p.getChips());
+			}
+			else {
+				writePosition(p.getPerGameId(),p.getPosition());
+				writeChips(p.getPerGameId(),p.getChips());
+			}
 		}
 		ops = newold;
 		
 	}
 
 	private void writeChips(int perGameId, ChipSet chips) {
+		System.out.println("CT writes chips: ");
 		for(String color : chips.getColors()){
 			Chip c = new Chip (getAgent(perGameId),color,chips.getNumChips(color),clock);
+			System.out.println("CT writes chips: "+c.toString());
 			createEntry(c);
 		}		
 	}
 
 	private void writePosition(int perGameId, RowCol position) {
+		System.out.println("CT writes position: ");
 		Position p = new Position(getAgent(perGameId),new Cell(position.row,position.col),clock);
+		System.out.println("CT writes position: "+p.toString());
 		createEntry(p);
 	}
 }
