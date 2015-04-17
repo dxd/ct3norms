@@ -161,11 +161,10 @@ public class CTsetup {
 	}
 
 	public void writePlayers(Set<PlayerStatus> ps) {
-		System.out.println("CT players: ");
+		System.out.println("CT players (clone,for): ");
 		Hashtable <Integer,PlayerStatus> newold = new Hashtable<Integer, PlayerStatus>();
-		while (ps.iterator().hasNext())
-		{			
-			PlayerStatus p = ps.iterator().next();
+		for (PlayerStatus p : ps) {
+					
 			newold.put(p.getPerGameId(), (PlayerStatus) p.clone());
 		//	if (!p.hasChanged())
 		//		continue;
@@ -181,7 +180,7 @@ public class CTsetup {
 				writeChips(p.getPerGameId(),p.getChips());
 			}
 		}
-		ops = newold;
+		ops = (Hashtable<Integer, PlayerStatus>) newold.clone();
 		
 	}
 
