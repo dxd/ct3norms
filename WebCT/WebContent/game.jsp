@@ -79,7 +79,7 @@ var game = {
 					"isGoalRevelationAllowed":<%out.print(gs.getMyPlayer().isRevelationAllowed() == true ? "true" : "false");%>,
 					"showPathFinder":<%out.print(WebCTConfiguration.getShowPathFinder() == true ? "\"true\"" : "\"false\"");%>,
 					"numOfColors":<% out.print(gs.getBoard().getColors().size()); %>, 
-					"role":<%out.print( gs.getMyPlayer().getRole().equals("Responder") ? 1 : 0 );
+					"role":<%out.print( gs.getMyPlayer().getRole().equals("responder") ? 1 : 0 );
 					System.out.print( gs.getPlayerByPerGameId(gs.getPerGameId()).getRole() );%>,
 					"players" : 
 					[  

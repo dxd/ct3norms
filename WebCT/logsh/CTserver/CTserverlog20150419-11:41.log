@@ -1,0 +1,101 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.079 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-64699-1429440108070-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.2] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.2] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.2] of type 
+     [java] Adding client state for 30
+     [java] Adding client state for 10
+     [java] Adding client state for 40
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.2] of type 
+     [java] Adding client state for 20
+     [java] Exception in thread "ActiveMQ Transport: tcp:///127.0.0.1:64752" java.lang.NoClassDefFoundError: javax/jms/MessageNotReadableException
+     [java] 	at org.apache.activemq.openwire.v3.ActiveMQBytesMessageMarshaller.createObject(ActiveMQBytesMessageMarshaller.java:55)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.doUnmarshal(OpenWireFormat.java:345)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:275)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] Caused by: java.lang.ClassNotFoundException: javax.jms.MessageNotReadableException
+     [java] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+     [java] 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+     [java] 	... 6 more
+     [java] Exception in thread "ActiveMQ Transport: tcp:///192.168.0.2:64748" java.lang.NoClassDefFoundError: org/apache/activemq/util/ServiceStopper
+     [java] 	at org.apache.activemq.util.ServiceSupport.stop(ServiceSupport.java:56)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:145)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] Caused by: java.lang.ClassNotFoundException: org.apache.activemq.util.ServiceStopper
+     [java] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+     [java] 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+     [java] 	... 3 more
+     [java] Client 20 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] java.lang.NoClassDefFoundError: org/apache/log4j/spi/ThrowableInformation
+     [java] 	at org.apache.log4j.spi.LoggingEvent.<init>(LoggingEvent.java:154)
+     [java] 	at org.apache.log4j.Category.forcedLog(Category.java:388)
+     [java] 	at org.apache.log4j.Category.log(Category.java:853)
+     [java] 	at org.apache.commons.logging.impl.Log4JLogger.warn(Log4JLogger.java:228)
+     [java] 	at org.apache.activemq.broker.TransportConnection.processRemoveConnection(TransportConnection.java:689)
+     [java] 	at org.apache.activemq.broker.TransportConnection.stop(TransportConnection.java:933)
+     [java] 	at org.apache.activemq.broker.jmx.ManagedTransportConnection.stop(ManagedTransportConnection.java:74)
+     [java] 	at org.apache.activemq.util.ServiceSupport.dispose(ServiceSupport.java:40)
+     [java] 	at org.apache.activemq.broker.TransportConnection.serviceTransportException(TransportConnection.java:213)
+     [java] 	at org.apache.activemq.broker.TransportConnection$1.onException(TransportConnection.java:195)
+     [java] 	at org.apache.activemq.transport.TransportFilter.onException(TransportFilter.java:96)
+     [java] 	at org.apache.activemq.transport.TransportFilter.onException(TransportFilter.java:96)
+     [java] 	at org.apache.activemq.transport.WireFormatNegotiator.onException(WireFormatNegotiator.java:147)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.onException(InactivityMonitor.java:158)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.writeCheck(InactivityMonitor.java:83)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$100(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$2.run(InactivityMonitor.java:56)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-64699-1429440108070-1:0) is shutting down
+     [java] Exception in thread "ActiveMQ ShutdownHook" java.lang.NoClassDefFoundError: org/apache/activemq/util/ServiceStopper
+     [java] 	at org.apache.activemq.broker.BrokerService.stop(BrokerService.java:454)
+     [java] 	at org.apache.activemq.broker.BrokerService.containerShutdown(BrokerService.java:1510)
+     [java] 	at org.apache.activemq.broker.BrokerService$3.run(BrokerService.java:1487)
+     [java] Caused by: java.lang.ClassNotFoundException: org.apache.activemq.util.ServiceStopper
+     [java] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+     [java] 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+     [java] 	... 3 more
+     [java] Java Result: 143
+
+BUILD SUCCESSFUL
+Total time: 2 minutes 53 seconds

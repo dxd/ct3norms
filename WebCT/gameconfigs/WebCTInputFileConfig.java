@@ -43,9 +43,6 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	 */
 	int CurrentInputFileIndex = 0;
 
-	// used for switching roles.
-	int ProposerID = 0;
-	int ResponderID = 1;
 
 	//calculated automatically in run time
 	int numberOfConfigFiles = 0;
@@ -74,18 +71,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		}
 	}
 
-	
-	/**
-	 * this method swaps the roles of the proposer and the responder in the
-	 * counter offer
-	 */
-	public void swapRoles() {
-		int tempID = ProposerID;
-		ProposerID = ResponderID;
-		ResponderID = tempID;
-		gs.getPlayerByPerGameId(ProposerID).setRole("proposer");
-		gs.getPlayerByPerGameId(ResponderID).setRole("responder");
-	}
+
 	
 	
 	/**
@@ -204,6 +190,9 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					//player.setTeamId(3); // set teams for players
 					player.setChips(getChipSet(gs.getGamePalette(), in));
 					player.setPosition(getPosition(in));
+					player.setCommunicationAllowed(true);
+					player.setTransfersAllowed(true);
+					player.setMovesAllowed(true);
 				}
 								
 				
@@ -214,28 +203,28 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 
 			
 
-			boolean ProposerCommunicationAllowed = true;
-			boolean ProposerTransfersAllowed = true;
-			boolean ProposerMovesAllowed = true;
-			boolean ResponderCommunicationAllowed = true;
-			boolean ResponderTransfersAllowed = true;
-			boolean ResponderMovesAllowed = true;
-
-		
-			//switch rolls on new boards
-			if (CurrentInputFileIndex > 0)
-				swapRoles();
-			
-			PlayerStatus Responder = gs.getPlayerByPerGameId(ResponderID);
-			PlayerStatus Proposer = gs.getPlayerByPerGameId(ProposerID);
-			
-			Responder.setCommunicationAllowed(ResponderCommunicationAllowed);
-			Responder.setTransfersAllowed(ResponderTransfersAllowed);
-			Responder.setMovesAllowed(ResponderMovesAllowed);
-
-			Proposer.setCommunicationAllowed(ProposerCommunicationAllowed);
-			Proposer.setTransfersAllowed(ProposerTransfersAllowed);
-			Proposer.setMovesAllowed(ProposerMovesAllowed);
+//			boolean ProposerCommunicationAllowed = true;
+//			boolean ProposerTransfersAllowed = true;
+//			boolean ProposerMovesAllowed = true;
+//			boolean ResponderCommunicationAllowed = true;
+//			boolean ResponderTransfersAllowed = true;
+//			boolean ResponderMovesAllowed = true;
+//
+//		
+//			//switch rolls on new boards
+//			if (CurrentInputFileIndex > 0)
+//				swapRoles();
+//			
+//			PlayerStatus Responder = gs.getPlayerByPerGameId(ResponderID);
+//			PlayerStatus Proposer = gs.getPlayerByPerGameId(ProposerID);
+//			
+//			Responder.setCommunicationAllowed(ResponderCommunicationAllowed);
+//			Responder.setTransfersAllowed(ResponderTransfersAllowed);
+//			Responder.setMovesAllowed(ResponderMovesAllowed);
+//
+//			Proposer.setCommunicationAllowed(ProposerCommunicationAllowed);
+//			Proposer.setTransfersAllowed(ProposerTransfersAllowed);
+//			Proposer.setMovesAllowed(ProposerMovesAllowed);
 		}
 	}
 

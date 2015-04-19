@@ -614,8 +614,9 @@ public class EnvCT  extends Environment implements ExternalTool {
 				session.addListener(new Prohibition(agent), handler);
 				session.addListener(new Obligation(agent), handler); 
 				session.addListener(new Points(agent), handler);
-				//session.addListener(new Message(agent), handler);
+				session.addListener(new Chip(agent), handler);
 				session.addListener(new Time(), handler);
+				session.addListener(new Tile(), handler);
 				//session.addListener(new Proposal(), handler);
 				//session.addListener(new Response(), handler);
 				

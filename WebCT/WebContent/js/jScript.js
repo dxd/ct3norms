@@ -857,7 +857,8 @@ function PlayerChips() {
 
 		// player name
 		newCell = newRow.insertCell(0);
-		newCell.innerHTML = '<img src="img/' + game.players[i].icon + '"/>';
+		playerId = game.getPlayerId(i);
+		newCell.innerHTML = playerId+'<img src="img/' + game.players[i].icon + '"/>';
 		for ( var j = 0; j < game.players[i].cards.length; j++) {
 
 			// create column
@@ -1198,9 +1199,10 @@ function proposalArea() {
 
 	
 	// populate data
+	InsertIntoPlayersIconsSelect();
 	InsertIntoSendSelect();
 	InsertIntoReceiveSelect();
-	InsertIntoPlayersIconsSelect();
+	
 
 	// show proposal area only for proposer
 	if (game.role == 1) { // 1 = Receiver
@@ -1237,16 +1239,17 @@ function InsertIntoPlayersIconsSelect() {
 	var playersIconsDropDown = document.createElement('select');
 	
 	playersIconsDropDown.setAttribute('id', 'playersIconsDropDown');
+	playersIconsDropDown.onchange= function(){InsertIntoReceiveSelect();}; 
 	playersIconsDropDown.style.width = '70px';
 	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
-	
+	removeAllOption("playersIconsDropDown");
 	for ( var i = 0; i < playerNumTotal; i++) {
 		// get player ID
 		playerId = game.getPlayerId(i);
 		// populate data only for all players except me
 		if (game.getisPlayerMe(playerId) != "true") {
 				// clear dropdown before inserting
-				removeAllOption("playersIconsDropDown");
+				//removeAllOption("playersIconsDropDown");
 				// insert player img to dropdown
 				appendOptionLast(playerId, playerId, "playersIconsDropDown", 'img/' + game.getPlayerIcon(playerId));							
 		}
@@ -1254,6 +1257,7 @@ function InsertIntoPlayersIconsSelect() {
 	
 	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
 	$("#playersIconsDropDown").msDropDown();
+	
 }
 // END INSERT INTO players Icons Drop Down
 
@@ -1308,9 +1312,7 @@ function InsertIntoSendSelect() {
 	}
 }
 // END INSERT INTO Players Chips Send
-
-// INSERT INTO Players Chips Receive
-function InsertIntoReceiveSelect() {
+function InsertIntoReceiveSelectOLD() {
 	var playerId;
 	var playerIdOpponent;
 	var color;
@@ -1334,6 +1336,35 @@ function InsertIntoReceiveSelect() {
 						sumChips += isRevelationEnabled == "true" ? game.getSumRevelationChips(playerIdOpponent, color) : game.getSumChips(playerIdOpponent, color);
 					}
 				}
+				for ( var k = 0; k <= sumChips; k++) {
+					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
+							+ "Color" + color, '');
+				}
+				sumChips = 0;
+			}
+		}
+	}
+}
+// INSERT INTO Players Chips Receive
+function InsertIntoReceiveSelect() {
+	var playerId;
+	var playerIdOpponent = document.getElementById('playersIconsDropDown').selectedIndex;
+	var color;
+	var sumChips = 0;
+
+	for ( var i = 0; i < playerNumTotal; i++) {
+		// populate data only for me (player)
+		playerId = game.getPlayerId(i);
+		if (game.getisPlayerMe(playerId) == "true") {
+			for ( var j = 0; j < colorNumTotal; j++) {
+				playerId = game.getPlayerId(i);
+				color = game.colors[j].name;
+
+				removeAllOption("SelectReceivePlayerId" + playerId + "Color"
+						+ color);
+
+				sumChips += isRevelationEnabled == "true" ? game.getSumRevelationChips(playerIdOpponent, color) : game.getSumChips(playerIdOpponent, color);
+
 				for ( var k = 0; k <= sumChips; k++) {
 					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
 							+ "Color" + color, '');

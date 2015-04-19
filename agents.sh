@@ -181,7 +181,7 @@ check_sanity
 
 # Parse the commandline arguments
 
- while getopts ":a:c:s:A:k2t" Option
+ while getopts ":a:c:s:A:k2tm" Option
 
 # Initial declaration.
 # a, c, s, A, k, and t are the flags expected.
@@ -196,7 +196,7 @@ s ) start_ctserver $OPTARG ;;
 A ) start_ctadmin $OPTARG ;;
 
 k ) stop_ctserver;start_aplserver;start_ctserver;start_safari ;;
-
+m ) stop_ctserver;start_aplserver;start_ctserver;start_ctclient $OPTARG ;;
 t ) echo blaat ;;
 2 ) start_aplserver ;;
 * ) usage_exit ;;
