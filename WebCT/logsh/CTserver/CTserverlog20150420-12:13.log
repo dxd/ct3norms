@@ -1,0 +1,912 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.059 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-55956-1429528394891-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 40
+     [java] Adding client state for 10
+     [java] Adding client state for 30
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.2] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.2] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.2] of type 
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.2] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-04-20 12:13:37,630 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-04-20~12.13-gigaspaces-service-192.168.0.2-41828.log
+     [java] 2015-04-20 12:13:37,625  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 825 milliseconds
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-20 12:13:37.855, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-20 12:13:37.967, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-20 12:13:37.968, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-20 12:13:37.969, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-04-20 12:13:37.971, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-20 12:13:37.972, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-20 12:13:37.973, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-20 12:13:37.974, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-20 12:13:37.975, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-04-20 12:13:37.976, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-20 12:13:37.977, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-20 12:13:37.979, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-20 12:13:37.98, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-20 12:13:37.981, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-04-20 12:13:37.983, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-20 12:13:37.984, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-20 12:13:37.987, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-20 12:13:37.988, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-20 12:13:37.99, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-04-20 12:13:37.991, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-04-20 12:13:37.993, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-04-20 12:13:37.994, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-04-20 12:13:37.996, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-04-20 12:13:37.997, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-04-20 12:13:37.998, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], agent=null, time=2015-04-20 12:13:38.029, clock=0]
+     [java] Player: 10  Score: 5
+     [java] Player: 20  Score: 10
+     [java] Player: 40  Score: 5
+     [java] Player: 30  Score: 10
+     [java] A New Phase Began: Movement Phase
+     [java] DEBUG root                           - received a move request...: 20
+     [java] DEBUG root                           - received a move request...: 20
+     [java] DEBUG root                           - received a move request...: 20
+     [java] A New Phase Began: Communication Phase
+     [java] java.io.FileNotFoundException: lib/adminconfig/board_1.txt (No such file or directory)
+     [java] 	at java.io.FileInputStream.open(Native Method)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+     [java] 	at java.io.FileReader.<init>(FileReader.java:41)
+     [java] 	at WebCTInputFileConfig.beginPhase(WebCTInputFileConfig.java:183)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerPhases.beginPhase(ServerPhases.java:94)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advanceToPhase(Phases.java:470)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advancePhase(Phases.java:482)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.actionPerformed(Phases.java:517)
+     [java] 	at javax.swing.Timer.fireActionPerformed(Timer.java:291)
+     [java] 	at javax.swing.Timer$DoPostEvent.run(Timer.java:221)
+     [java] 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+     [java] 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+     [java] 	at java.awt.EventQueue.access$400(EventQueue.java:82)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:676)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:674)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+     [java] 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+     [java] 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+     [java] 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+     [java] CT notification: Time [clock=2, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-04-20 12:14:21.265, clock=2]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-04-20 12:14:21.265, clock=2]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=3, y=2], time=2015-04-20 12:13:42.353, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=2], time=2015-04-20 12:13:42.394, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=3, y=2], time=2015-04-20 12:13:42.453, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=3, y=1], time=2015-04-20 12:13:43.32, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=1], time=2015-04-20 12:13:43.335, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=3, y=1], time=2015-04-20 12:13:43.385, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=3, y=0], time=2015-04-20 12:13:43.888, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-04-20 12:13:43.902, clock=0]
+     [java] CT writes chips: 
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.295, color=orange, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.295, color=orange, clock=2, number=1]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=3, y=0], time=2015-04-20 12:13:43.965, clock=0]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-04-20 12:14:21.265, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.307, color=red, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.307, color=red, clock=2, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.309, color=purple, clock=2, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.309, color=purple, clock=2, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.312, color=green, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 12:14:21.312, color=green, clock=2, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=3, y=0], time=2015-04-20 12:14:21.314, clock=2]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=3, y=0], time=2015-04-20 12:14:21.314, clock=2]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.316, color=orange, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.316, color=orange, clock=2, number=1]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=3, y=0], time=2015-04-20 12:14:21.314, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.318, color=red, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.318, color=red, clock=2, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.321, color=purple, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.321, color=purple, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.323, color=green, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 12:14:21.323, color=green, clock=2, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=2, y=2], time=2015-04-20 12:14:21.325, clock=2]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=2, y=2], time=2015-04-20 12:14:21.325, clock=2]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.327, color=orange, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.327, color=orange, clock=2, number=1]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=2, y=2], time=2015-04-20 12:14:21.325, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.33, color=red, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.33, color=red, clock=2, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.333, color=purple, clock=2, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.333, color=purple, clock=2, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.337, color=green, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 12:14:21.337, color=green, clock=2, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=1, y=1], time=2015-04-20 12:14:21.339, clock=2]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=1, y=1], time=2015-04-20 12:14:21.339, clock=2]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.342, color=orange, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.342, color=orange, clock=2, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.343, color=red, clock=2, number=3]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.343, color=red, clock=2, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.345, color=purple, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.345, color=purple, clock=2, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.347, color=green, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 12:14:21.347, color=green, clock=2, number=2]
+     [java] CT notification: Time [clock=3, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=4, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=5, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=6, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=1, y=1], time=2015-04-20 12:14:21.339, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=0], time=2015-04-20 12:14:22.838, clock=6]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Time [clock=7, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=8, time=null]
+     [java] CT players (clone,for): 
+     [java] Player: 10  Score: 5
+     [java] Player: 20  Score: 125
+     [java] Player: 40  Score: 5
+     [java] Player: 30  Score: 10
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=9, time=null]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Communication Phase
+     [java] java.io.FileNotFoundException: lib/adminconfig/board_2.txt (No such file or directory)
+     [java] 	at java.io.FileInputStream.open(Native Method)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+     [java] 	at java.io.FileReader.<init>(FileReader.java:41)
+     [java] 	at WebCTInputFileConfig.beginPhase(WebCTInputFileConfig.java:183)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerPhases.beginPhase(ServerPhases.java:94)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advanceToPhase(Phases.java:470)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advancePhase(Phases.java:482)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.actionPerformed(Phases.java:517)
+     [java] 	at javax.swing.Timer.fireActionPerformed(Timer.java:291)
+     [java] 	at javax.swing.Timer$DoPostEvent.run(Timer.java:221)
+     [java] 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+     [java] 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+     [java] 	at java.awt.EventQueue.access$400(EventQueue.java:82)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:676)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:674)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+     [java] 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+     [java] 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+     [java] 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+     [java] CT notification: Time [clock=10, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=11, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=12, time=null]
+     [java] CT players (clone,for): 
+     [java] Player: 10  Score: 5
+     [java] Player: 20  Score: 125
+     [java] Player: 40  Score: 5
+     [java] Player: 30  Score: 10
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=13, time=null]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Feedback Phase
+     [java] CT notification: Time [clock=14, time=null]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - Game ended id = 0
+     [java] CT notification: Time [clock=15, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=16, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=17, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=19, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=20, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=21, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=22, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=23, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=25, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=26, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=27, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=28, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=29, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=30, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=31, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=32, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=33, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=34, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=35, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=36, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=37, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=38, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=39, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=40, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=41, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=42, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=43, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=44, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=45, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=46, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=47, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=48, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=49, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=50, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=51, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=52, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=53, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=54, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=55, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=56, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=57, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=58, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=59, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=60, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=61, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=62, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=63, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=64, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=65, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=66, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=67, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=68, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=69, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=70, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=71, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=72, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=73, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=74, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=75, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=76, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=77, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=78, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=79, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=80, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=81, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=82, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=83, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=84, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=85, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=86, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=87, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=88, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=89, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=90, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=91, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=92, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=93, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=94, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=95, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=96, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=97, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=98, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=99, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=100, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=101, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=102, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=103, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=104, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=105, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=106, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=107, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=108, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=109, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=110, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=111, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=112, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=113, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=114, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=115, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=116, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=117, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=118, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=119, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=120, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=121, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=122, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=123, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=124, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=125, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=126, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=127, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=128, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=129, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=130, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=131, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=132, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=133, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=134, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=135, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=136, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=137, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=138, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=139, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=140, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=141, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=142, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=143, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=144, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=145, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=146, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=147, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=148, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=149, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=150, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=151, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=152, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=153, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=154, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=155, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=156, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=157, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=158, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=159, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=160, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=161, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=162, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=163, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=164, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=165, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=166, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=167, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=168, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=169, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=170, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=171, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=172, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=173, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=174, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=175, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=176, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=177, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=178, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=179, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=180, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=181, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=182, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=183, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=184, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=185, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=186, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=187, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=188, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=189, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=190, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=191, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=192, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=193, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=194, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=195, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=196, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=197, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=198, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=199, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=200, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=201, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=202, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=203, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=204, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=205, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=206, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=207, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=208, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=209, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=210, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=211, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=212, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=213, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=214, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=215, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=216, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=217, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=218, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=219, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=220, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=221, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=222, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=223, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=224, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=225, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=226, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=227, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=228, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=229, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=230, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=231, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=232, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=233, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=234, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=235, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=236, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=237, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=238, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=239, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=240, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=241, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=242, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=243, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=244, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=245, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=246, time=null]
+     [java] CT players (clone,for): 
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-55956-1429528394891-1:0) is shutting down
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-55956-1429528394891-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 41 minutes 8 seconds

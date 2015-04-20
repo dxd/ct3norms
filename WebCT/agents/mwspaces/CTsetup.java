@@ -138,10 +138,12 @@ public class CTsetup {
 			writePlayers(gs.getPlayers());
 		} else if (e instanceof tuplespace.Position) {
 			Position p = (Position) e;
+			//System.out.println("position: "+p);
 			Integer id = getID(getPin(p.agent));
 			RowCol newLoc = new RowCol(p.cell.x,p.cell.y);
 			if (!gs.getPlayerByPerGameId(id).getPosition().equals(newLoc)) {
-				gs.doMove(id, newLoc);
+				if (gs.doMove(id, newLoc))
+					writePlayers(gs.getPlayers());
 			}
 		}
 	}
@@ -158,16 +160,19 @@ public class CTsetup {
 		createEntry(m);
 	}
 	
-	private String getAgent(int pin) {
-		return "a" + String.valueOf(gs.getPlayerByPerGameId(pin).getPin());
+	private String getAgent(int id) {
+		return "a" + String.valueOf(gs.getPlayerByPerGameId(id).getPin());
 	}
 	
 	private Integer getPin(String agent) {
-		return Integer.getInteger(agent.substring(1));
+		//System.out.println(agent);
+		//System.out.println(Integer.parseInt(agent.substring(1)));
+		return Integer.parseInt(agent.substring(1));
 	}
 	
 	private Integer getID(Integer pin) {
 		for (PlayerStatus p : gs.getPlayers()) {
+			System.out.println(pin);
 			if (p.getPin() == pin)
 				return p.getPerGameId();
 		}

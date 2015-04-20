@@ -618,11 +618,11 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 
 		String phase = cgs.getPhases().getCurrentPhaseName();
 		if (phase.contains(" ")) {
-			String[] ph = phase.toLowerCase().split(" ");
+			String[] ph = phase.split(" ");
 			phase = ph[0] + ph[1];
 		}
 
-		APLIdent p = new APLIdent(phase);
+		APLIdent p = new APLIdent(phase.toLowerCase());
 		return p;
 
 	}
@@ -865,31 +865,31 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	 * @param gy: y coordinate of goal
 	 */
 
-	public Term moveStepToGoal(String agentname, APLNum ax,
-			APLNum ay, APLIdent id) throws
+	public Term moveStepToGoal(String agentname, APLNum x, APLNum y) throws
 			ExternalActionFailedException {
 
-		int agentx = ax.toInt();
-		int agenty = ay.toInt();
-		String goalid = id.toString();
 		ClientGameStatus cgs = client.getGameStatus();
 		Scoring scoring = cgs.getScoring();
-		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPathsToFirstGoal(cgs.getMyPlayer().getPosition(),
-				cgs.getBoard(), scoring);
+		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 10);
 
 
 		// Get the best path available
 		Path chosenPath = shortestPaths.remove(0); // why remove(0)??
-
+		System.out.println(agentname+"[CTAH] going to: " + chosenPath.getPoint(1));
 
 		// Send move request
-		client.communication.sendMoveRequest(chosenPath.getPoint(1));
+		if (client.communication.sendMoveRequest(chosenPath.getPoint(1)))
 
-
-		APLIdent uTD = new APLIdent("true");
+		{
+		APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
 		System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
 		return uTD; 
-
+		}
+		else {
+			
+			System.out.println("[CTAH] moveStepToGoal returns: " + false);
+			return new APLIdent("false");
+		}
 	}
 
 

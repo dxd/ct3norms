@@ -452,18 +452,15 @@ public class EnvCT  extends Environment implements ExternalTool {
 
 	/**
 	 * called by 2APL agent, convert APLNums to ints
-	 * @param ax: x coordinate of agent
-	 * @param ay: y coordinate of agent
 	 * @param gx: x coordinate of goal
 	 * @param gy: y coordinate of goal
 	 */
 
 	public Term moveStepToGoal(String agentname, APLNum ax,
-			APLNum ay, APLIdent id) throws
+			APLNum ay) throws
 			ExternalActionFailedException {
 
-		CTAgentHandler client = agents.get(agentname);
-		return client.moveStepToGoal(agentname,ax,ay,id);
+		return agents.get(agentname).moveStepToGoal(agentname,ax,ay);
 
 	}
 

@@ -36,6 +36,20 @@ norm(
     a20, // the subject agent
     ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
     obligation([east(X,Y,a20)],now + 10,[reduce(a20, 1000)]) // prohibition format
+    ).
+    
+norm(
+    group_task(a30),
+    a30, // the subject agent
+    ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
+    obligation([north(X,Y,a30)],now + 10,[reduce(a30, 1000)]) // prohibition format
+    ).
+    
+norm(
+    group_task(a40),
+    a40, // the subject agent
+    ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
+    obligation([east(X,Y,a40)],now + 10,[reduce(a40, 1000)]) // prohibition format
     ).  
 
 

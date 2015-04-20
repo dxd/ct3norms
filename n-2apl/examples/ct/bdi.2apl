@@ -38,7 +38,7 @@ BeliefUpdates:
 {opponentChips(L) or not opponentChips(L)}					GetOpponentChips(LNEW)			{not opponentChips(L), opponentChips(LNEW)}
 {true}														GetOpponentId(ID)				{opponentId(ID)}
 {true}														GetOpponentPin(PIN)				{opponentPin(PIN)}
-{phase(OLD) or not phase(OLD)}								GetPhase(Pp)						{not phase(OLD), phase(Pp)}
+{true}														GetPhase(Pp)					{not phase(_), phase(Pp)}
 {opponentPos(OLDX,OLDY) or not opponentPos(OLDX,OLDY)}		GetOpponentPos(X,Y)				{not opponentPos(OLDX,OLDY), opponentPos(X,Y)}
 {initialized(X)}											Initialize() 					{not intitialized(X), initialized(yes)}
 {score(ID,OLD) or not score(ID,OLD)}    					GetScore(ID,SCORE)				{not score (ID,OLD), score(ID,SCORE)}
@@ -64,8 +64,8 @@ Plans:
 initialize()
 
 
-Goals:
-  at(3,0) :: 20 >> 7
+//Goals:
+//  at(3,0) :: 20 >> 7
 //  reading(5,5) :: 30 >> 1
 
 
@@ -85,7 +85,7 @@ initialized <- event(game_initialized) | {
 
 update <- event(phasechange) | update()
 update <- phase(communicationphase) and role(X,proposer) and not sent(Pp,ID,open) | makeProposal()
-
+//update <- phase(movementphase) | moveStepToGoal()
 
 at(X,Y) <- true | {
 
@@ -101,11 +101,24 @@ reading(X,Y) <- true | {
     
 } : 10000
 
-westreading(X,Y) <- true | {
+westreading(X,Y) <- phase(movementphase) | {
 
-   [B(lower(X,EX));
-   moveTo(EX,Y); 
-   dropgoal(reading(EX,Y))]
+        [moveStepToGoal(west,X,Y)]
+    
+} : 10000
+eastreading(X,Y) <- phase(movementphase) | {
+
+        [moveStepToGoal(east,X,Y)]
+    
+} : 10000
+northreading(X,Y) <- phase(movementphase) | {
+
+        [moveStepToGoal(north,X,Y)]
+    
+} : 10000
+southreading(X,Y) <- phase(movementphase) | {
+
+        [moveStepToGoal(south,X,Y)]
     
 } : 10000
 
@@ -279,10 +292,10 @@ initialize() <- initialized(no) | {
 	Initialize() 
 }
 
-moveStepToGoal(TYPE) <- agentPos(AX,AY) and goalId(ID) | {
-	@ctenv( moveStepToGoal(AX,AY,ID), L1);
-	B( L1 = [actionresult(X)]);
-	MoveStepToGoal(X)
+moveStepToGoal(ID,X,Y) <- true | {
+	@ctenv( moveStepToGoal(X,Y), L1);
+	B( L1 = [actionresult(Z)]);
+	MoveStepToGoal(Z)
 }
 
 // TODO: give a goalidentifier to requestChips
@@ -329,8 +342,8 @@ orientation() <- true | {
 	getOpponentChips()
 }
 
-update() <- agentId(MYID) | {
+update() <- true | {
 	getPhase();
-    getRole(MYID);
+    //getRole(MYID);
     if B(event(phasechange)) then Updated()
 }

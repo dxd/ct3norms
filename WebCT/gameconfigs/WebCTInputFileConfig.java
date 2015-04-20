@@ -181,7 +181,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			try {
 
 				FileReader fr = new FileReader("lib/adminconfig/board_"
-						+ CurrentInputFileIndex + ".txt");
+						+ 0 + ".txt");
 				Scanner in = new Scanner(fr);
 
 				// assign game-board colors
