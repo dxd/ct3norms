@@ -23,10 +23,11 @@ public class Goal implements TimeEntry {
 	public Goal(Integer clock) {
 		this.clock = clock;
 	}
-	public Goal(int id, Cell cell, int clock) {
+	public Goal(int id, Cell cell, String agent, int clock) {
 		
 		this.id = id;
 		this.cell = cell;
+		this.agent = agent;
 		this.clock = clock;
 		this.time = new Timestamp(new Date().getTime());
 
@@ -72,7 +73,7 @@ public class Goal implements TimeEntry {
 	@Override
 	public String toPrologString() {
 
-		return "goal(" + cell.toPrologString() + "," + clock + ").";
+		return "goal(" + cell.toPrologString() + "," + agent + "," + clock + ").";
 
 	}
 	
@@ -95,12 +96,11 @@ public class Goal implements TimeEntry {
 		this.time = time;
 	}
 
+	
 	@Override
 	public String toString() {
-
-		return "Goal [id=" + id + ", cell=" + cell + ", time=" + time
-
-				+ ", clock=" + clock + "]";
+		return "Goal [id=" + id + ", cell=" + cell + ", agent=" + agent
+				+ ", time=" + time + ", clock=" + clock + "]";
 	}
 	@Override
 	public void setTime() {

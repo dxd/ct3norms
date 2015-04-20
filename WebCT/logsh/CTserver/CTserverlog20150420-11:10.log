@@ -1,0 +1,994 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.093 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-55311-1429524639075-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] Adding client state for 20
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.2] of type 
+     [java] Adding client state for 30
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.2] of type 
+     [java] Adding client state for 40
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.2] of type 
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.2] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-04-20 11:10:57,358 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-04-20~11.10-gigaspaces-service-192.168.0.2-41506.log
+     [java] 2015-04-20 11:10:57,354  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 833 milliseconds
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-20 11:10:57.688, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-20 11:10:57.797, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-20 11:10:57.801, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-20 11:10:57.804, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-04-20 11:10:57.811, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-20 11:10:57.816, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-20 11:10:57.828, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-20 11:10:57.831, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-20 11:10:57.836, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-04-20 11:10:57.847, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-20 11:10:57.85, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-20 11:10:57.853, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-20 11:10:57.863, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-20 11:10:57.868, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-04-20 11:10:57.876, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-20 11:10:57.879, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-20 11:10:57.883, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-20 11:10:57.896, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-20 11:10:57.899, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-04-20 11:10:57.901, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-04-20 11:10:57.903, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-04-20 11:10:57.905, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-04-20 11:10:57.949, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-04-20 11:10:57.951, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-04-20 11:10:57.953, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=0], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=0], agent=null, time=2015-04-20 11:10:57.994, clock=0]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=5121, agent=a20, agent2=a30, clock=0, time=2015-04-20 11:11:14.838]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=5121, response=accepted, clock=0, time=2015-04-20 11:11:15.166]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player pin: 30
+     [java] player chips: { chips  'orange':2 'red':3 'purple':1 'green':2 }
+     [java] player pin: 40
+     [java] player chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player pin: 20
+     [java] player chips: { chips  'orange':2 'red':3 'purple':1 'green':2 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  1
+     [java] Sending: { chips  'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] Responder: 2
+     [java] Sending: { chips  'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player pin: 30
+     [java] player chips: { chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player pin: 20
+     [java] player chips: { chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 1  Col: 0  Color: green
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':3 'green':1 }
+     [java] Step point: 1  Row: 2  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':0 'purple':3 'green':1 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':3 'green':1 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':1 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:0,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [0][0] [1][0] [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':2 'red':3 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':1 'red':3 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':2 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 2.
+     [java] PIN: 30.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 2.
+     [java] PIN: 30.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':1 'red':3 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 20.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 2.
+     [java] PIN: 30.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 2.
+     [java] PIN: 30.
+     [java] Pos: (R:3,C:3).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][3] [3][2] [3][1] [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':3 'green':2 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 3  Col: 2  Color: purple
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':2 'green':2 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':0 'red':1 'purple':2 'green':2 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':0 'red':0 'purple':2 'green':2 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 3.
+     [java] PIN: 40.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':0 'red':0 'purple':2 'green':2 }.
+     [java] Score: 120.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 3.
+     [java] PIN: 40.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':0 'red':1 'purple':2 'green':2 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 3.
+     [java] PIN: 40.
+     [java] Pos: (R:3,C:2).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':2 'green':2 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 3.
+     [java] PIN: 40.
+     [java] Pos: (R:2,C:2).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':3 'green':2 }.
+     [java] Score: 5.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [2][2] [3][2] [3][1] [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] player is allowed to move
+     [java] Step point: 0  Row: 2  Col: 1  Color: red
+     [java] chipset after step{ chips  'orange':2 'red':2 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] Step point: 1  Row: 3  Col: 1  Color: orange
+     [java] chipset after step{ chips  'orange':1 'red':2 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] Step point: 2  Row: 3  Col: 0  Color: red
+     [java] chipset after step{ chips  'orange':1 'red':1 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:1).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 20.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:1).
+     [java] Chips: { chips  'orange':2 'red':2 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:1,C:1).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] 
+     [java] Path 1:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':0 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 20.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:1).
+     [java] Chips: { chips  'orange':2 'red':2 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:1,C:1).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] 
+     [java] Path 2:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':2 'red':1 'purple':1 'green':1 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':2 'red':2 'purple':1 'green':1 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 20.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:1,C:0).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':1 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:1,C:1).
+     [java] Chips: { chips  'orange':2 'red':3 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 10.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [1][1] [2][1] [3][1] [3][0]
+     [java] 
+     [java] Player: 10  Score: 15
+     [java] Player: 30  Score: 125
+     [java] Player: 40  Score: 120
+     [java] Player: 20  Score: 125
+     [java] A New Phase Began: Movement Phase
+     [java] java.io.FileNotFoundException: lib/adminconfig/board_1.txt (No such file or directory)
+     [java] 	at java.io.FileInputStream.open(Native Method)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+     [java] 	at java.io.FileReader.<init>(FileReader.java:41)
+     [java] 	at WebCTInputFileConfig.beginPhase(WebCTInputFileConfig.java:183)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerPhases.beginPhase(ServerPhases.java:94)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advanceToPhase(Phases.java:470)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advancePhase(Phases.java:482)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.actionPerformed(Phases.java:517)
+     [java] 	at javax.swing.Timer.fireActionPerformed(Timer.java:291)
+     [java] 	at javax.swing.Timer$DoPostEvent.run(Timer.java:221)
+     [java] 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+     [java] 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+     [java] 	at java.awt.EventQueue.access$400(EventQueue.java:82)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:676)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:674)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+     [java] 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+     [java] 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+     [java] 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+     [java] A New Phase Began: Communication Phase
+     [java] CT notification: Time [clock=2, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=2, y=0], time=2015-04-20 11:11:31.865, clock=2]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=2, y=0], time=2015-04-20 11:11:31.865, clock=2]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.882, color=orange, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.882, color=orange, clock=2, number=1]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=2, y=3], time=2015-04-20 11:11:04.943, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=2, y=3], time=2015-04-20 11:11:04.962, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=3], time=2015-04-20 11:11:05.077, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=1, y=3], time=2015-04-20 11:11:05.929, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=1, y=3], time=2015-04-20 11:11:05.979, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=1, y=3], time=2015-04-20 11:11:06.082, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=0, y=3], time=2015-04-20 11:11:06.586, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=0, y=3], time=2015-04-20 11:11:06.603, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=3], time=2015-04-20 11:11:06.707, clock=1]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=0], time=2015-04-20 11:11:31.865, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.893, color=red, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.893, color=red, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.895, color=purple, clock=2, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.895, color=purple, clock=2, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.897, color=green, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-20 11:11:31.897, color=green, clock=2, number=1]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.9, clock=2]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.9, clock=2]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.902, color=orange, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.902, color=orange, clock=2, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.903, color=red, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.903, color=red, clock=2, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.905, color=purple, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.905, color=purple, clock=2, number=0]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.9, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.907, color=green, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.907, color=green, clock=2, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.911, color=RGBRed, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.911, color=RGBRed, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.916, color=RGBGreen, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.916, color=RGBGreen, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.922, color=purple1, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.922, color=purple1, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.924, color=orange1, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-20 11:11:31.924, color=orange1, clock=2, number=0]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.926, clock=2]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.926, clock=2]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.928, color=orange, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.928, color=orange, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.93, color=red, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.93, color=red, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.933, color=purple, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.933, color=purple, clock=2, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.936, color=green, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-20 11:11:31.936, color=green, clock=2, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.938, clock=2]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.938, clock=2]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.94, color=orange, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.94, color=orange, clock=2, number=1]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.926, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.946, color=red, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.946, color=red, clock=2, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.949, color=purple, clock=2, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.949, color=purple, clock=2, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.955, color=green, clock=2, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.955, color=green, clock=2, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.958, color=RGBRed, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.958, color=RGBRed, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.961, color=RGBGreen, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.961, color=RGBGreen, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.967, color=purple1, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.967, color=purple1, clock=2, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.969, color=orange1, clock=2, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:11:31.969, color=orange1, clock=2, number=0]
+     [java] CT notification: Time [clock=3, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=4, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=3, y=0], time=2015-04-20 11:11:31.938, clock=2]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=1, y=3], time=2015-04-20 11:11:32.926, clock=4]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=3], time=2015-04-20 11:11:33.322, clock=4]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':3 'green':1 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':3 'green':1 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':2 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 2.
+     [java] PIN: 30.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':0 'red':0 'purple':2 'green':2 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 3.
+     [java] PIN: 40.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':0 'red':0 'purple':2 'green':2 }.
+     [java] Score: 120.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':1 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':1 'purple':1 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] Player: 10  Score: 15
+     [java] Player: 30  Score: 125
+     [java] Player: 40  Score: 120
+     [java] Player: 20  Score: 125
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=2], time=2015-04-20 11:11:33.731, clock=4]
+     [java] CT notification: Time [clock=5, time=null]
+     [java] CT players (clone,for): 
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=1], time=2015-04-20 11:11:34.151, clock=4]
+     [java] CT notification: Time [clock=6, time=null]
+     [java] CT players (clone,for): 
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=0], time=2015-04-20 11:11:34.547, clock=4]
+     [java] CT notification: Time [clock=7, time=null]
+     [java] CT players (clone,for): 
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] A New Phase Began: Communication Phase
+     [java] java.io.FileNotFoundException: lib/adminconfig/board_2.txt (No such file or directory)
+     [java] 	at java.io.FileInputStream.open(Native Method)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+     [java] 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+     [java] 	at java.io.FileReader.<init>(FileReader.java:41)
+     [java] 	at WebCTInputFileConfig.beginPhase(WebCTInputFileConfig.java:183)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerPhases.beginPhase(ServerPhases.java:94)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advanceToPhase(Phases.java:470)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advancePhase(Phases.java:482)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.actionPerformed(Phases.java:517)
+     [java] 	at javax.swing.Timer.fireActionPerformed(Timer.java:291)
+     [java] 	at javax.swing.Timer$DoPostEvent.run(Timer.java:221)
+     [java] 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+     [java] 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+     [java] 	at java.awt.EventQueue.access$400(EventQueue.java:82)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:676)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:674)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+     [java] 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+     [java] 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+     [java] 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+     [java] DEBUG root                           - received a move request...: 20
+     [java] DEBUG root                           - received a move request...: 20
+     [java] CT notification: Time [clock=8, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=3, y=2], time=2015-04-20 11:12:04.967, clock=8]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=3, y=2], time=2015-04-20 11:12:04.967, clock=8]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.969, color=orange, clock=8, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.969, color=orange, clock=8, number=0]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=3, y=2], time=2015-04-20 11:12:04.967, clock=8]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.971, color=red, clock=8, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.971, color=red, clock=8, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.973, color=purple, clock=8, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.973, color=purple, clock=8, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.974, color=green, clock=8, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.974, color=green, clock=8, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.976, color=RGBRed, clock=8, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.976, color=RGBRed, clock=8, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.978, color=RGBGreen, clock=8, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.978, color=RGBGreen, clock=8, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.98, color=purple1, clock=8, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.98, color=purple1, clock=8, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.982, color=orange1, clock=8, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:04.982, color=orange1, clock=8, number=0]
+     [java] DEBUG root                           - received a move request...: 20
+     [java] CT notification: Time [clock=9, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=2, y=2], time=2015-04-20 11:12:14.968, clock=9]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=2, y=2], time=2015-04-20 11:12:14.968, clock=9]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.971, color=orange, clock=9, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.971, color=orange, clock=9, number=0]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=2, y=2], time=2015-04-20 11:12:14.968, clock=9]
+     [java] Error while procession organization notification
+     [java] java.lang.NullPointerException
+     [java] 	at mwspaces.CTsetup.getID(CTsetup.java:171)
+     [java] 	at mwspaces.CTsetup.event(CTsetup.java:141)
+     [java] 	at mwspaces.CTHandler.notify(CTHandler.java:29)
+     [java] 	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+     [java] 	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+     [java] 	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.973, color=red, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.973, color=red, clock=9, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.975, color=purple, clock=9, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.975, color=purple, clock=9, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.977, color=green, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.977, color=green, clock=9, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.979, color=RGBRed, clock=9, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.979, color=RGBRed, clock=9, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.981, color=RGBGreen, clock=9, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.981, color=RGBGreen, clock=9, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.983, color=purple1, clock=9, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.983, color=purple1, clock=9, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.985, color=orange1, clock=9, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:14.985, color=orange1, clock=9, number=0]
+     [java] DEBUG root                           - received a move request...: 20
+     [java] DEBUG root                           - received a move request...: 20
+     [java] CT notification: Time [clock=10, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.97, color=orange, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.97, color=orange, clock=10, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.973, color=red, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.973, color=red, clock=10, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.975, color=purple, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.975, color=purple, clock=10, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.977, color=green, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.977, color=green, clock=10, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.979, color=RGBRed, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.979, color=RGBRed, clock=10, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.981, color=RGBGreen, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.981, color=RGBGreen, clock=10, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.983, color=purple1, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.983, color=purple1, clock=10, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.986, color=orange1, clock=10, number=0]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-20 11:12:24.986, color=orange1, clock=10, number=0]
+     [java] AUTOMATIC MOVEMEMT
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':0 'purple':3 'green':1 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 0.
+     [java] PIN: 10.
+     [java] Pos: (R:2,C:0).
+     [java] Chips: { chips  'orange':1 'red':0 'purple':3 'green':1 }.
+     [java] Score: 15.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [2][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':1 'red':2 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 2.
+     [java] PIN: 30.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':1 'red':2 'purple':0 'green':2 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: 125.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':0 'red':0 'purple':2 'green':2 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 3.
+     [java] PIN: 40.
+     [java] Pos: (R:3,C:0).
+     [java] Chips: { chips  'orange':0 'red':0 'purple':2 'green':2 }.
+     [java] Score: 120.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [3][0]
+     [java] 
+     [java] begin path move
+     [java] player chipeset{ chips  'orange':0 'red':0 'purple':0 'green':0 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }
+     [java] player is allowed to move
+     [java] Path 0:
+     [java] Game Player...
+     [java] PerGameId: 1.
+     [java] PIN: 20.
+     [java] Pos: (R:2,C:2).
+     [java] Chips: { chips  'orange':0 'red':0 'purple':0 'green':0 'RGBRed':0 'RGBGreen':0 'purple1':0 'orange1':0 }.
+     [java] Score: -30.
+     [java] Team: -1.
+     [java] 
+     [java] 
+     [java] Path: [2][2]
+     [java] 
+     [java] Player: 10  Score: 15
+     [java] Player: 30  Score: 125
+     [java] Player: 40  Score: 120
+     [java] Player: 20  Score: -30
+     [java] A New Phase Began: Movement Phase
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - Game ended id = 0
+     [java] CT notification: Time [clock=11, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=12, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=13, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=14, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=15, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=16, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=17, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=null]
+     [java] CT players (clone,for): 
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-55311-1429524639075-1:0) is shutting down
+     [java] CT notification: Time [clock=19, time=null]
+     [java] CT players (clone,for): 
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-55311-1429524639075-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 3 minutes 17 seconds

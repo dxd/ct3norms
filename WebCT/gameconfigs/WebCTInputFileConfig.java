@@ -112,7 +112,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < numberOfConfigFiles; i++) {
 			ph.addPhase("Communication Phase", 30);
-			ph.addPhase("Movement Phase", 1);
+			ph.addPhase("Movement Phase", 10);
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
@@ -144,8 +144,10 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		board.setSquares(squares);
 		board.setGoal(getPosition(in), true); // goal location
 		
+		
 		gs.setBoard(board);
 		Goal g = gs.getBoard().getGoals().iterator().next();
+		//g.setType(type);
 		if (g != null) {
 			spaces.writeGoal(g);
 		}
@@ -237,7 +239,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		} else
 		if (phaseName.equals("Communication Phase")) {
 			CurrentInputFileIndex++;
-				doAutomaticMovement(s);
+				//doAutomaticMovement(s);
 
 				// calculate scores after all players have moved
 				// (e.g, in case a player's score depends on others' locations)

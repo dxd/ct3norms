@@ -102,7 +102,7 @@ public class CTsetup {
 			CTHandler handler = new CTHandler(this);
 			
 			try {
-				//session.addListener(new Position(), handler); 
+				session.addListener(new Position(), handler); 
 				session.addListener(new Time(), handler); 
 				//session.addListener(new Tile(), handler); 
 				//session.addListener(new GroupCoin(), handler); 
@@ -136,6 +136,13 @@ public class CTsetup {
 		if (e instanceof tuplespace.Time) {
 			this.clock = e.getClock();
 			writePlayers(gs.getPlayers());
+		} else if (e instanceof tuplespace.Position) {
+			Position p = (Position) e;
+			Integer id = getID(getPin(p.agent));
+			RowCol newLoc = new RowCol(p.cell.x,p.cell.y);
+			if (!gs.getPlayerByPerGameId(id).getPosition().equals(newLoc)) {
+				gs.doMove(id, newLoc);
+			}
 		}
 	}
 
@@ -153,6 +160,18 @@ public class CTsetup {
 	
 	private String getAgent(int pin) {
 		return "a" + String.valueOf(gs.getPlayerByPerGameId(pin).getPin());
+	}
+	
+	private Integer getPin(String agent) {
+		return Integer.getInteger(agent.substring(1));
+	}
+	
+	private Integer getID(Integer pin) {
+		for (PlayerStatus p : gs.getPlayers()) {
+			if (p.getPin() == pin)
+				return p.getPerGameId();
+		}
+		return null;
 	}
 
 	public void writeTile(int r, int c, String color) {
