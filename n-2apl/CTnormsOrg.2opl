@@ -16,7 +16,7 @@ norm(
     ra1, // the subject agent
 
     ( group(g), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 10,[reduce(g,1000)]) // prohibition format
+    obligation([surround(X,Y)],now + 10,[reduce(g,500)]) // prohibition format
 
     ).
     
@@ -26,7 +26,7 @@ norm(
     group_task(a10),
     a10, // the subject agent
     ( pursuer(a10), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([west(X,Y,a10)],now + 10,[reduce(a10, 1000)]) // prohibition format
+    obligation([west(X,Y,a10)],now + 10,[reduce(a10, 500)]) // prohibition format
     ).  
    
    
@@ -35,21 +35,21 @@ norm(
     group_task(a20),
     a20, // the subject agent
     ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([east(X,Y,a20)],now + 10,[reduce(a20, 1000)]) // prohibition format
+    obligation([east(X,Y,a20)],now + 10,[reduce(a20, 500)]) // prohibition format
     ).
     
 norm(
     group_task(a30),
     a30, // the subject agent
     ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([north(X,Y,a30)],now + 10,[reduce(a30, 1000)]) // prohibition format
+    obligation([north(X,Y,a30)],now + 10,[reduce(a30, 500)]) // prohibition format
     ).
     
 norm(
     group_task(a40),
     a40, // the subject agent
     ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([east(X,Y,a40)],now + 10,[reduce(a40, 1000)]) // prohibition format
+    obligation([east(X,Y,a40)],now + 10,[reduce(a40, 500)]) // prohibition format
     ).  
 
 
@@ -77,18 +77,21 @@ gensym(group_action,1).
 
 pursuer(a10).
 pursuer(a20).
+pursuer(a30).
+pursuer(a40).
 pursuer(ra1).
 
 group(g).
 group_member(g,a10).
 group_member(g,a20).
-
+group_member(g,a30).
+group_member(g,a40).
 group_member(g,ra1).
 
-color(a1,red).
-color(a2,blue).
-color(a3,green).
-color(a4,yellow).
+color(a10,red).
+color(a20,blue).
+color(a30,green).
+color(a40,yellow).
 
 //gensym(1).
 //gensym(X,5).
@@ -234,7 +237,8 @@ Effects:
 {true} reading(Agent, cell(X,Y), Value, Clock) { reading(X,Y,Value,Agent,Clock)}
 
 
-{true} goal(cell(X,Y), Clock) {goal(X,Y,Clock)}
+{true} goal(cell(X,Y), null, Clock) {goal(X,Y,Clock)}
+{true} goal(cell(X,Y), Agent, Clock) {goal(X,Y, Agent,Clock)}
 {true} proposal(Id,A1,A2,Clock) {proposal(Id,A1,A2,Clock)}
 {true} response(Id,X,Clock) {response(Id,X,Clock)}
 {true} tile(cell(X,Y),Color,Clock) {tile(X,Y,Color,Clock)}

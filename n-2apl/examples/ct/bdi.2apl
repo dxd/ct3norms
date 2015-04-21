@@ -8,6 +8,7 @@ reachedGoal :- goalPos(0,X,Y) , agentPos(X,Y).
 received(X,Y,closed) :- received(X,Y,closed(Z)).
 initialized :- event(game_initiatized), initialized(yes).
 initialized(no).
+phase(none).
 
   raise(X,NewX):- NewX is X + 1.
   lower(X,NewX):- NewX is X - 1.
@@ -38,7 +39,7 @@ BeliefUpdates:
 {opponentChips(L) or not opponentChips(L)}					GetOpponentChips(LNEW)			{not opponentChips(L), opponentChips(LNEW)}
 {true}														GetOpponentId(ID)				{opponentId(ID)}
 {true}														GetOpponentPin(PIN)				{opponentPin(PIN)}
-{true}														GetPhase(Pp)					{not phase(_), phase(Pp)}
+{phase(Old)}												GetPhase(Pp)					{not phase(Old), phase(Pp)}
 {opponentPos(OLDX,OLDY) or not opponentPos(OLDX,OLDY)}		GetOpponentPos(X,Y)				{not opponentPos(OLDX,OLDY), opponentPos(X,Y)}
 {initialized(X)}											Initialize() 					{not intitialized(X), initialized(yes)}
 {score(ID,OLD) or not score(ID,OLD)}    					GetScore(ID,SCORE)				{not score (ID,OLD), score(ID,SCORE)}
