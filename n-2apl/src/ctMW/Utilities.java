@@ -285,6 +285,11 @@ public class Utilities {
 			Time time = (Time) timeEntry; 
 			return new APLFunction("clock", new Term[]{new APLNum(time.clock)}); // construct result
 		} 
+		else if(timeEntry instanceof Position){ // reading(at(X,Y),Value,Agent,Clock)
+			Position position = (Position) timeEntry;
+			//Term term = constructTerm("at("+reading.cell.x+","+reading.cell.y+")");
+			return new APLFunction("position", new Term[]{new APLNum(position.cell.x),new APLNum(position.cell.x),new APLNum(position.clock)}); // construct result
+		} 
 		else if(timeEntry instanceof Chip){ // reading(at(X,Y),Value,Agent,Clock)
 			Chip reading = (Chip) timeEntry;
 			//Term term = constructTerm("at("+reading.cell.x+","+reading.cell.y+")");

@@ -1,0 +1,33 @@
+2015-04-21 13:18:54,927  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 363 milliseconds
+2015-04-21 14:08:04,720  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: 5113e87b-b0a1-4336-a11c-6f7ec987b182
+ expiration: 1429620294994
+ left 1389724
+ event cause: null
+
+2015-04-21 14:08:05,590  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: The transport is not running.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1215)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.IOException: The transport is not running.
+	at org.apache.activemq.transport.TransportSupport.checkStarted(TransportSupport.java:103)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:117)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:147)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:44)
+	at org.apache.activemq.transport.ResponseCorrelator.asyncRequest(ResponseCorrelator.java:67)
+	at org.apache.activemq.transport.ResponseCorrelator.request(ResponseCorrelator.java:72)
+	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1205)
+	... 8 more
+
+2015-04-21 14:08:06,954  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-21 14:08:23,411  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.

@@ -25,31 +25,29 @@ norm(
 
     group_task(a10),
     a10, // the subject agent
-    ( pursuer(a10), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([west(X,Y,a10)],now + 10,[reduce(a10, 500)]) // prohibition format
+    ( pursuer(a10), detached(group_surround(g)),goal(X,Y,Z),west(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([west(X1,Y1,a10)],now + 10,[reduce(a10, 500)]) // prohibition format
     ).  
-   
-   
-    
+      
 norm(
     group_task(a20),
     a20, // the subject agent
-    ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([east(X,Y,a20)],now + 10,[reduce(a20, 500)]) // prohibition format
+    ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z),east(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([east(X1,Y1,a20)],now + 10,[reduce(a20, 500)]) // prohibition format
     ).
     
 norm(
     group_task(a30),
     a30, // the subject agent
-    ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([north(X,Y,a30)],now + 10,[reduce(a30, 500)]) // prohibition format
+    ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z),north(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([north(X1,Y1,a30)],now + 10,[reduce(a30, 500)]) // prohibition format
     ).
     
 norm(
     group_task(a40),
     a40, // the subject agent
-    ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z)), // precondition - add triggering condition
-    obligation([east(X,Y,a40)],now + 10,[reduce(a40, 500)]) // prohibition format
+    ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z),south(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([south(X1,Y1,a40)],now + 10,[reduce(a40, 500)]) // prohibition format
     ).  
 
 

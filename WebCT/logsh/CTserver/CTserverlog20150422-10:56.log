@@ -1,0 +1,931 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.064 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-63626-1429696571704-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 10
+     [java] Adding client state for 30
+     [java] Adding client state for 40
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.40] of type 
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.40] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-04-22 10:57:03,175  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 919 milliseconds
+     [java] 2015-04-22 10:57:03,182 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-04-22~10.57-gigaspaces-service-192.168.0.40-48072.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-22 10:57:03.414, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-22 10:57:03.501, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-22 10:57:03.504, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-22 10:57:03.51, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-04-22 10:57:03.513, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-22 10:57:03.519, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-22 10:57:03.522, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-22 10:57:03.526, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-22 10:57:03.53, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-04-22 10:57:03.533, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-22 10:57:03.542, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-22 10:57:03.547, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-22 10:57:03.551, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-22 10:57:03.555, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-04-22 10:57:03.559, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-22 10:57:03.563, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-22 10:57:03.569, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-22 10:57:03.573, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-22 10:57:03.577, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-04-22 10:57:03.581, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-04-22 10:57:03.585, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-04-22 10:57:03.592, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-04-22 10:57:03.596, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-04-22 10:57:03.6, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-04-22 10:57:03.608, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=2015-04-22 10:57:03.677, clock=0]
+     [java] CT notification: Time [clock=5, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=0, y=0], time=2015-04-22 10:57:09.496, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=0, y=0], time=2015-04-22 10:57:09.496, clock=5]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.506, color=orange, clock=5, number=4]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.506, color=orange, clock=5, number=4]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=0, y=0], time=2015-04-22 10:57:09.496, clock=5]
+     [java] 40
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.517, color=red, clock=5, number=4]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.517, color=red, clock=5, number=4]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.52, color=purple, clock=5, number=4]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.52, color=purple, clock=5, number=4]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.522, color=green, clock=5, number=4]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:09.522, color=green, clock=5, number=4]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=0, y=4], time=2015-04-22 10:57:09.524, clock=5]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=0, y=4], time=2015-04-22 10:57:09.524, clock=5]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.526, color=orange, clock=5, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.526, color=orange, clock=5, number=2]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=0, y=4], time=2015-04-22 10:57:09.524, clock=5]
+     [java] 30
+     [java] 30
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.53, color=red, clock=5, number=3]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.53, color=red, clock=5, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.533, color=purple, clock=5, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.533, color=purple, clock=5, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.535, color=green, clock=5, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:09.535, color=green, clock=5, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=4, y=0], time=2015-04-22 10:57:09.537, clock=5]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=4, y=0], time=2015-04-22 10:57:09.537, clock=5]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.539, color=orange, clock=5, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.539, color=orange, clock=5, number=1]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=4, y=0], time=2015-04-22 10:57:09.537, clock=5]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.541, color=red, clock=5, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.541, color=red, clock=5, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.542, color=purple, clock=5, number=3]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.542, color=purple, clock=5, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.544, color=green, clock=5, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-04-22 10:57:09.544, color=green, clock=5, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=4, y=4], time=2015-04-22 10:57:09.546, clock=5]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=4, y=4], time=2015-04-22 10:57:09.546, clock=5]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.548, color=orange, clock=5, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.548, color=orange, clock=5, number=2]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=4, y=4], time=2015-04-22 10:57:09.546, clock=5]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.55, color=red, clock=5, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.55, color=red, clock=5, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.552, color=purple, clock=5, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.552, color=purple, clock=5, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.555, color=green, clock=5, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:09.555, color=green, clock=5, number=2]
+     [java] CT notification: Time [clock=6, time=null]
+     [java] CT players (clone,for): 
+     [java] Player: 40  Score: 40
+     [java] Player: 30  Score: 0
+     [java] Player: 20  Score: -5
+     [java] Player: 10  Score: 0
+     [java] A New Phase Began: Movement Phase
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT notification: Time [clock=7, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=1, y=3], time=2015-04-22 10:57:29.483, clock=7]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=1, y=3], time=2015-04-22 10:57:29.483, clock=7]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.486, color=orange, clock=7, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.486, color=orange, clock=7, number=2]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=1, y=3], time=2015-04-22 10:57:29.483, clock=7]
+     [java] 30
+     [java] 30
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.492, color=red, clock=7, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.492, color=red, clock=7, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.496, color=purple, clock=7, number=0]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.496, color=purple, clock=7, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.498, color=green, clock=7, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:57:29.498, color=green, clock=7, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=3, y=3], time=2015-04-22 10:57:29.501, clock=7]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=3, y=3], time=2015-04-22 10:57:29.501, clock=7]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.504, color=orange, clock=7, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.504, color=orange, clock=7, number=1]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=3, y=3], time=2015-04-22 10:57:29.501, clock=7]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.507, color=red, clock=7, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.507, color=red, clock=7, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.509, color=purple, clock=7, number=0]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.509, color=purple, clock=7, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.512, color=green, clock=7, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:29.512, color=green, clock=7, number=2]
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] CT notification: Time [clock=8, time=null]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-22 10:57:44.385, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-22 10:57:44.388, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-22 10:57:44.389, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-22 10:57:44.392, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-04-22 10:57:44.399, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-22 10:57:44.401, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-22 10:57:44.403, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-22 10:57:44.404, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-22 10:57:44.407, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-04-22 10:57:44.409, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-22 10:57:44.412, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-22 10:57:44.414, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-22 10:57:44.416, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-22 10:57:44.417, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-04-22 10:57:44.419, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-22 10:57:44.42, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-22 10:57:44.423, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-22 10:57:44.426, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-22 10:57:44.428, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-04-22 10:57:44.43, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-04-22 10:57:44.431, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-04-22 10:57:44.433, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-04-22 10:57:44.437, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-04-22 10:57:44.44, clock=8]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-04-22 10:57:44.442, clock=8]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=2], agent=null, time=null, clock=8]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=2], agent=null, time=2015-04-22 10:57:44.449, clock=8]
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT notification: Time [clock=9, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=1, y=0], time=2015-04-22 10:57:49.491, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=1, y=0], time=2015-04-22 10:57:49.491, clock=9]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.492, color=orange, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.492, color=orange, clock=9, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.494, color=red, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.494, color=red, clock=9, number=1]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=1, y=0], time=2015-04-22 10:57:49.491, clock=9]
+     [java] 40
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.496, color=purple, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.496, color=purple, clock=9, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.497, color=green, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:57:49.497, color=green, clock=9, number=1]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=4, y=4], time=2015-04-22 10:57:49.5, clock=9]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=4, y=4], time=2015-04-22 10:57:49.5, clock=9]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=3, y=0], time=2015-04-22 10:57:49.502, clock=9]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=3, y=0], time=2015-04-22 10:57:49.502, clock=9]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=4, y=4], time=2015-04-22 10:57:49.5, clock=9]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.505, color=orange, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.505, color=orange, clock=9, number=2]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=3, y=0], time=2015-04-22 10:57:49.502, clock=9]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.507, color=red, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.507, color=red, clock=9, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.509, color=purple, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.509, color=purple, clock=9, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.512, color=green, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:57:49.512, color=green, clock=9, number=2]
+     [java] CT notification: Time [clock=10, time=null]
+     [java] CT players (clone,for): 
+     [java] Player: 40  Score: -10
+     [java] Player: 30  Score: 0
+     [java] Player: 20  Score: 5
+     [java] Player: 10  Score: 15
+     [java] A New Phase Began: Movement Phase
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=11, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=2, y=0], time=2015-04-22 10:58:09.494, clock=11]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=2, y=0], time=2015-04-22 10:58:09.494, clock=11]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.496, color=orange, clock=11, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.496, color=orange, clock=11, number=1]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=2, y=0], time=2015-04-22 10:58:09.494, clock=11]
+     [java] 40
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.5, color=red, clock=11, number=0]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.5, color=red, clock=11, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.502, color=purple, clock=11, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.502, color=purple, clock=11, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.504, color=green, clock=11, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:09.504, color=green, clock=11, number=1]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=2, y=2], time=2015-04-22 10:58:09.506, clock=11]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=2, y=2], time=2015-04-22 10:58:09.506, clock=11]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.507, color=orange, clock=11, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.507, color=orange, clock=11, number=2]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=2], time=2015-04-22 10:58:09.506, clock=11]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.509, color=red, clock=11, number=0]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.509, color=red, clock=11, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.511, color=purple, clock=11, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.511, color=purple, clock=11, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.513, color=green, clock=11, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:09.513, color=green, clock=11, number=1]
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=12, time=null]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] A New Phase Began: Communication Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-04-22 10:58:25.422, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-04-22 10:58:25.424, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-04-22 10:58:25.426, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-04-22 10:58:25.427, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-04-22 10:58:25.431, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-04-22 10:58:25.433, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-04-22 10:58:25.435, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-04-22 10:58:25.436, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-04-22 10:58:25.438, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-04-22 10:58:25.439, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-04-22 10:58:25.441, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-04-22 10:58:25.443, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-04-22 10:58:25.444, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-04-22 10:58:25.446, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-04-22 10:58:25.448, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-04-22 10:58:25.45, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-04-22 10:58:25.452, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-04-22 10:58:25.453, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-04-22 10:58:25.455, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-04-22 10:58:25.457, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-04-22 10:58:25.459, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-04-22 10:58:25.46, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-04-22 10:58:25.462, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-04-22 10:58:25.463, clock=12]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-04-22 10:58:25.465, clock=12]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=2], agent=null, time=null, clock=12]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=2], agent=null, time=2015-04-22 10:58:25.471, clock=12]
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] CT notification: Time [clock=13, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-04-22 10:58:29.497, clock=13]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-04-22 10:58:29.497, clock=13]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.499, color=orange, clock=13, number=1]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.499, color=orange, clock=13, number=1]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-04-22 10:58:29.497, clock=13]
+     [java] 40
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.501, color=red, clock=13, number=0]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.501, color=red, clock=13, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.502, color=purple, clock=13, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.502, color=purple, clock=13, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.504, color=green, clock=13, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-04-22 10:58:29.504, color=green, clock=13, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=3, y=4], time=2015-04-22 10:58:29.511, clock=13]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=3, y=4], time=2015-04-22 10:58:29.511, clock=13]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.513, color=orange, clock=13, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.513, color=orange, clock=13, number=1]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=3, y=4], time=2015-04-22 10:58:29.511, clock=13]
+     [java] 30
+     [java] 30
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.514, color=red, clock=13, number=3]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.514, color=red, clock=13, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.516, color=purple, clock=13, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.516, color=purple, clock=13, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.517, color=green, clock=13, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:29.517, color=green, clock=13, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=0], time=2015-04-22 10:58:29.519, clock=13]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=0], time=2015-04-22 10:58:29.519, clock=13]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=1, y=3], time=2015-04-22 10:58:29.521, clock=13]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=1, y=3], time=2015-04-22 10:58:29.521, clock=13]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=0], time=2015-04-22 10:58:29.519, clock=13]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.524, color=orange, clock=13, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.524, color=orange, clock=13, number=2]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=1, y=3], time=2015-04-22 10:58:29.521, clock=13]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.526, color=red, clock=13, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.526, color=red, clock=13, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.528, color=purple, clock=13, number=0]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.528, color=purple, clock=13, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.529, color=green, clock=13, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:29.529, color=green, clock=13, number=2]
+     [java] CT notification: Time [clock=14, time=null]
+     [java] CT players (clone,for): 
+     [java] Player: 40  Score: 10
+     [java] Player: 30  Score: 15
+     [java] Player: 20  Score: -15
+     [java] Player: 10  Score: 0
+     [java] A New Phase Began: Movement Phase
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT notification: Time [clock=15, time=null]
+     [java] CT players (clone,for): 
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=3, y=3], time=2015-04-22 10:58:49.499, clock=15]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=3, y=3], time=2015-04-22 10:58:49.499, clock=15]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.501, color=orange, clock=15, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.501, color=orange, clock=15, number=1]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=3, y=3], time=2015-04-22 10:58:49.499, clock=15]
+     [java] 30
+     [java] 30
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.504, color=red, clock=15, number=3]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.504, color=red, clock=15, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.505, color=purple, clock=15, number=0]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.505, color=purple, clock=15, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.507, color=green, clock=15, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-04-22 10:58:49.507, color=green, clock=15, number=2]
+     [java] CT writes position: 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=1, y=2], time=2015-04-22 10:58:49.509, clock=15]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=1, y=2], time=2015-04-22 10:58:49.509, clock=15]
+     [java] CT writes chips: 
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.51, color=orange, clock=15, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.51, color=orange, clock=15, number=2]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=1, y=2], time=2015-04-22 10:58:49.509, clock=15]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.513, color=red, clock=15, number=1]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.513, color=red, clock=15, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.515, color=purple, clock=15, number=0]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.515, color=purple, clock=15, number=0]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.516, color=green, clock=15, number=2]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-04-22 10:58:49.516, color=green, clock=15, number=2]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT notification: Time [clock=16, time=null]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - Game ended id = 0
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT notification: Time [clock=17, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=19, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=20, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=21, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=22, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=23, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=25, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=26, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=27, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=28, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=29, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=30, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=31, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=32, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=33, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=34, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=35, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=36, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=37, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=38, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=39, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=40, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=41, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=42, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=43, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=44, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=45, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=46, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=47, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=48, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=49, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=50, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=51, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=52, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=53, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=54, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=55, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=56, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=57, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=58, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=59, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=60, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=61, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=62, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=63, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=64, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=65, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=66, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=67, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=68, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=69, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=70, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=71, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=72, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=73, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=74, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=75, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=76, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=77, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=78, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=79, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=80, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=81, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=82, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=83, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=84, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=85, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=86, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=87, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=88, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=89, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=90, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=91, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=92, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=93, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=94, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=95, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=96, time=null]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=97, time=null]
+     [java] CT players (clone,for): 

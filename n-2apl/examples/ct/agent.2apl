@@ -3,6 +3,7 @@ BeliefUpdates:
   { true } AddReading(at(X,Y),Value,Agent,Clock) { reading(at(X,Y),Value,Agent,Clock) }
   { position(X,Y) } UpdatePosition(X1,Y1) { not position(X,Y), position(X1,Y1) }
   { points(X) } UpdatePoints(X1) { not points(X), points(X1) }
+  { position(X,Y) } UpdatePosition(X1,Y1) { not position(X,Y), position(X1,Y1) }
 
 PC-rules:
 
@@ -46,6 +47,9 @@ event(clock(Clock),ctenv) <- true | {
 }
 event(points(Points),ctenv) <- true | {
    UpdatePoints(Points)
+}
+event(position(X,Y,Clock),ctenv) <- true | {
+   UpdatePosition(X,Y)
 }
 
 event(FUNCTION, NAME) <- true | {

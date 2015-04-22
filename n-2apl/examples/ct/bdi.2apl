@@ -139,7 +139,18 @@ makeReading(X,Y) <- true | {
 
 
 PC-rules:
-
+update() <- true | {
+	getPhase();
+    //getRole(MYID);
+    if B(phase(feedbackphase)) then  {
+    	if G(westreading(X,Y)) then dropgoal(westreading(X,Y));
+    	if G(eastreading(X,Y)) then dropgoal(eastreading(X,Y));
+    	if G(northreading(X,Y)) then dropgoal(northreading(X,Y));
+    	if G(southreading(X,Y)) then dropgoal(southreading(X,Y))
+    };
+    	
+    if B(event(phasechange)) then Updated()
+}
 
 // TODO: clear up?
 // extract multiple players from a list of closest players
@@ -341,10 +352,4 @@ sendResponse(RESPONSE,MSGID) <- received(proposal,MSGID,open) | {
 orientation() <- true | {
 	getChips();
 	getOpponentChips()
-}
-
-update() <- true | {
-	getPhase();
-    //getRole(MYID);
-    if B(event(phasechange)) then Updated()
 }

@@ -111,10 +111,10 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < numberOfConfigFiles; i++) {
-			ph.addPhase("Communication Phase", 30);
-			ph.addPhase("Movement Phase", 10);
+			ph.addPhase("Communication Phase", 20);
+			ph.addPhase("Movement Phase", 20);
+			ph.addPhase("Feedback Phase", 1);
 		}
-		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
 		gs.setPhases(ph);
 
@@ -146,7 +146,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		
 		
 		gs.setBoard(board);
-		Goal g = gs.getBoard().getGoals().iterator().next();
+		Goal g = board.getGoals().iterator().next();
 		//g.setType(type);
 		if (g != null) {
 			spaces.writeGoal(g);
@@ -181,7 +181,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			try {
 
 				FileReader fr = new FileReader("lib/adminconfig/board_"
-						+ 0 + ".txt");
+						+ CurrentInputFileIndex + ".txt");
 				Scanner in = new Scanner(fr);
 
 				// assign game-board colors
@@ -233,7 +233,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	@Override
 	public void endPhase(String phaseName) {
 
-		if (phaseName.equals("Feedback Phase")) {
+		if (phaseName.equals("Feedback Phase") && CurrentInputFileIndex == 3) {
 			// end game
 			gs.setEnded();
 		} else
