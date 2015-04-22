@@ -25,29 +25,29 @@ norm(
 
     group_task(a10),
     a10, // the subject agent
-    ( pursuer(a10), detached(group_surround(g)),goal(X,Y,Z),west(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([west(X1,Y1,a10)],now + 10,[reduce(a10, 500)]) // prohibition format
+    ( pursuer(a10), detached(group_surround(g)),goal(X,Y,Z),south(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([at(X1,Y1,a10)],now + 10,[reduce(a10, 500)]) // prohibition format
     ).  
       
 norm(
     group_task(a20),
     a20, // the subject agent
-    ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z),east(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([east(X1,Y1,a20)],now + 10,[reduce(a20, 500)]) // prohibition format
+    ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z),west(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([at(X1,Y1,a20)],now + 10,[reduce(a20, 500)]) // prohibition format
     ).
     
 norm(
     group_task(a30),
     a30, // the subject agent
-    ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z),north(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([north(X1,Y1,a30)],now + 10,[reduce(a30, 500)]) // prohibition format
+    ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z),east(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([at(X1,Y1,a30)],now + 10,[reduce(a30, 500)]) // prohibition format
     ).
     
 norm(
     group_task(a40),
     a40, // the subject agent
-    ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z),south(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([south(X1,Y1,a40)],now + 10,[reduce(a40, 500)]) // prohibition format
+    ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z),north(X,Y,X1,Y1)), // precondition - add triggering condition
+    obligation([at(X1,Y1,a40)],now + 10,[reduce(a40, 500)]) // prohibition format
     ).  
 
 
@@ -113,10 +113,10 @@ controller(c1).
 
 coordinator(c2).
 
-points(a1,1000).
-points(a2,1000).
-points(a3,1000).
-points(a4,1000).
+points(a10,1000).
+points(a20,1000).
+points(a30,1000).
+points(a40,1000).
 points(c1,1000).
 points(t1,1000).
 
@@ -166,8 +166,8 @@ makeGroupReading(X,Y) :-
 tooFar(AX, AY, X, Y) :- false.
 
 //do_sanction([not(H)|T]):- retract(H),do_sanction(T).
-do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
-do_sanction([]).
+//do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
+//do_sanction([]).
 
 do_reduce_h(Group,P):- 
    @external(ctMW,write(points(x,1,1),-1),_).
@@ -177,6 +177,7 @@ do_reduce_health(Agent,P):-
    points(Agent, Health),
    NewHealth is Health - P,
    clock(Now),
+   assertz(points(Agent,Now,NewHealth)),
    @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
    
 do_reduce_health(Group,P):- 
@@ -197,8 +198,9 @@ clock(0).
 //	sanction(GN,GS),
 //	GS =< T.
 	
-sanction([H|T],S):- do_reduce_health(H,S), sanction(T,S).
-sanction([]).
+//do_sanction([not(H)|T]):- retract(H),do_sanction(T).
+do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
+do_sanction([]).
 
 //group sanctions
 sanction_policy(1,policy1).
@@ -225,14 +227,14 @@ Effects:
 
 //{at(X1,Y1,Agent)} position(Agent, cell(X,Y), Clock) {not at(X1,Y1,Agent), at(X,Y,Agent), at(X,Y,Agent,Clock), not coin(X,Y)}
 //change to receive clock as well!!!!
-//{at(X1,Y1,Agent)} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent,Clock)} 
-//{true} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent,Clock), at(X,Y,Agent)}
+{at(X1,Y1,Agent)} position(Agent, cell(X,Y), Clock) {not at(X1,Y1,Agent), at(X,Y,Agent)} 
+{true} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent)}
 
 //quick fix
-{true} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent,Clock)}
+//{true} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent,Clock)}
 
 //{reading(X,Y,Value1,Agent,Clock1)} reading(Agent, cell(X,Y), Value, Clock) {not reading(X,Y,Value1,Agent,Clock1), reading(X,Y,Value,Agent,Clock)}
-{true} reading(Agent, cell(X,Y), Value, Clock) { reading(X,Y,Value,Agent,Clock)}
+//{true} reading(Agent, cell(X,Y), Value, Clock) { reading(X,Y,Value,Agent,Clock)}
 
 
 {true} goal(cell(X,Y), null, Clock) {goal(X,Y,Clock)}
@@ -243,12 +245,12 @@ Effects:
 {true} chip(A,Color,X,Clock) {chip(A,Color,X,Clock)}
 
 
-{true} cargo(cell(X,Y), Clock) {cargo(X,Y,Clock)}
+//{true} cargo(cell(X,Y), Clock) {cargo(X,Y,Clock)}
 
-{true} groupCoin(X,Y, Clock) {groupCoin(X,Y,Clock)}
+//{true} groupCoin(X,Y, Clock) {groupCoin(X,Y,Clock)}
 
 //{points(Agent,OldValue)} points(Agent, Clock, Value) {not points(Agent,OldValue), points(Agent,Value)}
-{true} points(Agent, Clock, Value) {points(Agent,Value,Clock)}
+//{true} points(Agent, Clock, Value) {points(Agent,Value,Clock)}
 
 
 
@@ -267,7 +269,7 @@ Sanction rules:
 reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
 
 viol(agent_directed(Label,Agent,prohibition(State,Sanction))), do_sanction(Sanction) => not viol(agent_directed(Label,Agent,prohibition(State,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), group(Label), do_sanction_g(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), individual(Label), do_sanction_i(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+//viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction_g(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
 
 obey(agent_directed(Label,Agent,Deontic)) => not obey(agent_directed(Label,Agent,Deontic)).

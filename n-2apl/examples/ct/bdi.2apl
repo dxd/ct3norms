@@ -88,10 +88,9 @@ update <- event(phasechange) | update()
 update <- phase(communicationphase) and role(X,proposer) and not sent(Pp,ID,open) | makeProposal()
 //update <- phase(movementphase) | moveStepToGoal()
 
-at(X,Y) <- true | {
+at(X,Y,C) <- phase(movementphase) | {
 
-   [moveTo(X,Y);
-    dropgoal(at(X,Y))]
+  [moveStepToGoal(neco,X,Y,C)]
     
 } : 100
 
@@ -102,26 +101,6 @@ reading(X,Y) <- true | {
     
 } : 10000
 
-westreading(X,Y) <- phase(movementphase) | {
-
-        [moveStepToGoal(west,X,Y)]
-    
-} : 10000
-eastreading(X,Y) <- phase(movementphase) | {
-
-        [moveStepToGoal(east,X,Y)]
-    
-} : 10000
-northreading(X,Y) <- phase(movementphase) | {
-
-        [moveStepToGoal(north,X,Y)]
-    
-} : 10000
-southreading(X,Y) <- phase(movementphase) | {
-
-        [moveStepToGoal(south,X,Y)]
-    
-} : 10000
 
 makeReading <- position(X,Y) | {
 
@@ -142,11 +121,12 @@ PC-rules:
 update() <- true | {
 	getPhase();
     //getRole(MYID);
+    B(clock(Clock));
     if B(phase(feedbackphase)) then  {
-    	if G(westreading(X,Y)) then dropgoal(westreading(X,Y));
-    	if G(eastreading(X,Y)) then dropgoal(eastreading(X,Y));
-    	if G(northreading(X,Y)) then dropgoal(northreading(X,Y));
-    	if G(southreading(X,Y)) then dropgoal(southreading(X,Y))
+    	if G(at(X,Y,C)) then if B(C<Clock) then dropgoal(at(X,Y,C));
+    	if G(eastreading(X1,Y1)) then dropgoal(eastreading(X1,Y1));
+    	if G(northreading(X2,Y2)) then dropgoal(northreading(X2,Y2));
+    	if G(southreading(X3,Y3)) then dropgoal(southreading(X3,Y3))
     };
     	
     if B(event(phasechange)) then Updated()
@@ -304,10 +284,16 @@ initialize() <- initialized(no) | {
 	Initialize() 
 }
 
-moveStepToGoal(ID,X,Y) <- true | {
+moveStepToGoal(ID,X,Y,C) <- true | {
 	@ctenv( moveStepToGoal(X,Y), L1);
 	B( L1 = [actionresult(Z)]);
-	MoveStepToGoal(Z)
+	MoveStepToGoal(Z);
+	if B(not false) then {
+		B([A,B] = Z);
+		UpdatePosition(A,B);
+		if B([A,B] = [X,Y])
+			then dropgoal(at(X,Y,C))
+	}
 }
 
 // TODO: give a goalidentifier to requestChips
