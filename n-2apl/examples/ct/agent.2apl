@@ -25,9 +25,9 @@ moveTo(X,Y) <- position(X,Y) | { skip }
 
 updatePos(NewX,NewY) <- position(X,Y) | {
     
-    B(clock(Clock));
-    UpdatePosition(NewX,NewY);
-    @ctenv(write(status(position(NewX,NewY),Clock),-1),_)   
+   // B(clock(Clock));
+    UpdatePosition(NewX,NewY)
+  //  @ctenv(write(status(position(NewX,NewY),Clock),-1),_)   
 } 
 
 event(obligation([Goal],Deadline,[Sanction]),ctenv) <- true | {
@@ -87,7 +87,8 @@ adoptProhibition(at(X,Y,_,_), reduce(_,Value)) <- true | {
 }
 
 adoptObligation(at(X,Y,_), D, reduce(_,Value)) <- true | {
-    adopta(at(X,Y) : D -> reduce(Value))
+	B(clock(Clock));
+    adopta(at(X,Y,Clock) : D -> reduce(Value))
 }
 
 adoptProhibition(coin(X,Y,A), reduce(_,Value)) <- true | {

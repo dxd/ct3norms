@@ -288,7 +288,7 @@ moveStepToGoal(ID,X,Y,C) <- true | {
 	@ctenv( moveStepToGoal(X,Y), L1);
 	B( L1 = [actionresult(Z)]);
 	MoveStepToGoal(Z);
-	if B(not false) then {
+	if B(not false=Z) then {
 		B([A,B] = Z);
 		UpdatePosition(A,B);
 		if B([A,B] = [X,Y])

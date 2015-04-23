@@ -181,7 +181,7 @@ public class CTsetup {
 
 	public void writeTile(int r, int c, String color) {
 		Tile t = new Tile(new Cell(r,c),color,clock);
-		createEntry(t);
+		//createEntry(t);
 	}
 
 	public void writePlayers(Set<PlayerStatus> ps) {
@@ -196,12 +196,12 @@ public class CTsetup {
 				PlayerStatus op = ops.get(p.getPerGameId());
 			if (!p.getPosition().equals(op.getPosition()))
 				writePosition(p.getPerGameId(),p.getPosition());
-			if (!p.getChips().equals(op.getChips()))
-				writeChips(p.getPerGameId(),p.getChips());
+			//if (!p.getChips().equals(op.getChips()))
+				//writeChips(p.getPerGameId(),p.getChips());
 			}
 			else {
 				writePosition(p.getPerGameId(),p.getPosition());
-				writeChips(p.getPerGameId(),p.getChips());
+				//writeChips(p.getPerGameId(),p.getChips());
 			}
 		}
 		ops = (Hashtable<Integer, PlayerStatus>) newold.clone();

@@ -438,7 +438,7 @@ function createGameBoard() {
 			// create column
 			newCell = newRow.insertCell(j);
 			newCell.id = "CellRow" + i + "Column" + j;
-		// newCell.innerText = i+", "+j;
+		 newCell.innerText = i+", "+j;
 			newCell.bgColor = "white";
 			newCell.ondblclick = move; //function() { alert(i+'-'+j);move(i,j); };
 			// create div
@@ -464,11 +464,11 @@ function createGameBoard() {
 		
 		
 		if (game.getisPlayerMe(playerId) == "true"){
-			newDiv.innerHTML = '<img src="img/' + game.getBigPlayerIcon(playerId) + '"/>';
+			newDiv.innerHTML =playerId+ '<img src="img/' + game.getBigPlayerIcon(playerId) + '"/>';
 		}
 		else
 		{
-			newDiv.innerHTML = '<img src="img/' + game.getPlayerIcon(playerId) + '"/>';
+			newDiv.innerHTML =playerId+ '<img src="img/' + game.getPlayerIcon(playerId) + '"/>';
 		}
 		playerContainer.appendChild(newDiv);
 		var divElem = document.getElementById("player" + playerId);

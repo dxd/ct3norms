@@ -173,18 +173,18 @@ do_reduce_h(Group,P):-
    @external(ctMW,write(points(x,1,1),-1),_).
    
 do_reduce_health(Agent,P):- 
-   pursuer(Agent),
+  // pursuer(Agent),
    points(Agent, Health),
    NewHealth is Health - P,
    clock(Now),
-   assertz(points(Agent,Now,NewHealth)),
+   assert(points(Agent,Now,NewHealth)),
    @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
    
-do_reduce_health(Group,P):- 
-   group(Group),
-   clock(Now),
-   policy1(g,1000),
-   @external(ctMW,write(points(Group,Now,NewHealth),-1),_).
+//do_reduce_health(Group,P):- 
+//   group(Group),
+//   clock(Now),
+//   policy1(g,1000),
+//   @external(ctMW,write(points(Group,Now,NewHealth),-1),_).
 
 //listTrue(_).
 listTrue([H|T]):- H, listTrue(T).

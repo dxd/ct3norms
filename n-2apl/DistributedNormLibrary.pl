@@ -30,16 +30,6 @@
 @remember_norm(agent_directed(B,_,_)) :- uniqueassertz(detached(B)).
 
 
-//hierarchical norms
-
-@instantiate_norms:-
-    @scheme(Name,Pre,_,_,_,_,_,_), 
-    Pre, 
-    @not_present(Name,Pre,Pre2), 
-    @norm_notification(Pre2), // For norm aware agents
-    @remember_norm(Name), //hierarchical scheme
-    uniqueassertz(@ni(Name,Pre2,keep)), fail.
-@instantiate_norms.
 
 // Function: update
 @update([plus(Rho)|Pi]):- uniqueassertz(Rho), @update(Pi).
@@ -81,13 +71,13 @@
 // Operation: clear norm
 @clear_norms:-
     @ni(Name,Pre,keep),
-    //@can_clear(@ni(Name,Pre,keep)), //for obligations
+    @can_clear(@ni(Name,Pre,keep)), //for obligations
     @mod(@ni(Name,Pre,keep),Pi),
     @update(Pi),
-    //atomic_update(remove,3,@ni(Name,Pre,keep)),
+    atomic_update(remove,3,@ni(Name,Pre,keep)),
     //@broadcast(Pi),
     //perform sanctions
-    perform_sanctions,
+   // perform_sanctions,
     fail.
 @clear_norms.
 

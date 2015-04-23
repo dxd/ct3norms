@@ -1,0 +1,139 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-04-23 16:37:50,151  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 780 milliseconds
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+	at org.apache.activemq.command.ActiveMQObjectMessage.copy(ActiveMQObjectMessage.java:72)
+	at org.apache.activemq.ActiveMQConnection.onCommand(ActiveMQConnection.java:1472)
+	at org.apache.activemq.transport.ResponseCorrelator.onCommand(ResponseCorrelator.java:95)
+	at org.apache.activemq.transport.TransportFilter.onCommand(TransportFilter.java:65)
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Heartbeat Timer" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Heartbeat Timer" Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+	at org.apache.activemq.openwire.v2.BaseDataStreamMarshaller.tightUnmarshalByteSequence(BaseDataStreamMarshaller.java:412)
+2015-04-23 16:51:35.395 java[53481:2407] java.lang.OutOfMemoryError: Java heap space
+2015-04-23 16:51:35.637 java[53481:2407] (
+	0   CoreFoundation                      0x00007fff898c025c __exceptionPreprocess + 172
+	1   libobjc.A.dylib                     0x00007fff8acb2e75 objc_exception_throw + 43
+	2   CoreFoundation                      0x00007fff898bfe09 -[NSException raise] + 9
+	3   JavaNativeFoundation                0x0000000108367c3f JNFCallStaticVoidMethod + 213
+	4   libawt.jnilib                       0x0000000110b3189c +[EventFactory postGesture:as:a:b:] + 218
+	5   AppKit                              0x00007fff8b877aea forwardMethod + 122
+	6   AppKit                              0x00007fff8b879864 -[NSWindow sendEvent:] + 2604
+	7   libawt.jnilib                       0x0000000110b1a25c -[CocoaAppWindow sendEvent:] + 185
+	8   AppKit                              0x00007fff8b8841fe -[NSApplication _handleGestureEvent:] + 550
+	9   AppKit                              0x00007fff8b819f34 -[NSApplication sendEvent:] + 325
+	10  AppKit                              0x00007fff8b66a9f9 -[NSApplication run] + 646
+	11  libawt.jnilib                       0x0000000110af4f30 +[AWTStarter startAWT:] + 1495
+	12  libawt.jnilib                       0x0000000110af48aa -[CPerformer perform] + 93
+	13  Foundation                          0x00007fff894cf75e __NSThreadPerformPerform + 229
+	14  CoreFoundation                      0x00007fff897f15b1 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+	15  CoreFoundation                      0x00007fff897e2c62 __CFRunLoopDoSources0 + 242
+	16  CoreFoundation                      0x00007fff897e23ef __CFRunLoopRun + 831
+	17  CoreFoundation                      0x00007fff897e1e75 CFRunLoopRunSpecific + 309
+	18  java                                0x0000000107a6a843 java + 18499
+	19  java                                0x0000000107a6a29a java + 17050
+	20  java                                0x0000000107a67a98 java + 6808
+)
+	at org.apache.activemq.openwire.v2.MessageMarshaller.tightUnmarshal(MessageMarshaller.java:72)
+	at org.apache.activemq.openwire.v2.ActiveMQMessageMarshaller.tightUnmarshal(ActiveMQMessageMarshaller.java:66)
+	at org.apache.activemq.openwire.v2.ActiveMQObjectMessageMarshaller.tightUnmarshal(ActiveMQObjectMessageMarshaller.java:66)
+	at org.apache.activemq.openwire.OpenWireFormat.tightUnmarshalNestedObject(OpenWireFormat.java:428)
+	at org.apache.activemq.openwire.v2.BaseDataStreamMarshaller.tightUnmarsalNestedObject(BaseDataStreamMarshaller.java:118)
+	at org.apache.activemq.openwire.v2.MessageDispatchMarshaller.tightUnmarshal(MessageDispatchMarshaller.java:71)
+	at org.apache.activemq.openwire.OpenWireFormat.doUnmarshal(OpenWireFormat.java:347)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:273)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+	at java.lang.Thread.run(Thread.java:695)
+Exception in thread "AWT-EventQueue-0" java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2882)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:100)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:390)
+	at java.lang.StringBuilder.append(StringBuilder.java:119)
+	at aplprolog.prolog.Prolog.toString(Prolog.java:512)
+	at oopl.GUI.PrologState.actionPerformed(PrologState.java:122)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2028)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2351)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:387)
+	at javax.swing.JToggleButton$ToggleButtonModel.setPressed(JToggleButton.java:291)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:236)
+	at java.awt.Component.processMouseEvent(Component.java:6414)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6179)
+	at java.awt.Container.processEvent(Container.java:2084)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2142)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4618)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4279)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4209)
+	at java.awt.Container.dispatchEventImpl(Container.java:2128)
+	at java.awt.Window.dispatchEventImpl(Window.java:2492)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+2015-04-23 16:50:46,712  SEVERE [com.gigaspaces.client] - Notification was send but user listener throws exception; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+Exception in thread "Heartbeat Timer" Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+Exception in thread "GS-com.gigaspaces.internal.client.cache.localcache.GarbageCollectorTask" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-84967" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Heartbeat Timer" Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Heartbeat Timer" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Heartbeat Timer" Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "GS-multicast-announcement-timer" Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Heartbeat Timer" Exception in thread "Heartbeat Timer" java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2882)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:100)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:390)
+	at java.lang.StringBuffer.append(StringBuffer.java:224)
+	at org.apache.activemq.util.IntrospectionSupport.toString(IntrospectionSupport.java:235)
+	at org.apache.activemq.command.BaseCommand.toString(BaseCommand.java:64)
+	at java.lang.String.valueOf(String.java:2826)
+	at java.lang.StringBuffer.append(StringBuffer.java:219)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1545)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+2015-04-23 16:51:07,118  SEVERE [com.gigaspaces.lrmi] - exception in main selection loop; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-7" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "Thread-204594" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Transport: tcp:///192.168.1.101:8088" Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+2015-04-23 16:51:06,776  SEVERE [com.gigaspaces.client] - Notification was send but user listener throws exception; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+2015-04-23 16:52:16,482  SEVERE [com.gigaspaces.lrmi] - exception in main selection loop; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+2015-04-23 16:53:00,594  SEVERE [com.gigaspaces.client] - Notification was send but user listener throws exception; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+2015-04-23 16:52:59,419  SEVERE [com.gigaspaces.client] - Notification was send but user listener throws exception; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+2015-04-23 16:52:59,419  SEVERE [com.gigaspaces.client] - Notification was send but user listener throws exception; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+2015-04-23 16:52:56,758  SEVERE [com.gigaspaces.lrmi] - exception in main selection loop; Caused by: java.lang.OutOfMemoryError: Java heap space
+
+Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ActiveMQ Session Task" java.lang.OutOfMemoryError: Java heap space

@@ -39,10 +39,11 @@ public class Utilities {
 		private EnvCT envCT;
 		
 		
-	public Utilities(DistributedOOPL oopl, APAPLTermConverter converter,EnvCT envCT)	{
+	public Utilities(DistributedOOPL oopl, APAPLTermConverter converter,EnvCT envCT, Prolog2Java pj2)	{
 		this.oopl = oopl;
 		this.converter = converter;
 		this.envCT = envCT;
+		this.p2j = pj2;
 	}
 	/*
 	 * Create an entry object form an integer array. Perhaps we want to replace this with
@@ -50,8 +51,7 @@ public class Utilities {
 	 */
 	public TimeEntry createEntry(int[] call) throws IllegalArgumentException, SecurityException, InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, NoSuchMethodException{ // e.g.: read(tuple(name,point(2,4),20),0)
 		//System.out.println(oopl.prolog.arStr(call));
-		return p2j.parseTerm(call, converter, oopl);
-		
+		return p2j.parseTerm(call, converter, oopl);		
 	}
 	
 

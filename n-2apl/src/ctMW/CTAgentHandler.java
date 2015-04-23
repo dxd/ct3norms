@@ -878,15 +878,14 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		System.out.println(agentname+"[CTAH] going to: " + chosenPath.getPoint(1));
 
 		// Send move request
-		if (client.communication.sendMoveRequest(chosenPath.getPoint(1)))
-
+		client.communication.sendMoveRequest(chosenPath.getPoint(1));
+		if (cgs.getMyPlayer().getPosition().equals(chosenPath.getPoint(1)))
 		{
-		APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
-		System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
-		return uTD; 
+			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
+			System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
+			return uTD; 
 		}
-		else {
-			
+		else {		
 			System.out.println("[CTAH] moveStepToGoal returns: " + false);
 			return new APLIdent("false");
 		}

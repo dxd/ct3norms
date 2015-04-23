@@ -119,7 +119,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 		//GUI g = new GUI(oopl,"SpaceOrg.2opl","OOPL",null,6677); // Make a GUI for the interpreter
 		GUI g = new GUI(oopl,"CTnormsOrg.2opl","OOPL",null,6677); // Make a GUI for the interpreter
 		converter = new APAPLTermConverter(oopl.prolog); // Make a term converter (relies on Prolog engine for string storage)
-		utilities = new Utilities(oopl,converter,this);
+		utilities = new Utilities(oopl,converter,this,p2j);
 		//INT_POINT =makeStringKnown("cell");
 		//INT_POINT =makeStringKnown("position");
 		INT_NULL =makeStringKnown("null"); 
@@ -219,7 +219,6 @@ public class EnvCT  extends Environment implements ExternalTool {
 		agents.put(agentname, client);
 		System.out.println("[ENV] added agent "+ agentname);  
 		register(agentname);
-
 	}
 
 	public Term sendProposal(String agentname) {
@@ -510,10 +509,11 @@ public class EnvCT  extends Environment implements ExternalTool {
 		} else if(call[1] == oopl.prolog.strStorage.getInt("write")){
 			System.out.println("write (points)");
 			try {
-				long lease = utilities.get_number(call,oopl.prolog.harvester.scanElement(call, 3, false, false)+1);
+				//long lease = utilities.get_number(call,oopl.prolog.harvester.scanElement(call, 3, false, false)+1);
 				//if(lease <= 0) lease = Lease.FOREVER;
 
 				TimeEntry e = utilities.createEntry(call);
+				//System.out.println(e);
 				if (e.getTime() == null)
 					e.setTime();
 				if (e.getClock() == null) {

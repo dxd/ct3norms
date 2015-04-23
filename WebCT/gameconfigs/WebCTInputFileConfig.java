@@ -181,20 +181,21 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			try {
 
 				FileReader fr = new FileReader("lib/adminconfig/board_"
-						+ CurrentInputFileIndex + ".txt");
+						+ 0 + ".txt");
 				Scanner in = new Scanner(fr);
 
 				// assign game-board colors
 				setBoard(gs.getGamePalette(), in);
 
 				// for all the players
-				for (PlayerStatus player : gs.getPlayers()) {
+				for (int i = 0; i < gs.getPlayers().size();i++) {
+					PlayerStatus player = gs.getPlayerByPerGameId(i);
 					//player.setTeamId(3); // set teams for players
 					player.setChips(getChipSet(gs.getGamePalette(), in));
 					player.setPosition(getPosition(in));
 					player.setCommunicationAllowed(true);
 					player.setTransfersAllowed(true);
-					player.setMovesAllowed(true);
+					player.setMovesAllowed(false);
 				}
 								
 				
@@ -227,6 +228,12 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 //			Proposer.setCommunicationAllowed(ProposerCommunicationAllowed);
 //			Proposer.setTransfersAllowed(ProposerTransfersAllowed);
 //			Proposer.setMovesAllowed(ProposerMovesAllowed);
+		}
+		if (phasename.equals("Movement Phase")) {	
+			for (int i = 0; i < gs.getPlayers().size();i++) {
+				PlayerStatus player = gs.getPlayerByPerGameId(i);
+				player.setMovesAllowed(true);
+			}
 		}
 	}
 
