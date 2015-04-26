@@ -15,7 +15,9 @@
 	@external(network,broadcast(Host,Port,Pi),_),
 	fail.
 @broadcast(_).
+
 //@scheme(Name,Pre,_,_,_,_,_,_), Pre, not(@ni(Name,Pre,_)), @norm_notification(Pre)
+
 // Operation: instantiate norms
 @instantiate_norms:-
     @scheme(Name,Pre,_,_,_,_,_,_), 
@@ -71,10 +73,11 @@
 // Operation: clear norm
 @clear_norms:-
     @ni(Name,Pre,keep),
-    @can_clear(@ni(Name,Pre,keep)), //for obligations
+   // @can_clear(@ni(Name,Pre,keep)), //for obligations
     @mod(@ni(Name,Pre,keep),Pi),
     @update(Pi),
     atomic_update(remove,3,@ni(Name,Pre,keep)),
+    //retract(@ni(Name,Pre,keep)),
     //@broadcast(Pi),
     //perform sanctions
    // perform_sanctions,
@@ -85,7 +88,7 @@
 @perform_update(Alpha):-
     @update(Phi,Alpha,Psi), 
     Phi, 
-    //retract(@update_call(Alpha)),
+    //retract(@update_call(Alpha)), uncommenting this stops all updates coming through
     @update(Psi),
     //@broadcast(Psi),
     !.

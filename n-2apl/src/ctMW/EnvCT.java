@@ -507,7 +507,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 				ea.intResult = utilities.entryToArray(null);
 			} catch (Exception e) {e.printStackTrace();}
 		} else if(call[1] == oopl.prolog.strStorage.getInt("write")){
-			System.out.println("write (points)");
+			//System.out.println("write (points)");
 			try {
 				//long lease = utilities.get_number(call,oopl.prolog.harvester.scanElement(call, 3, false, false)+1);
 				//if(lease <= 0) lease = Lease.FOREVER;
