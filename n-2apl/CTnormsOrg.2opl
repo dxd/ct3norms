@@ -73,6 +73,8 @@ color(a10,red).
 color(a20,blue).
 color(a30,green).
 color(a40,yellow).
+tile(3,3,red).
+at(3,3,a10).
 
 //gensym(1).
 //gensym(X,5).
@@ -124,6 +126,14 @@ surround(X,Y) :-
 //do_reduce_h(Group,P):- 
 //   @external(ctMW,write(points(x,1,1),-1),_).
    
+sanction([reduce(Agent,P)]) :-
+   pursuer(Agent),
+   points(Agent, Health),
+   NewHealth is Health - P,
+   clock(Now),
+//   assert(points(Agent,Now,NewHealth)),
+   @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
+   
 do_reduce_health(Agent,P):- 
    pursuer(Agent),
    points(Agent, Health),
@@ -152,7 +162,7 @@ goal(1,1,1).
 //	sanction(GN,GS),
 //	GS =< T.
 	
-//do_sanction([not(H)|T]):- retract(H),do_sanction(T).
+do_sanction([not(H)|T]):- retract(H),do_sanction(T).
 do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
 do_sanction([]).
 
@@ -205,10 +215,10 @@ agent_directed(Label,Agent,prohibition(ListA,Sanction)):
 	false]
 
 Sanction rules:
-reduce(Agent,X), do_reduce_health(Agent,X) => not reduce(Agent,X).
+reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
 
 viol(agent_directed(Label,Agent,prohibition(State,Sanction))), do_sanction(Sanction) => not viol(agent_directed(Label,Agent,prohibition(State,Sanction))).
 //viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction_g(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+//viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
 
 obey(agent_directed(Label,Agent,Deontic)) => not obey(agent_directed(Label,Agent,Deontic)).

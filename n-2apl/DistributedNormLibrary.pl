@@ -15,8 +15,15 @@
 	@external(network,broadcast(Host,Port,Pi),_),
 	fail.
 @broadcast(_).
-
 //@scheme(Name,Pre,_,_,_,_,_,_), Pre, not(@ni(Name,Pre,_)), @norm_notification(Pre)
+// Operation: instantiate norms
+//@instantiate_norms:-
+//    @scheme(Name,Pre,_,_,_,_,_,_), 
+//    Pre, 
+//    not(@ni(Name,Pre,_)), 
+//    @norm_notification(Pre), // For norm aware agents
+//    uniqueassertz(@ni(Name,Pre,keep)), fail.
+//@instantiate_norms.
 
 // Operation: instantiate norms
 @instantiate_norms:-
@@ -30,8 +37,6 @@
 
 //instance was detached
 @remember_norm(agent_directed(B,_,_)) :- uniqueassertz(detached(B)).
-
-
 
 // Function: update
 @update([plus(Rho)|Pi]):- uniqueassertz(Rho), @update(Pi).
@@ -55,8 +60,10 @@
 @update_facts(Psi):- @id(ID), @extract(ID,Psi,Pi), @update(Pi).
 
 // Function: can_clear
+//@can_clear(@ni(Name,Pre,keep)):-
+//    @scheme(Name,Pre,Pro,Obl,Dead,Exp,_,_), (Pro;(Obl;(Dead;Exp))),!.
 @can_clear(@ni(Name,Pre,keep)):- 
-    Scheme = @scheme(Name,Pre,Pro,Obl,Dead,Exp,_,_), (Pro;(Obl;(@check_deadline(Dead,Pre);Exp))),!.
+   @scheme(Name,Pre,Pro,Obl,Dead,Exp,_,_), (Pro;(Obl;(@check_deadline(Dead,Pre);Exp))),!.
 
 // Function: mod
 @mod(@ni(Name,Pre,keep),[]):- 
@@ -73,14 +80,11 @@
 // Operation: clear norm
 @clear_norms:-
     @ni(Name,Pre,keep),
-   // @can_clear(@ni(Name,Pre,keep)), //for obligations
+    //@can_clear(@ni(Name,Pre,keep)),
     @mod(@ni(Name,Pre,keep),Pi),
     @update(Pi),
-    atomic_update(remove,3,@ni(Name,Pre,keep)),
-    //retract(@ni(Name,Pre,keep)),
+    //atomic_update(remove,3,@ni(Name,Pre,keep)),
     //@broadcast(Pi),
-    //perform sanctions
-   // perform_sanctions,
     fail.
 @clear_norms.
 
@@ -88,7 +92,7 @@
 @perform_update(Alpha):-
     @update(Phi,Alpha,Psi), 
     Phi, 
-    //retract(@update_call(Alpha)), uncommenting this stops all updates coming through
+    //retract(@update_call(Alpha)),
     @update(Psi),
     //@broadcast(Psi),
     !.
@@ -117,6 +121,9 @@
 	@perform_update(Alpha), 
 	@rule_closure(@countsas), 
 	@rule_closure(@sanction). 
+
+
+
 	
 /////////////////////////////////////////////////
 /// Added functionality for norm-aware agents ///
