@@ -5981,3 +5981,31 @@ java.io.EOFException
 2015-04-27 15:26:01,818 [MQ Session Task] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [128.243.23.149] of type 
 2015-04-27 15:26:01,819 [MQ Session Task] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [128.243.23.149] of type 
 2015-04-27 15:26:01,820 [MQ Session Task] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [128.243.23.149] of type 
+2015-04-27 15:38:36,478 [MQ Session Task] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [128.243.23.149] of type 
+2015-04-27 15:38:36,479 [MQ Session Task] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [128.243.23.149] of type 
+2015-04-27 15:38:36,479 [MQ Session Task] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [128.243.23.149] of type 
+2015-04-27 19:12:26,002 [iveMQ Scheduler] WARN  ActiveMQConnection             - Async exception with no exception listener: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+2015-04-27 19:12:26,015 [/127.0.0.1:8088] WARN  ActiveMQConnection             - Async exception with no exception listener: java.net.SocketException: Socket closed
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:147)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:49)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:56)
+	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+	at java.lang.Thread.run(Thread.java:695)

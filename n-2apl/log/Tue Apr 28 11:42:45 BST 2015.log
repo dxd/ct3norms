@@ -1,0 +1,747 @@
+2015-04-28 11:42:47,114 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/gigaspaces-xap-premium-9.5.1-ga/logs/2015-04-28~11.42-gigaspaces-service-128.243.23.149-9069.log
+-------------------------last log tuples start--------------------------------
+Time [clock=1, time=null]
+Obligation [subject=a30, obligation=[at(2, 1, a30)], sanction=[reduce(a30, 500)], deadline=2, time=2015-04-28 11:41:33.998, clock=1]
+Prohibition [subject=a10, prohibition=[at(3, 3, a10)], sanction=[reduce(a10, 50)], clock=1, time=2015-04-28 11:41:33.979]
+Time [clock=3, time=null]
+Obligation [subject=a40, obligation=[at(1, 2, a40)], sanction=[reduce(a40, 500)], deadline=2, time=2015-04-28 11:41:34.002, clock=1]
+Time [clock=5, time=null]
+Time [clock=4, time=null]
+Obligation [subject=a20, obligation=[at(0, 1, a20)], sanction=[reduce(a20, 500)], deadline=2, time=2015-04-28 11:41:33.993, clock=1]
+Time [clock=2, time=null]
+Obligation [subject=a10, obligation=[at(1, 0, a10)], sanction=[reduce(a10, 500)], deadline=2, time=2015-04-28 11:41:33.99, clock=1]
+Obligation [subject=ra1, obligation=[surround(1, 1)], sanction=[reduce(g, 500)], deadline=2, time=2015-04-28 11:41:33.986, clock=1]
+Points [subject=a10, time=2015-04-28 11:41:34.026, clock=1, value=950, id=null]
+Points [subject=a20, time=2015-04-28 11:41:54.012, clock=3, value=500, id=null]
+Points [subject=a40, time=2015-04-28 11:41:54.017, clock=3, value=500, id=null]
+Points [subject=a30, time=2015-04-28 11:41:54.015, clock=3, value=500, id=null]
+Points [subject=a10, time=2015-04-28 11:41:54.01, clock=3, value=500, id=null]
+-------------------------last log tuples end----------------------------------
+[CTAH] started agent 10
+[CTAH] Added a new agent to the game by the name of 10.
+[ENV] added agent a10
+[CTAH] started agent 30
+[CTAH] Added a new agent to the game by the name of 30.
+[ENV] added agent a30
+[CTAH] started agent 40
+[CTAH] Added a new agent to the game by the name of 40.
+[ENV] added agent a40
+object notification: Time [clock=1, time=null]
+org notification: Time [clock=1, time=null]
+org notified sent time(1).
+object notification: Time [clock=1, time=null]
+object notification: Time [clock=1, time=null]
+Organization notifies object (write): Prohibition [subject=a10, prohibition=[at(3, 3, a10)], sanction=[reduce(a10, 50)], clock=1, time=2015-04-28 11:42:57.932]
+Event sent to object      a30 clock(1)
+Event sent to object      a10 clock(1)
+Event sent to object      a40 clock(1)
+Organization notifies object (write): Obligation [subject=ra1, obligation=[surround(1, 1)], sanction=[reduce(g, 500)], deadline=2, time=2015-04-28 11:42:57.937, clock=1]
+Organization notifies object (write): Obligation [subject=a10, obligation=[at(1, 0, a10)], sanction=[reduce(a10, 500)], deadline=2, time=2015-04-28 11:42:57.94, clock=1]
+object notification: Prohibition [subject=a10, prohibition=[at(3, 3, a10)], sanction=[reduce(a10, 50)], clock=1, time=2015-04-28 11:42:57.932]
+Event sent to object      a10 prohibition([at(3, 3, a10)], [reduce(a10, 50)])
+Organization notifies object (write): Obligation [subject=a20, obligation=[at(0, 1, a20)], sanction=[reduce(a20, 500)], deadline=2, time=2015-04-28 11:42:57.943, clock=1]
+Organization notifies object (write): Obligation [subject=a30, obligation=[at(2, 1, a30)], sanction=[reduce(a30, 500)], deadline=2, time=2015-04-28 11:42:57.947, clock=1]
+object notification: Obligation [subject=a10, obligation=[at(1, 0, a10)], sanction=[reduce(a10, 500)], deadline=2, time=2015-04-28 11:42:57.94, clock=1]
+Organization notifies object (write): Obligation [subject=a40, obligation=[at(1, 2, a40)], sanction=[reduce(a40, 500)], deadline=2, time=2015-04-28 11:42:57.953, clock=1]
+Event sent to object      a10 obligation([at(1, 0, a10)], 2, [reduce(a10, 500)])
+object notification: Obligation [subject=a30, obligation=[at(2, 1, a30)], sanction=[reduce(a30, 500)], deadline=2, time=2015-04-28 11:42:57.947, clock=1]
+Event sent to object      a30 obligation([at(2, 1, a30)], 2, [reduce(a30, 500)])
+object notification: Obligation [subject=a40, obligation=[at(1, 2, a40)], sanction=[reduce(a40, 500)], deadline=2, time=2015-04-28 11:42:57.953, clock=1]
+Event sent to object      a40 obligation([at(1, 2, a40)], 2, [reduce(a40, 500)])
+Organization writes: Points [subject=a10, time=2015-04-28 11:42:57.97, clock=1, value=950, id=null]
+object notification: Points [subject=a10, time=2015-04-28 11:42:57.97, clock=1, value=950, id=null]
+Event sent to object      a10 points(950)
+Event processed UpdateClock(1)
+Event processed UpdateClock(1)
+Event processed adoptObligation(at(2, 1, a30), 2, reduce(a30, 500))
+Event processed UpdateClock(1)
+Event processed adoptProhibition(at(3, 3, a10), reduce(a10, 50))
+Event processed adoptObligation(at(1, 2, a40), 2, reduce(a40, 500))
+Event processed adoptObligation(at(1, 0, a10), 2, reduce(a10, 500))
+Event processed UpdatePoints(950)
+org notification: Time [clock=2, time=null]
+org notified sent time(2).
+object notification: Time [clock=2, time=null]
+Event sent to object      a30 clock(2)
+object notification: Time [clock=2, time=null]
+Event sent to object      a40 clock(2)
+object notification: Time [clock=2, time=null]
+Event sent to object      a10 clock(2)
+Event processed UpdateClock(2)
+Event processed UpdateClock(2)
+Event processed UpdateClock(2)
+object notification: Time [clock=3, time=null]
+object notification: Time [clock=3, time=null]
+Event sent to object      a30 clock(3)
+Event sent to object      a10 clock(3)
+org notification: Time [clock=3, time=null]
+org notified sent time(3).
+object notification: Time [clock=3, time=null]
+Event sent to object      a40 clock(3)
+Organization writes: Points [subject=a10, time=2015-04-28 11:43:17.967, clock=3, value=500, id=null]
+Organization writes: Points [subject=a20, time=2015-04-28 11:43:17.97, clock=3, value=500, id=null]
+object notification: Points [subject=a10, time=2015-04-28 11:43:17.967, clock=3, value=500, id=null]
+Event sent to object      a10 points(500)
+Organization writes: Points [subject=a30, time=2015-04-28 11:43:17.972, clock=3, value=500, id=null]
+Organization writes: Points [subject=a40, time=2015-04-28 11:43:17.974, clock=3, value=500, id=null]
+Event processed UpdateClock(3)
+object notification: Points [subject=a30, time=2015-04-28 11:43:17.972, clock=3, value=500, id=null]
+Event sent to object      a30 points(500)
+object notification: Points [subject=a40, time=2015-04-28 11:43:17.974, clock=3, value=500, id=null]
+Event sent to object      a40 points(500)
+Event processed UpdateClock(3)
+Event processed UpdatePoints(500)
+Event processed UpdateClock(3)
+Event processed UpdatePoints(500)
+Event processed UpdatePoints(500)
+object notification: Time [clock=4, time=null]
+object notification: Time [clock=4, time=null]
+object notification: Time [clock=4, time=null]
+Event sent to object      a30 clock(4)
+Event sent to object      a40 clock(4)
+Event sent to object      a10 clock(4)
+Event processed UpdateClock(4)
+Event processed UpdateClock(4)
+Event processed UpdateClock(4)
+object notification: Time [clock=5, time=null]
+Event sent to object      a40 clock(5)
+object notification: Time [clock=5, time=null]
+Event sent to object      a30 clock(5)
+object notification: Time [clock=5, time=null]
+Event sent to object      a10 clock(5)
+Event processed UpdateClock(5)
+Event processed UpdateClock(5)
+Event processed UpdateClock(5)
+object notification: Time [clock=6, time=null]
+object notification: Time [clock=6, time=null]
+Event sent to object      a40 clock(6)
+Event sent to object      a30 clock(6)
+object notification: Time [clock=6, time=null]
+Event sent to object      a10 clock(6)
+Event processed UpdateClock(6)
+Event processed UpdateClock(6)
+Event processed UpdateClock(6)
+object notification: Time [clock=7, time=null]
+Event sent to object      a10 clock(7)
+object notification: Time [clock=7, time=null]
+Event sent to object      a30 clock(7)
+object notification: Time [clock=7, time=null]
+Event sent to object      a40 clock(7)
+Event processed UpdateClock(7)
+Event processed UpdateClock(7)
+Event processed UpdateClock(7)
+object notification: Time [clock=8, time=null]
+Event sent to object      a40 clock(8)
+object notification: Time [clock=8, time=null]
+Event sent to object      a10 clock(8)
+object notification: Time [clock=8, time=null]
+Event sent to object      a30 clock(8)
+Event processed UpdateClock(8)
+Event processed UpdateClock(8)
+Event processed UpdateClock(8)
+object notification: Time [clock=9, time=null]
+object notification: Time [clock=9, time=null]
+Event sent to object      a40 clock(9)
+Event sent to object      a30 clock(9)
+object notification: Time [clock=9, time=null]
+Event sent to object      a10 clock(9)
+Event processed UpdateClock(9)
+Event processed UpdateClock(9)
+Event processed UpdateClock(9)
+object notification: Time [clock=10, time=null]
+Event sent to object      a40 clock(10)
+object notification: Time [clock=10, time=null]
+Event sent to object      a10 clock(10)
+object notification: Time [clock=10, time=null]
+Event sent to object      a30 clock(10)
+Event processed UpdateClock(10)
+Event processed UpdateClock(10)
+Event processed UpdateClock(10)
+object notification: Time [clock=11, time=null]
+object notification: Time [clock=11, time=null]
+Event sent to object      a10 clock(11)
+Event sent to object      a30 clock(11)
+object notification: Time [clock=11, time=null]
+Event sent to object      a40 clock(11)
+object notification: Time [clock=12, time=null]
+object notification: Time [clock=12, time=null]
+Event sent to object      a40 clock(12)
+Event sent to object      a30 clock(12)
+object notification: Time [clock=12, time=null]
+Event sent to object      a10 clock(12)
+object notification: Time [clock=13, time=null]
+Event sent to object      a40 clock(13)
+object notification: Time [clock=13, time=null]
+Event sent to object      a30 clock(13)
+object notification: Time [clock=13, time=null]
+Event sent to object      a10 clock(13)
+object notification: Time [clock=14, time=null]
+object notification: Time [clock=14, time=null]
+Event sent to object      a40 clock(14)
+Event sent to object      a30 clock(14)
+object notification: Time [clock=14, time=null]
+Event sent to object      a10 clock(14)
+object notification: Time [clock=15, time=null]
+Event sent to object      a40 clock(15)
+object notification: Time [clock=15, time=null]
+object notification: Time [clock=15, time=null]
+Event sent to object      a10 clock(15)
+Event sent to object      a30 clock(15)
+object notification: Time [clock=16, time=null]
+object notification: Time [clock=16, time=null]
+Event sent to object      a10 clock(16)
+Event sent to object      a40 clock(16)
+object notification: Time [clock=16, time=null]
+Event sent to object      a30 clock(16)
+object notification: Time [clock=17, time=null]
+Event sent to object      a40 clock(17)
+object notification: Time [clock=17, time=null]
+Event sent to object      a10 clock(17)
+object notification: Time [clock=17, time=null]
+Event sent to object      a30 clock(17)
+object notification: Time [clock=18, time=null]
+object notification: Time [clock=18, time=null]
+Event sent to object      a10 clock(18)
+Event sent to object      a40 clock(18)
+object notification: Time [clock=18, time=null]
+Event sent to object      a30 clock(18)
+object notification: Time [clock=19, time=null]
+Event sent to object      a30 clock(19)
+object notification: Time [clock=19, time=null]
+Event sent to object      a40 clock(19)
+object notification: Time [clock=19, time=null]
+Event sent to object      a10 clock(19)
+object notification: Time [clock=20, time=null]
+Event sent to object      a40 clock(20)
+object notification: Time [clock=20, time=null]
+Event sent to object      a10 clock(20)
+object notification: Time [clock=20, time=null]
+Event sent to object      a30 clock(20)
+object notification: Time [clock=21, time=null]
+Event sent to object      a40 clock(21)
+object notification: Time [clock=21, time=null]
+Event sent to object      a30 clock(21)
+object notification: Time [clock=21, time=null]
+Event sent to object      a10 clock(21)
+object notification: Time [clock=22, time=null]
+Event sent to object      a10 clock(22)
+object notification: Time [clock=22, time=null]
+object notification: Time [clock=22, time=null]
+Event sent to object      a30 clock(22)
+Event sent to object      a40 clock(22)
+object notification: Time [clock=23, time=null]
+Event sent to object      a40 clock(23)
+object notification: Time [clock=23, time=null]
+Event sent to object      a10 clock(23)
+object notification: Time [clock=23, time=null]
+Event sent to object      a30 clock(23)
+object notification: Time [clock=24, time=null]
+Event sent to object      a40 clock(24)
+object notification: Time [clock=24, time=null]
+object notification: Time [clock=24, time=null]
+Event sent to object      a10 clock(24)
+Event sent to object      a30 clock(24)
+object notification: Time [clock=25, time=null]
+Event sent to object      a10 clock(25)
+object notification: Time [clock=25, time=null]
+object notification: Time [clock=25, time=null]
+Event sent to object      a30 clock(25)
+Event sent to object      a40 clock(25)
+object notification: Time [clock=26, time=null]
+Event sent to object      a40 clock(26)
+object notification: Time [clock=26, time=null]
+Event sent to object      a30 clock(26)
+object notification: Time [clock=26, time=null]
+Event sent to object      a10 clock(26)
+object notification: Time [clock=27, time=null]
+Event sent to object      a40 clock(27)
+object notification: Time [clock=27, time=null]
+Event sent to object      a30 clock(27)
+object notification: Time [clock=27, time=null]
+Event sent to object      a10 clock(27)
+object notification: Time [clock=28, time=null]
+Event sent to object      a40 clock(28)
+object notification: Time [clock=28, time=null]
+Event sent to object      a10 clock(28)
+object notification: Time [clock=28, time=null]
+Event sent to object      a30 clock(28)
+object notification: Time [clock=29, time=null]
+Event sent to object      a30 clock(29)
+object notification: Time [clock=29, time=null]
+Event sent to object      a10 clock(29)
+object notification: Time [clock=29, time=null]
+Event sent to object      a40 clock(29)
+object notification: Time [clock=30, time=null]
+Event sent to object      a40 clock(30)
+object notification: Time [clock=30, time=null]
+Event sent to object      a10 clock(30)
+object notification: Time [clock=30, time=null]
+Event sent to object      a30 clock(30)
+object notification: Time [clock=31, time=null]
+Event sent to object      a40 clock(31)
+object notification: Time [clock=31, time=null]
+Event sent to object      a30 clock(31)
+object notification: Time [clock=31, time=null]
+Event sent to object      a10 clock(31)
+object notification: Time [clock=32, time=null]
+Event sent to object      a10 clock(32)
+object notification: Time [clock=32, time=null]
+Event sent to object      a30 clock(32)
+object notification: Time [clock=32, time=null]
+Event sent to object      a40 clock(32)
+object notification: Time [clock=33, time=null]
+Event sent to object      a30 clock(33)
+object notification: Time [clock=33, time=null]
+Event sent to object      a10 clock(33)
+object notification: Time [clock=33, time=null]
+Event sent to object      a40 clock(33)
+object notification: Time [clock=34, time=null]
+Event sent to object      a40 clock(34)
+object notification: Time [clock=34, time=null]
+Event sent to object      a30 clock(34)
+object notification: Time [clock=34, time=null]
+Event sent to object      a10 clock(34)
+object notification: Time [clock=35, time=null]
+Event sent to object      a30 clock(35)
+object notification: Time [clock=35, time=null]
+Event sent to object      a10 clock(35)
+object notification: Time [clock=35, time=null]
+Event sent to object      a40 clock(35)
+object notification: Time [clock=36, time=null]
+Event sent to object      a30 clock(36)
+object notification: Time [clock=36, time=null]
+Event sent to object      a10 clock(36)
+object notification: Time [clock=36, time=null]
+Event sent to object      a40 clock(36)
+object notification: Time [clock=37, time=null]
+Event sent to object      a40 clock(37)
+object notification: Time [clock=37, time=null]
+Event sent to object      a30 clock(37)
+object notification: Time [clock=37, time=null]
+Event sent to object      a10 clock(37)
+object notification: Time [clock=38, time=null]
+Event sent to object      a40 clock(38)
+object notification: Time [clock=38, time=null]
+Event sent to object      a10 clock(38)
+object notification: Time [clock=38, time=null]
+Event sent to object      a30 clock(38)
+object notification: Time [clock=39, time=null]
+object notification: Time [clock=39, time=null]
+Event sent to object      a40 clock(39)
+object notification: Time [clock=39, time=null]
+Event sent to object      a10 clock(39)
+Event sent to object      a30 clock(39)
+object notification: Time [clock=40, time=null]
+Event sent to object      a30 clock(40)
+object notification: Time [clock=40, time=null]
+object notification: Time [clock=40, time=null]
+Event sent to object      a10 clock(40)
+Event sent to object      a40 clock(40)
+object notification: Time [clock=41, time=null]
+Event sent to object      a10 clock(41)
+object notification: Time [clock=41, time=null]
+Event sent to object      a40 clock(41)
+object notification: Time [clock=41, time=null]
+Event sent to object      a30 clock(41)
+object notification: Time [clock=42, time=null]
+object notification: Time [clock=42, time=null]
+Event sent to object      a30 clock(42)
+Event sent to object      a40 clock(42)
+object notification: Time [clock=42, time=null]
+Event sent to object      a10 clock(42)
+object notification: Time [clock=43, time=null]
+Event sent to object      a40 clock(43)
+object notification: Time [clock=43, time=null]
+Event sent to object      a10 clock(43)
+object notification: Time [clock=43, time=null]
+Event sent to object      a30 clock(43)
+object notification: Time [clock=44, time=null]
+Event sent to object      a40 clock(44)
+object notification: Time [clock=44, time=null]
+Event sent to object      a10 clock(44)
+object notification: Time [clock=44, time=null]
+Event sent to object      a30 clock(44)
+object notification: Time [clock=45, time=null]
+Event sent to object      a40 clock(45)
+object notification: Time [clock=45, time=null]
+Event sent to object      a10 clock(45)
+object notification: Time [clock=45, time=null]
+Event sent to object      a30 clock(45)
+object notification: Time [clock=46, time=null]
+Event sent to object      a30 clock(46)
+object notification: Time [clock=46, time=null]
+Event sent to object      a40 clock(46)
+object notification: Time [clock=46, time=null]
+Event sent to object      a10 clock(46)
+object notification: Time [clock=47, time=null]
+Event sent to object      a40 clock(47)
+object notification: Time [clock=47, time=null]
+Event sent to object      a10 clock(47)
+object notification: Time [clock=47, time=null]
+Event sent to object      a30 clock(47)
+object notification: Time [clock=48, time=null]
+Event sent to object      a10 clock(48)
+object notification: Time [clock=48, time=null]
+Event sent to object      a30 clock(48)
+object notification: Time [clock=48, time=null]
+Event sent to object      a40 clock(48)
+object notification: Time [clock=49, time=null]
+Event sent to object      a10 clock(49)
+object notification: Time [clock=49, time=null]
+Event sent to object      a40 clock(49)
+object notification: Time [clock=49, time=null]
+Event sent to object      a30 clock(49)
+object notification: Time [clock=50, time=null]
+Event sent to object      a10 clock(50)
+object notification: Time [clock=50, time=null]
+Event sent to object      a30 clock(50)
+object notification: Time [clock=50, time=null]
+Event sent to object      a40 clock(50)
+object notification: Time [clock=51, time=null]
+Event sent to object      a40 clock(51)
+object notification: Time [clock=51, time=null]
+Event sent to object      a10 clock(51)
+object notification: Time [clock=51, time=null]
+Event sent to object      a30 clock(51)
+object notification: Time [clock=52, time=null]
+Event sent to object      a40 clock(52)
+object notification: Time [clock=52, time=null]
+Event sent to object      a30 clock(52)
+object notification: Time [clock=52, time=null]
+Event sent to object      a10 clock(52)
+object notification: Time [clock=53, time=null]
+object notification: Time [clock=53, time=null]
+Event sent to object      a10 clock(53)
+object notification: Time [clock=53, time=null]
+Event sent to object      a40 clock(53)
+Event sent to object      a30 clock(53)
+object notification: Time [clock=54, time=null]
+Event sent to object      a40 clock(54)
+object notification: Time [clock=54, time=null]
+Event sent to object      a10 clock(54)
+object notification: Time [clock=54, time=null]
+Event sent to object      a30 clock(54)
+object notification: Time [clock=55, time=null]
+Event sent to object      a30 clock(55)
+object notification: Time [clock=55, time=null]
+Event sent to object      a10 clock(55)
+object notification: Time [clock=55, time=null]
+Event sent to object      a40 clock(55)
+object notification: Time [clock=56, time=null]
+Event sent to object      a40 clock(56)
+object notification: Time [clock=56, time=null]
+Event sent to object      a10 clock(56)
+object notification: Time [clock=56, time=null]
+Event sent to object      a30 clock(56)
+object notification: Time [clock=57, time=null]
+Event sent to object      a40 clock(57)
+object notification: Time [clock=57, time=null]
+Event sent to object      a10 clock(57)
+object notification: Time [clock=57, time=null]
+Event sent to object      a30 clock(57)
+object notification: Time [clock=58, time=null]
+Event sent to object      a40 clock(58)
+object notification: Time [clock=58, time=null]
+object notification: Time [clock=58, time=null]
+Event sent to object      a10 clock(58)
+Event sent to object      a30 clock(58)
+object notification: Time [clock=59, time=null]
+object notification: Time [clock=59, time=null]
+Event sent to object      a10 clock(59)
+Event sent to object      a40 clock(59)
+object notification: Time [clock=59, time=null]
+Event sent to object      a30 clock(59)
+object notification: Time [clock=60, time=null]
+Event sent to object      a40 clock(60)
+object notification: Time [clock=60, time=null]
+object notification: Time [clock=60, time=null]
+Event sent to object      a30 clock(60)
+Event sent to object      a10 clock(60)
+object notification: Time [clock=61, time=null]
+object notification: Time [clock=61, time=null]
+Event sent to object      a40 clock(61)
+Event sent to object      a30 clock(61)
+object notification: Time [clock=61, time=null]
+Event sent to object      a10 clock(61)
+object notification: Time [clock=62, time=null]
+Event sent to object      a10 clock(62)
+object notification: Time [clock=62, time=null]
+Event sent to object      a30 clock(62)
+object notification: Time [clock=62, time=null]
+Event sent to object      a40 clock(62)
+object notification: Time [clock=63, time=null]
+Event sent to object      a10 clock(63)
+object notification: Time [clock=63, time=null]
+Event sent to object      a40 clock(63)
+object notification: Time [clock=63, time=null]
+Event sent to object      a30 clock(63)
+object notification: Time [clock=64, time=null]
+Event sent to object      a40 clock(64)
+object notification: Time [clock=64, time=null]
+Event sent to object      a30 clock(64)
+object notification: Time [clock=64, time=null]
+Event sent to object      a10 clock(64)
+object notification: Time [clock=65, time=null]
+Event sent to object      a30 clock(65)
+object notification: Time [clock=65, time=null]
+Event sent to object      a10 clock(65)
+object notification: Time [clock=65, time=null]
+Event sent to object      a40 clock(65)
+object notification: Time [clock=66, time=null]
+Event sent to object      a10 clock(66)
+object notification: Time [clock=66, time=null]
+Event sent to object      a30 clock(66)
+object notification: Time [clock=66, time=null]
+Event sent to object      a40 clock(66)
+object notification: Time [clock=67, time=null]
+Event sent to object      a30 clock(67)
+object notification: Time [clock=67, time=null]
+Event sent to object      a10 clock(67)
+object notification: Time [clock=67, time=null]
+Event sent to object      a40 clock(67)
+object notification: Time [clock=68, time=null]
+Event sent to object      a10 clock(68)
+object notification: Time [clock=68, time=null]
+Event sent to object      a40 clock(68)
+object notification: Time [clock=68, time=null]
+Event sent to object      a30 clock(68)
+object notification: Time [clock=69, time=null]
+Event sent to object      a40 clock(69)
+object notification: Time [clock=69, time=null]
+Event sent to object      a10 clock(69)
+object notification: Time [clock=69, time=null]
+Event sent to object      a30 clock(69)
+object notification: Time [clock=70, time=null]
+Event sent to object      a40 clock(70)
+object notification: Time [clock=70, time=null]
+Event sent to object      a30 clock(70)
+object notification: Time [clock=70, time=null]
+Event sent to object      a10 clock(70)
+object notification: Time [clock=71, time=null]
+Event sent to object      a40 clock(71)
+object notification: Time [clock=71, time=null]
+Event sent to object      a10 clock(71)
+object notification: Time [clock=71, time=null]
+Event sent to object      a30 clock(71)
+object notification: Time [clock=72, time=null]
+Event sent to object      a40 clock(72)
+object notification: Time [clock=72, time=null]
+Event sent to object      a10 clock(72)
+object notification: Time [clock=72, time=null]
+Event sent to object      a30 clock(72)
+object notification: Time [clock=73, time=null]
+object notification: Time [clock=73, time=null]
+Event sent to object      a10 clock(73)
+object notification: Time [clock=73, time=null]
+Event sent to object      a40 clock(73)
+Event sent to object      a30 clock(73)
+object notification: Time [clock=74, time=null]
+Event sent to object      a40 clock(74)
+object notification: Time [clock=74, time=null]
+Event sent to object      a10 clock(74)
+object notification: Time [clock=74, time=null]
+Event sent to object      a30 clock(74)
+object notification: Time [clock=75, time=null]
+Event sent to object      a40 clock(75)
+object notification: Time [clock=75, time=null]
+Event sent to object      a10 clock(75)
+object notification: Time [clock=75, time=null]
+Event sent to object      a30 clock(75)
+object notification: Time [clock=76, time=null]
+Event sent to object      a30 clock(76)
+object notification: Time [clock=76, time=null]
+Event sent to object      a10 clock(76)
+object notification: Time [clock=76, time=null]
+Event sent to object      a40 clock(76)
+object notification: Time [clock=77, time=null]
+Event sent to object      a10 clock(77)
+object notification: Time [clock=77, time=null]
+Event sent to object      a30 clock(77)
+object notification: Time [clock=77, time=null]
+Event sent to object      a40 clock(77)
+object notification: Time [clock=78, time=null]
+Event sent to object      a30 clock(78)
+object notification: Time [clock=78, time=null]
+Event sent to object      a10 clock(78)
+object notification: Time [clock=78, time=null]
+Event sent to object      a40 clock(78)
+object notification: Time [clock=79, time=null]
+Event sent to object      a10 clock(79)
+object notification: Time [clock=79, time=null]
+Event sent to object      a30 clock(79)
+object notification: Time [clock=79, time=null]
+Event sent to object      a40 clock(79)
+object notification: Time [clock=80, time=null]
+Event sent to object      a40 clock(80)
+object notification: Time [clock=80, time=null]
+Event sent to object      a30 clock(80)
+object notification: Time [clock=80, time=null]
+Event sent to object      a10 clock(80)
+object notification: Time [clock=81, time=null]
+Event sent to object      a40 clock(81)
+object notification: Time [clock=81, time=null]
+Event sent to object      a30 clock(81)
+object notification: Time [clock=81, time=null]
+Event sent to object      a10 clock(81)
+object notification: Time [clock=82, time=null]
+Event sent to object      a30 clock(82)
+object notification: Time [clock=82, time=null]
+Event sent to object      a10 clock(82)
+object notification: Time [clock=82, time=null]
+Event sent to object      a40 clock(82)
+object notification: Time [clock=83, time=null]
+Event sent to object      a40 clock(83)
+object notification: Time [clock=83, time=null]
+Event sent to object      a30 clock(83)
+object notification: Time [clock=83, time=null]
+Event sent to object      a10 clock(83)
+object notification: Time [clock=84, time=null]
+Event sent to object      a40 clock(84)
+object notification: Time [clock=84, time=null]
+Event sent to object      a10 clock(84)
+object notification: Time [clock=84, time=null]
+Event sent to object      a30 clock(84)
+object notification: Time [clock=85, time=null]
+Event sent to object      a10 clock(85)
+object notification: Time [clock=85, time=null]
+Event sent to object      a40 clock(85)
+object notification: Time [clock=85, time=null]
+Event sent to object      a30 clock(85)
+object notification: Time [clock=86, time=null]
+Event sent to object      a40 clock(86)
+object notification: Time [clock=86, time=null]
+Event sent to object      a10 clock(86)
+object notification: Time [clock=86, time=null]
+Event sent to object      a30 clock(86)
+object notification: Time [clock=87, time=null]
+Event sent to object      a40 clock(87)
+object notification: Time [clock=87, time=null]
+Event sent to object      a10 clock(87)
+object notification: Time [clock=87, time=null]
+Event sent to object      a30 clock(87)
+object notification: Time [clock=88, time=null]
+Event sent to object      a40 clock(88)
+object notification: Time [clock=88, time=null]
+Event sent to object      a30 clock(88)
+object notification: Time [clock=88, time=null]
+Event sent to object      a10 clock(88)
+object notification: Time [clock=89, time=null]
+Event sent to object      a40 clock(89)
+object notification: Time [clock=89, time=null]
+Event sent to object      a30 clock(89)
+object notification: Time [clock=89, time=null]
+Event sent to object      a10 clock(89)
+object notification: Time [clock=90, time=null]
+Event sent to object      a40 clock(90)
+object notification: Time [clock=90, time=null]
+Event sent to object      a10 clock(90)
+object notification: Time [clock=90, time=null]
+Event sent to object      a30 clock(90)
+object notification: Time [clock=91, time=null]
+Event sent to object      a10 clock(91)
+object notification: Time [clock=91, time=null]
+Event sent to object      a40 clock(91)
+object notification: Time [clock=91, time=null]
+Event sent to object      a30 clock(91)
+object notification: Time [clock=92, time=null]
+object notification: Time [clock=92, time=null]
+Event sent to object      a30 clock(92)
+object notification: Time [clock=92, time=null]
+Event sent to object      a40 clock(92)
+Event sent to object      a10 clock(92)
+object notification: Time [clock=93, time=null]
+object notification: Time [clock=93, time=null]
+Event sent to object      a40 clock(93)
+Event sent to object      a10 clock(93)
+object notification: Time [clock=93, time=null]
+Event sent to object      a30 clock(93)
+object notification: Time [clock=94, time=null]
+Event sent to object      a30 clock(94)
+object notification: Time [clock=94, time=null]
+Event sent to object      a10 clock(94)
+object notification: Time [clock=94, time=null]
+Event sent to object      a40 clock(94)
+object notification: Time [clock=95, time=null]
+Event sent to object      a10 clock(95)
+object notification: Time [clock=95, time=null]
+Event sent to object      a30 clock(95)
+object notification: Time [clock=95, time=null]
+Event sent to object      a40 clock(95)
+object notification: Time [clock=96, time=null]
+Event sent to object      a40 clock(96)
+object notification: Time [clock=96, time=null]
+Event sent to object      a30 clock(96)
+object notification: Time [clock=96, time=null]
+Event sent to object      a10 clock(96)
+object notification: Time [clock=97, time=null]
+Event sent to object      a40 clock(97)
+object notification: Time [clock=97, time=null]
+Event sent to object      a10 clock(97)
+object notification: Time [clock=97, time=null]
+Event sent to object      a30 clock(97)
+object notification: Time [clock=98, time=null]
+object notification: Time [clock=98, time=null]
+Event sent to object      a10 clock(98)
+Event sent to object      a40 clock(98)
+object notification: Time [clock=98, time=null]
+Event sent to object      a30 clock(98)
+object notification: Time [clock=99, time=null]
+Event sent to object      a40 clock(99)
+object notification: Time [clock=99, time=null]
+Event sent to object      a30 clock(99)
+object notification: Time [clock=99, time=null]
+Event sent to object      a10 clock(99)
+object notification: Time [clock=100, time=null]
+Event sent to object      a40 clock(100)
+object notification: Time [clock=100, time=null]
+Event sent to object      a10 clock(100)
+object notification: Time [clock=100, time=null]
+Event sent to object      a30 clock(100)
+object notification: Time [clock=101, time=null]
+Event sent to object      a30 clock(101)
+object notification: Time [clock=101, time=null]
+Event sent to object      a10 clock(101)
+object notification: Time [clock=101, time=null]
+Event sent to object      a40 clock(101)
+object notification: Time [clock=102, time=null]
+Event sent to object      a10 clock(102)
+object notification: Time [clock=102, time=null]
+Event sent to object      a40 clock(102)
+object notification: Time [clock=102, time=null]
+Event sent to object      a30 clock(102)
+object notification: Time [clock=103, time=null]
+Event sent to object      a10 clock(103)
+object notification: Time [clock=103, time=null]
+Event sent to object      a30 clock(103)
+object notification: Time [clock=103, time=null]
+Event sent to object      a40 clock(103)
+object notification: Time [clock=104, time=null]
+Event sent to object      a10 clock(104)
+object notification: Time [clock=104, time=null]
+Event sent to object      a30 clock(104)
+object notification: Time [clock=104, time=null]
+Event sent to object      a40 clock(104)
+object notification: Time [clock=105, time=null]
+Event sent to object      a40 clock(105)
+object notification: Time [clock=105, time=null]
+Event sent to object      a10 clock(105)
+object notification: Time [clock=105, time=null]
+Event sent to object      a30 clock(105)
+object notification: Time [clock=106, time=null]
+Event sent to object      a40 clock(106)
+object notification: Time [clock=106, time=null]
+object notification: Time [clock=106, time=null]
+Event sent to object      a30 clock(106)
+Event sent to object      a10 clock(106)
+object notification: Time [clock=107, time=null]
+object notification: Time [clock=107, time=null]
+Event sent to object      a40 clock(107)
+object notification: Time [clock=107, time=null]
+Event sent to object      a30 clock(107)
+Event sent to object      a10 clock(107)
+object notification: Time [clock=108, time=null]
+Event sent to object      a40 clock(108)
+object notification: Time [clock=108, time=null]
+Event sent to object      a30 clock(108)
+object notification: Time [clock=108, time=null]
+Event sent to object      a10 clock(108)

@@ -13,7 +13,7 @@ Facts:
 %group surround
 norm(
     group_surround(g),
-    ra1, // the subject agent
+    g, // the subject agent
     ( group(g), goal(X,Y,Z)), // precondition - left blank for now
     obligation([surround(X,Y)],now + 1,[reduce(g,500)]) // prohibition format
     ).
@@ -67,7 +67,7 @@ group_member(g,a10).
 group_member(g,a20).
 group_member(g,a30).
 group_member(g,a40).
-group_member(g,ra1).
+//group_member(g,ra1).
 
 color(a10,red).
 color(a20,blue).
@@ -133,13 +133,26 @@ sanction([reduce(Agent,P)],viol(agent_directed(Label,Agent,prohibition(State,San
    clock(Now),
    assert(sanctioned(viol(agent_directed(Label,Agent,prohibition(State,Sanction))))),
    @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
-  sanction([reduce(Agent,P)],viol(agent_directed(Label,Agent,obligation(State,D,Sanction)))) :-
+   
+sanction([reduce(Agent,P)],viol(agent_directed(Label,Agent,obligation(State,D,Sanction)))) :-
    //pursuer(Agent),
    points(Agent, Health),
    NewHealth is Health - P,
    clock(Now),
    assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))),
    @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
+   
+sanction_g(Agent,P) :-
+   pursuer(Agent),
+   points(Agent, Health),
+   NewHealth is Health - P,
+   clock(Now),
+   @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
+      
+sanction([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(State,D,Sanction)))) :-
+   group(Group),
+   sanction_group(g,1000),
+   assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
    
 do_reduce_health(Agent,P):- 
    pursuer(Agent),
@@ -163,29 +176,45 @@ clock(0).
 //test
 goal(1,1,1).
 
-//check(GN):-
-//	setof(S, (group_member(G,A), sanction(A,S)),Ss),
-//	sum(Ss,T), //sumlist
-//	sanction(GN,GS),
-//	GS =< T.
+check(GN):-
+	setof(S, (group_member(G,A), violated(A,S)),Ss),
+	sum(Ss,T), //sumlist
+	sanction(GN,GS),
+	GS =< T.
 	
+violated(a10).
+violated(a40).
+
 do_sanction([not(H)|T]):- retract(H),do_sanction(T).
 do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
 do_sanction([]).
 
-//group sanctions
-//sanction_policy(1,policy1).
-//policy1(g,1000):-
-//    uniqueassertz(test(1)),
-//	findall(M,group_member(g,M),Vs),
-//	S is 1000 / length(Vs),
-//	uniqueassertz(povedlose(S)).
-//	sanction(Vs,S).
-	
-//sanction_group(ID,g,1000):-
-//	sanction_policy(ID,Policy),
-//	call(Policy(g,1000)).
+do_sanction([H|T],A):- sanction_g(H,A),do_sanction(T,A).
+do_sanction([],_).
 
+//group sanctions
+sanction_policy(g,policy1).
+policy1(Group,P):-
+//    assert(test(2)),
+	findall(M,(violated(M),group_member(Group,M)),Vs),
+//	assert(povedlose(x))
+	length(Vs,L),
+	assert(length(L)),
+	S is P / L,
+	assert(povedlose(S)),
+//	!,
+	do_sanction(Vs,S).
+//	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
+	
+sanction_group([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))):-
+	
+	sanction_policy(Group,Policy),	
+//	assert(test(1)),
+//	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
+	policy1(Group,P),
+//	call(Policy,Group,P),
+	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
+//	!.
 
 Effects:
 {true} tuple_space_changed {true} // causes compliance checking
@@ -226,8 +255,8 @@ reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
 
 viol(agent_directed(Label,Agent,prohibition(State,Sanction))) and not sanctioned(viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) => not viol(agent_directed(Label,Agent,prohibition(State,Sanction))).
 //viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction_g(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-//viol(agent_directed(enter_tile(a10),a10,prohibition([at(3.0,3.0,a10)],[reduce(a10,50.0)])))
-//viol(agent_directed(group_surround(g),ra1,obligation([surround(1.0,1.0)],A,[reduce(g,500.0)])))
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction_group(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+
 
 obey(agent_directed(Label,Agent,Deontic)) => not obey(agent_directed(Label,Agent,Deontic)).
