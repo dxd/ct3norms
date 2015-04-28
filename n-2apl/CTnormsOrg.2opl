@@ -20,28 +20,28 @@ norm(
     
 %agents group norms from RA
 norm(
-    group_task(a10),
+    group_task(group_surround(g)),
     a10, // the subject agent
     ( pursuer(a10), detached(group_surround(g)),goal(X,Y,Z),south(X,Y,X1,Y1)), // precondition - add triggering condition
     obligation([at(X1,Y1,a10)],now + 1,[reduce(a10, 500)]) // prohibition format
     ).  
       
 norm(
-    group_task(a20),
+    group_task(group_surround(g)),
     a20, // the subject agent
     ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z),west(X,Y,X1,Y1)), // precondition - add triggering condition
     obligation([at(X1,Y1,a20)],now + 1,[reduce(a20, 500)]) // prohibition format
     ).
     
 norm(
-    group_task(a30),
+    group_task(group_surround(g)),
     a30, // the subject agent
     ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z),east(X,Y,X1,Y1)), // precondition - add triggering condition
     obligation([at(X1,Y1,a30)],now + 1,[reduce(a30, 500)]) // prohibition format
     ).
     
 norm(
-    group_task(a40),
+    group_task(group_surround(g)),
     a40, // the subject agent
     ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z),north(X,Y,X1,Y1)), // precondition - add triggering condition
     obligation([at(X1,Y1,a40)],now + 1,[reduce(a40, 500)]) // prohibition format
@@ -55,6 +55,8 @@ Thing, // the subject agent
 prohibition([at(X,Y,Thing)],[reduce(Thing,50)]) // prohibition format
 ).
 
+
+hierachical(group_task(_)).
 
 pursuer(a10).
 pursuer(a20).
@@ -194,9 +196,9 @@ do_sanction([],_).
 
 //group sanctions
 sanction_policy(g,policy1).
-policy1(Group,P):-
+policy1(Group,P,Label):-
 //    assert(test(2)),
-	findall(M,(violated(M),group_member(Group,M)),Vs),
+	findall(M,(violated(group_task(Label),M),group_member(Group,M)),Vs),
 //	assert(povedlose(x))
 	length(Vs,L),
 	assert(length(L)),
@@ -211,7 +213,7 @@ sanction_group([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(List
 	sanction_policy(Group,Policy),	
 //	assert(test(1)),
 //	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
-	policy1(Group,P),
+	policy1(Group,P,Label),
 //	call(Policy,Group,P),
 	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
 //	!.
@@ -255,7 +257,8 @@ reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
 
 viol(agent_directed(Label,Agent,prohibition(State,Sanction))) and not sanctioned(viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) => not viol(agent_directed(Label,Agent,prohibition(State,Sanction))).
 //viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction_g(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not hierachical(Label) and not group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and hierachical(Label) and not group(Agent) and not violated(Label,Agent) and assert(violated(Label,Agent)) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
 viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction_group(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
 
 
