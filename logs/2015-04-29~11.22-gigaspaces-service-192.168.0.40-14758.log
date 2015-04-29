@@ -1,0 +1,1116 @@
+2015-04-29 11:22:26,525  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 424 milliseconds
+2015-04-29 12:47:58,098  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: Channel was inactive for too long.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:46)
+	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1211)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+
+2015-04-29 12:47:58,110  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: e2f3f81b-fc9c-4052-9c4f-72f10cbb08ac
+ expiration: 1430307986859
+ left 91209
+ event cause: null
+
+2015-04-29 12:47:58,166  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-04-29 12:48:02,238  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-04-29 12:48:02,239  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-04-29 12:48:03,978  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 12:48:04,453  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.
+2015-04-29 12:49:51,620  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: fb5e753d-7039-47b6-910f-4406af050164
+ expiration: 1430308174653
+ left 16967
+ event cause: null
+
+2015-04-29 13:50:56,978  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 13:50:58,089  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.
+2015-04-29 14:04:00,406  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: java.rmi.ConnectIOException: LRMI transport protocol over NIO broken connection with ServerEndPoint: [NIO://kafka.local:61856/pid[14463]/1430300996519401239_3_2101854821106756040_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]]; nested exception is: 
+	java.net.SocketException: Network is unreachable, request=myGrid_container:myGrid=>UpdateLeaseSpaceOperationRequest[uid=e7af102c-2669-497c-a087-2ae29753bad6,typeName=java.lang.Object,leaseObjectType=3,duration=60000]
+2015-04-29 14:04:20,439  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=e7af102c-2669-497c-a087-2ae29753bad6,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20004ms)
+2015-04-29 14:04:20,476  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: e7af102c-2669-497c-a087-2ae29753bad6
+ expiration: 1430312638335
+ left 22141
+ event cause: java.rmi.RemoteException: Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=e7af102c-2669-497c-a087-2ae29753bad6,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20004ms)
+
+2015-04-29 14:04:20,477  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 14:04:20,477  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-29 14:04:40,477  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=e7af102c-2669-497c-a087-2ae29753bad6,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20000ms)
+2015-04-29 14:04:40,478  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-29 14:05:00,479  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=e7af102c-2669-497c-a087-2ae29753bad6,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20001ms)
+2015-04-29 14:05:35,753  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 14:05:35,753  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 14:05:35,754  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 14:05:41,755  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 14:05:41,877  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.ConnectException: Connection refused
+2015-04-29 14:05:46,820  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.ConnectException: Connection refused
+2015-04-29 14:05:46,823  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 14:05:46,824  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 14:05:46,824  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 14:05:52,825  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 14:05:52,937  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.ConnectException: Connection refused
+2015-04-29 14:05:57,883  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.ConnectException: Connection refused
+2015-04-29 14:05:57,888  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 14:05:57,888  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 14:05:57,888  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 14:06:03,890  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 14:06:04,003  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.ConnectException: Connection refused
+2015-04-29 14:06:08,963  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 14:06:08,965  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 14:06:08,965  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 14:06:14,966  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 14:06:15,024  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-29 14:06:35,025  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute RegisterEntriesListenerSpaceOperationRequest[template=TemplatePacket[typeName=java.lang.Object,uid=null,version=0,operationId=null],lease=60000,notifyInfo=NotifyInfo[notifyType=6,templateUid=b29b6fe4-7809-49d4-9b8d-123717b9e8de,broadcast=false,fifo=false,returnOnlyUids=true,batchSize=1000,batchPendingThreshold=1000,batchTime=100,replicateTemplate=null,triggerNotifyTemplate=null,guaranteed=false,handback=null]](elapsed time: 20001ms)
+2015-04-29 14:06:35,025  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to initialize; Caused by: com.gigaspaces.internal.client.cache.SpaceCacheInitializationException: Failed to register local cache data event listener.
+2015-04-29 14:06:35,239  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 14:06:35,239  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 14:06:41,240  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 14:06:41,282  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-29 14:06:57,937  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.
+2015-04-29 16:04:32,743  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: a7220af8-f180-4cdc-961b-cc202b8d820d
+ expiration: 1430319868416
+ left 4327
+ event cause: null
+
+2015-04-29 16:04:32,743  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:39:51,535  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.
+2015-04-29 16:40:59,819  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: java.rmi.ConnectIOException: LRMI transport protocol over NIO broken connection with ServerEndPoint: [NIO://kafka.local:61856/pid[14463]/1430300996519401239_3_2101854821106756040_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]]; nested exception is: 
+	java.net.SocketException: Network is unreachable, request=myGrid_container:myGrid=>UpdateLeaseSpaceOperationRequest[uid=ebd0a6af-0d3e-4dc6-ae24-455f10ea5225,typeName=java.lang.Object,leaseObjectType=3,duration=60000]
+2015-04-29 16:41:19,821  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ebd0a6af-0d3e-4dc6-ae24-455f10ea5225,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20001ms)
+2015-04-29 16:41:19,822  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: ebd0a6af-0d3e-4dc6-ae24-455f10ea5225
+ expiration: 1430322051534
+ left 28288
+ event cause: java.rmi.RemoteException: Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ebd0a6af-0d3e-4dc6-ae24-455f10ea5225,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20001ms)
+
+2015-04-29 16:41:19,822  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:41:19,822  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-29 16:41:39,823  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ebd0a6af-0d3e-4dc6-ae24-455f10ea5225,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20001ms)
+2015-04-29 16:41:39,823  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-29 16:41:59,823  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ebd0a6af-0d3e-4dc6-ae24-455f10ea5225,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20000ms)
+2015-04-29 16:42:00,084  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 16:42:09,826  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 16:42:19,925  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 16:42:35,120  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:42:35,120  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:42:35,121  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:42:41,122  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:43:16,160  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:43:16,160  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:43:16,161  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:43:22,161  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:43:57,196  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:43:57,196  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:43:57,196  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:44:03,196  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:44:38,236  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:44:38,236  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:44:38,236  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:44:44,238  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:44:52,584  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 16:45:19,276  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:45:19,276  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:45:19,277  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:45:25,278  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:46:00,314  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:46:00,314  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:46:00,314  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:46:06,314  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:46:41,357  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:46:41,358  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:46:41,358  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:46:47,359  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:47:22,390  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:47:22,390  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:47:22,391  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:47:28,391  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:48:03,431  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:48:03,431  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:48:03,431  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:48:09,431  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:48:44,471  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:48:44,471  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:48:44,471  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:48:46,676  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 16:48:50,473  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:49:25,514  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:49:25,515  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:49:25,515  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:49:31,516  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:50:06,555  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:50:06,556  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:50:06,556  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:50:12,557  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:50:47,594  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:50:47,595  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:50:47,595  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:50:53,595  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:51:28,632  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:51:28,632  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:51:28,632  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:51:34,633  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:52:09,666  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:52:09,667  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:52:09,667  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:52:15,667  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:52:46,935  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 16:52:50,700  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:52:50,701  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:52:50,701  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:52:56,702  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:53:31,743  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:53:31,743  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:53:31,744  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:53:37,744  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:54:12,780  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:54:12,781  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:54:12,781  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:54:18,782  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:54:53,819  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:54:53,819  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:54:53,819  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:54:59,820  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:55:34,861  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:55:34,861  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:55:34,861  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:55:40,862  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:56:15,898  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:56:15,898  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:56:15,898  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:56:21,899  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:56:47,012  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 16:56:56,932  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:56:56,932  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:56:56,932  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:57:02,933  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:57:37,973  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:57:37,974  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:57:37,974  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:57:43,975  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:58:19,014  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:58:19,015  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:58:19,015  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:58:25,016  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:59:00,054  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:59:00,054  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:59:00,054  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:59:06,055  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 16:59:41,091  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 16:59:41,092  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 16:59:41,092  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 16:59:47,093  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:00:22,131  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:00:22,131  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:00:22,131  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:00:28,132  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:00:46,740  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:01:03,168  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:01:03,168  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:01:03,169  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:01:09,170  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:01:44,206  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:01:44,206  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:01:44,206  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:01:50,208  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:02:25,245  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:02:25,245  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:02:25,245  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:02:31,247  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:03:06,287  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:03:06,288  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:03:06,288  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:03:12,289  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:03:47,328  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:03:47,328  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:03:47,328  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:03:53,329  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:04:28,367  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:04:28,367  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:04:28,367  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:04:34,368  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:04:46,635  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:05:09,403  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:05:09,404  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:05:09,404  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:05:15,404  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:05:50,443  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:05:50,443  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:05:50,444  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:05:56,444  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:06:31,480  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:06:31,480  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:06:31,480  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:06:37,482  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:07:12,520  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:07:12,521  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:07:12,521  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:07:18,522  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:07:53,560  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:07:53,561  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:07:53,561  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:07:59,562  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:08:34,599  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:08:34,600  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:08:34,600  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:08:40,601  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:08:46,698  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:09:15,643  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:09:15,643  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:09:15,643  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:09:21,643  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:09:56,680  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:09:56,681  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:09:56,681  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:10:02,682  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:10:37,717  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:10:37,717  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:10:37,717  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:10:43,718  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:11:18,754  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:11:18,754  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:11:18,755  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:11:24,755  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:11:59,797  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:11:59,797  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:11:59,797  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:12:05,798  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:12:40,839  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:12:40,839  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:12:40,840  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:12:46,840  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:12:47,160  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:13:21,887  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:13:21,887  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:13:21,887  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:13:27,889  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:14:02,935  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:14:02,935  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:14:02,935  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:14:08,937  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:14:43,981  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:14:43,981  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:14:43,981  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:14:49,983  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:15:25,029  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:15:25,029  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:15:25,030  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:15:31,031  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:16:06,075  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:16:06,075  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:16:06,075  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:16:12,076  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:16:45,411  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:16:47,118  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:16:47,118  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:16:47,118  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:16:53,119  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:17:28,162  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:17:28,163  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:17:28,164  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:17:34,165  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:18:09,209  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:18:09,210  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:18:09,210  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:18:15,211  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:18:50,252  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:18:50,252  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:18:50,252  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:18:56,252  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:19:31,290  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:19:31,290  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:19:31,290  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:19:37,292  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:20:12,328  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:20:12,329  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:20:12,329  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:20:18,330  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:20:46,872  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:20:53,373  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:20:53,374  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:20:53,374  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:20:59,375  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:21:34,405  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:21:34,405  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:21:34,405  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:21:40,407  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:22:15,446  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:22:15,446  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:22:15,446  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:22:21,448  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:22:56,487  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:22:56,487  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:22:56,487  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:23:02,488  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:23:37,522  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:23:37,522  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:23:37,523  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:23:43,523  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:24:18,566  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:24:18,566  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:24:18,566  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:24:24,567  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:24:46,637  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:24:59,605  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:24:59,605  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:24:59,605  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:25:05,606  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:25:40,642  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:25:40,642  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:25:40,642  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:25:46,642  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:26:21,680  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:26:21,681  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:26:21,681  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:26:27,681  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:27:02,720  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:27:02,720  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:27:02,721  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:27:08,721  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:27:43,755  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:27:43,755  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:27:43,756  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:27:49,757  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:28:24,788  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:28:24,788  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:28:24,789  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:28:30,790  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:28:46,702  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:29:05,826  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:29:05,826  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:29:05,826  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:29:11,827  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:29:46,869  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:29:46,870  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:29:46,870  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:29:52,871  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:30:27,912  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:30:27,912  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:30:27,912  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:30:33,914  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:31:08,955  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:31:08,955  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:31:08,955  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:31:14,957  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:31:49,999  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:31:49,999  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:31:49,999  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:31:56,000  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:32:31,039  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:32:31,039  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:32:31,040  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:32:37,041  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:32:47,104  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:33:12,084  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:33:12,084  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:33:12,084  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:33:18,086  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:33:53,131  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:33:53,132  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:33:53,132  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:33:59,134  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:34:34,181  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:34:34,182  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:34:34,182  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:34:40,183  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:35:15,228  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:35:15,229  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:35:15,229  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:35:21,230  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:35:56,276  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:35:56,276  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:35:56,277  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:36:02,278  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:36:37,315  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:36:37,316  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:36:37,316  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:36:43,317  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:36:45,204  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:37:18,356  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:37:18,356  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:37:18,357  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:37:24,358  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:37:59,399  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:37:59,399  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:37:59,399  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:38:05,400  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:38:40,434  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:38:40,434  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:38:40,435  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:38:46,435  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:39:21,470  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:39:21,470  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:39:21,471  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:39:27,472  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:40:02,512  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:40:02,512  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:40:02,513  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:40:08,513  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:40:43,553  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:40:43,554  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:40:43,554  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:40:44,923  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.local:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.ConnectException: Operation timed out
+2015-04-29 17:40:49,555  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:41:24,593  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:41:24,594  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:41:24,594  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:41:30,595  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:42:30,714  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:42:30,718  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:42:30,718  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:42:30,718  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:42:36,719  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:43:01,247  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:43:36,827  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:43:36,833  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:43:36,833  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:43:36,833  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:43:42,834  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:43:57,186  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:44:42,945  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:44:42,947  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:44:42,947  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:44:42,947  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:44:48,949  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:45:03,293  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:45:49,056  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:45:49,060  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:45:49,060  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:45:49,061  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:45:55,062  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:46:09,416  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:46:55,168  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:46:55,173  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:46:55,173  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:46:55,173  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:47:01,174  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:47:15,518  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:48:01,286  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:48:01,289  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:48:01,289  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:48:01,290  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:48:07,290  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:48:21,603  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:49:07,399  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:49:07,404  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:49:07,404  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:49:07,404  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:49:13,404  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:49:27,758  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:50:13,515  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:50:13,520  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:50:13,520  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:50:13,520  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:50:19,521  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:50:33,862  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:51:19,637  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:51:19,643  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:51:19,643  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:51:19,644  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:51:25,644  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:51:39,984  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:52:25,756  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:52:25,759  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:52:25,759  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:52:25,759  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:52:31,761  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:53:31,877  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:53:31,884  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:53:31,884  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:53:31,884  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:53:37,886  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:53:52,203  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:54:37,996  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:54:38,000  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:54:38,001  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:54:38,001  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:54:44,001  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:55:03,470  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:55:44,114  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:55:44,118  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:55:44,118  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:55:44,119  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:55:50,120  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:56:04,463  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:56:50,232  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:56:50,236  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:56:50,237  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:56:50,237  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:56:56,238  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:57:10,566  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:57:56,350  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:57:56,354  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:57:56,354  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:57:56,355  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:58:02,355  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:58:16,688  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 17:59:02,465  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 17:59:02,471  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 17:59:02,472  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 17:59:02,472  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 17:59:08,473  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 17:59:22,838  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:00:08,585  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:00:08,591  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:00:08,591  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:00:08,591  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:00:14,592  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:00:28,911  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:01:14,703  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:01:14,709  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:01:14,709  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:01:14,710  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:01:20,710  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:01:35,066  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:02:20,819  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:02:20,824  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:02:20,825  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:02:20,825  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:02:26,826  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:02:41,182  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:03:26,938  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:03:26,945  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:03:26,946  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:03:26,946  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:03:32,946  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:03:47,292  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:04:33,061  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:04:33,067  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:04:33,067  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:04:33,067  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:04:39,068  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:05:03,628  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:05:39,177  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:05:39,181  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:05:39,181  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:05:39,181  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:05:45,182  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:05:59,487  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:06:45,289  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:06:45,293  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:06:45,293  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:06:45,293  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:06:51,294  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:07:05,601  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:07:51,404  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:07:51,408  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:07:51,408  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:07:51,408  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:07:57,411  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:08:11,756  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:08:57,520  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:08:57,524  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:08:57,524  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:08:57,524  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:09:03,525  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:09:17,860  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:10:03,638  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:10:03,645  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:10:03,645  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:10:03,646  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:10:09,646  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:10:24,024  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:11:09,762  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:11:09,767  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:11:09,768  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:11:09,768  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:11:15,769  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:11:30,128  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:12:15,878  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:12:15,906  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:12:15,906  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:12:15,907  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:12:21,908  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:12:36,270  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:13:22,020  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:13:22,025  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:13:22,026  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:13:22,026  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:13:28,026  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:13:42,388  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:14:28,140  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:14:28,147  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:14:28,148  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:14:28,148  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:14:34,149  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:15:34,258  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:15:34,267  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:15:34,267  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:15:34,267  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:15:40,268  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:15:54,618  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:16:40,379  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:16:40,383  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:16:40,383  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:16:40,384  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:16:46,385  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:17:00,773  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:17:46,499  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:17:46,503  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:17:46,503  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:17:46,504  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:17:52,506  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:18:01,768  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:18:52,622  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:18:52,649  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:18:52,649  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:18:52,650  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:18:58,652  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:19:07,846  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:19:58,766  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:19:58,772  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:19:58,772  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:19:58,772  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:20:04,774  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:20:19,112  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:21:04,889  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:21:04,896  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:21:04,896  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:21:04,897  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:21:10,898  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:21:20,142  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:22:11,008  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:22:11,014  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:22:11,015  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:22:11,015  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:22:17,016  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:22:31,367  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:23:17,126  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:23:17,133  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:23:17,134  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:23:17,134  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:23:23,135  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:23:37,477  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:24:23,245  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:24:23,250  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:24:23,251  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:24:23,251  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:24:29,252  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:24:43,617  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:25:29,362  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:25:29,370  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:25:29,370  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:25:29,370  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:25:35,371  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:25:49,744  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:26:35,485  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:26:35,490  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:26:35,491  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:26:35,491  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:26:41,492  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:27:00,949  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:27:41,602  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:27:41,610  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:27:41,610  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:27:41,610  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:27:47,611  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:28:01,994  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:28:47,723  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:28:47,730  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:28:47,730  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:28:47,730  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:28:53,732  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:29:08,083  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-04-29 18:29:53,847  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=b46414e9-79b6-4c82-a5d1-35b38d32ced3 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:61881/pid[14498]/1430301009711440232_2_9217580862130120583_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-04-29 18:29:53,851  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-29 18:29:53,851  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-29 18:29:53,851  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-29 18:29:59,852  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-29 18:30:14,242  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+

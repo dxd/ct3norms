@@ -1,0 +1,87 @@
+2015-04-28 16:22:38,288  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 558 milliseconds
+2015-04-28 16:47:35,040  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: fe5aa579-4458-4a05-8e01-37c4f8e7c417
+ expiration: 1430235908379
+ left 146643
+ event cause: null
+
+2015-04-28 16:47:39,350  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-04-28 16:47:39,350  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-04-28 16:47:39,351  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-04-28 16:47:39,351  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-04-28 16:47:40,986  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-28 16:48:12,713  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to initialize; Caused by: com.gigaspaces.internal.client.cache.SpaceCacheInitializationException: Failed to load space cache configuration
+2015-04-28 16:48:12,713  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-28 16:48:12,713  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-28 16:48:18,715  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-28 16:48:18,780  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.
+2015-04-28 16:54:48,804  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: java.rmi.ConnectException: LRMI transport protocol over NIO broken connection with ServerEndPoint: [NIO://kafka.local:56404/pid[10577]/1430234336914398240_3_2867368911993257742_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]]; nested exception is: 
+	java.nio.channels.ClosedChannelException, request=myGrid_container:myGrid=>UpdateLeaseSpaceOperationRequest[uid=6286cf15-d977-4be5-9093-0d93311a554c,typeName=java.lang.Object,leaseObjectType=3,duration=60000]
+2015-04-28 16:55:08,808  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=6286cf15-d977-4be5-9093-0d93311a554c,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20004ms)
+2015-04-28 16:55:08,809  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-28 16:55:28,810  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=6286cf15-d977-4be5-9093-0d93311a554c,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20001ms)
+2015-04-28 16:55:28,811  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: 6286cf15-d977-4be5-9093-0d93311a554c
+ expiration: 1430236518803
+ left 10008
+ event cause: java.rmi.RemoteException: Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=6286cf15-d977-4be5-9093-0d93311a554c,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20001ms)
+
+2015-04-28 16:55:28,811  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-28 16:55:28,811  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-28 16:55:48,812  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=6286cf15-d977-4be5-9093-0d93311a554c,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20001ms)
+2015-04-28 16:55:48,813  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-04-28 16:56:08,814  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=6286cf15-d977-4be5-9093-0d93311a554c,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20001ms)
+2015-04-28 16:56:44,456  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-28 16:56:44,456  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-28 16:56:44,457  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-28 16:56:50,457  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-28 16:57:25,508  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-28 16:57:25,508  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-28 16:57:25,508  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-28 16:57:31,510  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-28 16:58:06,564  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-28 16:58:06,564  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-28 16:58:06,564  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-28 16:58:12,566  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-04-28 16:58:47,922  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-04-28 16:58:47,922  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-04-28 16:58:47,922  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-04-28 16:58:53,923  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...

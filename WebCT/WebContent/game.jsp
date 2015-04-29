@@ -543,7 +543,7 @@ var game = {
 	</tr>
 	<tr>
 		<td>
-		<div id="divPathFinder" style="visibility: hidden;">
+		<div id="divPathFinder">
 		<table>
 			<tr>
 				<td >Player:<div> <select id="playerSelect"
@@ -619,13 +619,14 @@ var game = {
 	
 	//gil
 	loadProposalsTable();
-	//loadRevelationProposalsTable();
+	//LoadNormsTable();
+	//loadGoalRevelationProposalsTable();
 	//gilend
 	//proposalArea();
-	if (game.showPathFinder == "true") {
+	//if (game.showPathFinder == "true") {
 		document.getElementById("divPathFinder").style.visibility='visible';
 		CreatePathFinder();
-	}
+	//}
 	
 	//gil
 	//setInterval("UpdateServer()", 5000);

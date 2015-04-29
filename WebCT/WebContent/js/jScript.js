@@ -1443,7 +1443,6 @@ function loadProposalsTable() {
 				multiselect : false,
 				hoverrows : false				
 			});
-
 	var defaultData = {
 			// Id : MessageId,
 			// Proposer : playerName,
@@ -1461,6 +1460,66 @@ function loadProposalsTable() {
 		};
 	
 	jQuery("#tblProposals").jqGrid('addRowData', 0, defaultData);
+}
+	
+function loadNormsTable() {
+		jQuery("#tblNorms").jqGrid(
+				{
+					datatype : "local",
+					height : 200,
+					colNames : ['MsgType', 'Sender', 'Receiver', 'Send', 'Receive', 'Response' ],
+					colModel : [ {
+						name : 'MsgType',
+						index : 'MsgType',
+						width : 90,
+						sortable : false
+					}, {
+						name : 'Sender',
+						index : 'Sender',
+						width : 75,
+						sortable : false
+					},{
+						name : 'Receiver',
+						index : 'Receiver',
+						width : 75,
+						sortable : false
+					},{
+						name : 'Send',
+						index : 'Send',
+						width : 200,
+						sortable : false
+					}, {
+						name : 'Receive',
+						index : 'Receive',
+						width : 200,
+						sortable : false
+					}, {
+						name : 'Response',
+						index : 'Response',
+						width : 150,
+						sortable : false
+					} ],
+					multiselect : false,
+					hoverrows : false				
+				});
+
+	var defaultData = {
+			// Id : MessageId,
+			// Proposer : playerName,
+			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
+			// Receiver : '<img height=25px width=25px src="img/'
+			// + game.getPlayerIcon(SenderID) + '"/>',
+			// Proposer : SenderID,
+			// Receiver : SenderID == 0 ? 1 : 0,
+			MsgType : "<div id='divTableMsgType'></div>",
+			Sender : "<div id='divTableSender'></div>",
+			Receiver : "<div id='divTableReceiver'></div>",
+			Send : "<div id='divTableSend'></div>",
+			Receive : "<div id='divTableReceive'></div>", 
+			Response : "<div id='divButtonPropose'></div>"
+		};
+	
+	jQuery("#tblNorms").jqGrid('addRowData', 0, defaultData);
 }
 // end Proposals table
 
@@ -1920,11 +1979,9 @@ function insertIntoGoalSelect()
 		//alert(" goalType " +goalType);
 		//gilend
 		
-		if(goalType%10 == playerId)
-		{
 			goalNum++;
 			appendOptionLast(goalNum,goalType,"goalSelect", '');
-		}				
+						
 	}	
 	
 	

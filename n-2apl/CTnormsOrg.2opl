@@ -19,42 +19,29 @@ norm(
     ).
     
 %agents group norms from RA
-norm(
-    group_task(group_surround(g)),
-    a10, // the subject agent
-    ( pursuer(a10), detached(group_surround(g)),goal(X,Y,Z),south(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([at(X1,Y1,a10)],now + 1,[reduce(a10, 500)]) // prohibition format
-    ).  
-      
-norm(
-    group_task(group_surround(g)),
-    a20, // the subject agent
-    ( pursuer(a20), detached(group_surround(g)),goal(X,Y,Z),west(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([at(X1,Y1,a20)],now + 1,[reduce(a20, 500)]) // prohibition format
-    ).
     
 norm(
-    group_task(group_surround(g)),
-    a30, // the subject agent
-    ( pursuer(a30), detached(group_surround(g)),goal(X,Y,Z),east(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([at(X1,Y1,a30)],now + 1,[reduce(a30, 500)]) // prohibition format
-    ).
-    
-norm(
-    group_task(group_surround(g)),
-    a40, // the subject agent
-    ( pursuer(a40), detached(group_surround(g)),goal(X,Y,Z),north(X,Y,X1,Y1)), // precondition - add triggering condition
-    obligation([at(X1,Y1,a40)],now + 1,[reduce(a40, 500)]) // prohibition format
+    group_task(group_surround(g),Clock),
+    Agent, // the subject agent
+    ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),Clock)), // precondition - add triggering condition
+    obligation([at(X,Y,agent)],now + 1,[reduce(Agent, 500)]) // prohibition format
     ).  
 
 %individual prohibitions to use colored tiles
 norm(
-enter_tile(Thing),
+not_enter_tile(Thing),
 Thing, // the subject agent
-( pursuer(Thing), color(Thing,Color), tile(X,Y,Color)), // precondition
+( pursuer(Thing), color(Thing,Color,no), tile(X,Y,Color)), // precondition
 prohibition([at(X,Y,Thing)],[reduce(Thing,50)]) // prohibition format
 ).
 
+%individual obligations to use colored tiles
+norm(
+enter_tile(Thing),
+Thing, // the subject agent
+( pursuer(Thing), color(Thing,Color,yes), tile(X,Y,Color)), // precondition
+obligation([at(X,Y,Thing)],now + 10,[reduce(Thing,50)]) // prohibition format
+).
 
 hierachical(group_task(_)).
 
@@ -62,21 +49,21 @@ pursuer(a10).
 pursuer(a20).
 pursuer(a30).
 pursuer(a40).
-pursuer(ra1).
+
 
 group(g).
 group_member(g,a10).
 group_member(g,a20).
 group_member(g,a30).
 group_member(g,a40).
-//group_member(g,ra1).
+ra(g,a10).
 
-color(a10,red).
-color(a20,blue).
-color(a30,green).
-color(a40,yellow).
-tile(3,3,red).
-at(3,3,a10).
+//color(a10,red,yes).
+//color(a20,blue,yes).
+//color(a30,green,no).
+//color(a40,yellow,no).
+//tile(3,3,red).
+//at(3,3,a10).
 
 //gensym(1).
 //gensym(X,5).
@@ -176,7 +163,7 @@ listTrue([]).
 
 clock(0).
 //test
-goal(1,1,1).
+//goal(1,1,1).
 
 check(GN):-
 	setof(S, (group_member(G,A), violated(A,S)),Ss),
@@ -235,6 +222,8 @@ Effects:
 {true} tile(cell(X,Y),Color,Clock) {tile(X,Y,Color,Clock)}
 {true} chip(A,Color,X,Clock) {chip(A,Color,X,Clock)}
 
+{true} setGoal(Agent,X,Y,GX,GY,Clock) {agentSTask(Agent,X,Y,goal(GX,GY),Clock)}
+{true} color(Agent,Color,Type) {color(Agent,Color,Type)}
 
 //{points(Agent,OldValue)} points(Agent, Clock, Value) {not points(Agent,OldValue), points(Agent,Value)}
 //{true} points(Agent, Clock, Value) {points(Agent,Value,Clock)}
