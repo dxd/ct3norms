@@ -24,7 +24,10 @@ import edu.harvard.eecs.airg.coloredtrails.shared.discourse.DiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.*;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Collection;
+import java.util.Hashtable;
+import java.util.Set;
+
 
 /**
 	<b>Description</b>
@@ -77,8 +80,7 @@ import java.util.*;
 	In doDiscourse(), the discourse message being sent is not directly used
 	to build a log entry; rather, another instance of the same type is built
 	and used.  It is currently unclear why this is needed.
-	
-  @author Paul Heymann (ct3@heymann.be)
+	@author Paul Heymann (ct3@heymann.be)
 	@author Sevan G. Ficici (code review and additional comments)
  */
 public class ServerGameStatus extends GameStatus
@@ -86,6 +88,8 @@ public class ServerGameStatus extends GameStatus
 {
 //    private GameConfigDetailsRunnable gcdr = null;
 
+	
+	
     /************************
 		CONSTRUCTORS
 	************************/
@@ -113,6 +117,7 @@ public class ServerGameStatus extends GameStatus
     {
     	return new ServerGameStatus(this);
     }
+    
     
 
 //    public Hashtable<Integer, Semaphore> avoidClobberingGameStatus =

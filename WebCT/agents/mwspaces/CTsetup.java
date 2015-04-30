@@ -34,7 +34,7 @@ public class CTsetup {
 	
 	private GigaSpace space;
 	private DataEventSession session;
-	public static String[] agents = {"10", "20"};
+	public static String[] agents = {"20"};
 	
 	private Logger log = Logger.getRootLogger();
 	private Integer clock = 0;
@@ -104,6 +104,10 @@ public class CTsetup {
 			try {
 				session.addListener(new Position(), handler); 
 				session.addListener(new Time(), handler); 
+				for (int i = 0;  i <agents.length; i++) {
+					session.addListener(new Obligation(agents[i]), handler); 
+					session.addListener(new Prohibition(agents[i]), handler); 
+				}
 				//session.addListener(new Tile(), handler); 
 				//session.addListener(new GroupCoin(), handler); 
 			} catch (Exception e) {
@@ -145,6 +149,16 @@ public class CTsetup {
 				if (gs.doMove(id, newLoc))
 					writePlayers(gs.getPlayers());
 			}
+		} else if (e instanceof Obligation) {
+			Obligation o = (Obligation) e;
+			Integer i = getID(getPin(o.agent));
+			if (i != null )
+				gs.getPlayerByPerGameId(i).obligations.add(o);
+		} else if (e instanceof Prohibition) {
+			Prohibition p = (Prohibition) e;
+			Integer i = getID(getPin(p.agent));
+			if (i != null )
+				gs.getPlayerByPerGameId(i).prohibitions.add(p);
 		}
 	}
 

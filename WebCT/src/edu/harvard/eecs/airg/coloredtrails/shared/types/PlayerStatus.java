@@ -20,8 +20,12 @@
 
 package edu.harvard.eecs.airg.coloredtrails.shared.types;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.io.Serializable;
+
+import tuplespace.Obligation;
+import tuplespace.Prohibition;
 
 /**
 <b>Description</b>
@@ -112,7 +116,9 @@ Such enhancements provide the essential requirements for roles.
 public class PlayerStatus extends CTStateContainer
                           implements Serializable, Cloneable
 {
-	
+
+	public ArrayList<Obligation> obligations;
+	public ArrayList<Prohibition> prohibitions;
 	
     public PlayerStatus()
     {

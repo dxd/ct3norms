@@ -85,7 +85,7 @@ initialized <- event(game_initialized) | {
 }
 
 update <- event(phasechange) | update()
-update <- event(normphase) and ra | sendNorms()
+//update <- event(normphase) and ra | sendNorms()
 update <- phase(communicationphase) and role(X,proposer) and not sent(Pp,ID,open) | makeProposal()
 //update <- phase(movementphase) | moveStepToGoal()
 
