@@ -12,7 +12,7 @@ public class SetGoal implements TimeEntry {
 	public Integer id;
 	public String agent;
 	public Cell cell;
-	public Goal goal;
+	public Cell goal;
 	public Integer clock;
 	public Timestamp time;
 	
@@ -20,7 +20,7 @@ public class SetGoal implements TimeEntry {
 		
 	}
 	
-	public SetGoal(String agent, Cell cell, Goal goal, Integer clock) {
+	public SetGoal(String agent, Cell cell, Cell goal, Integer clock) {
 		this.agent = agent;
 		this.cell = cell;
 		this.goal = goal;
@@ -84,7 +84,7 @@ public class SetGoal implements TimeEntry {
 
 	@Override
 	public String toPrologString() {
-		return "setGoal(" + agent + "," + cell.x +"," + cell.y +"," + goal.cell.x +"," + goal.cell.y + "," + clock + ")";
+		return "setGoal(" + agent + "," + cell.x +"," + cell.y +"," + goal.x +"," + goal.y + "," + clock + ")";
 	}
 	@Override
 	public String toString() {

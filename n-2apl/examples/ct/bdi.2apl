@@ -18,7 +18,6 @@ phase(none).
   clock(0).
 
 
-
 Goals:
 initialized, wingame, update
 
@@ -104,8 +103,7 @@ reading(X,Y) <- true | {
 
 makeReading <- position(X,Y) | {
 
-   [
-   dropgoal(makeReading)]
+   [dropgoal(makeReading)]
     
 } : 100
 
@@ -117,7 +115,10 @@ makeReading(X,Y) <- true | {
 } : 100
 
 
+
 PC-rules:
+
+
 update() <- true | {
 	getPhase();
     //getRole(MYID);

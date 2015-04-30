@@ -24,7 +24,6 @@ import oopl.GUI.GUI;
 import tuplespace.*;
 import tuplespace.Prohibition;
 import tuplespace.Sanction;
-import RecipExperiment.RecipConstants;
 import apapl.Environment;
 import apapl.ExternalActionFailedException;
 import apapl.data.*;
@@ -396,9 +395,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 	 */
 	public Term getAgentPin(String agentname)
 			throws ExternalActionFailedException {
-
 		return  agents.get(agentname).getAgentPin(agentname);
-
 	}
 
 
@@ -415,38 +412,41 @@ public class EnvCT  extends Environment implements ExternalTool {
 		return client.getAgentPos(agentname);
 	}
 
-
-
 	public Term getGoalId(String agentname, APLNum type, APLNum xcoor, APLNum ycoor) {
-
 		CTAgentHandler client = agents.get(agentname);
 		return client.getGoalId(agentname,type,xcoor,ycoor);
-
 	}
 
 	// Return the position of a goal of a specific type
 	public Term getGoalPos(String agentname, APLNum type)
 			throws ExternalActionFailedException {
-
 		CTAgentHandler client = agents.get(agentname);
 		return client.getGoalPos(agentname,type);
-
 	}
 
 	public Term getRole(String agentname, APLNum apl_id)
 			throws ExternalActionFailedException {
-
 		CTAgentHandler client = agents.get(agentname);
 		return client.getRole(agentname,apl_id);
-
 	}
-
-
 
 	public void makeProposal(String agentname, APLNum responder) {
 		CTAgentHandler client = agents.get(agentname);
 		client.makeProposal(agentname,responder);
-
+	}
+	
+	public void setGoal(String agentname, APLIdent agent, APLNum xcoor, APLNum ycoor,APLNum gx, APLNum gy) {
+		//CTAgentHandler client = agents.get(agentname);
+		//client.setGoal(agentname,apl_id,xcoor,ycoor,gx,gy);
+		
+		SetGoal st = new SetGoal(agent.getName(),new Cell(xcoor.toInt(),ycoor.toInt()),new Cell(gx.toInt(),gy.toInt()),clock);
+		space.write(st);
+	}
+	
+	public void setColor(String agentname, APLIdent agent, APLIdent color, APLIdent type) {
+		CTAgentHandler client = agents.get(agentname);
+		Color c = new Color(agent.getName(),color.getName(),type.getName(),clock);
+		space.write(c);
 	}
 
 	/**
@@ -458,9 +458,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 	public Term moveStepToGoal(String agentname, APLNum ax,
 			APLNum ay) throws
 			ExternalActionFailedException {
-
 		return agents.get(agentname).moveStepToGoal(agentname,ax,ay);
-
 	}
 
 
@@ -473,6 +471,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 		if(oopl.prolog.strStorage.getInt(s)==null) oopl.prolog.strStorage.add(s);
 		return oopl.prolog.strStorage.getInt(s);
 	}
+	
 	/*
 	 * Make the possible external actions known to the Prolog engine. These will be the actions that
 	 * the organization can do.
@@ -615,6 +614,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 				session.addListener(new Time(), handler);
 				session.addListener(new Tile(), handler);
 				session.addListener(new Position(agent), handler);
+				
 				//session.addListener(new Proposal(), handler);
 				//session.addListener(new Response(), handler);
 				
@@ -689,9 +689,10 @@ public class EnvCT  extends Environment implements ExternalTool {
 			session.addListener(new Chip(), handler); 
 			session.addListener(new Time(), handler); 
 			session.addListener(new Tile(), handler); 
-			session.addListener(new GroupCoin(), handler);
 			session.addListener(new Proposal(), handler);
 			session.addListener(new Response(), handler);
+			session.addListener(new Color(), handler);
+			session.addListener(new SetGoal(), handler);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

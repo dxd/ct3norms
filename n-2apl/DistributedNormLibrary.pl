@@ -133,11 +133,17 @@
    assert(@sent_prohibition(Agent,prohibition(A,B))),
    @external(ctMW,notifyAgent(Agent,prohibition(A,B)),_),!.
    
-@norm_notification((@countsas,norm(_,Agent,_,obligation(A,Deadline,C)),_)):-
+@norm_notification((@countsas,norm(_,Group,_,obligation(A,Deadline,C)),_)):-
+   group(Group),
+   ra(Group,Agent),
    not(@sent_obligation(Agent,obligation(A,Deadline,C))),					// This should ensure that obligation is only send once
    assert(@sent_obligation(Agent,obligation(A,Deadline,C))),
    @external(ctMW,notifyAgent(Agent,obligation(A,Deadline,C)),_),!. // Deadline is replaced with the resolved value
-
+   
+@norm_notification((@countsas,norm(_,Agent,_,obligation(A,Deadline,C)),_)):-
+   not(@sent_obligation(Agent,obligation(A,Deadline,C))),					// This should ensure that obligation is only send once
+   assert(@sent_obligation(Agent,obligation(A,Deadline,C))),
+   @external(ctMW,notifyAgent(Agent,obligation(A,Deadline,C)),_),!.
 @norm_notification(_,_).
 		
 

@@ -164,6 +164,9 @@ adoptObligation(south(X,Y,_), D, reduce(_,Value)) <- true | {
 adoptObligation(surround(X,Y), D, reduce(Group,Sanction)) <- true | {
     adopta(surround(X,Y) : D -> reduce(Sanction))
 }
+adoptObligation(group_surround(X,Y), D, reduce(Group,Sanction)) <- true | {
+    adopta(group_surround(X,Y) : D -> reduce(Sanction))
+}
 adoptObligation(atleast(agent_sanctions(G),Sanction), D, sanction_group(Group,Sanction)) <- true | {
     adopta(sanction_agents(agent_sanctions(G),Sanction) : D -> reduce(Sanction))
 }

@@ -791,7 +791,12 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		APLList goalPos;
 
 		try {
-			RowCol rc = cgs.getBoard().getGoalLocations(t).get(0);
+			RowCol rc;
+			if (t == -1)
+				rc = cgs.getBoard().getGoalLocations().get(0);
+			else			
+				rc = cgs.getBoard().getGoalLocations(t).get(0);
+			
 			int col = rc.col;
 			//System.out.println("[CTAH] " + agentname + " received GoalPosCol: " + col);
 			int row = rc.row;
@@ -889,6 +894,18 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			System.out.println("[CTAH] moveStepToGoal returns: " + false);
 			return new APLIdent("false");
 		}
+	}
+
+	public void setGoal(String agentname, APLNum apl_id, APLNum xcoor,
+			APLNum ycoor, APLNum gx, APLNum gy) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setGoal(String agentname, APLNum apl_id, APLIdent color,
+			APLIdent type) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

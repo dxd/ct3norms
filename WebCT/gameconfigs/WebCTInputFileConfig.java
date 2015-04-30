@@ -111,6 +111,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < numberOfConfigFiles; i++) {
+			ph.addPhase("Norm Phase", 20);
 			ph.addPhase("Communication Phase", 20);
 			ph.addPhase("Movement Phase", 20);
 			ph.addPhase("Feedback Phase", 1);
