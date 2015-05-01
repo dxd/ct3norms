@@ -170,9 +170,6 @@ check(GN):-
 	sum(Ss,T), //sumlist
 	sanction(GN,GS),
 	GS =< T.
-	
-violated(a10).
-violated(a40).
 
 do_sanction([not(H)|T]):- retract(H),do_sanction(T).
 do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
@@ -220,7 +217,7 @@ Effects:
 {true} response(Id,X,Clock) {response(Id,X,Clock)}
 {tile(X,Y,Color,B)} tile(cell(X1,Y1),Color1,Clock) {not tile(X,Y,Color,B), tile(X1,Y1,Color1,Clock)}
 {true} tile(cell(X,Y),Color,Clock) {tile(X,Y,Color,Clock)}
-{chip(A,Color,Y,C)} chip(A,Color1,X,Clock) {not chip(A,Color,Y,C),chip(A,Color1,X,Clock)}
+{chip(A,Color,Y,C)} chip(A,Color1,X,Clock) {not chip(A,Color,Y,C), chip(A,Color1,X,Clock)}
 {true} chip(A,Color,X,Clock) {chip(A,Color,X,Clock)}
 
 //{agentSTask(Agent,X,Y,goal(GX,GY))} setGoal(Agent,X,Y,GX,GY,Clock) {not agentSTask(Agent,X,Y,goal(GX,GY))}

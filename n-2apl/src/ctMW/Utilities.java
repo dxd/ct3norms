@@ -291,9 +291,9 @@ public class Utilities {
 			return new APLFunction("position", new Term[]{new APLNum(position.cell.x),new APLNum(position.cell.x),new APLNum(position.clock)}); // construct result
 		} 
 		else if(timeEntry instanceof Chip){ // reading(at(X,Y),Value,Agent,Clock)
-			Chip reading = (Chip) timeEntry;
+			Chip chip = (Chip) timeEntry;
 			//Term term = constructTerm("at("+reading.cell.x+","+reading.cell.y+")");
-			return new APLFunction("reading", new Term[]{new APLNum(reading.number.intValue()),new APLIdent(reading.agent),new APLNum(reading.clock)}); // construct result
+			return new APLFunction("chip", new Term[]{new APLIdent(chip.agent),new APLIdent(chip.color),new APLNum(chip.getNumber().intValue()),new APLNum(chip.clock)}); // construct result
 		} 
 		else if(timeEntry instanceof Obligation){ //obligation(Goal, Deadline, Sanction)
 			Obligation o = (Obligation) timeEntry; 
