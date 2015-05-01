@@ -58,7 +58,7 @@ BeliefUpdates:
 {true}														Sent(TYPE,ID,STATUS)		    {sent(TYPE,ID,STATUS)}
 // sent an answer
 {received(proposal,ID,open)}								Sent(ANSWER,ID)					{not received(proposal,ID,open), received(proposal,ID,closed(ANSWER))}
-{surround(X,Y) or not surround(X,Y)}						Surround(NX,NY)					{not surround(X,Y), surround(NX,NY)}
+{gsurround(X,Y) or not gsurround(X,Y)}						Surround(NX,NY)					{not gsurround(X,Y), gsurround(NX,NY)}
 
 
 Plans:
@@ -116,30 +116,38 @@ makeReading(X,Y) <- true | {
     
 } : 100
 
-group_surround(X,Y) <- true | {
+surround(X,Y) <- true | {
 	[
 	Surround(X,Y);
 	sendSouth(a10,X,Y);
 	sendWest(a20,X,Y);
 	sendEast(a30,X,Y);
 	sendNorth(a40,X,Y);
-	dropgoal(group_surround(X,Y))
+	color(green,a10,yes);
+	color(green,a20,yes);
+	color(green,a30,yes);
+	color(green,a40,yes);
+	color(green,a10,no);
+	color(green,a20,no);
+	color(green,a30,no);
+	color(green,a40,no);
+	dropgoal(surround(X,Y))
 	]
 }
 
 
 PC-rules:
 
-sendNorth(Agent,X,Y) <- raise(Y,Y1) and surround(GX,GY) | {
+sendNorth(Agent,X,Y) <- raise(Y,Y1) and gsurround(GX,GY) | {
 	@ctenv( setGoal(Agent,X,Y1,GX,GY),L)
 }
-sendSouth(Agent,X,Y) <- lower(Y,Y1) and surround(GX,GY) | {
+sendSouth(Agent,X,Y) <- lower(Y,Y1) and gsurround(GX,GY) | {
 	@ctenv( setGoal(Agent,X,Y1,GX,GY),L)
 }
-sendEast(Agent,X,Y) <- raise(X,X1) and surround(GX,GY) | {
+sendEast(Agent,X,Y) <- raise(X,X1) and gsurround(GX,GY) | {
 	@ctenv( setGoal(Agent,X1,Y,GX,GY),L)
 }
-sendWest(Agent,X,Y) <- lower(X,X1) and surround(GX,GY) | {
+sendWest(Agent,X,Y) <- lower(X,X1) and gsurround(GX,GY) | {
 	@ctenv( setGoal(Agent,X1,Y,GX,GY),L)
 }
 

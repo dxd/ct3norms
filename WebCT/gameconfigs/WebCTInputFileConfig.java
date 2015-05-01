@@ -176,9 +176,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	@Override
 	public void beginPhase(String phasename) {
 		System.out.println("A New Phase Began: " + phasename);
-
-		if (phasename.equals("Communication Phase")) {			
-
+		if (phasename.equals("Norm Phase")) {		
 			try {
 
 				FileReader fr = new FileReader("lib/adminconfig/board_"
@@ -194,6 +192,27 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					//player.setTeamId(3); // set teams for players
 					player.setChips(getChipSet(gs.getGamePalette(), in));
 					player.setPosition(getPosition(in));
+					player.setCommunicationAllowed(false);
+					player.setTransfersAllowed(true);
+					player.setMovesAllowed(false);
+				}
+								
+				
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if (phasename.equals("Communication Phase")) {			
+
+			try {
+
+				
+
+				// for all the players
+				for (int i = 0; i < gs.getPlayers().size();i++) {
+					PlayerStatus player = gs.getPlayerByPerGameId(i);
+					//player.setTeamId(3); // set teams for players
 					player.setCommunicationAllowed(true);
 					player.setTransfersAllowed(true);
 					player.setMovesAllowed(false);
@@ -245,7 +264,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			// end game
 			gs.setEnded();
 		} else
-		if (phaseName.equals("Communication Phase")) {
+		if (phaseName.equals("Norm Phase")) {
 			CurrentInputFileIndex++;
 				//doAutomaticMovement(s);
 

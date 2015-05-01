@@ -21,9 +21,9 @@ norm(
 %agents group norms from RA
     
 norm(
-    group_task(group_surround(g),Clock),
+    group_task(group_surround(g)),
     Agent, // the subject agent
-    ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),Clock)), // precondition - add triggering condition
+    ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY))), // precondition - add triggering condition
     obligation([at(X,Y,agent)],now + 1,[reduce(Agent, 500)]) // prohibition format
     ).  
 
@@ -220,10 +220,12 @@ Effects:
 {true} response(Id,X,Clock) {response(Id,X,Clock)}
 {tile(X,Y,Color,B)} tile(cell(X1,Y1),Color1,Clock) {not tile(X,Y,Color,B), tile(X1,Y1,Color1,Clock)}
 {true} tile(cell(X,Y),Color,Clock) {tile(X,Y,Color,Clock)}
+{chip(A,Color,Y,C)} chip(A,Color1,X,Clock) {not chip(A,Color,Y,C),chip(A,Color1,X,Clock)}
 {true} chip(A,Color,X,Clock) {chip(A,Color,X,Clock)}
 
-{true} setGoal(Agent,X,Y,GX,GY,Clock) {agentSTask(Agent,X,Y,goal(GX,GY),Clock)}
-{true} color(Agent,Color,Type) {color(Agent,Color,Type)}
+//{agentSTask(Agent,X,Y,goal(GX,GY))} setGoal(Agent,X,Y,GX,GY,Clock) {not agentSTask(Agent,X,Y,goal(GX,GY))}
+{true} setGoal(Agent,X,Y,GX,GY,Clock) {agentSTask(Agent,X,Y,goal(GX,GY))}
+{true} color(Agent,Color,Type,C) {color(Agent,Color,Type)}
 
 //{points(Agent,OldValue)} points(Agent, Clock, Value) {not points(Agent,OldValue), points(Agent,Value)}
 //{true} points(Agent, Clock, Value) {points(Agent,Value,Clock)}

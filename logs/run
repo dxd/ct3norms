@@ -1,0 +1,353 @@
+% Rules with string id: detached
+% detached/1:
+detached(group_surround(g))
+detached(group_task(group_surround(g),6.0))
+detached(group_task(group_surround(g),10.0))
+detached(group_task(group_surround(g),16.0))
+
+% Rules with string id: @update
+% @update/3:
+@update((true),tuple_space_changed,[plus(true)|[]])
+@update((clock(A)),time(B),[min(clock(A)),plus(clock(B))|[]])
+@update((true),time(A),[plus(clock(A))|[]])
+@update((at(A,B,C)),position(C,cell(D,E),F),[min(at(A,B,C)),plus(at(D,E,C))|[]])
+@update((true),position(A,cell(B,C),D),[plus(at(B,C,A))|[]])
+@update((true),goal(cell(A,B),null,C),[plus(goal(A,B,C))|[]])
+@update((true),goal(cell(A,B),C,D),[plus(goal(A,B,C,D))|[]])
+@update((true),proposal(A,B,C,D),[plus(proposal(A,B,C,D))|[]])
+@update((true),response(A,B,C),[plus(response(A,B,C))|[]])
+@update((tile(A,B,C,D)),tile(cell(E,F),G,H),[min(tile(A,B,C,D)),plus(tile(E,F,G,H))|[]])
+@update((true),tile(cell(A,B),C,D),[plus(tile(A,B,C,D))|[]])
+@update((true),chip(A,B,C,D),[plus(chip(A,B,C,D))|[]])
+@update((true),setGoal(A,B,C,D,E,F),[plus(agentSTask(A,B,C,goal(D,E),F))|[]])
+@update((true),color(A,B,C,D),[plus(color(A,B,C,D))|[]])
+
+% Rules with string id: norm
+% norm/4:
+norm(group_surround(g),g,(group(g),goal(A,B,C)),obligation([surround(A,B)|[]],+(now,1.0),[reduce(g,500.0)|[]]))
+norm(group_task(group_surround(g),A),B,(pursuer(B),detached(group_surround(g)),goal(C,D,E),agentSTask(B,F,G,goal(C,D),A)),obligation([at(F,G,agent)|[]],+(now,1.0),[reduce(B,500.0)|[]]))
+norm(not_enter_tile(A),A,(pursuer(A),color(A,B,no),tile(C,D,B)),prohibition([at(C,D,A)|[]],[reduce(A,50.0)|[]]))
+norm(enter_tile(A),A,(pursuer(A),color(A,B,yes),tile(C,D,B)),obligation([at(C,D,A)|[]],+(now,10.0),[reduce(A,50.0)|[]]))
+
+% Rules with string id: group
+% group/1:
+group(g)
+
+% Rules with string id: ra
+% ra/2:
+ra(g,a10)
+
+% Rules with string id: @sent_obligation
+% @sent_obligation/2:
+@sent_obligation(a10,obligation([surround(2.0,2.0)|[]],5.0,[reduce(g,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],7.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],7.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],7.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],7.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([surround(2.0,2.0)|[]],11.0,[reduce(g,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],11.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],11.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],11.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],11.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],12.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],12.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],12.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],12.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],13.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],13.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],13.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],13.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([surround(2.0,2.0)|[]],17.0,[reduce(g,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],17.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],17.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],17.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],17.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],18.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],18.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],18.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],18.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],19.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],19.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],19.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],19.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],20.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],20.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],20.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],20.0,[reduce(a40,500.0)|[]]))
+@sent_obligation(a10,obligation([at(2.0,1.0,agent)|[]],21.0,[reduce(a10,500.0)|[]]))
+@sent_obligation(a20,obligation([at(1.0,2.0,agent)|[]],21.0,[reduce(a20,500.0)|[]]))
+@sent_obligation(a30,obligation([at(3.0,2.0,agent)|[]],21.0,[reduce(a30,500.0)|[]]))
+@sent_obligation(a40,obligation([at(2.0,3.0,agent)|[]],21.0,[reduce(a40,500.0)|[]]))
+
+% Rules with string id: clock
+% clock/1:
+clock(25.0)
+
+% Rules with string id: time_past
+% time_past/1:
+time_past(A) :- clock(B),>(B,A).
+
+% Rules with string id: listTrue
+% listTrue/1:
+listTrue([A|B]) :- A,listTrue(B).
+listTrue([])
+
+% Rules with string id: viol
+% viol/1:
+viol(agent_directed(group_surround(g),g,obligation([surround(2.0,2.0)|[]],+(now,1.0),[reduce(g,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a10,obligation([at(2.0,1.0,agent)|[]],+(now,1.0),[reduce(a10,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a20,obligation([at(1.0,2.0,agent)|[]],+(now,1.0),[reduce(a20,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a30,obligation([at(3.0,2.0,agent)|[]],+(now,1.0),[reduce(a30,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a40,obligation([at(2.0,3.0,agent)|[]],+(now,1.0),[reduce(a40,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),10.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),10.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),10.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),10.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])))
+viol(agent_directed(group_surround(g),g,obligation([surround(2.0,2.0)|[]],A,[reduce(g,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),6.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),16.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),16.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),16.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])))
+viol(agent_directed(group_task(group_surround(g),16.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])))
+
+% Rules with string id: goal
+% goal/3:
+goal(2.0,2.0,0.0)
+goal(2.0,2.0,10.0)
+goal(2.0,2.0,16.0)
+
+% Rules with string id: surround
+% surround/2:
+surround(A,B) :-  is (C,+(A,1.0)), is (D,+(B,1.0)), is (E,-(A,1.0)), is (F,-(B,1.0)),at(C,B,G),at(E,B,H),at(A,D,I),at(A,F,J).
+
+% Rules with string id: pursuer
+% pursuer/1:
+pursuer(a10)
+pursuer(a20)
+pursuer(a30)
+pursuer(a40)
+
+% Rules with string id: agentSTask
+% agentSTask/5:
+agentSTask(a10,2.0,1.0,goal(2.0,2.0),6.0)
+agentSTask(a20,1.0,2.0,goal(2.0,2.0),6.0)
+agentSTask(a30,3.0,2.0,goal(2.0,2.0),6.0)
+agentSTask(a40,2.0,3.0,goal(2.0,2.0),6.0)
+agentSTask(a10,2.0,1.0,goal(2.0,2.0),10.0)
+agentSTask(a20,1.0,2.0,goal(2.0,2.0),10.0)
+agentSTask(a30,3.0,2.0,goal(2.0,2.0),10.0)
+agentSTask(a40,2.0,3.0,goal(2.0,2.0),10.0)
+agentSTask(a10,2.0,1.0,goal(2.0,2.0),16.0)
+agentSTask(a20,1.0,2.0,goal(2.0,2.0),16.0)
+agentSTask(a30,3.0,2.0,goal(2.0,2.0),16.0)
+agentSTask(a40,2.0,3.0,goal(2.0,2.0),16.0)
+
+% Rules with string id: at
+% at/3:
+at(0.0,4.0,a20)
+at(2.0,3.0,a40)
+at(2.0,1.0,a10)
+at(3.0,2.0,a30)
+
+% Rules with string id: color
+% color/4:
+color(a10,green,yes,6.0)
+color(a20,green,yes,6.0)
+color(a30,green,yes,6.0)
+color(a40,green,yes,7.0)
+color(a10,green,no,7.0)
+color(a20,green,no,7.0)
+color(a30,green,no,7.0)
+color(a40,green,no,7.0)
+color(a10,green,yes,10.0)
+color(a20,green,yes,10.0)
+color(a30,green,yes,10.0)
+color(a40,green,yes,10.0)
+color(a10,green,no,10.0)
+color(a20,green,no,10.0)
+color(a30,green,no,10.0)
+color(a40,green,no,10.0)
+color(a10,green,yes,16.0)
+color(a20,green,yes,16.0)
+color(a30,green,yes,16.0)
+color(a40,green,yes,16.0)
+color(a10,green,no,16.0)
+color(a20,green,no,16.0)
+color(a30,green,no,16.0)
+color(a40,green,no,16.0)
+
+% Rules with string id: hierachical
+% hierachical/1:
+hierachical(group_task(A))
+
+% Rules with string id: group_member
+% group_member/2:
+group_member(g,a10)
+group_member(g,a20)
+group_member(g,a30)
+group_member(g,a40)
+
+% Rules with string id: points
+% points/2:
+points(a10,1000.0)
+points(a20,1000.0)
+points(a30,1000.0)
+points(a40,1000.0)
+points(c1,1000.0)
+points(g,1000.0)
+
+% Rules with string id: time_since
+% time_since/1:
+time_since(A) :- clock(B),>(A,B).
+
+% Rules with string id: not_area
+% not_area/2:
+not_area(A,B) :-  is (A,20.0),int(B),>(B,0.0),<(B,;(20.0,:(not_area(A,B), is (-(B),20.0)))),int(A),>(A,0.0),<(A,;(20.0,:(area(A,B),-(int(A))))),int(B),>(A,0.0),>(B,0.0),<(A,21.0),<(B,21.0).
+
+% Rules with string id: water
+% water/2:
+water(1.0,1.0)
+water(2.0,2.0)
+water(3.0,3.0)
+water(4.0,4.0)
+
+% Rules with string id: east
+% east/4:
+east(A,B,C,B) :-  is (C,+(A,1.0)).
+
+% Rules with string id: west
+% west/4:
+west(A,B,C,B) :-  is (C,-(A,1.0)).
+
+% Rules with string id: north
+% north/4:
+north(A,B,A,C) :-  is (C,+(B,1.0)).
+
+% Rules with string id: south
+% south/4:
+south(A,B,A,C) :-  is (C,-(B,1.0)).
+
+% Rules with string id: sanction
+% sanction/2:
+sanction([reduce(A,B)|[]],viol(agent_directed(C,A,prohibition(D,E)))) :- points(A,F), is (G,-(F,B)),clock(H),assert(sanctioned(viol(agent_directed(C,A,prohibition(D,E))))),@external(ctMW,write(points(A,H,G),-1.0),I).
+sanction([reduce(A,B)|[]],viol(agent_directed(C,A,obligation(D,E,F)))) :- points(A,G), is (H,-(G,B)),clock(I),assert(sanctioned(viol(agent_directed(C,A,obligation(D,E,F))))),@external(ctMW,write(points(A,I,H),-1.0),J).
+sanction([reduce(A,B)|[]],viol(agent_directed(C,D,obligation(E,F,G)))) :- group(A),sanction_group(g,1000.0),assert(sanctioned(viol(agent_directed(C,D,obligation(E,F,G))))).
+
+% Rules with string id: sanctioned
+% sanctioned/1:
+sanctioned(viol(agent_directed(group_task(group_surround(g),6.0),a10,obligation([at(2.0,1.0,agent)|[]],+(now,1.0),[reduce(a10,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),6.0),a20,obligation([at(1.0,2.0,agent)|[]],+(now,1.0),[reduce(a20,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),6.0),a30,obligation([at(3.0,2.0,agent)|[]],+(now,1.0),[reduce(a30,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),6.0),a40,obligation([at(2.0,3.0,agent)|[]],+(now,1.0),[reduce(a40,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_surround(g),g,obligation(A,B,[reduce(g,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),10.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),10.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),10.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),10.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),16.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),16.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),16.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]]))))
+sanctioned(viol(agent_directed(group_task(group_surround(g),16.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]]))))
+
+% Rules with string id: sanction_g
+% sanction_g/2:
+sanction_g(A,B) :- pursuer(A),points(A,C), is (D,-(C,B)),clock(E),@external(ctMW,write(points(A,E,D),-1.0),F).
+
+% Rules with string id: sanction_group
+% sanction_group/2:
+sanction_group([reduce(A,B)|[]],viol(agent_directed(C,D,obligation(E,F,G)))) :- sanction_policy(A,H),policy1(A,B,C),assert(sanctioned(viol(agent_directed(C,D,obligation(I,J,G))))).
+
+% Rules with string id: do_reduce_health
+% do_reduce_health/2:
+do_reduce_health(A,B) :- pursuer(A),points(A,C), is (D,-(C,B)),clock(E),@external(ctMW,write(points(A,E,D),-1.0),F).
+
+% Rules with string id: check
+% check/1:
+check(A) :- setof(B,(group_member(C,D),violated(D,B)),E),sum(E,F),sanction(A,G),=<(G,F).
+
+% Rules with string id: violated
+% violated/1:
+violated(a10)
+violated(a40)
+
+% Rules with string id: do_sanction
+% do_sanction/1:
+do_sanction([not(A)|B]) :- retract(A),do_sanction(B).
+do_sanction([A|B]) :- uniqueassertz(A),do_sanction(B).
+do_sanction([])
+% do_sanction/2:
+do_sanction([A|B],C) :- sanction_g(A,C),do_sanction(B,C).
+do_sanction([],A)
+
+% Rules with string id: sanction_policy
+% sanction_policy/2:
+sanction_policy(g,policy1)
+
+% Rules with string id: policy1
+% policy1/3:
+policy1(A,B,C) :- findall(D,(violated(group_task(C),D),group_member(A,D)),E),length(E,F),assert(length(F)), is (G,/(B,F)),assert(povedlose(G)),do_sanction(E,G).
+
+% Rules with string id: povedlose
+% povedlose/1:
+povedlose(Infinity)
+
+% Rules with string id: length
+% length/1:
+length(0.0)
+
+% Rules with string id: @scheme
+% @scheme/8:
+@scheme(agent_directed(A,B,prohibition(C,D)),(@countsas,norm(A,B,E,prohibition(C,D)),E),(listTrue(C)),false,(false),false,[plus(viol(agent_directed(A,B,prohibition(C,D))))|[]],[plus(obey(agent_directed(A,B,prohibition(C,D))))|[]])
+@scheme(@imply_rule(0.0),(@sanction,reduce(A,B),do_reduce_health(A,B)),true,false,false,false,[min(reduce(A,B))|[]],[])
+@scheme(@imply_rule(1.0),(@sanction,viol(agent_directed(A,B,prohibition(C,D))),not(sanctioned(viol(agent_directed(A,B,prohibition(C,D))))),sanction(D,viol(agent_directed(A,B,prohibition(C,D))))),true,false,false,false,[min(viol(agent_directed(A,B,prohibition(C,D))))|[]],[])
+@scheme(@imply_rule(2.0),(@sanction,viol(agent_directed(A,B,obligation(C,D,E))),not(hierachical(A)),not(group(B)),not(sanctioned(viol(agent_directed(A,B,obligation(C,D,E))))),sanction(E,viol(agent_directed(A,B,obligation(C,D,E))))),true,false,false,false,[min(viol(agent_directed(A,B,obligation(C,D,E))))|[]],[])
+@scheme(@imply_rule(3.0),(@sanction,viol(agent_directed(A,B,obligation(C,D,E))),hierachical(A),not(group(B)),not(violated(A,B)),assert(violated(A,B))),true,false,false,false,[min(viol(agent_directed(A,B,obligation(C,D,E))))|[]],[])
+@scheme(@imply_rule(4.0),(@sanction,viol(agent_directed(A,B,obligation(C,D,E))),group(B),not(sanctioned(viol(agent_directed(A,B,obligation(C,D,E))))),sanction_group(E,viol(agent_directed(A,B,obligation(C,D,E))))),true,false,false,false,[min(viol(agent_directed(A,B,obligation(C,D,E))))|[]],[])
+@scheme(@imply_rule(5.0),(@sanction,obey(agent_directed(A,B,C))),true,false,false,false,[min(obey(agent_directed(A,B,C)))|[]],[])
+@scheme(agent_directed(A,B,obligation(C,D,E)),(@countsas,norm(A,B,F,obligation(C,G,E)),F),false,(listTrue(C)),(time_past(D)),false,[plus(viol(agent_directed(A,B,obligation(C,D,E))))|[]],[plus(obey(agent_directed(A,B,obligation(C,D,E))))|[]])
+
+% Rules with string id: @ni
+% @ni/3:
+@ni(agent_directed(group_surround(g),g,obligation([surround(2.0,2.0)|[]],+(now,1.0),[reduce(g,500.0)|[]])),(@countsas,norm(group_surround(g),g,(group(g),goal(2.0,2.0,0.0)),obligation([surround(2.0,2.0)|[]],5.0,[reduce(g,500.0)|[]])),(group(g),goal(2.0,2.0,0.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a10,obligation([at(2.0,1.0,agent)|[]],+(now,1.0),[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),6.0)),obligation([at(2.0,1.0,agent)|[]],7.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a20,obligation([at(1.0,2.0,agent)|[]],+(now,1.0),[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),6.0)),obligation([at(1.0,2.0,agent)|[]],7.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a30,obligation([at(3.0,2.0,agent)|[]],+(now,1.0),[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),6.0)),obligation([at(3.0,2.0,agent)|[]],7.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a40,obligation([at(2.0,3.0,agent)|[]],+(now,1.0),[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),6.0)),obligation([at(2.0,3.0,agent)|[]],7.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_surround(g),g,obligation([surround(2.0,2.0)|[]],+(now,1.0),[reduce(g,500.0)|[]])),(@countsas,norm(group_surround(g),g,(group(g),goal(2.0,2.0,10.0)),obligation([surround(2.0,2.0)|[]],11.0,[reduce(g,500.0)|[]])),(group(g),goal(2.0,2.0,10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a10,obligation([at(2.0,1.0,agent)|[]],+(now,1.0),[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),6.0)),obligation([at(2.0,1.0,agent)|[]],11.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a20,obligation([at(1.0,2.0,agent)|[]],+(now,1.0),[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),6.0)),obligation([at(1.0,2.0,agent)|[]],11.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a30,obligation([at(3.0,2.0,agent)|[]],+(now,1.0),[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),6.0)),obligation([at(3.0,2.0,agent)|[]],11.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a40,obligation([at(2.0,3.0,agent)|[]],+(now,1.0),[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),6.0)),obligation([at(2.0,3.0,agent)|[]],11.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),10.0)),obligation([at(2.0,1.0,agent)|[]],12.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),10.0)),obligation([at(1.0,2.0,agent)|[]],12.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),10.0)),obligation([at(3.0,2.0,agent)|[]],12.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),10.0)),obligation([at(2.0,3.0,agent)|[]],12.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),10.0)),obligation([at(2.0,1.0,agent)|[]],13.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),10.0)),obligation([at(1.0,2.0,agent)|[]],13.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),10.0)),obligation([at(3.0,2.0,agent)|[]],13.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),10.0)),obligation([at(2.0,3.0,agent)|[]],13.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_surround(g),g,obligation([surround(2.0,2.0)|[]],A,[reduce(g,500.0)|[]])),(@countsas,norm(group_surround(g),g,(group(g),goal(2.0,2.0,16.0)),obligation([surround(2.0,2.0)|[]],17.0,[reduce(g,500.0)|[]])),(group(g),goal(2.0,2.0,16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),6.0)),obligation([at(2.0,1.0,agent)|[]],17.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),6.0)),obligation([at(1.0,2.0,agent)|[]],17.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),6.0)),obligation([at(3.0,2.0,agent)|[]],17.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),6.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),6.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),6.0)),obligation([at(2.0,3.0,agent)|[]],17.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),6.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),16.0)),obligation([at(2.0,1.0,agent)|[]],18.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),16.0)),obligation([at(1.0,2.0,agent)|[]],18.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),16.0)),obligation([at(3.0,2.0,agent)|[]],18.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),16.0)),obligation([at(2.0,3.0,agent)|[]],18.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,0.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),16.0)),obligation([at(2.0,1.0,agent)|[]],19.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),16.0)),obligation([at(1.0,2.0,agent)|[]],19.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),16.0)),obligation([at(3.0,2.0,agent)|[]],19.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),16.0)),obligation([at(2.0,3.0,agent)|[]],19.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,10.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),10.0)),obligation([at(2.0,1.0,agent)|[]],20.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),10.0)),obligation([at(1.0,2.0,agent)|[]],20.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),10.0)),obligation([at(3.0,2.0,agent)|[]],20.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),10.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),10.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),10.0)),obligation([at(2.0,3.0,agent)|[]],20.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),10.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a10,obligation([at(2.0,1.0,agent)|[]],A,[reduce(a10,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a10,(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),16.0)),obligation([at(2.0,1.0,agent)|[]],21.0,[reduce(a10,500.0)|[]])),(pursuer(a10),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a10,2.0,1.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a20,obligation([at(1.0,2.0,agent)|[]],A,[reduce(a20,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a20,(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),16.0)),obligation([at(1.0,2.0,agent)|[]],21.0,[reduce(a20,500.0)|[]])),(pursuer(a20),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a20,1.0,2.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a30,obligation([at(3.0,2.0,agent)|[]],A,[reduce(a30,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a30,(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),16.0)),obligation([at(3.0,2.0,agent)|[]],21.0,[reduce(a30,500.0)|[]])),(pursuer(a30),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a30,3.0,2.0,goal(2.0,2.0),16.0))),keep)
+@ni(agent_directed(group_task(group_surround(g),16.0),a40,obligation([at(2.0,3.0,agent)|[]],A,[reduce(a40,500.0)|[]])),(@countsas,norm(group_task(group_surround(g),16.0),a40,(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),16.0)),obligation([at(2.0,3.0,agent)|[]],21.0,[reduce(a40,500.0)|[]])),(pursuer(a40),detached(group_surround(g)),goal(2.0,2.0,16.0),agentSTask(a40,2.0,3.0,goal(2.0,2.0),16.0))),keep)
+

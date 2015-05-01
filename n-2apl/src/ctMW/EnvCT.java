@@ -430,23 +430,28 @@ public class EnvCT  extends Environment implements ExternalTool {
 		return client.getRole(agentname,apl_id);
 	}
 
-	public void makeProposal(String agentname, APLNum responder) {
+	public Term makeProposal(String agentname, APLNum responder) {
 		CTAgentHandler client = agents.get(agentname);
 		client.makeProposal(agentname,responder);
+		return new APLNum(1);
 	}
 	
-	public void setGoal(String agentname, APLIdent agent, APLNum xcoor, APLNum ycoor,APLNum gx, APLNum gy) {
+	public Term setGoal(String agentname, APLIdent agent, APLNum xcoor, APLNum ycoor,APLNum gx, APLNum gy) {
 		//CTAgentHandler client = agents.get(agentname);
 		//client.setGoal(agentname,apl_id,xcoor,ycoor,gx,gy);
 		
 		SetGoal st = new SetGoal(agent.getName(),new Cell(xcoor.toInt(),ycoor.toInt()),new Cell(gx.toInt(),gy.toInt()),clock);
+		System.out.println("agent writes: "+st.toString());
 		space.write(st);
+		return new APLNum(1);
 	}
 	
-	public void setColor(String agentname, APLIdent agent, APLIdent color, APLIdent type) {
+	public Term setColor(String agentname, APLIdent agent, APLIdent color, APLIdent type) {
 		CTAgentHandler client = agents.get(agentname);
 		Color c = new Color(agent.getName(),color.getName(),type.getName(),clock);
+		System.out.println("agent writes: "+c.toString());
 		space.write(c);
+		return new APLNum(1);
 	}
 
 	/**

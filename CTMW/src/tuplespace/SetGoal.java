@@ -84,11 +84,11 @@ public class SetGoal implements TimeEntry {
 
 	@Override
 	public String toPrologString() {
-		return "setGoal(" + agent + "," + cell.x +"," + cell.y +"," + goal.x +"," + goal.y + "," + clock + ")";
+		return "setGoal(" + agent + "," + cell.x +"," + cell.y +"," + goal.x +"," + goal.y + "," + clock + ").";
 	}
 	@Override
 	public String toString() {
-		return "GroupTask [id=" + id + ", agent=" + agent + ", cell=" + cell
+		return "SetGoal [id=" + id + ", agent=" + agent + ", cell=" + cell
 				+ ", goal=" + goal + ", clock=" + clock + ", time=" + time
 				+ "]";
 	}
