@@ -15,7 +15,7 @@ norm(
     group_surround(g),
     g, // the subject agent
     ( group(g), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 1,[reduce(g,500)]) // prohibition format
+    obligation([surround(X,Y)],now + 6,[reduce(g,500)]) // prohibition format
     ).
     
 %agents group norms from RA
@@ -24,7 +24,7 @@ norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
     ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY))), // precondition - add triggering condition
-    obligation([at(X,Y,agent)],now + 1,[reduce(Agent, 500)]) // prohibition format
+    obligation([at(X,Y,Agent)],now + 5,[reduce(Agent, 500)]) // prohibition format
     ).  
 
 %individual prohibitions to use colored tiles
@@ -40,7 +40,7 @@ norm(
 enter_tile(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), color(Thing,Color,yes), tile(X,Y,Color)), // precondition
-obligation([at(X,Y,Thing)],now + 10,[reduce(Thing,50)]) // prohibition format
+obligation([at(X,Y,Thing)],now + 2,[reduce(Thing,50)]) // prohibition format
 ).
 
 hierachical(group_task(_)).
@@ -182,8 +182,9 @@ do_sanction([],_).
 sanction_policy(g,policy1).
 policy1(Group,P,Label):-
 //    assert(test(2)),
-	findall(M,(violated(group_task(Label),M),group_member(Group,M)),Vs),
+	findall(M,(violated(group_task(Label),M),group_member(g,M)),Vs),
 //	assert(povedlose(x))
+//	assert(Label),
 	length(Vs,L),
 	assert(length(L)),
 	S is P / L,
@@ -203,7 +204,7 @@ sanction_group([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(List
 //	!.
 
 Effects:
-{true} tuple_space_changed {true} // causes compliance checking
+//{true} tuple_space_changed {true} // causes compliance checking
 
 {clock(Old)} time(New) {not clock(Old), clock(New)}
 {true} time(X) {clock(X)}

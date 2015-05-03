@@ -154,13 +154,12 @@ public class EnvCT  extends Environment implements ExternalTool {
 	 */
 	public synchronized int updateClock(int amount){
 		//if(amount>0)  oopl.handleEvent(ar_state_change, false); // clock ticked so deadlines can be passed, handleEvent causes the interpreter to check the norms
-		Time t = new Time();
-		//TimeEntry e = new TimeEntry();
 		clock++;
+		Time t = new Time(clock);
+		//TimeEntry e = new TimeEntry();		
 		//System.out.println(clock);
-		t.setClock(clock);
+		//t.setClock(clock);
 		space.write(t);
-
 		return clock;
 	}
 

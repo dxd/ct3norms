@@ -87,10 +87,10 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		System.out.println("game id= " + gs.getGameId());
 
 		GamePalette gp = new GamePalette();
-		gp.add("red");
+		//gp.add("red");
 		gp.add("green");
-		gp.add("purple");
-		gp.add("orange");
+		//gp.add("purple");
+		//gp.add("orange");
 		gs.setGamePalette(gp);
 		gs.setScoring(s);
 				
@@ -113,9 +113,9 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		for (int i = 0; i < numberOfConfigFiles; i++) {
 			ph.addPhase("Norm Phase", 20);
 			ph.addPhase("Communication Phase", 20);
-			ph.addPhase("Movement Phase", 20);
-			ph.addPhase("Feedback Phase", 1);
+			ph.addPhase("Movement Phase", 20);			
 		}
+		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
 		gs.setPhases(ph);
 
@@ -178,7 +178,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		System.out.println("A New Phase Began: " + phasename);
 		if (phasename.equals("Norm Phase")) {		
 			try {
-
+				//TODO remove 0 hack
 				FileReader fr = new FileReader("lib/adminconfig/board_"
 						+ 0 + ".txt");
 				Scanner in = new Scanner(fr);
@@ -260,7 +260,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	@Override
 	public void endPhase(String phaseName) {
 
-		if (phaseName.equals("Feedback Phase") && CurrentInputFileIndex == 3) {
+		if (phaseName.equals("Feedback Phase")) {
 			// end game
 			gs.setEnded();
 		} else
