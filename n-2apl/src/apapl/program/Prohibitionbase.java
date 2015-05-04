@@ -121,7 +121,7 @@ public class Prohibitionbase extends Base implements Iterable<Prohibition>{
 		ArrayList<Prohibition> prohibitions = new ArrayList<Prohibition>();
 		for (Prohibition p : sb)
 		{
-			if (p.getPriority() < priority)
+			if (p.getPriority() > priority)
 				prohibitions.add(p);
 		}
 		return prohibitions;

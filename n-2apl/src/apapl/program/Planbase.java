@@ -304,7 +304,7 @@ public class Planbase extends Base implements Iterable<PlanSeq>
 		List<PlanSeq> copy = clone().plans;
 		Collections.sort(this.plans, new Comparator<PlanSeq>(){
 	           public int compare (PlanSeq p1, PlanSeq p2){
-	               return p1.getPriority().compareTo(p2.getPriority());
+	               return p2.getPriority().compareTo(p1.getPriority());
 	           }
 	       });
 		this.plans = copy;

@@ -87,10 +87,10 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		System.out.println("game id= " + gs.getGameId());
 
 		GamePalette gp = new GamePalette();
-		//gp.add("red");
+		gp.add("red");
 		gp.add("green");
-		//gp.add("purple");
-		//gp.add("orange");
+		gp.add("purple");
+		gp.add("orange");
 		gs.setGamePalette(gp);
 		gs.setScoring(s);
 				

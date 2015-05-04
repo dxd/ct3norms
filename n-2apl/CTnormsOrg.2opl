@@ -94,11 +94,6 @@ not_area(X,Y):-
 area(X,Y):-
 	int(X), int(Y), X > 0, Y > 0, X < 21, Y < 21.
 	
-water(1,1).
-water(2,2).
-water(3,3).
-water(4,4).
-
 east(X,Y,EX,Y) :- EX is X + 1.
 west(X,Y,EX,Y) :- EX is X - 1.
 north(X,Y,X,EY) :- EY is Y + 1.
@@ -175,33 +170,26 @@ do_sanction([not(H)|T]):- retract(H),do_sanction(T).
 do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
 do_sanction([]).
 
-do_sanction([H|T],A):- sanction_g(H,A),do_sanction(T,A).
-do_sanction([],_).
+do_sanction([],S,Group,0):-
+		assert(group(Group,S)),
+		ra(Group,RA),
+		sanction_g(S,RA).
+do_sanction([H|T],A,Group,L):- sanction_g(H,A),do_sanction(T,A,Group,L).
+do_sanction([],_,Group,L).
 
 //group sanctions
 sanction_policy(g,policy1).
 policy1(Group,P,Label):-
-//    assert(test(2)),
-	findall(M,(violated(group_task(Label),M),group_member(g,M)),Vs),
-//	assert(povedlose(x))
-//	assert(Label),
+	findall(M,(violated(group_task(Label),M),group_member(Group,M)),Vs),
 	length(Vs,L),
-	assert(length(L)),
+//	assert(adelka(L)),
+//	assert(agroupTS(Group)).
 	S is P / L,
-	assert(povedlose(S)),
-//	!,
-	do_sanction(Vs,S).
-//	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
+	do_sanction(Vs,S,Group,L).
 	
 sanction_group([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))):-
-	
-	sanction_policy(Group,Policy),	
-//	assert(test(1)),
-//	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
 	policy1(Group,P,Label),
-//	call(Policy,Group,P),
 	assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
-//	!.
 
 Effects:
 //{true} tuple_space_changed {true} // causes compliance checking
@@ -216,8 +204,8 @@ Effects:
 {true} goal(cell(X,Y), Agent, Clock) {goal(X,Y, Agent,Clock)}
 {true} proposal(Id,A1,A2,Clock) {proposal(Id,A1,A2,Clock)}
 {true} response(Id,X,Clock) {response(Id,X,Clock)}
-{tile(X,Y,Color,B)} tile(cell(X1,Y1),Color1,Clock) {not tile(X,Y,Color,B), tile(X1,Y1,Color1,Clock)}
-{true} tile(cell(X,Y),Color,Clock) {tile(X,Y,Color,Clock)}
+{tile(X,Y,Color)} tile(cell(X1,Y1),Color1,Clock) {not tile(X,Y,Color), tile(X1,Y1,Color1)}
+{true} tile(cell(X,Y),Color,Clock) {tile(X,Y,Color)}
 {chip(A,Color,Y,C)} chip(A,Color1,X,Clock) {not chip(A,Color,Y,C), chip(A,Color1,X,Clock)}
 {true} chip(A,Color,X,Clock) {chip(A,Color,X,Clock)}
 
@@ -249,6 +237,5 @@ viol(agent_directed(Label,Agent,prohibition(State,Sanction))) and not sanctioned
 viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not hierachical(Label) and not group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
 viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and hierachical(Label) and not group(Agent) and not violated(Label,Agent) and assert(violated(Label,Agent)) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
 viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction_group(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-
 
 obey(agent_directed(Label,Agent,Deontic)) => not obey(agent_directed(Label,Agent,Deontic)).
