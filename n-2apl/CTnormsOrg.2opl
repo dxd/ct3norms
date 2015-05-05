@@ -184,7 +184,7 @@ policy1(Group,P,Label):-
 	length(Vs,L),
 //	assert(adelka(L)),
 //	assert(agroupTS(Group)).
-	S is P / L,
+	S is P / L,!,
 	do_sanction(Vs,S,Group,L).
 	
 sanction_group([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))):-

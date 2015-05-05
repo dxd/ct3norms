@@ -223,7 +223,6 @@ public class CTsetup {
 	}
 
 	private void writeChips(int perGameId, ChipSet chips) {
-		System.out.println("CT writes chips: ");
 		for(String color : chips.getColors()){
 			Chip c = new Chip (getAgent(perGameId),color,chips.getNumChips(color),clock);
 			System.out.println("CT writes chips: "+c.toString());
@@ -232,9 +231,25 @@ public class CTsetup {
 	}
 
 	private void writePosition(int perGameId, RowCol position) {
-		System.out.println("CT writes position: ");
 		Position p = new Position(getAgent(perGameId),new Cell(position.row,position.col),clock);
 		System.out.println("CT writes position: "+p.toString());
 		createEntry(p);
+	}
+
+	public void writeNormColor(int perGameId, String color, boolean t) {
+		String type;
+		if (t)
+			type = "yes";
+		else
+			type = "no";
+		Color c = new Color(getAgent(perGameId),color,type,clock);
+		System.out.println("CT writes color norm: "+c.toString());
+		createEntry(c);
+	}
+
+	public void writeNormGoal(int perGameId, RowCol g, RowCol oGoal) {
+		 tuplespace.SetGoal goal = new SetGoal(getAgent(perGameId),new Cell(g.row,g.col),new Cell(oGoal.row,oGoal.col),clock);
+		 System.out.println("CT writes setGoal: "+goal.toString());
+		 createEntry(goal);
 	}
 }

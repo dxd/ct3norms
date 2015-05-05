@@ -569,7 +569,7 @@ var game = {
 					<option value=7>7</option>
 					<option value=8>8</option>
 					<option value=9>9</option>
-					<option value=10>10</option>
+					<option value=10 selected="selected">10</option>
 				</select></td>
 			</tr>
 			<tr>

@@ -533,8 +533,8 @@ function createGoals() {
 	var playerID = game.getMe();
 	var goalSquare;
 	
-	
-	if (game.numOfGolals ==1 )  //Bargain Only and WebCTRevelation
+	//TODO remove hack 10...
+	if (game.numOfGolals ==10 )  //Bargain Only and WebCTRevelation
 	{
 		 var newDiv = document.createElement("div");
 		 newDiv.innerHTML = '<img src="img/goal.gif">';
@@ -730,16 +730,18 @@ function updateProgressBar() {
 		clearMessagesUI();
 		
 		switch (currentPhase) {
-		case "Revelation Phase":
+		case "Norm Phase":
 			//gil
 			//goalRevelation
 			if(game.getIsGoalRevelationAllowed())
+			//if (true)
 			{
 				clearProposalTableArea();
 				loadGoalRevelationProposalsTable();
+				//chipRevelationArea();
 				//revelationArea();
 				//gilend
-				goalRevelationPhaseEnded = true;
+				//goalRevelationPhaseEnded = true;
 				// notify
 				SetHeaderMsg('This is revelation phase, choose whether to reveal your to your opponent');
 			}
@@ -767,7 +769,7 @@ function updateProgressBar() {
 			SetHeaderMsg(game.role == 1 ? 'this is Counter Offer phase, you are the Receiver' : 'this is Counter Offer phase, you are the Proposer');
 			break;	
 		case "Movement Phase":	
-			SetHeaderMsg('auto movement... please wait');
+			SetHeaderMsg('time to move');
 			break;
 		case "Feedback Phase":			
 			SetHeaderMsg('please fill Feedback report');
@@ -1715,7 +1717,7 @@ function removeGoals(){
 // Change Player Revelation Chips after ajax update
 function UpdatePlayerRevelationChips(o) {
 	
-	if (currentPhase == "Revelation Phase") {
+	if (currentPhase == "Norm Phase") {
 		for ( var i = 0; i < o.RevelationChips.length; i++) {
 			var playerID = o.RevelationChips[i].playerID;
 			var recipient = o.RevelationChips[i].recipient;
@@ -2431,8 +2433,7 @@ function sendProposal(playerIDSend, playerIDReceive) {
 						+ "\", \"req\" : \"receive\" }";
 				var o = jQuery.parseJSON(json);
 				// put json into sendRequest
-				
-								
+												
 				sendRequest.push(o);
 				ReceivedChips.push(o);
 

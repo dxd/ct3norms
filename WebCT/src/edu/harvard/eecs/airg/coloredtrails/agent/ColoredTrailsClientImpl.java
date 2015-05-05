@@ -1373,12 +1373,12 @@ class JMSAgentClientThread extends Thread implements MessageListener {
                         subscribeToGame(msg);
                         //Check to see if thread is valid or not. If the game has ended, then we shut down the thread
                         //and wait for it to finish, then fire up a new game.
-                        if(t != null){
-                            if(t.isAlive()) {
-                                System.out.println("CT Client thread still alive");
-                            } else {
-                                System.out.println("CT Client thread is tot");
-                            }
+                      //  if(t != null){
+                      //      if(t.isAlive()) {
+                      //          System.out.println("CT Client thread still alive");
+                      //      } else {
+                     //           System.out.println("CT Client thread is tot");
+                     //       }
                             if(agent.getEnded()){
                                 System.out.println("Game is ended, so we are safe to start a new one");
                                 //shut down thread and wait for it to finish execution
@@ -1403,8 +1403,8 @@ class JMSAgentClientThread extends Thread implements MessageListener {
 
                             }
                         }
-                    }
-                }
+                   }
+              //  }
             } catch (JMSException e) {
                     log.fatal("Error receiving message:" + e);
             } 

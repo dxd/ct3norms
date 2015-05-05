@@ -6,6 +6,8 @@ import edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscour
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.ChipsRevelationDiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.DiscourseMessage;
+import edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormColorDiscourseMessage;
+import edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.*;
 
 import java.util.Date;
@@ -46,6 +48,9 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 
 	//calculated automatically in run time
 	int numberOfConfigFiles = 0;
+	
+	boolean automaticChipTransfer = true;
+	boolean EnableChipsRevelation = true;
 	
 	
 	CTsetup spaces;
@@ -119,6 +124,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		ph.setLoop(false);
 		gs.setPhases(ph);
 
+		
 		gs.setInitialized(); // will generate GAME_INITIALIZED message
 		
 		
@@ -173,6 +179,17 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		return new RowCol(row, col);
 	}
 
+	/**
+	 * Generates chipset with zero values for revelation chips
+	 */
+	protected static ChipSet getZeroSumsChipSet(GamePalette gp) {
+		ChipSet chipset = new ChipSet();
+
+		for (String color : gp.getColors())
+			chipset.set(color, 0);
+
+		return chipset;
+	}
 	@Override
 	public void beginPhase(String phasename) {
 		System.out.println("A New Phase Began: " + phasename);
@@ -195,6 +212,11 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(true);
 					player.setMovesAllowed(false);
+					
+					ChipSet revelationChips = getZeroSumsChipSet(gs.getGamePalette());
+					System.out.println("revelation chips: "
+							+ revelationChips.toString());
+					player.setRevelationChips(revelationChips);
 				}
 								
 				
@@ -206,9 +228,6 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		if (phasename.equals("Communication Phase")) {			
 
 			try {
-
-				
-
 				// for all the players
 				for (int i = 0; i < gs.getPlayers().size();i++) {
 					PlayerStatus player = gs.getPlayerByPerGameId(i);
@@ -321,6 +340,15 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		}  else if (dm instanceof BasicProposalDiscourseMessage) {
 			BasicProposalDiscourseMessage bpdm = (BasicProposalDiscourseMessage) dm;
 			spaces.writeProposal(bpdm);
+		} else if (dm instanceof NormColorDiscourseMessage) {
+			System.out.println("---- NormColorDiscourseMessage ----");
+			NormColorDiscourseMessage ncdm = (NormColorDiscourseMessage) dm;
+			String color = gs.getGamePalette().get(ncdm.getColor());
+			spaces.writeNormColor(ncdm.getToPerGameId(),color,ncdm.isNorm());	
+		}  else if (dm instanceof NormGoalDiscourseMessage) {
+			System.out.println("---- NormGoalDiscourseMessage ----");
+			NormGoalDiscourseMessage ngdm = (NormGoalDiscourseMessage) dm;
+			spaces.writeNormGoal(ngdm.getToPerGameId(),ngdm.getGoal(),ngdm.getOrigLoc());	
 		}
 		return result;
 	}
