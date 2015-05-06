@@ -407,6 +407,8 @@ function Init() {
 	isGoalRevelationSubmitted = false;
 	//set pending proposal flag
 	pendingProposalMsgID = -1;
+	
+	
 }
 
 // parse query string from url
@@ -962,7 +964,7 @@ function loadNormGoalProposalsTable() {
 			{
 				datatype : "local",
 				height : 200,
-				colNames : ['MsgType', 'Sender', 'Receiver', 'Message',  'Response' ],
+				colNames : ['MsgType', 'Sender', 'Receiver', 'Goal', 'Message',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
 					index : 'MsgType',
@@ -977,6 +979,11 @@ function loadNormGoalProposalsTable() {
 					name : 'Receiver',
 					index : 'Receiver',
 					width : 75,
+					sortable : false
+				},{
+					name : 'Goal',
+					index : 'Goal',
+					width : 90,
 					sortable : false
 				},{
 					name : 'Message',
@@ -1005,6 +1012,7 @@ function loadNormGoalProposalsTable() {
 			Sender : "<div id='divTableSender'></div>",
 			Receiver : "<div id='divTableReceiver'></div>",
 			Message : "<div id='divTableMessage'></div>", 
+			Goal : "<div id='divTableGoal'></div>",
 			Response : "<div id='divButtonPropose'></div>"
 		};
 	
@@ -1018,12 +1026,12 @@ function loadNormGoalProposalsTable() {
 	document.getElementById('divButtonPropose').appendChild(cont);	
 	
 	// append div into Messages grid
-	document.getElementById("divTableMessage").innerHTML = 'If you wish to send an obligaiton';
+	document.getElementById("divTableMessage").innerHTML = 'If you wish to send an obligation';
 	document.getElementById("divTableMsgType").innerHTML = 'Norm Goal';
 	document.getElementById("divTableSender").innerHTML = "<img src='img/me.gif'/>";
 	
 	InsertIntoPlayersIconsSelect();
-	
+	InsertIntoGoalsSelect();
 }
 // end Proposals table
 
@@ -1032,18 +1040,24 @@ function loadNormGoalProposalsTable() {
 function buttonSubmitNormGoal_click(playerId) {
 	
 	var ddIcons = document.getElementById('playersIconsDropDown');
+	var goals = document.getElementById('goalsDropDown');
 	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;
+	var goal = goals.options[goals.selectedIndex].value;
+	var n = goal.indexOf(",");
+	var x = goal.substr(0,n);
+	var y = goal.substr(n+1);
 	//playerId - my id
 	//ddIcons - the player that I want to reveal my goal to
 	isNormGoalSubmitted = true;
-	sendNormGoal(playerId,recipientID,2,3,1,2);
+	
+	sendNormGoal(playerId,recipientID,x,y,game.goals[0].posX,game.goals[0].posY);
 	clearProposalTableArea();
 	loadNormGoalProposalsTable();
 	// rowID = num of rows in proposals grid
 	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
 	//alert("rowID = "+rowID);
 	
-	addRecordToTable("Obligation", playerId,recipientID, rowID, "","");
+	addRecordToTable("Obligation", playerId, recipientID, rowID, x+","+y,"");
 	
 	//clearMessagesUI();
 	//$("#"+"0").hide();
@@ -1374,6 +1388,25 @@ function InsertIntoPlayersIconsSelect() {
 	
 	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
 	$("#playersIconsDropDown").msDropDown();
+	
+}
+function InsertIntoGoalsSelect() {
+	var playerId;	
+	var goalsDropDown = document.createElement('select');
+	
+	goalsDropDown.setAttribute('id', 'goalsDropDown');
+	goalsDropDown.style.width = '70px';
+
+	document.getElementById('divTableGoal').appendChild(goalsDropDown);
+	var x = game.goals[0].posX;
+	var y = game.goals[0].posY;
+
+	appendOptionLast("["+x+","+(y+1)+"]",x+","+(y+1),"goalsDropDown", "");
+	appendOptionLast("["+x+","+(y-1)+"]", x+","+(y-1), "goalsDropDown", "");
+	appendOptionLast("["+(x+1)+","+y+"]", (x+1)+","+y, "goalsDropDown", "");
+	appendOptionLast("["+(x-1)+","+y+"]", (x-1)+","+y, "goalsDropDown", "");
+	
+	//$("#goalsDropDown").msDropDown();
 	
 }
 // END INSERT INTO players Icons Drop Down
