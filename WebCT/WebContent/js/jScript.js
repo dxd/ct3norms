@@ -737,7 +737,7 @@ function updateProgressBar() {
 			//if (true)
 			{
 				clearProposalTableArea();
-				loadGoalRevelationProposalsTable();
+				loadNormGoalProposalsTable();
 				//chipRevelationArea();
 				//revelationArea();
 				//gilend
@@ -747,7 +747,9 @@ function updateProgressBar() {
 			}
 			else //chipRevelation
 			{
-				chipRevelationArea();
+				//chipRevelationArea();
+				clearProposalTableArea();
+				loadNormGoalProposalsTable();
 				SetHeaderMsg('This is revelation phase, choose how many of each chip color the opponent will see');
 			}
 			
@@ -953,7 +955,122 @@ function clearProposalTableArea(){
 	document.getElementById('proposals').appendChild(tableProposals);
 
 }
+function loadNormGoalProposalsTable() {
+	
+	
+	jQuery("#tblProposals").jqGrid(
+			{
+				datatype : "local",
+				height : 200,
+				colNames : ['MsgType', 'Sender', 'Receiver', 'Message',  'Response' ],
+				colModel : [ {
+					name : 'MsgType',
+					index : 'MsgType',
+					width : 90,
+					sortable : false
+				}, {
+					name : 'Sender',
+					index : 'Sender',
+					width : 75,
+					sortable : false
+				},{
+					name : 'Receiver',
+					index : 'Receiver',
+					width : 75,
+					sortable : false
+				},{
+					name : 'Message',
+					index : 'Message',
+					width : 400,
+					sortable : false
+				},{
+					name : 'Response',
+					index : 'Response',
+					width : 150,
+					sortable : false
+				} ],
+				multiselect : false,
+				hoverrows : false				
+			});
 
+	var defaultData = {
+			// Id : MessageId,
+			// Proposer : playerName,
+			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
+			// Receiver : '<img height=25px width=25px src="img/'
+			// + game.getPlayerIcon(SenderID) + '"/>',
+			// Proposer : SenderID,
+			// Receiver : SenderID == 0 ? 1 : 0,
+			MsgType : "<div id='divTableMsgType'></div>",
+			Sender : "<div id='divTableSender'></div>",
+			Receiver : "<div id='divTableReceiver'></div>",
+			Message : "<div id='divTableMessage'></div>", 
+			Response : "<div id='divButtonPropose'></div>"
+		};
+	
+	jQuery("#tblProposals").jqGrid('addRowData', 0, defaultData);
+	
+	// add a button for submit
+	var cont = document.createElement("div");
+	
+	var playerIdToSend = game.getMe();
+	cont.innerHTML = "<button id='buttonSubmitNormGoal' onclick='buttonSubmitNormGoal_click(" + playerIdToSend + ");'>Submit</button>";
+	document.getElementById('divButtonPropose').appendChild(cont);	
+	
+	// append div into Messages grid
+	document.getElementById("divTableMessage").innerHTML = 'If you wish to send an obligaiton';
+	document.getElementById("divTableMsgType").innerHTML = 'Norm Goal';
+	document.getElementById("divTableSender").innerHTML = "<img src='img/me.gif'/>";
+	
+	InsertIntoPlayersIconsSelect();
+	
+}
+// end Proposals table
+
+
+//Send revelation details to the sever
+function buttonSubmitNormGoal_click(playerId) {
+	
+	var ddIcons = document.getElementById('playersIconsDropDown');
+	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;
+	//playerId - my id
+	//ddIcons - the player that I want to reveal my goal to
+	isNormGoalSubmitted = true;
+	sendNormGoal(playerId,recipientID,2,3,1,2);
+	clearProposalTableArea();
+	loadNormGoalProposalsTable();
+	// rowID = num of rows in proposals grid
+	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
+	//alert("rowID = "+rowID);
+	
+	addRecordToTable("Obligation", playerId,recipientID, rowID, "","");
+	
+	//clearMessagesUI();
+	//$("#"+"0").hide();
+	
+}
+// END Send revelation details to the sever
+
+function sendNormGoal(playerIDSend,recipientID,x,y,ox,oy)
+{
+	var stringJ = "{\"player\" : \"" + playerIDSend + "\" , \"recipient\" : \"" + recipientID; 
+
+		stringJ = stringJ + "\", \"x\" : " + x + ", \"y\" : " + y ;
+		stringJ = stringJ + ", \"ox\" : " + ox + ", \"oy\" : " + oy +  "}";
+
+
+	jQuery.ajax({
+		type : "post",
+		url : "sendNormGoal.jsp",
+		data : "json=" + stringJ,
+		success : function(msg) {
+			 alert(stringJ);
+		}
+	});
+/*
+	
+*/
+}
 function loadGoalRevelationProposalsTable() {
 	
 	
@@ -1029,8 +1146,6 @@ function loadGoalRevelationProposalsTable() {
 
 //Send revelation details to the sever
 function buttonSubmitGoalRevelation_click(playerId) {
-	
-	
 	
 	var ddIcons = document.getElementById('playersIconsDropDown');
 	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;

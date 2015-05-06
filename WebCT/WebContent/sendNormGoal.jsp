@@ -42,16 +42,14 @@
 		
 		SimpleLog.write("send NormGoal, player ID: " + playerID + "recipientID: " + recipientID);
 
-		RowCol goal = new RowCol();
-		RowCol origGoal = new RowCol();
-		JSONObject jgoal = object.optJSONObject("goal");
-		goal.row = jgoal.getInt("row");
-		goal.col = jgoal.getInt("col");
-		JSONArray jorigGoal = object.optJSONObject("origGoal");
-		origGoal.row = jorigGoal.getInt("row");
-		origGoal.col = jorigGoal.getInt("col");
 		
-		SimpleLog.write("send NormGoal, color: " + color);
+		
+		//JSONArray jgoal = object.optJSONArray("goal");
+		RowCol goal = new RowCol(Integer.parseInt(object.optString("x")),Integer.parseInt(object.optString("y")));
+		//JSONArray jorigGoal = object.optJSONArray("origGoal");
+		RowCol origGoal = new RowCol(Integer.parseInt(object.optString("ox")),Integer.parseInt(object.optString("oy")));
+		
+		SimpleLog.write("send NormGoal, goal: " + goal);
 
 		//conect to session and send the message
 		String id = session.getAttribute("id").toString();
@@ -64,11 +62,11 @@
 		NormGoalDiscourseMessage ngdm = new NormGoalDiscourseMessage(
 				playerID,
 				recipientID,
-				msgID, goal, origGoal);
+				msgID, goal, origGoal, true);
 		
 		//send revelation message (to myself)
 		ClinetControler.GetClinet(id).client.communication.sendDiscourseRequest(ngdm);
-		
+		out.print("sent normgoal "+ ngdm);
 		SimpleLog.write("send NormGoal, session id: " + id);
 
 	}
