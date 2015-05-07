@@ -15,7 +15,7 @@ norm(
     group_surround(g),
     g, // the subject agent
     ( group(g), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 6,[reduce(g,500)]) // prohibition format
+    obligation([surround(X,Y)],now + 10,[reduce(g,500)]) // prohibition format
     ).
     
 %agents group norms from RA
@@ -24,7 +24,7 @@ norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
     ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY))), // precondition - add triggering condition
-    obligation([at(X,Y,Agent)],now + 5,[reduce(Agent, 500)]) // prohibition format
+    obligation([at(X,Y,Agent)],now + 6,[reduce(Agent, 500)]) // prohibition format
     ).  
 
 %individual prohibitions to use colored tiles
@@ -56,7 +56,7 @@ group_member(g,a10).
 group_member(g,a20).
 group_member(g,a30).
 group_member(g,a40).
-ra(g,a10).
+ra(g,a20).
 
 //color(a10,red,yes).
 //color(a20,blue,yes).
@@ -170,12 +170,12 @@ do_sanction([not(H)|T]):- retract(H),do_sanction(T).
 do_sanction([H|T]):- uniqueassertz(H),do_sanction(T).
 do_sanction([]).
 
-do_sanction([],S,Group,0):-
+do_sanction([],P,Group,0,S):-
 		assert(group(Group,S)),
 		ra(Group,RA),
 		sanction_g(S,RA).
-do_sanction([H|T],A,Group,L):- sanction_g(H,A),do_sanction(T,A,Group,L).
-do_sanction([],_,Group,L).
+do_sanction([H|T],A,Group,L,X):- sanction_g(H,A),do_sanction(T,A,Group,L,X).
+do_sanction([],_,Group,L,X).
 
 //group sanctions
 sanction_policy(g,policy1).
@@ -184,8 +184,8 @@ policy1(Group,P,Label):-
 	length(Vs,L),
 //	assert(adelka(L)),
 //	assert(agroupTS(Group)).
-	S is P / L,!,
-	do_sanction(Vs,S,Group,L).
+	S is P / L,
+	do_sanction(Vs,S,Group,L,P).
 	
 sanction_group([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))):-
 	policy1(Group,P,Label),

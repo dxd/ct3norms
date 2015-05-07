@@ -44,6 +44,7 @@
 <script type="text/javascript" src="js/jquery.notify.js"></script>
 <script type="text/javascript" src="js/jquery.dd.js"></script>
 <script type="text/javascript" src="js/jScript.js"></script>
+<script type="text/javascript" src="js/pathfinder.js"></script>
 
 <script type="text/javascript">
 //json
@@ -596,6 +597,9 @@ var game = {
 	</tr>
 </table>
 </div>
+<div id="norms">
+<table id="tblNorms"></table>
+</div>
 <div id="proposals">
 <table id="tblProposals"></table>
 </div>
@@ -606,9 +610,6 @@ var game = {
 </div>
 </div>
 
-<div id="dialog" title="About WebCT"></div>
-
-
 
 <script type="text/javascript">
 	createGameBoard();
@@ -618,8 +619,9 @@ var game = {
 	
 	
 	//gil
-	loadProposalsTable();
+	//loadProposalsTable();
 	//LoadNormsTable();
+	//LoadColorNorms();
 	//loadGoalRevelationProposalsTable();
 	//gilend
 	//proposalArea();

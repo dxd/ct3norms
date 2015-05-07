@@ -111,23 +111,18 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					numberOfConfigFiles++;
 				}
 			}
-		}
-		
+		}		
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < numberOfConfigFiles; i++) {
-			ph.addPhase("Norm Phase", 20);
+			ph.addPhase("Norm Phase", 60);
 			ph.addPhase("Communication Phase", 20);
 			ph.addPhase("Movement Phase", 20);			
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
-		gs.setPhases(ph);
-
-		
-		gs.setInitialized(); // will generate GAME_INITIALIZED message
-		
-		
+		gs.setPhases(ph);		
+		gs.setInitialized(); // will generate GAME_INITIALIZED message		
 	}
 
 	/**

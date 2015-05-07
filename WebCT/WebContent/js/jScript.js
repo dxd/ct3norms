@@ -1,297 +1,3 @@
-/*
- * green - #00ff00
- * purple - #9b30ff
- * red = #ff0000
- * orange - #ffa500
- */
-
-//json
-/*
- var game = {
- // AFTER CHANGE VALUES CONVERT TO INTEGER WITH PARSE INT!!
- "rows" : 4,
- "cols" : 4,
- "numOfGolals" : 4,
- "numOfPlayer" : 2,
- "numGoals" : 4,
- "numOfColors" : 4,
- "players" : [ {
- "id" : 1,
- "icon" : "me.gif",
- "name" : "hen",
- "isme" : "true",
- "age" : 23,
- "posX" : 2,
- "posY" : 1,
- "cards" : [ {
- "color" : "00ff00",
- "sum" : 1
- }, {
- "color" : "9b30ff",
- "sum" : 2
- }, {
- "color" : "ff0000",
- "sum" : 3
- }, {
- "color" : "ffa500",
- "sum" : 1
- } ],
- "RevelationChips" : [ {
- "color" : "00ff00",
- "sum" : 1
- }, {
- "color" : "9b30ff",
- "sum" : 2
- }, {
- "color" : "ff0000",
- "sum" : 3
- }, {
- "color" : "ffa500",
- "sum" : 1
- } ],
- "goalsId" : [ {
- "id" : 3
- }, {
- "id" : 5
- } ]
- }, {
- "id" : 2,
- "icon" : "them1.gif",
- "name" : "shay",
- "isme" : "false",
- "age" : 32,
- "posX" : 1,
- "posY" : 1,
- "cards" : [ {
- "color" : "00ff00",
- "sum" : 4
- }, {
- "color" : "9b30ff",
- "sum" : 5
- }, {
- "color" : "ff0000",
- "sum" : 1
- }, {
- "color" : "ffa500",
- "sum" : 2
- } ],
- "goalsId" : [ {
- "id" : 4
- }, {
- "id" : 2
- } ]
- }, ],
- "goals" : [ {
- "id" : 2,
- "name" : "gola1",
- "posX" : 3,
- "posY" : 1
- }, {
- "id" : 3,
- "name" : "gola1",
- "posX" : 2,
- "posY" : 3
- }, {
- "id" : 4,
- "name" : "goalAA",
- "posX" : 2,
- "posY" : 1
- }, {
- "id" : 5,
- "name" : "goalBB",
- "posX" : 3,
- "posY" : 2
- } ],
- "borderColors" : [ {
- "color" : "ffa500",
- "posX" : 0,
- "posY" : 0
- }, {
- "color" : "ff0000",
- "posX" : 0,
- "posY" : 1
- }, {
- "color" : "00ff00",
- "posX" : 1,
- "posY" : 1
- }, {
- "color" : "9b30ff",
- "posX" : 1,
- "posY" : 0
- }, {
- "color" : "ff0000",
- "posX" : 2,
- "posY" : 0
- }, {
- "color" : "ffa500",
- "posX" : 2,
- "posY" : 1
- }, {
- "color" : "ffa500",
- "posX" : 2,
- "posY" : 2
- }, {
- "color" : "ff0000",
- "posX" : 0,
- "posY" : 2
- }, {
- "color" : "ff0000",
- "posX" : 1,
- "posY" : 2
- }, {
- "color" : "ffa500",
- "posX" : 0,
- "posY" : 3
- }, {
- "color" : "ffa500",
- "posX" : 1,
- "posY" : 3
- }, {
- "color" : "ff0000",
- "posX" : 2,
- "posY" : 3
- }, {
- "color" : "ff0000",
- "posX" : 3,
- "posY" : 0
- }, {
- "color" : "00ff00",
- "posX" : 3,
- "posY" : 1
- }, {
- "color" : "ffa500",
- "posX" : 3,
- "posY" : 2
- }, {
- "color" : "9b30ff",
- "posX" : 3,
- "posY" : 3
- }
-
- ],
- "colors" : [ {
- "name" : "00ff00"
- }, {
- "name" : "9b30ff"
- }, {
- "name" : "ff0000"
- }, {
- "name" : "ffa500"
- } ],
- // times
-
- "CommunicationPhaseTimeConst" : "00:60",
- "ExchangePhaseTimeConst" : "00:20",
- "MovementPhaseTimeConst" : "00:17",
- "FeedBackPhaseTimeConst" : "00:19",
- // set cards to player
- setSumChips : function(playerID, color, sum) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- for ( var j = 0; j < game.players[i].cards.length; j++)
- if (game.players[i].cards[j].color == color)
- game.players[i].cards[j].sum = sum;
- }
- },
- getPlayerName : function(playerId) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerId) {
- return game.players[i].name;
- }
- },
- // getPlayerId
- getPlayerId : function(serial) {
- return game.players[serial].id;
- },
- getNumOfPlayer : function() {
- return game.numOfPlayer;
- },
- // get cards
- getSumChips : function(playerID, color) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- for ( var j = 0; j < game.players[i].cards.length; j++)
- if (game.players[i].cards[j].color == color)
- return game.players[i].cards[j].sum;
- }
- },
- getGoalPositionX : function(goalID) {
- for ( var i = 0; i < this.numGoals; i++)
- if (game.goals[i].id == goalID) {
- return game.goals[i].posX;
- }
- },
- getGoalPositionY : function(goalID) {
- for ( var i = 0; i < this.numGoals; i++)
- if (game.goals[i].id == goalID) {
- return game.goals[i].posY;
- }
- },
- getPlayerPositionX : function(playerID) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- return game.players[i].posX;
- }
- },
-
- getPlayerPositionY : function(playerID) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- return game.players[i].posY;
- }
- },
- getPlayerSerial : function(playerID) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- return i;
- }
- },
- getPlayerName : function(playerID) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- return game.players[i].name;
- }
- },
- getPlayerIcon : function(playerID) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- return game.players[i].icon;
- }
- },
- getisPlayerMe : function(playerID) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- return game.players[i].isme;
- }
- },
- getNumOfColors : function() {
- return game.numOfColors;
- },
- setPlayerPosition : function(playerID, x, y) {
- for ( var i = 0; i < playerNumTotal; i++)
- if (game.players[i].id == playerID) {
- game.players[i].posY = y;
- game.players[i].posX = x;
- }
- },
- getSizeRows : function() {
- return this.rows;
- },
- getSizeCols : function() {
- return this.cols;
- },
- getColorCell : function(posX, posY) {
- for ( var i = 0; i < this.borderColors.length; i++)
- if ((this.borderColors[i].posX == posX)
- && (this.borderColors[i].posY == posY)) {
- return this.borderColors[i].color;
- }
- }
- };
- // end json
- */
- 
-
 // times
 var numTurns;
 var CommunicationPhaseTimeConst;
@@ -440,7 +146,7 @@ function createGameBoard() {
 			// create column
 			newCell = newRow.insertCell(j);
 			newCell.id = "CellRow" + i + "Column" + j;
-		 newCell.innerText = i+", "+j;
+			newCell.innerText = i+", "+j;
 			newCell.bgColor = "white";
 			newCell.ondblclick = move; //function() { alert(i+'-'+j);move(i,j); };
 			// create div
@@ -669,9 +375,7 @@ function updateProgressBar() {
 	
 	// check phase ended or game just started
 	if (phaseChanged == true) {
-	
-		
-		
+			
 		lastRole = game.role;
 		
 		if (currentPhase == null) {
@@ -697,17 +401,6 @@ function updateProgressBar() {
 		//alert("phaseHashNameIndex = "+ game.phasesIndex[currentPhase]);
 		
 		phaseChanged = false;
-		
-		//check whether goal revelation phase occured
-			if(goalRevelationPhaseEnded == true)
-			{
-				if(isGoalRevelationSubmitted == false)
-				{
-					clearProposalTableArea();
-					loadProposalsTable();
-				}
-				goalRevelationPhaseEnded = false;
-			}
 
 		
 		// call update to get most recent changes from server
@@ -729,36 +422,20 @@ function updateProgressBar() {
 	
 		
 		// clear first row at proposals table
-		clearMessagesUI();
+		//clearMessagesUI();
 		
 		switch (currentPhase) {
 		case "Norm Phase":
-			//gil
-			//goalRevelation
-			if(game.getIsGoalRevelationAllowed())
-			//if (true)
-			{
-				clearProposalTableArea();
-				loadNormGoalProposalsTable();
 				//chipRevelationArea();
-				//revelationArea();
-				//gilend
-				//goalRevelationPhaseEnded = true;
-				// notify
-				SetHeaderMsg('This is revelation phase, choose whether to reveal your to your opponent');
-			}
-			else //chipRevelation
-			{
-				//chipRevelationArea();
-				clearProposalTableArea();
+				//clearProposalTableArea();
 				loadNormGoalProposalsTable();
-				SetHeaderMsg('This is revelation phase, choose how many of each chip color the opponent will see');
-			}
+				SetHeaderMsg('This is norm phase');
+			
 			
 			break;
 		case "Communication Phase":
 			// if communication phase -> build proposal area for players
-			
+			clearMessagesUI();
 			UpdateServer();			
 			proposalArea();
 			// notify			
@@ -852,8 +529,6 @@ function removeElemFromDOM(elem) {
 function PlayerChips() {
 	var theTable = document.getElementById("PlayerChips");
 
-	
-	
 	for ( var i = 0; i < playerNumTotal; i++) {
 
 		var newCell;
@@ -907,47 +582,7 @@ function PlayerChips() {
 }
 // end player chips area
 
-// create Revelation area
-function chipRevelationArea() {
-	
-	var playerId;
-	var playerIdToSend;
-	
-	var divRevelationArea = document.createElement("div");
-	divRevelationArea.setAttribute('id', 'revelationArea');		
-	
-	for (var i = 0; i < playerNumTotal; i++) {
-		// populate data only for me (player)
-		playerId = game.getPlayerId(i);
-		if (game.getisPlayerMe(playerId) == "true") {
-			playerIdToSend = playerId;
-			for (var j = 0; j < game.players[i].cards.length; j++) {
-				var cont = document.createElement("select");
-				cont.setAttribute('id', 'SelectRevelationPlayerId'
-						+ game.players[i].id + 'Color'
-						+ game.players[i].cards[j].color);
-				cont.style.background = "#"
-					+ game.players[i].cards[j].color;
-				
-				divRevelationArea.appendChild(cont);
-			}
-		}
-	}
-	
-	// add a button for submit
-	var cont = document.createElement("div");
-	cont.innerHTML = "<button id='buttonSubmitRevelation' onclick='buttonSubmitRevelation_click(" + playerIdToSend + ");'>Submit</button>";
-	document.getElementById('divButtonPropose').appendChild(cont);	
-	
-	// append div into Messages grid
-	document.getElementById("divTableSend").appendChild(divRevelationArea);
-	document.getElementById("divTableMsgType").innerHTML = 'Revelation';
-	document.getElementById("divTableSender").innerHTML = "<img src='img/me.gif'/>";
-	
-	InsertIntoPlayersIconsSelect();
-	InsertIntoRevelationSelect();
-}
-// END create Revelation area
+
 
 //Reset the proposal table area before/after changes where made by goal revelation phase
 function clearProposalTableArea(){
@@ -957,10 +592,8 @@ function clearProposalTableArea(){
 	document.getElementById('proposals').appendChild(tableProposals);
 
 }
-function loadNormGoalProposalsTable() {
-	
-	
-	jQuery("#tblProposals").jqGrid(
+function loadNormGoalProposalsTable() {	
+	jQuery("#tblNorms").jqGrid(
 			{
 				datatype : "local",
 				height : 200,
@@ -1016,7 +649,7 @@ function loadNormGoalProposalsTable() {
 			Response : "<div id='divButtonPropose'></div>"
 		};
 	
-	jQuery("#tblProposals").jqGrid('addRowData', 0, defaultData);
+	jQuery("#tblNorms").jqGrid('addRowData', 0, defaultData);
 	
 	// add a button for submit
 	var cont = document.createElement("div");
@@ -1051,13 +684,13 @@ function buttonSubmitNormGoal_click(playerId) {
 	isNormGoalSubmitted = true;
 	
 	sendNormGoal(playerId,recipientID,x,y,game.goals[0].posX,game.goals[0].posY);
-	clearProposalTableArea();
-	loadNormGoalProposalsTable();
+	//clearProposalTableArea();
+	//loadNormGoalProposalsTable();
 	// rowID = num of rows in proposals grid
-	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
+	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
 	//alert("rowID = "+rowID);
 	
-	addRecordToTable("Obligation", playerId, recipientID, rowID, x+","+y,"");
+	addNormToTable("Obligation", playerId, recipientID, rowID, "Your obligation is to go to ("+x+","+y+").");
 	
 	//clearMessagesUI();
 	//$("#"+"0").hide();
@@ -1078,145 +711,17 @@ function sendNormGoal(playerIDSend,recipientID,x,y,ox,oy)
 		url : "sendNormGoal.jsp",
 		data : "json=" + stringJ,
 		success : function(msg) {
-			 alert(stringJ);
+			// alert(stringJ);
 		}
 	});
 /*
 	
 */
 }
-function loadGoalRevelationProposalsTable() {
-	
-	
-	jQuery("#tblProposals").jqGrid(
-			{
-				datatype : "local",
-				height : 200,
-				colNames : ['MsgType', 'Sender', 'Receiver', 'Message',  'Response' ],
-				colModel : [ {
-					name : 'MsgType',
-					index : 'MsgType',
-					width : 90,
-					sortable : false
-				}, {
-					name : 'Sender',
-					index : 'Sender',
-					width : 75,
-					sortable : false
-				},{
-					name : 'Receiver',
-					index : 'Receiver',
-					width : 75,
-					sortable : false
-				},{
-					name : 'Message',
-					index : 'Message',
-					width : 400,
-					sortable : false
-				},{
-					name : 'Response',
-					index : 'Response',
-					width : 150,
-					sortable : false
-				} ],
-				multiselect : false,
-				hoverrows : false				
-			});
-
-	var defaultData = {
-			// Id : MessageId,
-			// Proposer : playerName,
-			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
-			// Receiver : '<img height=25px width=25px src="img/'
-			// + game.getPlayerIcon(SenderID) + '"/>',
-			// Proposer : SenderID,
-			// Receiver : SenderID == 0 ? 1 : 0,
-			MsgType : "<div id='divTableMsgType'></div>",
-			Sender : "<div id='divTableSender'></div>",
-			Receiver : "<div id='divTableReceiver'></div>",
-			Message : "<div id='divTableMessage'></div>", 
-			Response : "<div id='divButtonPropose'></div>"
-		};
-	
-	jQuery("#tblProposals").jqGrid('addRowData', 0, defaultData);
-	
-	// add a button for submit
-	var cont = document.createElement("div");
-	
-	var playerIdToSend = game.getMe();
-	cont.innerHTML = "<button id='buttonSubmitGoalRevelation' onclick='buttonSubmitGoalRevelation_click(" + playerIdToSend + ");'>Submit</button>";
-	document.getElementById('divButtonPropose').appendChild(cont);	
-	
-	// append div into Messages grid
-	document.getElementById("divTableMessage").innerHTML = 'If you wish to reveal your goal to the oponent';
-	document.getElementById("divTableMsgType").innerHTML = 'Revelation';
-	document.getElementById("divTableSender").innerHTML = "<img src='img/me.gif'/>";
-	
-	InsertIntoPlayersIconsSelect();
-	
-}
-// end Proposals table
-
-
-//Send revelation details to the sever
-function buttonSubmitGoalRevelation_click(playerId) {
-	
-	var ddIcons = document.getElementById('playersIconsDropDown');
-	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;
-	//playerId - my id
-	//ddIcons - the player that I want to reveal my goal to
-	isGoalRevelationSubmitted = true;
-	sendGoalRevelation(playerId);
-	clearProposalTableArea();
-	loadProposalsTable();
-	// rowID = num of rows in proposals grid
-	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
-	//alert("rowID = "+rowID);
-	
-	addRecordToTable("GoalRevelation", playerId,recipientID, rowID, "","");
-	
-	clearMessagesUI();
-	$("#"+"0").hide();
-	
-}
-// END Send revelation details to the sever
-
-function sendGoalRevelation(playerIDSend)
-{
-	var stringJ = "{\"player\" : \"" + playerIDSend + "\" }";
-
-	jQuery.ajax({
-		type : "post",
-		url : "sendGoalRevelation.jsp",
-		data : "json=" + stringJ,
-		success : function(msg) {
-			// alert(msg);
-		}
-	});
-/*
-	
-*/
-}
-
-
-
-// Send revelation details to the sever
-function buttonSubmitRevelation_click(playerId) {
-	
-	var ddIcons = document.getElementById('playersIconsDropDown');			
-
-	sendChipRevelation(playerId, ddIcons.options[ddIcons.selectedIndex].value);
-	
-	clearMessagesUI();
-	$("#"+"0").hide();	
-}
-// END Send revelation details to the sever
 
 // send Receive proposal area
 function proposalArea() {
 
-
-	
 	var rowSelectSend = 0;
 	var rowColorSend = 2;
 	var rowSelectReceive = 1;
@@ -1361,1187 +866,7 @@ function buttonSubmitProposal_click() {
 	$("#"+"0").hide();	
 	
 }
-
-// INSERT INTO players Icons Drop Down
-function InsertIntoPlayersIconsSelect() {
-	
-	
-	var playerId;	
-	var playersIconsDropDown = document.createElement('select');
-	
-	playersIconsDropDown.setAttribute('id', 'playersIconsDropDown');
-	playersIconsDropDown.onchange= function(){InsertIntoReceiveSelect();}; 
-	playersIconsDropDown.style.width = '70px';
-	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
-	removeAllOption("playersIconsDropDown");
-	for ( var i = 0; i < playerNumTotal; i++) {
-		// get player ID
-		playerId = game.getPlayerId(i);
-		// populate data only for all players except me
-		if (game.getisPlayerMe(playerId) != "true") {
-				// clear dropdown before inserting
-				//removeAllOption("playersIconsDropDown");
-				// insert player img to dropdown
-				appendOptionLast(playerId, playerId, "playersIconsDropDown", 'img/' + game.getPlayerIcon(playerId));							
-		}
-	}
-	
-	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
-	$("#playersIconsDropDown").msDropDown();
-	
-}
-function InsertIntoGoalsSelect() {
-	var playerId;	
-	var goalsDropDown = document.createElement('select');
-	
-	goalsDropDown.setAttribute('id', 'goalsDropDown');
-	goalsDropDown.style.width = '70px';
-
-	document.getElementById('divTableGoal').appendChild(goalsDropDown);
-	var x = game.goals[0].posX;
-	var y = game.goals[0].posY;
-
-	appendOptionLast("["+x+","+(y+1)+"]",x+","+(y+1),"goalsDropDown", "");
-	appendOptionLast("["+x+","+(y-1)+"]", x+","+(y-1), "goalsDropDown", "");
-	appendOptionLast("["+(x+1)+","+y+"]", (x+1)+","+y, "goalsDropDown", "");
-	appendOptionLast("["+(x-1)+","+y+"]", (x-1)+","+y, "goalsDropDown", "");
-	
-	//$("#goalsDropDown").msDropDown();
-	
-}
-// END INSERT INTO players Icons Drop Down
-
-// INSERT INTO revelation select
-function InsertIntoRevelationSelect() {
-	var playerId;
-	var color;
-	var sumChips;
-
-	for ( var i = 0; i < playerNumTotal; i++) {
-		// populate data only for me (player)
-		playerId = game.getPlayerId(i);
-		if (game.getisPlayerMe(playerId) == "true") {
-			for ( var j = 0; j < colorNumTotal; j++) {
-				playerId = game.getPlayerId(i);
-				color = game.colors[j].name;
-				removeAllOption("SelectRevelationPlayerId" + playerId + "Color"
-						+ color);
-				sumChips = game.getSumChips(playerId, color);
-				for ( var k = 0; k <= sumChips; k++) {
-					appendOptionLast(k, k, "SelectRevelationPlayerId" + playerId
-							+ "Color" + color, '');
-				}
-			}
-		}
-	}
-}
-// END INSERT INTO revelation select
-
-// INSERT INTO Players Chips Send
-function InsertIntoSendSelect() {
-	var playerId;
-	var color;
-	var sumChips;
-	
-	for ( var i = 0; i < playerNumTotal; i++) {
-		// populate data only for me (player)
-		playerId = game.getPlayerId(i);
-		if (game.getisPlayerMe(playerId) == "true") {
-			for ( var j = 0; j < colorNumTotal; j++) {
-				playerId = game.getPlayerId(i);
-				color = game.colors[j].name;
-				removeAllOption("SelectSendPlayerId" + playerId + "Color"
-						+ color);
-				sumChips = game.getSumChips(playerId, color);
-				for ( var k = 0; k <= sumChips; k++) {
-					appendOptionLast(k, k, "SelectSendPlayerId" + playerId
-							+ "Color" + color, '');
-				}
-			}
-		}
-	}
-}
-// END INSERT INTO Players Chips Send
-function InsertIntoReceiveSelectOLD() {
-	var playerId;
-	var playerIdOpponent;
-	var color;
-	var sumChips = 0;
-
-	for ( var i = 0; i < playerNumTotal; i++) {
-		// populate data only for me (player)
-		playerId = game.getPlayerId(i);
-		if (game.getisPlayerMe(playerId) == "true") {
-			for ( var j = 0; j < colorNumTotal; j++) {
-				playerId = game.getPlayerId(i);
-				color = game.colors[j].name;
-
-				removeAllOption("SelectReceivePlayerId" + playerId + "Color"
-						+ color);
-
-				/* for each player add the chips of the opponents */
-				for ( var pl = 0; pl < playerNumTotal; pl++) {
-					playerIdOpponent = game.getPlayerId(pl);
-					if (playerId != playerIdOpponent) {
-						sumChips += isRevelationEnabled == "true" ? game.getSumRevelationChips(playerIdOpponent, color) : game.getSumChips(playerIdOpponent, color);
-					}
-				}
-				for ( var k = 0; k <= sumChips; k++) {
-					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
-							+ "Color" + color, '');
-				}
-				sumChips = 0;
-			}
-		}
-	}
-}
-// INSERT INTO Players Chips Receive
-function InsertIntoReceiveSelect() {
-	var playerId;
-	var playerIdOpponent = document.getElementById('playersIconsDropDown').selectedIndex;
-	var color;
-	var sumChips = 0;
-
-	for ( var i = 0; i < playerNumTotal; i++) {
-		// populate data only for me (player)
-		playerId = game.getPlayerId(i);
-		if (game.getisPlayerMe(playerId) == "true") {
-			for ( var j = 0; j < colorNumTotal; j++) {
-				playerId = game.getPlayerId(i);
-				color = game.colors[j].name;
-
-				removeAllOption("SelectReceivePlayerId" + playerId + "Color"
-						+ color);
-
-				sumChips += isRevelationEnabled == "true" ? game.getSumRevelationChips(playerIdOpponent, color) : game.getSumChips(playerIdOpponent, color);
-
-				for ( var k = 0; k <= sumChips; k++) {
-					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
-							+ "Color" + color, '');
-				}
-				sumChips = 0;
-			}
-		}
-	}
-}
-// END INSERT INTO Players Chips Receive
-
-// insert value at end of Select element
-function appendOptionLast(text, value, IDselect, title) {
-	var elOptNew = document.createElement('option');
-	elOptNew.text = text;
-	elOptNew.value = value;
-	elOptNew.title = title == null ? "" : title;
-	var elSel = document.getElementById(IDselect);
-
-	try {
-		elSel.add(elOptNew, null); // standards compliant; doesn't work in IE
-	} catch (ex) {
-		elSel.add(elOptNew); // IE only
-	}
-}
-
-
-// remove all data from Select element
-function removeAllOption(IDselect) {
-	var elSel = document.getElementById(IDselect);
-	var i;
-	for (i = elSel.length - 1; i >= 0; i--) {
-
-		elSel.remove(i);
-	}
-}
-
-// Proposals table
-function loadProposalsTable() {
-	jQuery("#tblProposals").jqGrid(
-			{
-				datatype : "local",
-				height : 200,
-				colNames : ['MsgType', 'Sender', 'Receiver', 'Send', 'Receive', 'Response' ],
-				colModel : [ {
-					name : 'MsgType',
-					index : 'MsgType',
-					width : 90,
-					sortable : false
-				}, {
-					name : 'Sender',
-					index : 'Sender',
-					width : 75,
-					sortable : false
-				},{
-					name : 'Receiver',
-					index : 'Receiver',
-					width : 75,
-					sortable : false
-				},{
-					name : 'Send',
-					index : 'Send',
-					width : 200,
-					sortable : false
-				}, {
-					name : 'Receive',
-					index : 'Receive',
-					width : 200,
-					sortable : false
-				}, {
-					name : 'Response',
-					index : 'Response',
-					width : 150,
-					sortable : false
-				} ],
-				multiselect : false,
-				hoverrows : false				
-			});
-	var defaultData = {
-			// Id : MessageId,
-			// Proposer : playerName,
-			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
-			// Receiver : '<img height=25px width=25px src="img/'
-			// + game.getPlayerIcon(SenderID) + '"/>',
-			// Proposer : SenderID,
-			// Receiver : SenderID == 0 ? 1 : 0,
-			MsgType : "<div id='divTableMsgType'></div>",
-			Sender : "<div id='divTableSender'></div>",
-			Receiver : "<div id='divTableReceiver'></div>",
-			Send : "<div id='divTableSend'></div>",
-			Receive : "<div id='divTableReceive'></div>", 
-			Response : "<div id='divButtonPropose'></div>"
-		};
-	
-	jQuery("#tblProposals").jqGrid('addRowData', 0, defaultData);
-}
-	
-function loadNormsTable() {
-		jQuery("#tblNorms").jqGrid(
-				{
-					datatype : "local",
-					height : 200,
-					colNames : ['MsgType', 'Sender', 'Receiver', 'Send', 'Receive', 'Response' ],
-					colModel : [ {
-						name : 'MsgType',
-						index : 'MsgType',
-						width : 90,
-						sortable : false
-					}, {
-						name : 'Sender',
-						index : 'Sender',
-						width : 75,
-						sortable : false
-					},{
-						name : 'Receiver',
-						index : 'Receiver',
-						width : 75,
-						sortable : false
-					},{
-						name : 'Send',
-						index : 'Send',
-						width : 200,
-						sortable : false
-					}, {
-						name : 'Receive',
-						index : 'Receive',
-						width : 200,
-						sortable : false
-					}, {
-						name : 'Response',
-						index : 'Response',
-						width : 150,
-						sortable : false
-					} ],
-					multiselect : false,
-					hoverrows : false				
-				});
-
-	var defaultData = {
-			// Id : MessageId,
-			// Proposer : playerName,
-			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
-			// Receiver : '<img height=25px width=25px src="img/'
-			// + game.getPlayerIcon(SenderID) + '"/>',
-			// Proposer : SenderID,
-			// Receiver : SenderID == 0 ? 1 : 0,
-			MsgType : "<div id='divTableMsgType'></div>",
-			Sender : "<div id='divTableSender'></div>",
-			Receiver : "<div id='divTableReceiver'></div>",
-			Send : "<div id='divTableSend'></div>",
-			Receive : "<div id='divTableReceive'></div>", 
-			Response : "<div id='divButtonPropose'></div>"
-		};
-	
-	jQuery("#tblNorms").jqGrid('addRowData', 0, defaultData);
-}
-// end Proposals table
-
-// about window
-function LoadAbout() {
-
-	document.getElementById("dialog").innerHTML = '<h1>Color Trails</h1> <br />'
-			+ 'Version 2.1 - THE WEB VERSION <br /> '
-			+ 'Shay Libo & Hen Barshak <br />'
-			+ 'Dr. Kobi Gal <br />'
-			+ 'All rights reserved <br />' + 'Color trails <br />';
-	document.getElementById("dialog").align = "center";
-
-	$(function() {
-		$("#dialog").dialog();
-	});
-}
-// end about window
-
-// this function Receive "01:03" return "63"
-function getSeconds(timeForm) {
-
-	var time3 = timeForm.split(":");
-	// change second fro 09 to 9
-	if (time3[1].charAt(0) == 0)
-		time3[1] = time3[1].charAt(1);
-
-	// change minutes from 07 to 7
-	if (time3[0].charAt(0) == 0)
-		time3[0] = time3[0].charAt(1);
-
-	var seconds = parseInt(time3[0]) * 60 + parseInt(time3[1]);
-	seconds = parseInt(seconds);
-	return seconds;
-
-}
-// end getSeconds
-
-// this function Receives "120" return "2:00"
-function secondsToTime(seconds) {
-	var min = 0;
-	while (seconds >= 60) {
-		seconds = parseInt(seconds) - 60;
-		min = min + 1;
-	}
-	if (parseInt(min) < 10)
-		min = "0" + min;
-	if (parseInt(seconds) < 10)
-		seconds = "0" + seconds;
-
-	return min + ":" + seconds;
-
-}
-
-/* Add a msg to grid */
-function addRecordToTable(MsgType, SenderID, ReceiverID, msgID, ReceivedChips, SentChips) {
-	var ReceivedChips1 = "<div><table><tr>";
-	var SentChips1 = "<div><table><tr>";
-	var playerName = game.getPlayerName(SenderID);
-	// iterate over msg.ReceivedColor
-	
-	
-	if(MsgType != "GoalRevelation")
-	{
-		for ( var j = 0; j < SentChips.length; j++) {
-			SentChips1 = SentChips1 + '<td class="proposalsSendReceiveCol" style="background-color :#'
-					+ SentChips[j].color + ';"><b>'+" " + SentChips[j].sum + " "+'</b></td>';
-		}
-		SentChips1 = SentChips1 + "</tr></table></div>";
-
-	}
-	
-		
-	// only if msg type is Proposal iterate over recieved chips
-	if (MsgType == "Proposal") {
-		for ( var j = 0; j < ReceivedChips.length; j++) {
-			ReceivedChips1 = ReceivedChips1 + '<td class="proposalsSendReceiveCol" style="background-color :#'
-					+ ReceivedChips[j].color + ';"><b>'+" " + ReceivedChips[j].sum + " "+'</b></td>';
-		}
-		ReceivedChips1 = ReceivedChips1 + "</tr></table></div>";
-	}
-
-	var AcceptRejectButtonsHTML = '<div id="msgToAcceptReject'
-			+ msgID
-			+ '"><table><tr><td><input onclick="sendResponseAcceptReject('
-			+ msgID
-			+ ',1)" type="button" id="acceptResponseButton'
-			+ msgID
-			+ '" value="Accept"></td><td><input type="button" id="rejectResponseButton'
-			+ msgID + '" value="Reject" onclick="sendResponseAcceptReject('
-			+ msgID + ',0)"></td><td></td></tr></table></div>';
-
-	var showButtons = game.role == 1 ? AcceptRejectButtonsHTML
-			: '<div id="msgToAcceptReject' + msgID + '"></div>';
-
-	var defaultData = {
-		MsgType : MsgType,
-		Sender : game.getisPlayerMe(SenderID) == "true" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(SenderID) + "'/>",
-		Receiver : game.getisPlayerMe(SenderID) == "false" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(ReceiverID) + "'/>",	
-		Send : MsgType != "GoalRevelation" ? SentChips1  : "<div></div>",
-		Receive : MsgType == "Proposal" ? ReceivedChips1 : "<div></div>", 
-		Response : MsgType == "Proposal" ? showButtons : "<div></div>"
-	};
-
-	// rowID = num of rows in proposals grid
-	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
-	
-		
-	// alert('send: ' + SentChips1);
-	// alert('Receive: ' + ReceivedChips1);
-	
-	
-	jQuery("#tblProposals").jqGrid('addRowData', rowID, defaultData);
-	
-	//the popup window for received proposal
-	if(game.role == 1)
-	{
-		var newDiv = $(document.createElement('div')); 
-		newDiv.html('Incoming proposal received!');
-		newDiv.dialog({ title: "Proposal Received" });
-		setTimeout(function(){newDiv.dialog('close');},2500);
-	}
-	
-}
-
-// Change Player Chips after ajax update
-function UpdatePlayerChips(o) {
-	for ( var i = 0; i < o.chipsChange.length; i++) {
-		for ( var j = 0; j < o.chipsChange[i].chips.length; j++) {
-			var playerID = o.chipsChange[i].playerID;
-			var colorCell = o.chipsChange[i].chips[j].color;				
-			var total = o.chipsChange[i].chips[j].sum;
-			
-			game.setSumChips(playerID, colorCell, total);
-			
-			if (game.getisPlayerMe(playerID) == "true" || isRevelationEnabled == "false") {
-				jQuery("#" + "playerId" + playerID + "Color" + colorCell).html(
-						total);								
-			}
-		}
-	}
-}
-// END change player Chips
-
-function updateGoals(o)
-{
-		
-	removeGoals();
-	
-	for ( var i = 0; i < o.Goals.length; i++) 
-	{
-		game.goals[i].id = o.Goals[i].id;
-		game.goals[i].type = o.Goals[i].type;
-		game.goals[i].posX = o.Goals[i].posX;
-		game.goals[i].posY = o.Goals[i].posY;
-	}
-	
-	if(o.Goals.length < game.numOfGolals)
-	{
-		game.goals.splice(o.Goals.length,game.numOfGolals-o.Goals.length);
-	}
-	
-	game.numOfGolals = o.Goals.length;
-	game.numGoals = o.Goals.length;
-	
-	createGoals();
-	
-	updatePathFinderGoals();
-	
-	
-	
-	
-}
-
-
-function removeGoals(){
-
-    var goalSquare;
-    
-    for ( var i = 0; i < game.numOfGolals; i++) {
-       if(game.goals[i].type >= 10){
-               goalSquare = document.getElementById("DivRow" + game.goals[i].posX + "Column" + game.goals[i].posY);
-           goalSquare.removeChild(goalSquare.lastChild);
-            
-       }
-    }
-    
-    //alert("Finished removing goals");
-}
-
-
-
-// Change Player Revelation Chips after ajax update
-function UpdatePlayerRevelationChips(o) {
-	
-	if (currentPhase == "Norm Phase") {
-		for ( var i = 0; i < o.RevelationChips.length; i++) {
-			var playerID = o.RevelationChips[i].playerID;
-			var recipient = o.RevelationChips[i].recipient;
-			
-			for ( var j = 0; j < o.RevelationChips[i].chips.length; j++) {
-				
-				var colorCell = o.RevelationChips[i].chips[j].color;				
-				var total = o.RevelationChips[i].chips[j].sum;
-				
-				game.setSumRevelationChips(playerID, colorCell, total);
-				
-				if (game.getisPlayerMe(playerID) == "false" && isRevelationEnabled == "true") {	
-					jQuery("#" + "playerId" + playerID + "Color" + colorCell).html(
-							total);
-				}
-			}
-			
-			if (isRevelationEnabled == "true") {
-				var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
-				addRecordToTable("Revelation", playerID, recipient, rowID, "", o.RevelationChips[i].chips);
-			}
-		}
-	}
-}
-// END Change Player Revelation Chips after ajax update
-
-// Change BorderColors (game pallet) after ajax update
-function UpdateBorderColors(o) {
-	
-	for ( var i = 0; i < o.BorderColors.length; i++) {		
-			var color = o.BorderColors[i].color;
-			var posX = o.BorderColors[i].posX;				
-			var posY = o.BorderColors[i].posY;
-			
-			game.setColorCell(color, posX, posY);								
-	}
-	
-	// rebuild game bord colors
-	addColors();
-}
-// END Change BorderColors (game pallet) after ajax update
-
-// Change Player POS
-function UpdatePlayerPosOnBoard(o) {
-	for ( var i = 0; i < o.moveChange.length; i++) {
-		var playerID = o.moveChange[i].playerID;
-		var xpos = o.moveChange[i].position.y;
-		var ypos = o.moveChange[i].position.x;
-		// alert(playerID);
-		// alert(xpos);
-		// alert(ypos);
-		MoveElementPosition(playerID, xpos, ypos);
-	}
-}
-// END change player pos
-
-// add data to proposals table
-function InsertIntoProposalsTable(o) {
-
-	for ( var i = 0; i < o.msgs.length; i++) {
-		// alert("msg: " + o.msgs[i]);
-		addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
-				o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
-		
-		pendingProposalMsgID =  o.msgs[i].MessageId;
-	}
-}
-// END add data to proposals table in Receiver
-
-// update response for proposal at proposer side
-function UpdateResponseForProposal(o) {
-	// rowID = num of rows in proposals grid
-	
-		
-	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
-	
-	for ( var i = 0; i < o.response.length; i++) {
-		// jQuery("#tblProposals").jqGrid('setCell', rowID - 1, 4,
-		// o.response[i].response);
-		document.getElementById("msgToAcceptReject" + (rowID - 1)).innerHTML = o.response[i].response;
-	}
-}
-// END update response for proposal at proposer side
-
-// move player pos on the game board
-function MoveElementPosition(playerId, toX, toY) {
-	var cellColor = game.getColorCell(toX, toY);
-	// substract num chips
-	var numChips = game.getSumChips(playerId, cellColor);
-	game.setSumChips(playerId, cellColor, numChips - 1);
-	// update div numOf chips
-	jQuery("#" + "playerId" + playerId + "Color" + cellColor)
-			.html(numChips - 1);
-	// move
-	var newDiv = document.getElementById("player" + playerId);
-	var cell = document.getElementById("DivRow" + toX + "Column" + toY);
-	cell.appendChild(newDiv);
-};
-// end move player pos on the game board
-
-
-
-/** ********************** Path Finder *********************** */
-
-// create the path finder UI on the page
-function CreatePathFinder() {
-	insertIntoPlayerSelect();
-	insertIntoGoalSelect();
-}
-
-// Calculate player's path
-function findPath() {
-	var playerId = jQuery("#playerSelect").val();
-	var goalId = jQuery("#goalSelect").val();
-	var maxSteps = parseInt(jQuery("#numStepsPathFinder").val());
-
-	var x = parseInt(game.getPlayerPositionX(playerId));
-	var y = parseInt(game.getPlayerPositionY(playerId));
-
-	var gX = parseInt(game.getGoalPositionX(goalId));
-	var gY = parseInt(game.getGoalPositionY(goalId));
-
-	var path = this.factorial2(x, y, gX, gY, "", 0, maxSteps);
-	// var path=this.factorial2(2,1,2,3,"",0,4);
-	// alert(path);
-	var paths = path.split("&");
-
-	// order
-	var l1;
-	var l2;
-	var temp;
-	// alert(paths.length);
-	for ( var i = 0; i < paths.length; i++)
-		for ( var j = 0; j < paths.length; j++) {
-			l1 = paths[i].split("|").length;
-			l2 = paths[j].split("|").length;
-
-			if ((i != j) && (l1 < l2)) {
-				temp = paths[i];
-				paths[i] = paths[j];
-				paths[j] = temp;
-
-			}
-
-		}
-
-	// remove table from container
-	if (document.getElementById('pathFindeTable')) {
-		var container1 = document.getElementById("pathFinderContainer");
-		var tbl1 = document.getElementById("pathFindeTable");
-		container1.removeChild(tbl1);
-	}
-
-	// append new tbl
-	createTable();
-	var numOfMoves;
-	var missing;
-	var require;
-	appendRowIntoTable("", "moves", "requichips", "missing chips");
-	for ( var j = 0; j < paths.length; j++) {
-		// get num of moves
-		numOfMoves = paths[j].split("|").length - 1;
-		// get requid chip
-		require = this.getRequireChips(paths[j]);
-		// get missing chips
-		missing = this.getMissingChips(paths[j]);
-		if (numOfMoves > 0)
-			appendRowIntoTable(paths[j], numOfMoves, require, missing);
-	}
-
-};
-// end findpath function
-
-// assign goals to players
-function getPlayersGoal() {
-	// alert();
-	removeAllOption("goalSelect");
-	// appendOptionLast("Choose Goal",0,"goalSelect");
-	var dropdownIndex = document.getElementById('playerSelect').selectedIndex;
-	var goalType;
-	var playerName = document.getElementById('playerSelect')[dropdownIndex].text;
-	var playerId = document.getElementById('playerSelect')[dropdownIndex].value;
-	var playerSerial = game.getPlayerSerial(playerId);
-	var sumOfAppend = 0;
-	//for ( var j = 0; j < game.players[playerSerial].goalsId.length; j++) {
-	for ( var j = 0; j < game.goals.length; j++) {
-		goalType = game.goals[j].type;
-		sumOfAppend++;
-		appendOptionLast(goalType, goalType, "goalSelect", '');
-
-	}
-	
-	
-};
-// end function
-
-// Fill players into playersSelect DropDownList
-function insertIntoPlayerSelect()
-{
-	
-	
-	var playerId;
-	var playerName;
-	removeAllOption("playerSelect");
-	playerId = game.getMe();
-	playerName = game.getPlayerName(playerId);
-	appendOptionLast(playerName, playerId, "playerSelect", 'img/' + game.getPlayerIcon(playerId));
-	
-	
-	for ( var i = 0; i < playerNumTotal; i++) {
-		playerId = game.getPlayerId(i);
-		if(game.getisPlayerMe(playerId) != "true")
-		{
-			var found = false;
-			for(var j =0 ; j < game.numOfGolals &&!found ; j++)
-			{
-				if(game.goals[j].type%10 == playerId)
-				{
-					playerName = game.getPlayerName(playerId);
-					appendOptionLast(playerName, playerId, "playerSelect", 'img/' + game.getPlayerIcon(playerId));
-					found =true;
-				}
-			}
-			
-		}
-	}
-	
-	$("#playerSelect").msDropDown();
-	
-	
-	//gil
-	//    var playersIconsDropDown = document.getElementById('playerSelect_title');
-	//	
-	//	playersIconsDropDown.style.width = '120px';
-	//	playersIconsDropDown.style.height = '30px';
-	//	
-	//gilend
-	
-}
-// End of insertIntoPlayerSelect function
-
-// Fill goals into goalSelect DropDownList
-function insertIntoGoalSelect()
-{
-	
-	removeAllOption("goalSelect");
-	// appendOptionLast("Choose Goal",0,"goalSelect");
-	var dropdownIndex = document.getElementById('playerSelect').selectedIndex;
-	var goalType;
-	//var playerName = document.getElementById('playerSelect')[dropdownIndex].text;
-	var playerId = document.getElementById('playerSelect')[dropdownIndex].value;
-	//var playerSerial=game.getPlayerSerial(playerId); 
-	var goalNum=0;
-	//alert("insertIntoGoalSelect -revelation game.numOfGolals "+game.numOfGolals);
-	
-	for(var j =0 ; j < game.numOfGolals; j++)
-	{
-		goalType=game.goals[j].type;
-		
-		//gil
-		//alert(" goalType " +goalType);
-		//gilend
-		
-			goalNum++;
-			appendOptionLast(goalNum,goalType,"goalSelect", '');
-						
-	}	
-	
-	
-}
-// End of insertIntoGoalSelect function
-
-// Finds all paths from initial location to goal according to max number of
-// steps entered
-function factorial2(x,y,gX,gY,path,steps,maxSteps)
-{
-	if ((x==gX)&&(y==gY))
-	{
-		
-		var duplicate=this.hasDuplicate(path);
-		if (duplicate==false)
-			return path+x+","+y+"&";
-		if (duplicate==true)
-			return "";
-	
-	}
-    if (steps >= maxSteps)
-    {
-        // return path+"<br>";
-		return "";
-    }
-	else if ((x<0)||(y<0)||(x>=numOfRows)||(y>=numOfColumns))
-	{
-		return "";
-	}
-    else
-	{
-	return this.factorial2(x+1,y,gX,gY,path+""+x+','+y+"|",steps+1,maxSteps)+this.factorial2(x,y+1,gX,gY,path+""+x+','+y+"|",steps+1,maxSteps)+this.factorial2(x-1,y,gX,gY,path+""+x+','+y+"|",steps+1,maxSteps)+this.factorial2(x,y-1,gX,gY,path+""+x+','+y+"|",steps+1,maxSteps);
-	}
-}
-// End of function
-
-// check if a path already exists
-function hasDuplicate(str)
-{
-	// var str="0,0|1,0|2,0|0,0|1,0|2,0|0,0|1,0|0,0|1,0|0,0";
-	// check for duplicate if has not send
-		var hasD=false;
-		var px1; 
-		var py1; 
-		var co1;
-		var px2;
-		var py2;
-		var co2;
-		var ar=str.split("|");
-		for (var i=0;i<ar.length-1;i++)
-		{
-			co1=ar[i].split(",");
-			px1=co1[0];
-			py1=co1[1];
-			for (var j=0;j<ar.length-1;j++)
-				{	
-					co2=ar[j].split(",");
-					px2=co2[0];
-					py2=co2[1];
-					/*
-					 * document.write("i="+i+" "+"j="+j+"<br>");
-					 * document.write("x="+px2+" "+"x="+px1+"<br>");
-					 * document.write("y="+py2+" "+"y="+py1+"<br>");
-					 * document.write("<br>");
-					 */
-					if ((px1==px2)&&(py1==py2)&&(i!=j))
-					{
-						return true;
-					}
-				}
-		}
-		return hasD;
-}
-// End of function
-
-// creates a table to contain and present the paths to the goal
-function createTable()
-{
-	var container=document.getElementById("pathFinderContainer");
-    var tbl     = document.createElement("table");
-	 tbl.id="pathFindeTable";
-	 tbl.setAttribute("border", "2");
-	 container.appendChild(tbl);
-}
-// end of function
-
-// Append row with a path to the table
-function appendRowIntoTable(path,moves,missing,required)
-{
-		
-  // creates a <table> element and a <tbody> element
-  var tbl     = document.getElementById("pathFindeTable");
-  var tblBody = document.createElement("tbody");
-  var row = document.createElement("tr");
-  // row.setAttribute('id',path);
-	
-	// show path on board
-	if (moves!="moves")
-	{
-		// on Mouse Over Event
-		row.onmouseover = function ()
-		{ 
-			var paths=path.split("|");
-			var p;
-			var x;
-			var y;
-			for (var k=0;k<paths.length;k++)
-			{
-				// current div
-				p=paths[k].split(",");
-				x=p[0];
-				y=p[1];
-				var div3=document.getElementById("DivRow" + x+"Column"+y);
-				div3.className =  "cssDDContainer2";
-				// specify the arrow class
-						// privious div
-						var xPriv;
-						var yPriv;
-						var xPrivPriv;
-						var yPrivPriv;
-						if (k>0)
-						{
-							pPriv=paths[k-1].split(",");
-							xPriv=pPriv[0];
-							yPriv=pPriv[1];
-						}
-						if(k>2)
-						{ 
-							pPrivPriv=paths[k-2].split(",");
-							xPrivPriv=pPrivPriv[0];
-							yPrivPriv=pPrivPriv[1];
-						}
-						if ((xPriv==x)&&(y>yPriv))
-						{
-								var div3=document.getElementById("DivRow" + xPriv+"Column"+yPriv);
-								div3.className =  "rigth";
-						}
-						else if((xPriv==x)&&(y<yPriv))
-						{
-							var div3=document.getElementById("DivRow" + xPriv+"Column"+yPriv);
-								div3.className =  "left";
-						}
-						else if((xPriv>x)&&(y==yPriv))
-						{
-						
-							var div3=document.getElementById("DivRow" + xPriv+"Column"+yPriv);
-								div3.className =  "up";
-						}
-						else if((xPriv<x)&&(y==yPriv))
-						{
-							// alert("x="+x+"y="+y+"xpriv="+xPriv+"ypriv="+yPriv+"xprivpriv="+xPrivPriv+"yprivpriv="+yPrivPriv);
-							var div3=document.getElementById("DivRow" + xPriv+"Column"+yPriv);
-								div3.className =  "down";
-						}
-						else
-						{
-						var div3=document.getElementById("DivRow" + x+"Column"+y);
-						div3.className =  "cssDDContainer2";
-						}
-						// alert("k="+parseInt(k+1)+"pa="+paths.length);
-				// end
-			}
-		};
-		
-		// on ouse Out event
-		row.onmouseout = function ()
-		{ 
-			var paths=path.split("|");
-			var p;
-			var x;
-			var y;
-			for (var k=0;k<paths.length;k++)
-			{
-				p=paths[k].split(",");
-				x=p[0];
-				y=p[1];
-				var div3=document.getElementById("DivRow" + x+"Column"+y);
-				div3.className =  "cssDDContainer";
-			}
-		};
-	}
-	// end show path on board
-	
-	
-	// column 1
-  var cell = document.createElement("td");
-	var cellText = document.createTextNode(moves);
-  cell.appendChild(cellText);
-  row.appendChild(cell);
-	
-	// column 2
-  var cell = document.createElement("td");
-	cell.innerHTML=missing;
-	// var cellText = document.createTextNode(missing);
-  // cell.appendChild(cellText);
-  row.appendChild(cell);
-	
-	// column 3
-  var cell = document.createElement("td");
-	cell.innerHTML=required;
-  row.appendChild(cell);
-	
-  tblBody.appendChild(row);
-  tbl.appendChild(tblBody);
-	
- 
-}
-// End of appendRowIntoTable function
-
-// Gets the required chips needed for path
-function getRequireChips(path)
-{
-
-	var px;
-	var py;
-	var pos=path.split("|");
-	var cor;
-	var col;
-	var arr=new Array(game.numOfColors);
-	// init arra
-	for (var k=0;k<game.numOfColors;k++)
-	{
-		arr[k]=0;
-	}
-	// start from "1" because the start position
-	for(var j=1;j<pos.length;j++)
-	{
-		cor=pos[j].split(",");
-		px=cor[0];
-		py=cor[1];
-		if ((px!="")&&(py!=""))
-		{
-			col=game.getColorCell(px,py);
-			for (var i=0;i<game.numOfColors;i++)
-						if (game.colors[i].name==col)
-							{
-								arr[i]=arr[i]+1;
-							}
-		}
-	}
-
-	// return the str with color like <table><tr><td style="background-color
-	// :#FFF62D;">1</td><td style="background-color
-	// :#BF7FFF;">3</td></tr></table>
-	var req;
-	var str="<table><tr>";
-	for (var i=0;i<game.numOfColors;i++)
-							{
-								if ((game.colors[i].name=="#BFFF7F")||(game.colors[i].name=="#FF7F7F"))
-									req="<font style='color:black'>"+arr[i]+"</font>";
-								else
-									req=arr[i];
-								str=str+'<td style="background-color :#'+game.colors[i].name+';">'+req+'</td>';
-							}
-		str=str+"</tr></table>";
-		return str;
-}
-// End of function - return the require chips
-
-// Calculates the missing chips the player needs for a path to the goal
-function getMissingChips(path)
-{
-
-	var px;
-	var py;
-	var pos=path.split("|");
-	var cor;
-	var col;
-	var arr=new Array(game.numOfColors);
-	
-	// init arra
-	for (var k=0;k<game.numOfColors;k++)
-	{
-		arr[k]=0;
-	}
-	// start from "1" because the start position
-	for(var j=1;j<pos.length;j++)
-	{
-		cor=pos[j].split(",");
-		px=cor[0];
-		py=cor[1];
-		if ((px!="")&&(py!=""))
-		{
-			col=game.getColorCell(px,py);
-			for (var i=0;i<game.numOfColors;i++)
-						if (game.colors[i].name==col)
-							{
-								arr[i]=arr[i]+1;
-							}
-		}
-	}
-	
-	var dropdownIndex = document.getElementById('playerSelect').selectedIndex;
-	var colorName;
-	var colorQuan;
-	var playerId = document.getElementById('playerSelect')[dropdownIndex].value;
-	var playerSerial=game.getPlayerSerial(playerId); 
-	// substract
-	for(var i=0;i<game.numOfColors;i++)
-	{
-		colorName=game.players[playerSerial].cards[i].color;
-		colorQuan=game.players[playerSerial].cards[i].sum;
-		for (var j=0;j<game.numOfColors;j++)
-						if (game.colors[j].name==colorName)
-							{
-								arr[j]=arr[j]-parseInt(colorQuan);
-						}
-		
-	}	
-	
-	
-	for(var i=0;i<game.numOfColors;i++)
-	{
-		for (var i=0;i<game.numOfColors;i++)
-						if (arr[i]<0)
-							{
-								arr[i]=0;
-							}
-		
-	}	
-	
-	// return the str with color like <table><tr><td style="background-color
-	// :#FFF62D;">1</td><td style="background-color
-	// :#BF7FFF;">3</td></tr></table>
-	var req;
-	var str="<table><tr>";
-	for (var i=0;i<game.numOfColors;i++)
-							{
-								if ((game.colors[i].name=="#BFFF7F")||(game.colors[i].name=="#FF7F7F"))
-									req="<font style='color:black'>"+arr[i]+"</font>";
-								else
-									req=arr[i];
-								str=str+'<td style="background-color :#'+game.colors[i].name+';">'+req+'</td>';
-							}
-		str=str+"</tr></table>";
-		return str;
-}
-// End getMissingChips function
-
-
-//updates the goals of the pathfinder after number of goals changes
-function updatePathFinderGoals()
-{
-	insertIntoGoalSelect();
-	
-	// remove table from container
-	if (document.getElementById('pathFindeTable')) {
-		var container1 = document.getElementById("pathFinderContainer");
-		var tbl1 = document.getElementById("pathFindeTable");
-		container1.removeChild(tbl1);
-	}
-
-}
-
-
-/** ********************** END of Path Finder *********************** */
-
-
-
-/** ********************** AJAX *********************** */
-
-// send data to server and update game window with changes
-function UpdateServer() {
-	
-	
-	jQuery.post('getupdate.jsp', function(data) {
-		var o = jQuery.parseJSON(data);		
-		
-		// Update game isEnded
-		game.setIsEnded(o.isEnded);
-		// Update player role
-		game.setRole(o.role);
-		
-		//gil
-		// Update goal revelation
-		game.setIsGoalRevelationAllowed(o.isGoalRevelationAllowed);
-		//gilend
-		
-		//update current phase
-		if (currentPhase != o.CurrentPhase) {
-			phaseChanged = true;
-			
-			// Update Current Phase Time
-			pValue = o.PhaseSecsLeft;
-			// Update Current phase name
-			currentPhase = o.CurrentPhase;
-			if(game.numOfGolals!= o.numOfGoals)
-			{
-				//alert("Num of Goals Changed! = "+  o.numOfGoals);
-				updateGoals(o);
-			}
-			
-		} else {
-			phaseChanged = false;
-		}
-
-	
-		
-	
-		
-		InsertIntoProposalsTable(o);
-		UpdateResponseForProposal(o);
-		UpdatePlayerPosOnBoard(o);
-		UpdatePlayerChips(o);
-		UpdatePlayerRevelationChips(o);
-		UpdateBorderColors(o);
-	});
-}
-
-// this function send proposal
+//this function send proposal
 function sendProposal(playerIDSend, playerIDReceive) {
 
 	var SentChips = new Array();
@@ -2669,54 +994,512 @@ function login(pin) {
 }
 // END send login information to server
 
-// send revelation in ajax to server
-function sendChipRevelation(playerIDSend, recipientID) {
-	var sendRevelation = new Array();
+// INSERT INTO players Icons Drop Down
+function InsertIntoPlayersIconsSelect() {
 	
-	jQuery("select[id^=SelectRevelationPlayerId" + playerIDSend + "]").each(
-			function() {
-				idO = this.id;
-				var arr = idO.split("Color");
-				var color = arr[1];
-				var ddlist = document.getElementById(this.id);
-				var sum = ddlist.options[ddlist.selectedIndex].value;
-				// prepare json
-				var json = "{ \"sum\" : \" " + sum + " \", \"color\" : \""
-						+ color + "\" ,\"playConId\" : \"" + playerIDSend
-						+ "\", \"req\" :  \"Revelation\" }";
-				// alert(json);
-				var o = jQuery.parseJSON(json);
-				
-				// put json into sendRequest
-				sendRevelation.push(o);
-
-			});
 	
-	var stringJ = "{\"player\" : \"" + playerIDSend + "\" , \"recipient\" : \"" + recipientID + "\" , \"chips\" : [";
-	for ( var i = 0; i < sendRevelation.length; i++) {
-		stringJ = stringJ + "{ \"sum\" : " + sendRevelation[i].sum
-				+ ", \"color\" : \"" + sendRevelation[i].color
-				+ "\", \"req\" : \"" + sendRevelation[i].req + "\" }";
-		// alert(sendRequest[i].req);
-		if (i != sendRevelation.length - 1) {
-			stringJ = stringJ + ",";
+	var playerId;	
+	var playersIconsDropDown = document.createElement('select');
+	
+	playersIconsDropDown.setAttribute('id', 'playersIconsDropDown');
+	playersIconsDropDown.onchange= function(){InsertIntoReceiveSelect();}; 
+	playersIconsDropDown.style.width = '70px';
+	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
+	removeAllOption("playersIconsDropDown");
+	for ( var i = 0; i < playerNumTotal; i++) {
+		// get player ID
+		playerId = game.getPlayerId(i);
+		// populate data only for all players except me
+		if (game.getisPlayerMe(playerId) != "true") {
+				// clear dropdown before inserting
+				//removeAllOption("playersIconsDropDown");
+				// insert player img to dropdown
+				appendOptionLast(playerId, playerId, "playersIconsDropDown", 'img/' + game.getPlayerIcon(playerId));							
 		}
 	}
-	stringJ = stringJ + "]}";
+	
+	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
+	$("#playersIconsDropDown").msDropDown();
+	
+}
+function InsertIntoGoalsSelect() {
+	var playerId;	
+	var goalsDropDown = document.createElement('select');
+	
+	goalsDropDown.setAttribute('id', 'goalsDropDown');
+	goalsDropDown.style.width = '70px';
 
-	jQuery.ajax({
-		type : "post",
-		url : "sendRevelation.jsp",
-		data : "json=" + stringJ,
-		success : function(msg) {
-			// alert(msg);
+	document.getElementById('divTableGoal').appendChild(goalsDropDown);
+	var x = game.goals[0].posX;
+	var y = game.goals[0].posY;
+
+	appendOptionLast("["+x+","+(y+1)+"]",x+","+(y+1),"goalsDropDown", "");
+	appendOptionLast("["+x+","+(y-1)+"]", x+","+(y-1), "goalsDropDown", "");
+	appendOptionLast("["+(x+1)+","+y+"]", (x+1)+","+y, "goalsDropDown", "");
+	appendOptionLast("["+(x-1)+","+y+"]", (x-1)+","+y, "goalsDropDown", "");
+	
+	//$("#goalsDropDown").msDropDown();
+	
+}
+// END INSERT INTO players Icons Drop Down
+
+
+
+// INSERT INTO Players Chips Send
+function InsertIntoSendSelect() {
+	var playerId;
+	var color;
+	var sumChips;
+	
+	for ( var i = 0; i < playerNumTotal; i++) {
+		// populate data only for me (player)
+		playerId = game.getPlayerId(i);
+		if (game.getisPlayerMe(playerId) == "true") {
+			for ( var j = 0; j < colorNumTotal; j++) {
+				playerId = game.getPlayerId(i);
+				color = game.colors[j].name;
+				removeAllOption("SelectSendPlayerId" + playerId + "Color"
+						+ color);
+				sumChips = game.getSumChips(playerId, color);
+				for ( var k = 0; k <= sumChips; k++) {
+					appendOptionLast(k, k, "SelectSendPlayerId" + playerId
+							+ "Color" + color, '');
+				}
+			}
 		}
-	});
+	}
+}
+
+// INSERT INTO Players Chips Receive
+function InsertIntoReceiveSelect() {
+	var playerId;
+	var playerIdOpponent = document.getElementById('playersIconsDropDown').selectedIndex;
+	var color;
+	var sumChips = 0;
+
+	for ( var i = 0; i < playerNumTotal; i++) {
+		// populate data only for me (player)
+		playerId = game.getPlayerId(i);
+		if (game.getisPlayerMe(playerId) == "true") {
+			for ( var j = 0; j < colorNumTotal; j++) {
+				playerId = game.getPlayerId(i);
+				color = game.colors[j].name;
+
+				removeAllOption("SelectReceivePlayerId" + playerId + "Color"
+						+ color);
+
+				sumChips += isRevelationEnabled == "true" ? game.getSumRevelationChips(playerIdOpponent, color) : game.getSumChips(playerIdOpponent, color);
+
+				for ( var k = 0; k <= sumChips; k++) {
+					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
+							+ "Color" + color, '');
+				}
+				sumChips = 0;
+			}
+		}
+	}
+}
+// END INSERT INTO Players Chips Receive
+
+// insert value at end of Select element
+function appendOptionLast(text, value, IDselect, title) {
+	var elOptNew = document.createElement('option');
+	elOptNew.text = text;
+	elOptNew.value = value;
+	elOptNew.title = title == null ? "" : title;
+	var elSel = document.getElementById(IDselect);
+
+	try {
+		elSel.add(elOptNew, null); // standards compliant; doesn't work in IE
+	} catch (ex) {
+		elSel.add(elOptNew); // IE only
+	}
+}
+
+
+// remove all data from Select element
+function removeAllOption(IDselect) {
+	var elSel = document.getElementById(IDselect);
+	var i;
+	for (i = elSel.length - 1; i >= 0; i--) {
+
+		elSel.remove(i);
+	}
+}
+
+// Proposals table
+function loadProposalsTable() {
+	jQuery("#tblProposals").jqGrid(
+			{
+				datatype : "local",
+				height : 200,
+				colNames : ['MsgType', 'Sender', 'Receiver', 'Send', 'Receive', 'Response' ],
+				colModel : [ {
+					name : 'MsgType',
+					index : 'MsgType',
+					width : 90,
+					sortable : false
+				}, {
+					name : 'Sender',
+					index : 'Sender',
+					width : 75,
+					sortable : false
+				},{
+					name : 'Receiver',
+					index : 'Receiver',
+					width : 75,
+					sortable : false
+				},{
+					name : 'Send',
+					index : 'Send',
+					width : 200,
+					sortable : false
+				}, {
+					name : 'Receive',
+					index : 'Receive',
+					width : 200,
+					sortable : false
+				}, {
+					name : 'Response',
+					index : 'Response',
+					width : 150,
+					sortable : false
+				} ],
+				multiselect : false,
+				hoverrows : false				
+			});
+	var defaultData = {
+			// Id : MessageId,
+			// Proposer : playerName,
+			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
+			// Receiver : '<img height=25px width=25px src="img/'
+			// + game.getPlayerIcon(SenderID) + '"/>',
+			// Proposer : SenderID,
+			// Receiver : SenderID == 0 ? 1 : 0,
+			MsgType : "<div id='divTableMsgType'></div>",
+			Sender : "<div id='divTableSender'></div>",
+			Receiver : "<div id='divTableReceiver'></div>",
+			Send : "<div id='divTableSend'></div>",
+			Receive : "<div id='divTableReceive'></div>", 
+			Response : "<div id='divButtonPropose'></div>"
+		};
+	
+	jQuery("#tblProposals").jqGrid('addRowData', 0, defaultData);
+}
+
+
+// this function Receive "01:03" return "63"
+function getSeconds(timeForm) {
+
+	var time3 = timeForm.split(":");
+	// change second fro 09 to 9
+	if (time3[1].charAt(0) == 0)
+		time3[1] = time3[1].charAt(1);
+
+	// change minutes from 07 to 7
+	if (time3[0].charAt(0) == 0)
+		time3[0] = time3[0].charAt(1);
+
+	var seconds = parseInt(time3[0]) * 60 + parseInt(time3[1]);
+	seconds = parseInt(seconds);
+	return seconds;
+
+}
+// end getSeconds
+
+// this function Receives "120" return "2:00"
+function secondsToTime(seconds) {
+	var min = 0;
+	while (seconds >= 60) {
+		seconds = parseInt(seconds) - 60;
+		min = min + 1;
+	}
+	if (parseInt(min) < 10)
+		min = "0" + min;
+	if (parseInt(seconds) < 10)
+		seconds = "0" + seconds;
+
+	return min + ":" + seconds;
+
+}
+
+/* Add a msg to grid */
+function addNormToTable(MsgType, SenderID, ReceiverID, msgID, N) {
+	var Norm = "<div><table><tr>";
+	Norm = Norm + N + "</tr></table></div>";
+	
+	var defaultData = {
+		MsgType : MsgType,
+		Sender : game.getisPlayerMe(SenderID) == "true" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(SenderID) + "'/>",
+		Receiver : game.getisPlayerMe(SenderID) == "false" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(ReceiverID) +"'/>   "+ReceiverID+"",	
+		Goal : "<div></div>",
+		Message : Norm, 
+		Response : "<div></div>"
+	};
+
+	//alert(defaultData.Message);
+	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
+	jQuery("#tblNorms").jqGrid('addRowData', rowID, defaultData);
+	
+}
+
+function addRecordToTable(MsgType, SenderID, ReceiverID, msgID, ReceivedChips, SentChips) {
+	var ReceivedChips1 = "<div><table><tr>";
+	var SentChips1 = "<div><table><tr>";
+	var playerName = game.getPlayerName(SenderID);
+	// iterate over msg.ReceivedColor
+	
+	
+	if(MsgType != "GoalRevelation")
+	{
+		for ( var j = 0; j < SentChips.length; j++) {
+			SentChips1 = SentChips1 + '<td class="proposalsSendReceiveCol" style="background-color :#'
+					+ SentChips[j].color + ';"><b>'+" " + SentChips[j].sum + " "+'</b></td>';
+		}
+		SentChips1 = SentChips1 + "</tr></table></div>";
+
+	}
+	
+		
+	// only if msg type is Proposal iterate over recieved chips
+	if (MsgType == "Proposal") {
+		for ( var j = 0; j < ReceivedChips.length; j++) {
+			ReceivedChips1 = ReceivedChips1 + '<td class="proposalsSendReceiveCol" style="background-color :#'
+					+ ReceivedChips[j].color + ';"><b>'+" " + ReceivedChips[j].sum + " "+'</b></td>';
+		}
+		ReceivedChips1 = ReceivedChips1 + "</tr></table></div>";
+	}
+
+	var AcceptRejectButtonsHTML = '<div id="msgToAcceptReject'
+			+ msgID
+			+ '"><table><tr><td><input onclick="sendResponseAcceptReject('
+			+ msgID
+			+ ',1)" type="button" id="acceptResponseButton'
+			+ msgID
+			+ '" value="Accept"></td><td><input type="button" id="rejectResponseButton'
+			+ msgID + '" value="Reject" onclick="sendResponseAcceptReject('
+			+ msgID + ',0)"></td><td></td></tr></table></div>';
+
+	var showButtons = game.role == 1 ? AcceptRejectButtonsHTML
+			: '<div id="msgToAcceptReject' + msgID + '"></div>';
+
+	var defaultData = {
+		MsgType : MsgType,
+		Sender : game.getisPlayerMe(SenderID) == "true" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(SenderID) + "'/>",
+		Receiver : game.getisPlayerMe(SenderID) == "false" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(ReceiverID) + "'/>",	
+		Send : MsgType != "GoalRevelation" ? SentChips1  : "<div></div>",
+		Receive : MsgType == "Proposal" ? ReceivedChips1 : "<div></div>", 
+		Response : MsgType == "Proposal" ? showButtons : "<div></div>"
+	};
 
 	// rowID = num of rows in proposals grid
 	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
-	addRecordToTable("ChipRevelation", playerIDSend, recipientID, rowID, "",
-			sendRevelation);
-
+	
+		
+	// alert('send: ' + SentChips1);
+	// alert('Receive: ' + ReceivedChips1);
+	
+	
+	jQuery("#tblProposals").jqGrid('addRowData', rowID, defaultData);
+	
+	//the popup window for received proposal
+	if(game.role == 1)
+	{
+		var newDiv = $(document.createElement('div')); 
+		newDiv.html('Incoming proposal received!');
+		newDiv.dialog({ title: "Proposal Received" });
+		setTimeout(function(){newDiv.dialog('close');},2500);
+	}
+	
 }
-// END send revelation in ajax to server
+
+
+// send data to server and update game window with changes
+function UpdateServer() {
+	
+	
+	jQuery.post('getupdate.jsp', function(data) {
+		var o = jQuery.parseJSON(data);		
+		
+		// Update game isEnded
+		game.setIsEnded(o.isEnded);
+		// Update player role
+		game.setRole(o.role);
+		
+		//gil
+		// Update goal revelation
+		game.setIsGoalRevelationAllowed(o.isGoalRevelationAllowed);
+		//gilend
+		
+		//update current phase
+		if (currentPhase != o.CurrentPhase) {
+			phaseChanged = true;
+			
+			// Update Current Phase Time
+			pValue = o.PhaseSecsLeft;
+			// Update Current phase name
+			currentPhase = o.CurrentPhase;
+			if(game.numOfGolals!= o.numOfGoals)
+			{
+				//alert("Num of Goals Changed! = "+  o.numOfGoals);
+				updateGoals(o);
+			}
+			
+		} else {
+			phaseChanged = false;
+		}
+		
+		InsertIntoProposalsTable(o);
+		UpdateResponseForProposal(o);
+		UpdatePlayerPosOnBoard(o);
+		UpdatePlayerChips(o);
+		UpdateBorderColors(o);
+	});
+}
+
+//Change Player Chips after ajax update
+function UpdatePlayerChips(o) {
+	for ( var i = 0; i < o.chipsChange.length; i++) {
+		for ( var j = 0; j < o.chipsChange[i].chips.length; j++) {
+			var playerID = o.chipsChange[i].playerID;
+			var colorCell = o.chipsChange[i].chips[j].color;				
+			var total = o.chipsChange[i].chips[j].sum;
+			
+			game.setSumChips(playerID, colorCell, total);
+			
+			if (game.getisPlayerMe(playerID) == "true" || isRevelationEnabled == "false") {
+				jQuery("#" + "playerId" + playerID + "Color" + colorCell).html(
+						total);								
+			}
+		}
+	}
+}
+// END change player Chips
+
+function updateGoals(o)
+{
+		
+	removeGoals();
+	
+	for ( var i = 0; i < o.Goals.length; i++) 
+	{
+		game.goals[i].id = o.Goals[i].id;
+		game.goals[i].type = o.Goals[i].type;
+		game.goals[i].posX = o.Goals[i].posX;
+		game.goals[i].posY = o.Goals[i].posY;
+	}
+	
+	if(o.Goals.length < game.numOfGolals)
+	{
+		game.goals.splice(o.Goals.length,game.numOfGolals-o.Goals.length);
+	}
+	
+	game.numOfGolals = o.Goals.length;
+	game.numGoals = o.Goals.length;
+	
+	createGoals();
+	
+	updatePathFinderGoals();
+	
+	
+	
+	
+}
+
+
+function removeGoals(){
+
+    var goalSquare;
+    
+    for ( var i = 0; i < game.numOfGolals; i++) {
+       if(game.goals[i].type >= 10){
+               goalSquare = document.getElementById("DivRow" + game.goals[i].posX + "Column" + game.goals[i].posY);
+           goalSquare.removeChild(goalSquare.lastChild);
+            
+       }
+    }
+    
+    //alert("Finished removing goals");
+}
+
+
+
+
+
+// Change BorderColors (game pallet) after ajax update
+function UpdateBorderColors(o) {
+	
+	for ( var i = 0; i < o.BorderColors.length; i++) {		
+			var color = o.BorderColors[i].color;
+			var posX = o.BorderColors[i].posX;				
+			var posY = o.BorderColors[i].posY;
+			
+			game.setColorCell(color, posX, posY);								
+	}
+	
+	// rebuild game bord colors
+	addColors();
+}
+// END Change BorderColors (game pallet) after ajax update
+
+// Change Player POS
+function UpdatePlayerPosOnBoard(o) {
+	for ( var i = 0; i < o.moveChange.length; i++) {
+		var playerID = o.moveChange[i].playerID;
+		var xpos = o.moveChange[i].position.y;
+		var ypos = o.moveChange[i].position.x;
+		// alert(playerID);
+		// alert(xpos);
+		// alert(ypos);
+		MoveElementPosition(playerID, xpos, ypos);
+	}
+}
+// END change player pos
+
+// add data to proposals table
+function InsertIntoProposalsTable(o) {
+
+	for ( var i = 0; i < o.msgs.length; i++) {
+		// alert("msg: " + o.msgs[i]);
+		addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
+				o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
+		
+		pendingProposalMsgID =  o.msgs[i].MessageId;
+	}
+}
+// END add data to proposals table in Receiver
+
+// update response for proposal at proposer side
+function UpdateResponseForProposal(o) {
+	// rowID = num of rows in proposals grid
+	
+		
+	var rowID = jQuery("#tblProposals").jqGrid('getGridParam', 'records');
+	
+	for ( var i = 0; i < o.response.length; i++) {
+		// jQuery("#tblProposals").jqGrid('setCell', rowID - 1, 4,
+		// o.response[i].response);
+		document.getElementById("msgToAcceptReject" + (rowID - 1)).innerHTML = o.response[i].response;
+	}
+}
+// END update response for proposal at proposer side
+
+// move player pos on the game board
+function MoveElementPosition(playerId, toX, toY) {
+	var cellColor = game.getColorCell(toX, toY);
+	// substract num chips
+	var numChips = game.getSumChips(playerId, cellColor);
+	game.setSumChips(playerId, cellColor, numChips - 1);
+	// update div numOf chips
+	jQuery("#" + "playerId" + playerId + "Color" + cellColor)
+			.html(numChips - 1);
+	// move
+	var newDiv = document.getElementById("player" + playerId);
+	var cell = document.getElementById("DivRow" + toX + "Column" + toY);
+	cell.appendChild(newDiv);
+};
+// end move player pos on the game board
+
+
+
+
