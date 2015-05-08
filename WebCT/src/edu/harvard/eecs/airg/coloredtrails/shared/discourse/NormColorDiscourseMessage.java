@@ -16,21 +16,21 @@ public class NormColorDiscourseMessage extends DiscourseMessage {
 	 * 
 	 */
 	private static final long serialVersionUID = 8732569987805134283L;
-	Integer color;
+	String color;
 	boolean norm;
 	
-	public NormColorDiscourseMessage(int senderID, int receiverID, int messageId, Integer color, boolean norm) {
+	public NormColorDiscourseMessage(int senderID, int receiverID, int messageId, String color, String norm) {
 		super(senderID, receiverID, "normcolor", messageId);
 
-        this.norm = norm;
+        this.norm = norm == "yes" ? true : false;
         this.color = color;
 	}
 
-	public Integer getColor() {
+	public String getColor() {
 		return color;
 	}
 
-	public void setColor(Integer color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 

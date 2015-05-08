@@ -310,7 +310,8 @@ var game = {
 							Object[] colors = br.getColors().toArray();
 							for(int i =0;i< br.getColors().size();i++)
 							{
-								out.print(	"{\"name\" : \""+ColorConverter.getClientColor(colors[i].toString())+"\"}");
+								out.print(	"{\"name\" : \""+ColorConverter.getClientColor(colors[i].toString())+"\",");
+								out.print(	"\"color\" : \""+colors[i]+"\"}");
 								if(i != colors.length-1)
 								{
 									out.println(",");
@@ -599,6 +600,9 @@ var game = {
 </div>
 <div id="norms">
 <table id="tblNorms"></table>
+</div>
+<div id="Cnorms">
+<table id="tblCNorms"></table>
 </div>
 <div id="proposals">
 <table id="tblProposals"></table>

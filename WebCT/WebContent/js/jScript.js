@@ -390,6 +390,7 @@ function updateProgressBar() {
 				//chipRevelationArea();
 				//clearProposalTableArea();
 				loadNormGoalProposalsTable();
+				loadNormColorProposalsTable();
 				SetHeaderMsg('This is norm phase');
 			
 			
@@ -489,6 +490,12 @@ function clearNormMessagesUI() {
 	removeElemFromDOM(document.getElementById('divTableNGoal'));
 	removeElemFromDOM(document.getElementById('divTableNMessage'));
 	removeElemFromDOM(document.getElementById('divButtonNPropose'));
+	removeElemFromDOM(document.getElementById('divTableNCMsgType'));
+	removeElemFromDOM(document.getElementById('divTableNCSender'));
+	removeElemFromDOM(document.getElementById('divTableNCReceiver'));
+	removeElemFromDOM(document.getElementById('divTableNCColor'));
+	removeElemFromDOM(document.getElementById('divTableNCNorm'));
+	removeElemFromDOM(document.getElementById('divButtonNCPropose'));
 }
 // END clear message interface UI (first row in grid)
 
@@ -565,6 +572,126 @@ function clearProposalTableArea(){
 	document.getElementById('proposals').appendChild(tableProposals);
 
 }
+
+function loadNormColorProposalsTable() {	
+	jQuery("#tblCNorms").jqGrid(
+			{
+				datatype : "local",
+				height : 200,
+				colNames : ['MsgType', 'Sender', 'Receiver', 'Color', 'Norm',  'Response' ],
+				colModel : [ {
+					name : 'MsgType',
+					index : 'MsgType',
+					width : 90,
+					sortable : false
+				}, {
+					name : 'Sender',
+					index : 'Sender',
+					width : 75,
+					sortable : false
+				},{
+					name : 'Receiver',
+					index : 'Receiver',
+					width : 75,
+					sortable : false
+				},{
+					name : 'Color',
+					index : 'Color',
+					width : 90,
+					sortable : false
+				},{
+					name : 'Norm',
+					index : 'Norm',
+					width : 400,
+					sortable : false
+				},{
+					name : 'Response',
+					index : 'Response',
+					width : 150,
+					sortable : false
+				} ],
+				multiselect : false,
+				hoverrows : false				
+			});
+
+	var defaultData = {
+			// Id : MessageId,
+			// Proposer : playerName,
+			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
+			// Receiver : '<img height=25px width=25px src="img/'
+			// + game.getPlayerIcon(SenderID) + '"/>',
+			// Proposer : SenderID,
+			// Receiver : SenderID == 0 ? 1 : 0,
+			MsgType : "<div id='divTableNCMsgType'></div>",
+			Sender : "<div id='divTableNCSender'></div>",
+			Receiver : "<div id='divTableNCReceiver'></div>",
+			Color : "<div id='divTableNCColor'></div>", 
+			Norm : "<div id='divTableNCNorm'></div>",
+			Response : "<div id='divButtonNCPropose'></div>"
+		};
+	
+	jQuery("#tblCNorms").jqGrid('addRowData', 0, defaultData);
+	
+	// add a button for submit
+	var cont = document.createElement("div");
+	
+	var playerIdToSend = game.getMe();
+	cont.innerHTML = "<button id='buttonSubmitNormColor' onclick='buttonSubmitNormColor_click(" + playerIdToSend + ");'>Submit</button>";
+	document.getElementById('divButtonNCPropose').appendChild(cont);	
+	
+	// append div into Messages grid
+	//document.getElementById("divTableNCNorm").innerHTML = 'If you wish to send an obligation';
+	document.getElementById("divTableNCMsgType").innerHTML = 'Norm Color';
+	document.getElementById("divTableNCSender").innerHTML = "<img src='img/me.gif'/>";
+	
+	InsertIntoPlayersIconsSelect('divTableNCReceiver');
+	InsertIntoNormColorSelect();
+	InsertIntoNormSelect();
+}
+// end Proposals table
+
+
+//Send revelation details to the sever
+function buttonSubmitNormColor_click(playerId) {
+	
+	var ddIcons = document.getElementById('divTableNCReceiverDropDown');
+	var colors = document.getElementById('colorsDropDown');
+	var norms = document.getElementById('normsDropDown');
+	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;
+	var color = colors.options[colors.selectedIndex].value;
+	var norm = norms.options[norms.selectedIndex].value;
+	if (norm == "yes")
+		var message = "your obligation is to go through a " + colors.options[colors.selectedIndex].text + " square";
+	else
+		var message = "your prohibition is not to go through a " + colors.options[colors.selectedIndex].text + "square";
+	sendNormColor(playerId,recipientID,color,norm);
+	//clearProposalTableArea();
+	//loadNormGoalProposalsTable();
+	// rowID = num of rows in proposals grid
+	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
+	//alert("rowID = "+rowID);
+	
+	addNormToTable("Obligation", playerId, recipientID, rowID, message);
+	
+	//clearMessagesUI();
+	//$("#"+"0").hide();
+	
+}
+
+function sendNormColor(playerIDSend,recipientID,color,norm)
+{
+	var stringJ = "{\"player\" : \"" + playerIDSend + "\" , \"recipient\" : \"" + recipientID; 
+		stringJ = stringJ + "\", \"color\" : \"" + color + "\", \"norm\" : \"" + norm +"\"}";
+	jQuery.ajax({
+		type : "post",
+		url : "sendNormColor.jsp",
+		data : "json=" + stringJ,
+		success : function(msg) {
+			 alert(stringJ);
+		}
+	});
+}
+
 function loadNormGoalProposalsTable() {	
 	jQuery("#tblNorms").jqGrid(
 			{
@@ -636,7 +763,7 @@ function loadNormGoalProposalsTable() {
 	document.getElementById("divTableNMsgType").innerHTML = 'Norm Goal';
 	document.getElementById("divTableNSender").innerHTML = "<img src='img/me.gif'/>";
 	
-	InsertIntoPlayersNormIconsSelect();
+	InsertIntoPlayersIconsSelect("divTableNReceiver");
 	InsertIntoNormGoalsSelect();
 }
 // end Proposals table
@@ -645,7 +772,7 @@ function loadNormGoalProposalsTable() {
 //Send revelation details to the sever
 function buttonSubmitNormGoal_click(playerId) {
 	
-	var ddIcons = document.getElementById('playersIconsDropDown');
+	var ddIcons = document.getElementById('divTableNReceiverDropDown');
 	var goals = document.getElementById('goalsDropDown');
 	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;
 	var goal = goals.options[goals.selectedIndex].value;
@@ -669,7 +796,6 @@ function buttonSubmitNormGoal_click(playerId) {
 	//$("#"+"0").hide();
 	
 }
-// END Send revelation details to the sever
 
 function sendNormGoal(playerIDSend,recipientID,x,y,ox,oy)
 {
@@ -687,9 +813,6 @@ function sendNormGoal(playerIDSend,recipientID,x,y,ox,oy)
 			// alert(stringJ);
 		}
 	});
-/*
-	
-*/
 }
 
 // send Receive proposal area
@@ -808,7 +931,7 @@ function proposalArea() {
 
 	
 	// populate data
-	InsertIntoPlayersIconsSelect();
+	InsertIntoPlayersIconsSelect("divTableReceiver");
 	InsertIntoSendSelect();
 	InsertIntoReceiveSelect();
 	
@@ -830,7 +953,7 @@ function buttonSubmitProposal_click() {
 	
 	for ( var i = 0; i < playerNumTotal; i++) {
 		if (game.players[i].isme == 'true') {
-			var ddIcons = document.getElementById('playersIconsDropDown');	
+			var ddIcons = document.getElementById('divTableReceiverDropDown');	
 			sendProposal(game.getPlayerId(i), ddIcons.options[ddIcons.selectedIndex].value);
 		}
 	}
@@ -966,18 +1089,18 @@ function login(pin) {
 }
 // END send login information to server
 
-// INSERT INTO players Icons Drop Down
-function InsertIntoPlayersIconsSelect() {
+
+function InsertIntoPlayersIconsSelect(select) {
 	
 	
 	var playerId;	
 	var playersIconsDropDown = document.createElement('select');
 	
-	playersIconsDropDown.setAttribute('id', 'playersIconsDropDown');
+	playersIconsDropDown.setAttribute('id', select+'DropDown');
 	playersIconsDropDown.onchange= function(){InsertIntoReceiveSelect();}; 
 	playersIconsDropDown.style.width = '70px';
-	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
-	removeAllOption("playersIconsDropDown");
+	document.getElementById(select).appendChild(playersIconsDropDown);
+	removeAllOption(select+'DropDown');
 	for ( var i = 0; i < playerNumTotal; i++) {
 		// get player ID
 		playerId = game.getPlayerId(i);
@@ -986,39 +1109,12 @@ function InsertIntoPlayersIconsSelect() {
 				// clear dropdown before inserting
 				//removeAllOption("playersIconsDropDown");
 				// insert player img to dropdown
-				appendOptionLast(playerId, playerId, "playersIconsDropDown", 'img/' + game.getPlayerIcon(playerId));							
+				appendOptionLast(playerId, playerId, select+'DropDown', 'img/' + game.getPlayerIcon(playerId));							
 		}
 	}
 	
-	document.getElementById('divTableReceiver').appendChild(playersIconsDropDown);
-	$("#playersIconsDropDown").msDropDown();
-	
-}
-function InsertIntoPlayersNormIconsSelect() {
-	
-	
-	var playerId;	
-	var playersIconsDropDown = document.createElement('select');
-	
-	playersIconsDropDown.setAttribute('id', 'playersIconsDropDown');
-	playersIconsDropDown.onchange= function(){InsertIntoReceiveSelect();}; 
-	playersIconsDropDown.style.width = '70px';
-	document.getElementById('divTableNReceiver').appendChild(playersIconsDropDown);
-	removeAllOption("playersIconsDropDown");
-	for ( var i = 0; i < playerNumTotal; i++) {
-		// get player ID
-		playerId = game.getPlayerId(i);
-		// populate data only for all players except me
-		if (game.getisPlayerMe(playerId) != "true") {
-				// clear dropdown before inserting
-				//removeAllOption("playersIconsDropDown");
-				// insert player img to dropdown
-				appendOptionLast(playerId, playerId, "playersIconsDropDown", 'img/' + game.getPlayerIcon(playerId));							
-		}
-	}
-	
-	document.getElementById('divTableNReceiver').appendChild(playersIconsDropDown);
-	$("#playersIconsDropDown").msDropDown();
+	document.getElementById(select).appendChild(playersIconsDropDown);
+	$("#"+select+"DropDown").msDropDown();
 	
 }
 function InsertIntoNormGoalsSelect() {
@@ -1040,9 +1136,34 @@ function InsertIntoNormGoalsSelect() {
 	//$("#goalsDropDown").msDropDown();
 	
 }
-// END INSERT INTO players Icons Drop Down
 
+function InsertIntoNormColorSelect() {
+	var playerId;	
+	var colorsDropDown = document.createElement('select');
+	
+	colorsDropDown.setAttribute('id', 'colorsDropDown');
+	colorsDropDown.style.width = '70px';
 
+	document.getElementById('divTableNCColor').appendChild(colorsDropDown);
+	for ( var j = 0; j < colorNumTotal; j++) {
+		var color = game.colors[j].color;
+		var name = game.colors[j].name;
+		appendOptionLast(color,name,"colorsDropDown", 'color');
+	}
+}
+
+function InsertIntoNormSelect() {
+	var playerId;	
+	var normsDropDown = document.createElement('select');
+	
+	normsDropDown.setAttribute('id', 'normsDropDown');
+	normsDropDown.style.width = '70px';
+
+	document.getElementById('divTableNCNorm').appendChild(normsDropDown);
+	appendOptionLast("obligation","yes","normsDropDown", 'obligation');
+	appendOptionLast("prohibition","no","normsDropDown", 'prohibition');
+	
+}
 
 // INSERT INTO Players Chips Send
 function InsertIntoSendSelect() {
@@ -1072,7 +1193,7 @@ function InsertIntoSendSelect() {
 // INSERT INTO Players Chips Receive
 function InsertIntoReceiveSelect() {
 	var playerId;
-	var playerIdOpponent = document.getElementById('playersIconsDropDown').selectedIndex;
+	var playerIdOpponent = document.getElementById('divTableReceiverDropDown').selectedIndex;
 	var color;
 	var sumChips = 0;
 
@@ -1113,6 +1234,7 @@ function appendOptionLast(text, value, IDselect, title) {
 	} catch (ex) {
 		elSel.add(elOptNew); // IE only
 	}
+
 }
 
 
