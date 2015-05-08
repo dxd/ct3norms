@@ -109,8 +109,6 @@ function Init() {
 	goalRevelationPhaseEnded = false;
 	
 	phaseChanged = true;
-	//set goal revelation submit flag
-	isGoalRevelationSubmitted = false;
 	//set pending proposal flag
 	pendingProposalMsgID = -1;
 	
@@ -361,66 +359,29 @@ function createGoals() {
 
 // update the progress bar
 function updateProgressBar() {
-	
-	//gil
-	//alert("updateProgressBar started");
-	//gilend
-	
-	
-	// check if game has ended
+
 	if (game.isEnded == true) {
 		self.location = "ended.jsp";
 	}
 	
-	
-	// check phase ended or game just started
-	if (phaseChanged == true) {
-			
-		lastRole = game.role;
-		
+	if (phaseChanged == true) {			
+		lastRole = game.role;		
 		if (currentPhase == null) {
 			currentPhase = game.phases[currentPhaseIndex].name;
 		}
 		else
 		{
-			/*
-			if (currentPhaseIndex == (game.phases.length - 1)) 
-			{
-				currentPhaseIndex = 0;
-			}
-			else
-			{
-				currentPhaseIndex++;	
-			}
-			*/
-			currentPhaseIndex = game.phasesIndex[currentPhase];
-			
-		}
-		
-		//alert("current phase = "+ currentPhase);
-		//alert("phaseHashNameIndex = "+ game.phasesIndex[currentPhase]);
-		
+			currentPhaseIndex = game.phasesIndex[currentPhase];			
+		}		
 		phaseChanged = false;
 
-		
-		// call update to get most recent changes from server
 		UpdateServer();
-		
-//		for (var i = 0; i < game.phases.length; i++) {
-//			if (currentPhase == game.phases[i].name) {
-//				//alert(i);
-//				currentPhaseIndex = i;
-//			}
-//		}
-		
-		
+
 		currentPhaseTime = game.phases[currentPhaseIndex].duration;
 		if (currentPhaseIndex == 0) {
 			pValue = game.phases[currentPhaseIndex].duration;
 		}
-			
-	
-		
+
 		// clear first row at proposals table
 		//clearMessagesUI();
 		
@@ -435,8 +396,10 @@ function updateProgressBar() {
 			break;
 		case "Communication Phase":
 			// if communication phase -> build proposal area for players
-			clearMessagesUI();
-			UpdateServer();			
+			clearNormMessagesUI();
+			//UpdateServer();			
+			
+			loadProposalsTable();
 			proposalArea();
 			// notify			
 			SetHeaderMsg(game.role == 1 ? 'this is Communication phase, you are the Receiver' : 'this is Communication phase, you are the Proposer');		
@@ -444,7 +407,7 @@ function updateProgressBar() {
 			
 		case "Counter Offer Phase":
 			// if communication phase -> build proposal area for players
-			UpdateServer();			
+			//UpdateServer();			
 			proposalArea();
 			// notify
 			SetHeaderMsg(game.role == 1 ? 'this is Counter Offer phase, you are the Receiver' : 'this is Counter Offer phase, you are the Proposer');
@@ -514,8 +477,18 @@ function clearMessagesUI() {
 	removeElemFromDOM(document.getElementById('divTableReceiver'));
 	removeElemFromDOM(document.getElementById('divTableSend'));
 	removeElemFromDOM(document.getElementById('divTableReceive'));
+	removeElemFromDOM(document.getElementById('divTableGoal'));
+	removeElemFromDOM(document.getElementById('divTableMessage'));
 	removeElemFromDOM(document.getElementById('divButtonPropose'));
 	removeElemFromDOM(document.getElementById('notifyContainer'));	
+}
+function clearNormMessagesUI() {
+	removeElemFromDOM(document.getElementById('divTableNMsgType'));
+	removeElemFromDOM(document.getElementById('divTableNSender'));
+	removeElemFromDOM(document.getElementById('divTableNReceiver'));
+	removeElemFromDOM(document.getElementById('divTableNGoal'));
+	removeElemFromDOM(document.getElementById('divTableNMessage'));
+	removeElemFromDOM(document.getElementById('divButtonNPropose'));
 }
 // END clear message interface UI (first row in grid)
 
@@ -641,12 +614,12 @@ function loadNormGoalProposalsTable() {
 			// + game.getPlayerIcon(SenderID) + '"/>',
 			// Proposer : SenderID,
 			// Receiver : SenderID == 0 ? 1 : 0,
-			MsgType : "<div id='divTableMsgType'></div>",
-			Sender : "<div id='divTableSender'></div>",
-			Receiver : "<div id='divTableReceiver'></div>",
-			Message : "<div id='divTableMessage'></div>", 
-			Goal : "<div id='divTableGoal'></div>",
-			Response : "<div id='divButtonPropose'></div>"
+			MsgType : "<div id='divTableNMsgType'></div>",
+			Sender : "<div id='divTableNSender'></div>",
+			Receiver : "<div id='divTableNReceiver'></div>",
+			Message : "<div id='divTableNMessage'></div>", 
+			Goal : "<div id='divTableNGoal'></div>",
+			Response : "<div id='divButtonNPropose'></div>"
 		};
 	
 	jQuery("#tblNorms").jqGrid('addRowData', 0, defaultData);
@@ -656,15 +629,15 @@ function loadNormGoalProposalsTable() {
 	
 	var playerIdToSend = game.getMe();
 	cont.innerHTML = "<button id='buttonSubmitNormGoal' onclick='buttonSubmitNormGoal_click(" + playerIdToSend + ");'>Submit</button>";
-	document.getElementById('divButtonPropose').appendChild(cont);	
+	document.getElementById('divButtonNPropose').appendChild(cont);	
 	
 	// append div into Messages grid
-	document.getElementById("divTableMessage").innerHTML = 'If you wish to send an obligation';
-	document.getElementById("divTableMsgType").innerHTML = 'Norm Goal';
-	document.getElementById("divTableSender").innerHTML = "<img src='img/me.gif'/>";
+	document.getElementById("divTableNMessage").innerHTML = 'If you wish to send an obligation';
+	document.getElementById("divTableNMsgType").innerHTML = 'Norm Goal';
+	document.getElementById("divTableNSender").innerHTML = "<img src='img/me.gif'/>";
 	
-	InsertIntoPlayersIconsSelect();
-	InsertIntoGoalsSelect();
+	InsertIntoPlayersNormIconsSelect();
+	InsertIntoNormGoalsSelect();
 }
 // end Proposals table
 
@@ -842,13 +815,13 @@ function proposalArea() {
 
 	// show proposal area only for proposer
 	if (game.role == 1) { // 1 = Receiver
-		clearMessagesUI();		
+		//clearMessagesUI();		
 	}
 	else{
 		// make proposal area visible
 		$("#"+"0").show();
 	}
-		
+	$("#"+"0").show();
 }
 // END send Receive proposal area
 
@@ -861,7 +834,6 @@ function buttonSubmitProposal_click() {
 			sendProposal(game.getPlayerId(i), ddIcons.options[ddIcons.selectedIndex].value);
 		}
 	}
-
 	clearMessagesUI();
 	$("#"+"0").hide();	
 	
@@ -1022,14 +994,41 @@ function InsertIntoPlayersIconsSelect() {
 	$("#playersIconsDropDown").msDropDown();
 	
 }
-function InsertIntoGoalsSelect() {
+function InsertIntoPlayersNormIconsSelect() {
+	
+	
+	var playerId;	
+	var playersIconsDropDown = document.createElement('select');
+	
+	playersIconsDropDown.setAttribute('id', 'playersIconsDropDown');
+	playersIconsDropDown.onchange= function(){InsertIntoReceiveSelect();}; 
+	playersIconsDropDown.style.width = '70px';
+	document.getElementById('divTableNReceiver').appendChild(playersIconsDropDown);
+	removeAllOption("playersIconsDropDown");
+	for ( var i = 0; i < playerNumTotal; i++) {
+		// get player ID
+		playerId = game.getPlayerId(i);
+		// populate data only for all players except me
+		if (game.getisPlayerMe(playerId) != "true") {
+				// clear dropdown before inserting
+				//removeAllOption("playersIconsDropDown");
+				// insert player img to dropdown
+				appendOptionLast(playerId, playerId, "playersIconsDropDown", 'img/' + game.getPlayerIcon(playerId));							
+		}
+	}
+	
+	document.getElementById('divTableNReceiver').appendChild(playersIconsDropDown);
+	$("#playersIconsDropDown").msDropDown();
+	
+}
+function InsertIntoNormGoalsSelect() {
 	var playerId;	
 	var goalsDropDown = document.createElement('select');
 	
 	goalsDropDown.setAttribute('id', 'goalsDropDown');
 	goalsDropDown.style.width = '70px';
 
-	document.getElementById('divTableGoal').appendChild(goalsDropDown);
+	document.getElementById('divTableNGoal').appendChild(goalsDropDown);
 	var x = game.goals[0].posX;
 	var y = game.goals[0].posY;
 
