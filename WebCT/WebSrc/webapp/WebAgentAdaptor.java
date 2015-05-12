@@ -199,7 +199,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		ArrayList<String> o = GameStat.getMyPlayer().getObligations();
 		//System.out.println("Web Agent Adaptor: " + o);
 		if (o.size() > LastObl.size()) {
-		for (int i = 0; i < o.size(); i++) {
+		for (int i = LastObl.size(); i < o.size(); i++) {
 			JSONObject m = new JSONObject();
 			m.put(i,o.get(i));
 			ObliArray.add(m);
@@ -213,7 +213,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		ArrayList<String> p = GameStat.getMyPlayer().getProhibitions();
 		//System.out.println("Web Agent Adaptor: " + p);
 		if (p.size() > LastPro.size()) {
-		for (int i = 0; i < p.size(); i++) {
+		for (int i = LastPro.size(); i < p.size(); i++) {
 			JSONObject m = new JSONObject();
 			m.put(i,p.get(i));
 			ProArray.add(m);

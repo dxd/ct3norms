@@ -77,6 +77,13 @@ public class Obligation implements TimeEntry {
 	}
 	
 	public String toHumanString() {
-		return obligation;
+		String s = "Obligation for player "+agent+" received at clock "+clock+" to ";
+		if (obligation.startsWith("[at")) { //[at(1, 2, a20)]
+			String ss = obligation.substring(4);
+			String[] o = ss.split(",");
+			s+= "be at the grid tile [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "]";
+		}
+		s += " before clock " + deadline + " or sanction " + sanction + " will be applied";
+		return s;
 	}
 }

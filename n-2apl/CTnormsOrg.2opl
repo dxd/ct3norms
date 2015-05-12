@@ -40,7 +40,7 @@ norm(
 enter_tile(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), color(Thing,Color,yes), tile(X,Y,Color)), // precondition
-obligation([at(X,Y,Thing)],now + 2,[reduce(Thing,50)]) // prohibition format
+obligation([color(Color,Thing)],now + 2,[reduce(Thing,50)]) // prohibition format
 ).
 
 hierachical(group_task(_)).

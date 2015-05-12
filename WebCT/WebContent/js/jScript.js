@@ -1581,7 +1581,8 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 
 	if (prohibitions != null)
 		for ( var i = 0; i < prohibitions.length; i++) {
-			 alert("msg: " + prohibitions[i]);
+			 //alert("msg: " + prohibitions[i]);
+			 addNormToTable("Prohibition",null,null,null,JSON.stringify(prohibitions[i]));
 			//addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
 			//		o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
 			
@@ -1589,7 +1590,8 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 		}
 	if (obligations != null)
 		for ( var i = 0; i < obligations.length; i++) {
-			 alert("msg: " + obligations[i]);
+			// alert("msg: " + obligations[i]);
+			addNormToTable("Obligation",null,null,null,JSON.stringify(obligations[i]));
 			//addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
 			//		o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
 			
