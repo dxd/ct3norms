@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.Set;
@@ -34,7 +35,7 @@ public class CTsetup {
 	
 	private GigaSpace space;
 	private DataEventSession session;
-	public static String[] agents = {"20"};
+	public static String[] agents = {"a20"};
 	
 	private Logger log = Logger.getRootLogger();
 	private Integer clock = 0;
@@ -151,14 +152,29 @@ public class CTsetup {
 			}
 		} else if (e instanceof Obligation) {
 			Obligation o = (Obligation) e;
+			System.out.println("CT obligation: "+o);
 			Integer i = getID(getPin(o.agent));
 			if (i != null )
-				gs.getPlayerByPerGameId(i).obligations.add(o);
+			{
+				ArrayList<String> a = gs.getPlayerByPerGameId(i).getObligations();
+				System.out.println("CT obligation: "+a);
+				a.add(o.toHumanString());
+				System.out.println("CT obligation: "+a);
+				gs.getPlayerByPerGameId(i).setObligations(a);
+			}
+
 		} else if (e instanceof Prohibition) {
 			Prohibition p = (Prohibition) e;
+			System.out.println("CT prohibition: "+p);
 			Integer i = getID(getPin(p.agent));
 			if (i != null )
-				gs.getPlayerByPerGameId(i).prohibitions.add(p);
+			{
+				ArrayList<String> a = gs.getPlayerByPerGameId(i).getProhibitions();
+				System.out.println("CT prohibition: "+a);
+				a.add(p.toHumanString());
+				System.out.println("CT prohibition: "+a);
+				gs.getPlayerByPerGameId(i).setProhibitions(a);
+			}
 		}
 	}
 

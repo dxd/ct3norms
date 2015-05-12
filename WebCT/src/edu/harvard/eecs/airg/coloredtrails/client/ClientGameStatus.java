@@ -144,6 +144,15 @@ public class ClientGameStatus extends GameStatus
         }
         return al;
     }
+    public ArrayList<PlayerStatus> getPlayersArray() {
+        ArrayList<PlayerStatus> al =
+                new ArrayList<PlayerStatus>();
+        for (PlayerStatus p : getPlayers()) {
+        	PlayerStatus cp = new PlayerStatus(p);
+            al.add(cp);
+        }
+        return al;
+    }
 
     /**
      * Get the ClientPlayerStatus object associated with the player.

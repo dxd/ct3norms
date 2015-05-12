@@ -117,8 +117,6 @@ public class PlayerStatus extends CTStateContainer
                           implements Serializable, Cloneable
 {
 
-	public ArrayList<Obligation> obligations;
-	public ArrayList<Prohibition> prohibitions;
 	
     public PlayerStatus()
     {
@@ -151,6 +149,8 @@ public class PlayerStatus extends CTStateContainer
 		
 				// whether player is allowed to reveal its goal
 		set("revelationAllowed", Boolean.FALSE);
+		set("obligations", new ArrayList<String>());
+		set("prohibitions", new ArrayList<String>());
     }
 
     public PlayerStatus(int pin)
@@ -422,6 +422,26 @@ public class PlayerStatus extends CTStateContainer
     public void setPin(int pin)
     {
     	set("pin", new Integer(pin));
+    }
+    
+    public void setProhibitions(ArrayList<String> p) {
+    	set("prohitions", p);
+    	setChanged();
+        notifyObservers("PLAYER_CHANGED");
+    }
+    
+    public ArrayList<String> getProhibitions() {
+    	return (ArrayList<String>) get("prohibitions");
+    }
+    
+    public void setObligations(ArrayList<String> o) {
+    	set("obligations", o);
+    	setChanged();
+        notifyObservers("PLAYER_CHANGED");
+    }
+    
+    public ArrayList<String> getObligations() {
+    	return (ArrayList<String>) get("obligations");
     }
     
     /**

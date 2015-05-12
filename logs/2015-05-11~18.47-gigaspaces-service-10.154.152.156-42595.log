@@ -1,0 +1,51 @@
+2015-05-11 18:47:21,734  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 1.11 seconds
+2015-05-11 19:13:06,454  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: 8f71267d-7144-4069-ae82-17f90a51551a
+ expiration: 1431367941821
+ left 44553
+ event cause: null
+
+2015-05-11 19:19:29,990  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: The transport is not running.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1215)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.IOException: The transport is not running.
+	at org.apache.activemq.transport.TransportSupport.checkStarted(TransportSupport.java:103)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:117)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:147)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:44)
+	at org.apache.activemq.transport.ResponseCorrelator.asyncRequest(ResponseCorrelator.java:67)
+	at org.apache.activemq.transport.ResponseCorrelator.request(ResponseCorrelator.java:72)
+	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1205)
+	... 8 more
+
+2015-05-11 19:19:30,174  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-05-11 19:19:32,816  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-05-11 19:19:54,732  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to initialize; Caused by: com.gigaspaces.internal.client.cache.SpaceCacheInitializationException: Failed to load space cache configuration
+2015-05-11 19:19:54,732  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-05-11 19:19:54,732  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-05-11 19:20:00,733  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-05-11 19:20:00,928  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to initialize; Caused by: com.gigaspaces.internal.client.cache.SpaceCacheInitializationException: Failed to load space cache configuration
+2015-05-11 19:20:00,928  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-05-11 19:20:00,928  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-05-11 19:20:06,962  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-05-11 19:20:07,044  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.

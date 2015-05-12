@@ -661,9 +661,9 @@ function buttonSubmitNormColor_click(playerId) {
 	var color = colors.options[colors.selectedIndex].value;
 	var norm = norms.options[norms.selectedIndex].value;
 	if (norm == "yes")
-		var message = "your obligation is to go through a " + colors.options[colors.selectedIndex].text + " square";
+		var message = "the obligation is to go through a " + colors.options[colors.selectedIndex].text + " square";
 	else
-		var message = "your prohibition is not to go through a " + colors.options[colors.selectedIndex].text + "square";
+		var message = "the prohibition is not to go through a " + colors.options[colors.selectedIndex].text + "square";
 	sendNormColor(playerId,recipientID,color,norm);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
@@ -1469,7 +1469,7 @@ function UpdateServer() {
 		} else {
 			phaseChanged = false;
 		}
-		
+		InsertIntoNormsTable(o.Prohibitions,o.Obligations);
 		InsertIntoProposalsTable(o);
 		UpdateResponseForProposal(o);
 		UpdatePlayerPosOnBoard(o);
@@ -1576,7 +1576,26 @@ function UpdatePlayerPosOnBoard(o) {
 	}
 }
 // END change player pos
+//add data to proposals table
+function InsertIntoNormsTable(prohibitions,obligations) {
 
+	if (prohibitions != null)
+		for ( var i = 0; i < prohibitions.length; i++) {
+			 alert("msg: " + prohibitions[i]);
+			//addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
+			//		o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
+			
+			//pendingProposalMsgID =  o.msgs[i].MessageId;
+		}
+	if (obligations != null)
+		for ( var i = 0; i < obligations.length; i++) {
+			 alert("msg: " + obligations[i]);
+			//addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
+			//		o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
+			
+			//pendingProposalMsgID =  o.msgs[i].MessageId;
+		}
+}
 // add data to proposals table
 function InsertIntoProposalsTable(o) {
 

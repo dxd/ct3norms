@@ -75,4 +75,8 @@ public class Obligation implements TimeEntry {
 	public String toPrologString() {
 		return "obligation(" + agent + "," + obligation + "," + sanction + "," + deadline + "," + clock + ")";
 	}
+	
+	public String toHumanString() {
+		return obligation;
+	}
 }

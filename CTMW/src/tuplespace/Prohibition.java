@@ -65,4 +65,8 @@ public class Prohibition implements TimeEntry {
 	public void setClock(int clock) {
 		this.clock = clock;
 	}
+	
+	public String toHumanString() {
+		return prohibition;
+	}
 }

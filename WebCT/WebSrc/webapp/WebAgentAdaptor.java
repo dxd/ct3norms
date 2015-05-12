@@ -3,7 +3,6 @@ package webapp;
 import java.lang.reflect.Array;
 import java.sql.Date;
 import java.util.ArrayList;
-
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -14,9 +13,10 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.*;
 
+import tuplespace.Obligation;
+import tuplespace.Prohibition;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-
 import ctgui.original.ActionHistory.Chip;
 import ctgui.original.discoursehandlers.BasicProposalDiscourseHandler;
 import ctgui.original.discoursehandlers.BasicProposalDiscussionDiscourseHandler;
@@ -67,10 +67,14 @@ public class WebAgentAdaptor implements GameStartEventListener,
 	public ArrayList<BasicProposalDiscussionDiscourseMessage> LastUpdateResponsMessages;
 	public Hashtable<String, BasicProposalDiscourseMessage> MessagesPendingResponse;
 	public ArrayList<ChipsRevelationDiscourseMessage> LastUpdateRevelationChips;
+	public ArrayList<String> LastObl = new ArrayList<String>();
+	public ArrayList<String> LastPro = new ArrayList<String>();
 	
 	Logger logger;
 	//Hashtable<Integer, JSONArray> lastRevelationChips;
 	TimeWatch timer;
+	private Integer pin;
+	private int pID;
 
 	// boolean revelationChipsUpdate = false;
 
@@ -102,6 +106,9 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		client.addPhasesAdvancedEventListener(this);
 
 		client.start();
+		pin = Integer.parseInt(Pin);
+		
+		//GameStat = client.getGameStatus();
 	}
 
 	/*
@@ -187,16 +194,42 @@ public class WebAgentAdaptor implements GameStartEventListener,
 			// initialize the message Queue for the next update
 			LastUpdateProposaleMessages = new ArrayList<BasicProposalDiscourseMessage>();
 		}
-		
+		JSONArray ObliArray = new JSONArray();
+		//System.out.println("Web Agent Adaptor: " + client.getGameStatus());
+		ArrayList<String> o = GameStat.getMyPlayer().getObligations();
+		//System.out.println("Web Agent Adaptor: " + o);
+		if (o.size() > LastObl.size()) {
+		for (int i = 0; i < o.size(); i++) {
+			JSONObject m = new JSONObject();
+			m.put(i,o.get(i));
+			ObliArray.add(m);
+		}
+		LastObl = o;
+		}
+		object.put("Obligations", ObliArray);
+
+
+		JSONArray ProArray = new JSONArray();
+		ArrayList<String> p = GameStat.getMyPlayer().getProhibitions();
+		//System.out.println("Web Agent Adaptor: " + p);
+		if (p.size() > LastPro.size()) {
+		for (int i = 0; i < p.size(); i++) {
+			JSONObject m = new JSONObject();
+			m.put(i,p.get(i));
+			ProArray.add(m);
+		}
+		LastPro = p;
+		}
+		object.put("Prohibitions", ProArray);
 		
 		//gil
 		//System.out.println("Web Agent Adaptor: " + GameStat.getMyPlayer().isRevelationAllowed());
-		object.put("isGoalRevelationAllowed", GameStat.getMyPlayer().isRevelationAllowed());
+		object.put("isGoalRevelationAllowed", GameStat.getPlayerByPerGameId(pID).isRevelationAllowed());
 		object.put("numOfGoals", GameStat.getBoard().getGoals().size());
 		//gilend
 		object.put("isEnded", GameStat.isEnded());
 		object.put("role",
-				GameStat.getMyPlayer().getRole().equals("Responder") ? 1 : 0);
+				GameStat.getPlayerByPerGameId(pID).getRole().equals("Responder") ? 1 : 0);
 		// object.put("CurrentPhase",
 		// GameStat.getPhases().getCurrentPhaseName());
 		// object.put("PhaseSecsLeft",
@@ -378,6 +411,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 					(PlayerStatus) player.clone());
 		}
 
+		
 		return (object.toString());
 
 		// return("update Method");
@@ -391,6 +425,14 @@ public class WebAgentAdaptor implements GameStartEventListener,
 				+ client.getGameStatus().getBoard().getGoals().size()
 				+ " goals");
 		GameStat = client.getGameStatus();
+		Set<PlayerStatus> p = GameStat.getPlayers();
+		for (PlayerStatus player : p) {
+			if (player.getPin() == pin)
+				this.pID = player.getPerGameId();
+		}
+//		for (int i; i < p.size(), i++) {
+//			PlayerStatus pp = p.
+//		}
 	}
 
 	public Boolean SendDiscorseRequest(DiscourseMessage dm) {

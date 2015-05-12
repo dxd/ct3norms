@@ -1,0 +1,23 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-05-11 20:15:02,127  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 6.12 seconds
+2015-05-11 20:23:28,227  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: java.rmi.ConnectException: LRMI transport protocol over NIO broken connection with ServerEndPoint: [NIO://kafka.cs.nott.ac.uk:61913/pid[42925]/1431370603627517240_3_-1700926443261977968_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]]; nested exception is: 
+	java.nio.channels.ClosedChannelException, request=myGrid_container:myGrid=>WriteEntrySpaceOperationRequest[entryPacket=EntryPacket[typeName=tuplespace.Time,uid=null,version=0,operationId=ID:3827778183483128615.429],txn=null,lease=9223372036854775807,timeout=0,modifiers=4096,isUpdate=false]
+2015-05-11 20:23:32,924  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: com.gigaspaces.exception.lrmi.LRMINoSuchObjectException: LRMI made an attempt to invoke a method [com.gigaspaces.internal.remoting.RemoteOperationsExecutor.executeOperation] on an RemoteObject: [NIO://kafka.cs.nott.ac.uk:61913/pid[42925]/1431370603627517240_3_-1700926443261977968_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]] that no longer  exists in the remote virtual machine; nested exception is: 
+	java.rmi.NoSuchObjectException: Object 1431370603627517240 not found in object registry, request=myGrid_container:myGrid=>UpdateLeaseSpaceOperationRequest[uid=cd1333bd-f24f-485e-b4c9-d68b181743f3,typeName=java.lang.Object,leaseObjectType=3,duration=60000]
+Exception in thread "Thread-8" org.openspaces.core.SpaceClosedException: Underlying resources are being closed; nested exception is com.j_spaces.core.exception.ClosedResourceException: Underlying resources are being closed
+	at org.openspaces.core.exception.DefaultExceptionTranslator.internalTranslate(DefaultExceptionTranslator.java:115)
+	at org.openspaces.core.exception.DefaultExceptionTranslator.translate(DefaultExceptionTranslator.java:50)
+	at org.openspaces.core.DefaultGigaSpace.write(DefaultGigaSpace.java:1172)
+	at org.openspaces.core.DefaultGigaSpace.write(DefaultGigaSpace.java:1164)
+	at ctMW.EnvCT.updateClock(EnvCT.java:162)
+	at ctMW.ClockTicker.run(ClockTicker.java:16)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: com.j_spaces.core.exception.ClosedResourceException: Underlying resources are being closed
+	at com.gigaspaces.internal.utils.concurrent.CompetitionExecutor.onClosed(CompetitionExecutor.java:55)
+	at com.gigaspaces.internal.utils.concurrent.AbstractAsyncHandlerProvider.close(AbstractAsyncHandlerProvider.java:78)
+	at com.gigaspaces.internal.client.spaceproxy.router.SpaceProxyRouter.close(SpaceProxyRouter.java:230)
+	at com.gigaspaces.internal.client.spaceproxy.SpaceProxyImpl.close(SpaceProxyImpl.java:844)
+	at org.openspaces.core.space.AbstractSpaceFactoryBean.destroy(AbstractSpaceFactoryBean.java:243)
+	at org.openspaces.core.space.UrlSpaceConfigurer.destroy(UrlSpaceConfigurer.java:371)
+	at ctMW.DataGridConnectionUtility$1.run(DataGridConnectionUtility.java:42)

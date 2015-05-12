@@ -17,6 +17,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="edu.harvard.eecs.airg.coloredtrails.shared.types.RowCol"%>
 <%@page import="edu.harvard.eecs.airg.coloredtrails.shared.types.Square"%>
+<%@page import="edu.harvard.eecs.airg.coloredtrails.shared.types.PlayerStatus"%>
 <%@page import="edu.harvard.eecs.airg.coloredtrails.client.*"%>
 <%@page import="webapp.ColorConverter"%>
 <%@page
@@ -54,7 +55,7 @@
    
    	
 	Board br = gs.getBoard();
-	ArrayList<ClientPlayerStatus> players =  gs.getClientPlayers();	
+	ArrayList<PlayerStatus> players =  gs.getPlayersArray();	
 	
 	//gil
 	System.out.println("game.jsp - first part");
@@ -89,7 +90,7 @@ var game = {
 						int playerID  = gs.getPerGameId();
 						for(int i =0;i< players.size();i++)
 						{
-							ClientPlayerStatus player = players.get(i);
+							PlayerStatus player = players.get(i);
 							out.print(	"{\"id\" : "+player.getPerGameId()+",\n");
 							out.print(	"\"name\" : \"Player "+player.getPin()+"\",\n");//TO DO  need to deside if to add this filed
 							out.print(	"\"age\" : 23,\n");//TO DO  need to deside if to add this filed	
