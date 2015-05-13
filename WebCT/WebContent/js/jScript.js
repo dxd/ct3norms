@@ -485,13 +485,12 @@ function clearMessagesUI() {
 }
 function clearNormMessagesUI() {
 	removeElemFromDOM(document.getElementById('divTableNMsgType'));
-	removeElemFromDOM(document.getElementById('divTableNSender'));
 	removeElemFromDOM(document.getElementById('divTableNReceiver'));
 	removeElemFromDOM(document.getElementById('divTableNGoal'));
 	removeElemFromDOM(document.getElementById('divTableNMessage'));
 	removeElemFromDOM(document.getElementById('divButtonNPropose'));
 	removeElemFromDOM(document.getElementById('divTableNCMsgType'));
-	removeElemFromDOM(document.getElementById('divTableNCSender'));
+	removeElemFromDOM(document.getElementById('divTableNCSanction'));
 	removeElemFromDOM(document.getElementById('divTableNCReceiver'));
 	removeElemFromDOM(document.getElementById('divTableNCColor'));
 	removeElemFromDOM(document.getElementById('divTableNCNorm'));
@@ -577,7 +576,7 @@ function loadNormColorProposalsTable() {
 	jQuery("#tblCNorms").jqGrid(
 			{
 				datatype : "local",
-				height : 200,
+				height : 30,
 				colNames : ['MsgType', 'Receiver', 'Color', 'Norm', 'Sanction',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
@@ -681,7 +680,7 @@ function buttonSubmitNormColor_click(playerId) {
 	
 }
 
-function sendNormColor(playerIDSend,recipientID,color,norm)
+function sendNormColor(playerIDSend,recipientID,color,norm,sanction)
 {
 	var stringJ = "{\"player\" : \"" + playerIDSend + "\" , \"recipient\" : \"" + recipientID; 
 		stringJ = stringJ + "\", \"color\" : \"" + color + "\", \"norm\" : \"" + norm +"\, \"sanction\" : " + sanction +"}";
@@ -699,19 +698,14 @@ function loadNormGoalProposalsTable() {
 	jQuery("#tblNorms").jqGrid(
 			{
 				datatype : "local",
-				height : 200,
-				colNames : ['MsgType', 'Sender', 'Receiver', 'Goal', 'Message',  'Response' ],
+				height : 150,
+				colNames : ['MsgType', 'Receiver', 'Goal', 'Message',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
 					index : 'MsgType',
 					width : 90,
 					sortable : false
 				}, {
-					name : 'Sender',
-					index : 'Sender',
-					width : 75,
-					sortable : false
-				},{
 					name : 'Receiver',
 					index : 'Receiver',
 					width : 75,
@@ -745,7 +739,6 @@ function loadNormGoalProposalsTable() {
 			// Proposer : SenderID,
 			// Receiver : SenderID == 0 ? 1 : 0,
 			MsgType : "<div id='divTableNMsgType'></div>",
-			Sender : "<div id='divTableNSender'></div>",
 			Receiver : "<div id='divTableNReceiver'></div>",
 			Message : "<div id='divTableNMessage'></div>", 
 			Goal : "<div id='divTableNGoal'></div>",
@@ -764,7 +757,6 @@ function loadNormGoalProposalsTable() {
 	// append div into Messages grid
 	document.getElementById("divTableNMessage").innerHTML = 'If you wish to send an obligation';
 	document.getElementById("divTableNMsgType").innerHTML = 'Norm Goal';
-	document.getElementById("divTableNSender").innerHTML = "<img src='img/me.gif'/>";
 	
 	InsertIntoPlayersIconsSelect("divTableNReceiver");
 	InsertIntoNormGoalsSelect();
@@ -1160,7 +1152,7 @@ function InsertIntoNormSelect() {
 	var normsDropDown = document.createElement('select');
 	
 	normsDropDown.setAttribute('id', 'normsDropDown');
-	normsDropDown.style.width = '70px';
+	normsDropDown.style.width = '100px';
 
 	document.getElementById('divTableNCNorm').appendChild(normsDropDown);
 	appendOptionLast("obligation","yes","normsDropDown", 'obligation');

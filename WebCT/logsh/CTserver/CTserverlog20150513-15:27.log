@@ -1,0 +1,556 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.236 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-51885-1431527264989-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] Adding client state for 20
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.40] of type 
+     [java] Adding client state for 40
+     [java] Adding client state for 30
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.40] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-13 15:28:10,453 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-13~15.28-gigaspaces-service-192.168.0.40-54163.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] 2015-05-13 15:28:10,448  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 452 milliseconds
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-05-13 15:28:10.64, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-05-13 15:28:10.664, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-05-13 15:28:10.665, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-05-13 15:28:10.667, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-05-13 15:28:10.668, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-05-13 15:28:10.67, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-05-13 15:28:10.671, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-05-13 15:28:10.674, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-05-13 15:28:10.676, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-05-13 15:28:10.677, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-05-13 15:28:10.679, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-05-13 15:28:10.68, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-05-13 15:28:10.682, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-05-13 15:28:10.684, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-05-13 15:28:10.686, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-05-13 15:28:10.688, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-05-13 15:28:10.69, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-05-13 15:28:10.693, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-05-13 15:28:10.695, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-05-13 15:28:10.697, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-05-13 15:28:10.698, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-05-13 15:28:10.7, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-05-13 15:28:10.702, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-05-13 15:28:10.703, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-05-13 15:28:10.705, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=2015-05-13 15:28:10.724, clock=0]
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] CT notification: Time [clock=3, time=2015-05-13 15:28:18.5]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-13 15:28:45.065, clock=3]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-13 15:28:45.065, clock=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.079, color=orange, clock=3, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.079, color=orange, clock=3, number=2]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-13 15:28:45.065, clock=3]
+     [java] 40
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.116, color=red, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.116, color=red, clock=3, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.118, color=purple, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.118, color=purple, clock=3, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.12, color=green, clock=3, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 15:28:45.12, color=green, clock=3, number=2]
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-13 15:28:45.122, clock=3]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-13 15:28:45.122, clock=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.124, color=orange, clock=3, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.124, color=orange, clock=3, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.125, color=red, clock=3, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.125, color=red, clock=3, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.127, color=purple, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.127, color=purple, clock=3, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.129, color=green, clock=3, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 15:28:45.129, color=green, clock=3, number=2]
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-13 15:28:45.13, clock=3]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-13 15:28:45.13, clock=3]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.131, color=orange, clock=3, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.131, color=orange, clock=3, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.133, color=red, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.133, color=red, clock=3, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.135, color=purple, clock=3, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.135, color=purple, clock=3, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.136, color=green, clock=3, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 15:28:45.136, color=green, clock=3, number=2]
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-13 15:28:45.137, clock=3]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-13 15:28:45.137, clock=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.138, color=orange, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.138, color=orange, clock=3, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.139, color=red, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.139, color=red, clock=3, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.14, color=purple, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.14, color=purple, clock=3, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.142, color=green, clock=3, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 15:28:45.142, color=green, clock=3, number=3]
+     [java] CT notification: Time [clock=4, time=2015-05-13 15:28:28.507]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=5, time=2015-05-13 15:28:38.509]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-13 15:28:45.122, clock=3]
+     [java] 30
+     [java] 30
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-13 15:28:45.13, clock=3]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-13 15:28:45.137, clock=3]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT notification: Time [clock=6, time=2015-05-13 15:28:48.511]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=7, time=2015-05-13 15:28:58.513]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 3(PIN: 40)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a40, cell=Cell [x=2, y=3], goal=Cell [x=2, y=2], sanction=100, clock=7, time=2015-05-13 15:29:00.302]
+     [java] CT writes: SetGoal [id=null, agent=a40, cell=Cell [x=2, y=3], goal=Cell [x=2, y=2], sanction=100, clock=7, time=2015-05-13 15:29:00.302]
+     [java] org.openspaces.core.UnusableEntryException: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] ; nested exception is com.j_spaces.core.DetailedUnusableEntryException: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] 
+     [java] 	at org.openspaces.core.exception.DefaultExceptionTranslator.internalTranslate(DefaultExceptionTranslator.java:170)
+     [java] 	at org.openspaces.core.exception.DefaultExceptionTranslator.internalTranslate(DefaultExceptionTranslator.java:106)
+     [java] 	at org.openspaces.core.exception.DefaultExceptionTranslator.translate(DefaultExceptionTranslator.java:50)
+     [java] 	at org.openspaces.core.DefaultGigaSpace.write(DefaultGigaSpace.java:1172)
+     [java] 	at org.openspaces.core.DefaultGigaSpace.write(DefaultGigaSpace.java:1164)
+     [java] 	at mwspaces.CTsetup.createEntry(CTsetup.java:124)
+     [java] 	at mwspaces.CTsetup.writeNormGoal(CTsetup.java:269)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:346)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] Caused by: com.j_spaces.core.DetailedUnusableEntryException: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] 
+     [java] 	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.validateChecksum(SpaceTypeManager.java:476)
+     [java] 	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.validateChecksum(SpaceTypeManager.java:454)
+     [java] 	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.loadServerTypeDesc(SpaceTypeManager.java:233)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceEngine.write(SpaceEngine.java:766)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceEngine.write(SpaceEngine.java:732)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceImpl.write(SpaceImpl.java:1891)
+     [java] 	at com.gigaspaces.internal.server.space.operations.WriteEntrySpaceOperation.execute(WriteEntrySpaceOperation.java:47)
+     [java] 	at com.gigaspaces.internal.server.space.operations.WriteEntrySpaceOperation.execute(WriteEntrySpaceOperation.java:20)
+     [java] 	at com.gigaspaces.internal.server.space.operations.SpaceOperationsExecutor.executeOperation(SpaceOperationsExecutor.java:77)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceImpl.executeOperation(SpaceImpl.java:1847)
+     [java] 	at com.gigaspaces.internal.remoting.RemoteOperationsExecutorGigaspacesMethodinternalInvoke2.internalInvoke(Unknown Source)
+     [java] 	at com.gigaspaces.internal.reflection.fast.AbstractMethod.invoke(AbstractMethod.java:41)
+     [java] 	at com.gigaspaces.lrmi.LRMIRuntime.invoked(LRMIRuntime.java:450)
+     [java] 	at com.gigaspaces.lrmi.nio.Pivot.consumeAndHandleRequest(Pivot.java:557)
+     [java] 	at com.gigaspaces.lrmi.nio.Pivot.handleRequest(Pivot.java:658)
+     [java] 	at com.gigaspaces.lrmi.nio.Pivot$ChannelEntryTask.run(Pivot.java:196)
+     [java] 	... 3 more
+     [java] Caused by: java.lang.Throwable: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] 
+     [java] 	at com.j_spaces.core.DetailedUnusableEntryException.<init>(DetailedUnusableEntryException.java:40)
+     [java] 	... 19 more
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 3(PIN: 40)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a40, cell=Cell [x=2, y=3], goal=Cell [x=2, y=2], sanction=100, clock=7, time=2015-05-13 15:29:00.983]
+     [java] CT writes: SetGoal [id=null, agent=a40, cell=Cell [x=2, y=3], goal=Cell [x=2, y=2], sanction=100, clock=7, time=2015-05-13 15:29:00.983]
+     [java] org.openspaces.core.UnusableEntryException: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] ; nested exception is com.j_spaces.core.DetailedUnusableEntryException: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] 
+     [java] 	at org.openspaces.core.exception.DefaultExceptionTranslator.internalTranslate(DefaultExceptionTranslator.java:170)
+     [java] 	at org.openspaces.core.exception.DefaultExceptionTranslator.internalTranslate(DefaultExceptionTranslator.java:106)
+     [java] 	at org.openspaces.core.exception.DefaultExceptionTranslator.translate(DefaultExceptionTranslator.java:50)
+     [java] 	at org.openspaces.core.DefaultGigaSpace.write(DefaultGigaSpace.java:1172)
+     [java] 	at org.openspaces.core.DefaultGigaSpace.write(DefaultGigaSpace.java:1164)
+     [java] 	at mwspaces.CTsetup.createEntry(CTsetup.java:124)
+     [java] 	at mwspaces.CTsetup.writeNormGoal(CTsetup.java:269)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:346)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] Caused by: com.j_spaces.core.DetailedUnusableEntryException: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] 
+     [java] 	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.validateChecksum(SpaceTypeManager.java:476)
+     [java] 	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.validateChecksum(SpaceTypeManager.java:454)
+     [java] 	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.loadServerTypeDesc(SpaceTypeManager.java:233)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceEngine.write(SpaceEngine.java:766)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceEngine.write(SpaceEngine.java:732)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceImpl.write(SpaceImpl.java:1891)
+     [java] 	at com.gigaspaces.internal.server.space.operations.WriteEntrySpaceOperation.execute(WriteEntrySpaceOperation.java:47)
+     [java] 	at com.gigaspaces.internal.server.space.operations.WriteEntrySpaceOperation.execute(WriteEntrySpaceOperation.java:20)
+     [java] 	at com.gigaspaces.internal.server.space.operations.SpaceOperationsExecutor.executeOperation(SpaceOperationsExecutor.java:77)
+     [java] 	at com.gigaspaces.internal.server.space.SpaceImpl.executeOperation(SpaceImpl.java:1847)
+     [java] 	at com.gigaspaces.internal.remoting.RemoteOperationsExecutorGigaspacesMethodinternalInvoke2.internalInvoke(Unknown Source)
+     [java] 	at com.gigaspaces.internal.reflection.fast.AbstractMethod.invoke(AbstractMethod.java:41)
+     [java] 	at com.gigaspaces.lrmi.LRMIRuntime.invoked(LRMIRuntime.java:450)
+     [java] 	at com.gigaspaces.lrmi.nio.Pivot.consumeAndHandleRequest(Pivot.java:557)
+     [java] 	at com.gigaspaces.lrmi.nio.Pivot.handleRequest(Pivot.java:658)
+     [java] 	at com.gigaspaces.lrmi.nio.Pivot$ChannelEntryTask.run(Pivot.java:196)
+     [java] 	... 3 more
+     [java] Caused by: java.lang.Throwable: The operation's type description is incompatible with the type description stored in the space.
+     [java] Type=[tuplespace.SetGoal], Server checksum=[-1903973239], Operation checksum=[366545684].
+     [java] Server type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 6
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: -1903973239.
+     [java] 
+     [java] Operation type description:
+     [java] Super classes: 2
+     [java]    1: Type=[tuplespace.SetGoal]
+     [java]    2: Type=[java.lang.Object]
+     [java] Properties: 7
+     [java]    1: Name=[agent], Type=[java.lang.String]
+     [java]    2: Name=[cell], Type=[tuplespace.Cell]
+     [java]    3: Name=[clock], Type=[java.lang.Integer]
+     [java]    4: Name=[goal], Type=[tuplespace.Cell]
+     [java]    5: Name=[id], Type=[java.lang.Integer]
+     [java]    6: Name=[sanction], Type=[java.lang.Integer]
+     [java]    7: Name=[time], Type=[java.sql.Timestamp]
+     [java] Checksum: 366545684.
+     [java] 
+     [java] 	at com.j_spaces.core.DetailedUnusableEntryException.<init>(DetailedUnusableEntryException.java:40)
+     [java] 	... 19 more
+     [java] CT notification: Time [clock=8, time=2015-05-13 15:29:08.515]
+     [java] CT players (clone,for): 
+     [java] Player: 40  Score: 10
+     [java] Player: 30  Score: -5
+     [java] Player: 20  Score: 0
+     [java] Player: 10  Score: 20
+     [java] A New Phase Began: Communication Phase
+     [java] CT notification: Time [clock=9, time=2015-05-13 15:29:18.521]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=10, time=2015-05-13 15:29:28.525]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=11, time=2015-05-13 15:29:38.528]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=12, time=2015-05-13 15:29:48.531]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - Game ended id = 0
+     [java] CT notification: Time [clock=13, time=2015-05-13 15:29:58.533]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=14, time=2015-05-13 15:30:08.535]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=15, time=2015-05-13 15:30:18.537]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=16, time=2015-05-13 15:30:28.54]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=17, time=2015-05-13 15:30:38.541]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=2015-05-13 15:30:48.545]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=19, time=2015-05-13 15:30:58.547]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=20, time=2015-05-13 15:31:08.549]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=21, time=2015-05-13 15:31:18.551]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=22, time=2015-05-13 15:31:28.556]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=23, time=2015-05-13 15:31:38.559]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=2015-05-13 15:31:48.561]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=25, time=2015-05-13 15:31:58.564]
+     [java] CT players (clone,for): 
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka-51885-1431527264989-1:0) is shutting down
+     [java] CT notification: Time [clock=26, time=2015-05-13 15:32:08.567]
+     [java] CT players (clone,for): 
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-51885-1431527264989-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 4 minutes 29 seconds
