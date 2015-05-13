@@ -46,6 +46,7 @@
 
 		String color = object.optString("color");
 		String norm = object.getString("norm");
+		Integer sanction =Integer.parseInt(object.optString("sanction"));
 
 		SimpleLog.write("send NormColor, color: " + color);
 
@@ -60,7 +61,7 @@
 		NormColorDiscourseMessage ncdm = new NormColorDiscourseMessage(
 				playerID,
 				recipientID,
-				msgID, color, norm);
+				msgID, color, norm, sanction);
 		
 		//send revelation message (to myself)
 		ClinetControler.GetClinet(id).client.communication.sendDiscourseRequest(ncdm);

@@ -1,0 +1,363 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.116 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-64184-1431510275873-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.40] of type 
+     [java] Adding client state for 30
+     [java] Adding client state for 40
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.40] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-13 10:46:02,728  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 415 milliseconds
+     [java] 2015-05-13 10:46:02,733 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-13~10.46-gigaspaces-service-192.168.0.40-52683.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-05-13 10:46:02.878, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-05-13 10:46:02.906, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-05-13 10:46:02.907, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-05-13 10:46:02.91, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-05-13 10:46:02.913, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-05-13 10:46:02.915, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-05-13 10:46:02.924, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-05-13 10:46:02.93, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-05-13 10:46:02.937, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-05-13 10:46:02.946, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-05-13 10:46:02.949, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-05-13 10:46:02.957, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-05-13 10:46:02.962, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-05-13 10:46:02.968, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-05-13 10:46:02.99, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-05-13 10:46:02.997, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-05-13 10:46:03.019, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-05-13 10:46:03.023, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-05-13 10:46:03.026, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-05-13 10:46:03.032, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-05-13 10:46:03.035, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-05-13 10:46:03.04, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-05-13 10:46:03.044, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-05-13 10:46:03.047, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-05-13 10:46:03.051, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=2015-05-13 10:46:03.102, clock=0]
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] CT notification: Time [clock=9, time=2015-05-13 10:46:09.537]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-13 10:46:09.556, clock=9]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-13 10:46:09.556, clock=9]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.562, color=orange, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.562, color=orange, clock=9, number=2]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-13 10:46:09.556, clock=9]
+     [java] 20
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.57, color=red, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.57, color=red, clock=9, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.572, color=purple, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.572, color=purple, clock=9, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.576, color=green, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-13 10:46:09.576, color=green, clock=9, number=2]
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-13 10:46:09.588, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-13 10:46:09.588, clock=9]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.594, color=orange, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.594, color=orange, clock=9, number=2]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.615, color=red, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.615, color=red, clock=9, number=3]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-13 10:46:09.588, clock=9]
+     [java] 40
+     [java] 40
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.619, color=purple, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.619, color=purple, clock=9, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.622, color=green, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-13 10:46:09.622, color=green, clock=9, number=2]
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-13 10:46:09.625, clock=9]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-13 10:46:09.625, clock=9]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.627, color=orange, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.627, color=orange, clock=9, number=1]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-13 10:46:09.625, clock=9]
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.63, color=red, clock=9, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.63, color=red, clock=9, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.634, color=purple, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.634, color=purple, clock=9, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.637, color=green, clock=9, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-13 10:46:09.637, color=green, clock=9, number=2]
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-13 10:46:09.64, clock=9]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-13 10:46:09.64, clock=9]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.642, color=orange, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.642, color=orange, clock=9, number=3]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-13 10:46:09.64, clock=9]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.645, color=red, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.645, color=red, clock=9, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.649, color=purple, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.649, color=purple, clock=9, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.652, color=green, clock=9, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-13 10:46:09.652, color=green, clock=9, number=3]
+     [java] CT notification: Time [clock=10, time=2015-05-13 10:46:19.54]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=16, time=2015-05-13 10:46:24.364, clock=10]
+     [java] CT obligation: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=16, time=2015-05-13 10:46:24.364, clock=10]
+     [java] 20
+     [java] CT obligation: []
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 16 or sanction [reduce(a20, 500)] will be applied]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=12, time=2015-05-13 10:46:24.896, clock=10]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=12, time=2015-05-13 10:46:24.896, clock=10]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 16 or sanction [reduce(a20, 500)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 16 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 12 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(4, 4, a20)], sanction=[reduce(a20, 50)], clock=10, time=2015-05-13 10:46:25.329]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(4, 4, a20)], sanction=[reduce(a20, 50)], clock=10, time=2015-05-13 10:46:25.329]
+     [java] 20
+     [java] CT prohibition: []
+     [java] CT prohibition: [Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Time [clock=11, time=2015-05-13 10:46:29.542]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=12, time=2015-05-13 10:46:39.545]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=13, time=2015-05-13 10:46:49.547]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=14, time=2015-05-13 10:46:59.549]
+     [java] CT players (clone,for): 
+     [java] Player: 20  Score: 0
+     [java] Player: 40  Score: 10
+     [java] Player: 30  Score: -5
+     [java] Player: 10  Score: 20
+     [java] A New Phase Began: Communication Phase
+     [java] CT notification: Time [clock=15, time=2015-05-13 10:47:09.55]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=16, time=2015-05-13 10:47:19.553]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=17, time=2015-05-13 10:47:29.554]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=2015-05-13 10:47:39.556]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - Game ended id = 0
+     [java] CT notification: Time [clock=19, time=2015-05-13 10:47:49.561]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=20, time=2015-05-13 10:47:59.562]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=21, time=2015-05-13 10:48:09.564]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=22, time=2015-05-13 10:48:19.567]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=23, time=2015-05-13 10:48:29.569]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=2015-05-13 10:48:39.573]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=25, time=2015-05-13 10:48:49.575]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=26, time=2015-05-13 10:48:59.579]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=27, time=2015-05-13 10:49:09.58]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=28, time=2015-05-13 10:49:19.583]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=29, time=2015-05-13 10:49:29.593]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=30, time=2015-05-13 10:49:39.598]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=31, time=2015-05-13 10:49:49.6]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=32, time=2015-05-13 10:49:59.603]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=33, time=2015-05-13 10:50:09.605]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=34, time=2015-05-13 10:50:19.608]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=35, time=2015-05-13 10:50:29.609]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=36, time=2015-05-13 10:50:39.611]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=37, time=2015-05-13 10:50:49.614]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=38, time=2015-05-13 10:50:59.616]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=39, time=2015-05-13 10:51:09.624]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=40, time=2015-05-13 10:51:19.626]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=41, time=2015-05-13 10:51:29.629]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=42, time=2015-05-13 10:51:39.721]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=43, time=2015-05-13 10:51:49.728]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=44, time=2015-05-13 10:51:59.733]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=45, time=2015-05-13 10:52:09.885]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=46, time=2015-05-13 10:52:20.14]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=47, time=2015-05-13 10:52:30.141]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=48, time=2015-05-13 10:52:40.327]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=49, time=2015-05-13 10:52:50.829]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=50, time=2015-05-13 10:53:00.91]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=51, time=2015-05-13 10:53:10.981]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=52, time=2015-05-13 10:53:21.397]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=53, time=2015-05-13 10:53:31.679]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=54, time=2015-05-13 10:53:42.185]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=55, time=2015-05-13 10:53:52.536]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=56, time=2015-05-13 10:54:02.832]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=57, time=2015-05-13 10:54:12.937]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=58, time=2015-05-13 10:54:22.94]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=59, time=2015-05-13 10:54:33.125]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=60, time=2015-05-13 10:54:43.141]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=61, time=2015-05-13 10:54:53.424]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=62, time=2015-05-13 10:55:03.493]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=63, time=2015-05-13 10:55:13.798]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=64, time=2015-05-13 10:55:23.98]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=65, time=2015-05-13 10:55:34.36]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=66, time=2015-05-13 10:55:44.628]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=67, time=2015-05-13 10:55:54.972]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=68, time=2015-05-13 10:56:05.125]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=69, time=2015-05-13 10:56:15.232]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=70, time=2015-05-13 10:56:25.335]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=71, time=2015-05-13 10:56:35.505]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=72, time=2015-05-13 10:56:45.813]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=73, time=2015-05-13 10:56:56.024]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=74, time=2015-05-13 10:57:06.457]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=75, time=2015-05-13 10:57:16.608]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=76, time=2015-05-13 10:57:26.611]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=77, time=2015-05-13 10:57:36.68]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=78, time=2015-05-13 10:57:46.906]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=79, time=2015-05-13 10:57:57.278]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=80, time=2015-05-13 10:58:07.281]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=81, time=2015-05-13 10:58:17.284]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=82, time=2015-05-13 10:58:28.142]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=83, time=2015-05-13 10:58:38.211]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=84, time=2015-05-13 10:58:48.224]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=85, time=2015-05-13 10:58:58.41]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=86, time=2015-05-13 10:59:08.516]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=87, time=2015-05-13 10:59:18.6]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=88, time=2015-05-13 10:59:28.841]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=89, time=2015-05-13 10:59:39.087]
+     [java] CT players (clone,for): 
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka-64184-1431510275873-1:0) is shutting down
+     [java] CT notification: Time [clock=90, time=2015-05-13 10:59:49.409]
+     [java] CT players (clone,for): 
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-64184-1431510275873-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 15 minutes 19 seconds

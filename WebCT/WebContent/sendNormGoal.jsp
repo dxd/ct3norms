@@ -54,6 +54,8 @@
 		//conect to session and send the message
 		String id = session.getAttribute("id").toString();
 
+		Integer sanction =Integer.parseInt(object.optString("sanction"));
+		
 		//generate msg ID
 		Random rnd = new Random();
 		int msgID = rnd.nextInt(10000);
@@ -62,7 +64,7 @@
 		NormGoalDiscourseMessage ngdm = new NormGoalDiscourseMessage(
 				playerID,
 				recipientID,
-				msgID, goal, origGoal, true);
+				msgID, goal, origGoal, true, sanction);
 		
 		//send revelation message (to myself)
 		ClinetControler.GetClinet(id).client.communication.sendDiscourseRequest(ngdm);

@@ -67,11 +67,19 @@ public class Prohibition implements TimeEntry {
 	}
 	
 	public String toHumanString() {
-		String s = "Prohibition for player "+agent+" received at clock "+clock+" to ";
+		String s = "Prohibition to ";
 		if (prohibition.startsWith("[at")) { //[at(1, 2, a20)]
 			String ss = prohibition.substring(4);
 			String[] o = ss.split(",");
 			s+= "be at the grid tile [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "]";
+		}
+		else if (prohibition.startsWith("[color")) { //[color(red,a20)]
+			String ss = prohibition.substring(7);
+			String[] o = ss.split(",");
+			s+= "use a tile with color " +o[0];
+		}
+		else if (prohibition.startsWith("[rejectRequests")) { //[rejectRequests(a20)]
+			s+= "reject requests for chips from the other players";
 		}
 		s += " or sanction " + sanction + " will be applied";
 		return s;

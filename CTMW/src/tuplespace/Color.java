@@ -12,6 +12,7 @@ public class Color implements TimeEntry {
 	public String color;
 	public String agent;
 	public String type;
+	public Integer sanction;
 	public Timestamp time;
 	public Integer clock;
 	
@@ -19,11 +20,12 @@ public class Color implements TimeEntry {
 
 	}
 	
-public Color(String agent, String color, String type,
+public Color(String agent, String color, String type, Integer sanction,
 			Integer clock) {
 		this.color = color;
 		this.agent = agent;
 		this.type = type;
+		this.sanction = sanction;
 		this.clock = clock;
 		this.time = new Timestamp(new Date().getTime());
 	}
@@ -74,14 +76,15 @@ public Color(String color, Integer clock) {
 	}
 	@Override
 	public String toPrologString() {
-		return "color("+agent+"," + color + ","+type+"," + clock + ").";
+		return "color("+agent+"," + color + ","+type+","+sanction+"," + clock + ").";
 	}
-    
+
+
 	@Override
 	public String toString() {
-		return "Color [id=" + id + ", color=" + color
-				+ ", agent=" + agent + ", type=" + type + ", time=" + time
-				+ ", clock=" + clock + "]";
+		return "Color [id=" + id + ", color=" + color + ", agent=" + agent
+				+ ", type=" + type + ", sanction=" + sanction + ", time="
+				+ time + ", clock=" + clock + "]";
 	}
 
 	public Integer getId() {

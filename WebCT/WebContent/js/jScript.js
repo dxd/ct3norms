@@ -481,7 +481,7 @@ function clearMessagesUI() {
 	removeElemFromDOM(document.getElementById('divTableGoal'));
 	removeElemFromDOM(document.getElementById('divTableMessage'));
 	removeElemFromDOM(document.getElementById('divButtonPropose'));
-	removeElemFromDOM(document.getElementById('notifyContainer'));	
+	//removeElemFromDOM(document.getElementById('notifyContainer'));	
 }
 function clearNormMessagesUI() {
 	removeElemFromDOM(document.getElementById('divTableNMsgType'));
@@ -578,16 +578,11 @@ function loadNormColorProposalsTable() {
 			{
 				datatype : "local",
 				height : 200,
-				colNames : ['MsgType', 'Sender', 'Receiver', 'Color', 'Norm',  'Response' ],
+				colNames : ['MsgType', 'Receiver', 'Color', 'Norm', 'Sanction',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
 					index : 'MsgType',
 					width : 90,
-					sortable : false
-				}, {
-					name : 'Sender',
-					index : 'Sender',
-					width : 75,
 					sortable : false
 				},{
 					name : 'Receiver',
@@ -603,6 +598,11 @@ function loadNormColorProposalsTable() {
 					name : 'Norm',
 					index : 'Norm',
 					width : 400,
+					sortable : false
+				},{
+					name : 'Sanction',
+					index : 'Sanction',
+					width : 70,
 					sortable : false
 				},{
 					name : 'Response',
@@ -623,10 +623,10 @@ function loadNormColorProposalsTable() {
 			// Proposer : SenderID,
 			// Receiver : SenderID == 0 ? 1 : 0,
 			MsgType : "<div id='divTableNCMsgType'></div>",
-			Sender : "<div id='divTableNCSender'></div>",
 			Receiver : "<div id='divTableNCReceiver'></div>",
 			Color : "<div id='divTableNCColor'></div>", 
 			Norm : "<div id='divTableNCNorm'></div>",
+			Sanction : "<div id='divTableNCSanction'></div>",
 			Response : "<div id='divButtonNCPropose'></div>"
 		};
 	
@@ -642,11 +642,12 @@ function loadNormColorProposalsTable() {
 	// append div into Messages grid
 	//document.getElementById("divTableNCNorm").innerHTML = 'If you wish to send an obligation';
 	document.getElementById("divTableNCMsgType").innerHTML = 'Norm Color';
-	document.getElementById("divTableNCSender").innerHTML = "<img src='img/me.gif'/>";
 	
 	InsertIntoPlayersIconsSelect('divTableNCReceiver');
 	InsertIntoNormColorSelect();
 	InsertIntoNormSelect();
+	InsertIntoSanctionSelect();
+	
 }
 // end Proposals table
 
@@ -656,15 +657,17 @@ function buttonSubmitNormColor_click(playerId) {
 	
 	var ddIcons = document.getElementById('divTableNCReceiverDropDown');
 	var colors = document.getElementById('colorsDropDown');
+	var sanctions = document.getElementById('sanctionsDropDown');
 	var norms = document.getElementById('normsDropDown');
 	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;
 	var color = colors.options[colors.selectedIndex].value;
 	var norm = norms.options[norms.selectedIndex].value;
+	var sanction = sanctions.options[sanctions.selectedIndex].value;
 	if (norm == "yes")
 		var message = "the obligation is to go through a " + colors.options[colors.selectedIndex].text + " square";
 	else
 		var message = "the prohibition is not to go through a " + colors.options[colors.selectedIndex].text + "square";
-	sendNormColor(playerId,recipientID,color,norm);
+	sendNormColor(playerId,recipientID,color,norm,sanction);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
 	// rowID = num of rows in proposals grid
@@ -681,7 +684,7 @@ function buttonSubmitNormColor_click(playerId) {
 function sendNormColor(playerIDSend,recipientID,color,norm)
 {
 	var stringJ = "{\"player\" : \"" + playerIDSend + "\" , \"recipient\" : \"" + recipientID; 
-		stringJ = stringJ + "\", \"color\" : \"" + color + "\", \"norm\" : \"" + norm +"\"}";
+		stringJ = stringJ + "\", \"color\" : \"" + color + "\", \"norm\" : \"" + norm +"\, \"sanction\" : " + sanction +"}";
 	jQuery.ajax({
 		type : "post",
 		url : "sendNormColor.jsp",
@@ -783,7 +786,7 @@ function buttonSubmitNormGoal_click(playerId) {
 	//ddIcons - the player that I want to reveal my goal to
 	isNormGoalSubmitted = true;
 	
-	sendNormGoal(playerId,recipientID,x,y,game.goals[0].posX,game.goals[0].posY);
+	sendNormGoal(playerId,recipientID,x,y,game.goals[0].posX,game.goals[0].posY,100);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
 	// rowID = num of rows in proposals grid
@@ -797,12 +800,12 @@ function buttonSubmitNormGoal_click(playerId) {
 	
 }
 
-function sendNormGoal(playerIDSend,recipientID,x,y,ox,oy)
+function sendNormGoal(playerIDSend,recipientID,x,y,ox,oy,sanction)
 {
 	var stringJ = "{\"player\" : \"" + playerIDSend + "\" , \"recipient\" : \"" + recipientID; 
 
 		stringJ = stringJ + "\", \"x\" : " + x + ", \"y\" : " + y ;
-		stringJ = stringJ + ", \"ox\" : " + ox + ", \"oy\" : " + oy +  "}";
+		stringJ = stringJ + ", \"ox\" : " + ox + ", \"oy\" : " + oy +", \"sanction\" : " + sanction +  "}";
 
 
 	jQuery.ajax({
@@ -1164,6 +1167,23 @@ function InsertIntoNormSelect() {
 	appendOptionLast("prohibition","no","normsDropDown", 'prohibition');
 	
 }
+function InsertIntoSanctionSelect() {
+	var playerId;	
+	var normsDropDown = document.createElement('select');
+	
+	normsDropDown.setAttribute('id', 'sanctionsDropDown');
+	normsDropDown.style.width = '70px';
+
+	document.getElementById('divTableNCSanction').appendChild(normsDropDown);
+	appendOptionLast(50,50,"sanctionsDropDown", '');
+	appendOptionLast(100,100,"sanctionsDropDown", '');
+	appendOptionLast(150,150,"sanctionsDropDown", '');
+	appendOptionLast(200,200,"sanctionsDropDown", '');
+	appendOptionLast(250,250,"sanctionsDropDown", '');
+	appendOptionLast(300,300,"sanctionsDropDown", '');
+	appendOptionLast(400,400,"sanctionsDropDown", '');
+	appendOptionLast(500,500,"sanctionsDropDown", '');
+}
 
 // INSERT INTO Players Chips Send
 function InsertIntoSendSelect() {
@@ -1307,7 +1327,40 @@ function loadProposalsTable() {
 	
 	jQuery("#tblProposals").jqGrid('addRowData', 0, defaultData);
 }
-
+function loadCoordsTable() {
+	jQuery("#tblCoords").jqGrid(
+			{
+				datatype : "local",
+				height : 200,
+				colNames : ['MsgType', 'Norm' ],
+				colModel : [ {
+					name : 'MsgType',
+					index : 'MsgType',
+					width : 90,
+					sortable : false
+				}, {
+					name : 'Norm',
+					index : 'Norm',
+					width : 500,
+					sortable : false
+				} ],
+				multiselect : false,
+				hoverrows : false				
+			});
+	var defaultData = {
+			// Id : MessageId,
+			// Proposer : playerName,
+			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
+			// Receiver : '<img height=25px width=25px src="img/'
+			// + game.getPlayerIcon(SenderID) + '"/>',
+			// Proposer : SenderID,
+			// Receiver : SenderID == 0 ? 1 : 0,
+			MsgType : "<div id='divTableMsgTypeC'></div>",
+			Norm : "<div id='divTableSenderC'></div>"
+		};
+	
+	jQuery("#tblCoords").jqGrid('addRowData', 0, defaultData);
+}
 
 // this function Receive "01:03" return "63"
 function getSeconds(timeForm) {
@@ -1361,6 +1414,18 @@ function addNormToTable(MsgType, SenderID, ReceiverID, msgID, N) {
 	//alert(defaultData.Message);
 	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
 	jQuery("#tblNorms").jqGrid('addRowData', rowID, defaultData);
+	
+}
+
+function addNormToCoord(MsgType, Norm) {
+	
+	var defaultData = {
+		MsgType : MsgType,
+		Message : Norm
+	};
+
+	var rowID = jQuery("#tblCoords").jqGrid('getGridParam', 'records');
+	jQuery("#tblCoords").jqGrid('addRowData', rowID, defaultData);
 	
 }
 
@@ -1582,20 +1647,23 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 	if (prohibitions != null)
 		for ( var i = 0; i < prohibitions.length; i++) {
 			 //alert("msg: " + prohibitions[i]);
-			 addNormToTable("Prohibition",null,null,null,JSON.stringify(prohibitions[i]));
-			//addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
-			//		o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
-			
-			//pendingProposalMsgID =  o.msgs[i].MessageId;
+			//var s = JSON.parse(prohibitions[i]);
+			var newDiv = document.createElement('div');
+			newDiv.id = 'pro'+i;
+			//iDiv.className = 'block';
+			newDiv.innerHTML = JSON.stringify(prohibitions[i]);
+			document.getElementById("notifyContainer").appendChild(newDiv);
+			//alert("msg: "+JSON.stringify(prohibitions[i]));
 		}
 	if (obligations != null)
 		for ( var i = 0; i < obligations.length; i++) {
-			// alert("msg: " + obligations[i]);
-			addNormToTable("Obligation",null,null,null,JSON.stringify(obligations[i]));
-			//addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
-			//		o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
-			
-			//pendingProposalMsgID =  o.msgs[i].MessageId;
+			 //alert("msg: " + JSON.stringify(obligations[i]));
+			var newDiv = document.createElement('div');
+			newDiv.id = 'obl'+i;
+			//iDiv.className = 'block';
+			//newDiv.innerHTML = JSON.stringify(obligations[i]);
+			newDiv.innerHTML = obligations[i].toString();
+			document.getElementById("notifyContainer").appendChild(newDiv);
 		}
 }
 // add data to proposals table

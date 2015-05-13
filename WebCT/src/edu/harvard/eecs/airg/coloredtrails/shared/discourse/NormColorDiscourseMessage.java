@@ -18,12 +18,22 @@ public class NormColorDiscourseMessage extends DiscourseMessage {
 	private static final long serialVersionUID = 8732569987805134283L;
 	String color;
 	boolean norm;
+	int sanction;
 	
-	public NormColorDiscourseMessage(int senderID, int receiverID, int messageId, String color, String norm) {
+	public int getSanction() {
+		return sanction;
+	}
+
+	public void setSanction(int sanction) {
+		this.sanction = sanction;
+	}
+
+	public NormColorDiscourseMessage(int senderID, int receiverID, int messageId, String color, String norm, int sanction) {
 		super(senderID, receiverID, "normcolor", messageId);
 
         this.norm = norm == "yes" ? true : false;
         this.color = color;
+        this.sanction = sanction;
 	}
 
 	public String getColor() {

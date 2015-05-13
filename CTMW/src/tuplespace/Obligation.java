@@ -77,11 +77,24 @@ public class Obligation implements TimeEntry {
 	}
 	
 	public String toHumanString() {
-		String s = "Obligation for player "+agent+" received at clock "+clock+" to ";
+		String s = "Osbligation to ";
 		if (obligation.startsWith("[at")) { //[at(1, 2, a20)]
 			String ss = obligation.substring(4);
 			String[] o = ss.split(",");
 			s+= "be at the grid tile [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "]";
+		}
+		else if (obligation.startsWith("[surround")) { //[surround(2, 2)]
+			String ss = obligation.substring(10);
+			String[] o = ss.split(",");
+			s+= "coordinate other players (with the use of norms) to surround a goal [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "] from left, right, top and bottom ";
+		}
+		else if (obligation.startsWith("[color")) { //[color(red,a20)]
+			String ss = obligation.substring(7);
+			String[] o = ss.split(",");
+			s+= "use a tile with color " +o[0];
+		}
+		else if (obligation.startsWith("[acceptRequests")) { //[acceptRequests(a20)]
+			s+= "accept requests for chips from the other players";
 		}
 		s += " before clock " + deadline + " or sanction " + sanction + " will be applied";
 		return s;

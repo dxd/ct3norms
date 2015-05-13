@@ -339,11 +339,11 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			System.out.println("---- NormColorDiscourseMessage ----");
 			NormColorDiscourseMessage ncdm = (NormColorDiscourseMessage) dm;
 			//String color = gs.getGamePalette().get(ncdm.getColor());
-			spaces.writeNormColor(ncdm.getToPerGameId(),ncdm.getColor(),ncdm.isNorm());	
+			spaces.writeNormColor(ncdm.getToPerGameId(),ncdm.getColor(),ncdm.isNorm(),ncdm.getSanction());	
 		}  else if (dm instanceof NormGoalDiscourseMessage) {
 			System.out.println("---- NormGoalDiscourseMessage ----");
 			NormGoalDiscourseMessage ngdm = (NormGoalDiscourseMessage) dm;
-			spaces.writeNormGoal(ngdm.getToPerGameId(),ngdm.getGoal(),ngdm.getOrigLoc());	
+			spaces.writeNormGoal(ngdm.getToPerGameId(),ngdm.getGoal(),ngdm.getOrigLoc(),ngdm.getSanction());	
 		}
 		return result;
 	}

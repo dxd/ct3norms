@@ -621,7 +621,7 @@ var game = {
 	addColors();
 	createGoals();
 	PlayerChips();
-	
+	loadCoordsTable();
 	
 	//gil
 	//loadProposalsTable();

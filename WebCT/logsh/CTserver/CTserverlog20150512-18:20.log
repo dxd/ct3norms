@@ -1,0 +1,519 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.231 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-59023-1431451252133-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [10.154.152.156] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [10.154.152.156] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [10.154.152.156] of type 
+     [java] Adding client state for 40
+     [java] Adding client state for 30
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [10.154.152.156] of type 
+     [java] Adding client state for 20
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-12 18:21:30,786 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-12~18.21-gigaspaces-service-10.154.152.156-47979.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] 2015-05-12 18:21:30,782  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 377 milliseconds
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=green, time=2015-05-12 18:21:30.913, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=green, time=2015-05-12 18:21:30.936, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=red, time=2015-05-12 18:21:30.939, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=orange, time=2015-05-12 18:21:30.941, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=green, time=2015-05-12 18:21:30.942, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=green, time=2015-05-12 18:21:30.943, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=orange, time=2015-05-12 18:21:30.945, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=red, time=2015-05-12 18:21:30.946, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=red, time=2015-05-12 18:21:30.947, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=purple, time=2015-05-12 18:21:30.948, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=red, time=2015-05-12 18:21:30.949, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=red, time=2015-05-12 18:21:30.95, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=green, time=2015-05-12 18:21:30.951, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=purple, time=2015-05-12 18:21:30.952, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=red, time=2015-05-12 18:21:30.954, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=red, time=2015-05-12 18:21:30.955, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=orange, time=2015-05-12 18:21:30.956, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=purple, time=2015-05-12 18:21:30.957, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=purple, time=2015-05-12 18:21:30.959, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=orange, time=2015-05-12 18:21:30.96, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=green, time=2015-05-12 18:21:30.962, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=purple, time=2015-05-12 18:21:30.964, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=orange, time=2015-05-12 18:21:30.965, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=purple, time=2015-05-12 18:21:30.967, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=green, time=2015-05-12 18:21:30.969, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=2015-05-12 18:21:30.991, clock=0]
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] revelation chips: { chips  'orange':0 'red':0 'purple':0 'green':0 }
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=3, time=2015-05-12 18:21:31.301]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=3, time=2015-05-12 18:21:31.301]
+     [java] 20
+     [java] CT prohibition: []
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied]
+     [java] CT notification: Time [clock=4, time=2015-05-12 18:21:40.818]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-12 18:21:40.827, clock=4]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-12 18:21:40.827, clock=4]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.837, color=orange, clock=4, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.837, color=orange, clock=4, number=2]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-12 18:21:40.827, clock=4]
+     [java] 20
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.846, color=red, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.846, color=red, clock=4, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.848, color=purple, clock=4, number=1]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.848, color=purple, clock=4, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.85, color=green, clock=4, number=2]
+     [java] CT writes: Chip [id=null, agent=a20, time=2015-05-12 18:21:40.85, color=green, clock=4, number=2]
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-12 18:21:40.853, clock=4]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-12 18:21:40.853, clock=4]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.855, color=orange, clock=4, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.855, color=orange, clock=4, number=1]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-12 18:21:40.853, clock=4]
+     [java] 30
+     [java] 30
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.859, color=red, clock=4, number=1]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.859, color=red, clock=4, number=1]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.862, color=purple, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.862, color=purple, clock=4, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.867, color=green, clock=4, number=2]
+     [java] CT writes: Chip [id=null, agent=a30, time=2015-05-12 18:21:40.867, color=green, clock=4, number=2]
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-12 18:21:40.871, clock=4]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-12 18:21:40.871, clock=4]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.875, color=orange, clock=4, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.875, color=orange, clock=4, number=2]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-12 18:21:40.871, clock=4]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.881, color=red, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.881, color=red, clock=4, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.883, color=purple, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.883, color=purple, clock=4, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.885, color=green, clock=4, number=2]
+     [java] CT writes: Chip [id=null, agent=a40, time=2015-05-12 18:21:40.885, color=green, clock=4, number=2]
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-12 18:21:40.89, clock=4]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-12 18:21:40.89, clock=4]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.893, color=orange, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.893, color=orange, clock=4, number=3]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-12 18:21:40.89, clock=4]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.896, color=red, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.896, color=red, clock=4, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.899, color=purple, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.899, color=purple, clock=4, number=3]
+     [java] CT writes chips: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.902, color=green, clock=4, number=3]
+     [java] CT writes: Chip [id=null, agent=a10, time=2015-05-12 18:21:40.902, color=green, clock=4, number=3]
+     [java] CT notification: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=10, time=2015-05-12 18:21:42.001, clock=4]
+     [java] CT obligation: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=10, time=2015-05-12 18:21:42.001, clock=4]
+     [java] 20
+     [java] CT obligation: []
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=6, time=2015-05-12 18:21:42.822, clock=4]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=6, time=2015-05-12 18:21:42.822, clock=4]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Time [clock=5, time=2015-05-12 18:21:50.821]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(4, 4, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:21:56.018]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(4, 4, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:21:56.018]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-12 18:21:40.853, clock=4]
+     [java] 30
+     [java] 30
+     [java] CT notification: Time [clock=2, time=2015-05-12 18:21:20.813]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=3, time=2015-05-12 18:21:30.816]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-12 18:21:40.871, clock=4]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=4, time=2015-05-12 18:21:40.818]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-12 18:21:40.89, clock=4]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=3, time=2015-05-12 18:21:31.301]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=3, time=2015-05-12 18:21:31.301]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(4, 4, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:21:56.018]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(4, 4, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:21:56.018]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-12 18:21:40.827, clock=4]
+     [java] 20
+     [java] CT notification: Time [clock=5, time=2015-05-12 18:21:50.821]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=10, time=2015-05-12 18:21:42.001, clock=4]
+     [java] CT obligation: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=10, time=2015-05-12 18:21:42.001, clock=4]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=7, time=2015-05-12 18:22:00.2, clock=5]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=7, time=2015-05-12 18:22:00.2, clock=5]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=7, time=2015-05-12 18:22:00.2, clock=5]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=7, time=2015-05-12 18:22:00.2, clock=5]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(2, 2, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.22]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(2, 2, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.22]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(2, 2, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.22]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(2, 2, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.22]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(4, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.253]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(4, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.253]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Time [clock=1, time=2015-05-12 18:21:10.797]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(4, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.253]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(4, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.253]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(0, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.291]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(0, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.291]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=3, time=2015-05-12 18:22:00.335, clock=5]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=3, time=2015-05-12 18:22:00.335, clock=5]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(0, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.291]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(0, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.291]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=6, time=2015-05-12 18:21:42.822, clock=4]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=6, time=2015-05-12 18:21:42.822, clock=4]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=3, time=2015-05-12 18:22:00.335, clock=5]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=3, time=2015-05-12 18:22:00.335, clock=5]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied]
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [10.154.152.156] of type 
+     [java] Adding client state for 30
+     [java] Adding client state for 40
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [10.154.152.156] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [10.154.152.156] of type 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(0, 4, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.487]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(0, 4, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.487]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,4] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(0, 1, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.502]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(0, 1, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.502]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,4] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,1] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[at(1, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.52]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[at(1, 0, a20)], sanction=[reduce(a20, 50)], clock=5, time=2015-05-12 18:22:00.52]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,1] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,1] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [1,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Time [clock=6, time=2015-05-12 18:22:00.823]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=8, time=2015-05-12 18:22:02.062, clock=6]
+     [java] CT obligation: Obligation [subject=a20, obligation=[color(green, a20)], sanction=[reduce(a20, 50)], deadline=8, time=2015-05-12 18:22:02.062, clock=6]
+     [java] 20
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-12 18:22:02.061]
+     [java] CT obligation: [Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to be at the grid tile [1,2] before clock 10 or sanction [reduce(a20, 500)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 7 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 6 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 3 or sanction [reduce(a20, 50)] will be applied, Player a20 received an obligation to use a tile with color reen before clock 8 or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-12 18:22:02.061]
+     [java] 20
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,1] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [1,0] or sanction [reduce(a20, 50)] will be applied]
+     [java] CT prohibition: [Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied, Player a20 received a prohibition to be at the grid tile [4,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [2,2] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [4,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,4] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [0,1] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to be at the grid tile [1,0] or sanction [reduce(a20, 50)] will be applied, Player a20 received a prohibition to reject requests for chips from the other players or sanction [reduce(a20, 500)] will be applied]
+     [java] CT notification: Time [clock=1, time=2015-05-12 18:22:10.751]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=7, time=2015-05-12 18:22:10.825]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=2, time=2015-05-12 18:22:20.752]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=8, time=2015-05-12 18:22:20.827]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=3, time=2015-05-12 18:22:30.754]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=9, time=2015-05-12 18:22:30.828]
+     [java] CT players (clone,for): 
+     [java] Player: 20  Score: 0
+     [java] Player: 30  Score: -5
+     [java] Player: 40  Score: 10
+     [java] Player: 10  Score: 20
+     [java] A New Phase Began: Communication Phase
+     [java] CT notification: Time [clock=4, time=2015-05-12 18:22:40.756]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=10, time=2015-05-12 18:22:40.83]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=5, time=2015-05-12 18:22:50.757]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=11, time=2015-05-12 18:22:50.832]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=6, time=2015-05-12 18:23:00.759]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=12, time=2015-05-12 18:23:00.834]
+     [java] CT players (clone,for): 
+     [java] Client 20 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] 2015-05-12 18:34:50,193  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+     [java]  class name: java.lang.Object
+     [java]  uid: 893f71d2-b52b-43f7-9108-b5e4bf832136
+     [java]  expiration: 1431451440785
+     [java]  left 649339
+     [java]  event cause: null
+     [java] 
+     [java] 2015-05-12 18:34:50,222  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:46)
+     [java] 	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1211)
+     [java] 	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+     [java] 	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+     [java] 	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] Caused by: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] 
+     [java] 2015-05-12 18:34:50,243  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] 2015-05-12 18:34:50,243  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Time [clock=13, time=2015-05-12 18:24:46.14]
+     [java] CT players (clone,for): 
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Time [clock=7, time=2015-05-12 18:24:46.066]
+     [java] CT players (clone,for): 
+     [java] Client 40 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] Client 30 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] 2015-05-12 18:34:54,402  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] Client 10 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] 2015-05-12 18:34:55,860  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] ERROR root                           - Error sending game phases advanced messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game phases advanced messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game phases advanced messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game phases advanced messagejavax.jms.IllegalStateException: The Session is closed
+     [java] A New Phase Began: Feedback Phase
+     [java] 2015-05-12 18:34:56,168  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createObjectMessage(ActiveMQSession.java:329)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.sendPhaseAdvancedMessage(CtrlCommands.java:370)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.GamesStatusSender.update(GamesStatusSender.java:112)
+     [java] 	at java.util.Observable.notifyObservers(Observable.java:142)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.GameStatus.update(GameStatus.java:564)
+     [java] 	at java.util.Observable.notifyObservers(Observable.java:142)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advanceToPhase(Phases.java:467)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advancePhase(Phases.java:482)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.actionPerformed(Phases.java:517)
+     [java] 	at javax.swing.Timer.fireActionPerformed(Timer.java:291)
+     [java] 	at javax.swing.Timer$DoPostEvent.run(Timer.java:221)
+     [java] 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+     [java] 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+     [java] 	at java.awt.EventQueue.access$400(EventQueue.java:82)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:676)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:674)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+     [java] 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+     [java] 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+     [java] 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+     [java] 
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game players updated messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game end messagejavax.jms.IllegalStateException: The Session is closed
+     [java] 2015-05-12 18:34:57,175  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createObjectMessage(ActiveMQSession.java:329)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.sendGameEndedMessage(CtrlCommands.java:352)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.GamesStatusSender.update(GamesStatusSender.java:86)
+     [java] 	at java.util.Observable.notifyObservers(Observable.java:142)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.GameStatus.setEnded(GameStatus.java:343)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerGameStatus.setEnded(ServerGameStatus.java:457)
+     [java] 	at WebCTInputFileConfig.endPhase(WebCTInputFileConfig.java:279)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerPhases.endPhase(ServerPhases.java:84)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advanceToPhase(Phases.java:446)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advancePhase(Phases.java:482)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.actionPerformed(Phases.java:517)
+     [java] 	at javax.swing.Timer.fireActionPerformed(Timer.java:291)
+     [java] 	at javax.swing.Timer$DoPostEvent.run(Timer.java:221)
+     [java] 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+     [java] 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+     [java] 	at java.awt.EventQueue.access$400(EventQueue.java:82)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:676)
+     [java] 	at java.awt.EventQueue$2.run(EventQueue.java:674)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+     [java] 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+     [java] 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+     [java] 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+     [java] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+     [java] 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+     [java] 
+     [java] 2015-05-12 18:35:04,142  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-59023-1431451252133-1:0) is shutting down
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-59023-1431451252133-1:0) stopped
+     [java] Java Result: 143
+
+BUILD SUCCESSFUL
+Total time: 14 minutes 43 seconds

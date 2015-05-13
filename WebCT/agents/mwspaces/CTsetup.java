@@ -252,19 +252,19 @@ public class CTsetup {
 		createEntry(p);
 	}
 
-	public void writeNormColor(int perGameId, String color, boolean t) {
+	public void writeNormColor(int perGameId, String color, boolean t, int sanction) {
 		String type;
 		if (t)
 			type = "yes";
 		else
 			type = "no";
-		Color c = new Color(getAgent(perGameId),color,type,clock);
+		Color c = new Color(getAgent(perGameId),color,type, sanction,clock);
 		System.out.println("CT writes color norm: "+c.toString());
 		createEntry(c);
 	}
 
-	public void writeNormGoal(int perGameId, RowCol g, RowCol oGoal) {
-		 tuplespace.SetGoal goal = new SetGoal(getAgent(perGameId),new Cell(g.row,g.col),new Cell(oGoal.row,oGoal.col),clock);
+	public void writeNormGoal(int perGameId, RowCol g, RowCol oGoal, int sanction) {
+		 tuplespace.SetGoal goal = new SetGoal(getAgent(perGameId),new Cell(g.row,g.col),new Cell(oGoal.row,oGoal.col), sanction,clock);
 		 System.out.println("CT writes setGoal: "+goal.toString());
 		 createEntry(goal);
 	}

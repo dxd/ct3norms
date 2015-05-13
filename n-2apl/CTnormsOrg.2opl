@@ -23,7 +23,7 @@ norm(
 norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
-    ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY))), // precondition - add triggering condition
+    ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
     obligation([at(X,Y,Agent)],now + 6,[reduce(Agent, 500)]) // prohibition format
     ).  
 
@@ -31,17 +31,35 @@ norm(
 norm(
 not_enter_tile(Thing),
 Thing, // the subject agent
-( pursuer(Thing), color(Thing,Color,no), tile(X,Y,Color)), // precondition
-prohibition([at(X,Y,Thing)],[reduce(Thing,50)]) // prohibition format
+( pursuer(Thing), color(Thing,Color,no,S), tile(X,Y,Color)), // precondition
+prohibition([at(X,Y,Thing)],[reduce(Thing,S)]) // prohibition format
 ).
 
 %individual obligations to use colored tiles
 norm(
 enter_tile(Thing),
 Thing, // the subject agent
-( pursuer(Thing), color(Thing,Color,yes), tile(X,Y,Color)), // precondition
-obligation([color(Color,Thing)],now + 2,[reduce(Thing,50)]) // prohibition format
+( pursuer(Thing), color(Thing,Color,yes,S), tile(X,Y,Color)), // precondition
+obligation([color(Color,Thing)],now + 2,[reduce(Thing,S)]) // prohibition format
 ).
+
+%individual obligations to accept request
+norm(
+acceptRequests(Thing),
+Thing, // the subject agent
+( pursuer(Thing), acceptPolicy(Thing)), // precondition
+obligation([acceptRequests(Thing)],now + 20,[reduce(Thing,500)]) // prohibition format
+).
+
+%individual prohibitions to reject requests
+norm(
+rejectRequests(Thing),
+Thing, // the subject agent
+( pursuer(Thing)), // precondition
+prohibition([rejectRequests(Thing)],[reduce(Thing,500)]) // prohibition format
+).
+
+
 
 hierachical(group_task(_)).
 
@@ -210,8 +228,8 @@ Effects:
 {true} chip(A,Color,X,Clock) {chip(A,Color,X,Clock)}
 
 //{agentSTask(Agent,X,Y,goal(GX,GY))} setGoal(Agent,X,Y,GX,GY,Clock) {not agentSTask(Agent,X,Y,goal(GX,GY))}
-{true} setGoal(Agent,X,Y,GX,GY,Clock) {agentSTask(Agent,X,Y,goal(GX,GY))}
-{true} color(Agent,Color,Type,C) {color(Agent,Color,Type)}
+{true} setGoal(Agent,X,Y,GX,GY,S,Clock) {agentSTask(Agent,X,Y,goal(GX,GY),S)}
+{true} color(Agent,Color,Type,S,C) {color(Agent,Color,Type,S)}
 
 //{points(Agent,OldValue)} points(Agent, Clock, Value) {not points(Agent,OldValue), points(Agent,Value)}
 //{true} points(Agent, Clock, Value) {points(Agent,Value,Clock)}

@@ -19,12 +19,22 @@ public class NormGoalDiscourseMessage extends DiscourseMessage {
 	private static final long serialVersionUID = 8732569987805134283L;
 	RowCol goal;
 	RowCol origLoc;
+	int sanction;
 	
-	public NormGoalDiscourseMessage(int senderID, int receiverID, int messageId, RowCol goal, RowCol orig, boolean norm) {
+	public int getSanction() {
+		return sanction;
+	}
+
+	public void setSanction(int sanction) {
+		this.sanction = sanction;
+	}
+
+	public NormGoalDiscourseMessage(int senderID, int receiverID, int messageId, RowCol goal, RowCol orig, boolean norm, int sanction) {
 		super(senderID, receiverID, "normgoal", messageId);
 
         this.goal = goal;
         this.origLoc = orig;
+        this.sanction = sanction;
 	}
 
 	public void setOrigLoc(RowCol origLoc) {
