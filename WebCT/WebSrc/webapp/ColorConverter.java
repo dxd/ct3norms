@@ -47,6 +47,18 @@ public class ColorConverter {
 		if (c.equals("CTDkGreen")) {
 			return "7FBF7F";
 		}
+		if (c.equals("white")) {
+			return "F8F9F3"; /* "00ff00"; */
+		}
+		if (c.equals("yellow")) {
+			return "F5E83F"; /* "00ff00"; */
+		}
+		if (c.equals("brown")) {
+			return "694A0B"; /* "00ff00"; */
+		}
+		if (c.equals("myblue")) {
+			return "1F82C4"; /* "00ff00"; */
+		}
 		//moranend
 		return "";
 	}

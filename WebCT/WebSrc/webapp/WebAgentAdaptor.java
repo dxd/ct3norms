@@ -159,6 +159,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		// create the message object
 		JSONObject object = new JSONObject();
 		// got messages to update the client
+		//object.put("clock", client.);
 		JSONArray requestsArray = new JSONArray();
 		JSONArray responseArray = new JSONArray();
 		if ((LastUpdateProposaleMessages != null)

@@ -140,6 +140,7 @@ public class CTsetup {
 	public void event(TimeEntry e) {
 		if (e instanceof tuplespace.Time) {
 			this.clock = e.getClock();
+			gs.clock = clock;
 			writePlayers(gs.getPlayers());
 		} else if (e instanceof tuplespace.Position) {
 			Position p = (Position) e;

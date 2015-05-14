@@ -90,7 +90,9 @@ public class ServerGameStatus extends GameStatus
 
 	
 	
-    /************************
+    public Integer clock;
+
+	/************************
 		CONSTRUCTORS
 	************************/
     public ServerGameStatus()

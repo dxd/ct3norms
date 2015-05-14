@@ -36,6 +36,7 @@ var pValue;
 var currentPhase;
 // the current phase index in phases json array
 var currentPhaseIndex;
+var lastPhaseIndex;
 // the time of the current phase of the game
 var currentPhaseTime;
 // revelation chips flag (true/false)
@@ -51,6 +52,8 @@ var isGoalRevelationSubmitted;
 //indicate whether there is a pending proposal and its message id
 //id = -1 indicates that there is no pending message
 var pendingProposalMsgID;
+
+var clock;
 
 function Init() {
 	// times
@@ -239,8 +242,9 @@ function createGoals() {
 	var playerID = game.getMe();
 	var goalSquare;
 	
-	//TODO remove hack 10...
-	if (game.numOfGolals ==10 )  //Bargain Only and WebCTRevelation
+	if (game.role == 0)
+		return;
+	if (game.numOfGolals ==1 && game.role ==1 )  //Bargain Only and WebCTRevelation
 	{
 		 var newDiv = document.createElement("div");
 		 newDiv.innerHTML = '<img src="img/goal.gif">';
@@ -389,30 +393,24 @@ function updateProgressBar() {
 		case "Norm Phase":
 				//chipRevelationArea();
 				//clearProposalTableArea();
+			if (game.role == 1) {
 				loadNormGoalProposalsTable();
 				loadNormColorProposalsTable();
-				SetHeaderMsg('This is norm phase');
-			
-			
+			}
+				SetHeaderMsg('This is norm phase');					
 			break;
 		case "Communication Phase":
 			// if communication phase -> build proposal area for players
+			if (game.role == 1) {
 			clearNormMessagesUI();
+			}
 			//UpdateServer();			
 			
 			loadProposalsTable();
 			proposalArea();
 			// notify			
-			SetHeaderMsg(game.role == 1 ? 'this is Communication phase, you are the Receiver' : 'this is Communication phase, you are the Proposer');		
 			break;
 			
-		case "Counter Offer Phase":
-			// if communication phase -> build proposal area for players
-			//UpdateServer();			
-			proposalArea();
-			// notify
-			SetHeaderMsg(game.role == 1 ? 'this is Counter Offer phase, you are the Receiver' : 'this is Counter Offer phase, you are the Proposer');
-			break;	
 		case "Movement Phase":	
 			SetHeaderMsg('time to move');
 			break;
@@ -425,12 +423,8 @@ function updateProgressBar() {
 	} else {
 		// check if an update to server require a counter offer
 		UpdateServer();
-		if (game.role != lastRole) {			
-			clearMessagesUI();
-			proposalArea();
-			lastRole = game.role;
-			SetHeaderMsg(game.role == 1 ? 'couter offer, you are the Receiver' : 'counter offer, you are the Proposer');
-		}
+		//clearMessagesUI();
+		//proposalArea();	
 	}
 	
 	pValue = pValue - 1;
@@ -931,14 +925,6 @@ function proposalArea() {
 	InsertIntoReceiveSelect();
 	
 
-	// show proposal area only for proposer
-	if (game.role == 1) { // 1 = Receiver
-		//clearMessagesUI();		
-	}
-	else{
-		// make proposal area visible
-		$("#"+"0").show();
-	}
 	$("#"+"0").show();
 }
 // END send Receive proposal area
@@ -952,8 +938,8 @@ function buttonSubmitProposal_click() {
 			sendProposal(game.getPlayerId(i), ddIcons.options[ddIcons.selectedIndex].value);
 		}
 	}
-	clearMessagesUI();
-	$("#"+"0").hide();	
+	//clearMessagesUI();
+	//$("#"+"0").hide();	
 	
 }
 //this function send proposal
@@ -1458,7 +1444,7 @@ function addRecordToTable(MsgType, SenderID, ReceiverID, msgID, ReceivedChips, S
 			+ msgID + '" value="Reject" onclick="sendResponseAcceptReject('
 			+ msgID + ',0)"></td><td></td></tr></table></div>';
 
-	var showButtons = game.role == 1 ? AcceptRejectButtonsHTML
+	var showButtons = game.getisPlayerMe(ReceiverID) == "true" ? AcceptRejectButtonsHTML
 			: '<div id="msgToAcceptReject' + msgID + '"></div>';
 
 	var defaultData = {
@@ -1481,7 +1467,7 @@ function addRecordToTable(MsgType, SenderID, ReceiverID, msgID, ReceivedChips, S
 	jQuery("#tblProposals").jqGrid('addRowData', rowID, defaultData);
 	
 	//the popup window for received proposal
-	if(game.role == 1)
+	if( game.getisPlayerMe(ReceiverID) == "true" )
 	{
 		var newDiv = $(document.createElement('div')); 
 		newDiv.html('Incoming proposal received!');
@@ -1532,7 +1518,12 @@ function UpdateServer() {
 		UpdatePlayerPosOnBoard(o);
 		UpdatePlayerChips(o);
 		UpdateBorderColors(o);
+		UpdateClock(o.Clock);
 	});
+}
+
+function UpdateClock(c) {
+	clock = c;
 }
 
 //Change Player Chips after ajax update
@@ -1653,8 +1644,8 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 			var newDiv = document.createElement('div');
 			newDiv.id = 'obl'+i;
 			//iDiv.className = 'block';
-			//newDiv.innerHTML = JSON.stringify(obligations[i]);
-			newDiv.innerHTML = obligations[i].toString();
+			newDiv.innerHTML = JSON.stringify(obligations[i]);
+			//newDiv.innerHTML = obligations[i].toString();
 			document.getElementById("notifyContainer").appendChild(newDiv);
 		}
 }

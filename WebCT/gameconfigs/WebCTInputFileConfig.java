@@ -54,6 +54,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	
 	
 	CTsetup spaces;
+	 
 	/**
 	 * Returns score of specified player, according to player's current state
 	 */
@@ -92,10 +93,10 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		System.out.println("game id= " + gs.getGameId());
 
 		GamePalette gp = new GamePalette();
-		gp.add("red");
-		gp.add("green");
-		gp.add("purple");
-		gp.add("orange");
+		gp.add("white");
+		gp.add("brown");
+		gp.add("myblue");
+		gp.add("yellow");
 		gs.setGamePalette(gp);
 		gs.setScoring(s);
 				
@@ -114,14 +115,19 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		}		
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
-		for (int i = 0; i < numberOfConfigFiles; i++) {
-			ph.addPhase("Norm Phase", 60);
-			ph.addPhase("Communication Phase", 20);
-			ph.addPhase("Movement Phase", 20);			
+		for (int i = 0; i < 5; i++) {
+			ph.addPhase("Norm Phase", 10);		
+		}
+		for (int i = 0; i < 5; i++) {
+			ph.addPhase("Communication Phase", 10);		
+		}
+		for (int i = 0; i < 5; i++) {
+			ph.addPhase("Movement Phase", 10);			
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
 		gs.setPhases(ph);		
+		
 		gs.setInitialized(); // will generate GAME_INITIALIZED message		
 	}
 
@@ -204,6 +210,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					//player.setTeamId(3); // set teams for players
 					player.setChips(getChipSet(gs.getGamePalette(), in));
 					player.setPosition(getPosition(in));
+					player.setRole(in.next());
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(true);
 					player.setMovesAllowed(false);
