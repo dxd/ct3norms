@@ -56,7 +56,8 @@ public class Prolog2Java {
 		for (int i = 0; i <= event.getParams().size()-1; i++ ) {
 			//Integer number = null; // if health is null (which is ident) it stays also in java null
 			if(event.getParams().get(i) instanceof APLNum) {
-				String s = ((APLNum)event.getParams().get(i)).toString();
+				int si = ((APLNum)event.getParams().get(i)).toInt();
+				String s = Integer.toString(si);
 				if (s.startsWith("null"))
 					params[i] = null;
 				else

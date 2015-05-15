@@ -151,6 +151,7 @@ public class PlayerStatus extends CTStateContainer
 		set("revelationAllowed", Boolean.FALSE);
 		set("obligations", new ArrayList<String>());
 		set("prohibitions", new ArrayList<String>());
+		
     }
 
     public PlayerStatus(int pin)

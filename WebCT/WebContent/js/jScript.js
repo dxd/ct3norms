@@ -54,6 +54,7 @@ var isGoalRevelationSubmitted;
 var pendingProposalMsgID;
 
 var clock;
+var score;
 
 function Init() {
 	// times
@@ -114,8 +115,9 @@ function Init() {
 	phaseChanged = true;
 	//set pending proposal flag
 	pendingProposalMsgID = -1;
-	
-	
+	clock = 0;
+	score = 1000;
+	UpdateServer();
 }
 
 // parse query string from url
@@ -377,15 +379,7 @@ function updateProgressBar() {
 		{
 			currentPhaseIndex = game.phasesIndex[currentPhase];			
 		}		
-		phaseChanged = false;
-
-		UpdateServer();
-
-		currentPhaseTime = game.phases[currentPhaseIndex].duration;
-		if (currentPhaseIndex == 0) {
-			pValue = game.phases[currentPhaseIndex].duration;
-		}
-
+	}
 		// clear first row at proposals table
 		//clearMessagesUI();
 		
@@ -393,13 +387,16 @@ function updateProgressBar() {
 		case "Norm Phase":
 				//chipRevelationArea();
 				//clearProposalTableArea();
+			if (phaseChanged) {
 			if (game.role == 1) {
 				loadNormGoalProposalsTable();
 				loadNormColorProposalsTable();
 			}
-				SetHeaderMsg('This is norm phase');					
+				SetHeaderMsg('This is norm phase');	
+			}
 			break;
 		case "Communication Phase":
+			if (phaseChanged ) {
 			// if communication phase -> build proposal area for players
 			if (game.role == 1) {
 			clearNormMessagesUI();
@@ -408,11 +405,15 @@ function updateProgressBar() {
 			
 			loadProposalsTable();
 			proposalArea();
+			SetHeaderMsg("Communication Phase");
+			}
 			// notify			
 			break;
 			
 		case "Movement Phase":	
-			SetHeaderMsg('time to move');
+			SetHeaderMsg("Movement Phase");
+			//loadProposalsTable();
+			//proposalArea();
 			break;
 		case "Feedback Phase":			
 			SetHeaderMsg('please fill Feedback report');
@@ -420,44 +421,15 @@ function updateProgressBar() {
 		default:			
 			break;		
 		}
-	} else {
-		// check if an update to server require a counter offer
-		UpdateServer();
-		//clearMessagesUI();
-		//proposalArea();	
-	}
 	
-	pValue = pValue - 1;
+	phaseChanged = false;
+	
+	//document.getElementById("TimeLeft").innerHTML = currentPhase.substring(0, currentPhase.length - 5) + ' - ' + secondsToTime(pValue);
+	document.getElementById("TimeLeft").innerHTML = "clock: " + clock;
+	document.getElementById("divPhases").innerHTML = "score: " + score;
 
-	$("#progressbar").progressbar({
-		value : pValue / currentPhaseTime * 100
-	});
-
-	var divPhasesInnerHTML = "";
-	for (var i = 0; i < game.phases.length; i++) {
-		if (i == currentPhaseIndex) {
-			divPhasesInnerHTML += '<b>' + game.phases[i].name + '</b> <br />';
-		} else {
-			divPhasesInnerHTML += game.phases[i].name + '<br />';
-		}
-	}
-	
-	var progressbar = $("#progressbar");
-	var progressBarPossition = progressbar.position();
-	$("#TimeLeft").css('top', '\'' + progressBarPossition.top + '\'px');
-	
-	document.getElementById("TimeLeft").innerHTML = currentPhase.substring(0, currentPhase.length - 5) + ' - ' 
-			+ secondsToTime(pValue);
-	
-	document.getElementById("divPhases").innerHTML = divPhasesInnerHTML;
-	
-	
-	if(pValue<2&& pendingProposalMsgID > -1)
-	{
-		alert("pValue - "+pValue + " pendingProposalMsgID =  "+pendingProposalMsgID);
-		sendResponseAcceptReject(pendingProposalMsgID, 0);
-	}
 }
+
 // END update the progress bar
 
 // notification area
@@ -1498,9 +1470,7 @@ function UpdateServer() {
 		//update current phase
 		if (currentPhase != o.CurrentPhase) {
 			phaseChanged = true;
-			
-			// Update Current Phase Time
-			pValue = o.PhaseSecsLeft;
+
 			// Update Current phase name
 			currentPhase = o.CurrentPhase;
 			if(game.numOfGolals!= o.numOfGoals)
@@ -1509,9 +1479,8 @@ function UpdateServer() {
 				updateGoals(o);
 			}
 			
-		} else {
-			phaseChanged = false;
 		}
+		
 		InsertIntoNormsTable(o.Prohibitions,o.Obligations);
 		InsertIntoProposalsTable(o);
 		UpdateResponseForProposal(o);
@@ -1519,11 +1488,18 @@ function UpdateServer() {
 		UpdatePlayerChips(o);
 		UpdateBorderColors(o);
 		UpdateClock(o.Clock);
+		UpdateScore(o.Score);
 	});
 }
 
 function UpdateClock(c) {
+	if (c <= clock)
+		return;
 	clock = c;
+	updateProgressBar();
+}
+function UpdateScore(s) {
+	score = s;
 }
 
 //Change Player Chips after ajax update

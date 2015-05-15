@@ -108,9 +108,8 @@ public class CTsetup {
 				for (int i = 0;  i <agents.length; i++) {
 					session.addListener(new Obligation(agents[i]), handler); 
 					session.addListener(new Prohibition(agents[i]), handler); 
+					session.addListener(new Points(agents[i]), handler); 
 				}
-				//session.addListener(new Tile(), handler); 
-				//session.addListener(new GroupCoin(), handler); 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -140,9 +139,18 @@ public class CTsetup {
 	public void event(TimeEntry e) {
 		if (e instanceof tuplespace.Time) {
 			this.clock = e.getClock();
-			gs.clock = clock;
+			gs.getBoard().setClock(clock);
 			writePlayers(gs.getPlayers());
-		} else if (e instanceof tuplespace.Position) {
+		} else if (e instanceof tuplespace.Points) {
+			Points p = (Points) e;
+			Integer i = getID(getPin(p.agent));
+			if (i != null )
+			{
+				gs.getPlayerByPerGameId(i).setScore(p.value);
+			}
+		}
+		
+		else if (e instanceof tuplespace.Position) {
 			Position p = (Position) e;
 			//System.out.println("position: "+p);
 			Integer id = getID(getPin(p.agent));
@@ -153,12 +161,12 @@ public class CTsetup {
 			}
 		} else if (e instanceof Obligation) {
 			Obligation o = (Obligation) e;
-			System.out.println("CT obligation: "+o);
+			//System.out.println("CT obligation: "+o);
 			Integer i = getID(getPin(o.agent));
 			if (i != null )
 			{
 				ArrayList<String> a = gs.getPlayerByPerGameId(i).getObligations();
-				System.out.println("CT obligation: "+a);
+				//System.out.println("CT obligation: "+a);
 				a.add(o.toHumanString());
 				System.out.println("CT obligation: "+a);
 				gs.getPlayerByPerGameId(i).setObligations(a);
@@ -166,12 +174,12 @@ public class CTsetup {
 
 		} else if (e instanceof Prohibition) {
 			Prohibition p = (Prohibition) e;
-			System.out.println("CT prohibition: "+p);
+			//System.out.println("CT prohibition: "+p);
 			Integer i = getID(getPin(p.agent));
 			if (i != null )
 			{
 				ArrayList<String> a = gs.getPlayerByPerGameId(i).getProhibitions();
-				System.out.println("CT prohibition: "+a);
+				//System.out.println("CT prohibition: "+a);
 				a.add(p.toHumanString());
 				System.out.println("CT prohibition: "+a);
 				gs.getPlayerByPerGameId(i).setProhibitions(a);
@@ -227,12 +235,12 @@ public class CTsetup {
 				PlayerStatus op = ops.get(p.getPerGameId());
 			if (!p.getPosition().equals(op.getPosition()))
 				writePosition(p.getPerGameId(),p.getPosition());
-			if (!p.getChips().equals(op.getChips()))
-				writeChips(p.getPerGameId(),p.getChips());
+			//if (!p.getChips().equals(op.getChips()))
+				//writeChips(p.getPerGameId(),p.getChips());
 			}
 			else {
 				writePosition(p.getPerGameId(),p.getPosition());
-				writeChips(p.getPerGameId(),p.getChips());
+				//writeChips(p.getPerGameId(),p.getChips());
 			}
 		}
 		ops = (Hashtable<Integer, PlayerStatus>) newold.clone();

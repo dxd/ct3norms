@@ -164,6 +164,13 @@ public class Board extends CTStateContainer
 //        return (getRows() < 1) ? 0 : squares[0].length;
     }
 
+    public void setClock(int clock)
+    {
+    	put("clock", clock);
+		
+        setChanged();
+        notifyObservers("BOARD_CHANGED");
+    }
 
     /*************************/
     /***** BOARD COLORS ******/
@@ -390,9 +397,6 @@ public class Board extends CTStateContainer
       return nearest;
     }
 
-
-
-
     public String toString()
     {
         String rep = "";
@@ -407,4 +411,8 @@ public class Board extends CTStateContainer
         }
         return rep;
     }
+
+	public int getClock() {
+		return (Integer) get("clock");
+	}
 }

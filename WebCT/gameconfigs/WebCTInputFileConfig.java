@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.regex.Pattern;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -56,25 +57,15 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	CTsetup spaces;
 	 
 	/**
-	 * Returns score of specified player, according to player's current state
-	 */
-	public int getPlayerScore(PlayerStatus ps) {
-		RowCol gpos = gs.getBoard().getGoalLocations().get(0); // get first goal
-																// in list
-		return (int) Math.floor(s.score(ps, gpos)); // should change to double
-													// at some point
-	}
-	
-	/**
 	 * Called by GameConfigDetailsRunnable methods when calculation and
 	 * assignment of player scores is desired
 	 */
 	protected void assignScores() {
-		for (PlayerStatus ps : gs.getPlayers()) {
-			ps.setScore(getPlayerScore(ps));
-			System.out.println("Player: " + ps.getPin() + "  Score: "
-					+ ps.getScore());
-		}
+//		for (PlayerStatus ps : gs.getPlayers()) {
+//			ps.setScore(getPlayerScore(ps));
+//			System.out.println("Player: " + ps.getPin() + "  Score: "
+//					+ ps.getScore());
+//		}
 	}
 
 
@@ -115,14 +106,14 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		}		
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Norm Phase", 10);		
 		}
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Communication Phase", 10);		
 		}
-		for (int i = 0; i < 5; i++) {
-			ph.addPhase("Movement Phase", 10);			
+		for (int i = 0; i < 1; i++) {
+			ph.addPhase("Movement Phase", 60);			
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
@@ -207,10 +198,14 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 				// for all the players
 				for (int i = 0; i < gs.getPlayers().size();i++) {
 					PlayerStatus player = gs.getPlayerByPerGameId(i);
+					player.setScore(1000);
 					//player.setTeamId(3); // set teams for players
 					player.setChips(getChipSet(gs.getGamePalette(), in));
-					player.setPosition(getPosition(in));
-					player.setRole(in.next());
+					int row = in.nextInt();
+					int col = in.nextInt();
+					player.setPosition(new RowCol(row, col));
+					player.setRole(in.next("[a-z]+"));
+					in.nextLine();
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(true);
 					player.setMovesAllowed(false);
@@ -378,6 +373,14 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	        	
 	        }
 	    }
+
+
+
+
+	@Override
+	public int getPlayerScore(PlayerStatus ps) {
+		return ps.getScore();
+	}
 
 
 }

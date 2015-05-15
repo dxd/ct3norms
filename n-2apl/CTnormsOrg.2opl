@@ -123,54 +123,44 @@ surround(X,Y) :-
 	at(West,Y,B),
 	at(X,North,C),
 	at(X,South,D).
-	
-	
-//do_reduce_h(Group,P):- 
-//   @external(ctMW,write(points(x,1,1),-1),_).
    
 sanction([reduce(Agent,P)],viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) :-
-   //pursuer(Agent),
+assert(sanctionp(Agent,P)),
+   pursuer(Agent),
    points(Agent, Health),
    NewHealth is Health - P,
    clock(Now),
-   assert(sanctioned(viol(agent_directed(Label,Agent,prohibition(State,Sanction))))),
+   retract(points(Agent, Health)),
+   assert(points(Agent, NewHealth)),
+   assert(sanctioned(viol(agent_directed(Label,Agent,prohibition(State,Sanction))))),!,
    @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
    
 sanction([reduce(Agent,P)],viol(agent_directed(Label,Agent,obligation(State,D,Sanction)))) :-
-   //pursuer(Agent),
+assert(sanctiona(Agent,P)),
+   pursuer(Agent),
    points(Agent, Health),
    NewHealth is Health - P,
    clock(Now),
    assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))),
+   retract(points(Agent, Health)),
+   assert(points(Agent, NewHealth)),!,
    @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
    
 sanction_g(Agent,P) :-
+assert(sanctiong(Agent,P)),
    pursuer(Agent),
    points(Agent, Health),
    NewHealth is Health - P,
    clock(Now),
+   retract(points(Agent, Health)),
+   assert(points(Agent, NewHealth)),!,
    @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
       
 sanction([reduce(Group,P)],viol(agent_directed(Label,Agent,obligation(State,D,Sanction)))) :-
    group(Group),
-   sanction_group(g,1000),
+   sanction_group(g,Sanction),
    assert(sanctioned(viol(agent_directed(Label,Agent,obligation(State,D,Sanction))))).
-   
-do_reduce_health(Agent,P):- 
-   pursuer(Agent),
-   points(Agent, Health),
-   NewHealth is Health - P,
-   clock(Now),
-//   assert(points(Agent,Now,NewHealth)),
-   @external(ctMW,write(points(Agent,Now,NewHealth),-1),_).
-   
-//do_reduce_health(Group,P):- 
-//   group(Group),
-//   clock(Now),
-//   policy1(g,1000),
-//   @external(ctMW,write(points(Group,Now,NewHealth),-1),_).
 
-//listTrue(_).
 listTrue([H|T]):- H, listTrue(T).
 listTrue([]).
 
@@ -192,16 +182,19 @@ do_sanction([],P,Group,0,S):-
 		assert(group(Group,S)),
 		ra(Group,RA),
 		sanction_g(S,RA).
-do_sanction([H|T],A,Group,L,X):- sanction_g(H,A),do_sanction(T,A,Group,L,X).
+do_sanction([H|T],A,Group,L,X):- 
+		sanction_g(H,A),
+		do_sanction(T,A,Group,L,X).
 do_sanction([],_,Group,L,X).
 
 //group sanctions
 sanction_policy(g,policy1).
+
 policy1(Group,P,Label):-
 	findall(M,(violated(group_task(Label),M),group_member(Group,M)),Vs),
 	length(Vs,L),
-//	assert(adelka(L)),
-//	assert(agroupTS(Group)).
+assert(adelka(L)),
+assert(agroupTS(Group)),
 	S is P / L,
 	do_sanction(Vs,S,Group,L,P).
 	
@@ -248,7 +241,7 @@ agent_directed(Label,Agent,prohibition(ListA,Sanction)):
 	false]
 
 Sanction rules:
-reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
+//reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
 
 viol(agent_directed(Label,Agent,prohibition(State,Sanction))) and not sanctioned(viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) => not viol(agent_directed(Label,Agent,prohibition(State,Sanction))).
 //viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction_g(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).

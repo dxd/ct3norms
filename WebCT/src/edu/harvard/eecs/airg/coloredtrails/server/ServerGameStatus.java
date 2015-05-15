@@ -88,9 +88,7 @@ public class ServerGameStatus extends GameStatus
 {
 //    private GameConfigDetailsRunnable gcdr = null;
 
-	
-	
-    public Integer clock;
+
 
 	/************************
 		CONSTRUCTORS

@@ -529,7 +529,7 @@ var game = {
 		value : 100
 	});
 	Init(game);
-	setInterval("updateProgressBar()", 1000);
+	setInterval("UpdateServer()", 500);
 </script></div>
 		</td>
 	</tr>

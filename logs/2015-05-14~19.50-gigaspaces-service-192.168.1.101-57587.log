@@ -1,0 +1,81 @@
+2015-05-14 19:50:32,019  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 2.33 seconds
+2015-05-14 20:03:15,220  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute WriteEntrySpaceOperationRequest[entryPacket=EntryPacket[typeName=tuplespace.Time,uid=null,version=0,operationId=ID:6312485373830980560.655],txn=null,lease=9223372036854775807,timeout=0,modifiers=4096,isUpdate=false](elapsed time: 20298ms)
+2015-05-14 20:03:26,873  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ab2baa53-fad6-4ead-9c75-1e8761d0e879,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20340ms)
+2015-05-14 20:03:26,896  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-05-14 20:03:46,950  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ab2baa53-fad6-4ead-9c75-1e8761d0e879,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20054ms)
+2015-05-14 20:03:46,955  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: ab2baa53-fad6-4ead-9c75-1e8761d0e879
+ expiration: 1431630216275
+ left 10679
+ event cause: java.rmi.RemoteException: Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ab2baa53-fad6-4ead-9c75-1e8761d0e879,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20054ms)
+
+2015-05-14 20:03:46,959  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-05-14 20:03:46,962  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-05-14 20:04:07,475  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ab2baa53-fad6-4ead-9c75-1e8761d0e879,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20513ms)
+2015-05-14 20:04:07,475  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-05-14 20:04:27,476  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=ab2baa53-fad6-4ead-9c75-1e8761d0e879,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20001ms)
+2015-05-14 20:04:36,284  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-05-14 20:04:36,284  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-05-14 20:04:36,284  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-05-14 20:04:42,659  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-05-14 20:04:51,698  SEVERE [edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat] - null; Caused by: javax.jms.JMSException: The transport is not running.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1157)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1549)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.IOException: The transport is not running.
+	at org.apache.activemq.transport.TransportSupport.checkStarted(TransportSupport.java:103)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:117)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:141)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:47)
+	at org.apache.activemq.transport.ResponseCorrelator.oneway(ResponseCorrelator.java:60)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1155)
+	... 6 more
+
+2015-05-14 20:04:51,699  SEVERE [edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat] - null; Caused by: javax.jms.JMSException: The transport is not running.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1157)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1549)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.IOException: The transport is not running.
+	at org.apache.activemq.transport.TransportSupport.checkStarted(TransportSupport.java:103)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:117)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:141)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:47)
+	at org.apache.activemq.transport.ResponseCorrelator.oneway(ResponseCorrelator.java:60)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1155)
+	... 6 more
+
+2015-05-14 20:04:51,699  SEVERE [edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat] - null; Caused by: javax.jms.JMSException: The transport is not running.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1157)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1549)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.IOException: The transport is not running.
+	at org.apache.activemq.transport.TransportSupport.checkStarted(TransportSupport.java:103)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:117)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:141)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:47)
+	at org.apache.activemq.transport.ResponseCorrelator.oneway(ResponseCorrelator.java:60)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1155)
+	... 6 more
+
