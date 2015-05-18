@@ -1,15 +1,5 @@
 Facts:
 
-%RA group surround
-//norm(
-//    sanction_group(ra1),
-//    ra1, // the subject agent
-//    ( ra(ra1), sanction(Group,Sanction)), // precondition
-//    obligation([atleast(agent_sanctions(g),Sanction)],now+15,[reduce(ra1,Sanction)]) // prohibition format
-//    ).
-
-
-     
 %group surround
 norm(
     group_surround(g),
@@ -18,8 +8,7 @@ norm(
     obligation([surround(X,Y)],now + 10,[reduce(g,500)]) // prohibition format
     ).
     
-%agents group norms from RA
-    
+%agents group norms from RA  
 norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
@@ -43,7 +32,7 @@ Thing, // the subject agent
 obligation([color(Color,Thing)],now + 2,[reduce(Thing,S)]) // prohibition format
 ).
 
-%individual obligations to accept request
+%individual obligations to accept request, not used
 norm(
 acceptRequests(Thing),
 Thing, // the subject agent
@@ -59,8 +48,29 @@ Thing, // the subject agent
 prohibition([rejectRequests(Thing)],[reduce(Thing,500)]) // prohibition format
 ).
 
+%individual prohibition to move more than one field per turn
+norm(
+moveTooFast(Thing),
+Thing, // the subject agent
+( pursuer(Thing)), // precondition
+prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
+).
 
+%individual obligation to make a move during move phase
+norm(
+acceptRequests(Thing),
+Thing, // the subject agent
+( pursuer(Thing), phase(movement)), // precondition
+obligation([makeMove(Thing)],now + 20,[reduce(Thing,300)]) // prohibition format
+).
 
+rejectRequests(A) :- 
+	response(Id,rejected,_),
+	proposal(Id,_,A,_).
+acceptRequests(A):- 
+	response(Id,accepted,_),
+	proposal(Id,_,A,_).
+	
 hierachical(group_task(_)).
 
 pursuer(a10).

@@ -81,7 +81,13 @@ public class Prohibition implements TimeEntry {
 		else if (prohibition.startsWith("[rejectRequests")) { //[rejectRequests(a20)]
 			s+= "reject requests for chips from the other players";
 		}
-		s += " or sanction " + sanction + " will be applied";
+		else if (prohibition.startsWith("[moveTooFast")) { //[moveTooFast(a20)]
+			s+= "move more than 1 square per clock tick";
+		}
+		//s += " or sanction " + sanction + " will be applied";
+		String[] p1 = sanction.split(","); //[reduce(a20,500)]
+		String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);
+		s += " or " + p2 + " points will be deducted.";
 		return s;
 	}
 }

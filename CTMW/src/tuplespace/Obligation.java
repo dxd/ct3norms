@@ -77,7 +77,7 @@ public class Obligation implements TimeEntry {
 	}
 	
 	public String toHumanString() {
-		String s = "Osbligation to ";
+		String s = "Obligation to ";
 		if (obligation.startsWith("[at")) { //[at(1, 2, a20)]
 			String ss = obligation.substring(4);
 			String[] o = ss.split(",");
@@ -96,7 +96,12 @@ public class Obligation implements TimeEntry {
 		else if (obligation.startsWith("[acceptRequests")) { //[acceptRequests(a20)]
 			s+= "accept requests for chips from the other players";
 		}
-		s += " before clock " + deadline + " or sanction " + sanction + " will be applied";
+		else if (obligation.startsWith("[makeMove")) { //[makeMove(a20)]
+			s+= "make a movement on the board";
+		}
+		String[] p1 = sanction.split(","); //[reduce(a20,500)]
+		String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);
+		s += " before clock " + deadline + " or " + p2 + " points will be deducted.";
 		return s;
 	}
 }
