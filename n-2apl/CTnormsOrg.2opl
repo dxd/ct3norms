@@ -21,7 +21,7 @@ norm(
 not_enter_tile(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), color(Thing,Color,no,S), tile(X,Y,Color)), // precondition
-prohibition([at(X,Y,Thing)],[reduce(Thing,S)]) // prohibition format
+prohibition([color(Color,Thing)],[reduce(Thing,S)]) // prohibition format
 ).
 
 %individual obligations to use colored tiles
@@ -60,9 +60,14 @@ prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
 norm(
 acceptRequests(Thing),
 Thing, // the subject agent
-( pursuer(Thing), phase(movement)), // precondition
-obligation([makeMove(Thing)],now + 20,[reduce(Thing,300)]) // prohibition format
+( pursuer(Thing), phase(movement), at(X,Y,Thing)), // precondition
+obligation([makeMove(X,Y,Thing)],now + 20,[reduce(Thing,300)]) // prohibition format
 ).
+
+
+color(Color,Thing).
+moveTooFast(Thing).
+makeMove(Thing).
 
 rejectRequests(A) :- 
 	response(Id,rejected,_),

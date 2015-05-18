@@ -203,7 +203,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		if (o.size() > LastObl.size()) {
 		for (int i = LastObl.size(); i < o.size(); i++) {
 			JSONObject m = new JSONObject();
-			m.put(i,o.get(i));
+			m.put(new Integer(i),o.get(i).toString());
 			ObliArray.add(m);
 		}
 		LastObl = o;
@@ -217,7 +217,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		if (p.size() > LastPro.size()) {
 		for (int i = LastPro.size(); i < p.size(); i++) {
 			JSONObject m = new JSONObject();
-			m.put(i,p.get(i));
+			m.put(new Integer(i),p.get(i).toString());
 			ProArray.add(m);
 		}
 		LastPro = p;
@@ -231,7 +231,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		//gilend
 		object.put("isEnded", GameStat.isEnded());
 		object.put("role",
-				GameStat.getPlayerByPerGameId(pID).getRole().equals("Responder") ? 1 : 0);
+				GameStat.getPlayerByPerGameId(pID).getRole().equals("ra") ? 1 : 0);
 		// object.put("CurrentPhase",
 		// GameStat.getPhases().getCurrentPhaseName());
 		// object.put("PhaseSecsLeft",

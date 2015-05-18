@@ -1620,8 +1620,8 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 			var newDiv = document.createElement('div');
 			newDiv.id = 'obl'+i;
 			//iDiv.className = 'block';
-			newDiv.innerHTML = JSON.stringify(obligations[i]);
-			//newDiv.innerHTML = obligations[i].toString();
+			//newDiv.innerHTML = JSON.stringify(obligations[i]);
+			newDiv.innerHTML = obligations[i];
 			document.getElementById("notifyContainer").appendChild(newDiv);
 		}
 }
