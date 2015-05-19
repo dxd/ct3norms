@@ -86,7 +86,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		GamePalette gp = new GamePalette();
 		gp.add("white");
 		gp.add("brown");
-		gp.add("myblue");
+		gp.add("blue");
 		gp.add("yellow");
 		gs.setGamePalette(gp);
 		gs.setScoring(s);

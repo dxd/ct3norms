@@ -1058,12 +1058,12 @@ function InsertIntoPlayersIconsSelect(select) {
 		// get player ID
 		playerId = game.getPlayerId(i);
 		// populate data only for all players except me
-		if (game.getisPlayerMe(playerId) != "true") {
+		//if (game.getisPlayerMe(playerId) != "true") {
 				// clear dropdown before inserting
 				//removeAllOption("playersIconsDropDown");
 				// insert player img to dropdown
 				appendOptionLast(playerId, playerId, select+'DropDown', 'img/' + game.getPlayerIcon(playerId));							
-		}
+		//}
 	}
 	
 	document.getElementById(select).appendChild(playersIconsDropDown);
@@ -1163,7 +1163,8 @@ function InsertIntoSendSelect() {
 // INSERT INTO Players Chips Receive
 function InsertIntoReceiveSelect() {
 	var playerId;
-	var playerIdOpponent = document.getElementById('divTableReceiverDropDown').selectedIndex;
+	var ddIcons = document.getElementById('divTableReceiverDropDown');	
+	var playerIdOpponent = ddIcons.options[ddIcons.selectedIndex].value;
 	var color;
 	var sumChips = 0;
 
@@ -1178,7 +1179,7 @@ function InsertIntoReceiveSelect() {
 				removeAllOption("SelectReceivePlayerId" + playerId + "Color"
 						+ color);
 
-				sumChips += isRevelationEnabled == "true" ? game.getSumRevelationChips(playerIdOpponent, color) : game.getSumChips(playerIdOpponent, color);
+				sumChips += game.getSumChips(playerIdOpponent, color);
 
 				for ( var k = 0; k <= sumChips; k++) {
 					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
@@ -1620,8 +1621,8 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 			var newDiv = document.createElement('div');
 			newDiv.id = 'obl'+i;
 			//iDiv.className = 'block';
-			//newDiv.innerHTML = JSON.stringify(obligations[i]);
-			newDiv.innerHTML = obligations[i];
+			newDiv.innerHTML = JSON.stringify(obligations[i]);
+			//newDiv.innerHTML = obligations[i];
 			document.getElementById("notifyContainer").appendChild(newDiv);
 		}
 }

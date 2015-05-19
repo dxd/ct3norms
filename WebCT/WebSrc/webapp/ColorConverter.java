@@ -56,7 +56,7 @@ public class ColorConverter {
 		if (c.equals("brown")) {
 			return "694A0B"; /* "00ff00"; */
 		}
-		if (c.equals("myblue")) {
+		if (c.equals("blue")) {
 			return "1F82C4"; /* "00ff00"; */
 		}
 		//moranend
@@ -107,6 +107,18 @@ public class ColorConverter {
 		}
 		if (c.equals("7FBF7F")) {
 			return "CTDkGreen";
+		}
+		if (c.equals("F8F9F3")) {
+			return "white"; /* "00ff00"; */
+		}
+		if (c.equals("F5E83F")) {
+			return "yellow"; /* "00ff00"; */
+		}
+		if (c.equals("694A0B")) {
+			return "brown"; /* "00ff00"; */
+		}
+		if (c.equals("1F82C4")) {
+			return "blue"; /* "00ff00"; */
 		}
 		//moranend
 		return "";

@@ -5,7 +5,7 @@ norm(
     group_surround(g),
     g, // the subject agent
     ( group(g), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 10,[reduce(g,500)]) // prohibition format
+    obligation([surround(X,Y)],now + 20,[reduce(g,500)]) // prohibition format
     ).
     
 %agents group norms from RA  
@@ -13,7 +13,7 @@ norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
     ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
-    obligation([at(X,Y,Agent)],now + 6,[reduce(Agent, 500)]) // prohibition format
+    obligation([at(X,Y,Agent)],now + 16,[reduce(Agent, 500)]) // prohibition format
     ).  
 
 %individual prohibitions to use colored tiles
@@ -29,7 +29,7 @@ norm(
 enter_tile(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), color(Thing,Color,yes,S), tile(X,Y,Color)), // precondition
-obligation([color(Color,Thing)],now + 2,[reduce(Thing,S)]) // prohibition format
+obligation([color(Color,Thing)],now + 20,[reduce(Thing,S)]) // prohibition format
 ).
 
 %individual obligations to accept request, not used
@@ -37,7 +37,7 @@ norm(
 acceptRequests(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), acceptPolicy(Thing)), // precondition
-obligation([acceptRequests(Thing)],now + 20,[reduce(Thing,500)]) // prohibition format
+obligation([acceptRequests(Thing)],now + 30,[reduce(Thing,500)]) // prohibition format
 ).
 
 %individual prohibitions to reject requests
@@ -58,15 +58,15 @@ prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
 
 %individual obligation to make a move during move phase
 norm(
-acceptRequests(Thing),
+makeMove(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), phase(movement), at(X,Y,Thing)), // precondition
-obligation([makeMove(X,Y,Thing)],now + 20,[reduce(Thing,300)]) // prohibition format
+obligation([makeMove(X,Y,Thing)],now + 30,[reduce(Thing,300)]) // prohibition format
 ).
 
 
-color(Color,Thing).
-moveTooFast(Thing).
+//color(Color,Thing).
+//moveTooFast(Thing).
 makeMove(Thing).
 
 rejectRequests(A) :- 
