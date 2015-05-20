@@ -93,31 +93,19 @@ at(X,Y,C) <- phase(movementphase) | {
     
 } : 100
 
-reading(X,Y) <- true | {
+acceptRequests <- true | {
 
-   [moveTo(X,Y); 
-   dropgoal(reading(X,Y))]
-    
-} : 10000
+}
 
+color(Color) <- true | {
 
-makeReading <- position(X,Y) | {
+}
 
-   [dropgoal(makeReading)]
-    
-} : 100
+makeMove(X,Y) <- true | {
 
-makeReading(X,Y) <- true | {
-
-   [moveTo(X,Y);
-   dropgoal(makeReading(X,Y))]
-    
-} : 100
-
-
+}
 
 PC-rules:
-
 
 update() <- true | {
 	getPhase();

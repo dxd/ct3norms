@@ -38,10 +38,6 @@ event(prohibition([State],[Sanction]),ctenv) <- true | {
    adoptProhibition(State,Sanction)
 }
 
-event(reading(at(X,Y),Value,Agent,Clock),ctenv) <- true | {
-   AddReading(at(X,Y),Value,Agent,Clock)
-}
-
 event(clock(Clock),ctenv) <- true | {
    UpdateClock(Clock)
 }

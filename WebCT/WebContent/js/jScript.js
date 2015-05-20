@@ -542,7 +542,7 @@ function loadNormColorProposalsTable() {
 	jQuery("#tblCNorms").jqGrid(
 			{
 				datatype : "local",
-				height : 30,
+				height : 200,
 				colNames : ['MsgType', 'Receiver', 'Color', 'Norm', 'Sanction',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
@@ -602,7 +602,8 @@ function loadNormColorProposalsTable() {
 	
 	var playerIdToSend = game.getMe();
 	cont.innerHTML = "<button id='buttonSubmitNormColor' onclick='buttonSubmitNormColor_click(" + playerIdToSend + ");'>Submit</button>";
-	document.getElementById('divButtonNCPropose').appendChild(cont);	
+	document.getElementById('divButtonNCPropose').appendChild(cont);
+	document.getElementById('gview_tblCNorms').style.height= '50px';
 	
 	// append div into Messages grid
 	//document.getElementById("divTableNCNorm").innerHTML = 'If you wish to send an obligation';
@@ -1062,7 +1063,7 @@ function InsertIntoPlayersIconsSelect(select) {
 				// clear dropdown before inserting
 				//removeAllOption("playersIconsDropDown");
 				// insert player img to dropdown
-				appendOptionLast(playerId, playerId, select+'DropDown', 'img/' + game.getPlayerIcon(playerId));							
+				appendOptionLast(playerId, playerId, select+'DropDown', 'img/' + game.getPlayerIcon(playerId));		
 		//}
 	}
 	
