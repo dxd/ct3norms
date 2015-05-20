@@ -89,30 +89,9 @@ update <- event(phasechange) | update()
 update <- phase(communicationphase) and role(X,proposer) and not sent(Pp,ID,open) | makeProposal()
 //update <- phase(movementphase) | moveStepToGoal()
 
-at(X,Y,C) <- phase(movementphase) | {
+at(X,Y,C) <- phase(communicationphase) or phase(movementphase) | {
 
   [moveStepToGoal(neco,X,Y,C)]
-    
-} : 100
-
-reading(X,Y) <- true | {
-
-   [moveTo(X,Y); 
-   dropgoal(reading(X,Y))]
-    
-} : 10000
-
-
-makeReading <- position(X,Y) | {
-
-   [dropgoal(makeReading)]
-    
-} : 100
-
-makeReading(X,Y) <- true | {
-
-   [moveTo(X,Y);
-   dropgoal(makeReading(X,Y))]
     
 } : 100
 

@@ -5,7 +5,7 @@ norm(
     group_surround(g),
     g, // the subject agent
     ( group(g), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 20,[reduce(g,500)]) // prohibition format
+    obligation([surround(X,Y)],now + 30,[reduce(g,500)]) // prohibition format
     ).
     
 %agents group norms from RA  
@@ -13,7 +13,7 @@ norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
     ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
-    obligation([at(X,Y,Agent)],now + 16,[reduce(Agent, 500)]) // prohibition format
+    obligation([at(X,Y,Agent)],now + 26,[reduce(Agent, 500)]) // prohibition format
     ).  
 
 %individual prohibitions to use colored tiles

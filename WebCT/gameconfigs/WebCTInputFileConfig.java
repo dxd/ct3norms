@@ -231,7 +231,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					//player.setTeamId(3); // set teams for players
 					player.setCommunicationAllowed(true);
 					player.setTransfersAllowed(true);
-					player.setMovesAllowed(false);
+					player.setMovesAllowed(true);
 				}
 								
 				
