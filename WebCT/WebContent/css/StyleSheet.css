@@ -19,6 +19,7 @@ body {
 	min-height: 10em;
 	display: table-cell;
 }
+
 .playerChip { 
 		background:url(../img/num.gif) top center no-repeat;
 		font-size:5px;
@@ -196,24 +197,33 @@ body {
 
 select {
 	font-weight: bold;
+	z-index: 999;
 }
 
 select option {
 	line-height: 10px;
 	font-weight: bold;
+	z-index: 999;
 }
 
 select option.group {
 	font-weight: bold;
 	padding-left: 18px;
+	z-index: 999;
 }
 
 select option.user {
 	padding-left: 18px;
 	font-weight: bold;
+	z-index: 999;
 }
 
 /************************* Web design CSS - insert code above *********************/
+#divTableNCReceiver {
+	z-index: 999;
+	overflow:visible;
+}
+
 #container {
 	margin: 0 auto;
 	width: 1000px;
@@ -303,7 +313,17 @@ select option.user {
 	margin: 0 10px 0 0;
 	display: inline;
 }
-
+#notifyContainer {
+		//background:url(../img/misgeret06.gif) top center no-repeat; text-align:center;
+        border : 1px solid #000000;
+       // width : 60px;
+        //height : 60px;
+        background-color : #d0d0ff;
+        overflow : auto;
+		//vertical-align: middle;
+		// min-height: 10em;
+		font-size: 5px;
+}
 #aside h3 {
 	margin: 0;
 }
