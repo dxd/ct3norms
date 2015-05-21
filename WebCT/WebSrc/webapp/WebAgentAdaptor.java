@@ -178,6 +178,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 						.get(i);
 				JSONObject jsonMsg = new JSONObject();
 				jsonMsg.put("SenderID", new Integer(msg.getFromPerGameId()));
+				jsonMsg.put("ReceiverID", new Integer(msg.getToPerGameId()));
 				jsonMsg.put("MessageId", new Integer(id));
 				jsonMsg.put("ReceivedChips", WebAgentAdaptor
 						.GetJsonFromChipSet(msg.getChipsSentByProposer()));
@@ -203,7 +204,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		if (o.size() > LastObl.size()) {
 		for (int i = LastObl.size(); i < o.size(); i++) {
 			JSONObject m = new JSONObject();
-			m.put(new Integer(i),o.get(i).toString());
+			m.put("msg",o.get(i).toString());
 			ObliArray.add(m);
 		}
 		LastObl = o;
@@ -217,7 +218,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		if (p.size() > LastPro.size()) {
 		for (int i = LastPro.size(); i < p.size(); i++) {
 			JSONObject m = new JSONObject();
-			m.put(new Integer(i),p.get(i).toString());
+			m.put("msg",p.get(i).toString());
 			ProArray.add(m);
 		}
 		LastPro = p;

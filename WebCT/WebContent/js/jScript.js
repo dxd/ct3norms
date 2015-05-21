@@ -1423,8 +1423,8 @@ function addRecordToTable(MsgType, SenderID, ReceiverID, msgID, ReceivedChips, S
 
 	var defaultData = {
 		MsgType : MsgType,
-		Sender : game.getisPlayerMe(SenderID) == "true" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(SenderID) + "'/>",
-		Receiver : game.getisPlayerMe(SenderID) == "false" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(ReceiverID) + "'/>",	
+		Sender : game.getisPlayerMe(SenderID) == "true" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(SenderID) + "'/><div>"+SenderID+"</div>",
+		Receiver : game.getisPlayerMe(ReceiverID) == "true" ? "<img src='img/me.gif'/>" : "<img src='img/" + game.getPlayerIcon(ReceiverID) + "'/><div>"+ReceiverID+"</div>",	
 		Send : MsgType != "GoalRevelation" ? SentChips1  : "<div></div>",
 		Receive : MsgType == "Proposal" ? ReceivedChips1 : "<div></div>", 
 		Response : MsgType == "Proposal" ? showButtons : "<div></div>"
@@ -1612,7 +1612,7 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 			var newDiv = document.createElement('div');
 			newDiv.id = 'pro'+i;
 			//iDiv.className = 'block';
-			newDiv.innerHTML = JSON.stringify(prohibitions[i]);
+			newDiv.innerHTML = prohibitions[i].msg;
 			document.getElementById("notifyContainer").appendChild(newDiv);
 			//alert("msg: "+JSON.stringify(prohibitions[i]));
 		}
@@ -1622,7 +1622,7 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 			var newDiv = document.createElement('div');
 			newDiv.id = 'obl'+i;
 			//iDiv.className = 'block';
-			newDiv.innerHTML = JSON.stringify(obligations[i]);
+			newDiv.innerHTML = obligations[i].msg;
 			//newDiv.innerHTML = obligations[i];
 			document.getElementById("notifyContainer").appendChild(newDiv);
 		}
@@ -1631,7 +1631,7 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 function InsertIntoProposalsTable(o) {
 
 	for ( var i = 0; i < o.msgs.length; i++) {
-		// alert("msg: " + o.msgs[i]);
+		 alert("msg to: " + o.msgs[i].ReceiverID);
 		addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
 				o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
 		

@@ -1,0 +1,838 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.091 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-53779-1432145499055-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 40
+     [java] Adding client state for 30
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.1.101] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.1.101] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.1.101] of type 
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.1.101] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-20 19:11:53,931  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 383 milliseconds
+     [java] 2015-05-20 19:11:53,935 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-20~19.11-gigaspaces-service-192.168.1.101-76954.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=brown, time=2015-05-20 19:11:54.078, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=brown, time=2015-05-20 19:11:54.108, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=white, time=2015-05-20 19:11:54.11, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=yellow, time=2015-05-20 19:11:54.111, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=brown, time=2015-05-20 19:11:54.113, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=brown, time=2015-05-20 19:11:54.114, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=yellow, time=2015-05-20 19:11:54.115, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=white, time=2015-05-20 19:11:54.117, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=white, time=2015-05-20 19:11:54.118, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=blue, time=2015-05-20 19:11:54.12, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=white, time=2015-05-20 19:11:54.121, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=white, time=2015-05-20 19:11:54.122, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=brown, time=2015-05-20 19:11:54.124, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=blue, time=2015-05-20 19:11:54.126, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=white, time=2015-05-20 19:11:54.128, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=white, time=2015-05-20 19:11:54.129, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=yellow, time=2015-05-20 19:11:54.132, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=blue, time=2015-05-20 19:11:54.133, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=blue, time=2015-05-20 19:11:54.135, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=yellow, time=2015-05-20 19:11:54.137, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=brown, time=2015-05-20 19:11:54.138, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=blue, time=2015-05-20 19:11:54.139, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=yellow, time=2015-05-20 19:11:54.141, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=blue, time=2015-05-20 19:11:54.142, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=brown, time=2015-05-20 19:11:54.144, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=2015-05-20 19:11:54.163, clock=0]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT notification: Time [clock=2, time=2015-05-20 19:12:01.511]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=3, time=2015-05-20 19:12:15.705]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 will be deducted.]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-20 19:12:15.748, clock=2]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-20 19:12:15.748, clock=2]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=3, time=2015-05-20 19:12:15.732]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted.]
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-20 19:12:15.76, clock=2]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-20 19:12:15.76, clock=2]
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-20 19:12:15.765, clock=2]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-20 19:12:15.765, clock=2]
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-20 19:12:15.768, clock=2]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-20 19:12:15.768, clock=2]
+     [java] CT notification: Time [clock=3, time=2015-05-20 19:12:11.512]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-20 19:12:15.748, clock=2]
+     [java] 40
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-20 19:12:15.76, clock=2]
+     [java] 10
+     [java] 10
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-20 19:12:15.765, clock=2]
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-20 19:12:15.768, clock=2]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=29, time=2015-05-20 19:12:17.032, clock=3]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to be at the grid tile [1,2] before clock 29 or 500 will be deducted.]
+     [java] CT notification: Time [clock=4, time=2015-05-20 19:12:21.518]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=5, time=2015-05-20 19:12:31.521]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=6, time=2015-05-20 19:12:41.523]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=7, time=2015-05-20 19:12:51.526]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Communication Phase
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=7, time=2015-05-20 19:13:00.92]
+     [java] CT notification: Time [clock=8, time=2015-05-20 19:13:01.527]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=4, y=3], time=2015-05-20 19:13:01.536, clock=8]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=4, y=3], time=2015-05-20 19:13:01.536, clock=8]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=3], time=2015-05-20 19:13:01.536, clock=8]
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a40, clock=8, time=2015-05-20 19:13:07.075]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=8, time=2015-05-20 19:13:07.104]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':9 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':9 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 3
+     [java] Sending: { chips  'yellow':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':9 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':1 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a10, clock=8, time=2015-05-20 19:13:08.879]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=8, time=2015-05-20 19:13:08.886]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':9 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':7 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':7 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=9, time=2015-05-20 19:13:11.529]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=3, y=1], time=2015-05-20 19:13:11.538, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=3, y=1], time=2015-05-20 19:13:11.538, clock=9]
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=3, y=2], time=2015-05-20 19:13:11.54, clock=9]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=3, y=2], time=2015-05-20 19:13:11.54, clock=9]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=1], time=2015-05-20 19:13:11.538, clock=9]
+     [java] 40
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=3, y=2], time=2015-05-20 19:13:11.54, clock=9]
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] CT notification: Time [clock=10, time=2015-05-20 19:13:21.531]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a30, clock=10, time=2015-05-20 19:13:22.788]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=10, time=2015-05-20 19:13:22.81]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':7 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 2
+     [java] Sending: { chips  'blue':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':1 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':6 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=11, time=2015-05-20 19:13:31.533]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=3, y=2], time=2015-05-20 19:13:31.539, clock=11]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=3, y=2], time=2015-05-20 19:13:31.539, clock=11]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=2], time=2015-05-20 19:13:31.539, clock=11]
+     [java] 40
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=11, time=2015-05-20 19:13:37.411]
+     [java] CT notification: Time [clock=12, time=2015-05-20 19:13:41.535]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=13, time=2015-05-20 19:13:51.538]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 1
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=13, time=2015-05-20 19:13:53.645]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':6 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 1
+     [java] Sending: { chips  'brown':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':6 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 40
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=14, time=2015-05-20 19:14:01.541]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=2, y=2], time=2015-05-20 19:14:01.547, clock=14]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=2, y=2], time=2015-05-20 19:14:01.547, clock=14]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=2, y=2], time=2015-05-20 19:14:01.547, clock=14]
+     [java] 40
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a30, clock=14, time=2015-05-20 19:14:06.184]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=14, time=2015-05-20 19:14:06.196]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':6 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 2
+     [java] Sending: { chips  'blue':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':1 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':5 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=15, time=2015-05-20 19:14:11.553]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=2, y=3], time=2015-05-20 19:14:11.56, clock=15]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=2, y=3], time=2015-05-20 19:14:11.56, clock=15]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=2, y=3], time=2015-05-20 19:14:11.56, clock=15]
+     [java] 40
+     [java] CT notification: Time [clock=16, time=2015-05-20 19:14:21.555]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=17, time=2015-05-20 19:14:31.557]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=2015-05-20 19:14:41.559]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=19, time=2015-05-20 19:14:51.56]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - Game ended id = 0
+     [java] CT notification: Time [clock=20, time=2015-05-20 19:15:01.562]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=21, time=2015-05-20 19:15:11.564]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=22, time=2015-05-20 19:15:21.566]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=23, time=2015-05-20 19:15:31.568]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=2015-05-20 19:15:41.57]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=25, time=2015-05-20 19:15:51.572]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=26, time=2015-05-20 19:16:01.574]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=27, time=2015-05-20 19:16:11.577]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=28, time=2015-05-20 19:16:21.579]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=29, time=2015-05-20 19:16:31.581]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=30, time=2015-05-20 19:16:41.583]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=31, time=2015-05-20 19:16:51.585]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=32, time=2015-05-20 19:17:01.587]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a20, time=2015-05-20 19:17:01.604, clock=32, value=750, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Time [clock=33, time=2015-05-20 19:17:11.589]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=34, time=2015-05-20 19:17:21.59]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=35, time=2015-05-20 19:17:31.592]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=36, time=2015-05-20 19:17:41.599]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=37, time=2015-05-20 19:17:51.602]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=38, time=2015-05-20 19:18:01.604]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=39, time=2015-05-20 19:18:11.607]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=40, time=2015-05-20 19:18:21.609]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=41, time=2015-05-20 19:18:31.612]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=42, time=2015-05-20 19:18:41.614]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=43, time=2015-05-20 19:18:51.616]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=44, time=2015-05-20 19:19:01.618]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=45, time=2015-05-20 19:19:11.62]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=46, time=2015-05-20 19:19:21.622]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=47, time=2015-05-20 19:19:31.624]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=48, time=2015-05-20 19:19:41.626]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=49, time=2015-05-20 19:19:51.629]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=50, time=2015-05-20 19:20:01.631]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=51, time=2015-05-20 19:20:11.634]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=52, time=2015-05-20 19:20:21.636]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=53, time=2015-05-20 19:20:31.639]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=54, time=2015-05-20 19:20:41.648]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=55, time=2015-05-20 19:20:51.652]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=56, time=2015-05-20 19:21:01.654]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=57, time=2015-05-20 19:21:11.658]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=58, time=2015-05-20 19:21:21.659]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=59, time=2015-05-20 19:21:31.665]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=60, time=2015-05-20 19:21:41.681]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=61, time=2015-05-20 19:21:51.683]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=62, time=2015-05-20 19:22:01.819]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=63, time=2015-05-20 19:22:11.924]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=64, time=2015-05-20 19:22:21.991]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=65, time=2015-05-20 19:22:31.993]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=66, time=2015-05-20 19:22:41.997]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=67, time=2015-05-20 19:22:51.999]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=68, time=2015-05-20 19:23:02.106]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=69, time=2015-05-20 19:23:12.328]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=70, time=2015-05-20 19:23:22.389]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=71, time=2015-05-20 19:23:32.553]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=72, time=2015-05-20 19:23:42.556]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=73, time=2015-05-20 19:23:52.595]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=74, time=2015-05-20 19:24:02.716]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=75, time=2015-05-20 19:24:12.724]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=76, time=2015-05-20 19:24:22.786]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=77, time=2015-05-20 19:24:32.866]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=78, time=2015-05-20 19:24:43.044]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=79, time=2015-05-20 19:24:53.07]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=80, time=2015-05-20 19:25:03.118]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=81, time=2015-05-20 19:25:13.157]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=82, time=2015-05-20 19:25:23.276]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=83, time=2015-05-20 19:25:33.348]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=84, time=2015-05-20 19:25:43.449]
+     [java] CT players (clone,for): 
+     [java] Client 20 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] 2015-05-20 19:26:52,854  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:46)
+     [java] 	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1211)
+     [java] 	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+     [java] 	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+     [java] 	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] Caused by: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] 
+     [java] 2015-05-20 19:26:52,860  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+     [java]  class name: java.lang.Object
+     [java]  uid: 96b27998-789d-4bb5-878f-4e56ff85ddc7
+     [java]  expiration: 1432146383963
+     [java]  left 28835
+     [java]  event cause: null
+     [java] 
+     [java] 2015-05-21 09:41:27,027  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] 2015-05-21 09:41:27,028  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] 2015-05-21 09:41:27,029  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.net.SocketException: Socket closed
+     [java] java.net.SocketException: Socket closed
+     [java] 	at java.net.SocketInputStream.socketRead0(Native Method)
+     [java] 	at java.net.SocketInputStream.read(SocketInputStream.java:129)
+     [java] 	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:49)
+     [java] 	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:56)
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:370)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] 2015-05-21 09:41:27,023 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-21~09.41-gigaspaces-service-192.168.1.101-76954.log
+     [java] Client 10 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] Client 40 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] Client 30 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] CT notification: Time [clock=85, time=2015-05-21 09:41:28.079]
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] CT players (clone,for): 
+     [java] 2015-05-21 09:41:32,857  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:42:45,986  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:42:45,992  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:42:45,992  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:42:45,992  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:42:51,993  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:43:06,275  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:43:52,105  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:43:52,114  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:43:52,114  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:43:52,114  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:43:58,115  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:44:12,435  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:44:58,227  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:44:58,235  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:44:58,235  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:44:58,235  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:45:04,237  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:45:18,557  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:46:04,348  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:46:04,352  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:46:04,353  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:46:04,353  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:46:10,354  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:46:24,725  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:47:10,470  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:47:10,478  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:47:10,479  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:47:10,479  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:47:16,482  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:47:29,133  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:48:16,597  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:48:16,601  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:48:16,601  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:48:16,601  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:48:22,603  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:48:36,838  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:49:22,718  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:49:22,726  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:49:22,726  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:49:22,727  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:49:28,729  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:49:43,077  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:50:28,844  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:50:28,850  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:50:28,851  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:50:28,851  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:50:34,853  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:50:54,320  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:51:34,966  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:51:34,973  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:51:34,973  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:51:34,974  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:51:40,976  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:51:55,305  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:52:41,087  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:52:41,092  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:52:41,092  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:52:41,092  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:52:47,095  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-21 09:53:01,326  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+     [java] 	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+     [java] 	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+     [java] 	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+     [java] 	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+     [java] 	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+     [java] 	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+     [java] 
+     [java] 2015-05-21 09:53:50,682  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=f36263de-7c0c-475a-8f6b-bd5407f75572 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:52372/pid[76476]/1432142856179158232_2_5034750015501427956_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+     [java] 	java.net.SocketTimeoutException
+     [java] 2015-05-21 09:53:50,691  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+     [java] 2015-05-21 09:53:50,691  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+     [java] 2015-05-21 09:53:50,692  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+     [java] 2015-05-21 09:53:56,693  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-53779-1432145499055-1:0) is shutting down
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-53779-1432145499055-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 882 minutes 26 seconds

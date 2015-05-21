@@ -909,6 +909,9 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		if (myChips.getNumChips(color) == 0) {
 			if (!proposalSent) {
 				proposalSent = true;
+				PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
+				waiter.doWait(10, 20);
+				//waiter.doWait(RecipConstants.minProposeTime, RecipConstants.maxProposeTime);
 				makeProposal(agentname,color);
 				
 			}
