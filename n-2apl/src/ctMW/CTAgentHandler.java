@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 import ctagents.recipagents.PhaseWaiter;
@@ -152,8 +153,11 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		ChipSet recipientChips = new ChipSet();
 		recipientChips.add(color, 1);
 
+		Random rnd = new Random();
+		int msgID = rnd.nextInt(10000);
+		
 		BasicProposalDiscourseMessage proposal= new BasicProposalDiscourseMessage(
-				cgs.getPerGameId(), i, -1, senderChips, recipientChips);
+				cgs.getPerGameId(), i, msgID, senderChips, recipientChips);
 		//            sending = senderChips;
 
 		// PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());

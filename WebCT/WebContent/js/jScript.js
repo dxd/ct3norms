@@ -1023,7 +1023,7 @@ function sendResponseAcceptReject(msgID, accept)
 		document.getElementById("msgToAcceptReject" + msgID).innerHTML = "Reject";
 	if (accept == "1")
 		document.getElementById("msgToAcceptReject" + msgID).innerHTML = "Accept";
-	
+	document.getElementById("msgToAcceptReject" + msgID).parentNode.parentNode.hidden = true;
 	//the player responded to the proposal
 	pendingProposalMsgID = -1;
 	
@@ -1441,7 +1441,7 @@ function addRecordToTable(MsgType, SenderID, ReceiverID, msgID, ReceivedChips, S
 	jQuery("#tblProposals").jqGrid('addRowData', rowID, defaultData);
 	
 	//the popup window for received proposal
-	if( game.getisPlayerMe(ReceiverID) == "true" )
+	if( game.getisPlayerMe(ReceiverID) == "truee" ) //FIXED false
 	{
 		var newDiv = $(document.createElement('div')); 
 		newDiv.html('Incoming proposal received!');

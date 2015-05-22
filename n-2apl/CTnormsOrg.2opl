@@ -122,6 +122,7 @@ points(g,1000).
 
 time_past(Time):- clock(Now), Now > Time.
 time_since(Time):- clock(Now), Time > Now.
+time_before(Time):- clock(Now), assert(checkingClock(Time,Now)), Now < Time.
 
 not_area(X,Y):-
 	X is 20, int(Y), Y > 0, Y < 20;
@@ -258,18 +259,22 @@ agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)):
 	O(listTrue(ListA)), 
 	time_past(Deadline)]
 
+
 agent_directed(Label,Agent,prohibition(ListA,Sanction)): 
 	[norm(Label,Agent,Pre,prohibition(ListA,Sanction)) and Pre, 
 	F(listTrue(ListA)), 
 	false]
 
+
 Sanction rules:
 //reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
 
+//obey(agent_directed(Label,Agent,Deontic)) => not viol(agent_directed(Label,Agent,Deontic)).
+
 viol(agent_directed(Label,Agent,prohibition(State,Sanction))) and not sanctioned(viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,prohibition(State,Sanction)))) => not viol(agent_directed(Label,Agent,prohibition(State,Sanction))).
 //viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))), do_sanction_g(Sanction) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not hierachical(Label) and not group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and hierachical(Label) and not group(Agent) and not violated(Label,Agent) and assert(violated(Label,Agent)) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
-viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction_group(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not obey(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not hierachical(Label) and not group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not obey(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and hierachical(Label) and not group(Agent) and not violated(Label,Agent) and assert(violated(Label,Agent)) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
+viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and not obey(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))) and group(Agent) and not sanctioned(viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) and sanction_group(Sanction,viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)))) => not viol(agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction))).
 
-obey(agent_directed(Label,Agent,Deontic)) => not obey(agent_directed(Label,Agent,Deontic)).
+//obey(agent_directed(Label,Agent,Deontic)) => not viol(agent_directed(Label,Agent,Deontic)).

@@ -1,0 +1,957 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.135 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-65516-1432309835741-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 40
+     [java] Adding client state for 10
+     [java] Adding client state for 30
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.40] of type 
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.40] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-22 16:50:51,426  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 431 milliseconds
+     [java] 2015-05-22 16:50:51,919 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-22~16.50-gigaspaces-service-192.168.0.40-9311.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=brown, time=2015-05-22 16:50:52.053, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=brown, time=2015-05-22 16:50:52.081, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=white, time=2015-05-22 16:50:52.083, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=yellow, time=2015-05-22 16:50:52.086, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=brown, time=2015-05-22 16:50:52.087, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=5], subject=blue, time=2015-05-22 16:50:52.091, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=6], subject=brown, time=2015-05-22 16:50:52.093, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=brown, time=2015-05-22 16:50:52.094, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=yellow, time=2015-05-22 16:50:52.097, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=white, time=2015-05-22 16:50:52.099, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=white, time=2015-05-22 16:50:52.101, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=blue, time=2015-05-22 16:50:52.103, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=5], subject=brown, time=2015-05-22 16:50:52.106, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=6], subject=yellow, time=2015-05-22 16:50:52.108, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=white, time=2015-05-22 16:50:52.111, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=white, time=2015-05-22 16:50:52.114, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=brown, time=2015-05-22 16:50:52.118, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=blue, time=2015-05-22 16:50:52.12, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=white, time=2015-05-22 16:50:52.122, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=5], subject=brown, time=2015-05-22 16:50:52.124, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=6], subject=brown, time=2015-05-22 16:50:52.125, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=white, time=2015-05-22 16:50:52.127, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=yellow, time=2015-05-22 16:50:52.129, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=blue, time=2015-05-22 16:50:52.131, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=blue, time=2015-05-22 16:50:52.134, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=yellow, time=2015-05-22 16:50:52.136, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=5], subject=yellow, time=2015-05-22 16:50:52.138, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=6], subject=white, time=2015-05-22 16:50:52.14, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=brown, time=2015-05-22 16:50:52.142, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=blue, time=2015-05-22 16:50:52.144, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=yellow, time=2015-05-22 16:50:52.145, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=blue, time=2015-05-22 16:50:52.147, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=brown, time=2015-05-22 16:50:52.151, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=5], subject=yellow, time=2015-05-22 16:50:52.157, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=6], subject=brown, time=2015-05-22 16:50:52.161, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=0], subject=yellow, time=2015-05-22 16:50:52.164, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=1], subject=white, time=2015-05-22 16:50:52.168, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=2], subject=brown, time=2015-05-22 16:50:52.171, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=3], subject=yellow, time=2015-05-22 16:50:52.175, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=4], subject=blue, time=2015-05-22 16:50:52.18, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=5], subject=brown, time=2015-05-22 16:50:52.183, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=6], subject=white, time=2015-05-22 16:50:52.186, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=0], subject=blue, time=2015-05-22 16:50:52.194, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=1], subject=brown, time=2015-05-22 16:50:52.195, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=2], subject=white, time=2015-05-22 16:50:52.197, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=3], subject=brown, time=2015-05-22 16:50:52.2, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=4], subject=white, time=2015-05-22 16:50:52.202, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=5], subject=brown, time=2015-05-22 16:50:52.204, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=6], subject=white, time=2015-05-22 16:50:52.208, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=3], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=3], agent=null, time=2015-05-22 16:50:52.314, clock=0]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT writes setGoal: Group [name=g, ra=a20, clock=0, time=2015-05-22 16:50:52.6]
+     [java] CT writes: Group [name=g, ra=a20, clock=0, time=2015-05-22 16:50:52.6]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=1, time=2015-05-22 16:50:52.659]
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 points will be deducted.]
+     [java] CT notification: Obligation [subject=a20, obligation=[surround(3, 3)], sanction=[reduce(g, 500)], deadline=31, time=2015-05-22 16:50:52.647, clock=1]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=1, time=2015-05-22 16:50:52.67]
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 points will be deducted., Prohibition to move more than 1 square per clock tick or 300 points will be deducted.]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT notification: Time [clock=2, time=2015-05-22 16:51:01.129]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=6, y=6], time=2015-05-22 16:51:01.183, clock=2]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=6, y=6], time=2015-05-22 16:51:01.183, clock=2]
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=6], time=2015-05-22 16:51:01.196, clock=2]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=6], time=2015-05-22 16:51:01.196, clock=2]
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-22 16:51:01.201, clock=2]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-22 16:51:01.201, clock=2]
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-22 16:51:01.204, clock=2]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-22 16:51:01.204, clock=2]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=6, y=6], time=2015-05-22 16:51:01.183, clock=2]
+     [java] 30
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=6], time=2015-05-22 16:51:01.196, clock=2]
+     [java] 20
+     [java] 20
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-22 16:51:01.201, clock=2]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-22 16:51:01.204, clock=2]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT notification: Time [clock=3, time=2015-05-22 16:51:11.131]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormColorDiscourseMessage
+     [java] From: 1
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormColorDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 1(PIN: 20)
+     [java] ---- NormColorDiscourseMessage ----
+     [java] CT writes color norm: Color [id=null, color=brown, agent=a20, type=yes, sanction=50, time=2015-05-22 16:51:12.75, clock=3]
+     [java] CT writes: Color [id=null, color=brown, agent=a20, type=yes, sanction=50, time=2015-05-22 16:51:12.75, clock=3]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=23, time=2015-05-22 16:51:12.768, clock=3]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted.]
+     [java] CT notification: Time [clock=4, time=2015-05-22 16:51:21.133]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=24, time=2015-05-22 16:51:21.138, clock=4]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted.]
+     [java] CT notification: Time [clock=5, time=2015-05-22 16:51:31.136]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=25, time=2015-05-22 16:51:31.139, clock=5]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted.]
+     [java] CT notification: Time [clock=6, time=2015-05-22 16:51:41.138]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=26, time=2015-05-22 16:51:41.141, clock=6]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 1(PIN: 20)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a20, cell=Cell [x=3, y=4], goal=Cell [x=3, y=3], sanction=100, clock=6, time=2015-05-22 16:51:50.15]
+     [java] CT writes: SetGoal [id=null, agent=a20, cell=Cell [x=3, y=4], goal=Cell [x=3, y=3], sanction=100, clock=6, time=2015-05-22 16:51:50.15]
+     [java] CT notification: Obligation [subject=a20, obligation=[at(3, 4, a20)], sanction=[reduce(a20, 500)], deadline=32, time=2015-05-22 16:51:50.166, clock=6]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted.]
+     [java] CT notification: Time [clock=7, time=2015-05-22 16:51:51.139]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=27, time=2015-05-22 16:51:51.145, clock=7]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 2(PIN: 30)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a30, cell=Cell [x=3, y=2], goal=Cell [x=3, y=3], sanction=100, clock=7, time=2015-05-22 16:51:54.651]
+     [java] CT writes: SetGoal [id=null, agent=a30, cell=Cell [x=3, y=2], goal=Cell [x=3, y=3], sanction=100, clock=7, time=2015-05-22 16:51:54.651]
+     [java] CT notification: Time [clock=8, time=2015-05-22 16:52:01.142]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=28, time=2015-05-22 16:52:01.148, clock=8]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a10, cell=Cell [x=4, y=3], goal=Cell [x=3, y=3], sanction=100, clock=8, time=2015-05-22 16:52:01.196]
+     [java] CT writes: SetGoal [id=null, agent=a10, cell=Cell [x=4, y=3], goal=Cell [x=3, y=3], sanction=100, clock=8, time=2015-05-22 16:52:01.196]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 3(PIN: 40)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a40, cell=Cell [x=2, y=3], goal=Cell [x=3, y=3], sanction=100, clock=8, time=2015-05-22 16:52:06.658]
+     [java] CT writes: SetGoal [id=null, agent=a40, cell=Cell [x=2, y=3], goal=Cell [x=3, y=3], sanction=100, clock=8, time=2015-05-22 16:52:06.658]
+     [java] CT notification: Time [clock=9, time=2015-05-22 16:52:11.144]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=29, time=2015-05-22 16:52:11.16, clock=9]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted.]
+     [java] CT notification: Time [clock=10, time=2015-05-22 16:52:21.146]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=30, time=2015-05-22 16:52:21.157, clock=10]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted.]
+     [java] CT notification: Time [clock=11, time=2015-05-22 16:52:31.148]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=31, time=2015-05-22 16:52:31.151, clock=11]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted.]
+     [java] CT notification: Time [clock=12, time=2015-05-22 16:52:41.15]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=32, time=2015-05-22 16:52:41.154, clock=12]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted.]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=13, time=2015-05-22 16:52:51.153]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=33, time=2015-05-22 16:52:51.162, clock=13]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted.]
+     [java] A New Phase Began: Communication Phase
+     [java] CT notification: Time [clock=14, time=2015-05-22 16:53:01.16]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=34, time=2015-05-22 16:53:01.172, clock=14]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a10, clock=14, time=2015-05-22 16:53:07.2]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=14, time=2015-05-22 16:53:07.216]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':9 'brown':0 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=15, time=2015-05-22 16:53:11.163]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=5, y=1], time=2015-05-22 16:53:11.17, clock=15]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=5, y=1], time=2015-05-22 16:53:11.17, clock=15]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=35, time=2015-05-22 16:53:11.167, clock=15]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted.]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=5, y=1], time=2015-05-22 16:53:11.17, clock=15]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a30, clock=15, time=2015-05-22 16:53:13.804]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=15, time=2015-05-22 16:53:13.813]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 2
+     [java] Sending: { chips  'blue':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':1 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a10, clock=15, time=2015-05-22 16:53:14.788]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=15, time=2015-05-22 16:53:14.796]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':1 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':1 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':7 'brown':0 'yellow':0 }
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=15, time=2015-05-22 16:53:15.139]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=16, time=2015-05-22 16:53:21.166]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=4, y=1], time=2015-05-22 16:53:21.18, clock=16]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=4, y=1], time=2015-05-22 16:53:21.18, clock=16]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=1], time=2015-05-22 16:53:21.18, clock=16]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=36, time=2015-05-22 16:53:21.209, clock=16]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT notification: Time [clock=17, time=2015-05-22 16:53:31.209]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=5, y=6], time=2015-05-22 16:53:31.217, clock=17]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=5, y=6], time=2015-05-22 16:53:31.217, clock=17]
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=3, y=1], time=2015-05-22 16:53:31.222, clock=17]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=3, y=1], time=2015-05-22 16:53:31.222, clock=17]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=37, time=2015-05-22 16:53:31.213, clock=17]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted.]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=5, y=6], time=2015-05-22 16:53:31.217, clock=17]
+     [java] 30
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=1], time=2015-05-22 16:53:31.222, clock=17]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a30, clock=17, time=2015-05-22 16:53:33.645]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=17, time=2015-05-22 16:53:33.651]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':7 'brown':0 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 2
+     [java] Sending: { chips  'blue':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':7 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':1 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':7 'brown':0 'yellow':0 }
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=17, time=2015-05-22 16:53:36.987]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=17, time=2015-05-22 16:53:40.095]
+     [java] CT notification: Time [clock=18, time=2015-05-22 16:53:41.211]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=38, time=2015-05-22 16:53:41.234, clock=18]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=18, time=2015-05-22 16:53:48.534]
+     [java] CT notification: Time [clock=19, time=2015-05-22 16:53:51.217]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=3, y=2], time=2015-05-22 16:53:51.226, clock=19]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=3, y=2], time=2015-05-22 16:53:51.226, clock=19]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=39, time=2015-05-22 16:53:51.22, clock=19]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted.]
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=2], time=2015-05-22 16:53:51.226, clock=19]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] A New Phase Began: Movement Phase
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=19, time=2015-05-22 16:53:57.615]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=19, time=2015-05-22 16:54:00.045]
+     [java] CT notification: Time [clock=20, time=2015-05-22 16:54:01.219]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=40, time=2015-05-22 16:54:01.223, clock=20]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=20, time=2015-05-22 16:54:05.61]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=20, time=2015-05-22 16:54:05.712]
+     [java] CT notification: Time [clock=21, time=2015-05-22 16:54:11.221]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=41, time=2015-05-22 16:54:11.225, clock=21]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=21, time=2015-05-22 16:54:12.266]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=21, time=2015-05-22 16:54:17.085]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=21, time=2015-05-22 16:54:18.282]
+     [java] CT notification: Time [clock=22, time=2015-05-22 16:54:21.223]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=42, time=2015-05-22 16:54:21.238, clock=22]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=22, time=2015-05-22 16:54:23.159]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=22, time=2015-05-22 16:54:23.737]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=22, time=2015-05-22 16:54:30.527]
+     [java] CT notification: Time [clock=23, time=2015-05-22 16:54:31.236]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=43, time=2015-05-22 16:54:31.24, clock=23]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=23, time=2015-05-22 16:54:34.55]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=23, time=2015-05-22 16:54:36.149]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=23, time=2015-05-22 16:54:39.924]
+     [java] CT notification: Time [clock=24, time=2015-05-22 16:54:41.238]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=44, time=2015-05-22 16:54:41.243, clock=24]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=24, time=2015-05-22 16:54:43.712]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=24, time=2015-05-22 16:54:50.138]
+     [java] CT notification: Time [clock=25, time=2015-05-22 16:54:51.24]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=45, time=2015-05-22 16:54:51.244, clock=25]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=25, time=2015-05-22 16:54:52.788]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=25, time=2015-05-22 16:54:55.968]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=25, time=2015-05-22 16:54:56.709]
+     [java] CT notification: Time [clock=26, time=2015-05-22 16:55:01.244]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=46, time=2015-05-22 16:55:01.249, clock=26]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=26, time=2015-05-22 16:55:04.852]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=26, time=2015-05-22 16:55:09.728]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=26, time=2015-05-22 16:55:10.853]
+     [java] CT notification: Time [clock=27, time=2015-05-22 16:55:11.247]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=47, time=2015-05-22 16:55:11.252, clock=27]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=27, time=2015-05-22 16:55:15.241]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=27, time=2015-05-22 16:55:18.594]
+     [java] CT notification: Time [clock=28, time=2015-05-22 16:55:21.25]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=48, time=2015-05-22 16:55:21.254, clock=28]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted., Obligation to use a tile with color brown before clock 48 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=28, time=2015-05-22 16:55:25.701]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=28, time=2015-05-22 16:55:27.896]
+     [java] CT notification: Time [clock=29, time=2015-05-22 16:55:31.253]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=49, time=2015-05-22 16:55:31.263, clock=29]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted., Obligation to use a tile with color brown before clock 48 or 50 points will be deducted., Obligation to use a tile with color brown before clock 49 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=29, time=2015-05-22 16:55:31.886]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=29, time=2015-05-22 16:55:36.448]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=29, time=2015-05-22 16:55:37.909]
+     [java] CT notification: Time [clock=30, time=2015-05-22 16:55:41.255]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=50, time=2015-05-22 16:55:41.26, clock=30]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted., Obligation to use a tile with color brown before clock 48 or 50 points will be deducted., Obligation to use a tile with color brown before clock 49 or 50 points will be deducted., Obligation to use a tile with color brown before clock 50 or 50 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=30, time=2015-05-22 16:55:44.256]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=30, time=2015-05-22 16:55:45.895]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=30, time=2015-05-22 16:55:50.461]
+     [java] CT notification: Time [clock=31, time=2015-05-22 16:55:51.258]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=51, time=2015-05-22 16:55:51.266, clock=31]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted., Obligation to use a tile with color brown before clock 48 or 50 points will be deducted., Obligation to use a tile with color brown before clock 49 or 50 points will be deducted., Obligation to use a tile with color brown before clock 50 or 50 points will be deducted., Obligation to use a tile with color brown before clock 51 or 50 points will be deducted.]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=31, time=2015-05-22 16:55:52.957]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=31, time=2015-05-22 16:55:57.314]
+     [java] CT notification: Time [clock=32, time=2015-05-22 16:56:01.265]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=52, time=2015-05-22 16:56:01.269, clock=32]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted., Obligation to use a tile with color brown before clock 48 or 50 points will be deducted., Obligation to use a tile with color brown before clock 49 or 50 points will be deducted., Obligation to use a tile with color brown before clock 50 or 50 points will be deducted., Obligation to use a tile with color brown before clock 51 or 50 points will be deducted., Obligation to use a tile with color brown before clock 52 or 50 points will be deducted.]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=32, time=2015-05-22 16:56:02.955]
+     [java] CT notification: Obligation [subject=a20, obligation=[surround(3, 3)], sanction=[reduce(g, 500)], deadline=62, time=2015-05-22 16:56:02.958, clock=32]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted., Obligation to use a tile with color brown before clock 48 or 50 points will be deducted., Obligation to use a tile with color brown before clock 49 or 50 points will be deducted., Obligation to use a tile with color brown before clock 50 or 50 points will be deducted., Obligation to use a tile with color brown before clock 51 or 50 points will be deducted., Obligation to use a tile with color brown before clock 52 or 50 points will be deducted., Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 62 or 500 points will be deducted.]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=32, time=2015-05-22 16:56:04.931]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=32, time=2015-05-22 16:56:09.611]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=32, time=2015-05-22 16:56:09.761]
+     [java] CT notification: Time [clock=33, time=2015-05-22 16:56:11.267]
+     [java] CT players (clone,for): 
+     [java] CT notification: Obligation [subject=a20, obligation=[color(brown, a20)], sanction=[reduce(a20, 50)], deadline=53, time=2015-05-22 16:56:11.276, clock=33]
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 31 or 500 points will be deducted., Obligation to use a tile with color brown before clock 23 or 50 points will be deducted., Obligation to use a tile with color brown before clock 24 or 50 points will be deducted., Obligation to use a tile with color brown before clock 25 or 50 points will be deducted., Obligation to use a tile with color brown before clock 26 or 50 points will be deducted., Obligation to be at the grid tile [3,4] before clock 32 or 500 points will be deducted., Obligation to use a tile with color brown before clock 27 or 50 points will be deducted., Obligation to use a tile with color brown before clock 28 or 50 points will be deducted., Obligation to use a tile with color brown before clock 29 or 50 points will be deducted., Obligation to use a tile with color brown before clock 30 or 50 points will be deducted., Obligation to use a tile with color brown before clock 31 or 50 points will be deducted., Obligation to use a tile with color brown before clock 32 or 50 points will be deducted., Obligation to use a tile with color brown before clock 33 or 50 points will be deducted., Obligation to use a tile with color brown before clock 34 or 50 points will be deducted., Obligation to use a tile with color brown before clock 35 or 50 points will be deducted., Obligation to use a tile with color brown before clock 36 or 50 points will be deducted., Obligation to use a tile with color brown before clock 37 or 50 points will be deducted., Obligation to use a tile with color brown before clock 38 or 50 points will be deducted., Obligation to use a tile with color brown before clock 39 or 50 points will be deducted., Obligation to use a tile with color brown before clock 40 or 50 points will be deducted., Obligation to use a tile with color brown before clock 41 or 50 points will be deducted., Obligation to use a tile with color brown before clock 42 or 50 points will be deducted., Obligation to use a tile with color brown before clock 43 or 50 points will be deducted., Obligation to use a tile with color brown before clock 44 or 50 points will be deducted., Obligation to use a tile with color brown before clock 45 or 50 points will be deducted., Obligation to use a tile with color brown before clock 46 or 50 points will be deducted., Obligation to use a tile with color brown before clock 47 or 50 points will be deducted., Obligation to use a tile with color brown before clock 48 or 50 points will be deducted., Obligation to use a tile with color brown before clock 49 or 50 points will be deducted., Obligation to use a tile with color brown before clock 50 or 50 points will be deducted., Obligation to use a tile with color brown before clock 51 or 50 points will be deducted., Obligation to use a tile with color brown before clock 52 or 50 points will be deducted., Obligation to coordinate other players (with the use of norms) to surround a goal [3,3] from left, right, top and bottom  before clock 62 or 500 points will be deducted., Obligation to use a tile with color brown before clock 53 or 50 points will be deducted.]
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka-65516-1432309835741-1:0) is shutting down
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-65516-1432309835741-1:0) stopped
+     [java] Java Result: 143
+
+BUILD SUCCESSFUL
+Total time: 5 minutes 42 seconds
