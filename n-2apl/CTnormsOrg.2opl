@@ -2,25 +2,25 @@ Facts:
 
 %group surround
 norm(
-    group_surround(g),
-    g, // the subject agent
-    ( group(g), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 20,[reduce(g,500)]) // prohibition format
+    group_surround(G),
+    G, // the subject agent
+    ( group(G), goal(X,Y,Z)), // precondition - left blank for now
+    obligation([surround(X,Y)],now + 30,[reduce(G,500)]) // prohibition format
     ).
     
 %agents group norms from RA  
 norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
-    ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
-    obligation([at(X,Y,Agent)],now + 16,[reduce(Agent, 500)]) // prohibition format
+    ( pursuer(Agent), detached(group_surround(W)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
+    obligation([at(X,Y,Agent)],now + 26,[reduce(Agent, 500)]) // prohibition format
     ).  
 
 %individual prohibitions to use colored tiles
 norm(
 not_enter_tile(Thing),
 Thing, // the subject agent
-( pursuer(Thing), color(Thing,Color,no,S)), // precondition
+( pursuer(Thing), color(Thing,Color,no,S),group(Z)), // precondition
 prohibition([color(Color,Thing)],[reduce(Thing,S)]) // prohibition format
 ).
 
@@ -28,7 +28,7 @@ prohibition([color(Color,Thing)],[reduce(Thing,S)]) // prohibition format
 norm(
 enter_tile(Thing),
 Thing, // the subject agent
-( pursuer(Thing), color(Thing,Color,yes,S)), // precondition
+( pursuer(Thing), color(Thing,Color,yes,S),group(Z)), // precondition
 obligation([color(Color,Thing)],now + 20,[reduce(Thing,S)]) // prohibition format
 ).
 
@@ -44,7 +44,7 @@ obligation([acceptRequests(Thing)],now + 20,[reduce(Thing,500)]) // prohibition 
 norm(
 rejectRequests(Thing),
 Thing, // the subject agent
-( pursuer(Thing)), // precondition
+( pursuer(Thing),group(Z)), // precondition
 prohibition([rejectRequests(Thing)],[reduce(Thing,500)]) // prohibition format
 ).
 
@@ -52,7 +52,7 @@ prohibition([rejectRequests(Thing)],[reduce(Thing,500)]) // prohibition format
 norm(
 moveTooFast(Thing),
 Thing, // the subject agent
-( pursuer(Thing)), // precondition
+( pursuer(Thing),group(Z)), // precondition
 prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
 ).
 
@@ -60,7 +60,7 @@ prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
 norm(
 makeMove(Thing),
 Thing, // the subject agent
-( pursuer(Thing), phase(movement), at(X,Y,Thing)), // precondition
+( pursuer(Thing), phase(movement), at(X,Y,Thing),group(Z)), // precondition
 obligation([makeMove(X,Y,Thing)],now + 20,[reduce(Thing,300)]) // prohibition format
 ).
 
@@ -70,6 +70,7 @@ color(Color,Agent) :-
 	tile(X,Y,Color).
 //moveTooFast(Thing).
 makeMove(Thing).
+//phase(movement).
 
 rejectRequests(A) :- 
 	response(Id,rejected,_),
@@ -88,12 +89,12 @@ pursuer(a30).
 pursuer(a40).
 
 
-group(g).
+//group(g).
 group_member(g,a10).
 group_member(g,a20).
 group_member(g,a30).
 group_member(g,a40).
-ra(g,a20).
+//ra(g,a20).
 
 //color(a10,red,yes).
 //color(a20,blue,yes).
@@ -244,6 +245,7 @@ Effects:
 //{agentSTask(Agent,X,Y,goal(GX,GY))} setGoal(Agent,X,Y,GX,GY,Clock) {not agentSTask(Agent,X,Y,goal(GX,GY))}
 {true} setGoal(Agent,X,Y,GX,GY,S,Clock) {agentSTask(Agent,X,Y,goal(GX,GY),S)}
 {true} color(Agent,Color,Type,S,C) {color(Agent,Color,Type,S)}
+{true} group(Name,Agent,C) {group(Name), ra(Name,Agent)}
 
 //{points(Agent,OldValue)} points(Agent, Clock, Value) {not points(Agent,OldValue), points(Agent,Value)}
 //{true} points(Agent, Clock, Value) {points(Agent,Value,Clock)}

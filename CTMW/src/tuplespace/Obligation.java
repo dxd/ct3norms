@@ -86,7 +86,8 @@ public class Obligation implements TimeEntry {
 		else if (obligation.startsWith("[surround")) { //[surround(2, 2)]
 			String ss = obligation.substring(10);
 			String[] o = ss.split(",");
-			s+= "coordinate other players (with the use of norms) to surround a goal [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "] from left, right, top and bottom ";
+			String p2 = o[1].trim().substring(0, o[1].trim().length()-2);
+			s+= "coordinate other players (with the use of norms) to surround a goal [" +Integer.parseInt(o[0].trim())+ "," + p2+ "] from left, right, top and bottom ";
 		}
 		else if (obligation.startsWith("[color")) { //[color(red,a20)]
 			String ss = obligation.substring(7);

@@ -7,7 +7,7 @@ import oopl.DistributedOOPL;
 
 import tuplespace.Cell;
 import tuplespace.Chip;
-import tuplespace.GroupCoin;
+import tuplespace.Group;
 import tuplespace.Message;
 import tuplespace.Obligation;
 import tuplespace.Points;
@@ -28,9 +28,9 @@ import apapl.data.Term;
 import aplprolog.prolog.IntHarvester;
 
 public class Utilities {
-	public static String TYPE_STATUS="status", TYPE_PROHIBITION="prohibition", 
-			TYPE_OBLIGATION="obligation", TYPE_READINGREQ = "readingRequest",TYPE_READING = "reading",TYPE_INVESTIGATE = "investigate",TYPE_CARGO = "cargo",TYPE_COIN = "coin",TYPE_POINTS = "points",
-				TYPE_OBJECT="object", TYPE_INVENTORY="inventory", TYPE_SANCTION="sanction", TYPE_GROUPCOIN="groupCoin", NULL="null"; // for matching string with class type
+	public static String TYPE_STATUS="status", TYPE_PROHIBITION="prohibition", TYPE_RESPONSE = "response",
+			TYPE_OBLIGATION="obligation", TYPE_PROPOSAL = "proposal",TYPE_COLOR = "color",TYPE_SETGOAL = "getGoal",TYPE_TILE = "tile",TYPE_CHIP = "chip",TYPE_POINTS = "points",
+				TYPE_OBJECT="object", TYPE_INVENTORY="inventory", TYPE_SANCTION="sanction", TYPE_GROUP="group", NULL="null"; // for matching string with class type
 		public int[] ar_true, ar_null, ar_state_change, ar_false; // precalculated IntProlog data 
 		public int INT_TUPLE=0, INT_POINT=0, INT_NULL=0;
 		public APAPLTermConverter converter; // Converts between IntProlog and 2APL
@@ -131,63 +131,6 @@ public class Utilities {
 
 			return new Position(sAgent,c,clock); // Create Tuple
 		}
-		else if(call.getName().equals(TYPE_READINGREQ)){ // Prolog format: readingRequest(position(X,Y))
-			Cell c = null;
-			if(call.getParams().get(0) instanceof APLFunction){ // null is APLIdent  
-				APLFunction point = (APLFunction) call.getParams().get(0); // Get the point coordinations TODO: type check the arguments
-				int pointX = ((APLNum)point.getParams().get(0)).toInt(); // Get the position
-				int pointY = ((APLNum)point.getParams().get(1)).toInt();
-				c = new Cell(pointX,pointY);
-			}
-			//System.out.print("from/for object " + sAgent + "  ");
-			//System.out.println(call.toString());
-
-			return new Proposal(); //TODO Create Tuple
-
-		}
-		else if(call.getName().equals(TYPE_READING)){ // Prolog format: reading(position(X,Y))
-			Cell c = null;
-			if(call.getParams().get(0) instanceof APLFunction){ // null is APLIdent  
-				APLFunction point = (APLFunction) call.getParams().get(0); // Get the point coordinations TODO: type check the arguments
-				int pointX = ((APLNum)point.getParams().get(0)).toInt(); // Get the position
-				int pointY = ((APLNum)point.getParams().get(1)).toInt();
-				c = new Cell(pointX,pointY);
-			}
-			System.out.print("from/for object " + sAgent + "  ");
-			System.out.println(call.toString());
-			//System.out.println(new Chip(sAgent,c));
-			return new Chip(sAgent); //TODO Create Tuple
-		}
-		else if(call.getName().equals(TYPE_COIN)){ // Prolog format: coin(position(X,Y),Clock,Agent)
-			//System.out.println("create entry coin "+call.getParams().toString());
-			Cell c = null;
-			if(call.getParams().get(0) instanceof APLFunction){ // null is APLIdent  
-				APLFunction point = (APLFunction) call.getParams().get(0); // Get the point coordinations TODO: type check the arguments
-				int pointX = ((APLNum)point.getParams().get(0)).toInt(); // Get the position
-				int pointY = ((APLNum)point.getParams().get(1)).toInt();
-				c = new Cell(pointX,pointY);
-			}
-			Integer clock = null; // if health is null (which is ident) it stays also in java null
-			if(call.getParams().get(1) instanceof APLNum) clock = ((APLNum)call.getParams().get(1)).toInt(); // The health meter
-			String agent = null; // if health is null (which is ident) it stays also in java null
-			if(call.getParams().get(2) instanceof APLIdent) agent = ((APLIdent)call.getParams().get(2)).toString(); // The health meter
-
-			return new Tile(c,agent,clock); // Create Tuple
-		}
-		else if(call.getName().equals(TYPE_CARGO)){ // Prolog format: cargo(position(X,Y),Clock)
-			//System.out.println("create entry cargo "+call.getParams().toString());
-			Cell c = null;
-			if(call.getParams().get(0) instanceof APLFunction){ // null is APLIdent  
-				APLFunction point = (APLFunction) call.getParams().get(0); // Get the point coordinations TODO: type check the arguments
-				int pointX = ((APLNum)point.getParams().get(0)).toInt(); // Get the position
-				int pointY = ((APLNum)point.getParams().get(1)).toInt();
-				c = new Cell(pointX,pointY);
-			}
-			Integer clock = null; // if health is null (which is ident) it stays also in java null
-			if(call.getParams().get(1) instanceof APLNum) clock = ((APLNum)call.getParams().get(1)).toInt(); // The health meter
-
-			return new tuplespace.Goal(); //TODO Create Tuple
-		} 
 		else if(call.getName().equals(TYPE_POINTS)){ //points(Agent,Now,NewHealth)
 			System.out.println("create entry points "+call.getParams().toString());
 
@@ -248,24 +191,6 @@ public class Utilities {
 
 				s = new Sanction(sAgent, value, envCT.clock);
 				//System.out.println(s2);
-			}
-			return s; // Create Tuple
-		}
-		else if(call.getName().equals(TYPE_GROUPCOIN)){ // Prolog format: status(position(1,4),30) 
-			GroupCoin s = null;
-			//System.out.println("create entry obligation "+call.getParams().toString());
-
-
-			if(call.getParams().get(0) instanceof Term){ // null is APLIdent  
-				//APLFunction point = (APLFunction) call.getParams().get(0); // Get the point coordinations TODO: type check the arguments
-				String s1 = call.getParams().get(0).toString();// Get the position
-				//String s2 = call.getParams().get(1).toString();
-				//String s3 = call.getParams().get(2).toString();
-
-				int value = ((APLNum)call.getParams().get(1)).toInt();
-
-				s = new GroupCoin(15, 15); //@TODO remove the hack!!!!
-				System.out.println(s);
 			}
 			return s; // Create Tuple
 		}

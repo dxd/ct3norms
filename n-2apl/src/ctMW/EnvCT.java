@@ -86,6 +86,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 	 * Just for testing.
 	 */
 	public static void main(String[] args){ 
+		
 		EnvCT st = new EnvCT();
 	}
 
@@ -111,7 +112,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 
 
 	public void initializeOOPL() throws RemoteException {
-		registerOrg();
+		
 		p2j = new Prolog2Java();
 		// Starting the normative system:
 		oopl = new DistributedOOPL(); // Create interpreter object
@@ -143,6 +144,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 		// To create a IntProlog structure out of a string use the above lines (but replace the fact string such as "true.")
 		// Starting the clock 
 		Thread t = new Thread(new ClockTicker(this));
+
 		t.start(); 
 		//this.insertTestData();
 
@@ -192,7 +194,9 @@ public class EnvCT  extends Environment implements ExternalTool {
 
 		}
 		try { initializeGS(); 
-		initializeOOPL();} 
+		registerOrg();
+		initializeOOPL();
+		} 
 		catch (Exception e) 
 		{ e.printStackTrace(); }
 	}
@@ -675,8 +679,9 @@ public class EnvCT  extends Environment implements ExternalTool {
 	}
 
 	public void notifyOrg(TimeEntry te) {
-		//System.out.println("org notified found "+te.toString());
 		System.out.println("org notified sent "+te.toPrologString());
+		//System.out.println("org notified found "+te.toString());
+		
 		//int[] OOPLformat = te.toIntArray(oopl);
 		//oopl.handleEvent(ar_state_change, false);
 		oopl.handleEvent(oopl.getProlog().mp.parseFact(te.toPrologString(),oopl.getProlog().strStorage,false),false);
@@ -687,7 +692,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 		OrgHandler handler = new OrgHandler(this);
 
 		try {
-
+			session.addListener(new Group(), handler); 
 			session.addListener(new Position(), handler); 
 			session.addListener(new tuplespace.Goal(), handler); 
 			session.addListener(new Chip(), handler); 

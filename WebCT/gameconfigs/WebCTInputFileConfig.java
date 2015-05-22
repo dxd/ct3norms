@@ -107,13 +107,13 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Norm Phase", 60);		
+			ph.addPhase("Norm Phase", 120);		
 		}
 		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Communication Phase", 60);		
 		}
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Movement Phase", 120);			
+			ph.addPhase("Movement Phase", 300);			
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
@@ -205,6 +205,8 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					int col = in.nextInt();
 					player.setPosition(new RowCol(row, col));
 					player.setRole(in.next("[a-z]+"));
+					if (player.getRole().equals("ra"))
+						spaces.writeGroup(player.getPerGameId());
 					in.nextLine();
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(true);
@@ -286,7 +288,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 
 				// calculate scores after all players have moved
 				// (e.g, in case a player's score depends on others' locations)
-				assignScores();
+				//assignScores();
 			}
 	}
 	

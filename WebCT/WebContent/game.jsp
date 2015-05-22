@@ -599,15 +599,16 @@ var game = {
 	</tr>
 </table>
 </div>
+<div id="proposals">
+<table id="tblProposals"></table>
+</div>
 <div id="Cnorms">
 <table id="tblCNorms"></table>
 </div>
 <div id="norms">
 <table id="tblNorms"></table>
 </div>
-<div id="proposals">
-<table id="tblProposals"></table>
-</div>
+
 </div>
 <div id="aside">
 	<div id="notifyContainer"></div>

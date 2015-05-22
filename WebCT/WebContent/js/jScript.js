@@ -633,7 +633,7 @@ function buttonSubmitNormColor_click(playerId) {
 		var message = "the obligation is to go through a " + colors.options[colors.selectedIndex].text + " square";
 	else
 		var message = "the prohibition is not to go through a " + colors.options[colors.selectedIndex].text + "square";
-	sendNormColor(playerId,recipientID,color,norm,sanction);
+	sendNormColor(playerId,recipientID,colors.options[colors.selectedIndex].text,norm,sanction);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
 	// rowID = num of rows in proposals grid
@@ -650,7 +650,7 @@ function buttonSubmitNormColor_click(playerId) {
 function sendNormColor(playerIDSend,recipientID,color,norm,sanction)
 {
 	var stringJ = "{\"player\" : \"" + playerIDSend + "\" , \"recipient\" : \"" + recipientID; 
-		stringJ = stringJ + "\", \"color\" : \"" + color + "\", \"norm\" : \"" + norm +"\, \"sanction\" : " + sanction +"}";
+		stringJ = stringJ + "\", \"color\" : \"" + color + "\", \"norm\" : \"" + norm +"\", \"sanction\" : " + sanction +"}";
 	jQuery.ajax({
 		type : "post",
 		url : "sendNormColor.jsp",

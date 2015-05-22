@@ -1,0 +1,1507 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.087 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-64773-1432240490697-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 30
+     [java] Adding client state for 40
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.1.103] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.1.103] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.1.103] of type 
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.1.103] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-21 21:35:05,876  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 409 milliseconds
+     [java] 2015-05-21 21:35:05,880 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-21~21.35-gigaspaces-service-192.168.1.103-5221.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=brown, time=2015-05-21 21:35:06.025, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=brown, time=2015-05-21 21:35:06.066, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=white, time=2015-05-21 21:35:06.068, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=yellow, time=2015-05-21 21:35:06.076, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=brown, time=2015-05-21 21:35:06.088, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=brown, time=2015-05-21 21:35:06.113, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=yellow, time=2015-05-21 21:35:06.123, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=white, time=2015-05-21 21:35:06.143, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=white, time=2015-05-21 21:35:06.166, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=blue, time=2015-05-21 21:35:06.171, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=white, time=2015-05-21 21:35:06.175, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=white, time=2015-05-21 21:35:06.178, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=brown, time=2015-05-21 21:35:06.184, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=blue, time=2015-05-21 21:35:06.188, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=white, time=2015-05-21 21:35:06.192, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=white, time=2015-05-21 21:35:06.197, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=yellow, time=2015-05-21 21:35:06.202, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=blue, time=2015-05-21 21:35:06.206, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=blue, time=2015-05-21 21:35:06.209, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=yellow, time=2015-05-21 21:35:06.214, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=brown, time=2015-05-21 21:35:06.217, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=blue, time=2015-05-21 21:35:06.221, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=yellow, time=2015-05-21 21:35:06.225, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=blue, time=2015-05-21 21:35:06.228, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=brown, time=2015-05-21 21:35:06.231, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=2, y=2], agent=null, time=2015-05-21 21:35:06.262, clock=0]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT notification: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=17, time=2015-05-21 21:35:09.522, clock=1]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to be at the grid tile [1,2] before clock 17 or 500 will be deducted.]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(white, a20)], sanction=[reduce(a20, 100)], deadline=21, time=2015-05-21 21:35:10.301, clock=1]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to be at the grid tile [1,2] before clock 17 or 500 will be deducted., Obligation to use a tile with color white before clock 21 or 100 will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[color(blue, a20)], sanction=[reduce(a20, 100)], clock=1, time=2015-05-21 21:35:10.761]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted.]
+     [java] CT notification: Time [clock=2, time=2015-05-21 21:35:15.532]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-21 21:35:15.543, clock=2]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-21 21:35:15.543, clock=2]
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-21 21:35:15.55, clock=2]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-21 21:35:15.55, clock=2]
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-21 21:35:15.553, clock=2]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-21 21:35:15.553, clock=2]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-21 21:35:15.543, clock=2]
+     [java] 10
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-21 21:35:15.562, clock=2]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-21 21:35:15.562, clock=2]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-21 21:35:15.55, clock=2]
+     [java] 30
+     [java] 30
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-21 21:35:15.553, clock=2]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-21 21:35:15.562, clock=2]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Time [clock=3, time=2015-05-21 21:35:25.534]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=4, time=2015-05-21 21:35:35.536]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=5, time=2015-05-21 21:35:45.538]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=6, time=2015-05-21 21:35:55.539]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=7, time=2015-05-21 21:36:05.542]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Communication Phase
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a40, clock=7, time=2015-05-21 21:36:14.308]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=7, time=2015-05-21 21:36:14.337]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':9 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':9 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 3
+     [java] Sending: { chips  'yellow':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':9 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':0 'brown':0 'yellow':1 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] CT notification: Time [clock=8, time=2015-05-21 21:36:15.545]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a10, clock=8, time=2015-05-21 21:36:17.554]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=8, time=2015-05-21 21:36:17.582]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':9 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a10, clock=8, time=2015-05-21 21:36:18.895]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=8, time=2015-05-21 21:36:18.904]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':8 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':7 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':9 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a20, clock=8, time=2015-05-21 21:36:19.279]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 1
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=8, time=2015-05-21 21:36:22.32]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':7 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':9 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  0
+     [java] Sending: { chips  }
+     [java] Responder: 1
+     [java] Sending: { chips  'brown':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':7 'brown':1 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a10, clock=8, time=2015-05-21 21:36:25.064]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=8, time=2015-05-21 21:36:25.074]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':7 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':6 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] CT notification: Time [clock=9, time=2015-05-21 21:36:25.546]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=1, y=0], time=2015-05-21 21:36:25.556, clock=9]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=1, y=0], time=2015-05-21 21:36:25.556, clock=9]
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=1, y=4], time=2015-05-21 21:36:25.571, clock=9]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=1, y=4], time=2015-05-21 21:36:25.571, clock=9]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=1, y=0], time=2015-05-21 21:36:25.556, clock=9]
+     [java] 10
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-05-21 21:36:25.576, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-05-21 21:36:25.576, clock=9]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=1, y=4], time=2015-05-21 21:36:25.571, clock=9]
+     [java] 30
+     [java] 30
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-05-21 21:36:25.576, clock=9]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:36:25.581, clock=9, value=900, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:36:25.581, clock=9, value=900, id=null]
+     [java] 30
+     [java] 30
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a10, clock=9, time=2015-05-21 21:36:27.772]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=9, time=2015-05-21 21:36:27.784]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':6 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':5 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a40, clock=9, time=2015-05-21 21:36:30.704]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=9, time=2015-05-21 21:36:30.709]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':5 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':8 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 3
+     [java] Sending: { chips  'yellow':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':5 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':1 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 30
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a10, clock=9, time=2015-05-21 21:36:33.586]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=9, time=2015-05-21 21:36:33.592]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':5 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  2
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':4 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a10, clock=9, time=2015-05-21 21:36:34.119]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=9, time=2015-05-21 21:36:34.125]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':4 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':7 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  3
+     [java] Sending: { chips  }
+     [java] Responder: 0
+     [java] Sending: { chips  'white':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':3 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':7 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 3(PIN: 40)
+     [java] CT writes: Proposal [id=-1, agent=a10, agent2=a40, clock=9, time=2015-05-21 21:36:34.378]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 3
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 0(PIN: 10)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=accepted, clock=9, time=2015-05-21 21:36:34.384]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':3 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':7 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  0
+     [java] Sending: { chips  }
+     [java] Responder: 3
+     [java] Sending: { chips  'yellow':1 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':3 'brown':0 'yellow':1 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':1 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT notification: Time [clock=10, time=2015-05-21 21:36:35.548]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:35.557, clock=10]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:35.557, clock=10]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:35.557, clock=10]
+     [java] 30
+     [java] 30
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=7093, agent=a20, agent2=a10, clock=10, time=2015-05-21 21:36:36.172]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=7093, response=accepted, clock=10, time=2015-05-21 21:36:36.181]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':3 'brown':0 'yellow':1 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':0 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  1
+     [java] Sending: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] Responder: 0
+     [java] Sending: { chips  'blue':0 'white':2 'brown':0 'yellow':0 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':1 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':1 'brown':0 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':8 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 40
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a30, agent2=a20, clock=10, time=2015-05-21 21:36:37.46]
+     [java] DEBUG root                           - received a move request...: 10
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 1
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=rejected, clock=10, time=2015-05-21 21:36:43.782]
+     [java] Offer rejected
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:36:43.797, clock=10, value=500, id=null]
+     [java] 10
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:36:43.797, clock=10, value=500, id=null]
+     [java] 10
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:36:43.8, clock=10, value=500, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:36:43.8, clock=10, value=500, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:36:43.804, clock=10, value=500, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:36:43.804, clock=10, value=500, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=11, time=2015-05-21 21:36:45.55]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:45.557, clock=11]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:45.557, clock=11]
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=2, y=0], time=2015-05-21 21:36:45.562, clock=11]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=2, y=0], time=2015-05-21 21:36:45.562, clock=11]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:45.557, clock=11]
+     [java] 10
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=2, y=0], time=2015-05-21 21:36:45.562, clock=11]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=-1, agent=a40, agent2=a20, clock=11, time=2015-05-21 21:36:47.383]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 3(PIN: 40)
+     [java] CT writes: Proposal [id=815, agent=a20, agent2=a40, clock=11, time=2015-05-21 21:36:49.629]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=815, response=accepted, clock=11, time=2015-05-21 21:36:49.636]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  1
+     [java] Sending: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] Responder: 3
+     [java] Sending: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':8 'yellow':0 }
+     [java] CT notification: Time [clock=12, time=2015-05-21 21:36:55.552]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 1
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=-1, response=rejected, clock=12, time=2015-05-21 21:36:57.027]
+     [java] Offer rejected
+     [java] CT notification: Time [clock=13, time=2015-05-21 21:37:05.559]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=14, time=2015-05-21 21:37:15.56]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=15, time=2015-05-21 21:37:25.562]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=16, time=2015-05-21 21:37:35.564]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=17, time=2015-05-21 21:37:45.566]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 3(PIN: 40)
+     [java] CT writes: Proposal [id=280, agent=a20, agent2=a40, clock=17, time=2015-05-21 21:37:52.175]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=280, response=accepted, clock=17, time=2015-05-21 21:37:52.187]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':8 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  1
+     [java] Sending: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] Responder: 3
+     [java] Sending: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':7 'yellow':0 }
+     [java] CT notification: Time [clock=18, time=2015-05-21 21:37:55.568]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=3892, agent=a20, agent2=a10, clock=18, time=2015-05-21 21:37:58.458]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=3892, response=accepted, clock=18, time=2015-05-21 21:37:58.464]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':7 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  1
+     [java] Sending: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] Responder: 0
+     [java] Sending: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':6 'yellow':0 }
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=6244, agent=a20, agent2=a30, clock=18, time=2015-05-21 21:38:02.406]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=6244, response=accepted, clock=18, time=2015-05-21 21:38:02.416]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':0 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':6 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  1
+     [java] Sending: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] Responder: 2
+     [java] Sending: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':1 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':5 'yellow':0 }
+     [java] CT notification: Time [clock=19, time=2015-05-21 21:38:05.57]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=20, time=2015-05-21 21:38:15.579]
+     [java] CT players (clone,for): 
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 1
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=174, agent=a20, agent2=a30, clock=20, time=2015-05-21 21:38:18.424]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] CT writes: Response [id=174, response=accepted, clock=20, time=2015-05-21 21:38:18.434]
+     [java] We have an accepted offer, chips before: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':8 'white':0 'brown':1 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':0 'white':2 'brown':5 'yellow':0 }
+     [java] Initiating Automatic Chip Transfer
+     [java] Proposer:  1
+     [java] Sending: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] Responder: 2
+     [java] Sending: { chips  'blue':1 'white':0 'brown':0 'yellow':0 }
+     [java] EXECUTING AUTOMATIC CHIP TRANSFER
+     [java] chips after: 
+     [java] player pin: 10
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':0 }
+     [java] player pin: 30
+     [java] player chips: { chips  'blue':7 'white':0 'brown':2 'yellow':0 }
+     [java] player pin: 40
+     [java] player chips: { chips  'blue':0 'white':0 'brown':1 'yellow':6 }
+     [java] player pin: 20
+     [java] player chips: { chips  'blue':1 'white':2 'brown':4 'yellow':0 }
+     [java] DEBUG root                           - received a move request...: 20
+     [java] DEBUG root                           - received a move request...: 20
+     [java] DEBUG root                           - received a move request...: 20
+     [java] CT notification: Time [clock=21, time=2015-05-21 21:38:25.582]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=1, y=2], time=2015-05-21 21:38:25.603, clock=21]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=1, y=2], time=2015-05-21 21:38:25.603, clock=21]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=1, y=2], time=2015-05-21 21:38:25.603, clock=21]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Time [clock=22, time=2015-05-21 21:38:35.586]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:38:35.596, clock=22, value=333, id=null]
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:38:35.596, clock=22, value=333, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:38:35.597, clock=22, value=733, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:38:35.597, clock=22, value=733, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:38:35.599, clock=22, value=333, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:38:35.599, clock=22, value=333, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=23, time=2015-05-21 21:38:45.588]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=2015-05-21 21:38:55.595]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=25, time=2015-05-21 21:39:05.598]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - Game ended id = 0
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT notification: Time [clock=26, time=2015-05-21 21:39:15.599]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=2, y=2], time=2015-05-21 21:39:15.605, clock=26]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=2, y=2], time=2015-05-21 21:39:15.605, clock=26]
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=2, y=2], time=2015-05-21 21:39:15.605, clock=26]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:39:15.617, clock=26, value=633, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:39:15.617, clock=26, value=633, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Time [clock=27, time=2015-05-21 21:39:25.601]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=28, time=2015-05-21 21:39:35.603]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=29, time=2015-05-21 21:39:45.605]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=30, time=2015-05-21 21:39:55.607]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=31, time=2015-05-21 21:40:05.609]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=32, time=2015-05-21 21:40:15.61]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=33, time=2015-05-21 21:40:25.613]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=34, time=2015-05-21 21:40:35.615]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=35, time=2015-05-21 21:40:45.617]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=36, time=2015-05-21 21:40:55.62]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=37, time=2015-05-21 21:41:05.621]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=38, time=2015-05-21 21:41:15.624]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=39, time=2015-05-21 21:41:25.626]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=40, time=2015-05-21 21:41:35.629]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=41, time=2015-05-21 21:41:45.632]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=42, time=2015-05-21 21:41:55.635]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=43, time=2015-05-21 21:42:05.638]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=44, time=2015-05-21 21:42:15.64]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=45, time=2015-05-21 21:42:25.644]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=46, time=2015-05-21 21:42:35.647]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=47, time=2015-05-21 21:42:45.651]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=48, time=2015-05-21 21:42:55.654]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=49, time=2015-05-21 21:43:05.656]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=50, time=2015-05-21 21:43:15.658]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=51, time=2015-05-21 21:43:25.661]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=52, time=2015-05-21 21:43:35.662]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=53, time=2015-05-21 21:43:45.664]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=54, time=2015-05-21 21:43:55.666]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=55, time=2015-05-21 21:44:05.668]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=56, time=2015-05-21 21:44:15.671]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=57, time=2015-05-21 21:44:25.674]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=58, time=2015-05-21 21:44:35.677]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=59, time=2015-05-21 21:44:45.68]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=60, time=2015-05-21 21:44:55.682]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=42, time=2015-05-21 21:41:55.635]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=1, time=2015-05-21 21:35:05.541]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted.]
+     [java] CT notification: Time [clock=58, time=2015-05-21 21:44:35.677]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=2, y=0], time=2015-05-21 21:36:45.562, clock=11]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=41, time=2015-05-21 21:41:45.632]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.748, clock=58, value=33, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.748, clock=58, value=33, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=60, time=2015-05-21 21:44:55.682]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=43, time=2015-05-21 21:42:05.638]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=45, time=2015-05-21 21:42:25.644]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=4, y=0], time=2015-05-21 21:35:15.553, clock=2]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.808, clock=43, value=-66, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.808, clock=43, value=-66, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=51, time=2015-05-21 21:43:25.661]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[color(blue, a20)], sanction=[reduce(a20, 100)], clock=1, time=2015-05-21 21:35:10.761]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted.]
+     [java] CT notification: Time [clock=25, time=2015-05-21 21:39:05.598]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=44, time=2015-05-21 21:42:15.64]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=20, time=2015-05-21 21:38:15.579]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=3, y=0], time=2015-05-21 21:36:25.576, clock=9]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=1, time=2015-05-21 21:35:05.558]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted.]
+     [java] CT notification: Time [clock=49, time=2015-05-21 21:43:05.656]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=29, time=2015-05-21 21:39:45.605]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-21 21:35:15.543, clock=2]
+     [java] 10
+     [java] CT notification: Time [clock=30, time=2015-05-21 21:39:55.607]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=40, time=2015-05-21 21:41:35.629]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=4], time=2015-05-21 21:35:15.562, clock=2]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Time [clock=53, time=2015-05-21 21:43:45.664]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:35.557, clock=10]
+     [java] 30
+     [java] 30
+     [java] CT notification: Obligation [subject=a20, obligation=[at(1, 2, a20)], sanction=[reduce(a20, 500)], deadline=17, time=2015-05-21 21:35:09.522, clock=1]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to be at the grid tile [1,2] before clock 17 or 500 will be deducted., Obligation to use a tile with color white before clock 21 or 100 will be deducted., Obligation to be at the grid tile [1,2] before clock 17 or 500 will be deducted.]
+     [java] CT notification: Time [clock=54, time=2015-05-21 21:43:55.666]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:44:58.992, clock=49, value=400, id=null]
+     [java] 10
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:44:58.992, clock=49, value=400, id=null]
+     [java] 10
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=1, y=2], time=2015-05-21 21:38:25.603, clock=21]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Obligation [subject=a20, obligation=[color(white, a20)], sanction=[reduce(a20, 100)], deadline=21, time=2015-05-21 21:35:10.301, clock=1]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT obligation: [Obligation to be at the grid tile [1,2] before clock 17 or 500 will be deducted., Obligation to use a tile with color white before clock 21 or 100 will be deducted., Obligation to be at the grid tile [1,2] before clock 17 or 500 will be deducted., Obligation to use a tile with color white before clock 21 or 100 will be deducted.]
+     [java] CT notification: Time [clock=4, time=2015-05-21 21:35:35.536]
+     [java] CT players (clone,for): 
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=1, y=4], time=2015-05-21 21:36:25.571, clock=9]
+     [java] 30
+     [java] 30
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=2, y=2], time=2015-05-21 21:39:15.605, clock=26]
+     [java] 30
+     [java] 30
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=1, y=0], time=2015-05-21 21:36:25.556, clock=9]
+     [java] 10
+     [java] CT notification: Time [clock=35, time=2015-05-21 21:40:45.617]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=2, y=1], time=2015-05-21 21:36:45.557, clock=11]
+     [java] 10
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=4, y=4], time=2015-05-21 21:35:15.55, clock=2]
+     [java] 30
+     [java] 30
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=57, time=2015-05-21 21:44:25.674]
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:44:59.089, clock=29, value=233, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=37, time=2015-05-21 21:41:05.621]
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:44:59.089, clock=29, value=233, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=21, time=2015-05-21 21:38:25.582]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=39, time=2015-05-21 21:41:25.626]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=19, time=2015-05-21 21:38:05.57]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=56, time=2015-05-21 21:44:15.671]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=14, time=2015-05-21 21:37:15.56]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=22, time=2015-05-21 21:38:35.586]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:36:43.8, clock=10, value=500, id=null]
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:36:43.8, clock=10, value=500, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:36:43.797, clock=10, value=500, id=null]
+     [java] 10
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:36:43.797, clock=10, value=500, id=null]
+     [java] 10
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.808, clock=43, value=-66, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.808, clock=43, value=-66, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:36:25.581, clock=9, value=900, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:36:25.581, clock=9, value=900, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:36:43.804, clock=10, value=500, id=null]
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:36:43.804, clock=10, value=500, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:44:58.992, clock=49, value=400, id=null]
+     [java] 10
+     [java] CT notification: Points [subject=a10, time=2015-05-21 21:44:58.992, clock=49, value=400, id=null]
+     [java] 10
+     [java] CT notification: Time [clock=33, time=2015-05-21 21:40:25.613]
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:44:59.089, clock=29, value=233, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:44:59.089, clock=29, value=233, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Time [clock=8, time=2015-05-21 21:36:15.545]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=2015-05-21 21:38:55.595]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.748, clock=58, value=33, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:44:58.748, clock=58, value=33, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=26, time=2015-05-21 21:39:15.599]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=48, time=2015-05-21 21:42:55.654]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:39:15.617, clock=26, value=633, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:39:15.617, clock=26, value=633, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:38:35.596, clock=22, value=333, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Points [subject=a20, time=2015-05-21 21:38:35.596, clock=22, value=333, id=null]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:38:35.597, clock=22, value=733, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a30, time=2015-05-21 21:38:35.597, clock=22, value=733, id=null]
+     [java] 30
+     [java] 30
+     [java] CT notification: Time [clock=46, time=2015-05-21 21:42:35.647]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:38:35.599, clock=22, value=333, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a40, time=2015-05-21 21:38:35.599, clock=22, value=333, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Time [clock=3, time=2015-05-21 21:35:25.534]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=17, time=2015-05-21 21:37:45.566]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=52, time=2015-05-21 21:43:35.662]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=11, time=2015-05-21 21:36:45.55]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=23, time=2015-05-21 21:38:45.588]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=55, time=2015-05-21 21:44:05.668]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=32, time=2015-05-21 21:40:15.61]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=50, time=2015-05-21 21:43:15.658]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=16, time=2015-05-21 21:37:35.564]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=59, time=2015-05-21 21:44:45.68]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=36, time=2015-05-21 21:40:55.62]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=31, time=2015-05-21 21:40:05.609]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=15, time=2015-05-21 21:37:25.562]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=2015-05-21 21:37:55.568]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=1, time=2015-05-21 21:35:05.517]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=27, time=2015-05-21 21:39:25.601]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=9, time=2015-05-21 21:36:25.546]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=7, time=2015-05-21 21:36:05.542]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=47, time=2015-05-21 21:42:45.651]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=6, time=2015-05-21 21:35:55.539]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=10, time=2015-05-21 21:36:35.548]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=38, time=2015-05-21 21:41:15.624]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=5, time=2015-05-21 21:35:45.538]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=12, time=2015-05-21 21:36:55.552]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=2, time=2015-05-21 21:35:15.532]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=34, time=2015-05-21 21:40:35.615]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=28, time=2015-05-21 21:39:35.603]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=13, time=2015-05-21 21:37:05.559]
+     [java] CT players (clone,for): 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.1.103] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.1.103] of type 
+     [java] Adding client state for 10
+     [java] Adding client state for 30
+     [java] Adding client state for 40
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.1.103] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.1.103] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.1.103] of type 
+     [java] Adding client state for 10
+     [java] Adding client state for 30
+     [java] Adding client state for 40
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.1.103] of type 
+     [java] CT notification: Time [clock=61, time=2015-05-21 21:45:05.685]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-21 21:45:05.703]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=0, time=2015-05-21 21:45:05.723]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-21 21:45:05.72]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=0, time=2015-05-21 21:45:05.753]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted.]
+     [java] CT notification: Time [clock=1, time=2015-05-21 21:45:09.973]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=1, time=2015-05-21 21:45:09.973]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=0, time=2015-05-21 21:45:05.723]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted.]
+     [java] CT notification: Time [clock=61, time=2015-05-21 21:45:05.685]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-21 21:45:05.703]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=0, time=2015-05-21 21:45:05.753]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-21 21:45:05.72]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted.]
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.1.103] of type 
+     [java] Adding client state for 10
+     [java] Adding client state for 30
+     [java] Adding client state for 40
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.1.103] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.1.103] of type 
+     [java] CT notification: Time [clock=1, time=2015-05-21 21:45:13.848]
+     [java] CT players (clone,for): 
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-21 21:45:13.881]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=0, time=2015-05-21 21:45:13.895]
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] 20
+     [java] CT prohibition: [Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to use a tile with color blue or 100 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to reject requests for chips from the other players or 500 will be deducted., Prohibition to move more than 1 square per clock tick or 300 will be deducted.]
+     [java] CT notification: Time [clock=62, time=2015-05-21 21:45:15.688]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=2, time=2015-05-21 21:45:19.975]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=1, time=2015-05-21 21:45:22.232]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=2, time=2015-05-21 21:45:23.851]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=63, time=2015-05-21 21:45:25.691]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=3, time=2015-05-21 21:45:29.977]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=2, time=2015-05-21 21:45:32.234]
+     [java] CT players (clone,for): 
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-64773-1432240490697-1:0) is shutting down
+     [java] CT notification: Time [clock=3, time=2015-05-21 21:45:33.854]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=64, time=2015-05-21 21:45:35.694]
+     [java] CT players (clone,for): 
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-64773-1432240490697-1:0) stopped
+     [java] Java Result: 143
+
+BUILD SUCCESSFUL
+Total time: 10 minutes 47 seconds

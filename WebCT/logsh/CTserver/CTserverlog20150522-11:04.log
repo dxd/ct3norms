@@ -1,0 +1,446 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.103 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-53770-1432289095275-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [192.168.0.40] of type 
+     [java] Adding client state for 30
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [192.168.0.40] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [192.168.0.40] of type 
+     [java] Adding client state for 40
+     [java] Adding client state for 10
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [192.168.0.40] of type 
+     [java] Adding client state for 20
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-22 11:05:28,246  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 493 milliseconds
+     [java] 2015-05-22 11:05:28,252 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-22~11.05-gigaspaces-service-192.168.0.40-6451.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=brown, time=2015-05-22 11:05:28.426, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=brown, time=2015-05-22 11:05:28.455, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=white, time=2015-05-22 11:05:28.457, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=yellow, time=2015-05-22 11:05:28.458, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=brown, time=2015-05-22 11:05:28.46, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=5], subject=blue, time=2015-05-22 11:05:28.461, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=6], subject=brown, time=2015-05-22 11:05:28.462, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=brown, time=2015-05-22 11:05:28.463, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=yellow, time=2015-05-22 11:05:28.464, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=white, time=2015-05-22 11:05:28.466, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=white, time=2015-05-22 11:05:28.467, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=blue, time=2015-05-22 11:05:28.469, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=5], subject=brown, time=2015-05-22 11:05:28.47, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=6], subject=yellow, time=2015-05-22 11:05:28.471, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=white, time=2015-05-22 11:05:28.472, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=white, time=2015-05-22 11:05:28.474, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=brown, time=2015-05-22 11:05:28.477, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=blue, time=2015-05-22 11:05:28.479, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=white, time=2015-05-22 11:05:28.481, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=5], subject=brown, time=2015-05-22 11:05:28.483, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=6], subject=brown, time=2015-05-22 11:05:28.486, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=white, time=2015-05-22 11:05:28.488, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=yellow, time=2015-05-22 11:05:28.49, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=blue, time=2015-05-22 11:05:28.492, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=blue, time=2015-05-22 11:05:28.494, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=yellow, time=2015-05-22 11:05:28.496, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=5], subject=yellow, time=2015-05-22 11:05:28.498, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=6], subject=white, time=2015-05-22 11:05:28.499, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=brown, time=2015-05-22 11:05:28.501, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=blue, time=2015-05-22 11:05:28.503, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=yellow, time=2015-05-22 11:05:28.505, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=blue, time=2015-05-22 11:05:28.507, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=brown, time=2015-05-22 11:05:28.508, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=5], subject=yellow, time=2015-05-22 11:05:28.509, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=6], subject=brown, time=2015-05-22 11:05:28.511, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=0], subject=yellow, time=2015-05-22 11:05:28.512, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=1], subject=white, time=2015-05-22 11:05:28.515, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=2], subject=brown, time=2015-05-22 11:05:28.517, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=3], subject=yellow, time=2015-05-22 11:05:28.52, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=4], subject=blue, time=2015-05-22 11:05:28.523, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=5], subject=brown, time=2015-05-22 11:05:28.525, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=6], subject=white, time=2015-05-22 11:05:28.527, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=0], subject=blue, time=2015-05-22 11:05:28.53, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=1], subject=brown, time=2015-05-22 11:05:28.532, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=2], subject=white, time=2015-05-22 11:05:28.533, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=3], subject=brown, time=2015-05-22 11:05:28.535, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=4], subject=white, time=2015-05-22 11:05:28.536, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=5], subject=brown, time=2015-05-22 11:05:28.537, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=6], subject=white, time=2015-05-22 11:05:28.538, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=3], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=3], agent=null, time=2015-05-22 11:05:28.576, clock=0]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT writes setGoal: Group [name=g, ra=a20, clock=0, time=2015-05-22 11:05:28.713]
+     [java] CT writes: Group [name=g, ra=a20, clock=0, time=2015-05-22 11:05:28.713]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests(a20)], sanction=[reduce(a20, 500)], clock=0, time=2015-05-22 11:06:00.039]
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=0, time=2015-05-22 11:06:00.082]
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 points will be deducted., Prohibition to move more than 1 square per clock tick or 300 points will be deducted.]
+     [java] CT notification: Time [clock=1, time=2015-05-22 11:06:10.008]
+     [java] CT players (clone,for): 
+     [java] CT writes position: Position [subject=a20, id=null, cell=Cell [x=0, y=6], time=2015-05-22 11:06:10.029, clock=1]
+     [java] CT writes: Position [subject=a20, id=null, cell=Cell [x=0, y=6], time=2015-05-22 11:06:10.029, clock=1]
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-22 11:06:10.047, clock=1]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-22 11:06:10.047, clock=1]
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-22 11:06:10.049, clock=1]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-22 11:06:10.049, clock=1]
+     [java] CT notification: Position [subject=a20, id=null, cell=Cell [x=0, y=6], time=2015-05-22 11:06:10.029, clock=1]
+     [java] 20
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=6, y=6], time=2015-05-22 11:06:10.06, clock=1]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=6, y=6], time=2015-05-22 11:06:10.06, clock=1]
+     [java] CT notification: Position [subject=a10, id=null, cell=Cell [x=0, y=0], time=2015-05-22 11:06:10.047, clock=1]
+     [java] 10
+     [java] 10
+     [java] CT notification: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-22 11:06:10.049, clock=1]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Position [subject=a30, id=null, cell=Cell [x=6, y=6], time=2015-05-22 11:06:10.06, clock=1]
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] CT notification: Obligation [subject=a20, obligation=[makeMove(0, 6, a20)], sanction=[reduce(a20, 300)], deadline=21, time=2015-05-22 11:06:10.075, clock=1]
+     [java] 20
+     [java] CT obligation: [Obligation to make a movement on the board before clock 21 or 300 points will be deducted.]
+     [java] CT notification: Time [clock=2, time=2015-05-22 11:06:20.011]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Communication Phase
+     [java] CT notification: Time [clock=3, time=2015-05-22 11:06:30.012]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=4, time=2015-05-22 11:06:40.015]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=5, time=2015-05-22 11:06:50.017]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=6, time=2015-05-22 11:07:00.018]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=7, time=2015-05-22 11:07:10.02]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=8, time=2015-05-22 11:07:20.021]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=9, time=2015-05-22 11:07:30.023]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=10, time=2015-05-22 11:07:40.028]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=11, time=2015-05-22 11:07:50.03]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=12, time=2015-05-22 11:08:00.032]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=13, time=2015-05-22 11:08:10.034]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=14, time=2015-05-22 11:08:20.042]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=15, time=2015-05-22 11:08:30.046]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=16, time=2015-05-22 11:08:40.047]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=17, time=2015-05-22 11:08:50.05]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=18, time=2015-05-22 11:09:00.053]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=19, time=2015-05-22 11:09:10.058]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=20, time=2015-05-22 11:09:20.06]
+     [java] CT players (clone,for): 
+     [java] A New Phase Began: Feedback Phase
+     [java] DEBUG root                           - Game ended id = 0
+     [java] CT notification: Time [clock=21, time=2015-05-22 11:09:30.077]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=22, time=2015-05-22 11:09:40.079]
+     [java] CT players (clone,for): 
+     [java] CT notification: Points [subject=a20, time=2015-05-22 11:09:40.086, clock=22, value=700, id=null]
+     [java] 20
+     [java] CT notification: Points [subject=a20, time=2015-05-22 11:09:40.086, clock=22, value=700, id=null]
+     [java] 20
+     [java] CT notification: Points [subject=a10, time=2015-05-22 11:09:40.109, clock=22, value=700, id=null]
+     [java] 10
+     [java] 10
+     [java] CT notification: Points [subject=a10, time=2015-05-22 11:09:40.109, clock=22, value=700, id=null]
+     [java] 10
+     [java] 10
+     [java] CT notification: Points [subject=a40, time=2015-05-22 11:09:40.116, clock=22, value=700, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a30, time=2015-05-22 11:09:40.132, clock=22, value=700, id=null]
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] CT notification: Points [subject=a40, time=2015-05-22 11:09:40.116, clock=22, value=700, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT notification: Points [subject=a30, time=2015-05-22 11:09:40.132, clock=22, value=700, id=null]
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] 30
+     [java] CT notification: Time [clock=23, time=2015-05-22 11:09:50.082]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=24, time=2015-05-22 11:10:00.084]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=25, time=2015-05-22 11:10:10.086]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=26, time=2015-05-22 11:10:20.088]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=27, time=2015-05-22 11:10:30.09]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=28, time=2015-05-22 11:10:40.093]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=29, time=2015-05-22 11:10:50.095]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=30, time=2015-05-22 11:11:00.097]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=31, time=2015-05-22 11:11:10.099]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=32, time=2015-05-22 11:11:20.101]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=33, time=2015-05-22 11:11:30.103]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=34, time=2015-05-22 11:11:40.104]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=35, time=2015-05-22 11:11:50.106]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=36, time=2015-05-22 11:12:00.108]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=37, time=2015-05-22 11:12:10.109]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=38, time=2015-05-22 11:12:20.111]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=39, time=2015-05-22 11:12:30.115]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=40, time=2015-05-22 11:12:40.117]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=41, time=2015-05-22 11:12:50.119]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=42, time=2015-05-22 11:13:00.121]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=43, time=2015-05-22 11:13:10.124]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=44, time=2015-05-22 11:13:20.125]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=45, time=2015-05-22 11:13:30.126]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=46, time=2015-05-22 11:13:40.136]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=47, time=2015-05-22 11:13:50.137]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=48, time=2015-05-22 11:14:00.139]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=49, time=2015-05-22 11:14:10.143]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=50, time=2015-05-22 11:14:20.147]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=51, time=2015-05-22 11:14:30.15]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=52, time=2015-05-22 11:14:40.153]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=53, time=2015-05-22 11:14:50.155]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=54, time=2015-05-22 11:15:00.158]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=55, time=2015-05-22 11:15:10.164]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=56, time=2015-05-22 11:15:20.167]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=57, time=2015-05-22 11:15:30.17]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=58, time=2015-05-22 11:15:40.173]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=59, time=2015-05-22 11:15:50.176]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=60, time=2015-05-22 11:16:00.18]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=61, time=2015-05-22 11:16:10.183]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=62, time=2015-05-22 11:16:20.185]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=63, time=2015-05-22 11:16:30.19]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=64, time=2015-05-22 11:16:40.728]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=65, time=2015-05-22 11:16:50.76]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=66, time=2015-05-22 11:17:01.13]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=67, time=2015-05-22 11:17:11.203]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=68, time=2015-05-22 11:17:21.453]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=69, time=2015-05-22 11:17:31.733]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=70, time=2015-05-22 11:17:42.199]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=71, time=2015-05-22 11:17:52.203]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=72, time=2015-05-22 11:18:02.55]
+     [java] CT players (clone,for): 
+     [java] CT notification: Time [clock=73, time=2015-05-22 11:18:11.585]
+     [java] CT players (clone,for): 
+     [java] Client 20 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] 2015-05-22 11:22:09,398  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+     [java]  class name: java.lang.Object
+     [java]  uid: 99fbd4a9-b159-42ce-8eca-064b2dabcb11
+     [java]  expiration: 1432289938280
+     [java]  left 191046
+     [java]  event cause: null
+     [java] 
+     [java] 2015-05-22 11:22:09,397  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:46)
+     [java] 	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1211)
+     [java] 	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+     [java] 	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+     [java] 	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] Caused by: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+     [java] 	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+     [java] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+     [java] 	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+     [java] 	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] Client 10 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] Client 40 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] Client 30 disconnected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [java] CT notification: Time [clock=74, time=2015-05-22 11:22:09.441]
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+     [java] ERROR root                           - Error sending game board messagejavax.jms.IllegalStateException: The Session is closed
+     [java] CT players (clone,for): 
+     [java] 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] 
+     [java] 2015-05-22 11:22:09,427  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] 2015-05-22 11:22:09,429  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] 2015-05-22 11:22:09,430  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+     [java] 	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+     [java] 	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+     [java] 	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+     [java] 	at java.util.TimerThread.mainLoop(Timer.java:512)
+     [java] 	at java.util.TimerThread.run(Timer.java:462)
+     [java] 
+     [java] 2015-05-22 11:22:14,987  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+     [java] 2015-05-22 11:22:16,438  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka-53770-1432289095275-1:0) is shutting down
+     [java] INFO  TransportConnector             - Connector tcp://kafka:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka-53770-1432289095275-1:0) stopped
+     [java] Java Result: 143
+
+BUILD SUCCESSFUL
+Total time: 19 minutes 35 seconds

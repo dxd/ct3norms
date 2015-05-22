@@ -278,4 +278,11 @@ public class CTsetup {
 		 System.out.println("CT writes setGoal: "+goal.toString());
 		 createEntry(goal);
 	}
+
+	public void writeGroup(int perGameId) {
+		Group g = new Group("g",getAgent(perGameId),clock);
+		System.out.println("CT writes setGoal: "+g.toString());
+		 createEntry(g);
+		
+	}
 }
