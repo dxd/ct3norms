@@ -367,7 +367,7 @@ function createGoals() {
 function updateProgressBar() {
 
 	if (game.isEnded == true) {
-		self.location = "ended.jsp";
+		//self.location = "ended.jsp";
 	}
 	
 	if (phaseChanged == true) {			
@@ -656,7 +656,7 @@ function sendNormColor(playerIDSend,recipientID,color,norm,sanction)
 		url : "sendNormColor.jsp",
 		data : "json=" + stringJ,
 		success : function(msg) {
-			 alert(stringJ);
+			 //alert(stringJ);
 		}
 	});
 }
@@ -1631,7 +1631,7 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 function InsertIntoProposalsTable(o) {
 
 	for ( var i = 0; i < o.msgs.length; i++) {
-		 alert("msg to: " + o.msgs[i].ReceiverID);
+		 //alert("msg to: " + o.msgs[i].ReceiverID);
 		addRecordToTable("Proposal", o.msgs[i].SenderID, o.msgs[i].ReceiverID, o.msgs[i].MessageId,
 				o.msgs[i].SentChips, o.msgs[i].ReceivedChips);
 		

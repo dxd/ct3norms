@@ -1,27 +1,6 @@
 
 Include: agent.2apl
 
-
-Beliefs:
-wingame :- reachedGoal. 
-reachedGoal :- goalPos(0,X,Y) , agentPos(X,Y).
-received(X,Y,closed) :- received(X,Y,closed(Z)).
-initialized :- event(game_initiatized), initialized(yes).
-initialized(no).
-phase(none).
-
-  raise(X,NewX):- NewX is X + 1.
-  lower(X,NewX):- NewX is X - 1.
-
-  points(1000).
-  position(3, 3).
-  clock(0).
-
-
-Goals:
-initialized, wingame, update
-
-
 BeliefUpdates:
 //{message(TYPE,ID,open)}										CloseMessage(TYPE,ID,RESPONSE)	{not message(TYPE,ID,open), message(TYPE,ID,RESPONSE)}
 {true} 														Failed(X) 						{failed(X)}
@@ -56,7 +35,7 @@ BeliefUpdates:
 // sent a proposal
 {true}														Sent(TYPE,ID,STATUS)		    {sent(TYPE,ID,STATUS)}
 // sent an answer
-{received(proposal,ID,open)}								Sent(ANSWER,ID)					{not received(proposal,ID,open), received(proposal,ID,closed(ANSWER))}
+{received(proposal,ID,open)}								Sent(ANSWER,ID)					{not receivedP(proposal,ID,open), receivedP(proposal,ID,closed(ANSWER))}
 
 
 
@@ -69,41 +48,6 @@ initialize()
 //  reading(5,5) :: 30 >> 1
 
 
-PG-rules:
-
-//propose <- phase(communicationphase) and not sent(Pp,ID,open) | makeProposal()
-
-//respond <- received(TYPE,ID,open) and phase(communicationphase) | makeResponse(ID)
-
-received(TYPE,ID,closed) <- phase(communicationphase) | makeResponse(ID)
-receivedP(TYPE,ID,accept) <- phase(communicationphase) | makeResponse(ID)
-
-initialized <- event(game_initialized) | {
-    dropgoal(initialized);
-    Initialize()
-}
-
-update <- event(phasechange) | update()
-update <- phase(communicationphase) and role(X,proposer) and not sent(Pp,ID,open) | makeProposal()
-//update <- phase(movementphase) | moveStepToGoal()
-
-at(X,Y,C) <- phase(communicationphase) or phase(movementphase) | {
-
-  [moveStepToGoal(neco,X,Y,C)]
-    
-} : 100
-
-//acceptRequests <- true | {
-
-//}
-
-//color(Color) <- true | {
-
-//}
-
-//makeMove(X,Y) <- true | {
-
-//}
 
 PC-rules:
 
@@ -273,17 +217,7 @@ initialize() <- initialized(no) | {
 	Initialize() 
 }
 
-moveStepToGoal(ID,X,Y,C) <- true | {
-	@ctenv( moveStepToGoal(X,Y), L1);
-	B( L1 = [actionresult(Z)]);
-	MoveStepToGoal(Z);
-	if B(not false=Z) then {
-		B([A,B] = Z);
-		UpdatePosition(A,B);
-		if B([A,B] = [X,Y])
-			then dropgoal(at(X,Y,C))
-	}
-}
+
 
 // TODO: give a goalidentifier to requestChips
 requestChips(OPPPIN) <- opponentId(OPPID) | {

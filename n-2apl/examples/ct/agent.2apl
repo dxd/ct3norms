@@ -1,32 +1,119 @@
+Beliefs:
+wingame :- reachedGoal. 
+reachedGoal :- goalPos(0,X,Y) , agentPos(X,Y).
+received(X,Y,closed) :- received(X,Y,closed(Z)).
+useColor(Color) :- position(X,Y,Z),tile(Color,X,Y).
+at(X,Y,Z) :- position(X,Y,W).
+initialized :- event(game_initiatized), initialized(yes).
+initialized(no).
+phase(none).
+color(Color):- position(X,Y,C),
+	tile(Color,X,Y).
+receivedP(closed(reject),_) :-receivedP(_,_,closed(reject)).
+
+  raise(X,NewX):- NewX is X + 1.
+  lower(X,NewX):- NewX is X - 1.
+
+  points(1000).
+  position(3, 3, 0).
+  clock(0).
+
+
+Goals:
+initialized, wingame, update
+
 BeliefUpdates:
   { clock(Old) } UpdateClock(New) { not clock(Old), clock(New) }
   { true } AddReading(at(X,Y),Value,Agent,Clock) { reading(at(X,Y),Value,Agent,Clock) }
-  { position(X,Y) } UpdatePosition(X1,Y1) { not position(X,Y), position(X1,Y1) }
   { points(X) } UpdatePoints(X1) { not points(X), points(X1) }
-  { position(X,Y) } UpdatePosition(X1,Y1) { not position(X,Y), position(X1,Y1) }
+  { position(X,Y,Clock) } UpdatePosition(X1,Y1,Clock) { not position(X,Y,Clock), position(X1,Y1,Clock), moveTooFast(x)}
+  { position(X,Y,Clock) and moveTooFast(x) } UpdatePosition(X1,Y1,Clock1) { not position(X,Y,Clock), position(X1,Y1,Clock), not moveTooFast(x) }
+  { position(X,Y,Clock) } UpdatePosition(X1,Y1,Clock1) { not position(X,Y,Clock), position(X1,Y1,Clock)}
+  { true } UpdateTile(Color,X,Y) { tile(Color,X,Y) }
+
+PG-rules:
+//acceptRequests <- true | {
+
+//}
+
+useColor(Color) <- phase(movementphase) or phase(communicationphase) | { //not the closest one
+	[B(clock(Clock));
+	G(at(X,Y,_));
+	moveStepToGoal(Color,X,Y,Clock)]
+//	B(position(X1,Y1,_))
+///	if B(tile(Color,X1,Y1)) then
+//			dropgoal(useColor(Color))
+//		else
+//			moveStepToGoal(Color,X,Y,Clock)]
+} : 100
+
+//makeMove(X,Y) <- true | {
+
+//}
+//propose <- phase(communicationphase) and not sent(Pp,ID,open) | makeProposal()
+
+//respond <- received(TYPE,ID,open) and phase(communicationphase) | makeResponse(ID)
+
+received(TYPE,ID,closed) <- phase(communicationphase) | makeResponse(ID)
+receivedP(TYPE,ID,accept) <- phase(communicationphase) | makeResponse(ID)
+
+initialized <- event(game_initialized) | {
+    dropgoal(initialized);
+    Initialize()
+}
+
+update <- event(phasechange) | update()
+//update <- event(normphase) and ra | sendNorms()
+update <- phase(communicationphase) and role(X,proposer) and not sent(Pp,ID,open) | makeProposal()
+//update <- phase(movementphase) | moveStepToGoal()
+
+at(X,Y,C) <- phase(communicationphase) or phase(movementphase) | {
+
+  [moveStepToGoal(neco,X,Y,C)
+//  B(position(X1,Y1,_));
+//	if B([X1,Y1] = [X,Y]) then
+// 		dropgoal(at(X,Y,C))
+// 	else
+// 		moveStepToGoal(neco,X,Y,C)
+  ]
+    
+} : 100
 
 PC-rules:
+moveStepToGoal(ID,X,Y,C) <- true | {
+
+	@ctenv( moveStepToGoal(ID,X,Y), L1);
+	B( L1 = [actionresult(Z)]);
+	B(clock(Clock));
+	MoveStepToGoal(Z);
+	B(position(X1,Y1,_));
+	if 	B([A,B] = Z) then {
+		if B(not [X1,Y1] = Z)  then {
+		UpdatePosition(A,B,Clock)
+		}
+	}
+}
 
 ///////////// Moving
 
-moveTo(X,Y) <- position(X2,Y2) and Y2 < Y and raise(Y2,NewY) | { 
+moveTo(X,Y) <- position(X2,Y2,_) and Y2 < Y and raise(Y2,NewY) | { 
     updatePos(X2,NewY); moveTo(X,Y)
 }
-moveTo(X,Y) <- position(X2,Y2) and X2 < X and raise(X2,NewX) | { 
+moveTo(X,Y) <- position(X2,Y2,_) and X2 < X and raise(X2,NewX) | { 
     updatePos(NewX,Y2); moveTo(X,Y)
 }
-moveTo(X,Y) <- position(X2,Y2) and X2 > X and lower(X2,NewX) | { 
+moveTo(X,Y) <- position(X2,Y2,_) and X2 > X and lower(X2,NewX) | { 
     updatePos(NewX,Y2); moveTo(X,Y)
 }
-moveTo(X,Y) <- position(X2,Y2) and Y2 > Y and lower(Y2,NewY) | { 
+moveTo(X,Y) <- position(X2,Y2,_) and Y2 > Y and lower(Y2,NewY) | { 
     updatePos(X2,NewY); moveTo(X,Y)
 }
-moveTo(X,Y) <- position(X,Y) | { skip }
+moveTo(X,Y) <- position(X,Y,_) | { skip }
 
-updatePos(NewX,NewY) <- position(X,Y) | {
+updatePos(NewX,NewY) <- position(X,Y,_) | {
     
-   // B(clock(Clock));
-    UpdatePosition(NewX,NewY)
+    B(clock(Clock));
+    UpdatePosition(NewX,NewY,Clock)
   //  @ctenv(write(status(position(NewX,NewY),Clock),-1),_)   
 } 
 
@@ -45,7 +132,10 @@ event(points(Points),ctenv) <- true | {
    UpdatePoints(Points)
 }
 event(position(X,Y,Clock),ctenv) <- true | {
-   UpdatePosition(X,Y)
+   UpdatePosition(X,Y,Clock)
+}
+event(tile(Color,X,Y,Clock),ctenv) <- true | {
+   UpdateTile(Color,X,Y)
 }
 
 event(FUNCTION, NAME) <- true | {
@@ -78,6 +168,7 @@ event(FUNCTION, NAME) <- true | {
 }
 
 
+
 adoptProhibition(at(X,Y,_), reduce(_,Value)) <- true | {
 	B(clock(Clock));
     aprohibition(at(X,Y,Clock) -> reduce(Value))
@@ -86,12 +177,11 @@ adoptProhibition(color(Color,Thing), reduce(_,Value)) <- true | {
     aprohibition(color(Color) -> reduce(Value))
 }
 adoptProhibition(rejectRequests(Thing), reduce(_,Value)) <- true | {
-    aprohibition(rejectRequests -> reduce(Value))
+    aprohibition(receivedP(closed(reject),Thing) -> reduce(Value))
 }
 adoptProhibition(moveTooFast(Thing), reduce(_,Value)) <- true | {
-    aprohibition(moveTooFast -> reduce(Value))
+    aprohibition(moveTooFast(x,Thing) -> reduce(Value))
 }
-
 adoptObligation(at(X,Y,_), D, reduce(_,Value)) <- true | {
 	B(clock(Clock));
     adopta(at(X,Y,Clock) : D -> reduce(Value))
@@ -100,7 +190,7 @@ adoptObligation(surround(X,Y), D, reduce(Group,Sanction)) <- true | {
     adopta(surround(X,Y) : D -> reduce(Sanction))
 }
 adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- true | {
-    adopta(color(Color) : D -> reduce(Sanction))
+    adopta(useColor(Color) : D -> reduce(Sanction))
 }
 adoptObligation(acceptRequests(Thing), D, reduce(Group,Sanction)) <- true | {
     adopta(acceptRequests : D -> reduce(Sanction))

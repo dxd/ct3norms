@@ -105,10 +105,11 @@ public class CTsetup {
 			try {
 				session.addListener(new Position(), handler); 
 				session.addListener(new Time(), handler); 
+				session.addListener(new Points(), handler); 
 				for (int i = 0;  i <agents.length; i++) {
 					session.addListener(new Obligation(agents[i]), handler); 
 					session.addListener(new Prohibition(agents[i]), handler); 
-					session.addListener(new Points(agents[i]), handler); 
+					session.addListener(new Points(), handler); 
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

@@ -1,0 +1,82 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-05-21 19:27:37,802  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 405 milliseconds
+2015-05-21 21:26:35,874  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: a13f5ace-9c28-4397-830e-656383797b26
+ expiration: 1432233941986
+ left 6053888
+ event cause: null
+
+2015-05-21 21:26:35,877  SEVERE [edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat] - null; Caused by: javax.jms.JMSException: Broken pipe
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1157)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1549)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.net.SocketException: Broken pipe
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:136)
+	at org.apache.activemq.transport.tcp.TcpBufferedOutputStream.flush(TcpBufferedOutputStream.java:109)
+	at java.io.DataOutputStream.flush(DataOutputStream.java:106)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:119)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:141)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:47)
+	at org.apache.activemq.transport.ResponseCorrelator.oneway(ResponseCorrelator.java:60)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1155)
+	... 6 more
+
+2015-05-21 21:26:35,877  SEVERE [edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat] - null; Caused by: javax.jms.JMSException: Broken pipe
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1157)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1549)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.net.SocketException: Broken pipe
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:136)
+	at org.apache.activemq.transport.tcp.TcpBufferedOutputStream.flush(TcpBufferedOutputStream.java:109)
+	at java.io.DataOutputStream.flush(DataOutputStream.java:106)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:119)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:141)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:47)
+	at org.apache.activemq.transport.ResponseCorrelator.oneway(ResponseCorrelator.java:60)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1155)
+	... 6 more
+
+2015-05-21 21:26:35,877  SEVERE [edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat] - null; Caused by: javax.jms.JMSException: Broken pipe
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1157)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1549)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.net.SocketException: Broken pipe
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:136)
+	at org.apache.activemq.transport.tcp.TcpBufferedOutputStream.flush(TcpBufferedOutputStream.java:109)
+	at java.io.DataOutputStream.flush(DataOutputStream.java:106)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:119)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:141)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:47)
+	at org.apache.activemq.transport.ResponseCorrelator.oneway(ResponseCorrelator.java:60)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1155)
+	... 6 more
+

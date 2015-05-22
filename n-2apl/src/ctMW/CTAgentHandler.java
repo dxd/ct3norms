@@ -892,13 +892,26 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	 * @param gy: y coordinate of goal
 	 */
 
-	public Term moveStepToGoal(String agentname, APLNum x, APLNum y) throws
+	public Term moveStepToGoal(String agentname,APLIdent goal, APLNum x, APLNum y) throws
 			ExternalActionFailedException {
 
 		ClientGameStatus cgs = client.getGameStatus();
 		Scoring scoring = cgs.getScoring();
-		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 10);
-
+		//Scoring scoring = new Scoring(0,0,0);
+		String colorGoal = goal.getName();
+		System.out.println(agentname+"[CTAH] going goal: " +x+","+y+" color: "+ colorGoal);
+		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 1000);
+		System.out.println(agentname+"[CTAH] paths: " +shortestPaths.size());
+		if (cgs.getBoard().getColors().contains(colorGoal)) {
+			ArrayList<Path> paths = new ArrayList<Path>();
+			for (Path p : shortestPaths) {
+				ChipSet c = p.getRequiredChips(cgs.getBoard());
+				if (c.getColors().contains(colorGoal))
+					paths.add(p);
+			}
+			shortestPaths = paths;
+		}
+			
 		
 		// Get the best path available
 		Path chosenPath = shortestPaths.remove(0); // why remove(0)??
@@ -910,29 +923,31 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			if (!proposalSent) {
 				proposalSent = true;
 				PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
-				waiter.doWait(10, 20);
+				waiter.doWait(9, 10);
 				//waiter.doWait(RecipConstants.minProposeTime, RecipConstants.maxProposeTime);
 				makeProposal(agentname,color);
-				
+				//waiter.doWait(9, 10);
 			}
-			return new APLIdent("false");
-		}
-		proposalSent = false;
-
-		System.out.println(agentname+"[CTAH] going to: " + point);
-		
-		// Send move request
-		client.communication.sendMoveRequest(point);
-		if (cgs.getMyPlayer().getPosition().equals(point))
-		{
 			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
 			System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
 			return uTD; 
 		}
-		else {		
-			System.out.println("[CTAH] moveStepToGoal returns: " + false);
-			return new APLIdent("false");
-		}
+		proposalSent = false;
+
+		System.out.println(agentname+"[CTAH] going to: " + point + "goal: " +x+","+"y color: "+ colorGoal);
+		
+		// Send move request
+		client.communication.sendMoveRequest(point);
+		//if (cgs.getMyPlayer().getPosition().equals(point))
+		//{
+			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
+			System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
+			return uTD; 
+	//	}
+	//	else {		
+	//		System.out.println("[CTAH] moveStepToGoal returns: " + false);
+	//		return new APLIdent("false");
+	//	}
 	}
 
 	public void setGoal(String agentname, APLNum apl_id, APLNum xcoor,

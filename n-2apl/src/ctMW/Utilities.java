@@ -288,12 +288,17 @@ public class Utilities {
 		else if(timeEntry instanceof Position){ // reading(at(X,Y),Value,Agent,Clock)
 			Position position = (Position) timeEntry;
 			//Term term = constructTerm("at("+reading.cell.x+","+reading.cell.y+")");
-			return new APLFunction("position", new Term[]{new APLNum(position.cell.x),new APLNum(position.cell.x),new APLNum(position.clock)}); // construct result
+			return new APLFunction("position", new Term[]{new APLNum(position.cell.x),new APLNum(position.cell.y),new APLNum(position.clock)}); // construct result
 		} 
 		else if(timeEntry instanceof Chip){ // reading(at(X,Y),Value,Agent,Clock)
 			Chip chip = (Chip) timeEntry;
 			//Term term = constructTerm("at("+reading.cell.x+","+reading.cell.y+")");
 			return new APLFunction("chip", new Term[]{new APLIdent(chip.agent),new APLIdent(chip.color),new APLNum(chip.getNumber().intValue()),new APLNum(chip.clock)}); // construct result
+		} 
+		else if(timeEntry instanceof Tile){ 
+			Tile tile = (Tile) timeEntry;
+			//Term term = constructTerm("at("+reading.cell.x+","+reading.cell.y+")");
+			return new APLFunction("tile", new Term[]{new APLIdent(tile.color),new APLNum(tile.cell.x),new APLNum(tile.cell.y),new APLNum(tile.clock)}); // construct result
 		} 
 		else if(timeEntry instanceof Obligation){ //obligation(Goal, Deadline, Sanction)
 			Obligation o = (Obligation) timeEntry; 
@@ -358,7 +363,7 @@ public class Utilities {
 
 	public Term constructTerm(String term) {
 		term = term.replace("[","");
-		term.replace("]","");
+		term = term.replace("]","");
 
 		int tx = term.indexOf("(");
 		String s = term.substring(0, tx).trim();

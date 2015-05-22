@@ -5,7 +5,7 @@ norm(
     group_surround(g),
     g, // the subject agent
     ( group(g), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 30,[reduce(g,500)]) // prohibition format
+    obligation([surround(X,Y)],now + 20,[reduce(g,500)]) // prohibition format
     ).
     
 %agents group norms from RA  
@@ -13,14 +13,14 @@ norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
     ( pursuer(Agent), detached(group_surround(g)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
-    obligation([at(X,Y,Agent)],now + 26,[reduce(Agent, 500)]) // prohibition format
+    obligation([at(X,Y,Agent)],now + 16,[reduce(Agent, 500)]) // prohibition format
     ).  
 
 %individual prohibitions to use colored tiles
 norm(
 not_enter_tile(Thing),
 Thing, // the subject agent
-( pursuer(Thing), color(Thing,Color,no,S), tile(X,Y,Color)), // precondition
+( pursuer(Thing), color(Thing,Color,no,S)), // precondition
 prohibition([color(Color,Thing)],[reduce(Thing,S)]) // prohibition format
 ).
 
@@ -28,7 +28,7 @@ prohibition([color(Color,Thing)],[reduce(Thing,S)]) // prohibition format
 norm(
 enter_tile(Thing),
 Thing, // the subject agent
-( pursuer(Thing), color(Thing,Color,yes,S), tile(X,Y,Color)), // precondition
+( pursuer(Thing), color(Thing,Color,yes,S)), // precondition
 obligation([color(Color,Thing)],now + 20,[reduce(Thing,S)]) // prohibition format
 ).
 
@@ -37,7 +37,7 @@ norm(
 acceptRequests(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), acceptPolicy(Thing)), // precondition
-obligation([acceptRequests(Thing)],now + 30,[reduce(Thing,500)]) // prohibition format
+obligation([acceptRequests(Thing)],now + 20,[reduce(Thing,500)]) // prohibition format
 ).
 
 %individual prohibitions to reject requests
@@ -61,11 +61,13 @@ norm(
 makeMove(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), phase(movement), at(X,Y,Thing)), // precondition
-obligation([makeMove(X,Y,Thing)],now + 30,[reduce(Thing,300)]) // prohibition format
+obligation([makeMove(X,Y,Thing)],now + 20,[reduce(Thing,300)]) // prohibition format
 ).
 
 
-//color(Color,Thing).
+color(Color,Agent) :-
+	at(X,Y,Agent),
+	tile(X,Y,Color).
 //moveTooFast(Thing).
 makeMove(Thing).
 
@@ -78,6 +80,8 @@ acceptRequests(A):-
 	
 hierachical(group_task(_)).
 
+at(X,Y,Agent) :- at(X,Y,Agent,_).
+
 pursuer(a10).
 pursuer(a20).
 pursuer(a30).
@@ -89,7 +93,7 @@ group_member(g,a10).
 group_member(g,a20).
 group_member(g,a30).
 group_member(g,a40).
-ra(g,a10).
+ra(g,a20).
 
 //color(a10,red,yes).
 //color(a20,blue,yes).
@@ -223,14 +227,16 @@ Effects:
 {clock(Old)} time(New) {not clock(Old), clock(New)}
 {true} time(X) {clock(X)}
 
-{at(X1,Y1,Agent)} position(Agent, cell(X,Y), Clock) {not at(X1,Y1,Agent), at(X,Y,Agent)} 
-{true} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent)}
+{at(X1,Y1,Agent,Clock)} position(Agent, cell(X,Y), Clock) {not at(X1,Y1,Agent,Clock), at(X,Y,Agent,Clock), moveTooFast(Agent)} 
+{at(X1,Y1,Agent,Clock) and  moveTooFast(Agent)} position(Agent, cell(X,Y), Clock1) {not at(X1,Y1,Agent,Clock), at(X,Y,Agent,Clock1), not moveTooFast(Agent)} 
+{at(X1,Y1,Agent,Clock)} position(Agent, cell(X,Y), Clock1) {not at(X1,Y1,Agent,Clock), at(X,Y,Agent,Clock1)} 
+{true} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent,Clock)}
 
 {true} goal(cell(X,Y), null, Clock) {goal(X,Y,Clock)}
 {true} goal(cell(X,Y), Agent, Clock) {goal(X,Y, Agent,Clock)}
 {true} proposal(Id,A1,A2,Clock) {proposal(Id,A1,A2,Clock)}
 {true} response(Id,X,Clock) {response(Id,X,Clock)}
-{tile(X,Y,Color)} tile(cell(X1,Y1),Color1,Clock) {not tile(X,Y,Color), tile(X1,Y1,Color1)}
+{tile(X,Y,Color)} tile(cell(X,Y),Color1,Clock) {not tile(X,Y,Color), tile(X,Y,Color1)}
 {true} tile(cell(X,Y),Color,Clock) {tile(X,Y,Color)}
 {chip(A,Color,Y,C)} chip(A,Color1,X,Clock) {not chip(A,Color,Y,C), chip(A,Color1,X,Clock)}
 {true} chip(A,Color,X,Clock) {chip(A,Color,X,Clock)}

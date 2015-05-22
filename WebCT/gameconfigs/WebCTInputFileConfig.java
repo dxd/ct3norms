@@ -113,7 +113,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			ph.addPhase("Communication Phase", 60);		
 		}
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Movement Phase", 60);			
+			ph.addPhase("Movement Phase", 120);			
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);

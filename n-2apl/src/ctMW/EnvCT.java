@@ -459,10 +459,10 @@ public class EnvCT  extends Environment implements ExternalTool {
 	 * @param gy: y coordinate of goal
 	 */
 
-	public Term moveStepToGoal(String agentname, APLNum ax,
+	public Term moveStepToGoal(String agentname, APLIdent color, APLNum ax,
 			APLNum ay) throws
 			ExternalActionFailedException {
-		return agents.get(agentname).moveStepToGoal(agentname,ax,ay);
+		return agents.get(agentname).moveStepToGoal(agentname, color,ax,ay);
 	}
 
 
@@ -665,7 +665,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 		if (t.toString() == "null")
 			return;
 		throwEvent((APLFunction) t, new String[]{agent});
-		System.out.println("Event sent to object      "+agent+ " " +t.toString());
+		System.out.println("Event sent to agent      "+agent+ " " +t.toString());
 
 	}
 	public void notifyAgent(String agent, ArrayList<TimeEntry> r) {
