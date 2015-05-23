@@ -596,6 +596,11 @@ public class EnvCT  extends Environment implements ExternalTool {
 			return new APLIdent("true");
 		}catch (Exception e){ e.printStackTrace(); return new APLIdent("null"); }
 	}
+	public void write(String sAgent, int x, int y) {
+		Position p = new Position(sAgent, new Cell(x,y),clock);
+		System.out.println("Agent writes: "+p.toString());
+		space.write(p);
+	}
 
 
 	/*

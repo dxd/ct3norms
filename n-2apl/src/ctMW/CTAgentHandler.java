@@ -939,7 +939,10 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 					//proposalSent = false;					
 				}
 			}
-			client.communication.sendMoveRequest(point);
+			if (client.communication.sendMoveRequest(point)) {
+				//env.write(agentname, point.row, point.col);
+			}
+				
 
 			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
 			System.out.println("[CTAH] moveStepToGoal returns: " + uTD);

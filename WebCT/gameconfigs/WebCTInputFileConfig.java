@@ -383,6 +383,12 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	public int getPlayerScore(PlayerStatus ps) {
 		return ps.getScore();
 	}
+	
+	@Override
+	 public boolean doMove(int perGameId, RowCol newpos) {
+		spaces.writePosition(perGameId, newpos);
+	    return gs.doMove(perGameId, newpos);
+	}
 
 
 }

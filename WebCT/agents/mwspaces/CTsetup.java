@@ -103,13 +103,12 @@ public class CTsetup {
 			CTHandler handler = new CTHandler(this);
 			
 			try {
-				session.addListener(new Position(), handler); 
+				//session.addListener(new Position(), handler); 
 				session.addListener(new Time(), handler); 
 				session.addListener(new Points(), handler); 
 				for (int i = 0;  i <agents.length; i++) {
 					session.addListener(new Obligation(agents[i]), handler); 
 					session.addListener(new Prohibition(agents[i]), handler); 
-					session.addListener(new Points(), handler); 
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -141,7 +140,7 @@ public class CTsetup {
 		if (e instanceof tuplespace.Time) {
 			this.clock = e.getClock();
 			gs.getBoard().setClock(clock);
-			writePlayers(gs.getPlayers());
+//			writePlayers(gs.getPlayers());
 		} else if (e instanceof tuplespace.Points) {
 			Points p = (Points) e;
 			Integer i = getID(getPin(p.agent));
@@ -151,16 +150,17 @@ public class CTsetup {
 			}
 		}
 		
-		else if (e instanceof tuplespace.Position) {
-			Position p = (Position) e;
-			//System.out.println("position: "+p);
-			Integer id = getID(getPin(p.agent));
-			RowCol newLoc = new RowCol(p.cell.x,p.cell.y);
-			if (!gs.getPlayerByPerGameId(id).getPosition().equals(newLoc)) {
-				if (gs.doMove(id, newLoc))
-					writePlayers(gs.getPlayers());
-			}
-		} else if (e instanceof Obligation) {
+//		else if (e instanceof tuplespace.Position) {
+//			Position p = (Position) e;
+//			//System.out.println("position: "+p);
+//			Integer id = getID(getPin(p.agent));
+//			RowCol newLoc = new RowCol(p.cell.x,p.cell.y);
+//			if (!gs.getPlayerByPerGameId(id).getPosition().equals(newLoc)) {
+//				if (gs.doMove(id, newLoc))
+//					writePlayers(gs.getPlayers());
+//			}
+//		} 
+		else if (e instanceof Obligation) {
 			Obligation o = (Obligation) e;
 			//System.out.println("CT obligation: "+o);
 			Integer i = getID(getPin(o.agent));
@@ -225,7 +225,7 @@ public class CTsetup {
 	}
 
 	public void writePlayers(Set<PlayerStatus> ps) {
-		System.out.println("CT players (clone,for): ");
+		//System.out.println("CT players (clone,for): ");
 		Hashtable <Integer,PlayerStatus> newold = new Hashtable<Integer, PlayerStatus>();
 		for (PlayerStatus p : ps) {
 					
@@ -256,7 +256,7 @@ public class CTsetup {
 		}		
 	}
 
-	private void writePosition(int perGameId, RowCol position) {
+	public void writePosition(int perGameId, RowCol position) {
 		Position p = new Position(getAgent(perGameId),new Cell(position.row,position.col),clock);
 		System.out.println("CT writes position: "+p.toString());
 		createEntry(p);

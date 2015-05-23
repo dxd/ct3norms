@@ -56,44 +56,12 @@ PG-rules:
 
 
 
-surround(X,Y) <- true | {
-	[
-	Surround(X,Y);
-	sendSouth(a10,X,Y,100);
-	sendWest(a20,X,Y,100);
-	sendEast(a30,X,Y,100);
-	sendNorth(a40,X,Y,100);
-	color(white,a10,yes,100);
-	color(white,a20,yes,100);
-	color(white,a30,yes,100);
-	color(white,a40,yes,100);
-	color(blue,a10,no,100);
-	color(blue,a20,no,100);
-	color(blue,a30,no,100);
-	color(blue,a40,no,100);
-	dropgoal(surround(X,Y))
-	]
-} : 150
+
 
 
 PC-rules:
 
-sendNorth(Agent,X,Y,S) <- raise(Y,Y1) and gsurround(GX,GY) | {
-	@ctenv( setGoal(Agent,X,Y1,GX,GY,S),L)
-}
-sendSouth(Agent,X,Y,S) <- lower(Y,Y1) and gsurround(GX,GY) | {
-	@ctenv( setGoal(Agent,X,Y1,GX,GY,S),L)
-}
-sendEast(Agent,X,Y,S) <- raise(X,X1) and gsurround(GX,GY) | {
-	@ctenv( setGoal(Agent,X1,Y,GX,GY,S),L)
-}
-sendWest(Agent,X,Y,S) <- lower(X,X1) and gsurround(GX,GY) | {
-	@ctenv( setGoal(Agent,X1,Y,GX,GY,S),L)
-}
 
-color(Color,Agent,Yes,S) <- true | {
-	@ctenv( setColor(Agent,Color,Yes,S),L)
-}
 
 update() <- true | {
 	getPhase();
