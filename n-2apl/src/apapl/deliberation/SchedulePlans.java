@@ -215,25 +215,31 @@ public class SchedulePlans implements DeliberationStep {
 
 		for (Plan plan : ps.getPlans())
 		{
-			//plan.evaluateArguments();
+			
 			if (plan instanceof BeliefUpdateAction) {
 				APLFunction p = ((BeliefUpdateAction) plan).getPlan();
+				
 				SubstList<Term> theta = new SubstList<Term>();
-				Beliefbase beliefbase = module.getBeliefbase();
+				Beliefbase beliefbase = module.getBeliefbase().clone();
 				BeliefUpdate c;
 				c = module.getBeliefUpdates().selectBeliefUpdate(p,beliefbase,theta);
-
+				
 				if (c == null)
 					continue;
-
+			
 				for (Literal l : c.getPost()) {
 					Literal lcopy = l.clone();
 					lcopy.applySubstitution(theta);
-					Literal pl = pp.getProhibition();
-					//System.out.println(lcopy.toString() +"  "+pl.toString());
-					if (lcopy.equals(pl))
-						return true;
+					
+					beliefbase.assertBelief(lcopy);
+					System.out.println(lcopy.toString());
+				
 				}
+				LinkedList<Literal> pl = pp.getProhibitions();	
+				System.out.println(beliefbase.toString());
+				System.out.println(pl.toString());
+				if (beliefbase.doGoalQuery(new Goal(pl), theta))
+					return true;
 			}
 		}
 		return false;

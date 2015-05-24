@@ -1,3 +1,5 @@
+Include: norms.2apl
+
 Beliefs:
 useColor(Color) :- position(X,Y,Z),tile(Color,X,Y).
 at(X,Y,Z) :- position(X,Y,W).
@@ -57,15 +59,16 @@ BeliefUpdates:
 {true}														Sent(TYPE,ID,STATUS)		    {sent(TYPE,ID,STATUS)}
 // sent an answer
 {received(proposal,ID,open)}								Sent(ANSWER,ID)					{not receivedP(proposal,ID,open), receivedP(proposal,ID,closed(ANSWER))}
+{true}														Surround(X,Y)					{gsurround(X,Y)}  
   
-//Plans:
-//initialize()
+Plans:
+initialize()
 
 PG-rules:
 
 surround(X,Y) <- role(ID,ra) | {
 	[
-//	Surround(X,Y);
+	Surround(X,Y);
 	sendSouth(a10,X,Y,100);
 	sendWest(a20,X,Y,100);
 	sendEast(a30,X,Y,100);
@@ -74,10 +77,10 @@ surround(X,Y) <- role(ID,ra) | {
 	color(white,a20,yes,100);
 	color(white,a30,yes,100);
 	color(white,a40,yes,100);
-	color(blue,a10,no,100);
-	color(blue,a20,no,100);
-	color(blue,a30,no,100);
-	color(blue,a40,no,100);
+	color(blue,a10,no,200);
+	color(blue,a20,no,200);
+	color(blue,a30,no,200);
+	color(blue,a40,no,200);
 	dropgoal(surround(X,Y))
 	]
 } : 150
@@ -110,6 +113,14 @@ at(X,Y,C) <- phase(communicationphase) or phase(movementphase) | {
 } : 100
 
 PC-rules:
+
+
+initialize() <- initialized(no) | {
+    getPhase();
+    getId();
+    B(agentId(ID));
+    getRole(ID)
+}
 
 sendNorth(Agent,X,Y,S) <- raise(Y,Y1) and gsurround(GX,GY) | {
 	@ctenv( setGoal(Agent,X,Y1,GX,GY,S),L)
@@ -255,12 +266,6 @@ getScoreCurrentChips(ID) <- true | {
 	GetScoreCurrentChips(ID,X)
 }
 
-initialize() <- initialized(no) | {
-    getPhase();
-    getId();
-    B(agentId(ID));
-    getRole(ID)
-}
 
 // TODO: give a goalidentifier to requestChips
 requestChips(OPPPIN) <- opponentId(OPPID) | {
@@ -336,101 +341,3 @@ updatePos(NewX,NewY) <- position(X,Y,_) | {
     UpdatePosition(NewX,NewY,Clock)
 //  @ctenv(write(status(position(NewX,NewY),Clock),-1),_)   
 } 
-
-event(obligation([Goal],Deadline,[Sanction]),ctenv) <- true | {
-   adoptObligation(Goal, Deadline, Sanction)
-}
-
-event(prohibition([State],[Sanction]),ctenv) <- true | {
-   adoptProhibition(State,Sanction)
-}
-
-event(clock(Clock),ctenv) <- true | {
-   UpdateClock(Clock)
-}
-event(points(Points),ctenv) <- true | {
-   UpdatePoints(Points)
-}
-event(position(X,Y,Clock),ctenv) <- true | {
-   UpdatePosition(X,Y,Clock)
-}
-event(tile(Color,X,Y,Clock),ctenv) <- true | {
-   UpdateTile(Color,X,Y)
-}
-
-event(FUNCTION, NAME) <- true | {
-	@ctenv( functionToList(FUNCTION), LIST); 
-	if B(LIST=[actionresult([TYPE,ID])]) then { 
-		//Received a proposal
-		if B(TYPE=proposal) then {
-			ReceivedMessage(TYPE,ID,open);
-			//make response
-			adopta(received(TYPE,ID,closed))
-		}
-	}
-	else if B(LIST=[actionresult([TYPE,ID,RESPONSE])]) then {	
-		// Received a response
-		if B(TYPE=response) then {
-			ReceivedMessage(RESPONSE,ID)
-		} 
-	}
-	else if B(LIST=[actionresult([TYPE])]) then {
-		// Received an event
-		ReceivedEvent(TYPE)
-	}
-	else if B(LIST=[actionresult([TYPE,AGENT,ID,RESPONSE])]) then {	
-		// Received a proposal
-		if B(TYPE=proposal) then {
-			ReceivedProposal(AGENT,ID,RESPONSE)
-			//adopta(receivedP(AGENT,ID,RESPONSE))
-		}
-	}	
-}
-
-
-
-adoptProhibition(at(X,Y,_), reduce(_,Value)) <- clock(Clock) | {
-    aprohibition(at(X,Y,Clock) -> reduce(Value))
-}
-adoptProhibition(color(Color,Thing), reduce(_,Value)) <- true | {
-    aprohibition(useColor(Color) -> reduce(Value))
-}
-adoptProhibition(rejectRequests(Thing), reduce(_,Value)) <- true | {
-    aprohibition(receivedP(closed(reject),Thing) -> reduce(Value))
-}
-adoptProhibition(moveTooFast(Thing), reduce(_,Value)) <- true | {
-    aprohibition(moveTooFast(x) -> reduce(Value))
-}
-
-//{	adoptProhibition(rejectRequests(a40), reduce(a40, 500))
-//},
-//{	adoptProhibition(moveTooFast(a40), reduce(a40, 300))
-//}
-
-adoptObligation(at(X,Y,_), D, reduce(_,Value)) <- clock(Clock) | {
-    adopta(at(X,Y,Clock) : D -> reduce(Value))
-}
-adoptObligation(surround(X,Y), D, reduce(Group,Sanction)) <- true | {
-    adopta(surround(X,Y) : D -> reduce(Sanction))
-}
-adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- true | {
-    adopta(useColor(Color) : D -> reduce(Sanction))
-}
-adoptObligation(acceptRequests(Thing), D, reduce(Group,Sanction)) <- true | {
-    adopta(acceptRequests : D -> reduce(Sanction))
-}
-adoptObligation(makeMove(X,Y,Thing), D, reduce(Group,Sanction)) <- true | {
-    adopta(makeMove(X,Y) : D -> reduce(Sanction))
-}
-
-Sanctions:
-	reduce(50)  -> 1,
-	reduce(100) -> 2,
-	reduce(150) -> 3,
-	reduce(200) -> 4,
-	reduce(250) -> 5,
-	reduce(300) -> 6,
-	reduce(400) -> 7, 
-	reduce(500) -> 8,
-	reduce(700) -> 9,
-	reduce(1000) -> 10

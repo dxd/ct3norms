@@ -1,6 +1,7 @@
 package apapl.data;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import apapl.SubstList;
 import apapl.UnboundedVarException;
@@ -157,6 +158,13 @@ public class Prohibition {
 	public void evaluate()
 	{
 		prohibition.evaluate();
+	}
+
+
+	public LinkedList<Literal> getProhibitions() {
+		LinkedList<Literal> list = new LinkedList<Literal>();
+		list.add(prohibition);
+		return list;
 	}
 
 }
