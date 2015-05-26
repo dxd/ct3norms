@@ -297,11 +297,11 @@ public class Goalbase extends Base implements Iterable<Goal>
 		this.logger = logger;
 	}
 
-	public ArrayList<Goal> sorted() {
+	public ArrayList<Goal> sort() {
 		ArrayList<Goal> copy = clone().gb;
 		Collections.sort(copy, new Comparator<Goal>(){
 	           public int compare (Goal g1, Goal g2){
-	               return g1.getPriority().compareTo(g2.getPriority());
+	               return g2.getPriority().compareTo(g1.getPriority());
 	           }
 	       });
 		return copy;

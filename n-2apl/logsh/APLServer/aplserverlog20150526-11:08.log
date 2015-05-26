@@ -1,0 +1,32 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-05-26 11:09:12,809  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 687 milliseconds
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at java.util.concurrent.FutureTask$Sync.innerGet(FutureTask.java:222)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:83)
+	at apapl.deliberation.ExecuteAllPlans.executeEA(ExecuteAllPlans.java:140)
+	at apapl.deliberation.ExecuteAllPlans.execute(ExecuteAllPlans.java:37)
+	at apapl.deliberation.Deliberation.step(Deliberation.java:71)
+	at apapl.APLModule.step(APLModule.java:261)
+	at apapl.MultiThreadedExecutor$ModuleExecutor.run(MultiThreadedExecutor.java:367)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: java.lang.NullPointerException
+	at apapl.Environment.performAction(Environment.java:790)
+	at apapl.plans.ExternalAction.execute(ExternalAction.java:231)
+	at apapl.plans.ExternalAction.execute(ExternalAction.java:74)
+	at apapl.plans.ExternalAction.call(ExternalAction.java:388)
+	at apapl.plans.ExternalAction.call(ExternalAction.java:1)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	... 1 more
+Exception in thread "ModuleExecutor-a10" java.lang.NullPointerException
+	at apapl.Environment.performAction(Environment.java:790)
+	at apapl.plans.ExternalAction.execute(ExternalAction.java:231)
+	at apapl.plans.ExternalAction.execute(ExternalAction.java:74)
+	at apapl.deliberation.ExecuteAllPlans.execute(ExecuteAllPlans.java:65)
+	at apapl.deliberation.Deliberation.step(Deliberation.java:71)
+	at apapl.APLModule.step(APLModule.java:261)
+	at apapl.MultiThreadedExecutor$ModuleExecutor.run(MultiThreadedExecutor.java:367)
+	at java.lang.Thread.run(Thread.java:695)

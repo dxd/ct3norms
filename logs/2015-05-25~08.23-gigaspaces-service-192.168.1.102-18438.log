@@ -1,0 +1,12 @@
+2015-05-25 08:23:39,512  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=32b3947b-210f-40d4-9be7-1b25c779dc1f DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:65388/pid[13275]/1432448551739388232_2_848765984268169510_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:65388/pid[13275]/1432448551739388232_2_848765984268169510_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-05-25 08:23:57,665  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-05-25 08:24:40,104  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred while attempting to register with the lookup service event mechanism; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:65388/pid[13275]/1432448551739388232_2_848765984268169510_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException

@@ -469,7 +469,11 @@ public class EnvCT  extends Environment implements ExternalTool {
 		return agents.get(agentname).moveStepToGoal(agentname, color,ax,ay);
 	}
 
-
+	public Term moveStepToGoalTest(String agentname, APLIdent color, APLNum ax,
+			APLNum ay) throws
+			ExternalActionFailedException {
+		return agents.get(agentname).moveStepToGoalTest(agentname, color,ax,ay);
+	}
 
 	//////////////////////// 2OPL TO JAVASPACE AND 2APL
 	/*
@@ -527,7 +531,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 					//updateClock(0);
 					e.setClock(clock);
 				}
-				System.out.println("Organization writes: "+e.toString());
+				//System.out.println("Organization writes: "+e.toString());
 				space.write(e);
 				//System.out.println(e+"  "+lease+"   "+Lease.FOREVER);
 				ea.intResult = ar_true;
@@ -546,7 +550,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 				//updateClock(0);
 				e.setClock(clock);
 			}
-			System.out.println("Organization notifies object (write): "+e.toString());
+			//System.out.println("Organization notifies object (write): "+e.toString());
 			space.write(e);
 
 			//throwEvent(event, new String[]{recipient});
@@ -580,7 +584,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 	}
 
 	public Term write(String sAgent, APLFunction call, APLNum lease){ 
-		System.out.println("write " + sAgent);
+		//System.out.println("write " + sAgent);
 		try{
 
 			TimeEntry e = utilities.createEntry(sAgent,call);
@@ -590,7 +594,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 				//updateClock(0);
 				e.setClock(clock);
 			}
-			System.out.println("Agent writes: "+e.toString());
+			//System.out.println("Agent writes: "+e.toString());
 			space.write(e);
 
 			return new APLIdent("true");
@@ -598,7 +602,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 	}
 	public void write(String sAgent, int x, int y) {
 		Position p = new Position(sAgent, new Cell(x,y),clock);
-		System.out.println("Agent writes: "+p.toString());
+		//System.out.println("Agent writes: "+p.toString());
 		space.write(p);
 	}
 
@@ -674,7 +678,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 		if (t.toString() == "null")
 			return;
 		throwEvent((APLFunction) t, new String[]{agent});
-		System.out.println("Event sent to agent      "+agent+ " " +t.toString());
+		//System.out.println("Event sent to agent      "+agent+ " " +t.toString());
 
 	}
 	public void notifyAgent(String agent, ArrayList<TimeEntry> r) {
@@ -684,7 +688,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 	}
 
 	public void notifyOrg(TimeEntry te) {
-		System.out.println("org notified sent "+te.toPrologString());
+		//System.out.println("org notified sent "+te.toPrologString());
 		//System.out.println("org notified found "+te.toString());
 		
 		//int[] OOPLformat = te.toIntArray(oopl);

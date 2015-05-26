@@ -1,5 +1,6 @@
 package ctMW;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -47,7 +48,9 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	private int MyPerGameId;
 	private int OppPerGameId;
 	private String agentname;
-	private boolean proposalSent; 
+	private String[] proposals = new String[] {null,null,null,null,null}; 
+	private ArrayList<String> nogo = new ArrayList<String>();
+	private ArrayList<RowCol> nopoints = new ArrayList<RowCol>();
 
 	public CTAgentHandler(EnvCT envCT, String agentname) {
 		env = envCT;
@@ -186,15 +189,21 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 
 
 			BasicProposalDiscourseMessage proposal = (BasicProposalDiscourseMessage) dm;
-			if (type.equals("response")) {
+			if (type.equals("basicproposaldiscussion")) {
 				BasicProposalDiscussionDiscourseMessage response = (BasicProposalDiscussionDiscourseMessage) dm;
 				System.out.println("AGENT " + ": got response to offer");
+	//			for (String color : response.getChipsSentByResponder().getColors()) {
+				proposals[dm.getFromPerGameId()] = null;
 				APLFunction event = null;
 				if(!response.accepted() ) {
 					// The proposal is rejected and we still have more paths to propose, make an offer
 					event = new APLFunction("message",
 							new APLIdent(type), new APLNum(dm.getMessageId()),
 							new APLIdent("reject"));
+					for (String color : response.getChipsSentByResponder().getColors()) {
+						if (response.getChipsSentByResponder().getNumChips(color) > 0)
+							nogo.add(dm.getFromPerGameId(),color);
+					}
 				}
 				else if(response.accepted()) {
 					// The proposal is accepted
@@ -894,7 +903,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	 * @param gy: y coordinate of goal
 	 */
 
-	public Term moveStepToGoal(String agentname,APLIdent goal, APLNum x, APLNum y) throws
+	public Term moveStepToGoalTest(String agentname,APLIdent goal, APLNum x, APLNum y) throws
 	ExternalActionFailedException {
 
 		ClientGameStatus cgs = client.getGameStatus();
@@ -916,53 +925,67 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 
 		for (int i=0; i<1000; i++) {
 			// Get the best path available
-			Path chosenPath = shortestPaths.remove(i); // why remove(0)??
+			System.out.println(agentname+"[CTAH] path: " +i);
+			Path chosenPath = shortestPaths.remove(0); // why remove(0)??
 			RowCol point= chosenPath.getPoint(1);
 			String color = cgs.getBoard().getSquare(point).getColor();
 			ChipSet myChips = cgs.getMyPlayer().getChips();
-			if (myChips.getNumChips(color) == 0) {
-				PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
-				waiter.doWait(10, 15);
-				for(PlayerStatus ps : cgs.getPlayers()){
-					if (ps.getChips().getNumChips(color) > 0)
-					{
-						//if (!proposalSent) {
-						//proposalSent = true;
-						//waiter.doWait(RecipConstants.minProposeTime, RecipConstants.maxProposeTime);
-						makeProposal(agentname,ps.getPerGameId(),color);
-						//waiter.doWait(9, 10);
-						//}
-						APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
-						System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
-						return uTD; 
-					}
-					//proposalSent = false;					
-				}
-			}
-			if (client.communication.sendMoveRequest(point)) {
-				//env.write(agentname, point.row, point.col);
-			}
-				
-
-			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
-			System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
-			return uTD; 
-			//System.out.println(agentname+"[CTAH] going to: " + point + "goal: " +x+","+y+" color: "+ colorGoal);
+			if (myChips.getNumChips(color) > 0) {
+				APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col));
+				System.out.println(agentname+"[CTAH] moveStepToGoalTest returns I have chip: " + uTD);
+				return uTD; 
+				//System.out.println(agentname+"[CTAH] going to: " + point + "goal: " +x+","+y+" color: "+ colorGoal);
 			// Send move request
+			} else
+			 {
+				//System.out.println(agentname+"[CTAH] moveStepToGoalTest proposals: " + proposals.toString());
+//				if (nopoints.size() == 0 || !nopoints.contains(point)) {
+				
+					for(PlayerStatus ps : cgs.getPlayers()){
+						System.out.println(agentname+"[CTAH] moveStepToGoalTest proposals: " + proposals[ps.getPerGameId()]);
+						if (ps.getChips().getNumChips(color) > 0 )
+							if (proposals[ps.getPerGameId()] == null || !proposals[ps.getPerGameId()].equals(color))// && (nogo.size() == 0 || nogo.get(ps.getPerGameId()) == null || !nogo.get(ps.getPerGameId()).equals(color)))
+								{
+									//if (!proposalSent) {
+									//proposalSent = true;
+									//waiter.doWait(RecipConstants.minProposeTime, RecipConstants.maxProposeTime);
+									System.out.println(agentname+"[CTAH] found a chip....: " +point);
+									makeProposal(agentname,ps.getPerGameId(),color);
+									PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
+									waiter.doWait(7, 10);
+									proposals[ps.getPerGameId()] = color;
+									APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col));
+									//APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col),new APLIdent(color),new APLNum(ps.getPerGameId()));
+									
+									System.out.println(agentname+"[CTAH] moveStepToGoalTest sent proposal for: " + uTD);
+									return uTD; 
+									//waiter.doWait(9, 10);
+									//}
+								}
+						//proposalSent = false;					
+					}
+				}
+//			}
+			//if (client.communication.sendMoveRequest(point)) {}
+				//env.write(agentname, point.row, point.col);
 			
 		}
+		System.out.println(agentname+"[CTAH] moveStepToGoalTest havent found anything");
+		return new APLIdent("false");
+	}
+	
 
-
-		//if (cgs.getMyPlayer().getPosition().equals(point))
-		//{
-		APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
-		System.out.println("[CTAH] moveStepToGoal returns: " + uTD);
-		return uTD; 
-		//	}
-		//	else {		
-		//		System.out.println("[CTAH] moveStepToGoal returns: " + false);
-		//		return new APLIdent("false");
-		//	}
+	public Term moveStepToGoal(String agentname2, APLIdent color,
+			APLNum ax, APLNum ay) {
+		client.communication.sendMoveRequest(new RowCol(ax.toInt(),ay.toInt()));
+		if (cgs.getMyPlayer().getPosition().equals(new RowCol(ax.toInt(),ay.toInt()))) {
+			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
+			System.out.println(agentname2+"[CTAH] moveStepToGoal returns: " + uTD);
+			return uTD; 
+		}
+		//nopoints.add(new RowCol(ax.toInt(),ay.toInt()));
+		System.out.println(agentname2+"[CTAH] moveStepToGoal returns: false");
+		return new APLIdent("false");
 	}
 
 	public void setGoal(String agentname, APLNum apl_id, APLNum xcoor,
@@ -976,6 +999,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		// TODO Auto-generated method stub
 
 	}
+
 
 
 

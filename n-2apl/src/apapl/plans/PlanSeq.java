@@ -330,6 +330,10 @@ public class PlanSeq implements ParentPlan, Iterable<Plan>, Substitutable
 	{
 		PlanSeq copy = new PlanSeq();
 		for (Plan p : plans) copy.addPlan(p.clone());
+		copy.isAtomic = isAtomic;
+		copy.deadline = deadline;
+		copy.duration = duration;
+		copy.priority = priority;
 		return copy;
 	}
 	

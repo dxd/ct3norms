@@ -1,9 +1,14 @@
+BeliefUpdates:
+{ true } 												AdoptP(New) 				{ prohibition(New) }
+
+
 PC-rules:
 event(obligation([Goal],Deadline,[Sanction]),ctenv) <- true | {
    adoptObligation(Goal, Deadline, Sanction)
 }
 
 event(prohibition([State],[Sanction]),ctenv) <- true | {
+
    adoptProhibition(State,Sanction)
 }
 
@@ -20,16 +25,18 @@ event(tile(Color,X,Y,Clock),ctenv) <- true | {
    UpdateTile(Color,X,Y)
 }
 
-adoptProhibition(at(X,Y,_), reduce(_,Value)) <- clock(Clock) | {
-    aprohibition(at(X,Y,Clock) -> reduce(Value))
+adoptProhibition(at(X,Y,_), reduce(_,Value)) <- true | {
+    aprohibition(at(X,Y) -> reduce(Value))
 }
 adoptProhibition(color(Color,Thing), reduce(_,Value)) <- true | {
+	AdoptP(useColor(Color,Value));
     aprohibition(useColor(Color) -> reduce(Value))
 }
-adoptProhibition(rejectRequests(Thing), reduce(_,Value)) <- true | {
+//TODO remove hack
+adoptProhibition(rejectRequests(Thing), reduce(_,Value)) <- clock(100) | {
     aprohibition(receivedP(closed(reject),Thing) -> reduce(Value))
 }
-adoptProhibition(moveTooFast(Thing), reduce(_,Value)) <- true | {
+adoptProhibition(moveTooFast(Thing), reduce(_,Value)) <- clock(100) | {
     aprohibition(moveTooFast(x) -> reduce(Value))
 }
 
@@ -38,20 +45,20 @@ adoptProhibition(moveTooFast(Thing), reduce(_,Value)) <- true | {
 //{	adoptProhibition(moveTooFast(a40), reduce(a40, 300))
 //}
 
-adoptObligation(at(X,Y,_), D, reduce(_,Value)) <- clock(Clock) | {
-    adopta(at(X,Y,Clock) : D -> reduce(Value))
+adoptObligation(at(X,Y,_), D, reduce(_,Value)) <- true | {
+    adoptz(at(X,Y,Value) : D -> reduce(Value))
 }
 adoptObligation(surround(X,Y), D, reduce(Group,Sanction)) <- true | {
-    adopta(surround(X,Y) : D -> reduce(Sanction))
+    adoptz(surround(X,Y,Sanction) : D -> reduce(Sanction))
 }
-adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- true | {
-    adopta(useColor(Color) : D -> reduce(Sanction))
+adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- not useColor(Color) | {
+    adoptz(useColor(Color,Sanction) : D -> reduce(Sanction))
 }
 adoptObligation(acceptRequests(Thing), D, reduce(Group,Sanction)) <- true | {
-    adopta(acceptRequests : D -> reduce(Sanction))
+    adoptz(acceptRequests(Sanction) : D -> reduce(Sanction))
 }
 adoptObligation(makeMove(X,Y,Thing), D, reduce(Group,Sanction)) <- true | {
-    adopta(makeMove(X,Y) : D -> reduce(Sanction))
+    adoptz(makeMove(X,Y,Sanction) : D -> reduce(Sanction))
 }
 
 event(FUNCTION, NAME) <- true | {
@@ -82,8 +89,6 @@ event(FUNCTION, NAME) <- true | {
 		}
 	}	
 }
-
-
 
 Sanctions:
 	reduce(50)  -> 1,

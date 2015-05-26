@@ -27,6 +27,7 @@ public class Goal implements Iterable<Literal>
 	private Date				deadline;
 	private byte				priority;
 	private Literal				sanction;
+	private static int			timer = 10000;
 	
 	/**
 	 * Constructs a new empty goal.
@@ -35,7 +36,7 @@ public class Goal implements Iterable<Literal>
 	{
 		goal = new LinkedList<Literal>();
 		this.deadline = new Date(Long.MAX_VALUE);
-		this.priority = 1;
+		this.priority = 10;
 		
 	}
 	
@@ -48,7 +49,7 @@ public class Goal implements Iterable<Literal>
 	{
 		this.goal = goal;
 		this.deadline = new Date(Long.MAX_VALUE);
-		this.priority = 1;
+		this.priority = 10;
 	
 	}
 	
@@ -78,7 +79,7 @@ public class Goal implements Iterable<Literal>
 		try {
 			this.deadline = new Date();
 			int t = Integer.valueOf(time.trim());
-			this.deadline.setTime(deadline.getTime() + t*1000);
+			this.deadline.setTime(deadline.getTime() + t*timer);
 			//System.out.println("deadline " + deadline.toString());
 		} catch (Exception e) {
 			this.varDeadline = new APLVar(time);
@@ -210,7 +211,7 @@ public class Goal implements Iterable<Literal>
 		{
 			this.varDeadline.applySubstitution(theta);
 			//System.out.println("substitution: "+ varDeadline);
-			this.deadline.setTime(System.currentTimeMillis() + 100*1000);//TODO
+			this.deadline.setTime(System.currentTimeMillis() + 100*timer);//TODO
 		}
 		if (sanction != null)
 			sanction.applySubstitution(theta);
@@ -273,7 +274,7 @@ public class Goal implements Iterable<Literal>
 		
 		String r = "";
 		String s = "\\cf1  and \\cf0 ";
-		for (Literal l : goal) {
+		for (Literal l : goal) 
 			r = r + l.toRTF(inplan) + s;
 			if (deadline.getTime() != Long.MAX_VALUE) {
 				r = r + deadline.toGMTString();
@@ -281,8 +282,9 @@ public class Goal implements Iterable<Literal>
 			else {
 				r = r + "Infinite";
 			}
-		}
+		
 			
+		r += ", priority " + this.priority;
 		if (r.length()>=s.length()) r = r.substring(0,r.length()-s.length());	
 		
 		return r;

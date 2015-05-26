@@ -1,15 +1,15 @@
 Include: norms.2apl
 
 Beliefs:
-useColor(Color) :- position(X,Y,Z),tile(Color,X,Y).
-at(X,Y,Z) :- position(X,Y,W).
-initialized :- event(game_initiatized), initialized(yes).
+useColor(Color,V) :- position(X,Y,_),tile(Color,X,Y).
+at(X,Y,V) :- position(X,Y,W).
+at(X,Y) :- position(X,Y,W).
+initialized :- initialized(yes).
 receivedP(closed(reject),_) :-receivedP(_,_,closed(reject)).
 raise(X,NewX):- NewX is X + 1.
 lower(X,NewX):- NewX is X - 1.
 
 points(1000).
-position(3, 3, 0).
 clock(0).
 initialized(no).
 phase(none).
@@ -31,7 +31,7 @@ BeliefUpdates:
 {chipsRedundant(OLD) or not chipsRedundant(OLD)}			GetChipsRedundant(ID,NEW)		{not chipsRedundant(OLD), chipsRedundant(NEW)}
 {true}														GetAgentId(NEW)					{agentId(NEW)}
 {true} 														GetAgentPin(X)	 				{agentPin(X)}
-{agentPos(OLDX,OLDY) or not agentPos(OLDX,OLDY)} 			GetAgentPos(X,Y) 				{not agentPos(OLDX,OLDY), agentPos(X,Y)}
+{true}											 			GetAgentPos(X,Y,C) 				{position(X,Y,C)}
 {true}														GetRole(ID, ROLE)				{role(ID,ROLE)}
 {goalId(ID) or not goald(ID)}								GetGoalId(NEWID)				{not goalId(ID), goalId(NEWID)}
 {goalPos(TYPE,OLDX,OLDY) or not goalPos(TYPE,OLDX,OLDY)}	GetGoalPos(TYPE,X,Y) 			{not goalPos(TYPE,OLDX,OLDY), goalPos(TYPE,X,Y)}
@@ -60,66 +60,96 @@ BeliefUpdates:
 // sent an answer
 {received(proposal,ID,open)}								Sent(ANSWER,ID)					{not receivedP(proposal,ID,open), receivedP(proposal,ID,closed(ANSWER))}
 {true}														Surround(X,Y)					{gsurround(X,Y)}  
-  
+{true}														NextStep(X,Y)					{nextStep(X,Y)}
+{true}														NoNextStep(X,Y)					{not nextStep(X,Y)}
+ 
 Plans:
 initialize()
 
 PG-rules:
 
-surround(X,Y) <- role(ID,ra) | {
+surround(X,Y,V1) <- role(ID,ra) | {
 	[
 	Surround(X,Y);
 	sendSouth(a10,X,Y,100);
 	sendWest(a20,X,Y,100);
 	sendEast(a30,X,Y,100);
 	sendNorth(a40,X,Y,100);
-	color(white,a10,yes,100);
-	color(white,a20,yes,100);
-	color(white,a30,yes,100);
-	color(white,a40,yes,100);
-	color(blue,a10,no,200);
-	color(blue,a20,no,200);
-	color(blue,a30,no,200);
-	color(blue,a40,no,200);
-	dropgoal(surround(X,Y))
+	color(white,a10,yes,200);
+	color(white,a20,yes,200);
+	color(white,a30,yes,200);
+	color(white,a40,yes,200);
+	color(blue,a10,no,100);
+	color(blue,a20,no,100);
+	color(blue,a30,no,100);
+	color(blue,a40,no,100);
+	dropgoal(surround(X,Y,V1))
 	]
-} : 150
+} : 1500
 
-useColor(Color) <- phase(movementphase) or phase(communicationphase) | { //not the closest one
-	[B(clock(Clock));
-	G(at(X,Y,_));
-	moveStepToGoal(Color,X,Y,Clock)]
-} : 100
+useColor(Color,V1) <- (phase(communicationphase) or phase(movementphase)) and at(X1,Y1) and clock(C) | {
+	[
+	if B(tile(Color,X1,Y1)) then 
+		{dropgoal(useColor(Color,V1))}
+	else if B(prohibition(useColor(Color,V2))) then {
+		if B(V2 > V1) 
+			then {dropgoal(useColor(Color,V1))}
+	}
+	else {findNextStep(Color,V1)}
+	]
+} : 1000
 
 //makeMove(X,Y) <- true | {}
 
-//propose <- phase(communicationphase) and not sent(Pp,ID,open) | makeProposal()
-//respond <- received(TYPE,ID,open) and phase(communicationphase) | makeResponse(ID)
-
-received(TYPE,ID,closed) <- phase(communicationphase) | makeResponse(ID)
-receivedP(TYPE,ID,accept) <- phase(communicationphase) | makeResponse(ID)
-
 initialized <- event(game_initialized) | {
-   // dropgoal(initialized);
     Initialize()
-}
+} : 10
 
-update <- event(phasechange) | update()
+update <- event(phasechange) |  {
+	update()
+} : 10
 
-at(X,Y,C) <- phase(communicationphase) or phase(movementphase) | {
-
-  [moveStepToGoal(neco,X,Y,C)]
-    
-} : 100
+at(X,Y,V1) <- (phase(communicationphase) or phase(movementphase)) and at(X1,Y1) and clock(C) | {
+  [ 	
+  	findNextStep(neco,V1)	
+  ] 
+} : 1000
 
 PC-rules:
 
+findNextStep(Color,V1) <- not nextStep(X1,Y1) | {
+	if G(at(X,Y,V)) then
+		{@ctenv( moveStepToGoalTest(Color,X,Y), L1)}
+	else if B(tile(Color,X,Y)) then
+		{@ctenv( moveStepToGoalTest(Color,X,Y), L1)};
+	if B( L1 = [actionresult([Xa,Ya])]) then {
+		if B(tile(Color,Xa,Ya)) then {
+			if B(not prohibition(useColor(Color,V2))) then {
+				NextStep(Xa,Ya)
+			}
+		}
+		else {NextStep(Xa,Ya)}
+		
+//		else {findNextStep(Color,V1)}
+	}
+	
+}
+
+findNextStep(Color,V1) <- nextStep(X1,Y1) | {
+	@ctenv( moveStepToGoal(Color,X1,Y1), L2);
+	if B( L2 = [actionresult([X1,Y1])]) then {
+		B(clock(Clock));
+		UpdatePosition(X1,Y1,Clock)
+	};
+	NoNextStep(X1,Y1)
+}
 
 initialize() <- initialized(no) | {
     getPhase();
     getId();
     B(agentId(ID));
-    getRole(ID)
+    getRole(ID);
+    getPos()
 }
 
 sendNorth(Agent,X,Y,S) <- raise(Y,Y1) and gsurround(GX,GY) | {
@@ -161,7 +191,8 @@ getPhase() <- true | {
 getPos() <- true | {
 	@ctenv( getAgentPos(), L1);
 	B( L1 = [actionresult(  [X,Y] )]);
-	GetAgentPos(X,Y)
+	B(clock(C));
+	GetAgentPos(X,Y,C)
 }
 
 
@@ -306,19 +337,6 @@ sendResponse(RESPONSE,MSGID) <- received(proposal,MSGID,open) | {
 	dropgoal(received(proposal,MSGID,closed))
 }	
 
-moveStepToGoal(ID,X,Y,C) <- true | {
-	@ctenv( moveStepToGoal(ID,X,Y), L1);
-	B( L1 = [actionresult(Z)]);
-	B(clock(Clock));
-	MoveStepToGoal(Z);
-	B(position(X1,Y1,_));
-	if 	B([A,B] = Z) then {
-		if B(not [X1,Y1] = Z)  then {
-		UpdatePosition(A,B,Clock)
-		}
-	}
-}
-
 ///////////// Moving
 
 moveTo(X,Y) <- position(X2,Y2,_) and Y2 < Y and raise(Y2,NewY) | { 
@@ -341,3 +359,11 @@ updatePos(NewX,NewY) <- position(X,Y,_) | {
     UpdatePosition(NewX,NewY,Clock)
 //  @ctenv(write(status(position(NewX,NewY),Clock),-1),_)   
 } 
+
+//PR-rules:
+//  @blockworld( pickup(), _ ); REST <- true |
+//  {
+//    @blockworld( sensePosition(), POS );
+//    B(POS = [actionresult([X,Y])]);
+//    RemoveBomb( X, Y )
+//  }

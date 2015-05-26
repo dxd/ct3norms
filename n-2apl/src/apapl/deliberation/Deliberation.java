@@ -27,7 +27,7 @@ public class Deliberation implements Cloneable
 
 		cycle.add( new ApplyPGrules() );
 		cycle.add( new TestStoppingCond() );
-		//cycle.add( new SchedulePlans() );
+		//cycle.add( new SchedulePlans() ); moved to applyPGrules
 		cycle.add( new ExecuteAllPlans() );
 		cycle.add( new ProcessIEvents() );
 		cycle.add( new ProcessMessages() );
