@@ -37,23 +37,23 @@ norm(
 acceptRequests(Thing),
 Thing, // the subject agent
 ( pursuer(Thing), acceptPolicy(Thing)), // precondition
-obligation([acceptRequests(Thing)],now + 20,[reduce(Thing,500)]) // prohibition format
+obligation([acceptRequests],now + 20,[reduce(Thing,500)]) // prohibition format
 ).
 
 %individual prohibitions to reject requests
 norm(
 rejectRequests(Thing),
 Thing, // the subject agent
-( pursuer(Thing),group(Z),neco), // precondition
-prohibition([rejectRequests(Thing)],[reduce(Thing,500)]) // prohibition format
+( pursuer(Thing),group(Z)), // precondition
+prohibition([rejectRequests],[reduce(Thing,500)]) // prohibition format
 ).
 
 %individual prohibition to move more than one field per turn
 norm(
 moveTooFast(Thing),
 Thing, // the subject agent
-( pursuer(Thing),group(Z),neco), // precondition
-prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
+( pursuer(Thing),group(Z)), // precondition
+prohibition([moveTooFast],[reduce(Thing,300)]) // prohibition format
 ).
 
 %individual obligation to make a move during move phase

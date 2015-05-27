@@ -109,7 +109,7 @@ public class PGrulebase extends Rulebase<PGrule> {
 			Beliefbase beliefbase, Planbase planbase, boolean onlyone,
 			APLModule module) {
 		ArrayList<PlanSeq> plans = new ArrayList<PlanSeq>();
-		goalbase.sort();
+		//goalbase.sort();
 
 		// for each rule
 		for (PGrule pgrule : rules) { // if it is a reactive rule, try to match
@@ -320,8 +320,8 @@ public class PGrulebase extends Rulebase<PGrule> {
 				
 				
 				if (ps == module.getAtomic()) {
-					//if (ps.getExecStart() == null)
-					//	ps.setExecStart(null);
+					if (ps.getExecStart() == null)
+						ps.setExecStart(null);
 					cycleExecStart.put(ps.getID(), System.currentTimeMillis());
 					tempAtomic = newAtomic;
 				} else {
@@ -418,20 +418,28 @@ public class PGrulebase extends Rulebase<PGrule> {
 
 		planbase = new ArrayList<PlanSeq>();
 
-		for (PlanSeq ps1 : newNonAtomic) {
-			planbase.add(ps1);
-		}
-		boolean first = true;
+		
+		//boolean first = true;
 		for (PlanSeq ps1 : newAtomic) {
-			if (!ps1.getProhibited() && first) {
-				module.setAtomic(ps1);
+			if (!ps1.getProhibited() ) {
+				//module.setAtomic(ps1);
 				ps1.setExecStart(null);
-				first = false;
+				//first = false;
 			}
 			planbase.add(ps1);
 
 		}
-
+		boolean isFirst = false;
+		for (PlanSeq ps : planbase) {
+			if (module.getAtomic() != null && module.getAtomic().equals(ps))
+				isFirst = true;
+		}
+		if (!isFirst && newAtomic.size() > 0)
+			module.setAtomic(planbase.get(0));
+		
+		for (PlanSeq ps1 : newNonAtomic) {
+			planbase.add(ps1);
+		}
 		return planbase;
 
 	}

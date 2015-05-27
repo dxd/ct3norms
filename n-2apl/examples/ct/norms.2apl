@@ -1,5 +1,9 @@
+Beliefs:
+rejectRequests(X) :- receivedP(proposal,ID,closed(reject)).
+
+
 BeliefUpdates:
-{ true } 												AdoptP(New) 				{ prohibition(New) }
+{ true } 							AdoptP(New) 				{ prohibition(New) }
 
 
 PC-rules:
@@ -30,20 +34,16 @@ adoptProhibition(at(X,Y,_), reduce(_,Value)) <- true | {
 }
 adoptProhibition(color(Color,Thing), reduce(_,Value)) <- true | {
 	AdoptP(useColor(Color,Value));
-    aprohibition(useColor(Color) -> reduce(Value))
+    aprohibition(useColor(Color,Value) -> reduce(Value))
 }
-//TODO remove hack
-adoptProhibition(rejectRequests(Thing), reduce(_,Value)) <- clock(100) | {
-    aprohibition(receivedP(closed(reject),Thing) -> reduce(Value))
+adoptProhibition(rejectRequests, reduce(_,Value)) <- true | {
+	AdoptP(rejectRequests(Value));
+    aprohibition(rejectRequests(Value) -> reduce(Value))
 }
-adoptProhibition(moveTooFast(Thing), reduce(_,Value)) <- clock(100) | {
-    aprohibition(moveTooFast(x) -> reduce(Value))
+adoptProhibition(moveTooFast, reduce(_,Value)) <- true | {
+	AdoptP(movedTooFast(Value));
+    aprohibition(moveTooFast(Value) -> reduce(Value))
 }
-
-//{	adoptProhibition(rejectRequests(a40), reduce(a40, 500))
-//},
-//{	adoptProhibition(moveTooFast(a40), reduce(a40, 300))
-//}
 
 adoptObligation(at(X,Y,_), D, reduce(_,Value)) <- true | {
     adoptz(at(X,Y,Value) : D -> reduce(Value))

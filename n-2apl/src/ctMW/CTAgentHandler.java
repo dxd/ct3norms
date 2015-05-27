@@ -30,6 +30,7 @@ import edu.harvard.eecs.airg.coloredtrails.shared.ScoringUtility;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.DiscourseMessage;
+import edu.harvard.eecs.airg.coloredtrails.shared.types.Board;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.ChipSet;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.Goal;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.Path;
@@ -49,7 +50,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	private int OppPerGameId;
 	private String agentname;
 	private String[] proposals = new String[] {null,null,null,null,null}; 
-	private ArrayList<String> nogo = new ArrayList<String>();
+	private String[] nogo = new String[] {null,null,null,null,null};
 	private ArrayList<RowCol> nopoints = new ArrayList<RowCol>();
 
 	public CTAgentHandler(EnvCT envCT, String agentname) {
@@ -150,7 +151,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			return msgId; 
 		}
 	}
-	public void makeProposal(String agentname, int i, String color) {
+	public int makeProposal(String agentname, int i, String color) {
 
 		ChipSet senderChips = new ChipSet();
 		ChipSet recipientChips = new ChipSet();
@@ -158,7 +159,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 
 		Random rnd = new Random();
 		int msgID = rnd.nextInt(10000);
-		
+
 		BasicProposalDiscourseMessage proposal= new BasicProposalDiscourseMessage(
 				cgs.getPerGameId(), i, msgID, senderChips, recipientChips);
 		//            sending = senderChips;
@@ -168,7 +169,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 
 
 		client.communication.sendDiscourseRequest(proposal);
-
+		return msgID;
 
 
 	}
@@ -192,23 +193,23 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			if (type.equals("basicproposaldiscussion")) {
 				BasicProposalDiscussionDiscourseMessage response = (BasicProposalDiscussionDiscourseMessage) dm;
 				System.out.println("AGENT " + ": got response to offer");
-	//			for (String color : response.getChipsSentByResponder().getColors()) {
+				//			for (String color : response.getChipsSentByResponder().getColors()) {
 				proposals[dm.getFromPerGameId()] = null;
 				APLFunction event = null;
 				if(!response.accepted() ) {
 					// The proposal is rejected and we still have more paths to propose, make an offer
 					event = new APLFunction("message",
-							new APLIdent(type), new APLNum(dm.getMessageId()),
+							new APLIdent("response"), new APLNum(dm.getMessageId()),
 							new APLIdent("reject"));
 					for (String color : response.getChipsSentByResponder().getColors()) {
 						if (response.getChipsSentByResponder().getNumChips(color) > 0)
-							nogo.add(dm.getFromPerGameId(),color);
+							nogo[dm.getFromPerGameId()]=color;
 					}
 				}
 				else if(response.accepted()) {
 					// The proposal is accepted
 					event = new APLFunction("message",
-							new APLIdent(type), new APLNum(dm.getMessageId()),
+							new APLIdent("response"), new APLNum(dm.getMessageId()),
 							new APLIdent("accept"));
 				}
 				env.throwEvents(event,"a"+agentname);
@@ -231,16 +232,16 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 					//response.setSubjectMsgId(subjectMsgId);
 					event = new APLFunction("proposal",
 							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
-							new APLIdent("accept"));
+							new APLIdent("open"));
 					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).acceptOffer();
-					responseMessage.acceptOffer();
+					//responseMessage.acceptOffer();
 				} else {
 					//response.setSubjectMsgId(subjectMsgId);
 					event = new APLFunction("proposal",
 							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
-							new APLIdent("accept"));
+							new APLIdent("open"));
 					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).rejectOffer();
-					responseMessage.acceptOffer();
+					//responseMessage.acceptOffer();
 				}
 				env.throwEvents(event,"a"+agentname);
 				client.communication.sendDiscourseRequest(responseMessage);
@@ -903,60 +904,68 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	 * @param gy: y coordinate of goal
 	 */
 
-	public Term moveStepToGoalTest(String agentname,APLIdent goal, APLNum x, APLNum y) throws
+	public Term moveStepToGoalTest(String agentname,APLIdent goal, APLNum x, APLNum y, APLNum steps) throws
 	ExternalActionFailedException {
 
 		ClientGameStatus cgs = client.getGameStatus();
 		Scoring scoring = cgs.getScoring();
 		//Scoring scoring = new Scoring(0,0,0);
 		String colorGoal = goal.getName();
+		//Board b = (Board) cgs.getBoard().clone();
+		//b.setGoal(new RowCol(x.toInt(),y.toInt()), true);
 		System.out.println(agentname+"[CTAH] going goal: " +x+","+y+" color: "+ colorGoal);
 		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 1000);
-		System.out.println(agentname+"[CTAH] paths: " +shortestPaths.size());
-		if (cgs.getBoard().getColors().contains(colorGoal)) {
-			ArrayList<Path> paths = new ArrayList<Path>();
-			for (Path p : shortestPaths) {
-				ChipSet c = p.getRequiredChips(cgs.getBoard());
-				if (c.getColors().contains(colorGoal))
-					paths.add(p);
-			}
-			shortestPaths = paths;
-		}
-
+		System.out.println(agentname+"[CTAH] paths: " + shortestPaths.size());
+		
+//		ArrayList<Path> paths = new ArrayList<Path>();
+//			for (Path p : shortestPaths) {		
+//				if (p.getNumPoints() > steps.toInt() + 1)
+//					continue;
+//				if (cgs.getBoard().getColors().contains(colorGoal)) {
+//					ChipSet c = p.getRequiredChips(cgs.getBoard());
+//					if (c.getColors().contains(colorGoal))
+//						paths.add(p);
+//				}
+//			}
+//		shortestPaths = paths;
+		
+		PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
+		waiter.doWait(3, 5);
 		for (int i=0; i<1000; i++) {
 			// Get the best path available
 			System.out.println(agentname+"[CTAH] path: " +i);
 			Path chosenPath = shortestPaths.remove(0); // why remove(0)??
 			RowCol point= chosenPath.getPoint(1);
+			System.out.println(agentname+"[CTAH] path: " +chosenPath.toString());
 			String color = cgs.getBoard().getSquare(point).getColor();
 			ChipSet myChips = cgs.getMyPlayer().getChips();
 			if (myChips.getNumChips(color) > 0) {
-				APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col));
+				APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col),new APLIdent("no"),new APLIdent("no"));
 				System.out.println(agentname+"[CTAH] moveStepToGoalTest returns I have chip: " + uTD);
 				return uTD; 
 				//System.out.println(agentname+"[CTAH] going to: " + point + "goal: " +x+","+y+" color: "+ colorGoal);
-			// Send move request
+				// Send move request
 			} else
-			 {
+			{
 				//System.out.println(agentname+"[CTAH] moveStepToGoalTest proposals: " + proposals.toString());
-//				if (nopoints.size() == 0 || !nopoints.contains(point)) {
-				
+			//	if (nopoints.size() == 0 || !nopoints.contains(point)) {
+					System.out.println(agentname+"[CTAH] moveStepToGoalTest nopoints: " + nopoints.toString());
 					for(PlayerStatus ps : cgs.getPlayers()){
 						System.out.println(agentname+"[CTAH] moveStepToGoalTest proposals: " + proposals[ps.getPerGameId()]);
 						if (ps.getChips().getNumChips(color) > 0 )
-							if (proposals[ps.getPerGameId()] == null || !proposals[ps.getPerGameId()].equals(color))// && (nogo.size() == 0 || nogo.get(ps.getPerGameId()) == null || !nogo.get(ps.getPerGameId()).equals(color)))
+							//if (proposals[ps.getPerGameId()] == null || !proposals[ps.getPerGameId()].equals(color))
+								//if (nogo[ps.getPerGameId()] == null || !nogo[ps.getPerGameId()].equals(color))
 								{
 									//if (!proposalSent) {
 									//proposalSent = true;
 									//waiter.doWait(RecipConstants.minProposeTime, RecipConstants.maxProposeTime);
 									System.out.println(agentname+"[CTAH] found a chip....: " +point);
-									makeProposal(agentname,ps.getPerGameId(),color);
-									PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
-									waiter.doWait(7, 10);
-									proposals[ps.getPerGameId()] = color;
-									APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col));
-									//APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col),new APLIdent(color),new APLNum(ps.getPerGameId()));
+									int msgid = makeProposal(agentname,ps.getPerGameId(),color);
 									
+									proposals[ps.getPerGameId()] = color;
+									//APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col));
+									APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col),new APLNum(ps.getPerGameId()),new APLNum(msgid));
+
 									System.out.println(agentname+"[CTAH] moveStepToGoalTest sent proposal for: " + uTD);
 									return uTD; 
 									//waiter.doWait(9, 10);
@@ -964,20 +973,24 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 								}
 						//proposalSent = false;					
 					}
-				}
-//			}
+					//nopoints.add(point);
+	//			}
+			}
+			//			}
 			//if (client.communication.sendMoveRequest(point)) {}
-				//env.write(agentname, point.row, point.col);
-			
+			//env.write(agentname, point.row, point.col);
+
 		}
 		System.out.println(agentname+"[CTAH] moveStepToGoalTest havent found anything");
-		return new APLIdent("false");
+		return new APLIdent("no");
 	}
-	
+
 
 	public Term moveStepToGoal(String agentname2, APLIdent color,
 			APLNum ax, APLNum ay) {
 		client.communication.sendMoveRequest(new RowCol(ax.toInt(),ay.toInt()));
+		PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
+		waiter.doWait(3, 5);
 		if (cgs.getMyPlayer().getPosition().equals(new RowCol(ax.toInt(),ay.toInt()))) {
 			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
 			System.out.println(agentname2+"[CTAH] moveStepToGoal returns: " + uTD);
@@ -985,7 +998,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		}
 		//nopoints.add(new RowCol(ax.toInt(),ay.toInt()));
 		System.out.println(agentname2+"[CTAH] moveStepToGoal returns: false");
-		return new APLIdent("false");
+		return new APLIdent("no");
 	}
 
 	public void setGoal(String agentname, APLNum apl_id, APLNum xcoor,
@@ -998,6 +1011,28 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			APLIdent type) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public Term sendResponse(String agentname2, APLNum msgID, APLIdent response) {
+		BasicProposalDiscourseMessage proposal = (BasicProposalDiscourseMessage) messages.get(msgID.toInt());
+		BasicProposalDiscussionDiscourseMessage responseMessage = new BasicProposalDiscussionDiscourseMessage(proposal);
+		// check if the proposal is beneficial
+	// PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
+		// waiter.doWait(RecipConstants.minRespondTime, RecipConstants.maxRespondTime);
+		//response.setSubjectMsgId(msgID);
+		// check if the proposal is beneficial
+		if( response.equals("accept") ) {
+			
+
+			//(BasicProposalDiscussionDiscourseMessage) messages.get(msgID.toInt()).acceptOffer();
+			responseMessage.acceptOffer();
+		} else {
+			//(BasicProposalDiscussionDiscourseMessage) messages.get(msgID.toInt()).rejectOffer();
+			responseMessage.acceptOffer();
+		}
+		//env.throwEvents(event,"a"+agentname);
+		client.communication.sendDiscourseRequest(responseMessage);
+		return new APLIdent("true");
 	}
 
 

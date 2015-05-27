@@ -1,0 +1,1535 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.193 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.local:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-52964-1432669049373-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] Adding client state for 40
+     [java] Adding client state for 10
+     [java] Adding client state for 30
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [10.154.153.148] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [10.154.153.148] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [10.154.153.148] of type 
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [10.154.153.148] of type 
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-05-26 20:37:56,445  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 483 milliseconds
+     [java] 2015-05-26 20:37:56,461 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-05-26~20.37-gigaspaces-service-10.154.153.148-30229.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Norm Phase
+     [java] -------- Creating Board --------
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=brown, time=2015-05-26 20:37:56.621, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=brown, time=2015-05-26 20:37:56.65, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=white, time=2015-05-26 20:37:56.652, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=yellow, time=2015-05-26 20:37:56.653, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=brown, time=2015-05-26 20:37:56.654, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=5], subject=blue, time=2015-05-26 20:37:56.655, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=6], subject=brown, time=2015-05-26 20:37:56.657, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=brown, time=2015-05-26 20:37:56.658, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=yellow, time=2015-05-26 20:37:56.66, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=white, time=2015-05-26 20:37:56.661, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=white, time=2015-05-26 20:37:56.662, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=blue, time=2015-05-26 20:37:56.664, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=5], subject=brown, time=2015-05-26 20:37:56.666, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=6], subject=yellow, time=2015-05-26 20:37:56.667, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=white, time=2015-05-26 20:37:56.668, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=white, time=2015-05-26 20:37:56.67, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=brown, time=2015-05-26 20:37:56.672, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=blue, time=2015-05-26 20:37:56.674, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=white, time=2015-05-26 20:37:56.676, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=5], subject=brown, time=2015-05-26 20:37:56.678, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=6], subject=brown, time=2015-05-26 20:37:56.679, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=white, time=2015-05-26 20:37:56.681, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=yellow, time=2015-05-26 20:37:56.683, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=blue, time=2015-05-26 20:37:56.684, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=blue, time=2015-05-26 20:37:56.686, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=yellow, time=2015-05-26 20:37:56.687, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=5], subject=yellow, time=2015-05-26 20:37:56.689, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=6], subject=white, time=2015-05-26 20:37:56.691, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=brown, time=2015-05-26 20:37:56.692, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=blue, time=2015-05-26 20:37:56.694, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=yellow, time=2015-05-26 20:37:56.695, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=blue, time=2015-05-26 20:37:56.698, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=brown, time=2015-05-26 20:37:56.7, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=5], subject=yellow, time=2015-05-26 20:37:56.702, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=6], subject=brown, time=2015-05-26 20:37:56.704, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=0], subject=yellow, time=2015-05-26 20:37:56.706, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=1], subject=white, time=2015-05-26 20:37:56.708, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=2], subject=brown, time=2015-05-26 20:37:56.71, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=3], subject=yellow, time=2015-05-26 20:37:56.712, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=4], subject=blue, time=2015-05-26 20:37:56.714, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=5], subject=brown, time=2015-05-26 20:37:56.72, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=6], subject=white, time=2015-05-26 20:37:56.724, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=0], subject=blue, time=2015-05-26 20:37:56.726, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=1], subject=brown, time=2015-05-26 20:37:56.728, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=2], subject=white, time=2015-05-26 20:37:56.73, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=3], subject=brown, time=2015-05-26 20:37:56.732, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=4], subject=white, time=2015-05-26 20:37:56.735, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=5], subject=brown, time=2015-05-26 20:37:56.738, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=6, y=6], subject=white, time=2015-05-26 20:37:56.739, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=3], agent=null, time=null, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=3], agent=null, time=2015-05-26 20:37:56.778, clock=0]
+     [java] CT writes setGoal: Group [name=g, ra=a10, clock=0, time=2015-05-26 20:37:56.865]
+     [java] CT writes: Group [name=g, ra=a10, clock=0, time=2015-05-26 20:37:56.865]
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] revelation chips: { chips  'blue':0 'white':0 'brown':0 'yellow':0 }
+     [java] CT notification: Prohibition [subject=a20, prohibition=[rejectRequests], sanction=[reduce(a20, 500)], clock=1, time=2015-05-26 20:38:01.752]
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast], sanction=[reduce(a20, 300)], clock=1, time=2015-05-26 20:38:01.761]
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 points will be deducted., Prohibition to move more than 1 square per clock tick or 300 points will be deducted.]
+     [java] CT notification: Time [clock=2, time=2015-05-26 20:38:01.896]
+     [java] CT notification: Obligation [subject=a20, obligation=[at(2, 3, a20)], sanction=[reduce(a20, 700)], deadline=28, time=2015-05-26 20:38:03.016, clock=2]
+     [java] 20
+     [java] CT obligation: [Obligation to be at the grid tile [2,3] before clock 28 or 700 points will be deducted.]
+     [java] CT notification: Obligation [subject=a20, obligation=[color(white, a20)], sanction=[reduce(a20, 200)], deadline=22, time=2015-05-26 20:38:10.622, clock=2]
+     [java] 20
+     [java] CT obligation: [Obligation to be at the grid tile [2,3] before clock 28 or 700 points will be deducted., Obligation to use a tile with color white before clock 22 or 200 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[color(blue, a20)], sanction=[reduce(a20, 100)], clock=2, time=2015-05-26 20:38:10.653]
+     [java] 20
+     [java] CT prohibition: [Prohibition to reject requests for chips from the other players or 500 points will be deducted., Prohibition to move more than 1 square per clock tick or 300 points will be deducted., Prohibition to use a tile with color blue or 100 points will be deducted.]
+     [java] CT notification: Time [clock=3, time=2015-05-26 20:38:11.929]
+     [java] CT notification: Time [clock=4, time=2015-05-26 20:38:21.93]
+     [java] A New Phase Began: Communication Phase
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 0
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=8192, agent=a10, agent2=a20, clock=4, time=2015-05-26 20:38:28.566]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=6296, agent=a30, agent2=a20, clock=4, time=2015-05-26 20:38:28.668]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 1(PIN: 20)
+     [java] CT writes: Proposal [id=9074, agent=a40, agent2=a20, clock=4, time=2015-05-26 20:38:28.69]
+     [java] CT notification: Time [clock=5, time=2015-05-26 20:38:31.932]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=1], time=2015-05-26 20:38:33.934, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=1], time=2015-05-26 20:38:33.934, clock=5]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=5, y=0], time=2015-05-26 20:38:36.041, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=5, y=0], time=2015-05-26 20:38:36.041, clock=5]
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=6, y=5], time=2015-05-26 20:38:36.124, clock=5]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=6, y=5], time=2015-05-26 20:38:36.124, clock=5]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=496, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:36.509]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:36.775, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:36.775, clock=5]
+     [java] CT notification: Points [subject=a40, time=2015-05-26 20:38:36.779, clock=5, value=900, id=null]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=2354, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:37.197]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:37.469, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:37.469, clock=5]
+     [java] DEBUG root                           - received a move request...: 10
+     [java] CT writes position: Position [subject=a10, id=null, cell=Cell [x=0, y=1], time=2015-05-26 20:38:37.846, clock=5]
+     [java] CT writes: Position [subject=a10, id=null, cell=Cell [x=0, y=1], time=2015-05-26 20:38:37.846, clock=5]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=1173, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:37.981]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:38.237, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:38.237, clock=5]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=7762, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:38.652]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:38.914, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:38.914, clock=5]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=2123, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:39.35]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:39.608, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:39.608, clock=5]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=7896, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:40.012]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:40.648, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:40.648, clock=5]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 2
+     [java] From: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 0(PIN: 10)
+     [java] CT writes: Proposal [id=2677, agent=a30, agent2=a10, clock=5, time=2015-05-26 20:38:41.014]
+     [java] DEBUG root                           - received a discourse mesage... 10
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 0
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 0 TO: 2(PIN: 30)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=8257, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:41.217]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:41.487, clock=5]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:41.487, clock=5]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=1917, agent=a40, agent2=a30, clock=5, time=2015-05-26 20:38:41.923]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] CT notification: Time [clock=6, time=2015-05-26 20:38:41.935]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:42.444, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:42.444, clock=6]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=8376, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:43.002]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:43.325, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:43.325, clock=6]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=9911, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:43.855]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:44.191, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:44.191, clock=6]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=8216, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:44.729]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:45.093, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:45.093, clock=6]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=72, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:45.697]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:46.191, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:46.191, clock=6]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=5847, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:46.745]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:47.137, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:47.137, clock=6]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=2848, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:47.727]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:48.124, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:48.124, clock=6]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=3485, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:48.762]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:49.134, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:49.134, clock=6]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=4290, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:49.835]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:50.556, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:50.556, clock=6]
+     [java] DEBUG root                           - received a move request...: 30
+     [java] CT writes position: Position [subject=a30, id=null, cell=Cell [x=5, y=6], time=2015-05-26 20:38:50.61, clock=6]
+     [java] CT writes: Position [subject=a30, id=null, cell=Cell [x=5, y=6], time=2015-05-26 20:38:50.61, clock=6]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=2212, agent=a40, agent2=a30, clock=6, time=2015-05-26 20:38:51.246]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:51.658, clock=6]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:51.658, clock=6]
+     [java] CT notification: Time [clock=7, time=2015-05-26 20:38:51.937]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=4580, agent=a40, agent2=a30, clock=7, time=2015-05-26 20:38:52.309]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:52.789, clock=7]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:52.789, clock=7]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=8126, agent=a40, agent2=a30, clock=7, time=2015-05-26 20:38:53.47]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:54.17, clock=7]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:54.17, clock=7]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=435, agent=a40, agent2=a30, clock=7, time=2015-05-26 20:38:55.078]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:55.656, clock=7]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:55.656, clock=7]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=8354, agent=a40, agent2=a30, clock=7, time=2015-05-26 20:38:56.485]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:57.185, clock=7]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:57.185, clock=7]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=9277, agent=a40, agent2=a30, clock=7, time=2015-05-26 20:38:58.117]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:59.244, clock=7]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:38:59.244, clock=7]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=3319, agent=a40, agent2=a30, clock=7, time=2015-05-26 20:39:00.015]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:00.688, clock=7]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:00.688, clock=7]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=9334, agent=a40, agent2=a30, clock=7, time=2015-05-26 20:39:01.738]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] CT notification: Time [clock=8, time=2015-05-26 20:39:01.939]
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:02.416, clock=8]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:02.416, clock=8]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=3553, agent=a40, agent2=a30, clock=8, time=2015-05-26 20:39:03.206]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:04.563, clock=8]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:04.563, clock=8]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=773, agent=a40, agent2=a30, clock=8, time=2015-05-26 20:39:05.465]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:06.252, clock=8]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:06.252, clock=8]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=7918, agent=a40, agent2=a30, clock=8, time=2015-05-26 20:39:07.273]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:08.22, clock=8]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:08.22, clock=8]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=42, agent=a40, agent2=a30, clock=8, time=2015-05-26 20:39:09.243]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:10.048, clock=8]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:10.048, clock=8]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=8300, agent=a40, agent2=a30, clock=8, time=2015-05-26 20:39:10.889]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:11.597, clock=8]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:11.597, clock=8]
+     [java] CT notification: Time [clock=9, time=2015-05-26 20:39:11.94]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=5468, agent=a40, agent2=a30, clock=9, time=2015-05-26 20:39:12.56]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:13.289, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:13.289, clock=9]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=8126, agent=a40, agent2=a30, clock=9, time=2015-05-26 20:39:14.339]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:15.154, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:15.154, clock=9]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=2289, agent=a40, agent2=a30, clock=9, time=2015-05-26 20:39:16.12]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:16.852, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:16.852, clock=9]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=665, agent=a40, agent2=a30, clock=9, time=2015-05-26 20:39:17.896]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:18.549, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:18.549, clock=9]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=1801, agent=a40, agent2=a30, clock=9, time=2015-05-26 20:39:19.607]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:20.158, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:20.158, clock=9]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=6472, agent=a40, agent2=a30, clock=9, time=2015-05-26 20:39:21.081]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:21.648, clock=9]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:21.648, clock=9]
+     [java] CT notification: Time [clock=10, time=2015-05-26 20:39:21.946]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=5790, agent=a40, agent2=a30, clock=10, time=2015-05-26 20:39:22.735]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:23.302, clock=10]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:23.302, clock=10]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=3884, agent=a40, agent2=a30, clock=10, time=2015-05-26 20:39:24.323]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:24.927, clock=10]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:24.927, clock=10]
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=4317, agent=a40, agent2=a30, clock=10, time=2015-05-26 20:39:25.81]
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a move request...: 40
+     [java] CT writes position: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:26.4, clock=10]
+     [java] CT writes: Position [subject=a40, id=null, cell=Cell [x=6, y=0], time=2015-05-26 20:39:26.4, clock=10]
+     [java] A New Phase Began: Movement Phase
+     [java] DEBUG root                           - received a discourse mesage... 40
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] From: 3
+     [java] From: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscourseMessage
+     [java] DEBUG root                           - FROM: 3 TO: 2(PIN: 30)
+     [java] CT writes: Proposal [id=7503, agent=a40, agent2=a30, clock=10, time=2015-05-26 20:39:27.372]
+     [java] java.lang.NullPointerException
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage.accepted(BasicProposalDiscussionDiscourseMessage.java:98)
+     [java] 	at WebCTInputFileConfig.doDiscourse(WebCTInputFileConfig.java:314)
+     [java] 	at edu.harvard.eecs.airg.coloredtrails.server.ClientCommands.onMessage(ClientCommands.java:220)
+     [java] 	at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:870)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:122)
+     [java] 	at org.apache.activemq.ActiveMQSessionExecutor.iterate(ActiveMQSessionExecutor.java:189)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:115)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner.access$100(PooledTaskRunner.java:26)
+     [java] 	at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:44)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+     [java] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] DEBUG root                           - received a discourse mesage... 30
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] From: 2
+     [java] From: 3
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscussionDiscourseMessage
+     [java] DEBUG root                           - FROM: 2 TO: 3(PIN: 40)
+     [java] ---- BasicProposalDiscussionDiscourseMessage ----
+     [java] ERROR root                           - Error with the DiscourseMessage in the Game Configurationjava.lang.NullPointerException
+     [java] CT notification: Time [clock=11, time=2015-05-26 20:39:31.947]
+     [java] CT notification: Time [clock=12, time=2015-05-26 20:39:41.95]
+     [java] CT notification: Time [clock=13, time=2015-05-26 20:39:51.952]
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.local-52964-1432669049373-1:0) is shutting down
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka.local:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.local-52964-1432669049373-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 2 minutes 33 seconds

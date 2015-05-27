@@ -1,0 +1,23 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-05-27 12:56:48,980  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 398 milliseconds
+2015-05-27 12:59:52,602  SEVERE [edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat] - null; Caused by: javax.jms.JMSException: The transport is not running.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:58)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1157)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1549)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:465)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:356)
+	at edu.harvard.eecs.airg.coloredtrails.agent.HeartBeat$HeartBeatSender.run(HeartBeat.java:42)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.IOException: The transport is not running.
+	at org.apache.activemq.transport.TransportSupport.checkStarted(TransportSupport.java:103)
+	at org.apache.activemq.transport.tcp.TcpTransport.oneway(TcpTransport.java:117)
+	at org.apache.activemq.transport.InactivityMonitor.oneway(InactivityMonitor.java:141)
+	at org.apache.activemq.transport.TransportFilter.oneway(TransportFilter.java:80)
+	at org.apache.activemq.transport.WireFormatNegotiator.oneway(WireFormatNegotiator.java:93)
+	at org.apache.activemq.transport.MutexTransport.oneway(MutexTransport.java:47)
+	at org.apache.activemq.transport.ResponseCorrelator.oneway(ResponseCorrelator.java:60)
+	at org.apache.activemq.ActiveMQConnection.asyncSendPacket(ActiveMQConnection.java:1155)
+	... 6 more
+

@@ -291,6 +291,11 @@ public class Utilities {
 		term = term.replace("]","");
 
 		int tx = term.indexOf("(");
+		if (tx < 0) {
+			Term posTerm = new APLIdent(term.trim());
+			return posTerm;
+		}
+			
 		String s = term.substring(0, tx).trim();
 
 		Term[] t = new Term[10];

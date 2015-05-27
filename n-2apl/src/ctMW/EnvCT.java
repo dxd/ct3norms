@@ -226,6 +226,10 @@ public class EnvCT  extends Environment implements ExternalTool {
 	public Term sendProposal(String agentname) {
 		return agents.get(agentname).sendProposal(agentname);
 	}
+	
+	public Term sendResponse(String agentname, APLNum msgID, APLIdent response) {
+		return agents.get(agentname).sendResponse(agentname,msgID,response);
+	}
 
 
 	/**
@@ -470,9 +474,9 @@ public class EnvCT  extends Environment implements ExternalTool {
 	}
 
 	public Term moveStepToGoalTest(String agentname, APLIdent color, APLNum ax,
-			APLNum ay) throws
+			APLNum ay, APLNum steps) throws
 			ExternalActionFailedException {
-		return agents.get(agentname).moveStepToGoalTest(agentname, color,ax,ay);
+		return agents.get(agentname).moveStepToGoalTest(agentname, color,ax,ay,steps);
 	}
 
 	//////////////////////// 2OPL TO JAVASPACE AND 2APL
