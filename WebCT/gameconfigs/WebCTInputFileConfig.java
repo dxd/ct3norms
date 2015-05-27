@@ -306,11 +306,12 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 
 		// ### automatic exchange of chips upon acceptance of a proposal ###
 		if (dm instanceof BasicProposalDiscussionDiscourseMessage) {
-			System.out
-					.println("---- BasicProposalDiscussionDiscourseMessage ----");
+			
 
 			BasicProposalDiscussionDiscourseMessage bpddm = (BasicProposalDiscussionDiscourseMessage) dm;
-
+			System.out
+			.println("---- BasicProposalDiscussionDiscourseMessage ----" + bpddm);
+			
 			if (bpddm.accepted()) {		
 				spaces.writeResponse(dm.getMessageId(),"accepted");
 				

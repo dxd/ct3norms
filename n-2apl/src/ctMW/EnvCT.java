@@ -473,10 +473,10 @@ public class EnvCT  extends Environment implements ExternalTool {
 		return agents.get(agentname).moveStepToGoal(agentname, color,ax,ay);
 	}
 
-	public Term moveStepToGoalTest(String agentname, APLIdent color, APLNum ax,
+	public Term moveStepToGoalTest(String agentname, APLIdent color, APLIdent norm, APLNum ax,
 			APLNum ay, APLNum steps) throws
 			ExternalActionFailedException {
-		return agents.get(agentname).moveStepToGoalTest(agentname, color,ax,ay,steps);
+		return agents.get(agentname).moveStepToGoalTest(agentname, color, norm,ax,ay,steps);
 	}
 
 	//////////////////////// 2OPL TO JAVASPACE AND 2APL

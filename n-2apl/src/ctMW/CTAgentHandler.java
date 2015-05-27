@@ -185,10 +185,10 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		System.out.println("[MSG] Message is for: " + dm.getToPerGameId());
 		System.out.println("[MSG] i'm: " + cgs.getPerGameId());
 
-		messages.put(dm.getMessageId(), dm);
+		
 		if (dm.getToPerGameId() == cgs.getPerGameId()) {
 
-
+			messages.put(dm.getMessageId(), dm);
 			BasicProposalDiscourseMessage proposal = (BasicProposalDiscourseMessage) dm;
 			if (type.equals("basicproposaldiscussion")) {
 				BasicProposalDiscussionDiscourseMessage response = (BasicProposalDiscussionDiscourseMessage) dm;
@@ -216,35 +216,19 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			}
 
 			else if (type.equals("basicproposal")) {
-				BasicProposalDiscussionDiscourseMessage responseMessage = new BasicProposalDiscussionDiscourseMessage(proposal );
+				//BasicProposalDiscussionDiscourseMessage responseMessage = new BasicProposalDiscussionDiscourseMessage(proposal );
 				// check if the proposal is beneficial
 
-				boolean offerResponse = RespondStrategy(ChipSet.subChipSets(proposal.getChipsSentByResponder(), proposal.getChipsSentByProposer() ),dm.getFromPerGameId());
+				//boolean offerResponse = RespondStrategy(ChipSet.subChipSets(proposal.getChipsSentByResponder(), proposal.getChipsSentByProposer() ),dm.getFromPerGameId());
 				System.out.println("Received a proposal creating event");
 				APLFunction event = null;
 
-
-				// PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
-				// waiter.doWait(RecipConstants.minRespondTime, RecipConstants.maxRespondTime);
-
-				// check if the proposal is beneficial
-				if( offerResponse ) {
-					//response.setSubjectMsgId(subjectMsgId);
 					event = new APLFunction("proposal",
 							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
 							new APLIdent("open"));
-					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).acceptOffer();
-					//responseMessage.acceptOffer();
-				} else {
-					//response.setSubjectMsgId(subjectMsgId);
-					event = new APLFunction("proposal",
-							new APLIdent("proposal"),new APLNum(dm.getFromPerGameId()), new APLNum(dm.getMessageId()),
-							new APLIdent("open"));
-					//((BasicProposalDiscussionDiscourseMessage) messages.get(dm.getMessageId())).rejectOffer();
-					//responseMessage.acceptOffer();
-				}
+	
 				env.throwEvents(event,"a"+agentname);
-				client.communication.sendDiscourseRequest(responseMessage);
+				//client.communication.sendDiscourseRequest(responseMessage);
 			}
 
 		}
@@ -904,7 +888,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	 * @param gy: y coordinate of goal
 	 */
 
-	public Term moveStepToGoalTest(String agentname,APLIdent goal, APLNum x, APLNum y, APLNum steps) throws
+	public Term moveStepToGoalTest(String agentname,APLIdent goal, APLIdent norm, APLNum x, APLNum y, APLNum steps) throws
 	ExternalActionFailedException {
 
 		ClientGameStatus cgs = client.getGameStatus();
@@ -933,8 +917,23 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		waiter.doWait(3, 5);
 		for (int i=0; i<1000; i++) {
 			// Get the best path available
+				
 			System.out.println(agentname+"[CTAH] path: " +i);
 			Path chosenPath = shortestPaths.remove(0); // why remove(0)??
+			
+			if (cgs.getBoard().getColors().contains(colorGoal)) {
+				ChipSet c = chosenPath.getRequiredChips(cgs.getBoard());
+				if (c.getColors().contains(colorGoal)) {
+					if (!cgs.getBoard().getSquare(chosenPath.getPoint(0)).getColor().equals(colorGoal)) {
+						if (norm.getName().equals("no"))
+							continue;
+					}
+				} else {
+					if (norm.getName().equals("yes"))
+						continue;
+				}
+			}
+			
 			RowCol point= chosenPath.getPoint(1);
 			System.out.println(agentname+"[CTAH] path: " +chosenPath.toString());
 			String color = cgs.getBoard().getSquare(point).getColor();
@@ -947,29 +946,31 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 				// Send move request
 			} else
 			{
-				//System.out.println(agentname+"[CTAH] moveStepToGoalTest proposals: " + proposals.toString());
-			//	if (nopoints.size() == 0 || !nopoints.contains(point)) {
-					System.out.println(agentname+"[CTAH] moveStepToGoalTest nopoints: " + nopoints.toString());
-					for(PlayerStatus ps : cgs.getPlayers()){
-						System.out.println(agentname+"[CTAH] moveStepToGoalTest proposals: " + proposals[ps.getPerGameId()]);
-						if (ps.getChips().getNumChips(color) > 0 )
-							//if (proposals[ps.getPerGameId()] == null || !proposals[ps.getPerGameId()].equals(color))
-								//if (nogo[ps.getPerGameId()] == null || !nogo[ps.getPerGameId()].equals(color))
+					
+				for(PlayerStatus ps : cgs.getPlayers()){
+					System.out.println(agentname+"[CTAH] moveStepToGoalTest proposals: " + proposals[ps.getPerGameId()]);
+						if (ps.getChips().getNumChips(color) > 1 )
+							if (proposals[ps.getPerGameId()] == null || !proposals[ps.getPerGameId()].equals(color))
+								if (nogo[ps.getPerGameId()] == null || !nogo[ps.getPerGameId()].equals(color))
 								{
-									//if (!proposalSent) {
-									//proposalSent = true;
-									//waiter.doWait(RecipConstants.minProposeTime, RecipConstants.maxProposeTime);
 									System.out.println(agentname+"[CTAH] found a chip....: " +point);
-									int msgid = makeProposal(agentname,ps.getPerGameId(),color);
-									
+									int msgid = makeProposal(agentname,ps.getPerGameId(),color);								
 									proposals[ps.getPerGameId()] = color;
-									//APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col));
 									APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col),new APLNum(ps.getPerGameId()),new APLNum(msgid));
-
 									System.out.println(agentname+"[CTAH] moveStepToGoalTest sent proposal for: " + uTD);
 									return uTD; 
-									//waiter.doWait(9, 10);
-									//}
+								}
+						//proposalSent = false;					
+					}
+					for(PlayerStatus ps : cgs.getPlayers()){
+						if (ps.getChips().getNumChips(color) > 0 )
+								{
+									System.out.println(agentname+"[CTAH] found any chip....: " +point);
+									int msgid = makeProposal(agentname,ps.getPerGameId(),color);								
+									proposals[ps.getPerGameId()] = color;
+									APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col),new APLNum(ps.getPerGameId()),new APLNum(msgid));
+									System.out.println(agentname+"[CTAH] moveStepToGoalTest sent proposal for: " + uTD);
+									return uTD; 
 								}
 						//proposalSent = false;					
 					}
@@ -997,7 +998,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			return uTD; 
 		}
 		//nopoints.add(new RowCol(ax.toInt(),ay.toInt()));
-		System.out.println(agentname2+"[CTAH] moveStepToGoal returns: false");
+		System.out.println(agentname2+"[CTAH] moveStepToGoal returns: no");
 		return new APLIdent("no");
 	}
 
@@ -1016,103 +1017,14 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	public Term sendResponse(String agentname2, APLNum msgID, APLIdent response) {
 		BasicProposalDiscourseMessage proposal = (BasicProposalDiscourseMessage) messages.get(msgID.toInt());
 		BasicProposalDiscussionDiscourseMessage responseMessage = new BasicProposalDiscussionDiscourseMessage(proposal);
-		// check if the proposal is beneficial
-	// PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
-		// waiter.doWait(RecipConstants.minRespondTime, RecipConstants.maxRespondTime);
-		//response.setSubjectMsgId(msgID);
-		// check if the proposal is beneficial
-		if( response.equals("accept") ) {
-			
-
-			//(BasicProposalDiscussionDiscourseMessage) messages.get(msgID.toInt()).acceptOffer();
+		if( response.getName().equals("accept") ) {
 			responseMessage.acceptOffer();
 		} else {
-			//(BasicProposalDiscussionDiscourseMessage) messages.get(msgID.toInt()).rejectOffer();
-			responseMessage.acceptOffer();
+			responseMessage.rejectOffer();
 		}
-		//env.throwEvents(event,"a"+agentname);
 		client.communication.sendDiscourseRequest(responseMessage);
+		System.out.println(agentname2+"[CTAH] sent response: "+responseMessage);
 		return new APLIdent("true");
 	}
-
-
-
-
-	/**
-	 * Send a proposal to a player
-	 * @param agentname
-	 * @param playerpin Pin of the player the agent will propose to
-	 * @param requestedchips Requested chips of opponent player
-	 */
-	//     public Term sendProposal(String agentname, APLNum playerpin,
-	//                                                    APLList requestedchips) {
-	//    	 System.out.println("[CTAH] trying to send a proposal: " + agentname);
-	//
-	//         LinkedList<Term> chips = requestedchips.toLinkedList();
-	//       //  HashMap<String, Integer> proposal = new HashMap();
-	//         ChipSet chipset = new ChipSet();
-	//
-	//         Set<String> ctclr = cgs.getBoard().getColors();
-	//         String[] ctcolors = new String[ctclr.size()];
-	//         ctclr.toArray(ctcolors);
-	//
-	//         HashMap<String, String> colorsmap = new HashMap<String, String>();
-	//
-	//         // link the normal ct colors to their lower case versions
-	//         for (String color: ctcolors) {
-	//             String colorLC = color.toLowerCase();
-	//             colorsmap.put(colorLC, color);
-	//         }
-	//         
-	//         for (int i = 0; i<chips.size(); i++) {
-	//             APLList item = (APLList) chips.get(i);
-	//             LinkedList<Term> itemlist = item.toLinkedList();
-	//
-	//             // modify color
-	//             APLIdent colorapl = (APLIdent) itemlist.get(0);
-	//             String clr = colorapl.toString();
-	//             String originalcolor = colorsmap.get(clr);
-	//
-	//             // modify amount of chips
-	//             APLNum amountapl = (APLNum) itemlist.get(1);
-	//             int amount = amountapl.toInt();
-	//
-	//             // add to the proposal chips
-	//             chipset.add(originalcolor, amount);
-	//         }
-	//
-	//         BasicProposalDiscourseMessage proposal= new BasicProposalDiscourseMessage(
-	//                 cgs.getGameId(), playerpin.toInt(), -1, new ChipSet(), chipset);
-	//
-	//     		client.communication.sendDiscourseRequest(proposal);
-	//
-	//     
-	//             
-	//         int messageId = proposal.getMessageId();
-	//         APLNum msgId = new APLNum(messageId);
-	//         return msgId; 
-	//     }
-
-
-	//
-	//    /**
-	//     * BROKEN
-	//     * Informs the sender that the proposal has or has not been accepted.
-	//     * @param agentname The name of the agent requesting the send action
-	//     * @param response Acceptance or rejection of the proposal
-	//     * @param messageid The message which is subject to the response
-	//     */
-	//    public void sendResponse(String agentname, APLIdent response, APLNum messageid) {
-	//   
-	//    }
-
-
-	//////////////////////////////
-
-
-
-
-
-
 
 }

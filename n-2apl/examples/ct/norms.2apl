@@ -63,18 +63,10 @@ adoptObligation(makeMove(X,Y,Thing), D, reduce(Group,Sanction)) <- true | {
 
 event(FUNCTION, NAME) <- true | {
 	@ctenv( functionToList(FUNCTION), LIST); 
-	if B(LIST=[actionresult([TYPE,ID])]) then { 
-		//Received a proposal
-		if B(TYPE=proposal) then {
-			ReceivedMessage(TYPE,ID,open);
-			//make response
-			adopta(received(TYPE,ID,closed))
-		}
-	}
-	else if B(LIST=[actionresult([TYPE,ID,RESPONSE])]) then {	
+	if B(LIST=[actionresult([TYPE,ID,RESPONSE])]) then {	
 		// Received a response
 		if B(TYPE=response) then {
-			ReceivedMessage(RESPONSE,ID)
+			ReceivedResponse(RESPONSE,ID)
 		} 
 	}
 	else if B(LIST=[actionresult([TYPE])]) then {
