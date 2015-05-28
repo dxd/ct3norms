@@ -1,0 +1,68 @@
+2015-05-27 19:22:59,741  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 528 milliseconds
+2015-05-27 19:25:05,087  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createObjectMessage(ActiveMQSession.java:329)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.sendPhaseAdvancedMessage(CtrlCommands.java:370)
+	at edu.harvard.eecs.airg.coloredtrails.server.GamesStatusSender.update(GamesStatusSender.java:112)
+	at java.util.Observable.notifyObservers(Observable.java:142)
+	at edu.harvard.eecs.airg.coloredtrails.shared.types.GameStatus.update(GameStatus.java:564)
+	at java.util.Observable.notifyObservers(Observable.java:142)
+	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advanceToPhase(Phases.java:467)
+	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.advancePhase(Phases.java:482)
+	at edu.harvard.eecs.airg.coloredtrails.shared.types.Phases.actionPerformed(Phases.java:517)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:291)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:221)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+
+2015-05-27 19:25:21,968  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: java.rmi.ConnectIOException: LRMI transport protocol over NIO broken connection with ServerEndPoint: [NIO://kafka.cs.nott.ac.uk:53934/pid[39365]/1432735540000497239_3_723581155937918397_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]]; nested exception is: 
+	java.net.SocketException: Network is unreachable, request=myGrid_container:myGrid=>UpdateLeaseSpaceOperationRequest[uid=b46ec475-a0d1-460c-a15b-e76219219eb3,typeName=java.lang.Object,leaseObjectType=3,duration=60000]
+2015-05-27 19:26:34,742  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=b46ec475-a0d1-460c-a15b-e76219219eb3,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 72773ms)
+2015-05-27 19:26:34,750  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: b46ec475-a0d1-460c-a15b-e76219219eb3
+ expiration: 1432751099743
+ left 95007
+ event cause: java.rmi.RemoteException: Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=b46ec475-a0d1-460c-a15b-e76219219eb3,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 72773ms)
+
+2015-05-27 19:26:34,772  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-05-27 21:59:09,072  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-05-27 21:59:09,153  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.cs.nott.ac.uk:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.UnknownHostException: kafka.cs.nott.ac.uk
+2015-05-27 21:59:09,155  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.cs.nott.ac.uk:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.UnknownHostException: kafka.cs.nott.ac.uk
+2015-05-27 21:59:09,155  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery to kafka.cs.nott.ac.uk:4174 with constraints InvocationConstraints[reqs: {}, prefs: {}]; Caused by: java.net.UnknownHostException: kafka.cs.nott.ac.uk
+2015-05-27 21:59:29,072  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=b46ec475-a0d1-460c-a15b-e76219219eb3,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20000ms)
+2015-05-27 21:59:29,073  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-05-27 21:59:49,074  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=b46ec475-a0d1-460c-a15b-e76219219eb3,typeName=java.lang.Object,leaseObjectType=3,duration=-1](elapsed time: 20001ms)
+2015-05-27 22:00:49,387  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=e4a585ad-81be-404c-846f-23b8735462cc DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.cs.nott.ac.uk:54059/pid[39400]/1432735563114579232_2_-5541286279052918511_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.cs.nott.ac.uk:54059/pid[39400]/1432735563114579232_2_-5541286279052918511_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-05-27 22:00:49,392  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-05-27 22:00:49,392  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-05-27 22:00:49,393  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-05-27 22:00:55,394  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-05-27 22:01:09,709  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+2015-05-27 22:01:55,506  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=e4a585ad-81be-404c-846f-23b8735462cc DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.cs.nott.ac.uk:54059/pid[39400]/1432735563114579232_2_-5541286279052918511_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.cs.nott.ac.uk:54059/pid[39400]/1432735563114579232_2_-5541286279052918511_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-05-27 22:01:55,513  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to find remote space: jini:/*/*/myGrid?groups=gigaspaces-9.5.1-XAPPremium-ga&state=started&create=false
+2015-05-27 22:01:55,514  SEVERE [com.gigaspaces.localcache] - LocalCache#1-myGrid is disconnected.
+2015-05-27 22:01:55,515  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid failed to connect to remote space - waiting 6000 millis before next attempt...
+2015-05-27 22:02:01,516  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...

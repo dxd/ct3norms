@@ -470,27 +470,49 @@ function removeElemFromDOM(elem) {
 	}
 }
 
-// Player Chips Area
+//Player Chips Area
 function PlayerChips() {
 	var theTable = document.getElementById("PlayerChips");
 
+	
+	
 	for ( var i = 0; i < playerNumTotal; i++) {
 
 		var newCell;
 
 		// create chip row
-		var newRow = theTable.insertRow(theTable.rows.length);
+		var newRow1 = theTable.insertRow(theTable.rows.length);
 
 		// player name
-		newCell = newRow.insertCell(0);
-		playerId = game.getPlayerId(i);
-		newCell.innerHTML = playerId+'<img src="img/' + game.players[i].icon + '"/>';
+		newCell = newRow1.insertCell(0);
+		newCell.innerHTML = "Player: ";
+		
+		
+		newCella = newRow1.insertCell(1);
+		var playerId = game.getPlayerId(i);
+		newCella.innerHTML = '<img src="img/' + game.players[i].icon + '"/> '+playerId;
+		
+		// create column
+		var newCell1 = newRow1.insertCell(2);
+		newCell1.id = "CellRowPoints" + i;
+		
+		// create div
+		var newDiv1 = document.createElement("div");
+		
+		
+		newDiv1.id = "playerId" + game.players[i].id + "Points";
+		newDiv1.innerHTML = 1000;
+		//newDiv.style.
+
+		newCell1.appendChild(newDiv1);
+		
+		var newRow = theTable.insertRow(theTable.rows.length);
 		for ( var j = 0; j < game.players[i].cards.length; j++) {
 
 			// create column
-			newCell = newRow.insertCell(j + 1);
-			newCell.id = "CellRowChips" + i + "ColumnChips" + j;
-			newCell.className = "containerForChip";
+			var newCell3 = newRow.insertCell(j);
+			newCell3.id = "CellRowChips" + i + "ColumnChips" + j;
+			newCell3.className = "containerForChip";
 			
 			// create div
 			var newDiv = document.createElement("div");
@@ -521,12 +543,42 @@ function PlayerChips() {
 			cell.appendChild(newDiv);
 			
 		}
+		
 	}
 	
 	
 }
 // end player chips area
+function PlayerPoints() {
+	var theTable = document.getElementById("PlayerPoints");
 
+	for ( var i = 0; i < playerNumTotal; i++) {
+
+		var newRow = theTable.insertRow(theTable.rows.length);
+		var newCell = newRow.insertCell(0);
+		var playerId = game.getPlayerId(i);
+		newCell.innerHTML = playerId+'<img src="img/' + game.players[i].icon + '"/>';
+		
+		
+		// create column
+		var newCell1 = newRow.insertCell(1);
+		newCell1.id = "CellRowPoints" + i;
+		newCell.className = "containerForChip";
+		
+		// create div
+		var newDiv = document.createElement("div");
+		
+		
+		newDiv.id = "playerId" + game.players[i].id + "Points";
+		newDiv.innerHTML = 1000;
+		newDiv.style.background = "#" + game.players[i].cards[0].color;
+
+		newCell1.appendChild(newDiv);
+		
+	}
+	
+	
+}
 
 
 //Reset the proposal table area before/after changes where made by goal revelation phase
@@ -1488,6 +1540,7 @@ function UpdateServer() {
 		UpdateResponseForProposal(o);
 		UpdatePlayerPosOnBoard(o);
 		UpdatePlayerChips(o);
+		UpdatePlayerPoints(o);
 		UpdateBorderColors(o);
 		UpdateClock(o.Clock);
 		UpdateScore(o.Score);
@@ -1504,6 +1557,11 @@ function UpdateScore(s) {
 	score = s;
 }
 
+function UpdatePlayerPoints(o) {
+	for ( var i = 0; i < o.Points.length; i++) {		
+		jQuery("#" + "playerId" + o.Points[i].id + "Points").html(o.Points[i].points);											
+	}
+}
 //Change Player Chips after ajax update
 function UpdatePlayerChips(o) {
 	for ( var i = 0; i < o.chipsChange.length; i++) {
@@ -1546,7 +1604,7 @@ function updateGoals(o)
 	
 	createGoals();
 	
-	updatePathFinderGoals();
+	//updatePathFinderGoals();
 	
 	
 	

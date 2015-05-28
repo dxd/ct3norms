@@ -1,5 +1,5 @@
 Beliefs:
-rejectRequests(X) :- receivedP(proposal,ID,closed(reject)).
+rejectRequests(X) :- receivedP(Y,ID,closed(reject)).
 
 
 BeliefUpdates:
@@ -36,12 +36,12 @@ adoptProhibition(color(Color,Thing), reduce(_,Value)) <- true | {
 	AdoptP(useColor(Color,Value));
     aprohibition(useColor(Color,Value) -> reduce(Value))
 }
-adoptProhibition(rejectRequests, reduce(_,Value)) <- true | {
+adoptProhibition(rejectRequests(A), reduce(_,Value)) <- true | {
 	AdoptP(rejectRequests(Value));
     aprohibition(rejectRequests(Value) -> reduce(Value))
 }
-adoptProhibition(moveTooFast, reduce(_,Value)) <- true | {
-	AdoptP(movedTooFast(Value));
+adoptProhibition(moveTooFast(A), reduce(_,Value)) <- true | {
+	AdoptP(moveTooFast(Value));
     aprohibition(moveTooFast(Value) -> reduce(Value))
 }
 
@@ -49,13 +49,13 @@ adoptObligation(at(X,Y,_), D, reduce(_,Value)) <- true | {
     adoptz(at(X,Y,Value) : D -> reduce(Value))
 }
 adoptObligation(surround(X,Y), D, reduce(Group,Sanction)) <- true | {
-    adoptz(surround(X,Y,Sanction) : D -> reduce(Sanction))
+    adopta(surround(X,Y,Sanction) : D -> reduce(Sanction))
 }
-adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- not useColor(Color) | {
+adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- true | {
     adoptz(useColor(Color,Sanction) : D -> reduce(Sanction))
 }
-adoptObligation(acceptRequests(Thing), D, reduce(Group,Sanction)) <- true | {
-    adoptz(acceptRequests(Sanction) : D -> reduce(Sanction))
+adoptObligation(acceptRequest(Id), D, reduce(Group,Sanction)) <- true | {
+    adoptz(acceptRequest(Id,Sanction) : D -> reduce(Sanction))
 }
 adoptObligation(makeMove(X,Y,Thing), D, reduce(Group,Sanction)) <- true | {
     adoptz(makeMove(X,Y,Sanction) : D -> reduce(Sanction))

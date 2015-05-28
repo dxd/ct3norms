@@ -161,6 +161,15 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		// got messages to update the client
 		object.put("Clock", client.getGameStatus().getBoard().getClock());
 		object.put("Score", client.getGameStatus().getMyPlayer().getScore());
+		JSONArray ScoreArray = new JSONArray();
+		for (PlayerStatus player : GameStat.getPlayers()) {
+			JSONObject m = new JSONObject();
+			m.put("id",player.getPerGameId());
+			m.put("points",player.getScore());
+			ScoreArray.add(m);
+		}
+		object.put("Points", ScoreArray);
+		
 		JSONArray requestsArray = new JSONArray();
 		JSONArray responseArray = new JSONArray();
 		if ((LastUpdateProposaleMessages != null)

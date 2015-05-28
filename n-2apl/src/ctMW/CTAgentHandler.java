@@ -51,7 +51,6 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	private String agentname;
 	private String[] proposals = new String[] {null,null,null,null,null}; 
 	private String[] nogo = new String[] {null,null,null,null,null};
-	private ArrayList<RowCol> nopoints = new ArrayList<RowCol>();
 
 	public CTAgentHandler(EnvCT envCT, String agentname) {
 		env = envCT;
@@ -422,45 +421,6 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			return apllist;
 		}
 	}
-
-
-	/**
-	 * Find the player closest to the given coordinates. These can also
-	 * be the coordinates of the current agent.
-	 * @param x APLNum X-coordinate
-	 * @param y APLNum Y-coordinate
-	 * @return An APLList of APLLists of [playerpin, posx, posy]
-	 */
-
-	//     public Term findPlayerClosestTo(String agentname, APLNum x, APLNum y)
-	//                        throws ExternalActionFailedException {
-	//        int xcoor = x.toInt();
-	//        int ycoor = y.toInt();
-	//        HashMap players = agents.get(agentname).findPlayerClosestTo(xcoor, ycoor);
-	//        Set<Integer> playerPins = players.keySet();
-	//        APLList closestPlayers;
-	//        // make a list of players that corresponds with the size of the CT HashMap
-	//        Term[] t = new Term[playerPins.size()];
-	//        int i = 0;
-	//
-	//        // convert each <pin, RowCol> pair to an APLList and put this in the
-	//        // list of players
-	//        for (int pin : playerPins) {
-	//            RowCol pos = (RowCol) players.get(pin);
-	//            int row = pos.row;
-	//            int col = pos.col;
-	//            APLList position = new APLList(new Term[]
-	//                    {new APLNum(pin), new APLNum(row), new APLNum(col)});
-	//            t[i] = position;
-	//            i++;
-	//        }
-	//
-	//        closestPlayers = new APLList(t);
-	//        System.out.println("[CTAH] This is what closestPlayers looks like: " + closestPlayers);
-	//        return closestPlayers;
-	//     }
-
-
 
 	/**
 	 * Return a list of chips of a specified player
@@ -901,18 +861,6 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 1000);
 		System.out.println(agentname+"[CTAH] paths: " + shortestPaths.size());
 		
-//		ArrayList<Path> paths = new ArrayList<Path>();
-//			for (Path p : shortestPaths) {		
-//				if (p.getNumPoints() > steps.toInt() + 1)
-//					continue;
-//				if (cgs.getBoard().getColors().contains(colorGoal)) {
-//					ChipSet c = p.getRequiredChips(cgs.getBoard());
-//					if (c.getColors().contains(colorGoal))
-//						paths.add(p);
-//				}
-//			}
-//		shortestPaths = paths;
-		
 		PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
 		waiter.doWait(3, 5);
 		for (int i=0; i<1000; i++) {
@@ -942,8 +890,6 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 				APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col),new APLIdent("no"),new APLIdent("no"));
 				System.out.println(agentname+"[CTAH] moveStepToGoalTest returns I have chip: " + uTD);
 				return uTD; 
-				//System.out.println(agentname+"[CTAH] going to: " + point + "goal: " +x+","+y+" color: "+ colorGoal);
-				// Send move request
 			} else
 			{
 					
@@ -959,11 +905,11 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 									APLList uTD = new APLList(new APLNum(point.row),new APLNum(point.col),new APLNum(ps.getPerGameId()),new APLNum(msgid));
 									System.out.println(agentname+"[CTAH] moveStepToGoalTest sent proposal for: " + uTD);
 									return uTD; 
-								}
-						//proposalSent = false;					
+								}				
 					}
 					for(PlayerStatus ps : cgs.getPlayers()){
 						if (ps.getChips().getNumChips(color) > 0 )
+							if (nogo[ps.getPerGameId()] == null || !nogo[ps.getPerGameId()].equals(color))
 								{
 									System.out.println(agentname+"[CTAH] found any chip....: " +point);
 									int msgid = makeProposal(agentname,ps.getPerGameId(),color);								

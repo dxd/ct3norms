@@ -45,7 +45,7 @@
 <script type="text/javascript" src="js/jquery.notify.js"></script>
 <script type="text/javascript" src="js/jquery.dd.js"></script>
 <script type="text/javascript" src="js/jScript.js"></script>
-<script type="text/javascript" src="js/pathfinder.js"></script>
+
 
 <script type="text/javascript">
 //json
@@ -79,7 +79,7 @@ var game = {
 					"isEnded":<%out.print(gs.isEnded() == true ? "true" : "false");%>,
 					"isRevelationEnabled":<%out.print(WebCTConfiguration.getIsChipRevelationGame() == true ? "\"true\"" : "\"false\"");%>,
 					"isGoalRevelationAllowed":<%out.print(gs.getMyPlayer().isRevelationAllowed() == true ? "true" : "false");%>,
-					"showPathFinder":<%out.print(WebCTConfiguration.getShowPathFinder() == true ? "\"true\"" : "\"false\"");%>,
+					
 					"numOfColors":<% out.print(gs.getBoard().getColors().size()); %>, 
 					"role":<%out.print( gs.getMyPlayer().getRole().equals("ra") ? 1 : 0 );
 					System.out.print( gs.getPlayerByPerGameId(gs.getPerGameId()).getRole() );%>,
@@ -546,46 +546,12 @@ var game = {
 	</tr>
 	<tr>
 		<td>
-		<div id="divPathFinder">
-		<table>
-			<tr>
-				<td >Player:<div> <select id="playerSelect"
-					onchange="insertIntoGoalSelect()"
-					style="width: 120px ; margin:0px 10px 5px 0px">
-					<option value=0>choose player</option>
-				</select> </div> </td>
-			</tr>
-			<tr>
-				<td>Goal: <select id="goalSelect"
-					style="width: 60px; margin: 0px 10px 5px 0px;">
-					<option value=0>select</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Steps: <select id="numStepsPathFinder" style="width: 40px">
-					<option value=1>1</option>
-					<option value=2>2</option>
-					<option value=3>3</option>
-					<option value=4>4</option>
-					<option value=5>5</option>
-					<option value=6>6</option>
-					<option value=7>7</option>
-					<option value=8>8</option>
-					<option value=9>9</option>
-					<option value=10 selected="selected">10</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>
-				<button onclick="findPath()">Path Finder</button>
-				</td>
-			</tr>
+		<table id="PlayerPoints">
 		</table>
-		</div>
+		
 		</td>
 	</tr>
 </table>
-<div id="pathFinderContainer"></div>
 <!--end proposal area--> <!-- Source point for window animations. -->
 <div id="divSource" class="cssSource"></div>
 </div>
@@ -632,8 +598,8 @@ var game = {
 	//gilend
 	//proposalArea();
 	//if (game.showPathFinder == "true") {
-		document.getElementById("divPathFinder").style.visibility='visible';
-		CreatePathFinder();
+	//	document.getElementById("divPathFinder").style.visibility='visible';
+	//	CreatePathFinder();
 	//}
 	
 	//gil

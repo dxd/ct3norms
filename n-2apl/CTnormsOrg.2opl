@@ -32,12 +32,12 @@ Thing, // the subject agent
 obligation([color(Color,Thing)],now + 20,[reduce(Thing,S)]) // prohibition format
 ).
 
-%individual obligations to accept request, not used
+%individual obligations to accept requests per each
 norm(
-acceptRequests(Thing),
+acceptRequest(Thing),
 Thing, // the subject agent
-( pursuer(Thing), acceptPolicy(Thing)), // precondition
-obligation([acceptRequests],now + 20,[reduce(Thing,500)]) // prohibition format
+( pursuer(Thing), proposal(Id,_,Thing,_)), // precondition
+obligation([acceptRequest(Id)],now + 5,[reduce(Thing,500)]) // prohibition format
 ).
 
 %individual prohibitions to reject requests
@@ -45,7 +45,7 @@ norm(
 rejectRequests(Thing),
 Thing, // the subject agent
 ( pursuer(Thing),group(Z)), // precondition
-prohibition([rejectRequests],[reduce(Thing,500)]) // prohibition format
+prohibition([rejectRequests(Thing)],[reduce(Thing,500)]) // prohibition format
 ).
 
 %individual prohibition to move more than one field per turn
@@ -53,14 +53,14 @@ norm(
 moveTooFast(Thing),
 Thing, // the subject agent
 ( pursuer(Thing),group(Z)), // precondition
-prohibition([moveTooFast],[reduce(Thing,300)]) // prohibition format
+prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
 ).
 
 %individual obligation to make a move during move phase
 norm(
 makeMove(Thing),
 Thing, // the subject agent
-( pursuer(Thing), phase(movement), at(X,Y,Thing),group(Z)), // precondition
+( pursuer(Thing), at(X,Y,Thing),group(Z)), // precondition
 obligation([makeMove(X,Y,Thing)],now + 20,[reduce(Thing,300)]) // prohibition format
 ).
 
@@ -68,8 +68,14 @@ obligation([makeMove(X,Y,Thing)],now + 20,[reduce(Thing,300)]) // prohibition fo
 color(Color,Agent) :-
 	at(X,Y,Agent),
 	tile(X,Y,Color).
-//moveTooFast(Thing).
-makeMove(Thing).
+	
+makeMove(X,Y,Thing) :-
+	at(X1,Y,Thing),
+	not(X is X1).
+makeMove(X,Y1,Thing) :-
+	at(X,Y1,Thing),
+	not(Y is Y1).	
+	
 //phase(movement).
 
 rejectRequests(A) :- 
@@ -78,6 +84,9 @@ rejectRequests(A) :-
 acceptRequests(A):- 
 	response(Id,accepted,_),
 	proposal(Id,_,A,_).
+acceptRequest(Id):- 
+	response(Id,accepted,_),
+	proposal(Id,_,_,_).
 	
 hierachical(group_task(_)).
 

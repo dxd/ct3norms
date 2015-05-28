@@ -2,12 +2,14 @@ Include: norms.2apl
 
 Beliefs:
 useColor(Color,V) :- position(X,Y,_),tile(Color,X,Y).
+acceptRequest(MSGID,V1) :- receivedP(X,MSGID,closed(ANSWER)).
 at(X,Y,V) :- position(X,Y,W).
 at(X,Y) :- position(X,Y,W).
 initialized :- initialized(yes).
 raise(X,NewX):- NewX is X + 1.
 lower(X,NewX):- NewX is X - 1.
 
+timetowait(7).
 points(1000).
 clock(0).
 initialized(no).
@@ -24,7 +26,6 @@ BeliefUpdates:
 { position(X,Y,Clock) and moveTooFast(X) } 					UpdatePosition(X1,Y1,Clock1) 	{ not position(X,Y,Clock), position(X1,Y1,Clock), not moveTooFast(X) }
 { position(X,Y,Clock) } 									UpdatePosition(X1,Y1,Clock1) 	{ not position(X,Y,Clock), position(X1,Y1,Clock)}
 { true } 													UpdateTile(Color,X,Y) 			{ tile(Color,X,Y) }
-//{message(TYPE,ID,open)}										CloseMessage(TYPE,ID,RESPONSE)	{not message(TYPE,ID,open), message(TYPE,ID,RESPONSE)}
 {true} 														Failed(X) 						{failed(X)}
 {chipsNeeded(OLD) or not chipsNeeded(OLD)}					GetChipsNeeded(NEW)				{not chipsNeeded(OLD), chipsNeeded(NEW)}
 {chipsRedundant(OLD) or not chipsRedundant(OLD)}			GetChipsRedundant(ID,NEW)		{not chipsRedundant(OLD), chipsRedundant(NEW)}
@@ -53,6 +54,7 @@ BeliefUpdates:
 
 {true}														SentProposal(MSGID,ID,STATUS,C) {sent(MSGID,ID,STATUS,C)}
 {sent(MSGID,ID,open,C)}										ReceivedResponse(RESPONSE,MSGID){not sent(MSGID,ID,open,C), sent(MSGID,ID,closed(RESPONSE),C)}
+{sent(MSGID,ID,closed(noresponse),C)}						ReceivedResponse(RESPONSE,MSGID){sent(MSGID,ID,closed(RESPONSE),C)}
 
 {true}														ReceivedProposal(TYPE,ID,STATUS){receivedP(TYPE,ID,STATUS)}
 {receivedP(X,ID,open)}										SentResponse(ANSWER,ID)			{not receivedP(X,ID,open), receivedP(X,ID,closed(ANSWER))}
@@ -68,11 +70,32 @@ initialize()
 
 PG-rules:
 
-respond <- receivedP(X,MSGID,open) and agentId(ID) and not scoreAfterExchange(MSGID,Score) | {
-		getScoreAfterExchange(ID,MSGID);
-		if G(at(A,B,C)) then
-			{skip} else
-			{sendResponse(MSGID,accept)}		
+acceptRequest(MSGID,V1) <- receivedP(X,MSGID,open) | {
+	if B(not scoreAfterExchange(MSGID,Score)) then
+		{getScoreAfterExchange(MSGID)};
+		
+	B(scoreAfterExchange(MSGID,Score));
+	B(Answer = accept);
+	
+	if B(Score = yes) then
+		{B(Answer = accept)}
+	else if B(Score = no) then
+		{B(Answer = reject)}
+	else if B(Score > V1) then
+		{B(Answer = reject)}
+	else if B(prohibition(rejectRequests(V2))) then 
+				{if B(V2 < V1) then 
+					{B(Answer = reject)}};
+		
+	sendResponse(MSGID,Answer)
+	
+} : 10
+
+respond <- receivedP(X,MSGID,open) | {
+		if G(acceptRequests(MSGID,V2)) then 
+  			{skip}
+  		else if B(not receivedP(X, MSGID, closed(A))) then
+  			{adoptz(acceptRequest(MSGID,50))}	
 } : 10
 
 surround(X,Y,V1) <- role(ID,ra) | {
@@ -98,52 +121,30 @@ useColor(Color,V1) <- (phase(communicationphase) or phase(movementphase)) and at
 	[
 	if B(tile(Color,X1,Y1)) then 
 		{dropgoal(useColor(Color,V1))}
-	else if B(prohibition(useColor(Color,V2))) then {
-		if B(V2 > V1) 
-			then {dropgoal(useColor(Color,V1))}
-	}
-	else {findNextStep(Color,V1)};
-	
-	if B(receivedP(A,MSGID,open)) then if B(scoreAfterExchange(MSGID,Score)) then {
-  		respond(MSGID,V1)
-  	}
+	else if B(prohibition(useColor(Color,V2))) then
+		{if B(V2 > V1) then
+			{dropgoal(useColor(Color,V1))}}
+	else 
+		{findNextStep(Color,V1)}
 	]
 } : 100
 
-//makeMove(X,Y) <- true | {}
-
 initialized <- event(game_initialized) | {
     Initialize()
-} : 10
+} : 1
 
 update <- event(phasechange) |  {
 	update()
-} : 10
+} : 1
 
 at(X,Y,V1) <- (phase(communicationphase) or phase(movementphase)) and at(X1,Y1) and clock(C) | {
   [ 	
-  	findNextStep(neco,V1);
-  	
-  	if B(receivedP(A,MSGID,open)) then 
-  		if B(scoreAfterExchange(MSGID,Score)) then 
-  		{
-  		respond(MSGID,V1)
-  		}
+  	findNextStep(neco,V1)
   ] 
 } : 100
 
 PC-rules:
 
-respond(MSGID,V1) <- receivedP(X,MSGID,open) and scoreAfterExchange(MSGID,Score) | {
-		
-		B(ANSWER = accept);
-		if B(not Score = yes) then { 
-			if B(prohibition(rejectRequests(V2))) then 
-				{if B(V2 < V1) then {
-					B(ANSWER = reject)
-								}}};		
-  		sendResponse(MSGID,ANSWER)
-}
 
 findNextStep(Color,V1) <- not nextStep(X1,Y1) and not nextStep(X1,Y1,Msg) and not sent(ID,IDagent,open,C1) | {
 	if G(at(X,Y,V)) then {B([A,B] = [X,Y])}
@@ -167,12 +168,6 @@ findNextStep(Color,V1) <- not nextStep(X1,Y1) and not nextStep(X1,Y1,Msg) and no
 		else 
 			{NextStep(Xa,Ya)}
 
-//		if B(tile(Color1,Xa,Ya)) then {
-//			if B(prohibition(useColor(Color1,V2))) then {if B(V1 > V2) then {if B(not ID = no) then {NextStep(Xa,Ya,ID)} else {NextStep(Xa,Ya)}}}
-//			else { if B(not ID = no) then {NextStep(Xa,Ya,ID)} else {NextStep(Xa,Ya)}}
-//		};		
-//		if B(not ID = no) then
-//			SentProposal(ID,Agent,open,Clock)
 	}
 	
 }
@@ -196,7 +191,8 @@ findNextStep(Color,V1) <- nextStep(X1,Y1,ID) and sent(ID,IDagent,closed(RESPONSE
 }
 
 findNextStep(Color,V1) <- nextStep(X1,Y1,ID) and sent(ID,IDagent,open,C1) and clock(C2) | {
-	if B(C2 > C1 + 5) then {
+	B(timetowait(Wait));
+	if B(C2 > C1 + Wait) then {
 		NoNextStep(X1,Y1,ID);
 		ReceivedResponse(noresponse,ID)
 		}
@@ -331,8 +327,8 @@ getRole(ID) <- true | {
 	GetRole(ID, X)
 }
 
-getScoreAfterExchange(ID,MSGID) <- true | {
-	//@ctenv( getScoreAfterExchange(ID,MSGID), L1);
+getScoreAfterExchange(MSGID) <- true | {
+	//@ctenv( getScoreAfterExchange(MSGID), L1);
 	//B( L1 = [actionresult(X)]);
 	GetScoreAfterExchange(MSGID,yes)
 }
