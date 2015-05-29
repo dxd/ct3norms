@@ -297,12 +297,15 @@ public class Utilities {
 		}
 			
 		String s = term.substring(0, tx).trim();
-
-		Term[] t = new Term[10];
+		Term[] t = new Term[50];
 		int i = term.indexOf(",");
 		int index = 0;
 		if (i == -1) {
-			return new APLFunction(term);
+			int j = term.indexOf(")");
+			String y = term.substring(tx+1, j).trim();
+			t[index] = numOrIdent(y);
+			Term posTerm = new APLFunction(s, t);
+			return posTerm;
 		}
 		else {
 			String x = term.substring(s.length() + 1, i).trim();

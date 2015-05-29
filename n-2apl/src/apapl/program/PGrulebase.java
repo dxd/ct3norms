@@ -5,6 +5,7 @@ import apapl.NoRuleException;
 import apapl.Parser;
 import apapl.plans.BeliefUpdateAction;
 import apapl.plans.ChunkPlan;
+import apapl.plans.PAction;
 import apapl.plans.Plan;
 import apapl.plans.PlanResult;
 import apapl.plans.PlanSeq;
@@ -379,6 +380,7 @@ public class PGrulebase extends Rulebase<PGrule> {
 						}
 					}
 				} else {
+				
 					pass = false;
 					ps.setProhibited();
 				}
@@ -503,6 +505,9 @@ public class PGrulebase extends Rulebase<PGrule> {
 
 		for (Plan plan : ps.getPlans()) {
 			// plan.evaluateArguments();
+			if (plan instanceof PAction) {
+				continue;
+			}
 			if (plan instanceof BeliefUpdateAction) {
 				APLFunction p = ((BeliefUpdateAction) plan).getPlan();
 				SubstList<Term> theta = new SubstList<Term>();

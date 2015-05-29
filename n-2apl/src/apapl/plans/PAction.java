@@ -37,7 +37,7 @@ public class PAction extends ModulePlan
 	{
 		APLModule updatedModule;
 		//System.out.println(action);
-		
+		//System.out.println("called PAction:   "+p);
 		if (moduleId != null) {
 			try {
 				if (moduleId == null)
@@ -53,7 +53,7 @@ public class PAction extends ModulePlan
 		}		
 		
 		int r = PlanResult.FAILED;
-		
+		//System.out.println("PAction:   "+p);
 		Prohibitionbase prohibitions = updatedModule.getProhibitionbase();
 		try {
 			p.unvar();
@@ -62,9 +62,10 @@ public class PAction extends ModulePlan
 			e.printStackTrace();
 		}
 		if (action.equals("aprohibition")) {
-			//p.evaluate();
+		//	System.out.println("PAction:   "+p);
+			p.evaluate();
 			prohibitions.add(p);
-			//System.out.println("PAction:   "+p);
+		//	System.out.println("PAction:   "+p);
 			parent.removeFirst();
 			module.assignPriorities();
 			r = PlanResult.SUCCEEDED;

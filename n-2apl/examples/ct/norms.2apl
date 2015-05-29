@@ -36,11 +36,12 @@ adoptProhibition(color(Color,Thing), reduce(_,Value)) <- true | {
 	AdoptP(useColor(Color,Value));
     aprohibition(useColor(Color,Value) -> reduce(Value))
 }
-adoptProhibition(rejectRequests(A), reduce(_,Value)) <- true | {
+//adoptProhibition(rejectRequests(a40), reduce(a40, 500))
+adoptProhibition(rejectRequests(Thing), reduce(Thing,Value)) <- true | {
 	AdoptP(rejectRequests(Value));
     aprohibition(rejectRequests(Value) -> reduce(Value))
 }
-adoptProhibition(moveTooFast(A), reduce(_,Value)) <- true | {
+adoptProhibition(moveTooFast(Thing), reduce(Thing,Value)) <- true | {
 	AdoptP(moveTooFast(Value));
     aprohibition(moveTooFast(Value) -> reduce(Value))
 }

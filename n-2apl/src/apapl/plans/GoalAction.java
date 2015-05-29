@@ -59,16 +59,16 @@ public class GoalAction extends ModulePlan
 		int r = PlanResult.FAILED;
 		if (action.startsWith("adopt")) {
 			try {
-				//System.out.println("obligation to be adopted: "+g);
+				System.out.println("obligation to be adopted: "+g);
 				g.unvar();
-				if(testGoal(module.getBeliefbase())) r = PlanResult.FAILED;
-				else {
+//				if(testGoal(module.getBeliefbase())) r = PlanResult.FAILED;
+//				else {
 					if (action.equals("adopta")) goals.assertGoalHead(g);
 					else if (action.equals("adoptz")) goals.assertGoal(g);
 					parent.removeFirst();
 					module.assignPriorities();
 					r = PlanResult.SUCCEEDED;
-				}
+//				}
 			}
 			catch (UnboundedVarException e) {
 				r = PlanResult.FAILED;
