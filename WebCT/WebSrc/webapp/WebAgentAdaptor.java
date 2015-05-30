@@ -240,8 +240,12 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		object.put("numOfGoals", GameStat.getBoard().getGoals().size());
 		//gilend
 		object.put("isEnded", GameStat.isEnded());
-		object.put("role",
-				GameStat.getPlayerByPerGameId(pID).getRole().equals("ra") ? 1 : 0);
+		if (GameStat.getPlayerByPerGameId(pID).getRole().equals("ra"))
+			object.put("role",1);
+		else if (GameStat.getPlayerByPerGameId(pID).getRole().equals("raaa"))
+			object.put("role",2);
+		else 
+			object.put("role",0);
 		// object.put("CurrentPhase",
 		// GameStat.getPhases().getCurrentPhaseName());
 		// object.put("PhaseSecsLeft",

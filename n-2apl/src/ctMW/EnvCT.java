@@ -715,6 +715,7 @@ public class EnvCT  extends Environment implements ExternalTool {
 			session.addListener(new Response(), handler);
 			session.addListener(new Color(), handler);
 			session.addListener(new SetGoal(), handler);
+			session.addListener(new GroupObl(), handler);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

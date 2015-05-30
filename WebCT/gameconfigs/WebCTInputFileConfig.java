@@ -8,6 +8,7 @@ import edu.harvard.eecs.airg.coloredtrails.shared.discourse.ChipsRevelationDisco
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.DiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormColorDiscourseMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage;
+import edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGroupMessage;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.*;
 
 import java.util.Date;
@@ -324,7 +325,11 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		}  else if (dm instanceof NormGoalDiscourseMessage) {
 			System.out.println("---- NormGoalDiscourseMessage ----");
 			NormGoalDiscourseMessage ngdm = (NormGoalDiscourseMessage) dm;
-			spaces.writeNormGoal(ngdm.getToPerGameId(),ngdm.getGoal(),ngdm.getOrigLoc(),ngdm.getSanction());	
+			spaces.writeNormGoal(ngdm.getToPerGameId(),ngdm.getGoal(),ngdm.getOrigLoc(),ngdm.getSanction());		
+		}  else if (dm instanceof NormGroupMessage) {
+			System.out.println("---- NormGroupMessage ----" + dm);
+			NormGroupMessage ngdm = (NormGroupMessage) dm;
+			spaces.writeNormGroup(ngdm.isNorm(),ngdm.getSanction());	
 		}
 		return result;
 	}

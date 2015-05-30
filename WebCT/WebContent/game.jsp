@@ -566,6 +566,9 @@ var game = {
 <div id="Cnorms">
 <table id="tblCNorms"></table>
 </div>
+<div id="Gnorms">
+<table id="tblGNorms"></table>
+</div>
 <div id="norms">
 <table id="tblNorms"></table>
 </div>

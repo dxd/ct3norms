@@ -16,6 +16,22 @@ norm(
     obligation([at(X,Y,Agent)],now + 26,[reduce(Agent, 700)]) // prohibition format
     ).  
 
+%group accept requests
+norm(
+    group_acceptRequests(G,Sanction),
+    G, // the subject agent
+    ( group(G), groupObl(acceptRequests,Sanction)), // precondition - left blank for now
+    obligation([group_acceptRequests],now + 30,[reduce(G,Sanction)]) // prohibition format
+    ).
+    
+%agents group norms from RA  
+norm(
+    group_task(group_acceptRequests(G)),
+    Agent, // the subject agent 
+    ( pursuer(Agent), detached(group_acceptRequests(G,Sanction))), // precondition - add triggering condition
+    obligation([acceptRequests],now + 26,[reduce(Agent,Sanction)]) // prohibition format
+    ). 
+    
 %individual prohibitions to use colored tiles
 norm(
 	not_enter_tile(Thing),	
@@ -267,6 +283,7 @@ Effects:
 {true} setGoal(Agent,X,Y,GX,GY,S,Clock) {agentSTask(Agent,X,Y,goal(GX,GY),S)}
 {true} color(Agent,Color,Type,S,C) {color(Agent,Color,Type,S)}
 {true} group(Name,Agent,C) {group(Name), ra(Name,Agent)}
+{true} groupObl(Obl,Sanction,C) {groupObl(Obl,Sanction)}
 
 //{points(Agent,OldValue)} points(Agent, Clock, Value) {not points(Agent,OldValue), points(Agent,Value)}
 //{true} points(Agent, Clock, Value) {points(Agent,Value,Clock)}

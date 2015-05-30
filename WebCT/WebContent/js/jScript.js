@@ -358,21 +358,21 @@ function updateProgressBar() {
 				//chipRevelationArea();
 				//clearProposalTableArea();
 			if (phaseChanged) {
-			if (game.role > 0) {
-				loadNormGoalProposalsTable();
-				
-			}
-			if  (game.role == 2) {
-				
-				loadNormColorProposalsTable();
-			}
+				if (game.role > 0) {
+					loadNormGoalProposalsTable();					
+				}
+				if  (game.role == 2) {
+					
+					loadNormColorProposalsTable();
+					loadNormGroupProposalsTable();
+				}
 				SetHeaderMsg('Setting up phase');	
 			}
 			break;
 		case "Movement Phase":
 			if (phaseChanged ) {
 			// if communication phase -> build proposal area for players
-			if (game.role == 1) {
+			if (game.role > 0) {
 			clearNormMessagesUI();
 			}
 			//UpdateServer();			
@@ -418,7 +418,8 @@ function clearMessagesUI() {
 	//removeElemFromDOM(document.getElementById('notifyContainer'));	
 }
 function clearNormMessagesUI() {
-	removeElemFromDOM(document.getElementById('tblCNorms'));
+	removeElemFromDOM(document.getElementById('CNorms'));
+	removeElemFromDOM(document.getElementById('GNorms'));
 	removeElemFromDOM(document.getElementById('divTableNMsgType'));
 	removeElemFromDOM(document.getElementById('divTableNReceiver'));
 	removeElemFromDOM(document.getElementById('divTableNGoal'));
@@ -442,8 +443,6 @@ function removeElemFromDOM(elem) {
 //Player Chips Area
 function PlayerChips() {
 	var theTable = document.getElementById("PlayerChips");
-
-	
 	
 	for ( var i = 0; i < playerNumTotal; i++) {
 
@@ -527,6 +526,99 @@ function clearProposalTableArea(){
 
 }
 
+function loadNormGroupProposalsTable() {	
+	jQuery("#tblGNorms").jqGrid(
+			{
+				datatype : "local",
+				height : 200,
+				colNames : ['MsgType', 'Norm', 'Sanction',  'Response' ],
+				colModel : [ {
+					name : 'MsgType',
+					index : 'MsgType',
+					width : 90,
+					sortable : false
+				},{
+					name : 'Norm',
+					index : 'Norm',
+					width : 530,
+					sortable : false
+				},{
+					name : 'Sanction',
+					index : 'Sanction',
+					width : 70,
+					sortable : false
+				},{
+					name : 'Response',
+					index : 'Response',
+					width : 150,
+					sortable : false
+				} ],
+				multiselect : false,
+				hoverrows : false				
+			});
+
+	var defaultData = {
+			// Id : MessageId,
+			// Proposer : playerName,
+			// Proposer : '<img height=25px width=25px src="img/me.gif"/>',
+			// Receiver : '<img height=25px width=25px src="img/'
+			// + game.getPlayerIcon(SenderID) + '"/>',
+			// Proposer : SenderID,
+			// Receiver : SenderID == 0 ? 1 : 0,
+			MsgType : "<div id='divTableGMsgType'></div>",
+			Norm : "<div id='divTableGNorm'></div>",
+			Sanction : "<div id='divTableGSanction'></div>",
+			Response : "<div id='divButtonGPropose'></div>"
+		};
+	
+	jQuery("#tblGNorms").jqGrid('addRowData', 0, defaultData);
+	
+	// add a button for submit
+	var cont = document.createElement("div");
+	
+	cont.innerHTML = "<button id='buttonSubmitNormG' onclick='buttonSubmitNormG_click();'>Submit</button>";
+	document.getElementById('divButtonGPropose').appendChild(cont);
+	document.getElementById('gview_tblGNorms').style.height= '50px';
+	
+	// append div into Messages grid
+	document.getElementById("divTableGNorm").innerHTML = 'obligation to all players';
+	document.getElementById("divTableGMsgType").innerHTML = 'Accept requests';
+
+	InsertIntoSanctionSelect('divTableGSanction');
+	
+}
+// end Proposals table
+
+
+//Send revelation details to the sever
+function buttonSubmitNormG_click() {
+	
+	var sanctions = document.getElementById('divTableGSanctionDropDown');
+	var sanction = sanctions.options[sanctions.selectedIndex].value;
+
+	var message = "group obligation sent to accept requests";
+
+	sendNormG("acceptRequests",sanction);
+	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
+	
+	addNormToTable("Obligation", game.getMe(), "all players", rowID, message);
+	
+	
+}
+
+function sendNormG(norm,sanction)
+{
+	var stringJ = "{ \"norm\" : \"" + norm +"\", \"sanction\" : " + sanction +"}";
+	jQuery.ajax({
+		type : "post",
+		url : "sendNormG.jsp",
+		data : "json=" + stringJ,
+		success : function(msg) {
+			 alert(stringJ);
+		}
+	});
+}
+
 function loadNormColorProposalsTable() {	
 	jQuery("#tblCNorms").jqGrid(
 			{
@@ -601,7 +693,7 @@ function loadNormColorProposalsTable() {
 	InsertIntoPlayersIconsSelect('divTableNCReceiver');
 	InsertIntoNormColorSelect();
 	InsertIntoNormSelect();
-	InsertIntoSanctionSelect();
+	InsertIntoSanctionSelect("divTableNCSanction");
 	
 }
 // end Proposals table
@@ -612,7 +704,7 @@ function buttonSubmitNormColor_click(playerId) {
 	
 	var ddIcons = document.getElementById('divTableNCReceiverDropDown');
 	var colors = document.getElementById('colorsDropDown');
-	var sanctions = document.getElementById('sanctionsDropDown');
+	var sanctions = document.getElementById('divTableNCSanctionDropDown');
 	var norms = document.getElementById('normsDropDown');
 	var recipientID = ddIcons.options[ddIcons.selectedIndex].value;
 	var color = colors.options[colors.selectedIndex].value;
@@ -1107,22 +1199,24 @@ function InsertIntoNormSelect() {
 	appendOptionLast("prohibition","no","normsDropDown", 'prohibition');
 	
 }
-function InsertIntoSanctionSelect() {
+function InsertIntoSanctionSelect(select) {
 	var playerId;	
 	var normsDropDown = document.createElement('select');
 	
-	normsDropDown.setAttribute('id', 'sanctionsDropDown');
+	normsDropDown.setAttribute('id', select+"DropDown");
 	normsDropDown.style.width = '70px';
 
-	document.getElementById('divTableNCSanction').appendChild(normsDropDown);
-	appendOptionLast(50,50,"sanctionsDropDown", '');
-	appendOptionLast(100,100,"sanctionsDropDown", '');
-	appendOptionLast(150,150,"sanctionsDropDown", '');
-	appendOptionLast(200,200,"sanctionsDropDown", '');
-	appendOptionLast(250,250,"sanctionsDropDown", '');
-	appendOptionLast(300,300,"sanctionsDropDown", '');
-	appendOptionLast(400,400,"sanctionsDropDown", '');
-	appendOptionLast(500,500,"sanctionsDropDown", '');
+	document.getElementById(select).appendChild(normsDropDown);
+	appendOptionLast(50,50,select+'DropDown', '');
+	appendOptionLast(100,100,select+'DropDown', '');
+	appendOptionLast(150,150,select+'DropDown', '');
+	appendOptionLast(200,200,select+'DropDown', '');
+	appendOptionLast(250,250,select+'DropDown', '');
+	appendOptionLast(300,300,select+'DropDown', '');
+	appendOptionLast(400,400,select+'DropDown', '');
+	appendOptionLast(500,500,select+'DropDown', '');
+	
+	//document.getElementById(select).appendChild(select+"DropDown");
 }
 
 // INSERT INTO Players Chips Send
@@ -1169,7 +1263,7 @@ function InsertIntoReceiveSelect() {
 				removeAllOption("SelectReceivePlayerId" + playerId + "Color"
 						+ color);
 
-				sumChips += game.getSumChips(playerIdOpponent, color);
+				//sumChips += game.getSumChips(playerIdOpponent, color);
 				sumChips = (game.getSumChips(playerIdOpponent, color) < 1 ? 0 : 1);
 				for ( var k = 0; k <= sumChips; k++) {
 					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
