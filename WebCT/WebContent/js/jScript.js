@@ -244,9 +244,7 @@ function createGoals() {
 	var playerID = game.getMe();
 	var goalSquare;
 	
-	if (game.role == 0)
-		return;
-	if (game.numOfGolals ==1 && game.role ==1 )  //Bargain Only and WebCTRevelation
+	if (game.numOfGolals ==1 && game.role >0 )  //Bargain Only and WebCTRevelation
 	{
 		 var newDiv = document.createElement("div");
 		 newDiv.innerHTML = '<img src="img/goal.gif">';
@@ -256,57 +254,28 @@ function createGoals() {
 	}
 	else  //Signaling
 	{
-		var isMeRevealed = true;
-		
-		for(var i=0; i< game.numOfGolals&&isMeRevealed; i++)
-		{
-			if(game.goals[i].type >= 10 && game.goals[i].type%10 == playerID)
-			{
-				isMeRevealed = false;
-			}
-		}
 		
 	    for ( var i = 0; i < game.numOfGolals; i++) 
 	    {
 	    	var newDiv = document.createElement("div");
           
-	    	if(game.goals[i].type%10 == playerID) //my goal
+	    	if(game.goals[i].type == playerID) //my goal
 	    	{
-	    		if(isMeRevealed)
-	    		{
+
 	    			newDiv.innerHTML = '<img src="img/goalA.gif">';
-	    		}
-	    		else
-	    		{
-	    			if(game.goals[i].type >= 10 && game.goals[i].type <20){  //g 50 me
-	                       newDiv.innerHTML = '<img src="img/goalA_belief50.gif">';
-	               }
-	    			else
-	    			{
-	    				if(game.goals[i].type >= 20)
-	    				{
-	    					newDiv.innerHTML = '<img src="img/beliefMe50.gif">';
-	    				}
-	    				else
-	    				{
-	    					continue;
-	    				}
-	    					
-	    			}
-	    			
-	    		}
+	    		
 	    		
 	    	}
 	    	else  //opponent's goal
 	    	{
-	    		if(game.goals[i].type >= 10)
-	    		{
-	    			newDiv.innerHTML = '<img src="img/possibleG50.gif">';
-	    		}
-	    		else
-	    		{
+	    		if(game.goals[i].type == -1 && game.role >0)
+
+	    			newDiv.innerHTML = '<img src="img/goal.gif">';
+	    		
+	    		if(game.goals[i].type > -1 && game.role >0)
+
 	    			newDiv.innerHTML = '<img src="img/goalB.gif">';
-	    		}
+	    		
 	    	}
 	    	 goalSquare = document.getElementById("DivRow" + game.goals[i].posX
                      + "Column" + game.goals[i].posY);
@@ -318,6 +287,7 @@ function createGoals() {
 		
 		
 	}//else
+	
 	
 	
 	
@@ -388,14 +358,18 @@ function updateProgressBar() {
 				//chipRevelationArea();
 				//clearProposalTableArea();
 			if (phaseChanged) {
-			if (game.role == 1) {
+			if (game.role > 0) {
 				loadNormGoalProposalsTable();
+				
+			}
+			if  (game.role == 2) {
+				
 				loadNormColorProposalsTable();
 			}
-				SetHeaderMsg('This is norm phase');	
+				SetHeaderMsg('Setting up phase');	
 			}
 			break;
-		case "Communication Phase":
+		case "Movement Phase":
 			if (phaseChanged ) {
 			// if communication phase -> build proposal area for players
 			if (game.role == 1) {
@@ -405,18 +379,12 @@ function updateProgressBar() {
 			
 			loadProposalsTable();
 			proposalArea();
-			SetHeaderMsg("Communication Phase");
+			SetHeaderMsg("Moving and exchanging phase");
 			}
 			// notify			
 			break;
-			
-		case "Movement Phase":	
-			SetHeaderMsg("Movement Phase");
-			//loadProposalsTable();
-			//proposalArea();
-			break;
 		case "Feedback Phase":			
-			SetHeaderMsg('please fill Feedback report');
+			SetHeaderMsg('The game has ended');
 			break;
 		default:			
 			break;		
@@ -450,17 +418,18 @@ function clearMessagesUI() {
 	//removeElemFromDOM(document.getElementById('notifyContainer'));	
 }
 function clearNormMessagesUI() {
+	removeElemFromDOM(document.getElementById('tblCNorms'));
 	removeElemFromDOM(document.getElementById('divTableNMsgType'));
 	removeElemFromDOM(document.getElementById('divTableNReceiver'));
 	removeElemFromDOM(document.getElementById('divTableNGoal'));
 	removeElemFromDOM(document.getElementById('divTableNMessage'));
 	removeElemFromDOM(document.getElementById('divButtonNPropose'));
-	removeElemFromDOM(document.getElementById('divTableNCMsgType'));
-	removeElemFromDOM(document.getElementById('divTableNCSanction'));
-	removeElemFromDOM(document.getElementById('divTableNCReceiver'));
-	removeElemFromDOM(document.getElementById('divTableNCColor'));
-	removeElemFromDOM(document.getElementById('divTableNCNorm'));
-	removeElemFromDOM(document.getElementById('divButtonNCPropose'));
+//	removeElemFromDOM(document.getElementById('divTableNCMsgType'));
+//	removeElemFromDOM(document.getElementById('divTableNCSanction'));
+//	removeElemFromDOM(document.getElementById('divTableNCReceiver'));
+//	removeElemFromDOM(document.getElementById('divTableNCColor'));
+//	removeElemFromDOM(document.getElementById('divTableNCNorm'));
+//	removeElemFromDOM(document.getElementById('divButtonNCPropose'));
 }
 // END clear message interface UI (first row in grid)
 
@@ -548,38 +517,6 @@ function PlayerChips() {
 	
 	
 }
-// end player chips area
-function PlayerPoints() {
-	var theTable = document.getElementById("PlayerPoints");
-
-	for ( var i = 0; i < playerNumTotal; i++) {
-
-		var newRow = theTable.insertRow(theTable.rows.length);
-		var newCell = newRow.insertCell(0);
-		var playerId = game.getPlayerId(i);
-		newCell.innerHTML = playerId+'<img src="img/' + game.players[i].icon + '"/>';
-		
-		
-		// create column
-		var newCell1 = newRow.insertCell(1);
-		newCell1.id = "CellRowPoints" + i;
-		newCell.className = "containerForChip";
-		
-		// create div
-		var newDiv = document.createElement("div");
-		
-		
-		newDiv.id = "playerId" + game.players[i].id + "Points";
-		newDiv.innerHTML = 1000;
-		newDiv.style.background = "#" + game.players[i].cards[0].color;
-
-		newCell1.appendChild(newDiv);
-		
-	}
-	
-	
-}
-
 
 //Reset the proposal table area before/after changes where made by goal revelation phase
 function clearProposalTableArea(){
@@ -614,7 +551,7 @@ function loadNormColorProposalsTable() {
 				},{
 					name : 'Norm',
 					index : 'Norm',
-					width : 400,
+					width : 330,
 					sortable : false
 				},{
 					name : 'Sanction',
@@ -1203,7 +1140,7 @@ function InsertIntoSendSelect() {
 				color = game.colors[j].name;
 				removeAllOption("SelectSendPlayerId" + playerId + "Color"
 						+ color);
-				sumChips = game.getSumChips(playerId, color);
+				sumChips = (game.getSumChips(playerId, color) < 1 ? 0 : 1);
 				for ( var k = 0; k <= sumChips; k++) {
 					appendOptionLast(k, k, "SelectSendPlayerId" + playerId
 							+ "Color" + color, '');
@@ -1233,7 +1170,7 @@ function InsertIntoReceiveSelect() {
 						+ color);
 
 				sumChips += game.getSumChips(playerIdOpponent, color);
-
+				sumChips = (game.getSumChips(playerIdOpponent, color) < 1 ? 0 : 1);
 				for ( var k = 0; k <= sumChips; k++) {
 					appendOptionLast(k, k, "SelectReceivePlayerId" + playerId
 							+ "Color" + color, '');
@@ -1278,7 +1215,7 @@ function loadProposalsTable() {
 			{
 				datatype : "local",
 				height : 200,
-				colNames : ['MsgType', 'Sender', 'Receiver', 'Send', 'Receive', 'Response' ],
+				colNames : ['MsgType', 'Sender', 'Receiver', 'Receive', 'Send', 'Response' ],
 				colModel : [ {
 					name : 'MsgType',
 					index : 'MsgType',
@@ -1295,13 +1232,13 @@ function loadProposalsTable() {
 					width : 75,
 					sortable : false
 				},{
-					name : 'Send',
-					index : 'Send',
+					name : 'Receive',
+					index : 'Receive',
 					width : 200,
 					sortable : false
 				}, {
-					name : 'Receive',
-					index : 'Receive',
+					name : 'Send',
+					index : 'Send',
 					width : 200,
 					sortable : false
 				}, {
@@ -1324,8 +1261,8 @@ function loadProposalsTable() {
 			MsgType : "<div id='divTableMsgType'></div>",
 			Sender : "<div id='divTableSender'></div>",
 			Receiver : "<div id='divTableReceiver'></div>",
-			Send : "<div id='divTableSend'></div>",
 			Receive : "<div id='divTableReceive'></div>", 
+			Send : "<div id='divTableSend'></div>",
 			Response : "<div id='divButtonPropose'></div>"
 		};
 	
@@ -1527,14 +1464,13 @@ function UpdateServer() {
 
 			// Update Current phase name
 			currentPhase = o.CurrentPhase;
-			if(game.numOfGolals!= o.numOfGoals)
-			{
-				//alert("Num of Goals Changed! = "+  o.numOfGoals);
-				updateGoals(o);
-			}
+			
 			
 		}
-		
+		if(game.numOfGolals!= o.numOfGoals)
+		{
+			updateGoals(o);
+		}
 		InsertIntoNormsTable(o.Prohibitions,o.Obligations);
 		InsertIntoProposalsTable(o);
 		UpdateResponseForProposal(o);

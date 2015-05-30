@@ -107,10 +107,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Norm Phase", 30);		
-		}
-		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Communication Phase", 60);		
+			ph.addPhase("Norm Phase", 60);		
 		}
 		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Movement Phase", 300);			
@@ -137,6 +134,8 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			for (int c = 0; c < col; c++) {
 				squares[r][c] = new Square();
 				squares[r][c].setColor(gp.get(in.nextInt()));
+				//overwriting to random colors
+				squares[r][c].setColor(gp.getRandomColor()); 
 				spaces.writeTile(r,c,squares[r][c].getColor());
 			}
 		}
@@ -146,7 +145,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		
 		gs.setBoard(board);
 		Goal g = board.getGoals().iterator().next();
-		//g.setType(type);
+		g.setType(-1);
 		if (g != null) {
 			spaces.writeGoal(g);
 		}
@@ -182,6 +181,25 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 
 		return chipset;
 	}
+	/**
+	Places random colors on specified board
+	*/
+	protected void setRandBoard(GamePalette gp) {
+		Board board = new Board(7,7);
+		Square[][] squares = new Square[board.getRows()][board.getCols()];
+
+		for (int i = 0; i < board.getRows(); i++) {
+			for (int j = 0; j < board.getCols(); j++) {
+		      squares[i][j] = new Square();
+		      squares[i][j].setColor(gp.getRandomColor());
+			}
+		}
+		board.setSquares(squares);
+		board.setGoal(new RowCol(2, 3), true);             // goal location player 0
+    //    board.setGoal(new RowCol(2, 3), true,1);             // goal location player 1
+		gs.setBoard(board);
+	}
+	
 	@Override
 	public void beginPhase(String phasename) {
 		System.out.println("A New Phase Began: " + phasename);
@@ -205,11 +223,11 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					int col = in.nextInt();
 					player.setPosition(new RowCol(row, col));
 					player.setRole(in.next("[a-z]+"));
-					if (player.getRole().equals("ra"))
+					if (player.getRole().contains("ra"))
 						spaces.writeGroup(player.getPerGameId());
 					in.nextLine();
 					player.setCommunicationAllowed(false);
-					player.setTransfersAllowed(true);
+					player.setTransfersAllowed(false);
 					player.setMovesAllowed(false);
 					
 					ChipSet revelationChips = getZeroSumsChipSet(gs.getGamePalette());
@@ -223,54 +241,12 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		if (phasename.equals("Communication Phase")) {			
-
-			try {
-				// for all the players
-				for (int i = 0; i < gs.getPlayers().size();i++) {
-					PlayerStatus player = gs.getPlayerByPerGameId(i);
-					//player.setTeamId(3); // set teams for players
-					player.setCommunicationAllowed(true);
-					player.setTransfersAllowed(true);
-					player.setMovesAllowed(true);
-				}
-								
-				
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-			
-
-//			boolean ProposerCommunicationAllowed = true;
-//			boolean ProposerTransfersAllowed = true;
-//			boolean ProposerMovesAllowed = true;
-//			boolean ResponderCommunicationAllowed = true;
-//			boolean ResponderTransfersAllowed = true;
-//			boolean ResponderMovesAllowed = true;
-//
-//		
-//			//switch rolls on new boards
-//			if (CurrentInputFileIndex > 0)
-//				swapRoles();
-//			
-//			PlayerStatus Responder = gs.getPlayerByPerGameId(ResponderID);
-//			PlayerStatus Proposer = gs.getPlayerByPerGameId(ProposerID);
-//			
-//			Responder.setCommunicationAllowed(ResponderCommunicationAllowed);
-//			Responder.setTransfersAllowed(ResponderTransfersAllowed);
-//			Responder.setMovesAllowed(ResponderMovesAllowed);
-//
-//			Proposer.setCommunicationAllowed(ProposerCommunicationAllowed);
-//			Proposer.setTransfersAllowed(ProposerTransfersAllowed);
-//			Proposer.setMovesAllowed(ProposerMovesAllowed);
-		}
-		if (phasename.equals("Movement Phase")) {	
+		} else	if (phasename.equals("Movement Phase")) {	
 			for (int i = 0; i < gs.getPlayers().size();i++) {
 				PlayerStatus player = gs.getPlayerByPerGameId(i);
 				player.setMovesAllowed(true);
+				player.setCommunicationAllowed(true);
+				player.setTransfersAllowed(true);
 			}
 		}
 	}

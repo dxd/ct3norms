@@ -23,6 +23,7 @@ import edu.harvard.eecs.airg.coloredtrails.shared.discourse.BasicProposalDiscour
 import edu.harvard.eecs.airg.coloredtrails.shared.types.ChipSet;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.PlayerStatus;
 import edu.harvard.eecs.airg.coloredtrails.shared.types.RowCol;
+import edu.harvard.eecs.airg.coloredtrails.shared.types.Goal;
 
 import org.apache.log4j.Logger;
 import org.openspaces.core.GigaSpace;
@@ -35,7 +36,6 @@ public class CTsetup {
 	
 	private GigaSpace space;
 	private DataEventSession session;
-	public static String[] agents = {"a20"};
 	
 	private Logger log = Logger.getRootLogger();
 	private Integer clock = 0;
@@ -106,10 +106,10 @@ public class CTsetup {
 				//session.addListener(new Position(), handler); 
 				session.addListener(new Time(), handler); 
 				session.addListener(new Points(), handler); 
-				for (int i = 0;  i <agents.length; i++) {
-					session.addListener(new Obligation(agents[i]), handler); 
-					session.addListener(new Prohibition(agents[i]), handler); 
-				}
+				
+					session.addListener(new Obligation(), handler); 
+					session.addListener(new Prohibition(), handler); 
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -129,7 +129,7 @@ public class CTsetup {
 	 }
 	 
 	 public void writeGoal(edu.harvard.eecs.airg.coloredtrails.shared.types.Goal goal2) {
-		 tuplespace.Goal goal = new Goal();
+		 tuplespace.Goal goal = new tuplespace.Goal();
 		 goal.cell = new Cell(goal2.getLocation().row,goal2.getLocation().col);
 		 goal.clock = clock;
 		 System.out.println("CT writes goal: "+goal.toString());
@@ -171,6 +171,15 @@ public class CTsetup {
 				a.add(o.toHumanString());
 				System.out.println("CT obligation: "+a);
 				gs.getPlayerByPerGameId(i).setObligations(a);
+				//display goal to human players
+				if (o.obligation.startsWith("[at")) { //[at(1, 2, a20)]
+					String ss = o.obligation.substring(4);
+					String[] place = ss.split(",");
+					int x = Integer.parseInt(place[0].trim());
+					int y = Integer.parseInt(place[1].trim());
+					Goal g = new Goal(i,new RowCol(x,y));
+					gs.getBoard().setGoal(g, true);
+				}
 			}
 
 		} else if (e instanceof Prohibition) {

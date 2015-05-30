@@ -909,6 +909,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 					}
 					for(PlayerStatus ps : cgs.getPlayers()){
 						if (ps.getChips().getNumChips(color) > 0 )
+							if (proposals[ps.getPerGameId()] == null || !proposals[ps.getPerGameId()].equals(color))
 							if (nogo[ps.getPerGameId()] == null || !nogo[ps.getPerGameId()].equals(color))
 								{
 									System.out.println(agentname+"[CTAH] found any chip....: " +point);

@@ -3,6 +3,7 @@ Include: norms.2apl
 Beliefs:
 useColor(Color,V) :- position(X,Y,_),tile(Color,X,Y).
 acceptRequest(MSGID,V1) :- receivedP(X,MSGID,closed(ANSWER)).
+respondToRequest(MSGID,V1) :- receivedP(X,MSGID,closed(ANSWER)).
 at(X,Y,V) :- position(X,Y,W).
 at(X,Y) :- position(X,Y,W).
 initialized :- initialized(yes).
@@ -91,14 +92,46 @@ acceptRequest(MSGID,V1) <- receivedP(X,MSGID,open) | {
 	
 } : 10
 
+respondToRequest(MSGID,V1) <- receivedP(X,MSGID,open) | {
+	if B(not scoreAfterExchange(MSGID,Score)) then
+		{getScoreAfterExchange(MSGID)};
+		
+	B(scoreAfterExchange(MSGID,Score));
+	B(Answer = accept);
+	
+	if B(Score = yes) then
+		{B(Answer = accept)}
+	else if B(Score = no) then
+		{B(Answer = reject)}
+	else if B(Score > V1) then
+		{B(Answer = reject)}
+	else if B(prohibition(rejectRequests(V2))) then 
+				{if B(V2 < V1) then 
+					{B(Answer = reject)}};
+		
+	sendResponse(MSGID,Answer)
+	
+} : 10
+
 respond <- receivedP(X,MSGID,open) | {
 		if G(acceptRequests(MSGID,V2)) then 
   			{skip}
   		else if B(not receivedP(X, MSGID, closed(A))) then
-  			{adoptz(acceptRequest(MSGID,50))}	
+  			{adoptz(respondToRequest(MSGID,50))}	
 } : 10
 
 surround(X,Y,V1) <- role(ID,ra) | {
+	[
+	Surround(X,Y);
+	sendSouth(a10,X,Y,100);
+	sendWest(a20,X,Y,100);
+	sendEast(a30,X,Y,100);
+	sendNorth(a40,X,Y,100);
+	dropgoal(surround(X,Y,V1))
+	]
+} : 100
+
+surround(X,Y,V1) <- role(ID,raaa) | {
 	[
 	Surround(X,Y);
 	sendSouth(a10,X,Y,100);

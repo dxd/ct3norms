@@ -81,8 +81,10 @@ var game = {
 					"isGoalRevelationAllowed":<%out.print(gs.getMyPlayer().isRevelationAllowed() == true ? "true" : "false");%>,
 					
 					"numOfColors":<% out.print(gs.getBoard().getColors().size()); %>, 
-					"role":<%out.print( gs.getMyPlayer().getRole().equals("ra") ? 1 : 0 );
-					System.out.print( gs.getPlayerByPerGameId(gs.getPerGameId()).getRole() );%>,
+					"role":<%
+					if (gs.getMyPlayer().getRole().equals("ra")) out.print( 1 );
+					else if (gs.getMyPlayer().getRole().equals("raaa")) out.print( 2 );
+					else  out.print( 0 );%>,
 					"players" : 
 					[  
 
@@ -512,7 +514,7 @@ var game = {
 </head>
 <body>
 <div id="container">
-<div id="header"></div>
+
 <div id="navigation">
 <ul>
 
@@ -535,20 +537,13 @@ var game = {
 	</tr>
 	<tr>
 		<td>
-		<div id="divPhases"></div>		
+		<div id="header"></div>		
 		</td>
 	</tr>
 	<tr>
 		<td>
 		<table id="PlayerChips">
 		</table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-		<table id="PlayerPoints">
-		</table>
-		
 		</td>
 	</tr>
 </table>
@@ -589,22 +584,6 @@ var game = {
 	createGoals();
 	PlayerChips();
 	loadCoordsTable();
-	
-	//gil
-	//loadProposalsTable();
-	//LoadNormsTable();
-	//LoadColorNorms();
-	//loadGoalRevelationProposalsTable();
-	//gilend
-	//proposalArea();
-	//if (game.showPathFinder == "true") {
-	//	document.getElementById("divPathFinder").style.visibility='visible';
-	//	CreatePathFinder();
-	//}
-	
-	//gil
-	//setInterval("UpdateServer()", 5000);
-	//gilend
 </script>
 
 </body>

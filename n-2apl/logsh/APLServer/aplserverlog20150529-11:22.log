@@ -1,0 +1,9 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-05-29 11:22:56,559  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 535 milliseconds
+2015-05-29 11:26:26,574  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: java.rmi.ConnectException: Connect Failed to [NIO://kafka:51646/pid[45855]/1432889877762645239_3_-4266040699298327360_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]]; nested exception is: 
+	java.net.UnknownHostException, request=myGrid_container:myGrid=>UpdateLeaseSpaceOperationRequest[uid=d3b8e2c6-2ad5-42b4-be07-a6ad105cf867,typeName=java.lang.Object,leaseObjectType=3,duration=60000]
+2015-05-29 11:26:46,579  SEVERE [com.gigaspaces.spaceproxy.router.lookup.myGrid] - Failed to find an active server to execute UpdateLeaseSpaceOperationRequest[uid=d3b8e2c6-2ad5-42b4-be07-a6ad105cf867,typeName=java.lang.Object,leaseObjectType=3,duration=60000](elapsed time: 20004ms)
+2015-05-29 11:26:46,581  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - No active server - attempting to locate an active server...
+2015-05-29 11:26:49,739  WARNING [com.gigaspaces.spaceproxy.router.myGrid] - Execution failed: java.rmi.ConnectIOException: LRMI transport protocol over NIO broken connection with ServerEndPoint: [NIO://kafka:51646/pid[45855]/1432889877762645239_3_-4266040699298327360_details[class com.gigaspaces.internal.server.space.SpaceImpl(myGrid_container:myGrid)]]; nested exception is: 
+	java.net.SocketException: Network is unreachable, request=myGrid_container:myGrid=>WriteEntrySpaceOperationRequest[entryPacket=EntryPacket[typeName=tuplespace.Time,uid=null,version=0,operationId=ID:-124009774095008754.449],txn=null,lease=9223372036854775807,timeout=0,modifiers=4096,isUpdate=false]
