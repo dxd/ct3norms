@@ -22,8 +22,12 @@
 		String id = session.getAttribute("id").toString();
 		try {
 		if (ClinetControler.GetClinet(id).game_initialized) {
+			if (ClinetControler.GetClinet(id).GameStat.isEnded())
+				out.print("ended");	
+			else {
 			SimpleLog.write("game started on session id: " + id);
-			out.print("true");						
+			out.print("true");		
+			}
 		} else {
 			out.print("false");			
 		}

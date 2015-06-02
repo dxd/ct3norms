@@ -103,14 +103,14 @@ public class Obligation implements TimeEntry {
 		else if (obligation.startsWith("[acceptRequest")) { //[acceptRequest(2100)]
 			String ss = obligation.substring(15);
 			String[] o = ss.split(",");
-			int id = Integer.parseInt(o[0]);
-			s+= "accept exchange request with id: " +o[0];
+			int id = Integer.parseInt(o[0].substring(0, o[0].trim().length()-2));
+			s+= "accept exchange request with id: " +id;
 		}
 		else if (obligation.startsWith("[respondToRequest")) { //[respondToRequest(2100)]
 			String ss = obligation.substring(18);
 			String[] o = ss.split(",");
-			int id = Integer.parseInt(o[0]);
-			s+= "respond to request with id: " +o[0];
+			int id = Integer.parseInt(o[0].substring(0, o[0].trim().length()-2));
+			s+= "respond to request with id: " +id;
 		}
 		String[] p1 = sanction.split(","); //[reduce(a20,500)]
 		String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);

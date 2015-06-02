@@ -87,6 +87,9 @@ public class Goal extends CTStateContainer implements Cloneable, Serializable {
 			goalimages.add(new URL("file://lib/images/goal.gif"));
 			goalimages.add(new URL("file://lib/images/goal.gif"));
 			goalimages.add(new URL("file://lib/images/goal.gif"));
+			goalimages.add(new URL("file://lib/images/goal.gif"));
+			goalimages.add(new URL("file://lib/images/goal.gif"));
+			goalimages.add(new URL("file://lib/images/goal.gif"));
 		} catch (Exception e) {
 			System.out
 					.println("Goal.static: unable to build default goal image list");
@@ -185,7 +188,7 @@ public class Goal extends CTStateContainer implements Cloneable, Serializable {
 		this();
 		put("type", new Integer(type));
 		put("location", location);
-		put("imageloc", getImage(type));
+//		put("imageloc", getImage(type));
 	}
 
 	/**

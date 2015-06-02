@@ -117,7 +117,11 @@ function Init() {
 	pendingProposalMsgID = -1;
 	clock = 0;
 	score = 1000;
+	
+//	document.getElementById("user").innerHTML = user;
 	UpdateServer();
+	
+	
 }
 
 // parse query string from url
@@ -337,11 +341,17 @@ function createGoals() {
 function updateProgressBar() {
 
 	if (game.isEnded == true) {
-		//self.location = "ended.jsp";
+		self.location = "ended.jsp";
 	}
 	
 	if (phaseChanged == true) {			
 		lastRole = game.role;		
+		user = "Role: Team member";
+		if (game.role == 1)
+			user = "Role: Coordinator";
+		if (game.role == 2)
+			user = "Role: Flexible Coordinator";
+		$("#user").html(user);
 		if (currentPhase == null) {
 			currentPhase = game.phases[currentPhaseIndex].name;
 		}
@@ -394,7 +404,7 @@ function updateProgressBar() {
 	
 	//document.getElementById("TimeLeft").innerHTML = currentPhase.substring(0, currentPhase.length - 5) + ' - ' + secondsToTime(pValue);
 	document.getElementById("TimeLeft").innerHTML = "clock: " + clock;
-	document.getElementById("divPhases").innerHTML = "score: " + score;
+	//document.getElementById("divPhases").innerHTML = "score: " + score;
 
 }
 
@@ -418,13 +428,17 @@ function clearMessagesUI() {
 	//removeElemFromDOM(document.getElementById('notifyContainer'));	
 }
 function clearNormMessagesUI() {
-	removeElemFromDOM(document.getElementById('CNorms'));
-	removeElemFromDOM(document.getElementById('GNorms'));
-	removeElemFromDOM(document.getElementById('divTableNMsgType'));
-	removeElemFromDOM(document.getElementById('divTableNReceiver'));
-	removeElemFromDOM(document.getElementById('divTableNGoal'));
-	removeElemFromDOM(document.getElementById('divTableNMessage'));
-	removeElemFromDOM(document.getElementById('divButtonNPropose'));
+//	var e = document.getElementById('CNorms');
+//	e.parentNode.removeChild(e);
+//	var f = document.getElementById('GNorms');
+//	e.parentNode.removeChild(f);
+	removeElemFromDOM(document.getElementById('tblCNorms'),'div');
+	removeElemFromDOM(document.getElementById('tblGNorms'),'div');
+//	removeElemFromDOM(document.getElementById('divTableNMsgType'));
+//	removeElemFromDOM(document.getElementById('divTableNReceiver'));
+//	removeElemFromDOM(document.getElementById('divTableNGoal'));
+//	removeElemFromDOM(document.getElementById('divTableNMessage'));
+	removeElemFromDOM(document.getElementById('divButtonNPropose'),'div');
 //	removeElemFromDOM(document.getElementById('divTableNCMsgType'));
 //	removeElemFromDOM(document.getElementById('divTableNCSanction'));
 //	removeElemFromDOM(document.getElementById('divTableNCReceiver'));
@@ -434,10 +448,10 @@ function clearNormMessagesUI() {
 }
 // END clear message interface UI (first row in grid)
 
-function removeElemFromDOM(elem) {
-	while (elem.hasChildNodes()) {
-		elem.removeChild(elem.lastChild);
-	}
+function removeElemFromDOM(EId,parent) {
+	$(EId).parents(parent).eq(1).remove();
+//	$(EId).parentNode.removeChild(EId);
+//	return(EObj=document.getElementById(EId))?EObj.parentNode.removeChild(EObj):false;
 }
 
 //Player Chips Area
@@ -540,7 +554,7 @@ function loadNormGroupProposalsTable() {
 				},{
 					name : 'Norm',
 					index : 'Norm',
-					width : 530,
+					width : 480,
 					sortable : false
 				},{
 					name : 'Sanction',
@@ -614,7 +628,7 @@ function sendNormG(norm,sanction)
 		url : "sendNormG.jsp",
 		data : "json=" + stringJ,
 		success : function(msg) {
-			 alert(stringJ);
+			// alert(stringJ);
 		}
 	});
 }
@@ -643,7 +657,7 @@ function loadNormColorProposalsTable() {
 				},{
 					name : 'Norm',
 					index : 'Norm',
-					width : 330,
+					width : 315,
 					sortable : false
 				},{
 					name : 'Sanction',
@@ -766,7 +780,7 @@ function loadNormGoalProposalsTable() {
 				},{
 					name : 'Message',
 					index : 'Message',
-					width : 400,
+					width : 385,
 					sortable : false
 				},{
 					name : 'Response',
@@ -825,16 +839,23 @@ function buttonSubmitNormGoal_click(playerId) {
 	//playerId - my id
 	//ddIcons - the player that I want to reveal my goal to
 	isNormGoalSubmitted = true;
+	var gx = game.goalx;
+	var gy = game.goaly;
 	
-	sendNormGoal(playerId,recipientID,x,y,game.goals[0].posX,game.goals[0].posY,100);
+	for ( var i = 0; i < this.numGoals; i++)
+		if (game.goals[i].type == -1) {
+			gx= game.goals[i].posX;
+			gy= game.goals[i].posY;
+		}
+	
+	sendNormGoal(playerId,recipientID,x,y,gx,gy,100);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
-	// rowID = num of rows in proposals grid
+	//rowID = num of rows in proposals grid
 	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
 	//alert("rowID = "+rowID);
 	
 	addNormToTable("Obligation", playerId, recipientID, rowID, "Your obligation is to go to ("+x+","+y+").");
-	
 	//clearMessagesUI();
 	//$("#"+"0").hide();
 	
@@ -1116,10 +1137,13 @@ function sendResponseAcceptReject(msgID, accept)
 function login(pin) {	
 	// alert(stringJ);
 	jQuery.post('login.jsp?pin=' + pin, function(data) {
-		// alert(jQuery.trim(data));
+		 //alert(jQuery.trim(data));
 		if (jQuery.trim(data) == "true") {
 			window.location = 'game.jsp';
-		}
+		} 
+//		else if (jQuery.trim(data) == "ended") {
+			
+//		}
 	});
 }
 // END send login information to server
@@ -1618,16 +1642,14 @@ function updateGoals(o)
 	
 	for ( var i = 0; i < o.Goals.length; i++) 
 	{
+//		alert(JSON.stringify(o.Goals));
+		game.goals[i] = o.Goals[i];
 		game.goals[i].id = o.Goals[i].id;
 		game.goals[i].type = o.Goals[i].type;
 		game.goals[i].posX = o.Goals[i].posX;
 		game.goals[i].posY = o.Goals[i].posY;
 	}
-	
-	if(o.Goals.length < game.numOfGolals)
-	{
-		game.goals.splice(o.Goals.length,game.numOfGolals-o.Goals.length);
-	}
+
 	
 	game.numOfGolals = o.Goals.length;
 	game.numGoals = o.Goals.length;
@@ -1647,11 +1669,12 @@ function removeGoals(){
     var goalSquare;
     
     for ( var i = 0; i < game.numOfGolals; i++) {
-       if(game.goals[i].type >= 10){
-               goalSquare = document.getElementById("DivRow" + game.goals[i].posX + "Column" + game.goals[i].posY);
+    //   if(game.goals[i].type >= 10){
+           goalSquare = document.getElementById("DivRow" + game.goals[i].posX + "Column" + game.goals[i].posY);
+           
            goalSquare.removeChild(goalSquare.lastChild);
             
-       }
+  //     }
     }
     
     //alert("Finished removing goals");
@@ -1701,7 +1724,7 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 			newDiv.id = 'pro'+i;
 			//iDiv.className = 'block';
 			newDiv.innerHTML = prohibitions[i].msg;
-			document.getElementById("notifyContainer").appendChild(newDiv);
+			document.getElementById("notifyContainer").insertBefore(newDiv, document.getElementById("notifyContainer").firstChild);
 			//alert("msg: "+JSON.stringify(prohibitions[i]));
 		}
 	if (obligations != null)
@@ -1712,7 +1735,7 @@ function InsertIntoNormsTable(prohibitions,obligations) {
 			//iDiv.className = 'block';
 			newDiv.innerHTML = obligations[i].msg;
 			//newDiv.innerHTML = obligations[i];
-			document.getElementById("notifyContainer").appendChild(newDiv);
+			document.getElementById("notifyContainer").insertBefore(newDiv, document.getElementById("notifyContainer").firstChild);
 		}
 }
 // add data to proposals table

@@ -230,6 +230,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(false);
 					player.setMovesAllowed(false);
+				
 					
 					ChipSet revelationChips = getZeroSumsChipSet(gs.getGamePalette());
 					System.out.println("revelation chips: "

@@ -178,7 +178,10 @@ public class CTsetup {
 					int x = Integer.parseInt(place[0].trim());
 					int y = Integer.parseInt(place[1].trim());
 					Goal g = new Goal(i,new RowCol(x,y));
-					gs.getBoard().setGoal(g, true);
+					if (gs.getBoard().getGoalLocations(i).isEmpty()) {
+						gs.getBoard().setGoal(g, true);
+						System.out.println("CT set goal: "+g);
+					}
 				}
 			}
 

@@ -79,7 +79,9 @@ var game = {
 					"isEnded":<%out.print(gs.isEnded() == true ? "true" : "false");%>,
 					"isRevelationEnabled":<%out.print(WebCTConfiguration.getIsChipRevelationGame() == true ? "\"true\"" : "\"false\"");%>,
 					"isGoalRevelationAllowed":<%out.print(gs.getMyPlayer().isRevelationAllowed() == true ? "true" : "false");%>,
-					
+
+					"goalx":<% out.print(gs.getBoard().getGoalLocations(-1).get(0).row); %>, 
+					"goaly":<% out.print(gs.getBoard().getGoalLocations(-1).get(0).col); %>, 
 					"numOfColors":<% out.print(gs.getBoard().getColors().size()); %>, 
 					"role":<%
 					if (gs.getMyPlayer().getRole().equals("ra")) out.print( 1 );
@@ -533,6 +535,11 @@ var game = {
 	Init(game);
 	setInterval("UpdateServer()", 500);
 </script></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<div id="user">Role: </div>		
 		</td>
 	</tr>
 	<tr>

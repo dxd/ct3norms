@@ -302,17 +302,17 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		object.put("BorderColors", borderColorsArray);
 
 		//gil - goals array
-		JSONArray goalsArray = new JSONArray();
+		
 		
 		if(initialNumOfGoals!=br.getGoals().size())
 		{
-			
+			JSONArray goalsArray = new JSONArray();
 			
 			
 			Set<Goal> goalsSet = new HashSet<Goal>();
 			goalsSet = br.getGoals();
 			Iterator<Goal> it = goalsSet.iterator();
-					
+			int i = 0;	
 			
 			while(it.hasNext())
 			{
@@ -326,12 +326,13 @@ public class WebAgentAdaptor implements GameStartEventListener,
 				jsonGoal.put("posX",  cur.row);
 				jsonGoal.put("posY", cur.col);
 				
-				goalsArray.add(jsonGoal);
+				goalsArray.add(i, jsonGoal);
+				i++;
 			}
-		
+			object.put("Goals", goalsArray);
 		}
 		
-		object.put("Goals", goalsArray);
+		
 		//gilend
 		
 		
