@@ -58,6 +58,9 @@ adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- true | {
 adoptObligation(acceptRequest(Id), D, reduce(Group,Sanction)) <- true | {
     adoptz(acceptRequest(Id,Sanction) : D -> reduce(Sanction))
 }
+adoptObligation(acceptCRequest(Id), D, reduce(Group,Sanction)) <- true | {
+    adoptz(acceptRequest(Id,Sanction) : D -> reduce(Sanction))
+}
 adoptObligation(respondToRequest(Id), D, reduce(Group,Sanction)) <- true | {
     adoptz(respondToRequest(Id,Sanction) : D -> reduce(Sanction))
 }

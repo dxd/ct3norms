@@ -113,7 +113,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Movement Phase", 120);			
 		}
-		ph.addPhase("Feedback Phase", 1);
+		ph.addPhase("Feedback Phase", 10);
 		ph.setLoop(false);
 		gs.setPhases(ph);		
 		
@@ -162,7 +162,8 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			counter++;
 		}
 		in.nextLine();
-		return cs;
+		
+		return getRandomChipSet(gp);
 	}
 
 	protected RowCol getPosition(Scanner in) {
@@ -177,11 +178,11 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	/**
 	 * Generates chipset with zero values for revelation chips
 	 */
-	protected static ChipSet getZeroSumsChipSet(GamePalette gp) {
+	protected static ChipSet getRandomChipSet(GamePalette gp) {
 		ChipSet chipset = new ChipSet();
-
+		
 		for (String color : gp.getColors())
-			chipset.set(color, 0);
+			chipset.set(color, localrand.nextInt(3));
 
 		return chipset;
 	}
@@ -217,6 +218,11 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 				// assign game-board colors
 				setBoard(gs.getGamePalette(), in);
 
+				String role = "ra";
+				int ra = localrand.nextInt(3);
+				boolean raaa = localrand.nextBoolean();
+				if (raaa)
+					role = "raaa";
 				// for all the players
 				for (int i = 0; i < gs.getPlayers().size();i++) {
 					PlayerStatus player = gs.getPlayerByPerGameId(i);
@@ -228,9 +234,12 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					int col = in.nextInt();
 					col = localrand.nextInt(gs.getBoard().getCols());
 					player.setPosition(new RowCol(row, col));
-					player.setRole(in.next("[a-z]+"));
-					if (player.getRole().contains("ra"))
-						spaces.writeGroup(player.getPerGameId(),player.getRole());
+//					player.setRole(in.next("[a-z]+"));
+//					if (player.getRole().contains("ra"))
+					if (ra == i) {
+						player.setRole(role);
+						spaces.writeGroup(i,role);
+					}
 					in.nextLine();
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(false);

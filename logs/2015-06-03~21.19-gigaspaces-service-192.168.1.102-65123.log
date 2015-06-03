@@ -1,0 +1,19 @@
+2015-06-03 21:19:39,482  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 422 milliseconds
+2015-06-03 21:19:53,948  SEVERE [com.gigaspaces.client] - Notification was send but user listener throws exception; Caused by: aplprolog.Parsing.TokenMgrError: Lexical error at line 1, column 25.  Encountered: <EOF> after : ""
+	at aplprolog.Parsing.IntPrologTokenManager.getNextToken(IntPrologTokenManager.java:1143)
+	at aplprolog.Parsing.IntProlog.jj_ntk(IntProlog.java:1333)
+	at aplprolog.Parsing.IntProlog.Argument(IntProlog.java:384)
+	at aplprolog.Parsing.IntProlog.Arguments(IntProlog.java:360)
+	at aplprolog.Parsing.IntProlog.PosLiteral(IntProlog.java:317)
+	at aplprolog.Parsing.IntProlog.Rule(IntProlog.java:250)
+	at aplprolog.Parsing.IntProlog.parseFact(IntProlog.java:80)
+	at ctMW.EnvCT.notifyOrg(EnvCT.java:700)
+	at ctMW.OrgHandler.notify(OrgHandler.java:31)
+	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+

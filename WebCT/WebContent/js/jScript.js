@@ -393,7 +393,11 @@ function updateProgressBar() {
 			}
 			// notify			
 			break;
-		case "Feedback Phase":			
+		case "Feedback Phase":	
+			var newDiv = $(document.createElement('div')); 
+			newDiv.html('The game has ended!');
+			newDiv.dialog({ title: "The end" });
+			setTimeout(function(){newDiv.dialog('close');},2500);
 			SetHeaderMsg('The game has ended');
 			break;
 		default:			
