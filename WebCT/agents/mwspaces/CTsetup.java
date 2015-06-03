@@ -291,8 +291,8 @@ public class CTsetup {
 		 createEntry(goal);
 	}
 
-	public void writeGroup(int perGameId) {
-		Group g = new Group("g",getAgent(perGameId),clock);
+	public void writeGroup(int perGameId, String type) {
+		Group g = new Group("g",getAgent(perGameId), type,clock);
 		System.out.println("CT writes setGoal: "+g.toString());
 		createEntry(g);		
 	}

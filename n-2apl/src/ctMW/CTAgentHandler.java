@@ -962,7 +962,15 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	}
 
 	public Term sendResponse(String agentname2, APLNum msgID, APLIdent response) {
-		BasicProposalDiscourseMessage proposal = (BasicProposalDiscourseMessage) messages.get(msgID.toInt());
+		BasicProposalDiscourseMessage proposal;
+		if (messages.containsKey(msgID.toInt())) {
+			proposal = (BasicProposalDiscourseMessage) messages.get(msgID.toInt());
+			messages.remove(msgID.toInt());
+		}
+		else {
+			return new APLIdent("true"); 
+		}
+		
 		BasicProposalDiscussionDiscourseMessage responseMessage = new BasicProposalDiscussionDiscourseMessage(proposal);
 		if( response.getName().equals("accept") ) {
 			responseMessage.acceptOffer();
@@ -970,7 +978,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			responseMessage.rejectOffer();
 		}
 		client.communication.sendDiscourseRequest(responseMessage);
-		System.out.println(agentname2+"[CTAH] sent response: "+responseMessage);
+		System.out.println(agentname2+"[CTAH] sent response: "+responseMessage.toString());
 		return new APLIdent("true");
 	}
 

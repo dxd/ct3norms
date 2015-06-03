@@ -79,7 +79,6 @@ var game = {
 					"isEnded":<%out.print(gs.isEnded() == true ? "true" : "false");%>,
 					"isRevelationEnabled":<%out.print(WebCTConfiguration.getIsChipRevelationGame() == true ? "\"true\"" : "\"false\"");%>,
 					"isGoalRevelationAllowed":<%out.print(gs.getMyPlayer().isRevelationAllowed() == true ? "true" : "false");%>,
-
 					"goalx":<%   out.print((br.getGoals().size() >0)?gs.getBoard().getGoalLocations(-1).get(0).row:-1); %>, 
 					"goaly":<%   out.print((br.getGoals().size() >0)?gs.getBoard().getGoalLocations(-1).get(0).col:-1); %>, 
 					"numOfColors":<% out.print(gs.getBoard().getColors().size()); %>, 

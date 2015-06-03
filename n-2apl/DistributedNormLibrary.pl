@@ -135,7 +135,7 @@
    
 @norm_notification((@countsas,norm(_,Group,_,obligation(A,Deadline,C)),_)):-
    group(Group),
-   ra(Group,Agent),
+   ra(Group,Agent,_),
    not(@sent_obligation(Agent,obligation(A,Deadline,C))),					// This should ensure that obligation is only send once
    assert(@sent_obligation(Agent,obligation(A,Deadline,C))),
    @external(ctMW,notifyAgent(Agent,obligation(A,Deadline,C)),_),!. // Deadline is replaced with the resolved value

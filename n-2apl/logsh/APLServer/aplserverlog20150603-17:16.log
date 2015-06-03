@@ -1,0 +1,55 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-06-03 17:16:55,638  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 383 milliseconds
+org.openspaces.core.ObjectConversionException: com.gigaspaces.internal.metadata.converter.ConversionException: java.lang.ArrayIndexOutOfBoundsException: 4; nested exception is com.gigaspaces.internal.metadata.converter.ConversionException: com.gigaspaces.internal.metadata.converter.ConversionException: java.lang.ArrayIndexOutOfBoundsException: 4
+	at org.openspaces.core.exception.DefaultExceptionTranslator.internalTranslate(DefaultExceptionTranslator.java:123)
+	at org.openspaces.core.exception.DefaultExceptionTranslator.translate(DefaultExceptionTranslator.java:50)
+	at org.openspaces.core.DefaultGigaSpace.take(DefaultGigaSpace.java:883)
+	at org.openspaces.core.DefaultGigaSpace.take(DefaultGigaSpace.java:875)
+	at org.openspaces.core.DefaultGigaSpace.take(DefaultGigaSpace.java:871)
+	at ctMW.EnvCT.dumpGSdata(EnvCT.java:780)
+	at ctMW.EnvCT.initializeGS(EnvCT.java:103)
+	at ctMW.EnvCT.<init>(EnvCT.java:196)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at eis.EILoader.fromJarFile(EILoader.java:75)
+	at apapl.APAPLBuilder.buildMas(APAPLBuilder.java:107)
+	at gui.GUI.loadMas(GUI.java:191)
+	at gui.GUI.<init>(GUI.java:172)
+	at APAPL.main(APAPL.java:103)
+Caused by: com.gigaspaces.internal.metadata.converter.ConversionException: com.gigaspaces.internal.metadata.converter.ConversionException: java.lang.ArrayIndexOutOfBoundsException: 4
+	at com.gigaspaces.internal.metadata.AbstractTypeIntrospector.toObject(AbstractTypeIntrospector.java:112)
+	at com.gigaspaces.internal.transport.AbstractEntryPacket.toObject(AbstractEntryPacket.java:275)
+	at com.gigaspaces.internal.transport.AbstractEntryPacket.toObject(AbstractEntryPacket.java:256)
+	at com.gigaspaces.internal.client.spaceproxy.metadata.SpaceProxyTypeManager.getObjectFromEntryPacket(SpaceProxyTypeManager.java:168)
+	at com.gigaspaces.internal.client.spaceproxy.metadata.SpaceProxyTypeManager.getObjectFromEntryPacket(SpaceProxyTypeManager.java:155)
+	at com.gigaspaces.internal.client.spaceproxy.metadata.SpaceProxyTypeManager.convertQueryResult(SpaceProxyTypeManager.java:272)
+	at com.gigaspaces.internal.client.spaceproxy.actioninfo.ReadTakeProxyActionInfo.convertQueryResult(ReadTakeProxyActionInfo.java:123)
+	at com.gigaspaces.internal.client.cache.localcache.actions.LocalCacheImplReadTakeAction.take(LocalCacheImplReadTakeAction.java:96)
+	at com.gigaspaces.internal.client.cache.localcache.actions.LocalCacheImplReadTakeAction.take(LocalCacheImplReadTakeAction.java:36)
+	at com.gigaspaces.internal.client.spaceproxy.actions.AbstractSpaceProxyActionManager.take(AbstractSpaceProxyActionManager.java:388)
+	at com.gigaspaces.internal.client.spaceproxy.actions.AbstractSpaceProxyActionManager.take(AbstractSpaceProxyActionManager.java:364)
+	at com.gigaspaces.internal.client.spaceproxy.AbstractSpaceProxy.take(AbstractSpaceProxy.java:325)
+	at org.openspaces.core.DefaultGigaSpace.take(DefaultGigaSpace.java:881)
+	... 14 more
+Caused by: com.gigaspaces.internal.metadata.converter.ConversionException: java.lang.ArrayIndexOutOfBoundsException: 4
+	at com.gigaspaces.internal.metadata.EntryIntrospector.setValues(EntryIntrospector.java:296)
+	at com.gigaspaces.internal.metadata.EntryIntrospector.setValues(EntryIntrospector.java:44)
+	at com.gigaspaces.internal.metadata.AbstractTypeIntrospector.toObject(AbstractTypeIntrospector.java:102)
+	... 26 more
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 4
+	at tuplespace.Group__GigaspacesFieldProperties__.setValues(Unknown Source)
+	at com.gigaspaces.internal.metadata.EntryIntrospector.setValues(EntryIntrospector.java:292)
+	... 28 more
+Exception in thread "main" java.lang.NullPointerException
+	at ctMW.EnvCT.register(EnvCT.java:631)
+	at ctMW.EnvCT.addAgent(EnvCT.java:223)
+	at apapl.Environment.addEntity(Environment.java:493)
+	at apapl.Environment.addAgentEntity(Environment.java:134)
+	at apapl.APLMAS.attachModuleToEnvironment(APLMAS.java:222)
+	at apapl.APAPLBuilder.buildMas(APAPLBuilder.java:259)
+	at gui.GUI.loadMas(GUI.java:191)
+	at gui.GUI.<init>(GUI.java:172)
+	at APAPL.main(APAPL.java:103)

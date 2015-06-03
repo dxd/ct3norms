@@ -612,7 +612,7 @@ function buttonSubmitNormG_click() {
 
 	var message = "group obligation sent to accept requests";
 
-	sendNormG("acceptRequests",sanction);
+	sendNormG("acceptCRequests",sanction);
 	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
 	
 	addNormToTable("Obligation", game.getMe(), "all players", rowID, message);

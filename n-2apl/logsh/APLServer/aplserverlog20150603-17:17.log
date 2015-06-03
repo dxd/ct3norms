@@ -1,0 +1,92 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-06-03 17:17:35,987  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 398 milliseconds
+com.j_spaces.core.exception.internal.ProxyInternalSpaceException: The operation's type description is incompatible with the type description stored in the space.
+Type=[tuplespace.Group], Server checksum=[1943467773], Operation checksum=[1010977968].
+Server type description:
+Super classes: 2
+   1: Type=[tuplespace.Group]
+   2: Type=[java.lang.Object]
+Properties: 4
+   1: Name=[clock], Type=[java.lang.Integer]
+   2: Name=[name], Type=[java.lang.String]
+   3: Name=[ra], Type=[java.lang.String]
+   4: Name=[time], Type=[java.sql.Timestamp]
+Checksum: 1943467773.
+
+Operation type description:
+Super classes: 2
+   1: Type=[tuplespace.Group]
+   2: Type=[java.lang.Object]
+Properties: 5
+   1: Name=[clock], Type=[java.lang.Integer]
+   2: Name=[name], Type=[java.lang.String]
+   3: Name=[ra], Type=[java.lang.String]
+   4: Name=[time], Type=[java.sql.Timestamp]
+   5: Name=[type], Type=[java.lang.String]
+Checksum: 1010977968.
+
+	at com.j_spaces.kernel.JSpaceUtilities.createProxyInternalSpaceException(JSpaceUtilities.java:1097)
+	at com.gigaspaces.internal.client.spaceproxy.actions.AbstractSpaceProxyActionManager.processInternalException(AbstractSpaceProxyActionManager.java:509)
+	at com.gigaspaces.internal.client.spaceproxy.actions.AbstractSpaceProxyActionManager.notify(AbstractSpaceProxyActionManager.java:179)
+	at com.gigaspaces.internal.client.spaceproxy.AbstractSpaceProxy.notify(AbstractSpaceProxy.java:207)
+	at com.j_spaces.core.client.NotifyDelegator.<init>(NotifyDelegator.java:136)
+	at com.gigaspaces.events.UnicastDelegatorSession.addListenerInternal(UnicastDelegatorSession.java:41)
+	at com.gigaspaces.events.AbstractDataEventSession.addListener(AbstractDataEventSession.java:132)
+	at com.gigaspaces.events.AbstractDataEventSession.addListener(AbstractDataEventSession.java:124)
+	at com.gigaspaces.events.AbstractDataEventSession.addListener(AbstractDataEventSession.java:109)
+	at ctMW.EnvCT.registerOrg(EnvCT.java:708)
+	at ctMW.EnvCT.<init>(EnvCT.java:197)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at eis.EILoader.fromJarFile(EILoader.java:75)
+	at apapl.APAPLBuilder.buildMas(APAPLBuilder.java:107)
+	at gui.GUI.loadMas(GUI.java:191)
+	at gui.GUI.<init>(GUI.java:172)
+	at APAPL.main(APAPL.java:103)
+Caused by: java.lang.Throwable: The operation's type description is incompatible with the type description stored in the space.
+Type=[tuplespace.Group], Server checksum=[1943467773], Operation checksum=[1010977968].
+Server type description:
+Super classes: 2
+   1: Type=[tuplespace.Group]
+   2: Type=[java.lang.Object]
+Properties: 4
+   1: Name=[clock], Type=[java.lang.Integer]
+   2: Name=[name], Type=[java.lang.String]
+   3: Name=[ra], Type=[java.lang.String]
+   4: Name=[time], Type=[java.sql.Timestamp]
+Checksum: 1943467773.
+
+Operation type description:
+Super classes: 2
+   1: Type=[tuplespace.Group]
+   2: Type=[java.lang.Object]
+Properties: 5
+   1: Name=[clock], Type=[java.lang.Integer]
+   2: Name=[name], Type=[java.lang.String]
+   3: Name=[ra], Type=[java.lang.String]
+   4: Name=[time], Type=[java.sql.Timestamp]
+   5: Name=[type], Type=[java.lang.String]
+Checksum: 1010977968.
+
+	at com.j_spaces.core.DetailedUnusableEntryException.<init>(DetailedUnusableEntryException.java:40)
+	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.validateChecksum(SpaceTypeManager.java:476)
+	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.validateChecksum(SpaceTypeManager.java:454)
+	at com.gigaspaces.internal.server.space.metadata.SpaceTypeManager.loadServerTypeDesc(SpaceTypeManager.java:233)
+	at com.gigaspaces.internal.server.space.SpaceEngine.notify(SpaceEngine.java:920)
+	at com.gigaspaces.internal.server.space.SpaceImpl.notify(SpaceImpl.java:2434)
+	at com.gigaspaces.internal.server.space.operations.RegisterEntriesListenerSpaceOperation.execute(RegisterEntriesListenerSpaceOperation.java:26)
+	at com.gigaspaces.internal.server.space.operations.RegisterEntriesListenerSpaceOperation.execute(RegisterEntriesListenerSpaceOperation.java:20)
+	at com.gigaspaces.internal.server.space.operations.SpaceOperationsExecutor.executeOperation(SpaceOperationsExecutor.java:77)
+	at com.gigaspaces.internal.server.space.SpaceImpl.executeOperation(SpaceImpl.java:1847)
+	at com.gigaspaces.internal.remoting.RemoteOperationsExecutorGigaspacesMethodinternalInvoke2.internalInvoke(Unknown Source)
+	at com.gigaspaces.internal.reflection.fast.AbstractMethod.invoke(AbstractMethod.java:41)
+	at com.gigaspaces.lrmi.LRMIRuntime.invoked(LRMIRuntime.java:450)
+	at com.gigaspaces.lrmi.nio.Pivot.consumeAndHandleRequest(Pivot.java:557)
+	at com.gigaspaces.lrmi.nio.Pivot.handleRequest(Pivot.java:658)
+	at com.gigaspaces.lrmi.nio.Pivot$ChannelEntryTask.run(Pivot.java:196)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)

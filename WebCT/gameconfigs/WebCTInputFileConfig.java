@@ -108,10 +108,10 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Norm Phase", 90);		
+			ph.addPhase("Norm Phase", 70);		
 		}
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Movement Phase", 90);			
+			ph.addPhase("Movement Phase", 120);			
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
@@ -230,17 +230,12 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					player.setPosition(new RowCol(row, col));
 					player.setRole(in.next("[a-z]+"));
 					if (player.getRole().contains("ra"))
-						spaces.writeGroup(player.getPerGameId());
+						spaces.writeGroup(player.getPerGameId(),player.getRole());
 					in.nextLine();
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(false);
 					player.setMovesAllowed(false);
-				
-					
-					ChipSet revelationChips = getZeroSumsChipSet(gs.getGamePalette());
-					System.out.println("revelation chips: "
-							+ revelationChips.toString());
-					player.setRevelationChips(revelationChips);
+
 				}
 								
 				
@@ -281,7 +276,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		System.out.println("Received Discourse Message ");
 		System.out.println("Class: " + dm.getClass());
 		System.out.println("From: " + dm.getFromPerGameId());
-		System.out.println("From: " + dm.getToPerGameId());
+		System.out.println("To: " + dm.getToPerGameId());
 
 		
 		// Sending the message to the client
@@ -292,8 +287,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			
 
 			BasicProposalDiscussionDiscourseMessage bpddm = (BasicProposalDiscussionDiscourseMessage) dm;
-			System.out
-			.println("---- BasicProposalDiscussionDiscourseMessage ----" + bpddm);
+			System.out.println("---- BasicProposalDiscussionDiscourseMessage ----" + bpddm);
 			
 			if (bpddm.accepted()) {		
 				spaces.writeResponse(dm.getMessageId(),"accepted");

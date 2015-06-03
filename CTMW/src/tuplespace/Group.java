@@ -12,6 +12,7 @@ public class Group implements TimeEntry {
 
 	public String name;
 	public String ra;
+	public String type;
 	public Integer clock;
 	public Timestamp time;
 	
@@ -19,9 +20,10 @@ public class Group implements TimeEntry {
 		
 	}
 
-	public Group(String name, String ra, Integer clock) {
+	public Group(String name, String ra, String type, Integer clock) {
 		this.name = name;
 		this.ra = ra;
+		this.type = type;
 		this.clock = clock;
 		this.time = new Timestamp(new Date().getTime());
 	}
@@ -42,12 +44,13 @@ public class Group implements TimeEntry {
 	}
 	@Override
 	public int[] toIntArray(DistributedOOPL oopl) {
-		int[] r = new int[12];
+		int[] r = new int[18];
 		JL.addPredicate(r,0,oopl.prolog.strStorage.getInt("group"),4, oopl); // points/2
 		
 		JL.addPredicate(r,3,JL.makeStringKnown(this.name, oopl),0, oopl); // the name
 		JL.addPredicate(r,6,JL.makeStringKnown(this.ra, oopl),0, oopl); // the name
-		JL.addNumber(r, 9, this.clock, oopl);
+		JL.addPredicate(r,9,JL.makeStringKnown(this.type, oopl),0, oopl); // the name
+		JL.addNumber(r, 12, this.clock, oopl);
 
 		return r;
 		// TODO Auto-generated method stub
@@ -69,12 +72,14 @@ public class Group implements TimeEntry {
 
 	@Override
 	public String toPrologString() {
-		return "group(" + name + "," + ra + "," + clock + ").";
+		return "group(" + name + "," + ra +"," + type + "," + clock + ").";
 	}
+
 	@Override
 	public String toString() {
-		return "Group [name=" + name + ", ra=" + ra + ", clock=" + clock
-				+ ", time=" + time + "]";
+		return "Group [name=" + name + ", ra=" + ra + ", type=" + type
+				+ ", clock=" + clock + ", time=" + time + "]";
 	}
+
 	
 }
