@@ -41,7 +41,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	 * cannot move any farther towards the goal.
 	 */
 	Scoring s = new Scoring(100, -10, 5);
-
+	private static Random localrand = new Random();
 	/**
 	 * indicated the current file number that data is taken from
 	 */
@@ -108,10 +108,10 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Norm Phase", 60);		
+			ph.addPhase("Norm Phase", 90);		
 		}
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Movement Phase", 300);			
+			ph.addPhase("Movement Phase", 90);			
 		}
 		ph.addPhase("Feedback Phase", 1);
 		ph.setLoop(false);
@@ -141,12 +141,13 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 			}
 		}
 		board.setSquares(squares);
-		board.setGoal(getPosition(in), true); // goal location
-		
-		
 		gs.setBoard(board);
-		Goal g = board.getGoals().iterator().next();
-		g.setType(-1);
+		
+		gs.getBoard().setGoal(getPosition(in), true); // goal location
+		gs.getBoard().getGoals().iterator().next().setType(-1);
+		
+		
+		Goal g = gs.getBoard().getGoals().iterator().next();
 		if (g != null) {
 			spaces.writeGoal(g);
 		}
@@ -166,7 +167,9 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 
 	protected RowCol getPosition(Scanner in) {
 		int row = in.nextInt();
+		row = localrand.nextInt(gs.getBoard().getRows()-2) +1;
 		int col = in.nextInt();
+		col = localrand.nextInt(gs.getBoard().getCols()-2) +1;
 		in.nextLine();
 		return new RowCol(row, col);
 	}
@@ -197,7 +200,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		}
 		board.setSquares(squares);
 		board.setGoal(new RowCol(2, 3), true);             // goal location player 0
-    //    board.setGoal(new RowCol(2, 3), true,1);             // goal location player 1
+  //    board.setGoal(new RowCol(2, 3), true,1);             // goal location player 1
 		gs.setBoard(board);
 	}
 	
@@ -221,7 +224,9 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					//player.setTeamId(3); // set teams for players
 					player.setChips(getChipSet(gs.getGamePalette(), in));
 					int row = in.nextInt();
+					row = localrand.nextInt(gs.getBoard().getRows());
 					int col = in.nextInt();
+					col = localrand.nextInt(gs.getBoard().getCols());
 					player.setPosition(new RowCol(row, col));
 					player.setRole(in.next("[a-z]+"));
 					if (player.getRole().contains("ra"))

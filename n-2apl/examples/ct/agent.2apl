@@ -9,7 +9,14 @@ at(X,Y) :- position(X,Y,W).
 initialized :- initialized(yes).
 raise(X,NewX):- NewX is X + 1.
 lower(X,NewX):- NewX is X - 1.
-
+choose([], []).
+choose(List, Elt) :-
+        length(List, Length),
+        random(0, Length, Index),
+        nth0(Index, List, Elt),
+        not(sentTo(Elt,Somewhere)).
+agents([a10,a20,a30,a40]).
+penalties([50,100,200,300,400,500]).
 timetowait(7).
 points(1000).
 clock(0).
@@ -65,7 +72,7 @@ BeliefUpdates:
 {true}														NoNextStep(X,Y)					{not nextStep(X,Y)}
 {true}														NextStep(X,Y,ID)				{nextStep(X,Y,ID)}
 {true}														NoNextStep(X,Y,ID)				{not nextStep(X,Y,ID)}
- 
+{true}														SentTo(Agent)					{sentTo(Agent)}
 Plans:
 initialize()
 
@@ -138,14 +145,18 @@ surround(X,Y,V1) <- role(ID,raaa) | {
 	sendWest(a20,X,Y,100);
 	sendEast(a30,X,Y,100);
 	sendNorth(a40,X,Y,100);
-	color(white,a10,yes,100);
-	color(white,a20,yes,100);
-	color(white,a30,yes,100);
-	color(white,a40,yes,100);
-	color(blue,a10,no,100);
-	color(blue,a20,no,100);
-	color(blue,a30,no,100);
-	color(blue,a40,no,100);
+	B(tile(C1,1,1));
+	color(C1,a10,yes,100);
+	B(tile(C2,2,2));
+	color(C2,a20,yes,100);
+	B(tile(C3,3,3));
+	color(C3,a30,yes,100);
+	B(tile(C4,4,4));
+	color(C4,a40,yes,100);
+	color(C4,a10,no,100);
+	color(C3,a20,no,100);
+	color(C2,a30,no,100);
+	color(C1,a40,no,100);
 	dropgoal(surround(X,Y,V1))
 	]
 } : 100
