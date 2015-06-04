@@ -15,22 +15,6 @@ norm(
     ( pursuer(Agent), detached(group_surround(W)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
     obligation([at(X,Y,Agent)],now + 14,[reduce(Agent, 700)]) // prohibition format
     ).  
-
-%group accept requests
-norm(
-    group_acceptCRequests(G,Sanction),
-    G, // the subject agent
-    ( group(G), groupObl(acceptCRequests,Sanction)), // precondition - left blank for now
-    obligation([group_acceptCRequests],now + 18,[reduce(G,Sanction)]) // prohibition format
-    ).
-    
-%agents group norms from RA  
-norm(
-    group_task(group_acceptCRequest(G)),
-    Agent, // the subject agent 
-    ( pursuer(Agent), detached(group_acceptCRequests(G,Sanction)),proposal(Id,_,Agent,_)), // precondition - add triggering condition
-    obligation([acceptCRequest(Id)],now + 14,[reduce(Agent,Sanction)]) // prohibition format
-    ). 
     
 %individual prohibitions to use colored tiles
 norm(
@@ -48,27 +32,43 @@ norm(
 	obligation([color(Color,Thing)],now + 15,[reduce(Thing,S)]) // prohibition format
 ).
 
-%individual obligations to accept requests per each
+%Deactivated individual obligations to accept requests per each
 norm(
 	acceptRequest(Thing),
 	Thing, // the subject agent
-	( pursuer(Thing), proposal(Id,_,Thing,_),groupObl(acceptRequests,Sanction)), // precondition disabled
+	( pursuer(Thing), proposal(Id,_,Thing,_),ra(_,_,x)), // precondition disabled
 	obligation([acceptRequest(Id)],now + 3,[reduce(Thing,Sanction)]) // prohibition format
+).
+
+%individual obligations to accept requests per each
+norm(
+	acceptRequests(Thing),
+	Thing, // the subject agent
+	( pursuer(Thing), groupObl(acceptRequests,Sanction)), // precondition disabled
+	obligation([acceptRequests(Thing)],now + 15,[reduce(Thing,Sanction)]) // prohibition format
 ).
 
 %individual obligations to accept requests per each
 norm(
 	respondToRequest(Thing),
 	Thing, // the subject agent
-	( pursuer(Thing), proposal(Id,_,Thing,_)), // precondition
+	( pursuer(Thing), proposal(Id,_,Thing,_),group(Z)), // precondition
 	obligation([respondToRequest(Id)],now + 3,[reduce(Thing,300)]) // prohibition format
 ).
 
-%individual prohibitions to reject requests
+%individual obligation to make a move during move phase
+norm(
+	makeMove(Thing),
+	Thing, // the subject agent
+	( pursuer(Thing), at(X,Y,Thing),group(Z), not detached(makeMove(Thing))), // precondition
+	obligation([makeMove(X,Y,Thing)],now + 10,[reduce(Thing,300)]) // prohibition format
+).
+
+%Deactivated individual prohibitions to reject requests
 norm(
 	rejectRequests(Thing),
 	Thing, // the subject agent
-	( pursuer(Thing),group(Z)), // precondition
+	( pursuer(Thing),group(Z),ra(_,_,x)), // precondition
 	prohibition([rejectRequests(Thing)],[reduce(Thing,200)]) // prohibition format
 ).
 
@@ -80,14 +80,6 @@ norm(
 	prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
 ).
 
-%individual obligation to make a move during move phase
-norm(
-	makeMove(Thing),
-	Thing, // the subject agent
-	( pursuer(Thing), at(X,Y,Thing),group(Z), not detached(makeMove(Thing))), // precondition
-	obligation([makeMove(X,Y,Thing)],now + 10,[reduce(Thing,300)]) // prohibition format
-).
-
 
 color(Color,Agent) :-
 	at(X,Y,Agent),
@@ -96,13 +88,11 @@ color(Color,Agent) :-
 makeMove(X,Y,Thing) :-
 	at(X1,Y,Thing),
 	not(X is X1).
-makeMove(X,Y1,Thing) :-
+	
+makeMove(X,Y,Thing) :-
 	at(X,Y1,Thing),
 	not(Y is Y1).	
-	
-//phase(movement).
-group_acceptCRequests :-
-	groupSurroundObeyd.
+
 rejectRequests(A) :- 
 	response(Id,rejected,_),
 	proposal(Id,_,A,_).
@@ -277,12 +267,11 @@ agent_directed(Label,Agent,obligation(ListA,Deadline,Sanction)):
 	O(listTrue(ListA)), 
 	time_past(Deadline)]
 
-
 agent_directed(Label,Agent,prohibition(ListA,Sanction)): 
 	[norm(Label,Agent,Pre,prohibition(ListA,Sanction)) and Pre, 
 	F(listTrue(ListA)), 
 	false]
-
+	
 
 Sanction rules:
 //reduce(Agent,X) and do_reduce_health(Agent,X) => not reduce(Agent,X).
