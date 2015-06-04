@@ -453,7 +453,7 @@ function clearNormMessagesUI() {
 // END clear message interface UI (first row in grid)
 
 function removeElemFromDOM(EId,parent) {
-	$(EId).parents(parent).eq(1).remove();
+	$(EId).parents(parent).eq(0).remove();
 //	$(EId).parentNode.removeChild(EId);
 //	return(EObj=document.getElementById(EId))?EObj.parentNode.removeChild(EObj):false;
 }
@@ -616,7 +616,7 @@ function buttonSubmitNormG_click() {
 
 	var message = "group obligation sent to accept requests";
 
-	sendNormG("acceptCRequests",sanction);
+	sendNormG("acceptRequests",sanction);
 	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
 	
 	addNormToTable("Obligation", game.getMe(), "all players", rowID, message);
@@ -764,7 +764,7 @@ function loadNormGoalProposalsTable() {
 	jQuery("#tblNorms").jqGrid(
 			{
 				datatype : "local",
-				height : 150,
+				height : 110,
 				colNames : ['MsgType', 'Receiver', 'Goal', 'Message',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
@@ -1141,7 +1141,7 @@ function sendResponseAcceptReject(msgID, accept)
 function login(pin) {	
 	// alert(stringJ);
 	jQuery.post('login.jsp?pin=' + pin, function(data) {
-		 //alert(jQuery.trim(data));
+//		alert(jQuery.trim(data));
 		if (jQuery.trim(data) == "true") {
 			window.location = 'game.jsp';
 		} 

@@ -569,14 +569,17 @@ var game = {
 <div id="proposals">
 <table id="tblProposals"></table>
 </div>
+
+<div id="norms">
+<table id="tblNorms"></table>
+</div>
+
 <div id="Cnorms">
 <table id="tblCNorms"></table>
 </div>
+
 <div id="Gnorms">
 <table id="tblGNorms"></table>
-</div>
-<div id="norms">
-<table id="tblNorms"></table>
 </div>
 
 </div>

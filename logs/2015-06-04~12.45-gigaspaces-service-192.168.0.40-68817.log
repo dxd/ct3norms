@@ -1,0 +1,35 @@
+2015-06-04 12:45:54,101  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 377 milliseconds
+2015-06-04 13:06:11,809  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: 22d6207b-edb4-46a4-a42e-9ea600e6c4e1
+ expiration: 1433419554188
+ left 17610
+ event cause: null
+
+2015-06-04 13:06:11,838  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: Channel was inactive for too long.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:46)
+	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1211)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+
+2015-06-04 13:55:44,876  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-06-04 13:55:45,278  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.

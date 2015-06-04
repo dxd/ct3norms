@@ -107,6 +107,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		}		
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
+		ph.addPhase("Setup Phase", 10);	
 		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Norm Phase", 70);		
 		}
@@ -123,18 +124,18 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	/**
 	 * Places random colors on specified board
 	 */
-	protected void setBoard(GamePalette gp, Scanner in) throws Exception {
+	protected void setBoard(GamePalette gp) throws Exception {
 
-		System.out.println("-------- Creating Board --------");
-		int row = in.nextInt();
-		int col = in.nextInt();
-		in.nextLine(); // clears out any comments
+//		System.out.println("-------- Creating Board --------");
+		int row = 6;
+		int col = 6;
+//		in.nextLine(); // clears out any comments
 		Board board = new Board(row, col);
 		Square[][] squares = new Square[row][col];
 		for (int r = 0; r < row; r++) {
 			for (int c = 0; c < col; c++) {
 				squares[r][c] = new Square();
-				squares[r][c].setColor(gp.get(in.nextInt()));
+//				squares[r][c].setColor(gp.get(in.nextInt()));
 				//overwriting to random colors
 				squares[r][c].setColor(gp.getRandomColor()); 
 				spaces.writeTile(r,c,squares[r][c].getColor());
@@ -143,7 +144,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		board.setSquares(squares);
 		gs.setBoard(board);
 		
-		gs.getBoard().setGoal(getPosition(in), true); // goal location
+		gs.getBoard().setGoal(getPosition(), true); // goal location
 		gs.getBoard().getGoals().iterator().next().setType(-1);
 		
 		
@@ -154,24 +155,24 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		
 	}
 
-	protected ChipSet getChipSet(GamePalette gp, Scanner in) {
+	protected ChipSet getChipSet(GamePalette gp) {
 		ChipSet cs = new ChipSet();
-		int counter = 0;
-		while (in.hasNextInt()) {
-			cs.add(gp.get(counter), in.nextInt());
-			counter++;
-		}
-		in.nextLine();
+//		int counter = 0;
+//		while (in.hasNextInt()) {
+//			cs.add(gp.get(counter), in.nextInt());
+//			counter++;
+//		}
+//		in.nextLine();
 		
 		return getRandomChipSet(gp);
 	}
 
-	protected RowCol getPosition(Scanner in) {
-		int row = in.nextInt();
-		row = localrand.nextInt(gs.getBoard().getRows()-2) +1;
-		int col = in.nextInt();
-		col = localrand.nextInt(gs.getBoard().getCols()-2) +1;
-		in.nextLine();
+	protected RowCol getPosition() {
+//		int row = in.nextInt();
+		int row = localrand.nextInt(gs.getBoard().getRows()-2) +1;
+//		int col = in.nextInt();
+		int col = localrand.nextInt(gs.getBoard().getCols()-2) +1;
+//		in.nextLine();
 		return new RowCol(row, col);
 	}
 
@@ -182,8 +183,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		ChipSet chipset = new ChipSet();
 		
 		for (String color : gp.getColors())
-			chipset.set(color, localrand.nextInt(3));
-
+			chipset.set(color, localrand.nextInt(5));
 		return chipset;
 	}
 	/**
@@ -208,15 +208,14 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 	@Override
 	public void beginPhase(String phasename) {
 		System.out.println("A New Phase Began: " + phasename);
-		if (phasename.equals("Norm Phase")) {		
+		if (phasename.equals("Setup Phase")) {		
 			try {
 				//TODO remove 0 hack
-				FileReader fr = new FileReader("lib/adminconfig/board_"
-						+ 0 + ".txt");
-				Scanner in = new Scanner(fr);
+//				FileReader fr = new FileReader("lib/adminconfig/board_"					+ 0 + ".txt");
+//				Scanner in = new Scanner(fr);
 
 				// assign game-board colors
-				setBoard(gs.getGamePalette(), in);
+				setBoard(gs.getGamePalette());
 
 				String role = "ra";
 				int ra = localrand.nextInt(3);
@@ -228,31 +227,37 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 					PlayerStatus player = gs.getPlayerByPerGameId(i);
 					player.setScore(1000);
 					//player.setTeamId(3); // set teams for players
-					player.setChips(getChipSet(gs.getGamePalette(), in));
-					int row = in.nextInt();
-					row = localrand.nextInt(gs.getBoard().getRows());
-					int col = in.nextInt();
-					col = localrand.nextInt(gs.getBoard().getCols());
-					player.setPosition(new RowCol(row, col));
+					player.setChips(getChipSet(gs.getGamePalette()));
+//					int row = in.nextInt();
+					int row = localrand.nextInt(gs.getBoard().getRows());
+//					int col = in.nextInt();
+					int col = localrand.nextInt(gs.getBoard().getCols());
+					player.setPosition(new RowCol(row,col));
 //					player.setRole(in.next("[a-z]+"));
 //					if (player.getRole().contains("ra"))
 					if (ra == i) {
 						player.setRole(role);
-						spaces.writeGroup(i,role);
+//						spaces.writeGroup(i,role);
+					} else {
+						player.setRole("none");
 					}
-					in.nextLine();
+//					in.nextLine();
 					player.setCommunicationAllowed(false);
 					player.setTransfersAllowed(false);
 					player.setMovesAllowed(false);
-
-				}
-								
-				
-
+				}								
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else	if (phasename.equals("Movement Phase")) {	
+		}
+		else	if (phasename.equals("Norm Phase")) {	
+			for (int i = 0; i < gs.getPlayers().size();i++) {
+				PlayerStatus player = gs.getPlayerByPerGameId(i);
+				if (!player.getRole().equals("none"))
+					spaces.writeGroup(i,player.getRole());
+			}
+		}
+		else	if (phasename.equals("Movement Phase")) {	
 			for (int i = 0; i < gs.getPlayers().size();i++) {
 				PlayerStatus player = gs.getPlayerByPerGameId(i);
 				player.setMovesAllowed(true);

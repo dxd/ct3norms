@@ -56,6 +56,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 	public boolean game_ended = false;
 	public boolean Phase_completed = false;
 	public boolean FirstPhase = true;
+	public int PhaseNum = 0;
 	public ClientGameStatus GameStat;
 	public String ID = "";
 	public Hashtable<String, PlayerStatus> LastUpdatePlyerStatus;
@@ -545,7 +546,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 		// TODO Auto-generated method stub
 		System.out.println(ph.getCurrentPhaseName() + " "
 				+ ph.getPhaseDuration());
-
+		PhaseNum++;
 		timer = TimeWatch.start();
 
 		if (FirstPhase) {

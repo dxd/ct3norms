@@ -142,15 +142,17 @@ public class EnvCT  extends Environment implements ExternalTool {
 		ar_null = oopl.prolog.mp.parseFact("null.", oopl.prolog.strStorage, false);
 		ar_state_change = oopl.prolog.mp.parseFact("tuple_space_changed.", oopl.prolog.strStorage, false);
 		// To create a IntProlog structure out of a string use the above lines (but replace the fact string such as "true.")
-		// Starting the clock 
-		Thread t = new Thread(new ClockTicker(this));
 
-		t.start(); 
 		//this.insertTestData();
 
 
 	} 
 
+	void startTime() {
+		// Starting the clock 
+		Thread t = new Thread(new ClockTicker(this));
+		t.start(); 
+	}
 	/*
 	 * Both used for increasing or just reading the clock. 
 	 */
@@ -697,6 +699,8 @@ public class EnvCT  extends Environment implements ExternalTool {
 		
 		//int[] OOPLformat = te.toIntArray(oopl);
 		//oopl.handleEvent(ar_state_change, false);
+		if (te instanceof Group)
+			startTime();
 		oopl.handleEvent(oopl.getProlog().mp.parseFact(te.toPrologString(),oopl.getProlog().strStorage,false),false);
 	}
 

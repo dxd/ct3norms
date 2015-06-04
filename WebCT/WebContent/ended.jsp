@@ -26,17 +26,32 @@ if (gs.getMyPlayer().getRole().equals("ra")) role = 1;
 else if (gs.getMyPlayer().getRole().equals("raaa")) role = 2;
 
 ArrayList<String> questions =  new ArrayList<String>();
-questions.add("I have enjoyed the game");
+questions.add("I have enjoyed the game.");
 questions.add("I have understood the rules of the game.");
 questions.add("I have understood the goals of the game.");
-questions.add("I understand how my score was calculated.");
-questions.add("I was able to achieve my goals.");
+if (gs.getMyPlayer().getScore() == 1000)
+	questions.add("I understand how my score was calculated.");
+else
+	questions.add("I understand why I was penalized.");
+//questions.add("I was able to achieve my goals.");
 questions.add("The team work well together.");
-questions.add("The additional norms I received were reasonable.");
-questions.add("The other players behaved predictably.");
+
+if (role == 0)
+{
+	questions.add("The prohibitions I received were reasonable.");
+	questions.add("The obligations I received were reasonable.");
+}
+//questions.add("The additional norms I received were reasonable.");
+//questions.add("The other players behaved predictably.");
+
 if (role > 0)
 {
-	questions.add( "I was able to coordinate the team members to reach the goal.");
+	questions.add( "I was able to instruct the team members about how to reach the group goal.");
+}
+
+if (role == 2)
+{
+	questions.add( "As a flexible coordinator I felt I was able to ensure the goal is reached.");
 }
 
 %>

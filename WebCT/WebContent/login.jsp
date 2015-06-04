@@ -26,10 +26,13 @@
 				out.print("ended");	
 			else {
 			SimpleLog.write("game started on session id: " + id);
-			out.print("true");		
+			if (ClinetControler.GetClinet(id).PhaseNum < 2) //waiting for the norm phase
+				out.print("waiting...");
+			else
+				out.print("true");		
 			}
 		} else {
-			out.print("false");			
+			out.print(id);			
 		}
 		}
 		catch(Exception ex) {

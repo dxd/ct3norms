@@ -970,7 +970,8 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		else {
 			return new APLIdent("true"); 
 		}
-		
+		PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
+		waiter.doWait(1, 3);
 		BasicProposalDiscussionDiscourseMessage responseMessage = new BasicProposalDiscussionDiscourseMessage(proposal);
 		if( response.getName().equals("accept") ) {
 			responseMessage.acceptOffer();
