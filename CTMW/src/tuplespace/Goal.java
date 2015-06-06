@@ -23,9 +23,8 @@ public class Goal implements TimeEntry {
 	public Goal(Integer clock) {
 		this.clock = clock;
 	}
-	public Goal(int id, Cell cell, String agent, int clock) {
+	public Goal(Cell cell, String agent, int clock) {
 		
-		this.id = id;
 		this.cell = cell;
 		this.agent = agent;
 		this.clock = clock;

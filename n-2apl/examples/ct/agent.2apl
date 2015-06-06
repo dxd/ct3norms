@@ -151,18 +151,19 @@ surround(X,Y,V1) <- role(ID,raaa) | {
 	sendWest(a30,X,Y,100);
 	sendEast(a20,X,Y,100);
 	sendNorth(a10,X,Y,100);
-//	B(tile(C1,1,1));
+	B(tile(C1,1,1));
 //	color(C1,a10,yes,100);
-//	B(tile(C2,2,2));
+	B(tile(C2,2,2));
 //	color(C2,a20,yes,100);
-//	B(tile(C3,3,3));
+	B(tile(C3,3,3));
 //	color(C3,a30,yes,100);
-//	B(tile(C4,4,4));
+	B(tile(C4,4,4));
 //	color(C4,a40,yes,100);
-//	color(C4,a10,no,100);
-//	color(C3,a20,no,100);
-//	color(C2,a30,no,100);
-//	color(C1,a40,no,100);
+	color(C4,a10,no,100);
+	color(C3,a20,no,100);
+	color(C2,a30,no,100);
+	color(C1,a40,no,100);
+	acceptRequests(200);
 	dropgoal(surround(X,Y,V1))
 	]
 } : 100
@@ -271,6 +272,10 @@ sendWest(Agent,X,Y,S) <- lower(X,X1) and gsurround(GX,GY) | {
 
 color(Color,Agent,Yes,S) <- true | {
 	@ctenv( setColor(Agent,Color,Yes,S),L)
+}
+
+acceptRequests(S) <- true | {
+	@ctenv( setObligation(acceptRequests,S),L)
 }
 
 update() <- true | {

@@ -456,13 +456,20 @@ public class EnvCT  extends Environment implements ExternalTool {
 	}
 	
 	public Term setColor(String agentname, APLIdent agent, APLIdent color, APLIdent type,APLNum sanction) {
-		CTAgentHandler client = agents.get(agentname);
+//		CTAgentHandler client = agents.get(agentname);
 		Color c = new Color(agent.getName(),color.getName(),type.getName(),sanction.toInt(),clock);
 		System.out.println("agent writes: "+c.toString());
 		space.write(c);
 		return new APLNum(1);
 	}
 
+	public Term setObligation(String agentname, APLIdent type, APLNum sanction) {
+
+		GroupObl gb = new GroupObl(type.getName(),sanction.toInt(),clock);
+		System.out.println("agent writes: "+gb.toString());
+		space.write(gb);
+		return new APLNum(1);
+	}
 	/**
 	 * called by 2APL agent, convert APLNums to ints
 	 * @param gx: x coordinate of goal

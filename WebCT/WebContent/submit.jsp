@@ -19,6 +19,8 @@
 <%@page import="webapp.ClinetControler"%>
 <%@page import="webapp.listen"%>
 <%@page import="net.sf.json.JSONObject"%>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.net.URLDecoder"%>
 <%@page
 	import="edu.harvard.eecs.airg.coloredtrails.client.ClientGameStatus"%><%@ page
 	language="java" contentType="text/html; charset=ISO-8859-1"
@@ -31,9 +33,9 @@ try {
     Enumeration paramNames = request.getParameterNames();
 	while(paramNames.hasMoreElements()) {
 	   String paramName = (String)paramNames.nextElement();
-	   pw.println(paramName + " : ");
+	   pw.print(paramName + " : ");
 	   String paramValue = request.getParameter(paramName);
-	   pw.println(paramValue);
+	   pw.println(java.net.URLDecoder.decode(paramValue));
 	}
     pw.close();
 } catch(IOException e) {

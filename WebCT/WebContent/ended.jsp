@@ -11,6 +11,8 @@
 	<%@page import="webapp.ClinetControler"%>
 <%@page import="webapp.GeneralFunction"%>	
 <%@page import="java.util.ArrayList"%>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.net.URLDecoder"%>
 
 <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.9.custom.min.js"></script>
@@ -69,12 +71,11 @@ if (role == 2)
 for (int i=0; i < questions.size(); i++) {
 %>
 <tr>
-
     <td><legend><%out.print(questions.get(i));%></legend></td>
-    <td><label><input type="radio" name="q<%out.print(i);%>" value="1"></label></td>
-    <td><label><input type="radio" name="q<%out.print(i);%>" value="2"></label></td>
-    <td><label><input type="radio" name="q<%out.print(i);%>" value="3"></label></td>
-    <td><label><input type="radio" name="q<%out.print(i);%>" value="4"></label></td>
+    <td><label><input type="radio" id="q<%out.print(i); %>" name="<%out.print(java.net.URLEncoder.encode(questions.get(i)));%>" value="1"></label></td>
+    <td><label><input type="radio" id="q<%out.print(i); %>" name="<%out.print(java.net.URLEncoder.encode(questions.get(i)));%>" value="2"></label></td>
+    <td><label><input type="radio" id="q<%out.print(i); %>" name="<%out.print(java.net.URLEncoder.encode(questions.get(i)));%>" value="3"></label></td>
+    <td><label><input type="radio" id="q<%out.print(i); %>" name="<%out.print(java.net.URLEncoder.encode(questions.get(i)));%>" value="4"></label></td>
 
 </tr>	
 <%	
@@ -97,7 +98,7 @@ var howmany = <%out.print(questions.size());%>
     	 
     	 for(i = 0; i < howmany; i++) {
     		 
-    		 if ($('input[name=q'+i+']:checked').length == 0) {
+    		 if ($('input[id=q'+i+']:checked').length == 0) {
     			    right = false;
     			}
     	 }

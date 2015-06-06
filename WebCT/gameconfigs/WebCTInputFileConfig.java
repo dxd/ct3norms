@@ -233,6 +233,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 //					int col = in.nextInt();
 					int col = localrand.nextInt(gs.getBoard().getCols());
 					player.setPosition(new RowCol(row,col));
+					spaces.writePosition(i, new RowCol(row,col));
 //					player.setRole(in.next("[a-z]+"));
 //					if (player.getRole().contains("ra"))
 					if (ra == i) {

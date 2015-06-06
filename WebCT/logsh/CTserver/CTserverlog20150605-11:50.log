@@ -1,0 +1,218 @@
+Buildfile: /Users/dxd/git/ct3/WebCT/build.xml
+
+runserver:
+     [java] INFO  BrokerService                  - ActiveMQ null JMS Message Broker (localhost) is starting
+     [java] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+     [java] INFO  AMQPersistenceAdapter          - AMQStore starting using directory: activemq-data/localhost
+     [java] INFO  KahaStore                      - Kaha Store using data directory /Users/dxd/git/ct3/WebCT/activemq-data/localhost/kr-store
+     [java] INFO  AMQPersistenceAdapter          - Active data files: []
+     [java] INFO  AMQPersistenceAdapter          - Journal Recovery Started from: DataManager:(data-)
+     [java] INFO  AMQPersistenceAdapter          - Recovered 0 operations from redo log in 0.282 seconds.
+     [java] INFO  BrokerService                  - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+     [java] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://kafka.cs.nott.ac.uk:8088
+     [java] INFO  TransportConnector             - Connector tcp://kafka.cs.nott.ac.uk:8088 Started
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.cs.nott.ac.uk-59070-1433501444277-1:0) started
+     [java] INFO  root                           - Started the JMS Server
+     [java] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+     [java] INFO  BrokerService                  - About to delete any non-persistent messages that may have overflowed to disk ...
+     [java] INFO  KahaStore                      - Kaha Store successfully deleted data directory activemq-data/localhost/tmp_storage
+     [java] INFO  BrokerService                  - Successfully deleted temporary storage
+     [java] INFO  root                           - Controller Interface has been started
+     [java] INFO  root                           - ColoredTrails is now running...
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 40 [128.243.23.149] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 20 [128.243.23.149] of type 
+     [java] Adding client state for 40
+     [java] Adding client state for 20
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 30 [128.243.23.149] of type 
+     [java] INFO  root                           - Colored Trails Server received a subcription message from client: 10 [128.243.23.149] of type 
+     [java] Adding client state for 30
+     [java] Adding client state for 10
+     [java] Received message to add config class from: admin
+     [java] INFO  root                           - Received message from admin: SET_CONFIGURATION
+     [java] INFO  root                           - Received message from admin client:ADD_CONFIGURATION
+     [java] DEBUG root                           - Administrator: adding configuration file [WebCTInputFileConfig] class name: WebCTInputFileConfig
+     [java] INFO  root                           - Received message from admin client:NEW_GAME
+     [java] DEBUG root                           - Administrator: newGame configName = [WebCTInputFileConfig] 
+     [java] DEBUG root                           - Administrator: newGame adding Player: [10]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [20]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [30]
+     [java] DEBUG root                           - Administrator: newGame adding Player: [40]
+     [java] DEBUG root                           - ServerData addNewGame -- config file
+     [java] DEBUG root                           - ServerData addNewGame -- Starting ServerGameStatus
+     [java] DEBUG root                           - ServerData addNewGame -- Starting a new game with id: 0
+     [java] DEBUG root                           - ClientCommands creating new Topic: ct3.game.0
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [10]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [20]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [30]
+     [java] DEBUG root                           - sending sendClientSubscribeToGameMessage: for game [0] and player [40]
+     [java] INFO  root                           - Received message from admin client:LIST_GAMES
+     [java] INFO  root                           - Received message from admin client:LIST_CONFIGURATIONS
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] received client subscribed successfully message
+     [java] All players subscribed to game, trying to start
+     [java] INFO  root                           - Sending reply to controller: NEW_GAME_REPLY
+     [java] DEBUG root                           - sendGameStart
+     [java] DEBUG root                           - sendGameStart to controller
+     [java] DEBUG root                           - sending game id = 0
+     [java] INFO  root                           - Starting spaces 1
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini:/*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] 2015-06-05 11:51:02,100 CONFIG [com.gigaspaces.logger] - Log file: /Users/dxd/git/ct3/logs/2015-06-05~11.51-gigaspaces-service-128.243.23.149-70984.log
+     [java] DEBUG GigaSpaceFactoryBean           - Clustered flag automatically set to [true] since the space is a local cache space for bean [null]
+     [java] DEBUG UrlSpaceFactoryBean            - Finding Space with URL [jini://*/*/myGrid] and properties [{com.j_spaces.core.container.shutdown_hook=false}]
+     [java] zatim dobry
+     [java] 2015-06-05 11:51:02,095  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 397 milliseconds
+     [java] Let the game begin...
+     [java] game id= 0
+     [java] ---- Sending Scoring Change ----
+     [java] setPhases in GameStatus
+     [java] A New Phase Began: Setup Phase
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=0], subject=blue, time=2015-06-05 11:51:02.235, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=1], subject=yellow, time=2015-06-05 11:51:02.273, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=2], subject=yellow, time=2015-06-05 11:51:02.275, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=3], subject=brown, time=2015-06-05 11:51:02.277, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=4], subject=yellow, time=2015-06-05 11:51:02.278, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=0, y=5], subject=white, time=2015-06-05 11:51:02.28, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=0], subject=blue, time=2015-06-05 11:51:02.281, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=1], subject=white, time=2015-06-05 11:51:02.283, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=2], subject=brown, time=2015-06-05 11:51:02.284, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=3], subject=brown, time=2015-06-05 11:51:02.286, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=4], subject=white, time=2015-06-05 11:51:02.288, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=1, y=5], subject=yellow, time=2015-06-05 11:51:02.29, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=0], subject=yellow, time=2015-06-05 11:51:02.291, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=1], subject=blue, time=2015-06-05 11:51:02.293, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=2], subject=brown, time=2015-06-05 11:51:02.295, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=3], subject=brown, time=2015-06-05 11:51:02.297, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=4], subject=yellow, time=2015-06-05 11:51:02.3, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=2, y=5], subject=yellow, time=2015-06-05 11:51:02.302, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=0], subject=white, time=2015-06-05 11:51:02.303, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=1], subject=yellow, time=2015-06-05 11:51:02.305, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=2], subject=yellow, time=2015-06-05 11:51:02.307, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=3], subject=white, time=2015-06-05 11:51:02.309, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=4], subject=white, time=2015-06-05 11:51:02.311, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=3, y=5], subject=blue, time=2015-06-05 11:51:02.312, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=0], subject=blue, time=2015-06-05 11:51:02.314, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=1], subject=blue, time=2015-06-05 11:51:02.316, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=2], subject=brown, time=2015-06-05 11:51:02.317, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=3], subject=blue, time=2015-06-05 11:51:02.319, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=4], subject=brown, time=2015-06-05 11:51:02.321, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=4, y=5], subject=brown, time=2015-06-05 11:51:02.322, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=0], subject=brown, time=2015-06-05 11:51:02.324, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=1], subject=brown, time=2015-06-05 11:51:02.325, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=2], subject=white, time=2015-06-05 11:51:02.326, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=3], subject=brown, time=2015-06-05 11:51:02.328, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=4], subject=yellow, time=2015-06-05 11:51:02.329, clock=0]
+     [java] CT writes: Tile [id=null, cell=Cell [x=5, y=5], subject=blue, time=2015-06-05 11:51:02.33, clock=0]
+     [java] CT writes goal: Goal [id=null, cell=Cell [x=3, y=4], agent=null, time=2015-06-05 11:51:02.351, clock=0]
+     [java] CT writes: Goal [id=null, cell=Cell [x=3, y=4], agent=null, time=2015-06-05 11:51:02.351, clock=0]
+     [java] A New Phase Began: Norm Phase
+     [java] CT writes Group: Group [name=g, ra=a20, type=raaa, clock=0, time=2015-06-05 11:51:12.234]
+     [java] CT writes: Group [name=g, ra=a20, type=raaa, clock=0, time=2015-06-05 11:51:12.234]
+     [java] CT notification: Obligation [subject=a20, obligation=[surround(3, 4)], sanction=[reduce(g, 700)], deadline=18, time=2015-06-05 11:51:12.247, clock=0]
+     [java] 20
+     [java] CT obligation: [Obligation to coordinate other players (with the use of norms) to surround a goal [3,4] from left, right, top and bottom  before the clock: 18 or 700 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a10, prohibition=[moveTooFast(a10)], sanction=[reduce(a10, 300)], clock=0, time=2015-06-05 11:51:12.261]
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] 10
+     [java] CT prohibition: [Prohibition to move more than 1 square per clock tick or 300 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a20, prohibition=[moveTooFast(a20)], sanction=[reduce(a20, 300)], clock=0, time=2015-06-05 11:51:12.263]
+     [java] 20
+     [java] CT prohibition: [Prohibition to move more than 1 square per clock tick or 300 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a30, prohibition=[moveTooFast(a30)], sanction=[reduce(a30, 300)], clock=0, time=2015-06-05 11:51:12.267]
+     [java] 30
+     [java] 30
+     [java] CT prohibition: [Prohibition to move more than 1 square per clock tick or 300 points will be deducted.]
+     [java] CT notification: Prohibition [subject=a40, prohibition=[moveTooFast(a40)], sanction=[reduce(a40, 300)], clock=0, time=2015-06-05 11:51:12.27]
+     [java] 40
+     [java] 40
+     [java] 40
+     [java] CT prohibition: [Prohibition to move more than 1 square per clock tick or 300 points will be deducted.]
+     [java] CT notification: Time [clock=1, time=2015-06-05 11:51:22.247]
+     [java] CT notification: Time [clock=2, time=2015-06-05 11:51:32.249]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] To: 0
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 0(PIN: 10)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a10, cell=Cell [x=3, y=5], goal=Cell [x=-1, y=-1], sanction=100, clock=2, time=2015-06-05 11:51:32.453]
+     [java] CT writes: SetGoal [id=null, agent=a10, cell=Cell [x=3, y=5], goal=Cell [x=-1, y=-1], sanction=100, clock=2, time=2015-06-05 11:51:32.453]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] To: 1
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 1(PIN: 20)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a20, cell=Cell [x=3, y=3], goal=Cell [x=-1, y=-1], sanction=100, clock=2, time=2015-06-05 11:51:36.239]
+     [java] CT writes: SetGoal [id=null, agent=a20, cell=Cell [x=3, y=3], goal=Cell [x=-1, y=-1], sanction=100, clock=2, time=2015-06-05 11:51:36.239]
+     [java] DEBUG root                           - received a discourse mesage... 20
+     [java] Received Discourse Message 
+     [java] Class: class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] From: 1
+     [java] To: 2
+     [java] DEBUG root                           - sendGameDiscourseMessage class edu.harvard.eecs.airg.coloredtrails.shared.discourse.NormGoalDiscourseMessage
+     [java] DEBUG root                           - FROM: 1 TO: 2(PIN: 30)
+     [java] ---- NormGoalDiscourseMessage ----
+     [java] CT writes setGoal: SetGoal [id=null, agent=a30, cell=Cell [x=4, y=4], goal=Cell [x=-1, y=-1], sanction=100, clock=2, time=2015-06-05 11:51:41.496]
+     [java] CT writes: SetGoal [id=null, agent=a30, cell=Cell [x=4, y=4], goal=Cell [x=-1, y=-1], sanction=100, clock=2, time=2015-06-05 11:51:41.496]
+     [java] CT notification: Time [clock=3, time=2015-06-05 11:51:42.251]
+     [java] CT notification: Time [clock=4, time=2015-06-05 11:51:52.253]
+     [java] CT notification: Time [clock=5, time=2015-06-05 11:52:02.256]
+     [java] CT notification: Time [clock=6, time=2015-06-05 11:52:12.258]
+     [java] CT notification: Time [clock=7, time=2015-06-05 11:52:22.26]
+     [java] A New Phase Began: Movement Phase
+     [java] CT notification: Time [clock=8, time=2015-06-05 11:52:32.262]
+     [java] CT notification: Time [clock=9, time=2015-06-05 11:52:42.265]
+     [java] CT notification: Time [clock=10, time=2015-06-05 11:52:52.269]
+     [java] CT notification: Time [clock=11, time=2015-06-05 11:53:02.272]
+     [java] CT notification: Time [clock=12, time=2015-06-05 11:53:12.277]
+     [java] CT notification: Time [clock=13, time=2015-06-05 11:53:22.281]
+     [java] CT notification: Time [clock=14, time=2015-06-05 11:53:32.285]
+     [java] CT notification: Time [clock=15, time=2015-06-05 11:53:42.287]
+     [java] CT notification: Time [clock=16, time=2015-06-05 11:53:52.29]
+     [java] CT notification: Time [clock=17, time=2015-06-05 11:54:02.292]
+     [java] CT notification: Time [clock=18, time=2015-06-05 11:54:12.295]
+     [java] CT notification: Time [clock=19, time=2015-06-05 11:54:22.299]
+     [java] A New Phase Began: Feedback Phase
+     [java] CT notification: Time [clock=20, time=2015-06-05 11:54:32.302]
+     [java] DEBUG root                           - Game ended id = 0
+     [java] CT notification: Time [clock=21, time=2015-06-05 11:54:42.305]
+     [java] CT notification: Time [clock=22, time=2015-06-05 11:54:52.309]
+     [java] CT notification: Time [clock=23, time=2015-06-05 11:55:02.311]
+     [java] CT notification: Time [clock=24, time=2015-06-05 11:55:12.315]
+     [java] CT notification: Time [clock=25, time=2015-06-05 11:55:22.319]
+     [java] CT notification: Time [clock=26, time=2015-06-05 11:55:32.321]
+     [java] CT notification: Time [clock=27, time=2015-06-05 11:55:42.323]
+     [java] CT notification: Time [clock=28, time=2015-06-05 11:55:52.326]
+     [java] CT notification: Time [clock=29, time=2015-06-05 11:56:02.329]
+     [java] CT notification: Time [clock=30, time=2015-06-05 11:56:12.333]
+     [java] CT notification: Time [clock=31, time=2015-06-05 11:56:22.336]
+     [java] CT notification: Time [clock=32, time=2015-06-05 11:56:32.339]
+     [java] CT notification: Time [clock=33, time=2015-06-05 11:56:42.342]
+     [java] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:kafka.cs.nott.ac.uk-59070-1433501444277-1:0) is shutting down
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] WARN  ActiveMQConnection             - Async exception with no exception listener: java.io.EOFException
+     [java] java.io.EOFException
+     [java] 	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+     [java] 	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:156)
+     [java] 	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:136)
+     [java] 	at java.lang.Thread.run(Thread.java:695)
+     [java] INFO  TransportConnector             - Connector tcp://kafka.cs.nott.ac.uk:8088 Stopped
+     [java] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:kafka.cs.nott.ac.uk-59070-1433501444277-1:0) stopped
+
+BUILD SUCCESSFUL
+Total time: 6 minutes 5 seconds

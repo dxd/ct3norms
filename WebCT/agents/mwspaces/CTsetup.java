@@ -129,9 +129,7 @@ public class CTsetup {
 	 }
 	 
 	 public void writeGoal(edu.harvard.eecs.airg.coloredtrails.shared.types.Goal goal2) {
-		 tuplespace.Goal goal = new tuplespace.Goal();
-		 goal.cell = new Cell(goal2.getLocation().row,goal2.getLocation().col);
-		 goal.clock = clock;
+		 tuplespace.Goal goal = new tuplespace.Goal(new Cell(goal2.getLocation().row,goal2.getLocation().col),null,clock);
 		 System.out.println("CT writes goal: "+goal.toString());
 		 createEntry(goal);
 	 }

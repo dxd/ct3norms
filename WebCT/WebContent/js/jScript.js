@@ -153,7 +153,7 @@ function createGameBoard() {
 			// create column
 			newCell = newRow.insertCell(j);
 			newCell.id = "CellRow" + i + "Column" + j;
-			newCell.innerText = i+", "+j;
+			newCell.innerHTML = i+", "+j;
 			newCell.bgColor = "white";
 			newCell.ondblclick = move; //function() { alert(i+'-'+j);move(i,j); };
 			// create div
@@ -614,7 +614,7 @@ function buttonSubmitNormG_click() {
 	var sanctions = document.getElementById('divTableGSanctionDropDown');
 	var sanction = sanctions.options[sanctions.selectedIndex].value;
 
-	var message = "group obligation sent to accept requests";
+	var message = "players are obliged to accept requests";
 
 	sendNormG("acceptRequests",sanction);
 	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
@@ -706,7 +706,7 @@ function loadNormColorProposalsTable() {
 	
 	// append div into Messages grid
 	//document.getElementById("divTableNCNorm").innerHTML = 'If you wish to send an obligation';
-	document.getElementById("divTableNCMsgType").innerHTML = 'Norm Color';
+	document.getElementById("divTableNCMsgType").innerHTML = 'Color Norms';
 	
 	InsertIntoPlayersIconsSelect('divTableNCReceiver');
 	InsertIntoNormColorSelect();
@@ -729,9 +729,9 @@ function buttonSubmitNormColor_click(playerId) {
 	var norm = norms.options[norms.selectedIndex].value;
 	var sanction = sanctions.options[sanctions.selectedIndex].value;
 	if (norm == "yes")
-		var message = "the obligation is to go through a " + colors.options[colors.selectedIndex].text + " square";
+		var message = "the obligation is to visit a " + colors.options[colors.selectedIndex].text + " square";
 	else
-		var message = "the prohibition is not to go through a " + colors.options[colors.selectedIndex].text + "square";
+		var message = "the prohibition is to visit a " + colors.options[colors.selectedIndex].text + " square";
 	sendNormColor(playerId,recipientID,colors.options[colors.selectedIndex].text,norm,sanction);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
@@ -821,8 +821,8 @@ function loadNormGoalProposalsTable() {
 	document.getElementById('divButtonNPropose').appendChild(cont);	
 	
 	// append div into Messages grid
-	document.getElementById("divTableNMessage").innerHTML = 'If you wish to send an obligation';
-	document.getElementById("divTableNMsgType").innerHTML = 'Norm Goal';
+	document.getElementById("divTableNMessage").innerHTML = 'Set an obligation for player to go to a selected sauare';
+	document.getElementById("divTableNMsgType").innerHTML = 'Goal Position';
 	
 	InsertIntoPlayersIconsSelect("divTableNReceiver");
 	InsertIntoNormGoalsSelect();
@@ -852,6 +852,12 @@ function buttonSubmitNormGoal_click(playerId) {
 			gy= game.goals[i].posY;
 		}
 	
+	if (gx = -1)
+	{
+				gx= game.goals[0].posX;
+				gy= game.goals[0].posY;
+			}
+	
 	sendNormGoal(playerId,recipientID,x,y,gx,gy,100);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
@@ -859,7 +865,7 @@ function buttonSubmitNormGoal_click(playerId) {
 	var rowID = jQuery("#tblNorms").jqGrid('getGridParam', 'records');
 	//alert("rowID = "+rowID);
 	
-	addNormToTable("Obligation", playerId, recipientID, rowID, "Your obligation is to go to ("+x+","+y+").");
+	addNormToTable("Obligation", playerId, recipientID, rowID, "Player's obligation is to go to square ("+x+","+y+").");
 	//clearMessagesUI();
 	//$("#"+"0").hide();
 	
