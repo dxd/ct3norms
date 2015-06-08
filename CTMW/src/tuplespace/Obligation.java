@@ -81,7 +81,11 @@ public class Obligation implements TimeEntry {
 		if (obligation.startsWith("[at")) { //[at(1, 2, a20)]
 			String ss = obligation.substring(4);
 			String[] o = ss.split(",");
-			s+= "be at the grid tile [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "]";
+			s= "Group obligation to be at the grid tile [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "]";
+			String[] p1 = sanction.split(","); //[reduce(a20,500)]
+			String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);
+			s += " before the clock: " + deadline + " or up to " + p2 + " points will be deducted.";
+			return s;
 		}
 		else if (obligation.startsWith("[surround")) { //[surround(2, 2)]
 			String ss = obligation.substring(10);

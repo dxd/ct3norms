@@ -183,17 +183,17 @@ public class PGrulebase extends Rulebase<PGrule> {
 					// if( ruleApplied ) break;
 				}
 		}
-		System.out.println("[Planbase]:"+ planbase.toString());
+//		System.out.println("[Planbase]:"+ planbase.toString());
 		ArrayList<PlanSeq> plansReturn = plans;
 		for (PlanSeq x : planbase)
 			plansReturn.add(x);
 		
-		System.out.println("[new scheduled]:"+ plans.toString());
+//		System.out.println("[new scheduled]:"+ plans.toString());
 		ArrayList<PlanSeq> plansFinal = this.schedulePlans(module, plansReturn);
 		for (PlanSeq p : plansFinal)
 			planbase.addPlan(p);
 		planbase.replacePlans(plans);
-		System.out.println("[After]:"+ planbase.toString());
+//		System.out.println("[After]:"+ planbase.toString());
 		return plansReturn;
 	}
 

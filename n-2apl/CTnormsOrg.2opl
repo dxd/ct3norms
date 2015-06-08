@@ -48,6 +48,14 @@ norm(
 	obligation([acceptRequests(Thing)],now + 15,[reduce(Thing,Sanction)]) // prohibition format
 ).
 
+%individual prohibition for raaa
+norm(
+	restrictPlayer(Thing),
+	Thing, // the subject agent
+	( ra(_,Thing,raaa)), 
+	prohibition([restrictPlayer(Thing)],[reduce(Thing,500)]) // prohibition format
+).
+
 %individual obligations to respond to requests per each
 norm(
 	respondToRequest(Thing),
@@ -80,7 +88,7 @@ norm(
 	prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
 ).
 
-
+	
 color(Color,Agent) :-
 	at(X,Y,Agent),
 	tile(X,Y,Color).
@@ -252,6 +260,7 @@ Effects:
 
 //{agentSTask(Agent,X,Y,goal(GX,GY))} setGoal(Agent,X,Y,GX,GY,Clock) {not agentSTask(Agent,X,Y,goal(GX,GY))}
 {true} setGoal(Agent,X,Y,GX,GY,S,Clock) {agentSTask(Agent,X,Y,goal(GX,GY),S)}
+{color(Agent,Color,Type,S)} color(Agent,Color2,Type2,S2,C) {color(Agent,Color2,Type2,S2), restrictPlayer(Agent)}
 {true} color(Agent,Color,Type,S,C) {color(Agent,Color,Type,S)}
 {true} group(Name,Agent,Type,C) {group(Name), ra(Name,Agent,Type)}
 {true} groupObl(Obl,Sanction,C) {groupObl(Obl,Sanction)}

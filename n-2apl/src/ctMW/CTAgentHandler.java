@@ -858,7 +858,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		//Board b = (Board) cgs.getBoard().clone();
 		//b.setGoal(new RowCol(x.toInt(),y.toInt()), true);
 		System.out.println(agentname+"[CTAH] going goal: " +x+","+y+" color: "+ colorGoal);
-		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 1000);
+		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 100);
 		System.out.println(agentname+"[CTAH] paths: " + shortestPaths.size());
 		
 		PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
@@ -872,7 +872,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			if (cgs.getBoard().getColors().contains(colorGoal)) {
 				ChipSet c = chosenPath.getRequiredChips(cgs.getBoard());
 				if (c.getColors().contains(colorGoal)) {
-					if (!cgs.getBoard().getSquare(chosenPath.getPoint(0)).getColor().equals(colorGoal)) {
+					if (!cgs.getBoard().getSquare(chosenPath.getPoint(0)).getColor().equals(colorGoal)) {					
 						if (norm.getName().equals("no"))
 							continue;
 					}

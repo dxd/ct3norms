@@ -160,7 +160,8 @@ function createGameBoard() {
 			var newDiv = document.createElement("div");
 			newDiv.className = "cssDDContainer";
 			newDiv.id = "DivRow" + i + "Column" + j; // id of new div
-			
+			newDiv.setAttribute('ondrop',"drop(event)");
+			newDiv.setAttribute('ondragover',"allowDrop(event)");
 			var cell = document.getElementById("CellRow" + i + "Column" + j);
 			cell.appendChild(newDiv);
 		}
@@ -180,6 +181,8 @@ function createGameBoard() {
 		
 		if (game.getisPlayerMe(playerId) == "true"){
 			newDiv.innerHTML =playerId+ '<img src="img/' + game.getBigPlayerIcon(playerId) + '"/>';
+			newDiv.setAttribute('draggable', true);
+			newDiv.setAttribute('ondragstart',"drag(event)");
 		}
 		else
 		{
@@ -193,7 +196,20 @@ function createGameBoard() {
 	}
 }
 // END CREATE GAME BOARD
+function allowDrop(ev) {
+    ev.preventDefault();
+}
 
+function drag(ev) {
+    ev.dataTransfer.setData("object", ev);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("object");
+    move(ev);
+ //   ev.target.appendChild(document.getElementById(data));
+}
 function move(e)
 	{
 	var target = e.target || e.srcElement;
@@ -252,6 +268,7 @@ function createGoals() {
 	{
 		 var newDiv = document.createElement("div");
 		 newDiv.innerHTML = '<img src="img/goal.gif">';
+		 newDiv.setAttribute('name','goal');
 		 goalSquare = document.getElementById("DivRow" + game.goals[0].posX
                  + "Column" + game.goals[0].posY);
 		 goalSquare.appendChild(newDiv); 
@@ -267,7 +284,7 @@ function createGoals() {
 	    	{
 
 	    			newDiv.innerHTML = '<img src="img/goalA.gif">';
-	    		
+	    			newDiv.setAttribute('name','goal');
 	    		
 	    	}
 	    	else  //opponent's goal
@@ -275,10 +292,12 @@ function createGoals() {
 	    		if(game.goals[i].type == -1 && game.role >0)
 
 	    			newDiv.innerHTML = '<img src="img/goal.gif">';
+	    		 	newDiv.setAttribute('name','goal');
 	    		
 	    		if(game.goals[i].type > -1 && game.role >0)
 
 	    			newDiv.innerHTML = '<img src="img/goalB.gif">';
+	    			newDiv.setAttribute('name','goal');
 	    		
 	    	}
 	    	 goalSquare = document.getElementById("DivRow" + game.goals[i].posX
@@ -389,7 +408,7 @@ function updateProgressBar() {
 			
 			loadProposalsTable();
 			proposalArea();
-			SetHeaderMsg("Moving and exchanging phase");
+			SetHeaderMsg("Moving and requesting phase");
 			}
 			// notify			
 			break;
@@ -1307,6 +1326,7 @@ function InsertIntoReceiveSelect() {
 			}
 		}
 	}
+	InsertIntoSendSelect();
 }
 // END INSERT INTO Players Chips Receive
 

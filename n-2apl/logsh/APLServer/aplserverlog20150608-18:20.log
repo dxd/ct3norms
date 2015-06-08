@@ -1,0 +1,26 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-06-08 18:20:53,267  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 1.04 seconds
+2015-06-08 18:21:09,432  SEVERE [com.gigaspaces.client] - Notification was send but user listener throws exception; Caused by: aplprolog.Parsing.TokenMgrError: Lexical error at line 1, column 27.  Encountered: <EOF> after : ""
+	at aplprolog.Parsing.IntPrologTokenManager.getNextToken(IntPrologTokenManager.java:1143)
+	at aplprolog.Parsing.IntProlog.jj_scan_token(IntProlog.java:1294)
+	at aplprolog.Parsing.IntProlog.jj_3R_16(IntProlog.java:734)
+	at aplprolog.Parsing.IntProlog.jj_3R_6(IntProlog.java:786)
+	at aplprolog.Parsing.IntProlog.jj_3R_5(IntProlog.java:810)
+	at aplprolog.Parsing.IntProlog.jj_3_2(IntProlog.java:1150)
+	at aplprolog.Parsing.IntProlog.jj_2_2(IntProlog.java:723)
+	at aplprolog.Parsing.IntProlog.Argument(IntProlog.java:381)
+	at aplprolog.Parsing.IntProlog.Arguments(IntProlog.java:360)
+	at aplprolog.Parsing.IntProlog.PosLiteral(IntProlog.java:317)
+	at aplprolog.Parsing.IntProlog.Rule(IntProlog.java:250)
+	at aplprolog.Parsing.IntProlog.parseFact(IntProlog.java:80)
+	at ctMW.EnvCT.notifyOrg(EnvCT.java:711)
+	at ctMW.OrgHandler.notify(OrgHandler.java:31)
+	at com.j_spaces.core.client.NotifyDelegator.notify(NotifyDelegator.java:142)
+	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.dequeueAndTrigger(BlockedOrderedQueue.java:319)
+	at com.gigaspaces.events.fifo.BlockedOrderedQueue$NotifyFifoTask.run(BlockedOrderedQueue.java:290)
+	at com.gigaspaces.internal.utils.concurrent.RunnableContextClassLoaderDecorator.run(RunnableContextClassLoaderDecorator.java:40)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+

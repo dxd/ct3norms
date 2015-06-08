@@ -4,7 +4,7 @@ rejectRequests(X) :- receivedP(Y,ID,closed(reject)).
 
 BeliefUpdates:
 { true } 							AdoptP(New) 				{ prohibition(New) }
-
+{ true } 							AdoptO(New) 				{ obligation(New) }
 
 PC-rules:
 event(obligation([Goal],Deadline,[Sanction]),ctenv) <- true | {
@@ -53,6 +53,7 @@ adoptObligation(surround(X,Y), D, reduce(Group,Sanction)) <- true | {
     adopta(surround(X,Y,Sanction) : D -> reduce(Sanction))
 }
 adoptObligation(color(Color,Thing), D, reduce(Group,Sanction)) <- true | {
+	AdoptO(useColor(Color,Sanction));
     adoptz(useColor(Color,Sanction) : D -> reduce(Sanction))
 }
 adoptObligation(acceptRequest(Id), D, reduce(Group,Sanction)) <- true | {

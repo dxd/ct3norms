@@ -48,7 +48,7 @@ public class ColorConverter {
 			return "7FBF7F";
 		}
 		if (c.equals("white")) {
-			return "F8F9F3"; /* "00ff00"; */
+			return "FFFFFF"; /* "00ff00"; */
 		}
 		if (c.equals("yellow")) {
 			return "F5E83F"; /* "00ff00"; */

@@ -130,7 +130,7 @@ public class CTsetup {
 	 
 	 public void writeGoal(edu.harvard.eecs.airg.coloredtrails.shared.types.Goal goal2) {
 		 tuplespace.Goal goal = new tuplespace.Goal(new Cell(goal2.getLocation().row,goal2.getLocation().col),null,clock);
-		 System.out.println("CT writes goal: "+goal.toString());
+//		 System.out.println("CT writes goal: "+goal.toString());
 		 createEntry(goal);
 	 }
 
@@ -261,7 +261,7 @@ public class CTsetup {
 	private void writeChips(int perGameId, ChipSet chips) {
 		for(String color : chips.getColors()){
 			Chip c = new Chip (getAgent(perGameId),color,chips.getNumChips(color),clock);
-			System.out.println("CT writes chips: "+c.toString());
+//			System.out.println("CT writes chips: "+c.toString());
 			createEntry(c);
 		}		
 	}
@@ -279,25 +279,25 @@ public class CTsetup {
 		else
 			type = "no";
 		Color c = new Color(getAgent(perGameId),color,type, sanction,clock);
-		System.out.println("CT writes color norm: "+c.toString());
+//		System.out.println("CT writes color norm: "+c.toString());
 		createEntry(c);
 	}
 
 	public void writeNormGoal(int perGameId, RowCol g, RowCol oGoal, int sanction) {
 		 tuplespace.SetGoal goal = new SetGoal(getAgent(perGameId),new Cell(g.row,g.col),new Cell(oGoal.row,oGoal.col), sanction,clock);
-		 System.out.println("CT writes setGoal: "+goal.toString());
+//		 System.out.println("CT writes setGoal: "+goal.toString());
 		 createEntry(goal);
 	}
 
 	public void writeGroup(int perGameId, String type) {
 		Group g = new Group("g",getAgent(perGameId), type,clock);
-		System.out.println("CT writes Group: "+g.toString());
+//		System.out.println("CT writes Group: "+g.toString());
 		createEntry(g);		
 	}
 
 	public void writeNormGroup(String norm, int sanction) {
 		GroupObl g = new GroupObl(norm,sanction,clock);
-		System.out.println("CT writes groupOgl: "+g.toString());
+//		System.out.println("CT writes groupOgl: "+g.toString());
 		createEntry(g);	
 	}
 }

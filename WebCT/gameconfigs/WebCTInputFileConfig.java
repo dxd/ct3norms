@@ -169,9 +169,9 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 
 	protected RowCol getPosition() {
 //		int row = in.nextInt();
-		int row = localrand.nextInt(gs.getBoard().getRows()-2) +1;
+		int row = localrand.nextInt(gs.getBoard().getRows()-3) +2;
 //		int col = in.nextInt();
-		int col = localrand.nextInt(gs.getBoard().getCols()-2) +1;
+		int col = localrand.nextInt(gs.getBoard().getCols()-3) +2;
 //		in.nextLine();
 		return new RowCol(row, col);
 	}

@@ -84,6 +84,9 @@ public class Prohibition implements TimeEntry {
 		else if (prohibition.startsWith("[moveTooFast")) { //[moveTooFast(a20)]
 			s+= "move more than 1 square per clock tick";
 		}
+		else if (prohibition.startsWith("[restrictPlayer")) { //[moveTooFast(a20)]
+			s+= "create more than one color norm per player";
+		}
 		//s += " or sanction " + sanction + " will be applied";
 		String[] p1 = sanction.split(","); //[reduce(a20,500)]
 		String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);

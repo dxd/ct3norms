@@ -1,0 +1,64 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-06-08 15:23:54,211  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=2d5a060e-de32-40fa-93ca-06b6bfa241b7 DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.cs.nott.ac.uk:52496/pid[74788]/1433750229320183232_2_4670594195613659047_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.cs.nott.ac.uk:52496/pid[74788]/1433750229320183232_2_4670594195613659047_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-06-08 15:24:12,687  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+org.openspaces.admin.AdminException: Failed to deploy [/templates/datagrid]
+	at org.openspaces.admin.internal.gsm.DefaultGridServiceManager.deploy(DefaultGridServiceManager.java:211)
+	at org.openspaces.admin.internal.gsm.DefaultGridServiceManager.deploy(DefaultGridServiceManager.java:183)
+	at org.openspaces.admin.internal.gsm.DefaultGridServiceManager.deploy(DefaultGridServiceManager.java:179)
+	at org.openspaces.admin.internal.gsm.DefaultGridServiceManager.deploy(DefaultGridServiceManager.java:146)
+	at org.openspaces.admin.internal.gsm.DefaultGridServiceManager.deploy(DefaultGridServiceManager.java:142)
+	at ctMW.DataGridConnectionUtility.getSpace(DataGridConnectionUtility.java:65)
+	at ctMW.DataGridConnectionUtility.getSpace(DataGridConnectionUtility.java:81)
+	at ctMW.EnvCT.initializeGS(EnvCT.java:101)
+	at ctMW.EnvCT.<init>(EnvCT.java:198)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at eis.EILoader.fromJarFile(EILoader.java:75)
+	at apapl.APAPLBuilder.buildMas(APAPLBuilder.java:107)
+	at gui.GUI.loadMas(GUI.java:191)
+	at gui.GUI.<init>(GUI.java:172)
+	at APAPL.main(APAPL.java:103)
+Caused by: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.openspaces.org/schema/core]
+Offending resource: resource loaded from byte array
+
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:68)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:80)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.error(BeanDefinitionParserDelegate.java:316)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1420)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1413)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:184)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:140)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:111)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:493)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:390)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:334)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.xml.XmlBeanFactory.<init>(XmlBeanFactory.java:78)
+	at org.springframework.beans.factory.xml.XmlBeanFactory.<init>(XmlBeanFactory.java:66)
+	at org.openspaces.pu.container.servicegrid.deploy.Deploy.buildOperationalString(Deploy.java:457)
+	at org.openspaces.admin.internal.gsm.DefaultGridServiceManager.deploy(DefaultGridServiceManager.java:209)
+	... 17 more
+Exception in thread "main" java.lang.NullPointerException
+	at ctMW.EnvCT.register(EnvCT.java:640)
+	at ctMW.EnvCT.addAgent(EnvCT.java:225)
+	at apapl.Environment.addEntity(Environment.java:493)
+	at apapl.Environment.addAgentEntity(Environment.java:134)
+	at apapl.APLMAS.attachModuleToEnvironment(APLMAS.java:222)
+	at apapl.APAPLBuilder.buildMas(APAPLBuilder.java:259)
+	at gui.GUI.loadMas(GUI.java:191)
+	at gui.GUI.<init>(GUI.java:172)
+	at APAPL.main(APAPL.java:103)
+2015-06-08 15:24:56,183  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred while attempting to register with the lookup service event mechanism; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.cs.nott.ac.uk:52496/pid[74788]/1433750229320183232_2_4670594195613659047_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
