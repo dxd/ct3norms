@@ -287,19 +287,19 @@ function createGoals() {
 	    			newDiv.setAttribute('name','goal');
 	    		
 	    	}
-	    	else  //opponent's goal
-	    	{
-	    		if(game.goals[i].type == -1 && game.role >0)
-
-	    			newDiv.innerHTML = '<img src="img/goal.gif">';
-	    		 	newDiv.setAttribute('name','goal');
-	    		
-	    		if(game.goals[i].type > -1 && game.role >0)
-
-	    			newDiv.innerHTML = '<img src="img/goalB.gif">';
-	    			newDiv.setAttribute('name','goal');
-	    		
-	    	}
+//	    	else  //opponent's goal
+//	    	{
+//	    		if(game.goals[i].type == -1 && game.role >0)
+//
+//	    			newDiv.innerHTML = '<img src="img/goal.gif">';
+//	    		 	newDiv.setAttribute('name','goal');
+//	    		
+//	    		if(game.goals[i].type > -1 && game.role >0)
+//
+//	    			newDiv.innerHTML = '<img src="img/goalB.gif">';
+//	    			newDiv.setAttribute('name','goal');
+//	    		
+//	    	}
 	    	 goalSquare = document.getElementById("DivRow" + game.goals[i].posX
                      + "Column" + game.goals[i].posY);
 	    	 goalSquare.appendChild(newDiv);     
@@ -366,10 +366,26 @@ function updateProgressBar() {
 	if (phaseChanged == true) {			
 		lastRole = game.role;		
 		user = "Role: Team member";
-		if (game.role == 1)
+		if (game.role == 1) {
 			user = "Role: Coordinator";
-		if (game.role == 2)
-			user = "Role: Flexible Coordinator";
+			if (game.phases[currentPhaseIndex].name == "Norm Phase") {
+				var newDiv = $(document.createElement('div')); 
+				newDiv.html('You are a coordinator!');
+				newDiv.dialog({ title: "Role" });
+				setTimeout(function(){newDiv.dialog('close');},2500);
+			}
+
+		}
+		if (game.role == 2) {
+			user = "Role: Coordinator";
+			if (game.phases[currentPhaseIndex].name == "Norm Phase") {
+				var newDiv = $(document.createElement('div')); 
+				newDiv.html('You are a coordinator!');
+				newDiv.dialog({ title: "Role" });
+				setTimeout(function(){newDiv.dialog('close');},2500);
+			}
+
+		}
 		$("#user").html(user);
 		if (currentPhase == null) {
 			currentPhase = game.phases[currentPhaseIndex].name;
@@ -396,19 +412,21 @@ function updateProgressBar() {
 					loadNormGroupProposalsTable();
 				}
 				SetHeaderMsg('Setting up phase');	
+				loadProposalsTable();
+				proposalArea();
 			}
 			break;
 		case "Movement Phase":
 			if (phaseChanged ) {
 			// if communication phase -> build proposal area for players
 			if (game.role > 0) {
-			clearNormMessagesUI();
+			//clearNormMessagesUI();
 			}
 			//UpdateServer();			
 			
-			loadProposalsTable();
-			proposalArea();
-			SetHeaderMsg("Moving and requesting phase");
+//			loadProposalsTable();
+//			proposalArea();
+			SetHeaderMsg("Moving phase");
 			}
 			// notify			
 			break;
@@ -1362,7 +1380,7 @@ function loadProposalsTable() {
 	jQuery("#tblProposals").jqGrid(
 			{
 				datatype : "local",
-				height : 200,
+				height : 150,
 				colNames : ['MsgType', 'Sender', 'Receiver', 'Receive', 'Send', 'Response' ],
 				colModel : [ {
 					name : 'MsgType',
@@ -1578,7 +1596,7 @@ function addRecordToTable(MsgType, SenderID, ReceiverID, msgID, ReceivedChips, S
 	jQuery("#tblProposals").jqGrid('addRowData', rowID, defaultData);
 	
 	//the popup window for received proposal
-	if( game.getisPlayerMe(ReceiverID) == "truee" ) //FIXED false
+	if( game.getisPlayerMe(ReceiverID) == "true" ) //FIXED false
 	{
 		var newDiv = $(document.createElement('div')); 
 		newDiv.html('Incoming proposal received!');
@@ -1668,7 +1686,7 @@ function UpdatePlayerChips(o) {
 function updateGoals(o)
 {
 		
-	removeGoals();
+//	removeGoals();
 	
 	for ( var i = 0; i < o.Goals.length; i++) 
 	{

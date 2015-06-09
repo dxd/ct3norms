@@ -67,7 +67,7 @@ public class Prohibition implements TimeEntry {
 	}
 	
 	public String toHumanString() {
-		String s = "Prohibition to ";
+		String s = "You shouldn't ";
 		if (prohibition.startsWith("[at")) { //[at(1, 2, a20)]
 			String ss = prohibition.substring(4);
 			String[] o = ss.split(",");
@@ -90,7 +90,7 @@ public class Prohibition implements TimeEntry {
 		//s += " or sanction " + sanction + " will be applied";
 		String[] p1 = sanction.split(","); //[reduce(a20,500)]
 		String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);
-		s += " or " + p2 + " points will be deducted.";
+		s += ". Penalty: " + p2 + " points.";
 		return s;
 	}
 }

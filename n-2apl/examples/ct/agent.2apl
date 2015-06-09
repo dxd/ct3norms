@@ -30,8 +30,8 @@ initialized, update, respond
 BeliefUpdates:
 { clock(Old) } 												UpdateClock(New) 				{ not clock(Old), clock(New) }
 { points(X) } 												UpdatePoints(X1) 				{ not points(X), points(X1) }
-{ position(X,Y,Clock) } 									UpdatePosition(X1,Y1,Clock) 	{ not position(X,Y,Clock), position(X1,Y1,Clock), moveTooFast(X)}
-{ position(X,Y,Clock) and moveTooFast(X) } 					UpdatePosition(X1,Y1,Clock1) 	{ not position(X,Y,Clock), position(X1,Y1,Clock), not moveTooFast(X) }
+{ position(X,Y,Clock) } 									UpdatePosition(X1,Y1,Clock) 	{ not position(X,Y,Clock), position(X1,Y1,Clock), moveTooFast}
+{ position(X,Y,Clock) and moveTooFast } 					UpdatePosition(X1,Y1,Clock1) 	{ not position(X,Y,Clock), position(X1,Y1,Clock), not moveTooFast }
 { position(X,Y,Clock) } 									UpdatePosition(X1,Y1,Clock1) 	{ not position(X,Y,Clock), position(X1,Y1,Clock)}
 { true } 													UpdateTile(Color,X,Y) 			{ tile(Color,X,Y) }
 {true} 														Failed(X) 						{failed(X)}
@@ -202,13 +202,13 @@ findNextStep(Color,V1) <- not nextStep(X1,Y1) and not nextStep(X1,Y1,Msg) and no
 	else if B(tile(Color,X,Y)) then {B([A,B] = [X,Y])};
 	
 	if B(prohibition(useColor(Color2,V3))) then 
-			{if B(V3 > V2) then 
+			{if B(V3 > V1) then 
 				{@ctenv( moveStepToGoalTest(Color2,no,A,B,8), L1)}
 				           else
 				{@ctenv( moveStepToGoalTest(Color,any,A,B,8), L1)} 
 			}
 	else if B(obligation(useColor(Color2,V3))) then 
-			{if B(V3 > V2) then 
+			{if B(V3 > V1) then 
 				{@ctenv( moveStepToGoalTest(Color2,yes,A,B,8), L1)}
 				           else
 				{@ctenv( moveStepToGoalTest(Color,any,A,B,8), L1)} 

@@ -77,14 +77,14 @@ public class Obligation implements TimeEntry {
 	}
 	
 	public String toHumanString() {
-		String s = "Obligation to ";
+		String s = "You should ";
 		if (obligation.startsWith("[at")) { //[at(1, 2, a20)]
 			String ss = obligation.substring(4);
 			String[] o = ss.split(",");
-			s= "Group obligation to be at the grid tile [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "]";
+			s+= "be at the grid tile [" +Integer.parseInt(o[0].trim())+ "," + Integer.parseInt(o[1].trim())+ "]";
 			String[] p1 = sanction.split(","); //[reduce(a20,500)]
 			String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);
-			s += " before the clock: " + deadline + " or up to " + p2 + " points will be deducted.";
+			s += " before the clock: " + deadline + " to achieve a team goal. Penalty: up to " + p2 + " points.";
 			return s;
 		}
 		else if (obligation.startsWith("[surround")) { //[surround(2, 2)]
@@ -108,7 +108,7 @@ public class Obligation implements TimeEntry {
 			String ss = obligation.substring(15);
 			String[] o = ss.split(",");
 			int id = Integer.parseInt(o[0].substring(0, o[0].trim().length()-2));
-			s+= "accept exchange request with id: " +id;
+			s+= "accept exchange request";
 		}
 		else if (obligation.startsWith("[respondToRequest")) { //[respondToRequest(2100)]
 			String ss = obligation.substring(18);
@@ -124,7 +124,7 @@ public class Obligation implements TimeEntry {
 		}
 		String[] p1 = sanction.split(","); //[reduce(a20,500)]
 		String p2 = p1[1].trim().substring(0, p1[1].trim().length()-2);
-		s += " before the clock: " + deadline + " or " + p2 + " points will be deducted.";
+		s += " before the clock: " + deadline + ". Penalty: " + p2 + " points.";
 		return s;
 	}
 }

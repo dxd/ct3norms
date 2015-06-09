@@ -1,0 +1,14 @@
+log4j:WARN No appenders could be found for logger (org.openspaces.core.space.UrlSpaceFactoryBean).
+log4j:WARN Please initialize the log4j system properly.
+2015-06-09 09:12:15,604  INFO [net.jini.lookup.ServiceDiscoveryManager] - Exception occurred during query, discarding reggie [com.sun.jini.reggie.RegistrarProxy[registrar=87683477-9fbc-4d59-8dc0-dbf7bb9c8d7b DynamicSmartStub [ImplObjClass: com.sun.jini.reggie.GigaRegistrar, ConnectionURL: NIO://kafka.local:63061/pid[78063]/1433793987063671232_2_-6206851180856113735_details[class com.sun.jini.reggie.GigaRegistrar], MaxConnPool: 1024 ]]]; Caused by: java.rmi.ConnectException: Connect Failed to [NIO://kafka.local:63061/pid[78063]/1433793987063671232_2_-6206851180856113735_details[class com.sun.jini.reggie.GigaRegistrar]]; nested exception is: 
+	java.net.SocketTimeoutException
+2015-06-09 09:12:35,297  INFO [net.jini.discovery.LookupDiscovery] - exception occurred during unicast discovery; Caused by: java.lang.IllegalStateException: discovery terminated
+	at net.jini.discovery.LookupDiscovery.discard(LookupDiscovery.java:2051)
+	at net.jini.discovery.LookupDiscovery.getActualGroups(LookupDiscovery.java:2968)
+	at net.jini.discovery.LookupDiscovery.maybeSendEvent(LookupDiscovery.java:2784)
+	at net.jini.discovery.LookupDiscovery.access$3900(LookupDiscovery.java:696)
+	at net.jini.discovery.LookupDiscovery$UnicastDiscoveryTask.run(LookupDiscovery.java:1797)
+	at com.sun.jini.thread.TaskManager$TaskThread.run(TaskManager.java:408)
+
+org.openspaces.admin.AdminException: Failed to deploy [/templates/datagrid]
+	at org.openspaces.admin.internal.gsm.DefaultGridServiceManager.deploy(DefaultGridServiceManager.java:211)

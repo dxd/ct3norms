@@ -91,6 +91,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		gp.add("yellow");
 		gs.setGamePalette(gp);
 		gs.setScoring(s);
+		
 				
 		//count number of config files to read
 		String pathToConfigFiles = "lib/adminconfig";
@@ -109,7 +110,7 @@ public class WebCTInputFileConfig extends GameConfigDetailsRunnable implements
 		ServerPhases ph = new ServerPhases(this);
 		ph.addPhase("Setup Phase", 10);	
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Norm Phase", 70);		
+			ph.addPhase("Norm Phase", 100);		
 		}
 		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Movement Phase", 120);			

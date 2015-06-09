@@ -5,7 +5,7 @@ norm(
     group_surround(G),
     G, // the subject agent
     ( group(G), goal(X,Y,Z)), // precondition - left blank for now
-    obligation([surround(X,Y)],now + 18,[reduce(G,700)]) // prohibition format
+    obligation([surround(X,Y)],now + 20,[reduce(G,700)]) // prohibition format
     ).
     
 %agents group norms from RA  
@@ -13,7 +13,7 @@ norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
     ( pursuer(Agent), detached(group_surround(W)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
-    obligation([at(X,Y,Agent)],now + 14,[reduce(Agent, 700)]) // prohibition format
+    obligation([at(X,Y,Agent)],now + 16,[reduce(Agent, 700)]) // prohibition format
     ).  
     
 %individual prohibitions to use colored tiles raaa
@@ -29,7 +29,7 @@ norm(
 	enter_tile(Thing),
 	Thing, // the subject agent
 	( pursuer(Thing), color(Thing,Color,yes,S),group(Z)), // precondition
-	obligation([color(Color,Thing)],now + 15,[reduce(Thing,S)]) // prohibition format
+	obligation([color(Color,Thing)],now + 16,[reduce(Thing,S)]) // prohibition format
 ).
 
 %Deactivated individual obligations to accept requests per each
@@ -69,7 +69,7 @@ norm(
 	makeMove(Thing),
 	Thing, // the subject agent
 	( pursuer(Thing), at(X,Y,Thing),group(Z), not detached(makeMove(Thing))), // precondition
-	obligation([makeMove(X,Y,Thing)],now + 10,[reduce(Thing,300)]) // prohibition format
+	obligation([makeMove(X,Y,Thing)],now + 15,[reduce(Thing,300)]) // prohibition format
 ).
 
 %Deactivated individual prohibitions to reject requests
@@ -105,8 +105,9 @@ rejectRequests(A) :-
 	response(Id,rejected,_),
 	proposal(Id,_,A,_).
 acceptRequests(A):- 
-	response(Id,accepted,_),
-	proposal(Id,_,A,_).
+//	response(Id,accepted,_),
+//	proposal(Id,_,A,_).
+	not(rejectRequests(A)).
 acceptRequest(Id):- 
 	response(Id,accepted,_),
 	proposal(Id,_,_,_).

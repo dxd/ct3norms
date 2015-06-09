@@ -35,6 +35,7 @@ if (gs.getMyPlayer().getScore() == 1000)
 	questions.add("I understand how my score was calculated.");
 else
 	questions.add("I understand why I was penalized.");
+questions.add("The penalization seemed fair.");
 //questions.add("I was able to achieve my goals.");
 questions.add("The team work well together.");
 
@@ -53,7 +54,7 @@ if (role > 0)
 
 if (role == 2)
 {
-	questions.add( "As a flexible coordinator I felt I was able to ensure the goal is reached.");
+	questions.add( "As a game coordinator I felt I was able to ensure the goal is reached.");
 }
 
 %>
@@ -66,6 +67,7 @@ if (role == 2)
 <FORM METHOD=POST id="form" action="submit.jsp" name="myform">
 <input type="hidden" id="player" name="player" value="<%out.print(gs.getMyPlayer().getPerGameId());%>">
 <input type="hidden" id="pin" name="pin" value="<%out.print(gs.getMyPlayer().getPin());%>">
+<input type="hidden" id="role" name="role" value="<%out.print(gs.getMyPlayer().getRole());%>">
 <th></th><td>Strongly agree</td><td>Slightly agree</td><td>Slightly disagree</td><td>Strongly disagree</td></th>
 <%
 for (int i=0; i < questions.size(); i++) {
@@ -78,9 +80,14 @@ for (int i=0; i < questions.size(); i++) {
     <td><label><input type="radio" id="q<%out.print(i); %>" name="<%out.print(java.net.URLEncoder.encode(questions.get(i)));%>" value="4"></label></td>
 
 </tr>	
+
 <%	
 }
 %>
+<tr>
+<td><label>Any comments?</label></td>
+<td span=4><input id="comment" name="comment" type="textarea"><td>
+</tr>
 <tr>
 <td></td><td></td><td></td><td></td><td><INPUT TYPE="button" VALUE="Submit!" id="button"></td>
 </tr>
