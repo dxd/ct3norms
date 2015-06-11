@@ -12,8 +12,8 @@ norm(
 norm(
     group_task(group_surround(g)),
     Agent, // the subject agent
-    ( pursuer(Agent), detached(group_surround(W)),goal(GX,GY,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
-    obligation([at(X,Y,Agent)],now + 16,[reduce(Agent, 700)]) // prohibition format
+    ( pursuer(Agent), detached(group_surround(W)),goal(GX1,GY1,Z),agentSTask(Agent,X,Y,goal(GX,GY),S)), // precondition - add triggering condition
+    obligation([at(X,Y,Agent)],now + 16,[reduce(Agent, 600)]) // prohibition format
     ).  
     
 %individual prohibitions to use colored tiles raaa
@@ -53,7 +53,7 @@ norm(
 	restrictPlayer(Thing),
 	Thing, // the subject agent
 	( ra(_,Thing,raaa)), 
-	prohibition([restrictPlayer(Thing)],[reduce(Thing,500)]) // prohibition format
+	prohibition([restrictPlayer(Thing)],[reduce(Thing,300)]) // prohibition format
 ).
 
 %individual obligations to respond to requests per each
@@ -61,7 +61,7 @@ norm(
 	respondToRequest(Thing),
 	Thing, // the subject agent
 	( pursuer(Thing), proposal(Id,_,Thing,_),group(Z)), // precondition
-	obligation([respondToRequest(Id)],now + 3,[reduce(Thing,300)]) // prohibition format
+	obligation([respondToRequest(Id)],now + 3,[reduce(Thing,200)]) // prohibition format
 ).
 
 %individual obligation to make a move during move phase
@@ -69,7 +69,7 @@ norm(
 	makeMove(Thing),
 	Thing, // the subject agent
 	( pursuer(Thing), at(X,Y,Thing),group(Z), not detached(makeMove(Thing))), // precondition
-	obligation([makeMove(X,Y,Thing)],now + 15,[reduce(Thing,300)]) // prohibition format
+	obligation([makeMove(X,Y,Thing)],now + 15,[reduce(Thing,200)]) // prohibition format
 ).
 
 %Deactivated individual prohibitions to reject requests
@@ -85,7 +85,7 @@ norm(
 	moveTooFast(Thing),
 	Thing, // the subject agent
 	( pursuer(Thing),group(Z)), // precondition
-	prohibition([moveTooFast(Thing)],[reduce(Thing,300)]) // prohibition format
+	prohibition([moveTooFast(Thing)],[reduce(Thing,100)]) // prohibition format
 ).
 
 	
@@ -250,7 +250,7 @@ Effects:
 {at(X1,Y1,Agent,Clock)} position(Agent, cell(X,Y), Clock1) {not at(X1,Y1,Agent,Clock), at(X,Y,Agent,Clock1)} 
 {true} position(Agent, cell(X,Y), Clock) {at(X,Y,Agent,Clock)}
 
-{true} goal(cell(X,Y), null, Clock) {goal(X,Y,Clock)}
+{not goal(A,B,C)} goal(cell(X,Y), null, Clock) {goal(X,Y,Clock)}
 {true} goal(cell(X,Y), Agent, Clock) {goal(X,Y, Agent,Clock)}
 {true} proposal(Id,A1,A2,Clock) {proposal(Id,A1,A2,Clock)}
 {true} response(Id,X,Clock) {response(Id,X,Clock)}

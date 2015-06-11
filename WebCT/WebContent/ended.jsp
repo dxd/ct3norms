@@ -86,7 +86,7 @@ for (int i=0; i < questions.size(); i++) {
 %>
 <tr>
 <td><label>Any comments?</label></td>
-<td span=4><input id="comment" name="comment" type="textarea"><td>
+<td><textarea cols=40 rows=4 id="comment" name="comment"></textarea><td>
 </tr>
 <tr>
 <td></td><td></td><td></td><td></td><td><INPUT TYPE="button" VALUE="Submit!" id="button"></td>
@@ -94,6 +94,7 @@ for (int i=0; i < questions.size(); i++) {
 </table>
 
 </FORM>
+
 </BODY>
 </HTML>
 <script type="text/javascript">

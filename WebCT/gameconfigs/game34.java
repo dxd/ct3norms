@@ -110,12 +110,12 @@ public class game34 extends GameConfigDetailsRunnable implements
 		}		
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
-		ph.addPhase("Setup Phase", 10);	
+		ph.addPhase("Setup Phase", 3);	
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Norm Phase", 100);		
+			ph.addPhase("Norm Phase", 40);		
 		}
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Movement Phase", 120);			
+			ph.addPhase("Movement Phase", 80);			
 		}
 		ph.addPhase("Feedback Phase", 10);
 		ph.setLoop(false);

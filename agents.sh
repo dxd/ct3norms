@@ -195,7 +195,7 @@ c ) start_ctclient $OPTARG ;;
 s ) start_ctserver $OPTARG ;;
 A ) start_ctadmin $OPTARG ;;
 
-k ) stop_ctserver;start_aplserver;start_ctserver;start_safari ;;
+k ) start_ctserver ;;
 m ) stop_ctserver;start_aplserver;start_ctserver;start_ctclient $OPTARG ;;
 t ) echo blaat ;;
 2 ) start_aplserver ;;

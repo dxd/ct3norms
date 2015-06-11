@@ -331,6 +331,7 @@ public class WebAgentAdaptor implements GameStartEventListener,
 				i++;
 			}
 			object.put("Goals", goalsArray);
+			initialNumOfGoals = br.getGoals().size();
 		}
 		
 		

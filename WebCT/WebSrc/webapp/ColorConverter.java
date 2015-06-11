@@ -108,7 +108,7 @@ public class ColorConverter {
 		if (c.equals("7FBF7F")) {
 			return "CTDkGreen";
 		}
-		if (c.equals("F8F9F3")) {
+		if (c.equals("FFFFFF")) {
 			return "white"; /* "00ff00"; */
 		}
 		if (c.equals("F5E83F")) {

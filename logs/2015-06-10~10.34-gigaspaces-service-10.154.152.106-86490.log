@@ -1,0 +1,65 @@
+2015-06-10 10:34:35,437  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid was created successfully. Total time: 408 milliseconds
+2015-06-10 10:54:55,037  WARNING [com.gigaspaces.localcache] - Failed to renew local space notify lease - LeaseRenewalEvent: 
+ class name: java.lang.Object
+ uid: 91807aad-0108-4536-9308-5561419ea9e1
+ expiration: 1433929895512
+ left 199492
+ event cause: null
+
+2015-06-10 10:54:55,062  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.JMSException: Channel was inactive for too long.
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:46)
+	at org.apache.activemq.ActiveMQConnection.syncSendPacket(ActiveMQConnection.java:1211)
+	at org.apache.activemq.ActiveMQSession.send(ActiveMQSession.java:1648)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:499)
+	at org.apache.activemq.ActiveMQMessageProducer.send(ActiveMQMessageProducer.java:375)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:390)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too long.
+	at org.apache.activemq.transport.InactivityMonitor.readCheck(InactivityMonitor.java:102)
+	at org.apache.activemq.transport.InactivityMonitor.access$000(InactivityMonitor.java:34)
+	at org.apache.activemq.transport.InactivityMonitor$1.run(InactivityMonitor.java:50)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:204)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+
+2015-06-10 10:54:58,470  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-06-10 10:54:58,471  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-06-10 10:54:58,472  SEVERE [edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands] - null; Caused by: javax.jms.IllegalStateException: The Session is closed
+	at org.apache.activemq.ActiveMQSession.checkClosed(ActiveMQSession.java:661)
+	at org.apache.activemq.ActiveMQSession.configureMessage(ActiveMQSession.java:647)
+	at org.apache.activemq.ActiveMQSession.createTextMessage(ActiveMQSession.java:380)
+	at edu.harvard.eecs.airg.coloredtrails.server.CtrlCommands.clientDisconnected(CtrlCommands.java:386)
+	at edu.harvard.eecs.airg.coloredtrails.server.ClientState.updateState(ClientState.java:38)
+	at edu.harvard.eecs.airg.coloredtrails.server.ServerData.run(ServerData.java:446)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+
+2015-06-10 10:55:00,966  WARNING [com.gigaspaces.localcache] - LocalCache#1-myGrid lost connection to remote space - attempting to reconnect...
+2015-06-10 10:55:15,668  INFO [com.gigaspaces.localcache] - LocalCache#1-myGrid is connected.

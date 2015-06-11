@@ -110,7 +110,7 @@ public class game6 extends GameConfigDetailsRunnable implements
 		}		
 		// set up phase sequence
 		ServerPhases ph = new ServerPhases(this);
-		ph.addPhase("Setup Phase", 10);	
+		ph.addPhase("Setup Phase", 3);	
 		for (int i = 0; i < 1; i++) {
 			ph.addPhase("Norm Phase", 100);		
 		}

@@ -186,7 +186,8 @@ function createGameBoard() {
 		}
 		else
 		{
-			newDiv.innerHTML =playerId+ '<img src="img/' + game.getPlayerIcon(playerId) + '"/>';
+//			newDiv.innerHTML =playerId+ '<img src="img/' + game.getPlayerIcon(playerId) + '"/>';
+			newDiv.innerHTML =playerId;
 		}
 		playerContainer.appendChild(newDiv);
 		var divElem = document.getElementById("player" + playerId);
@@ -264,11 +265,14 @@ function createGoals() {
 	var playerID = game.getMe();
 	var goalSquare;
 	
-	if (game.numOfGolals ==1 && game.role >0 )  //Bargain Only and WebCTRevelation
+	if (game.numOfGolals ==1)  //Bargain Only and WebCTRevelation
 	{
 		 var newDiv = document.createElement("div");
 		 newDiv.innerHTML = '<img src="img/goal.gif">';
 		 newDiv.setAttribute('name','goal');
+		 newDiv.setAttribute("style","width:50px");
+//		 newDiv.setAttribute('height',50);
+		 newDiv.setAttribute('clickable','false');
 		 goalSquare = document.getElementById("DivRow" + game.goals[0].posX
                  + "Column" + game.goals[0].posY);
 		 goalSquare.appendChild(newDiv); 
@@ -284,8 +288,27 @@ function createGoals() {
 	    	{
 
 	    			newDiv.innerHTML = '<img src="img/goalA.gif">';
-	    			newDiv.setAttribute('name','goal');
+	    			newDiv.className = "goalie";
+	    			 newDiv.setAttribute("style","width:20px");
+//	    			 newDiv.setAttribute('height',50);
+	    			 newDiv.setAttribute('clickable','false');
+	    			 goalSquare = document.getElementById("DivRow" + game.goals[i].posX
+	    	                   + "Column" + game.goals[i].posY);
+	    		    	 goalSquare.appendChild(newDiv);     
 	    		
+	    	}
+	    	else if 
+	    	(game.goals[i].type == -1)  //Bargain Only and WebCTRevelation
+	    	{
+	    		 var newDiv = document.createElement("div");
+	    		 newDiv.innerHTML = '<img src="img/goal.gif">';
+	    		 newDiv.className = "goalie";
+	    		 newDiv.setAttribute("style","width:20px");
+//	    		 newDiv.setAttribute('height',50);
+	    		 newDiv.setAttribute('clickable','false');
+	    		 goalSquare = document.getElementById("DivRow" + game.goals[i].posX
+	                     + "Column" + game.goals[i].posY);
+	    		 goalSquare.appendChild(newDiv); 
 	    	}
 //	    	else  //opponent's goal
 //	    	{
@@ -300,9 +323,7 @@ function createGoals() {
 //	    			newDiv.setAttribute('name','goal');
 //	    		
 //	    	}
-	    	 goalSquare = document.getElementById("DivRow" + game.goals[i].posX
-                     + "Column" + game.goals[i].posY);
-	    	 goalSquare.appendChild(newDiv);     
+	    	
            
 	    }//for
 		
@@ -368,22 +389,10 @@ function updateProgressBar() {
 		user = "Role: Team member";
 		if (game.role == 1) {
 			user = "Role: Coordinator";
-			if (game.phases[currentPhaseIndex].name == "Norm Phase") {
-				var newDiv = $(document.createElement('div')); 
-				newDiv.html('You are a coordinator!');
-				newDiv.dialog({ title: "Role" });
-				setTimeout(function(){newDiv.dialog('close');},2500);
-			}
 
 		}
 		if (game.role == 2) {
 			user = "Role: Coordinator";
-			if (game.phases[currentPhaseIndex].name == "Norm Phase") {
-				var newDiv = $(document.createElement('div')); 
-				newDiv.html('You are a coordinator!');
-				newDiv.dialog({ title: "Role" });
-				setTimeout(function(){newDiv.dialog('close');},2500);
-			}
 
 		}
 		$("#user").html(user);
@@ -404,7 +413,11 @@ function updateProgressBar() {
 				//clearProposalTableArea();
 			if (phaseChanged) {
 				if (game.role > 0) {
-					loadNormGoalProposalsTable();					
+					loadNormGoalProposalsTable();	
+					var newDiv = $(document.createElement('div')); 
+					newDiv.html('You are a coordinator!');
+					newDiv.dialog({ title: "Role" });
+					setTimeout(function(){newDiv.dialog('close');},2500);
 				}
 				if  (game.role == 2) {
 					
@@ -586,7 +599,7 @@ function loadNormGroupProposalsTable() {
 			{
 				datatype : "local",
 				height : 200,
-				colNames : ['MsgType', 'Norm', 'Sanction',  'Response' ],
+				colNames : ['MsgType', 'Norm', 'Penalty',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
 					index : 'MsgType',
@@ -598,8 +611,8 @@ function loadNormGroupProposalsTable() {
 					width : 480,
 					sortable : false
 				},{
-					name : 'Sanction',
-					index : 'Sanction',
+					name : 'Penalty',
+					index : 'Penalty',
 					width : 70,
 					sortable : false
 				},{
@@ -622,7 +635,7 @@ function loadNormGroupProposalsTable() {
 			// Receiver : SenderID == 0 ? 1 : 0,
 			MsgType : "<div id='divTableGMsgType'></div>",
 			Norm : "<div id='divTableGNorm'></div>",
-			Sanction : "<div id='divTableGSanction'></div>",
+			Penalty : "<div id='divTableGSanction'></div>",
 			Response : "<div id='divButtonGPropose'></div>"
 		};
 	
@@ -679,7 +692,7 @@ function loadNormColorProposalsTable() {
 			{
 				datatype : "local",
 				height : 200,
-				colNames : ['MsgType', 'Receiver', 'Color', 'Norm', 'Sanction',  'Response' ],
+				colNames : ['MsgType', 'Receiver', 'Color', 'Norm', 'Penalty',  'Response' ],
 				colModel : [ {
 					name : 'MsgType',
 					index : 'MsgType',
@@ -701,8 +714,8 @@ function loadNormColorProposalsTable() {
 					width : 315,
 					sortable : false
 				},{
-					name : 'Sanction',
-					index : 'Sanction',
+					name : 'Penalty',
+					index : 'Penalty',
 					width : 70,
 					sortable : false
 				},{
@@ -727,7 +740,7 @@ function loadNormColorProposalsTable() {
 			Receiver : "<div id='divTableNCReceiver'></div>",
 			Color : "<div id='divTableNCColor'></div>", 
 			Norm : "<div id='divTableNCNorm'></div>",
-			Sanction : "<div id='divTableNCSanction'></div>",
+			Penalty : "<div id='divTableNCSanction'></div>",
 			Response : "<div id='divButtonNCPropose'></div>"
 		};
 	
@@ -766,9 +779,9 @@ function buttonSubmitNormColor_click(playerId) {
 	var norm = norms.options[norms.selectedIndex].value;
 	var sanction = sanctions.options[sanctions.selectedIndex].value;
 	if (norm == "yes")
-		var message = "the obligation is to visit a " + colors.options[colors.selectedIndex].text + " square";
+		var message = "should visit a " + colors.options[colors.selectedIndex].text + " square";
 	else
-		var message = "the prohibition is to visit a " + colors.options[colors.selectedIndex].text + " square";
+		var message = "shouldn't visit a " + colors.options[colors.selectedIndex].text + " square";
 	sendNormColor(playerId,recipientID,colors.options[colors.selectedIndex].text,norm,sanction);
 	//clearProposalTableArea();
 	//loadNormGoalProposalsTable();
@@ -858,7 +871,7 @@ function loadNormGoalProposalsTable() {
 	document.getElementById('divButtonNPropose').appendChild(cont);	
 	
 	// append div into Messages grid
-	document.getElementById("divTableNMessage").innerHTML = 'Set an obligation for player to go to a selected sauare';
+	document.getElementById("divTableNMessage").innerHTML = 'Sets a goal to a selected square';
 	document.getElementById("divTableNMsgType").innerHTML = 'Goal Position';
 	
 	InsertIntoPlayersIconsSelect("divTableNReceiver");
@@ -1266,8 +1279,8 @@ function InsertIntoNormSelect() {
 	normsDropDown.style.width = '100px';
 
 	document.getElementById('divTableNCNorm').appendChild(normsDropDown);
-	appendOptionLast("obligation","yes","normsDropDown", 'obligation');
-	appendOptionLast("prohibition","no","normsDropDown", 'prohibition');
+	appendOptionLast("should","yes","normsDropDown", 'obligation');
+	appendOptionLast("should not","no","normsDropDown", 'prohibition');
 	
 }
 function InsertIntoSanctionSelect(select) {
@@ -1633,9 +1646,9 @@ function UpdateServer() {
 			
 			
 		}
-		if(game.numOfGolals!= o.numOfGoals)
+		if(o.numOfGoals > 0 && o.Goals != null)
 		{
-			updateGoals(o);
+		  updateGoals(o);
 		}
 		InsertIntoNormsTable(o.Prohibitions,o.Obligations);
 		InsertIntoProposalsTable(o);
@@ -1686,23 +1699,34 @@ function UpdatePlayerChips(o) {
 function updateGoals(o)
 {
 		
-//	removeGoals();
-	
+	removeGoals();
+	var goals = 0;
 	for ( var i = 0; i < o.Goals.length; i++) 
 	{
 //		alert(JSON.stringify(o.Goals));
-		game.goals[i] = o.Goals[i];
-		game.goals[i].id = o.Goals[i].id;
-		game.goals[i].type = o.Goals[i].type;
-		game.goals[i].posX = o.Goals[i].posX;
-		game.goals[i].posY = o.Goals[i].posY;
+		if (o.Goals[i].type == game.getMe()) {
+//			removeGoals();
+			game.goals[1] = o.Goals[i];
+			goals++;
+//			createGoals();
+		}
+		else if (o.Goals[i].type == -1) {
+//			removeGoals();
+			game.goals[0] = o.Goals[i];
+			goals++
+//			createGoals();
+		}
+//		game.goals[i].id = o.Goals[i].id;
+//		game.goals[i].type = o.Goals[i].type;
+//		game.goals[i].posX = o.Goals[i].posX;
+//		game.goals[i].posY = o.Goals[i].posY;
 	}
 
 	
-	game.numOfGolals = o.Goals.length;
-	game.numGoals = o.Goals.length;
+	game.numOfGolals = goals;
+	game.numGoals = goals;
 	
-	createGoals();
+//	createGoals();
 	
 	//updatePathFinderGoals();
 	
@@ -1716,14 +1740,22 @@ function removeGoals(){
 
     var goalSquare;
     
-    for ( var i = 0; i < game.numOfGolals; i++) {
-    //   if(game.goals[i].type >= 10){
-           goalSquare = document.getElementById("DivRow" + game.goals[i].posX + "Column" + game.goals[i].posY);
-           
-           goalSquare.removeChild(goalSquare.lastChild);
+//    for ( var i = 0; i < game.numOfGolals; i++) { 
+     if(game.numOfGolals > 0){
+    
+         //  goalSquare = document.getElementById("DivRow" + game.goals[0].posX + "Column" + game.goals[0].posY);
+           $( "DivRow" + game.goals[0].posX + "Column" + game.goals[0].posY ).remove( ".goalie" );
+         //  goalSquare.removeChild(goalSquare.lastChild);
             
-  //     }
+      }
+     if(game.numOfGolals > 1){
+    	    
+ //        goalSquare = document.getElementById("DivRow" + game.goals[1].posX + "Column" + game.goals[1].posY);
+         $( "DivRow" + game.goals[1].posX + "Column" + game.goals[1].posY ).remove( ".goalie" );
+  //       goalSquare.removeChild(goalSquare.lastChild);
+          
     }
+ //   }
     
     //alert("Finished removing goals");
 }
