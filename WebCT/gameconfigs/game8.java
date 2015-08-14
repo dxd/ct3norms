@@ -115,7 +115,7 @@ public class game8 extends GameConfigDetailsRunnable implements
 			ph.addPhase("Norm Phase", 100);		
 		}
 		for (int i = 0; i < 1; i++) {
-			ph.addPhase("Movement Phase", 120);			
+			ph.addPhase("Movement Phase", 100);			
 		}
 		ph.addPhase("Feedback Phase", 10);
 		ph.setLoop(false);

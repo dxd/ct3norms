@@ -1291,14 +1291,10 @@ function InsertIntoSanctionSelect(select) {
 	normsDropDown.style.width = '70px';
 
 	document.getElementById(select).appendChild(normsDropDown);
-	appendOptionLast(50,50,select+'DropDown', '');
-	appendOptionLast(100,100,select+'DropDown', '');
-	appendOptionLast(150,150,select+'DropDown', '');
-	appendOptionLast(200,200,select+'DropDown', '');
-	appendOptionLast(250,250,select+'DropDown', '');
 	appendOptionLast(300,300,select+'DropDown', '');
-	appendOptionLast(400,400,select+'DropDown', '');
 	appendOptionLast(500,500,select+'DropDown', '');
+	appendOptionLast(600,600,select+'DropDown', '');
+	appendOptionLast(800,800,select+'DropDown', '');
 	
 	//document.getElementById(select).appendChild(select+"DropDown");
 }
@@ -1741,7 +1737,7 @@ function removeGoals(){
     var goalSquare;
     
 //    for ( var i = 0; i < game.numOfGolals; i++) { 
-     if(game.numOfGolals > 0){
+     if(game.numOfGolals > 0 && game.goals[0] != null){
     
          //  goalSquare = document.getElementById("DivRow" + game.goals[0].posX + "Column" + game.goals[0].posY);
            $( "DivRow" + game.goals[0].posX + "Column" + game.goals[0].posY ).remove( ".goalie" );

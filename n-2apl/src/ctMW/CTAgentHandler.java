@@ -51,6 +51,8 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 	private String agentname;
 	private String[] proposals = new String[] {null,null,null,null,null}; 
 	private String[] nogo = new String[] {null,null,null,null,null};
+	private RowCol[] been = new RowCol[] {null,null,null,null,null};
+	private Path[] paths = new Path[] {null,null,null,null,null};
 
 	public CTAgentHandler(EnvCT envCT, String agentname) {
 		env = envCT;
@@ -622,7 +624,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		String[] ctcolors = new String[ctclr.size()];
 		ctclr.toArray(ctcolors);
 
-		HashMap<String, String> colorsmap = new HashMap();
+		HashMap<String, String> colorsmap = new HashMap<String, String>();
 
 		// link the normal ct colors to their lower case versions
 		for (String color: ctcolors) {
@@ -857,33 +859,87 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 		String colorGoal = goal.getName();
 		//Board b = (Board) cgs.getBoard().clone();
 		//b.setGoal(new RowCol(x.toInt(),y.toInt()), true);
+		Path old = paths[cgs.getPerGameId()];
+
 		System.out.println(agentname+"[CTAH] going goal: " +x+","+y+" color: "+ colorGoal);
-		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 100);
+		ArrayList<Path> shortestPaths = ShortestPaths.getShortestPaths(cgs.getMyPlayer().getPosition(), new RowCol(x.toInt(),y.toInt()), cgs.getBoard(), scoring, 1000);
 		System.out.println(agentname+"[CTAH] paths: " + shortestPaths.size());
 		
 		PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
-		waiter.doWait(3, 5);
+		waiter.doWait(0, 1);
+		Path chosen= new Path();
+		if (old == null) {
 		for (int i=0; i<1000; i++) {
 			// Get the best path available
 				
 			System.out.println(agentname+"[CTAH] path: " +i);
-			Path chosenPath = shortestPaths.remove(0); // why remove(0)??
-			
+			Path chosenPath = shortestPaths.remove(i); // why remove(0)??
+			Path testPath = new Path();
+			LinkedList points = (LinkedList) chosenPath.getPoints().clone();
+			RowCol start = (RowCol) points.pollFirst();
+			RowCol end = (RowCol) points.pollLast();
+			for (int j = 0; j < points.size(); j++)
+				testPath.addPathPoint((RowCol) points.get(j));
+			boolean stop = false;
+			System.out.println(agentname+"[CTAH] testpath: " +testPath.toString());
+			if (been[cgs.getMyPlayer().getPerGameId()] != null && testPath.getPoint(0).equals(been[cgs.getMyPlayer().getPerGameId()]))
+				continue;
 			if (cgs.getBoard().getColors().contains(colorGoal)) {
-				ChipSet c = chosenPath.getRequiredChips(cgs.getBoard());
-				if (c.getColors().contains(colorGoal)) {
-					if (!cgs.getBoard().getSquare(chosenPath.getPoint(0)).getColor().equals(colorGoal)) {					
+				for (int j = 0; j < points.size(); j++) {
+					
+					if (cgs.getBoard().getSquare(testPath.getPoint(j)).getColor().equals(colorGoal)) {
 						if (norm.getName().equals("no"))
-							continue;
+							stop = true;
 					}
-				} else {
-					if (norm.getName().equals("yes"))
-						continue;
+					else {
+						if (norm.getName().equals("yes"))
+							stop = true;
+					}
+				}
+				
+			if (stop)
+				continue;
+			chosen = chosenPath;
+			paths[cgs.getPerGameId()] = chosen;
+			break;
+				
+//				ChipSet c = testPath.getRequiredChips(cgs.getBoard());
+//				if (c.getColors().contains(colorGoal)) {
+//					if (!cgs.getBoard().getSquare(chosenPath.getPoint(0)).getColor().equals(colorGoal)) {	
+//						if (!cgs.getBoard().getSquare(chosenPath.getEndPoint()).getColor().equals(colorGoal)) {	
+//							if (norm.getName().equals("no"))
+//								continue;
+//						}	
+//					}
+//				} else {
+//					if (norm.getName().equals("yes"))
+//						continue;
+//				}
+				
+			}
+			//chosenPath.appendPathPoint(start);
+			//chosenPath.addPathPoint(end);
+			
+		
+		}
+		
+		}
+		else {
+			if (old.getPoints().get(0).equals(cgs.getMyPlayer().getPosition()))
+				for (int j = 0; j < old.getPoints().size(); j++)
+					chosen.addPathPoint((RowCol) old.getPoints().get(j));	
+			else {
+				paths[cgs.getPerGameId()] = new Path();
+				for (int j = 1; j < old.getPoints().size(); j++) {
+					chosen.addPathPoint((RowCol) old.getPoints().get(j));
+					paths[cgs.getPerGameId()].addPathPoint((RowCol) old.getPoints().get(j));
 				}
 			}
-			
-			RowCol point= chosenPath.getPoint(1);
-			System.out.println(agentname+"[CTAH] path: " +chosenPath.toString());
+		}
+		
+		RowCol point= chosen.getPoint(1);
+		System.out.println(agentname+"[CTAH] path: " +chosen.toString());
+		
 			String color = cgs.getBoard().getSquare(point).getColor();
 			ChipSet myChips = cgs.getMyPlayer().getChips();
 			if (myChips.getNumChips(color) > 0) {
@@ -928,7 +984,7 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			//if (client.communication.sendMoveRequest(point)) {}
 			//env.write(agentname, point.row, point.col);
 
-		}
+		
 		System.out.println(agentname+"[CTAH] moveStepToGoalTest havent found anything");
 		return new APLIdent("no");
 	}
@@ -938,8 +994,17 @@ public class CTAgentHandler implements RecipAgentAdaptor{
 			APLNum ax, APLNum ay) {
 		client.communication.sendMoveRequest(new RowCol(ax.toInt(),ay.toInt()));
 		PhaseWaiter waiter = new PhaseWaiter(cgs.getPhases());
-		waiter.doWait(3, 5);
+		
+		waiter.doWait(1, 2);
+//		Path newp = new Path();
+//		for (int j = 1; j < paths[cgs.getMyPlayer().getPerGameId()].getPoints().size(); j++) {				
+//			newp.addPathPoint((RowCol) paths[cgs.getMyPlayer().getPerGameId()].getPoints().get(j));				
+//		}
+//		paths[cgs.getMyPlayer().getPerGameId()] = newp;
 		if (cgs.getMyPlayer().getPosition().equals(new RowCol(ax.toInt(),ay.toInt()))) {
+			been[cgs.getMyPlayer().getPerGameId()] = new RowCol(ax.toInt(),ay.toInt());
+			
+			
 			APLList uTD = new APLList(new APLNum(cgs.getMyPlayer().getPosition().row),new APLNum(cgs.getMyPlayer().getPosition().col));
 			System.out.println(agentname2+"[CTAH] moveStepToGoal returns: " + uTD);
 			return uTD; 

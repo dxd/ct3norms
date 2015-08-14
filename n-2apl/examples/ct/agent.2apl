@@ -151,19 +151,19 @@ surround(X,Y,V1) <- role(ID,raaa) | {
 	sendWest(a30,X,Y,100);
 	sendEast(a20,X,Y,100);
 	sendNorth(a10,X,Y,100);
-	B(tile(C1,1,1));
+//	B(tile(C1,1,1));
 //	color(C1,a10,yes,100);
-	B(tile(C2,2,2));
+//	B(tile(C2,2,2));
 //	color(C2,a20,yes,100);
-	B(tile(C3,3,3));
+//	B(tile(C3,3,3));
 //	color(C3,a30,yes,100);
-	B(tile(C4,4,4));
+//	B(tile(C4,4,4));
 //	color(C4,a40,yes,300);
-	color(C4,a10,no,100);
-	color(C3,a20,no,100);
-	color(C2,a30,no,100);
-	color(C1,a40,no,100);
-	acceptRequests(200);
+	color(white,a10,no,500);
+	color(white,a20,no,500);
+	color(white,a30,no,500);
+	color(white,a40,no,500);
+//	acceptRequests(200);
 	dropgoal(surround(X,Y,V1))
 	]
 } : 100
@@ -202,13 +202,13 @@ findNextStep(Color,V1) <- not nextStep(X1,Y1) and not nextStep(X1,Y1,Msg) and no
 	else if B(tile(Color,X,Y)) then {B([A,B] = [X,Y])};
 	
 	if B(prohibition(useColor(Color2,V3))) then 
-			{if B(V3 > V1) then 
+			{if B(V3 > 100) then 
 				{@ctenv( moveStepToGoalTest(Color2,no,A,B,8), L1)}
 				           else
 				{@ctenv( moveStepToGoalTest(Color,any,A,B,8), L1)} 
 			}
 	else if B(obligation(useColor(Color2,V3))) then 
-			{if B(V3 > V1) then 
+			{if B(V3 > 100) then 
 				{@ctenv( moveStepToGoalTest(Color2,yes,A,B,8), L1)}
 				           else
 				{@ctenv( moveStepToGoalTest(Color,any,A,B,8), L1)} 
